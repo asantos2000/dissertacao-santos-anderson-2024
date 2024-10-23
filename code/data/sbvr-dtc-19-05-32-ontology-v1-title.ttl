@@ -1,0 +1,2849 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbvr: <https://www.omg.org/spec/SBVR/20190601#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sbvr:adoptingAuthority a rdf:Property ;
+    rdfs:comment "This is the adoptingAuthority property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Adoptingauthorityadoptselementofguidancefromowningauthoritycitingreference ;
+    rdfs:range xsd:anyType .
+
+sbvr:antecedent a rdf:Property ;
+    rdfs:comment "This is the antecedent property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Implication,
+        sbvr:Implicationhasantecedent ;
+    rdfs:range xsd:anyType .
+
+sbvr:binaryLogicalOperation a rdf:Property ;
+    rdfs:comment "This is the binaryLogicalOperation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Binarylogicaloperationhaslogicaloperand1,
+        sbvr:Binarylogicaloperationhaslogicaloperand2 .
+
+sbvr:bindableTarget a rdf:Property ;
+    rdfs:comment "This is the bindableTarget property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Instantiationformulationbindstobindabletarget,
+        sbvr:Objectificationbindstobindabletarget,
+        sbvr:Projectingformulationbindstobindabletarget,
+        sbvr:Propositionnominalizationbindstobindabletarget,
+        sbvr:Rolebindingbindstobindabletarget .
+
+sbvr:bodyOfSharedMeanings1 a rdf:Property ;
+    rdfs:comment "This is the bodyOfSharedMeanings1 property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bodyofsharedmeanings1containsbodyofsharedmeanings2 .
+
+sbvr:bodyOfSharedMeanings2 a rdf:Property ;
+    rdfs:comment "This is the bodyOfSharedMeanings2 property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bodyofsharedmeanings1containsbodyofsharedmeanings2 .
+
+sbvr:cardinality a rdf:Property ;
+    rdfs:comment "This is the cardinality property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bodyofsharedmeanings,
+        sbvr:Businessvocabulary,
+        sbvr:Exactly-nquantification,
+        sbvr:Exactly-nquantificationhascardinality,
+        sbvr:Exactly-onequantification,
+        sbvr:Ruleset,
+        sbvr:Sethascardinality,
+        sbvr:Speechcommunityrepresentationset,
+        sbvr:Vocabulary ;
+    rdfs:range xsd:anyType .
+
+sbvr:category a rdf:Property ;
+    rdfs:comment "This is the category property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Categorizationschemecontainscategory,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Derivableconcept,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Integer,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Quantity,
+        sbvr:Role,
+        sbvr:Situationalrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:closeMatch a rdf:Property ;
+    rdfs:label "close match" ;
+    rdfs:comment "Links an sbvr:term to a skos:Concept that has the closest meaning. When used to connect terms in a similarity search, means the term has at least a 80% match",
+        "This is the closeMatch property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Term ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf skos:closeMatch .
+
+sbvr:closedSemanticFormulation a rdf:Property ;
+    rdfs:comment "This is the closedSemanticFormulation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Closedsemanticformulationformulatesmeaning .
+
+sbvr:community a rdf:Property ;
+    rdfs:comment "This is the community property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Communityhassubcommunity,
+        sbvr:Communityhasuri .
+
+sbvr:concept a rdf:Property ;
+    rdfs:comment "This is the concept property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bodyofsharedconceptsincludesconcept,
+        sbvr:Concepthasdefinition,
+        sbvr:Concepthasdesignation,
+        sbvr:Concepthasextension,
+        sbvr:Concepthasfacet,
+        sbvr:Concepthasimpliedcharacteristic,
+        sbvr:Concepthasinstance,
+        sbvr:Concepthasnecessarycharacteristic,
+        sbvr:Conceptincorporatescharacteristic,
+        sbvr:Instantiationformulationconsidersconcept,
+        sbvr:Referenceschemeisforconcept,
+        sbvr:Semanticcommunitysharesunderstandingofconcept,
+        sbvr:Variablerangesoverconcept .
+
+sbvr:concept1 a rdf:Property ;
+    rdfs:comment "This is the concept1 property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Concept1iscoextensivewithconcept2,
+        sbvr:Concept1specializesconcept2 .
+
+sbvr:concept2 a rdf:Property ;
+    rdfs:comment "This is the concept2 property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Concept1iscoextensivewithconcept2,
+        sbvr:Concept1specializesconcept2 .
+
+sbvr:consequent a rdf:Property ;
+    rdfs:comment "This is the consequent property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Implication,
+        sbvr:Implicationhasconsequent,
+        sbvr:Whether-or-notformulation,
+        sbvr:Whether-or-notformulationhasconsequent ;
+    rdfs:range xsd:anyType .
+
+sbvr:constrainingFormulation a rdf:Property ;
+    rdfs:comment "This is the constrainingFormulation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bagprojection,
+        sbvr:Closedprojection,
+        sbvr:Projection,
+        sbvr:Setprojection ;
+    rdfs:range xsd:anyType .
+
+sbvr:delimitingCharacteristic a rdf:Property ;
+    rdfs:comment "This is the delimitingCharacteristic property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Intensionaldefinitionusesdelimitingcharacteristic .
+
+sbvr:designationContext a rdf:Property ;
+    rdfs:comment "This is the designationContext property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Representationisindesignationcontext,
+        sbvr:Vocabularynamespaceisspecifictodesignationcontext .
+
+sbvr:element a rdf:Property ;
+    rdfs:comment "This is the element property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bodyofsharedmeanings,
+        sbvr:Businessvocabulary,
+        sbvr:Ruleset,
+        sbvr:Speechcommunityrepresentationset,
+        sbvr:Vocabulary ;
+    rdfs:range xsd:anyType .
+
+sbvr:essentialCharacteristic a rdf:Property ;
+    rdfs:comment "This is the essentialCharacteristic property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Derivableconcept,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Integer,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Quantity,
+        sbvr:Role,
+        sbvr:Situationalrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:exactMatch a rdf:Property ;
+    rdfs:label "exact match" ;
+    rdfs:comment "Links an sbvr:term to a skos:Concept that has the same meaning. When used to connect terms in a similarity search, means the term has at least a 99% match",
+        "This is the exactMatch property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Term ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf skos:exactMatch .
+
+sbvr:expression a rdf:Property ;
+    rdfs:comment "Something that expresses or communicates, but considered independently of its interpretation. Example: the sequence of characters 'car'",
+        "This is the expression property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Adopteddefinition,
+        sbvr:Advicestatement,
+        sbvr:Behavioralbusinessrulestatement,
+        sbvr:Businesspolicystatement,
+        sbvr:Communicationcontent,
+        sbvr:Contingencystatement,
+        sbvr:Definitedescription,
+        sbvr:Definition,
+        sbvr:Definitionalrulestatement,
+        sbvr:Description,
+        sbvr:Descriptiveexample,
+        sbvr:Designation,
+        sbvr:Expressionisunambiguoustospeechcommunity,
+        sbvr:Expressionrepresentsmeaning,
+        sbvr:Extensionaldefinition,
+        sbvr:Formalrepresentation,
+        sbvr:Guidancestatement,
+        sbvr:Icon,
+        sbvr:Impossibilitystatement,
+        sbvr:Informalrepresentation,
+        sbvr:Intensionaldefinition,
+        sbvr:Name,
+        sbvr:Necessitystatement,
+        sbvr:Non-necessitystatement,
+        sbvr:Non-obligationstatement,
+        sbvr:Nonverbaldesignation,
+        sbvr:Note,
+        sbvr:Nounform,
+        sbvr:Obligationstatement,
+        sbvr:Optionalitystatement,
+        sbvr:Owneddefinition,
+        sbvr:Permissionstatement,
+        sbvr:Placeholder,
+        sbvr:Possibilitystatement,
+        sbvr:Preferreddesignation,
+        sbvr:Prohibiteddesignation,
+        sbvr:Prohibitionstatement,
+        sbvr:Reference,
+        sbvr:Representation,
+        sbvr:Representationhasexpression,
+        sbvr:Restrictedpermissionstatement,
+        sbvr:Restrictedpossibilitystatement,
+        sbvr:Rulestatement,
+        sbvr:Sententialform,
+        sbvr:Statement,
+        sbvr:Statementofadviceofpermission,
+        sbvr:Statementofadviceofpossibility,
+        sbvr:Term,
+        sbvr:Verbconceptroledesignation,
+        sbvr:Verbconceptwording,
+        sbvr:Verbsymbol ;
+    rdfs:range xsd:anyType .
+
+sbvr:extension a rdf:Property ;
+    rdfs:comment "This is the extension property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Concepthasextension,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Derivableconcept,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Integer,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Quantity,
+        sbvr:Role,
+        sbvr:Situationalrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:extensionallyUsedRole a rdf:Property ;
+    rdfs:comment "This is the extensionallyUsedRole property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Referencescheme ;
+    rdfs:range xsd:anyType .
+
+sbvr:identifyingCharacteristic a rdf:Property ;
+    rdfs:comment "This is the identifyingCharacteristic property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Referencescheme ;
+    rdfs:range xsd:anyType .
+
+sbvr:impliedCharacteristic a rdf:Property ;
+    rdfs:comment "This is the impliedCharacteristic property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Concepthasimpliedcharacteristic,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Derivableconcept,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Integer,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Quantity,
+        sbvr:Role,
+        sbvr:Situationalrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:inconsequent a rdf:Property ;
+    rdfs:comment "This is the inconsequent property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Whether-or-notformulation,
+        sbvr:Whether-or-notformulationhasinconsequent ;
+    rdfs:range xsd:anyType .
+
+sbvr:informationSource a rdf:Property ;
+    rdfs:comment "This is the informationSource property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Referencepointstoinformationsource .
+
+sbvr:instance a rdf:Property ;
+    rdfs:comment "This is the instance property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Concepthasinstance,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Derivableconcept,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Integer,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Quantity,
+        sbvr:Role,
+        sbvr:Situationalrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:isDirectlyEnforceable a rdf:Property ;
+    rdfs:comment "This is the isDirectlyEnforceable property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Behavioralbusinessrule,
+        sbvr:Businesspolicy,
+        sbvr:Elementofgovernance ;
+    rdfs:range xsd:boolean .
+
+sbvr:isImplicitlyUnderstood a rdf:Property ;
+    rdfs:comment "Generally understood by its owning community without an explicit definition for the concept it designates",
+        "This is the isImplicitlyUnderstood property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Designation,
+        sbvr:Icon,
+        sbvr:Name,
+        sbvr:Nonverbaldesignation,
+        sbvr:Placeholder,
+        sbvr:Preferreddesignation,
+        sbvr:Prohibiteddesignation,
+        sbvr:Term,
+        sbvr:Verbconceptroledesignation,
+        sbvr:Verbsymbol ;
+    rdfs:range xsd:boolean .
+
+sbvr:isPracticable a rdf:Property ;
+    rdfs:comment "This is the isPracticable property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Advice,
+        sbvr:Adviceofcontingency,
+        sbvr:Adviceofoptionality,
+        sbvr:Adviceofpermission,
+        sbvr:Adviceofpossibility,
+        sbvr:Behavioralbusinessrule,
+        sbvr:Businesspolicy,
+        sbvr:Businessrule,
+        sbvr:Elementofgovernance,
+        sbvr:Elementofguidance ;
+    rdfs:range xsd:boolean .
+
+sbvr:isUnitary a rdf:Property ;
+    rdfs:comment "This is the isUnitary property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Auxiliaryvariable,
+        sbvr:Variable ;
+    rdfs:range xsd:boolean .
+
+sbvr:isViolated a rdf:Property ;
+    rdfs:comment "This is the isViolated property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Behavioralbusinessrule ;
+    rdfs:range xsd:boolean .
+
+sbvr:logicalFormulation a rdf:Property ;
+    rdfs:comment "This is the logicalFormulation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Logicalformulationconstrainsprojection,
+        sbvr:Logicalformulationrestrictsvariable,
+        sbvr:Modalformulationembedslogicalformulation,
+        sbvr:Objectificationconsiderslogicalformulation,
+        sbvr:Propositionnominalizationconsiderslogicalformulation,
+        sbvr:Quantificationscopesoverlogicalformulation .
+
+sbvr:logicalOperand a rdf:Property ;
+    rdfs:comment "This is the logicalOperand property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Conjunction,
+        sbvr:Disjunction,
+        sbvr:Equivalence,
+        sbvr:Exclusivedisjunction,
+        sbvr:Implication,
+        sbvr:Logicalnegation,
+        sbvr:Logicaloperationhaslogicaloperand,
+        sbvr:Nandformulation,
+        sbvr:Norformulation,
+        sbvr:Whether-or-notformulation ;
+    rdfs:range xsd:anyType .
+
+sbvr:logicalOperand1 a rdf:Property ;
+    rdfs:comment "This is the logicalOperand1 property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Binarylogicaloperationhaslogicaloperand1,
+        sbvr:Conjunction,
+        sbvr:Disjunction,
+        sbvr:Equivalence,
+        sbvr:Exclusivedisjunction,
+        sbvr:Implication,
+        sbvr:Nandformulation,
+        sbvr:Norformulation,
+        sbvr:Whether-or-notformulation ;
+    rdfs:range xsd:anyType .
+
+sbvr:logicalOperand2 a rdf:Property ;
+    rdfs:comment "This is the logicalOperand2 property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Binarylogicaloperationhaslogicaloperand2,
+        sbvr:Conjunction,
+        sbvr:Disjunction,
+        sbvr:Equivalence,
+        sbvr:Exclusivedisjunction,
+        sbvr:Implication,
+        sbvr:Nandformulation,
+        sbvr:Norformulation,
+        sbvr:Whether-or-notformulation ;
+    rdfs:range xsd:anyType .
+
+sbvr:logicalOperation a rdf:Property ;
+    rdfs:comment "This is the logicalOperation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Logicaloperationhaslogicaloperand .
+
+sbvr:maximumCardinality a rdf:Property ;
+    rdfs:comment "This is the maximumCardinality property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:At-most-nquantification,
+        sbvr:At-most-nquantificationhasmaximumcardinality,
+        sbvr:At-most-onequantification,
+        sbvr:Numericrangequantification,
+        sbvr:Numericrangequantificationhasmaximumcardinality ;
+    rdfs:range xsd:anyType .
+
+sbvr:meaning a rdf:Property ;
+    rdfs:comment "This is the meaning property or class within the SBVR ontology.",
+        "What is meant by a word, sign, statement (natural language meaning), or description; what someone intends to express or what someone understands" ;
+    rdfs:domain sbvr:Adopteddefinition,
+        sbvr:Advicestatement,
+        sbvr:Behavioralbusinessrulestatement,
+        sbvr:Businesspolicystatement,
+        sbvr:Closedsemanticformulationformulatesmeaning,
+        sbvr:Communicationcontent,
+        sbvr:Contingencystatement,
+        sbvr:Definitedescription,
+        sbvr:Definition,
+        sbvr:Definitionalrulestatement,
+        sbvr:Description,
+        sbvr:Descriptionportraysmeaning,
+        sbvr:Descriptiveexample,
+        sbvr:Descriptiveexampleillustratesmeaning,
+        sbvr:Designation,
+        sbvr:Expressionrepresentsmeaning,
+        sbvr:Extensionaldefinition,
+        sbvr:Formalrepresentation,
+        sbvr:Guidancestatement,
+        sbvr:Icon,
+        sbvr:Impossibilitystatement,
+        sbvr:Informalrepresentation,
+        sbvr:Intensionaldefinition,
+        sbvr:Name,
+        sbvr:Necessitystatement,
+        sbvr:Non-necessitystatement,
+        sbvr:Non-obligationstatement,
+        sbvr:Nonverbaldesignation,
+        sbvr:Note,
+        sbvr:Notecommentsonmeaning,
+        sbvr:Nounform,
+        sbvr:Obligationstatement,
+        sbvr:Optionalitystatement,
+        sbvr:Owneddefinition,
+        sbvr:Permissionstatement,
+        sbvr:Placeholder,
+        sbvr:Possibilitystatement,
+        sbvr:Preferreddesignation,
+        sbvr:Prohibiteddesignation,
+        sbvr:Prohibitionstatement,
+        sbvr:Reference,
+        sbvr:Referencesupportsmeaning,
+        sbvr:Representation,
+        sbvr:Representationrepresentsmeaning,
+        sbvr:Restrictedpermissionstatement,
+        sbvr:Restrictedpossibilitystatement,
+        sbvr:Rulestatement,
+        sbvr:Sententialform,
+        sbvr:Statement,
+        sbvr:Statementofadviceofpermission,
+        sbvr:Statementofadviceofpossibility,
+        sbvr:Term,
+        sbvr:Verbconceptroledesignation,
+        sbvr:Verbconceptwording,
+        sbvr:Verbsymbol ;
+    rdfs:range xsd:anyType .
+
+sbvr:minimumCardinality a rdf:Property ;
+    rdfs:comment "This is the minimumCardinality property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:At-least-nquantification,
+        sbvr:At-least-nquantificationhasminimumcardinality,
+        sbvr:Existentialquantification,
+        sbvr:Numericrangequantification,
+        sbvr:Numericrangequantificationhasminimumcardinality ;
+    rdfs:range xsd:anyType .
+
+sbvr:modalFormulation a rdf:Property ;
+    rdfs:comment "This is the modalFormulation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Modalformulationembedslogicalformulation .
+
+sbvr:moreGeneralConcept a rdf:Property ;
+    rdfs:comment "This is the moreGeneralConcept property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Derivableconcept,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Integer,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Quantity,
+        sbvr:Role,
+        sbvr:Situationalrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:namespace1 a rdf:Property ;
+    rdfs:comment "This is the namespace1 property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Namespace1incorporatesnamespace2 .
+
+sbvr:namespace2 a rdf:Property ;
+    rdfs:comment "This is the namespace2 property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Namespace1incorporatesnamespace2 .
+
+sbvr:necessaryCharacteristic a rdf:Property ;
+    rdfs:comment "This is the necessaryCharacteristic property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Concepthasnecessarycharacteristic,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Derivableconcept,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Integer,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Quantity,
+        sbvr:Role,
+        sbvr:Situationalrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:objectifiedVerbConcept a rdf:Property ;
+    rdfs:comment "This is the objectifiedVerbConcept property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Categorizationtype,
+        sbvr:Characteristictype,
+        sbvr:Concepttype,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Logicalformulationkind,
+        sbvr:Situationalrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:owningAuthority a rdf:Property ;
+    rdfs:comment "This is the owningAuthority property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Adoptingauthorityadoptselementofguidancefromowningauthoritycitingreference ;
+    rdfs:range xsd:anyType .
+
+sbvr:projectingFormulation a rdf:Property ;
+    rdfs:comment "This is the projectingFormulation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Projectingformulationbindstobindabletarget,
+        sbvr:Projectingformulationhasprojection .
+
+sbvr:projectionPosition a rdf:Property ;
+    rdfs:comment "This is the projectionPosition property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Auxiliaryvariable,
+        sbvr:Variable,
+        sbvr:Variablehasprojectionposition ;
+    rdfs:range xsd:anyType .
+
+sbvr:projectionVariable a rdf:Property ;
+    rdfs:comment "This is the projectionVariable property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bagprojection,
+        sbvr:Closedprojection,
+        sbvr:Projection,
+        sbvr:Setprojection ;
+    rdfs:range xsd:anyType .
+
+sbvr:quantification a rdf:Property ;
+    rdfs:comment "This is the quantification property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Quantificationintroducesvariable,
+        sbvr:Quantificationscopesoverlogicalformulation .
+
+sbvr:quantity1 a rdf:Property ;
+    rdfs:comment "This is the quantity1 property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Quantity1equalsquantity2,
+        sbvr:Quantity1islessthanquantity2 .
+
+sbvr:quantity2 a rdf:Property ;
+    rdfs:comment "This is the quantity2 property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Quantity1equalsquantity2,
+        sbvr:Quantity1islessthanquantity2 .
+
+sbvr:ranged-overConcept a rdf:Property ;
+    rdfs:comment "This is the ranged-overConcept property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Auxiliaryvariable,
+        sbvr:Variable ;
+    rdfs:range xsd:anyType .
+
+sbvr:res a rdf:Property ;
+    rdfs:comment "This is the res property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Resissensorymanifestationofsignifier .
+
+sbvr:restrictingFormulation a rdf:Property ;
+    rdfs:comment "This is the restrictingFormulation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Auxiliaryvariable,
+        sbvr:Variable ;
+    rdfs:range xsd:anyType .
+
+sbvr:scopeFormulation a rdf:Property ;
+    rdfs:comment "This is the scopeFormulation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:At-least-nquantification,
+        sbvr:At-most-nquantification,
+        sbvr:At-most-onequantification,
+        sbvr:Exactly-nquantification,
+        sbvr:Exactly-onequantification,
+        sbvr:Existentialquantification,
+        sbvr:Numericrangequantification,
+        sbvr:Universalquantification ;
+    rdfs:range xsd:anyType .
+
+sbvr:semanticFormulation a rdf:Property ;
+    rdfs:comment "This is the semanticFormulation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Variableisfreewithinsemanticformulation .
+
+sbvr:servesAsDesignation a rdf:Property ;
+    rdfs:comment "This is the servesAsDesignation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Adopteddefinition,
+        sbvr:Definitedescription,
+        sbvr:Definition,
+        sbvr:Extensionaldefinition,
+        sbvr:Intensionaldefinition,
+        sbvr:Owneddefinition ;
+    rdfs:range xsd:boolean .
+
+sbvr:set a rdf:Property ;
+    rdfs:comment "This is the set property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Sethascardinality .
+
+sbvr:signifier a rdf:Property ;
+    rdfs:comment "Expression that is a linguistic unit or pattern, such as a succession of speech sounds, written symbols or gestures, used in a designation of a concept",
+        "This is the signifier property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Designation,
+        sbvr:Designationhassignifier,
+        sbvr:Icon,
+        sbvr:Name,
+        sbvr:Nonverbaldesignation,
+        sbvr:Placeholder,
+        sbvr:Preferreddesignation,
+        sbvr:Prohibiteddesignation,
+        sbvr:Resissensorymanifestationofsignifier,
+        sbvr:Speechcommunityregulatesitsusageofsignifier,
+        sbvr:Term,
+        sbvr:Verbconceptroledesignation,
+        sbvr:Verbsymbol ;
+    rdfs:range xsd:anyType .
+
+sbvr:simplyUsedRole a rdf:Property ;
+    rdfs:comment "This is the simplyUsedRole property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Referencescheme ;
+    rdfs:range xsd:anyType .
+
+sbvr:startingCharacterPosition a rdf:Property ;
+    rdfs:comment "This is the startingCharacterPosition property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Placeholder,
+        sbvr:Placeholderisatstartingcharacterposition ;
+    rdfs:range xsd:anyType .
+
+sbvr:subcommunity a rdf:Property ;
+    rdfs:comment "This is the subcommunity property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Communityhassubcommunity,
+        sbvr:Semanticcommunity,
+        sbvr:Speechcommunity ;
+    rdfs:range xsd:anyType .
+
+sbvr:subjectConcept a rdf:Property ;
+    rdfs:comment "This is the subjectConcept property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Attributivenamespaceisforsubjectconcept .
+
+sbvr:thing1 a rdf:Property ;
+    rdfs:comment "This is the thing1 property or class within the SBVR ontology.",
+        "anything perceivable or conceivable" ;
+    rdfs:domain sbvr:Thing1isthing2 .
+
+sbvr:thing2 a rdf:Property ;
+    rdfs:comment "This is the thing2 property or class within the SBVR ontology.",
+        "anything perceivable or conceivable" ;
+    rdfs:domain sbvr:Thing1isthing2 .
+
+sbvr:value a rdf:Property ;
+    rdfs:comment "This is the value property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Integer,
+        sbvr:Nonnegativeinteger,
+        sbvr:Positiveinteger,
+        sbvr:Text,
+        sbvr:URI ;
+    rdfs:range xsd:integer,
+        xsd:string .
+
+sbvr:verbConceptObjectification a rdf:Property ;
+    rdfs:comment "This is the verbConceptObjectification property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Characteristic,
+        sbvr:Generalverbconcept,
+        sbvr:Partitiveverbconcept,
+        sbvr:Propertyassociation,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept ;
+    rdfs:range xsd:anyType .
+
+sbvr:vocabulary1 a rdf:Property ;
+    rdfs:comment "This is the vocabulary1 property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Vocabulary1incorporatesvocabulary2 .
+
+sbvr:vocabulary2 a rdf:Property ;
+    rdfs:comment "This is the vocabulary2 property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Vocabulary1incorporatesvocabulary2 .
+
+sbvr:Authority a rdf:Property,
+        owl:Class ;
+    rdfs:label "authority" ;
+    rdfs:comment "This is the authority property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Authorityauthorsguidancestatement,
+        sbvr:Authoritydefineselementofguidance,
+        sbvr:Elementofguidanceisinthejurisdictionofauthority .
+
+sbvr:Bodyofsharedconcepts a rdf:Property,
+        owl:Class ;
+    rdfs:label "bodyOfSharedConcepts" ;
+    rdfs:comment "This is the bodyOfSharedConcepts property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bodyofsharedconceptsincludesconcept,
+        sbvr:Bodyofsharedmeaningsincludesbodyofsharedconcepts .
+
+sbvr:Bodyofsharedguidance a rdf:Property,
+        owl:Class ;
+    rdfs:label "bodyOfSharedGuidance" ;
+    rdfs:comment "This is the bodyOfSharedGuidance property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bodyofsharedguidanceincludeselementofguidance,
+        sbvr:Bodyofsharedguidanceincludesruleset,
+        sbvr:Bodyofsharedmeaningsincludesbodyofsharedguidance .
+
+sbvr:Categorizationscheme a rdf:Property,
+        owl:Class ;
+    rdfs:label "categorizationScheme" ;
+    rdfs:comment "This is the categorizationScheme property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Categorizationschemecontainscategory,
+        sbvr:Categorizationschemeisforgeneralconcept,
+        sbvr:Categorizationtype,
+        sbvr:Characteristictype,
+        sbvr:Concepttype,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Logicalformulationkind,
+        sbvr:Situationalrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:Closedlogicalformulation a rdf:Property,
+        owl:Class ;
+    rdfs:label "closedLogicalFormulation" ;
+    rdfs:comment "This is the closedLogicalFormulation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Closedlogicalformulationformalizesstatement,
+        sbvr:Closedlogicalformulationmeansproposition .
+
+sbvr:ElementsOfConceptSystemStructure a owl:Class ;
+    rdfs:label "ElementsOfConceptSystemStructure" ;
+    rdfs:comment "This is the ElementsOfConceptSystemStructure property or class within the SBVR ontology." .
+
+sbvr:Enforcementlevel a rdf:Property,
+        owl:Class ;
+    rdfs:label "enforcementLevel" ;
+    rdfs:comment "This is the enforcementLevel property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Behavioralbusinessrule,
+        sbvr:Behavioralbusinessrulehasenforcementlevel ;
+    rdfs:range xsd:anyType .
+
+sbvr:Instantiationformulation a rdf:Property,
+        owl:Class ;
+    rdfs:label "instantiationFormulation" ;
+    rdfs:comment "This is the instantiationFormulation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Instantiationformulationbindstobindabletarget,
+        sbvr:Instantiationformulationconsidersconcept .
+
+sbvr:Language a rdf:Property,
+        owl:Class ;
+    rdfs:label "language" ;
+    rdfs:comment "This is the language property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Speechcommunityuseslanguage,
+        sbvr:Vocabularyisexpressedinlanguage,
+        sbvr:Vocabularynamespaceisforlanguage .
+
+sbvr:Necessityformulation a owl:Class ;
+    rdfs:label "necessityFormulation" ;
+    rdfs:comment "This is the necessityFormulation property or class within the SBVR ontology." .
+
+sbvr:Objectification a rdf:Property,
+        owl:Class ;
+    rdfs:label "objectification" ;
+    rdfs:comment "This is the objectification property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Objectificationbindstobindabletarget,
+        sbvr:Objectificationconsiderslogicalformulation .
+
+sbvr:Obligationformulation a owl:Class ;
+    rdfs:label "obligationFormulation" ;
+    rdfs:comment "This is the obligationFormulation property or class within the SBVR ontology." .
+
+sbvr:Permissibilityformulation a owl:Class ;
+    rdfs:label "permissibilityFormulation" ;
+    rdfs:comment "This is the permissibilityFormulation property or class within the SBVR ontology." .
+
+sbvr:Possibilityformulation a owl:Class ;
+    rdfs:label "possibilityFormulation" ;
+    rdfs:comment "This is the possibilityFormulation property or class within the SBVR ontology." .
+
+sbvr:Property a owl:Class ;
+    rdfs:label "property" ;
+    rdfs:comment "This is the property property or class within the SBVR ontology." .
+
+sbvr:Propositionnominalization a rdf:Property,
+        owl:Class ;
+    rdfs:label "propositionNominalization" ;
+    rdfs:comment "This is the propositionNominalization property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Propositionnominalizationbindstobindabletarget,
+        sbvr:Propositionnominalizationconsiderslogicalformulation .
+
+sbvr:RepresentationFormality a owl:Class ;
+    rdfs:label "RepresentationFormality" ;
+    rdfs:comment "This is the RepresentationFormality property or class within the SBVR ontology." .
+
+sbvr:Rolebinding a rdf:Property,
+        owl:Class ;
+    rdfs:label "roleBinding" ;
+    rdfs:comment "This is the roleBinding property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Atomicformulation,
+        sbvr:Rolebindingbindstobindabletarget,
+        sbvr:Rolebindingoccursinatomicformulation,
+        sbvr:Verbconceptrole,
+        sbvr:Verbconceptrolehasrolebinding ;
+    rdfs:range xsd:anyType .
+
+sbvr:Segmentation a owl:Class ;
+    rdfs:label "segmentation" ;
+    rdfs:comment "This is the segmentation property or class within the SBVR ontology." .
+
+sbvr:Stateofaffairs a rdf:Property,
+        owl:Class ;
+    rdfs:label "stateOfAffairs" ;
+    rdfs:comment "This is the stateOfAffairs property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Elementofguidanceacknowledgesaspossiblestateofaffairs,
+        sbvr:Elementofguidancenecessitatesstateofaffairs,
+        sbvr:Elementofguidancepermitsstateofaffairs .
+
+sbvr:Subjectfield a rdf:Property,
+        owl:Class ;
+    rdfs:label "subjectField" ;
+    rdfs:comment "This is the subjectField property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Representationisinsubjectfield,
+        sbvr:Vocabularynamespaceisspecifictosubjectfield .
+
+sbvr:Viewpoint a owl:Class ;
+    rdfs:label "viewpoint" ;
+    rdfs:comment "This is the viewpoint property or class within the SBVR ontology." .
+
+sbvr:Adviceisderivedfrombusinesspolicy a owl:Class ;
+    rdfs:label "adviceIsDerivedFromBusinessPolicy" ;
+    rdfs:comment "This is the adviceIsDerivedFromBusinessPolicy property or class within the SBVR ontology." .
+
+sbvr:Aggregationformulation a owl:Class ;
+    rdfs:label "aggregationFormulation" ;
+    rdfs:comment "This is the aggregationFormulation property or class within the SBVR ontology." .
+
+sbvr:Answernominalization a owl:Class ;
+    rdfs:label "answerNominalization" ;
+    rdfs:comment "This is the answerNominalization property or class within the SBVR ontology." .
+
+sbvr:At-least-nquantificationhasminimumcardinality a owl:Class ;
+    rdfs:label "at-least-nQuantificationHasMinimumCardinality" ;
+    rdfs:comment "This is the at-least-nQuantificationHasMinimumCardinality property or class within the SBVR ontology." .
+
+sbvr:At-most-nquantificationhasmaximumcardinality a owl:Class ;
+    rdfs:label "at-most-nQuantificationHasMaximumCardinality" ;
+    rdfs:comment "This is the at-most-nQuantificationHasMaximumCardinality property or class within the SBVR ontology." .
+
+sbvr:Atomicformulation a rdf:Property,
+        owl:Class ;
+    rdfs:label "atomicFormulation" ;
+    rdfs:comment "This is the atomicFormulation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Atomicformulationisbasedonverbconcept,
+        sbvr:Rolebindingoccursinatomicformulation .
+
+sbvr:Atomicformulationisbasedonverbconcept a owl:Class ;
+    rdfs:label "atomicFormulationIsBasedOnVerbConcept" ;
+    rdfs:comment "This is the atomicFormulationIsBasedOnVerbConcept property or class within the SBVR ontology." .
+
+sbvr:Attributivenamespace a rdf:Property,
+        owl:Class ;
+    rdfs:label "attributiveNamespace" ;
+    rdfs:comment "This is the attributiveNamespace property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Attributivenamespaceisforsubjectconcept,
+        sbvr:Attributivenamespaceiswithinvocabularynamespace,
+        sbvr:Binaryverbconcept,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Derivableconcept,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Integer,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Quantity,
+        sbvr:Role,
+        sbvr:Situationalrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:Attributivenamespaceisforsubjectconcept a owl:Class ;
+    rdfs:label "attributiveNamespaceIsForSubjectConcept" ;
+    rdfs:comment "This is the attributiveNamespaceIsForSubjectConcept property or class within the SBVR ontology." .
+
+sbvr:Attributivenamespaceiswithinvocabularynamespace a owl:Class ;
+    rdfs:label "attributiveNamespaceIsWithinVocabularyNamespace" ;
+    rdfs:comment "This is the attributiveNamespaceIsWithinVocabularyNamespace property or class within the SBVR ontology." .
+
+sbvr:Authorityauthorsguidancestatement a owl:Class ;
+    rdfs:label "authorityAuthorsGuidanceStatement" ;
+    rdfs:comment "This is the authorityAuthorsGuidanceStatement property or class within the SBVR ontology." .
+
+sbvr:Authoritydefineselementofguidance a owl:Class ;
+    rdfs:label "authorityDefinesElementOfGuidance" ;
+    rdfs:comment "This is the authorityDefinesElementOfGuidance property or class within the SBVR ontology." .
+
+sbvr:Behavioralbusinessrulehasenforcementlevel a owl:Class ;
+    rdfs:label "behavioralBusinessRuleHasEnforcementLevel" ;
+    rdfs:comment "This is the behavioralBusinessRuleHasEnforcementLevel property or class within the SBVR ontology." .
+
+sbvr:Binarylogicaloperationhaslogicaloperand1 a owl:Class ;
+    rdfs:label "binaryLogicalOperationHasLogicalOperand1" ;
+    rdfs:comment "This is the binaryLogicalOperationHasLogicalOperand1 property or class within the SBVR ontology." .
+
+sbvr:Binarylogicaloperationhaslogicaloperand2 a owl:Class ;
+    rdfs:label "binaryLogicalOperationHasLogicalOperand2" ;
+    rdfs:comment "This is the binaryLogicalOperationHasLogicalOperand2 property or class within the SBVR ontology." .
+
+sbvr:Bodyofsharedconceptsincludesconcept a owl:Class ;
+    rdfs:label "bodyOfSharedConceptsIncludesConcept" ;
+    rdfs:comment "This is the bodyOfSharedConceptsIncludesConcept property or class within the SBVR ontology." .
+
+sbvr:Bodyofsharedguidanceincludeselementofguidance a owl:Class ;
+    rdfs:label "bodyOfSharedGuidanceIncludesElementOfGuidance" ;
+    rdfs:comment "This is the bodyOfSharedGuidanceIncludesElementOfGuidance property or class within the SBVR ontology." .
+
+sbvr:Bodyofsharedguidanceincludesruleset a owl:Class ;
+    rdfs:label "bodyOfSharedGuidanceIncludesRuleSet" ;
+    rdfs:comment "This is the bodyOfSharedGuidanceIncludesRuleSet property or class within the SBVR ontology." .
+
+sbvr:Bodyofsharedmeanings1containsbodyofsharedmeanings2 a owl:Class ;
+    rdfs:label "bodyOfSharedMeanings1ContainsBodyOfSharedMeanings2" ;
+    rdfs:comment "This is the bodyOfSharedMeanings1ContainsBodyOfSharedMeanings2 property or class within the SBVR ontology." .
+
+sbvr:Bodyofsharedmeaningsincludesbodyofsharedconcepts a owl:Class ;
+    rdfs:label "bodyOfSharedMeaningsIncludesBodyOfSharedConcepts" ;
+    rdfs:comment "This is the bodyOfSharedMeaningsIncludesBodyOfSharedConcepts property or class within the SBVR ontology." .
+
+sbvr:Bodyofsharedmeaningsincludesbodyofsharedguidance a owl:Class ;
+    rdfs:label "bodyOfSharedMeaningsIncludesBodyOfSharedGuidance" ;
+    rdfs:comment "This is the bodyOfSharedMeaningsIncludesBodyOfSharedGuidance property or class within the SBVR ontology." .
+
+sbvr:Bodyofsharedmeaningsunitessemanticcommunity a owl:Class ;
+    rdfs:label "bodyOfSharedMeaningsUnitesSemanticCommunity" ;
+    rdfs:comment "This is the bodyOfSharedMeaningsUnitesSemanticCommunity property or class within the SBVR ontology." .
+
+sbvr:Businessruleisderivedfrombusinesspolicy a owl:Class ;
+    rdfs:label "businessRuleIsDerivedFromBusinessPolicy" ;
+    rdfs:comment "This is the businessRuleIsDerivedFromBusinessPolicy property or class within the SBVR ontology." .
+
+sbvr:Categorizationschemecontainscategory a owl:Class ;
+    rdfs:label "categorizationSchemeContainsCategory" ;
+    rdfs:comment "This is the categorizationSchemeContainsCategory property or class within the SBVR ontology." .
+
+sbvr:Categorizationschemeisforgeneralconcept a owl:Class ;
+    rdfs:label "categorizationSchemeIsForGeneralConcept" ;
+    rdfs:comment "This is the categorizationSchemeIsForGeneralConcept property or class within the SBVR ontology." .
+
+sbvr:Categorizationtypeisforgeneralconcept a owl:Class ;
+    rdfs:label "categorizationTypeIsForGeneralConcept" ;
+    rdfs:comment "This is the categorizationTypeIsForGeneralConcept property or class within the SBVR ontology." .
+
+sbvr:Closedlogicalformulationformalizesstatement a owl:Class ;
+    rdfs:label "closedLogicalFormulationFormalizesStatement" ;
+    rdfs:comment "This is the closedLogicalFormulationFormalizesStatement property or class within the SBVR ontology." .
+
+sbvr:Closedlogicalformulationmeansproposition a owl:Class ;
+    rdfs:label "closedLogicalFormulationMeansProposition" ;
+    rdfs:comment "This is the closedLogicalFormulationMeansProposition property or class within the SBVR ontology." .
+
+sbvr:Closedprojectiondefinesnounconcept a owl:Class ;
+    rdfs:label "closedProjectionDefinesNounConcept" ;
+    rdfs:comment "This is the closedProjectionDefinesNounConcept property or class within the SBVR ontology." .
+
+sbvr:Closedprojectiondefinesverbconcept a owl:Class ;
+    rdfs:label "closedProjectionDefinesVerbConcept" ;
+    rdfs:comment "This is the closedProjectionDefinesVerbConcept property or class within the SBVR ontology." .
+
+sbvr:Closedprojectionformalizesdefinition a owl:Class ;
+    rdfs:label "closedProjectionFormalizesDefinition" ;
+    rdfs:comment "This is the closedProjectionFormalizesDefinition property or class within the SBVR ontology." .
+
+sbvr:Closedprojectionmeansquestion a owl:Class ;
+    rdfs:label "closedProjectionMeansQuestion" ;
+    rdfs:comment "This is the closedProjectionMeansQuestion property or class within the SBVR ontology." .
+
+sbvr:Closedsemanticformulationformulatesmeaning a owl:Class ;
+    rdfs:label "closedSemanticFormulationFormulatesMeaning" ;
+    rdfs:comment "This is the closedSemanticFormulationFormulatesMeaning property or class within the SBVR ontology." .
+
+sbvr:Communicationcontentiscomposedofrepresentation a owl:Class ;
+    rdfs:label "communicationContentIsComposedOfRepresentation" ;
+    rdfs:comment "This is the communicationContentIsComposedOfRepresentation property or class within the SBVR ontology." .
+
+sbvr:Communityhassubcommunity a owl:Class ;
+    rdfs:label "communityHasSubcommunity" ;
+    rdfs:comment "This is the communityHasSubcommunity property or class within the SBVR ontology." .
+
+sbvr:Communityhasuri a owl:Class ;
+    rdfs:label "communityHasURI" ;
+    rdfs:comment "This is the communityHasURI property or class within the SBVR ontology." .
+
+sbvr:Concept1iscoextensivewithconcept2 a owl:Class ;
+    rdfs:label "concept1IsCoextensiveWithConcept2" ;
+    rdfs:comment "This is the concept1IsCoextensiveWithConcept2 property or class within the SBVR ontology." .
+
+sbvr:Concept1specializesconcept2 a owl:Class ;
+    rdfs:label "concept1SpecializesConcept2" ;
+    rdfs:comment "This is the concept1SpecializesConcept2 property or class within the SBVR ontology." .
+
+sbvr:Concepthasdefinition a owl:Class ;
+    rdfs:label "conceptHasDefinition" ;
+    rdfs:comment "This is the conceptHasDefinition property or class within the SBVR ontology." .
+
+sbvr:Concepthasdesignation a owl:Class ;
+    rdfs:label "conceptHasDesignation" ;
+    rdfs:comment "This is the conceptHasDesignation property or class within the SBVR ontology." .
+
+sbvr:Concepthasextension a owl:Class ;
+    rdfs:label "conceptHasExtension" ;
+    rdfs:comment "This is the conceptHasExtension property or class within the SBVR ontology." .
+
+sbvr:Concepthasfacet a owl:Class ;
+    rdfs:label "conceptHasFacet" ;
+    rdfs:comment "This is the conceptHasFacet property or class within the SBVR ontology." .
+
+sbvr:Concepthasimpliedcharacteristic a owl:Class ;
+    rdfs:label "conceptHasImpliedCharacteristic" ;
+    rdfs:comment "This is the conceptHasImpliedCharacteristic property or class within the SBVR ontology." .
+
+sbvr:Concepthasinstance a owl:Class ;
+    rdfs:label "conceptHasInstance" ;
+    rdfs:comment "This is the conceptHasInstance property or class within the SBVR ontology." .
+
+sbvr:Concepthasnecessarycharacteristic a owl:Class ;
+    rdfs:label "conceptHasNecessaryCharacteristic" ;
+    rdfs:comment "This is the conceptHasNecessaryCharacteristic property or class within the SBVR ontology." .
+
+sbvr:Conceptincorporatescharacteristic a owl:Class ;
+    rdfs:label "conceptIncorporatesCharacteristic" ;
+    rdfs:comment "This is the conceptIncorporatesCharacteristic property or class within the SBVR ontology." .
+
+sbvr:Descriptionportraysmeaning a owl:Class ;
+    rdfs:label "descriptionPortraysMeaning" ;
+    rdfs:comment "This is the descriptionPortraysMeaning property or class within the SBVR ontology." .
+
+sbvr:Descriptiveexampleillustratesmeaning a owl:Class ;
+    rdfs:label "descriptiveExampleIllustratesMeaning" ;
+    rdfs:comment "This is the descriptiveExampleIllustratesMeaning property or class within the SBVR ontology." .
+
+sbvr:Designationhassignifier a owl:Class ;
+    rdfs:label "designationHasSignifier" ;
+    rdfs:comment "This is the designationHasSignifier property or class within the SBVR ontology." .
+
+sbvr:Designationisinnamespace a owl:Class ;
+    rdfs:label "designationIsInNamespace" ;
+    rdfs:comment "This is the designationIsInNamespace property or class within the SBVR ontology." .
+
+sbvr:Elementofguidanceacknowledgesaspossiblestateofaffairs a owl:Class ;
+    rdfs:label "elementOfGuidanceAcknowledgesAsPossibleStateOfAffairs" ;
+    rdfs:comment "This is the elementOfGuidanceAcknowledgesAsPossibleStateOfAffairs property or class within the SBVR ontology." .
+
+sbvr:Elementofguidanceisinthejurisdictionofauthority a owl:Class ;
+    rdfs:label "elementOfGuidanceIsInTheJurisdictionOfAuthority" ;
+    rdfs:comment "This is the elementOfGuidanceIsInTheJurisdictionOfAuthority property or class within the SBVR ontology." .
+
+sbvr:Elementofguidancenecessitatesstateofaffairs a owl:Class ;
+    rdfs:label "elementOfGuidanceNecessitatesStateOfAffairs" ;
+    rdfs:comment "This is the elementOfGuidanceNecessitatesStateOfAffairs property or class within the SBVR ontology." .
+
+sbvr:Elementofguidancepermitsstateofaffairs a owl:Class ;
+    rdfs:label "elementOfGuidancePermitsStateOfAffairs" ;
+    rdfs:comment "This is the elementOfGuidancePermitsStateOfAffairs property or class within the SBVR ontology." .
+
+sbvr:Exactly-nquantificationhascardinality a owl:Class ;
+    rdfs:label "exactly-nQuantificationHasCardinality" ;
+    rdfs:comment "This is the exactly-nQuantificationHasCardinality property or class within the SBVR ontology." .
+
+sbvr:Expressionisunambiguoustospeechcommunity a owl:Class ;
+    rdfs:label "expressionIsUnambiguousToSpeechCommunity" ;
+    rdfs:comment "This is the expressionIsUnambiguousToSpeechCommunity property or class within the SBVR ontology." .
+
+sbvr:Expressionrepresentsmeaning a owl:Class ;
+    rdfs:label "expressionRepresentsMeaning" ;
+    rdfs:comment "This is the expressionRepresentsMeaning property or class within the SBVR ontology." .
+
+sbvr:Generalconceptobjectifiesverbconcept a owl:Class ;
+    rdfs:label "generalConceptObjectifiesVerbConcept" ;
+    rdfs:comment "This is the generalConceptObjectifiesVerbConcept property or class within the SBVR ontology." .
+
+sbvr:Implicationhasantecedent a owl:Class ;
+    rdfs:label "implicationHasAntecedent" ;
+    rdfs:comment "This is the implicationHasAntecedent property or class within the SBVR ontology." .
+
+sbvr:Implicationhasconsequent a owl:Class ;
+    rdfs:label "implicationHasConsequent" ;
+    rdfs:comment "This is the implicationHasConsequent property or class within the SBVR ontology." .
+
+sbvr:Instantiationformulationbindstobindabletarget a owl:Class ;
+    rdfs:label "instantiationFormulationBindsToBindableTarget" ;
+    rdfs:comment "This is the instantiationFormulationBindsToBindableTarget property or class within the SBVR ontology." .
+
+sbvr:Instantiationformulationconsidersconcept a owl:Class ;
+    rdfs:label "instantiationFormulationConsidersConcept" ;
+    rdfs:comment "This is the instantiationFormulationConsidersConcept property or class within the SBVR ontology." .
+
+sbvr:Intensionaldefinitionusesdelimitingcharacteristic a owl:Class ;
+    rdfs:label "intensionalDefinitionUsesDelimitingCharacteristic" ;
+    rdfs:comment "This is the intensionalDefinitionUsesDelimitingCharacteristic property or class within the SBVR ontology." .
+
+sbvr:Logicalformulationconstrainsprojection a owl:Class ;
+    rdfs:label "logicalFormulationConstrainsProjection" ;
+    rdfs:comment "This is the logicalFormulationConstrainsProjection property or class within the SBVR ontology." .
+
+sbvr:Logicalformulationrestrictsvariable a owl:Class ;
+    rdfs:label "logicalFormulationRestrictsVariable" ;
+    rdfs:comment "This is the logicalFormulationRestrictsVariable property or class within the SBVR ontology." .
+
+sbvr:Logicalnegation a owl:Class ;
+    rdfs:label "logicalNegation" ;
+    rdfs:comment "This is the logicalNegation property or class within the SBVR ontology." .
+
+sbvr:Logicaloperationhaslogicaloperand a owl:Class ;
+    rdfs:label "logicalOperationHasLogicalOperand" ;
+    rdfs:comment "This is the logicalOperationHasLogicalOperand property or class within the SBVR ontology." .
+
+sbvr:Modalformulationembedslogicalformulation a owl:Class ;
+    rdfs:label "modalFormulationEmbedsLogicalFormulation" ;
+    rdfs:comment "This is the modalFormulationEmbedsLogicalFormulation property or class within the SBVR ontology." .
+
+sbvr:Namespace a rdf:Property,
+        owl:Class ;
+    rdfs:label "namespace" ;
+    rdfs:comment "This is the namespace property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Designationisinnamespace,
+        sbvr:Namespacehasuri,
+        sbvr:Verbconceptwordingisinnamespace .
+
+sbvr:Namespace1incorporatesnamespace2 a owl:Class ;
+    rdfs:label "namespace1IncorporatesNamespace2" ;
+    rdfs:comment "This is the namespace1IncorporatesNamespace2 property or class within the SBVR ontology." .
+
+sbvr:Namespacehasuri a owl:Class ;
+    rdfs:label "namespaceHasURI" ;
+    rdfs:comment "This is the namespaceHasURI property or class within the SBVR ontology." .
+
+sbvr:Notecommentsonmeaning a owl:Class ;
+    rdfs:label "noteCommentsOnMeaning" ;
+    rdfs:comment "This is the noteCommentsOnMeaning property or class within the SBVR ontology." .
+
+sbvr:Nounconceptnominalization a owl:Class ;
+    rdfs:label "nounConceptNominalization" ;
+    rdfs:comment "This is the nounConceptNominalization property or class within the SBVR ontology." .
+
+sbvr:Numericrangequantificationhasmaximumcardinality a owl:Class ;
+    rdfs:label "numericRangeQuantificationHasMaximumCardinality" ;
+    rdfs:comment "This is the numericRangeQuantificationHasMaximumCardinality property or class within the SBVR ontology." .
+
+sbvr:Numericrangequantificationhasminimumcardinality a owl:Class ;
+    rdfs:label "numericRangeQuantificationHasMinimumCardinality" ;
+    rdfs:comment "This is the numericRangeQuantificationHasMinimumCardinality property or class within the SBVR ontology." .
+
+sbvr:Objectificationbindstobindabletarget a owl:Class ;
+    rdfs:label "objectificationBindsToBindableTarget" ;
+    rdfs:comment "This is the objectificationBindsToBindableTarget property or class within the SBVR ontology." .
+
+sbvr:Objectificationconsiderslogicalformulation a owl:Class ;
+    rdfs:label "objectificationConsidersLogicalFormulation" ;
+    rdfs:comment "This is the objectificationConsidersLogicalFormulation property or class within the SBVR ontology." .
+
+sbvr:Placeholderisatstartingcharacterposition a owl:Class ;
+    rdfs:label "placeholderIsAtStartingCharacterPosition" ;
+    rdfs:comment "This is the placeholderIsAtStartingCharacterPosition property or class within the SBVR ontology." .
+
+sbvr:Placeholderisinverbconceptwording a owl:Class ;
+    rdfs:label "placeholderIsInVerbConceptWording" ;
+    rdfs:comment "This is the placeholderIsInVerbConceptWording property or class within the SBVR ontology." .
+
+sbvr:Placeholderusesdesignation a owl:Class ;
+    rdfs:label "placeholderUsesDesignation" ;
+    rdfs:comment "This is the placeholderUsesDesignation property or class within the SBVR ontology." .
+
+sbvr:Projectingformulationbindstobindabletarget a owl:Class ;
+    rdfs:label "projectingFormulationBindsToBindableTarget" ;
+    rdfs:comment "This is the projectingFormulationBindsToBindableTarget property or class within the SBVR ontology." .
+
+sbvr:Projectingformulationhasprojection a owl:Class ;
+    rdfs:label "projectingFormulationHasProjection" ;
+    rdfs:comment "This is the projectingFormulationHasProjection property or class within the SBVR ontology." .
+
+sbvr:Projectionhasauxiliaryvariable a owl:Class ;
+    rdfs:label "projectionHasAuxiliaryVariable" ;
+    rdfs:comment "This is the projectionHasAuxiliaryVariable property or class within the SBVR ontology." .
+
+sbvr:Projectionisonvariable a owl:Class ;
+    rdfs:label "projectionIsOnVariable" ;
+    rdfs:comment "This is the projectionIsOnVariable property or class within the SBVR ontology." .
+
+sbvr:Propositionisbasedonverbconcept a owl:Class ;
+    rdfs:label "propositionIsBasedOnVerbConcept" ;
+    rdfs:comment "This is the propositionIsBasedOnVerbConcept property or class within the SBVR ontology." .
+
+sbvr:Propositionnominalizationbindstobindabletarget a owl:Class ;
+    rdfs:label "propositionNominalizationBindsToBindableTarget" ;
+    rdfs:comment "This is the propositionNominalizationBindsToBindableTarget property or class within the SBVR ontology." .
+
+sbvr:Propositionnominalizationconsiderslogicalformulation a owl:Class ;
+    rdfs:label "propositionNominalizationConsidersLogicalFormulation" ;
+    rdfs:comment "This is the propositionNominalizationConsidersLogicalFormulation property or class within the SBVR ontology." .
+
+sbvr:Quantificationintroducesvariable a owl:Class ;
+    rdfs:label "quantificationIntroducesVariable" ;
+    rdfs:comment "This is the quantificationIntroducesVariable property or class within the SBVR ontology." .
+
+sbvr:Quantificationscopesoverlogicalformulation a owl:Class ;
+    rdfs:label "quantificationScopesOverLogicalFormulation" ;
+    rdfs:comment "This is the quantificationScopesOverLogicalFormulation property or class within the SBVR ontology." .
+
+sbvr:Quantity1equalsquantity2 a owl:Class ;
+    rdfs:label "quantity1EqualsQuantity2" ;
+    rdfs:comment "This is the quantity1EqualsQuantity2 property or class within the SBVR ontology." .
+
+sbvr:Quantity1islessthanquantity2 a owl:Class ;
+    rdfs:label "quantity1IsLessThanQuantity2" ;
+    rdfs:comment "This is the quantity1IsLessThanQuantity2 property or class within the SBVR ontology." .
+
+sbvr:Question a rdf:Property,
+        owl:Class ;
+    rdfs:label "question" ;
+    rdfs:comment "This is the question property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Closedprojectionmeansquestion .
+
+sbvr:Questionnominalization a owl:Class ;
+    rdfs:label "questionNominalization" ;
+    rdfs:comment "This is the questionNominalization property or class within the SBVR ontology." .
+
+sbvr:Referencepointstoinformationsource a owl:Class ;
+    rdfs:label "referencePointsToInformationSource" ;
+    rdfs:comment "This is the referencePointsToInformationSource property or class within the SBVR ontology." .
+
+sbvr:Referenceschemeextensionallyusesverbconceptrole a owl:Class ;
+    rdfs:label "referenceSchemeExtensionallyUsesVerbConceptRole" ;
+    rdfs:comment "This is the referenceSchemeExtensionallyUsesVerbConceptRole property or class within the SBVR ontology." .
+
+sbvr:Referenceschemeisforconcept a owl:Class ;
+    rdfs:label "referenceSchemeIsForConcept" ;
+    rdfs:comment "This is the referenceSchemeIsForConcept property or class within the SBVR ontology." .
+
+sbvr:Referenceschemesimplyusesverbconceptrole a owl:Class ;
+    rdfs:label "referenceSchemeSimplyUsesVerbConceptRole" ;
+    rdfs:comment "This is the referenceSchemeSimplyUsesVerbConceptRole property or class within the SBVR ontology." .
+
+sbvr:Referenceschemeusescharacteristic a owl:Class ;
+    rdfs:label "referenceSchemeUsesCharacteristic" ;
+    rdfs:comment "This is the referenceSchemeUsesCharacteristic property or class within the SBVR ontology." .
+
+sbvr:Referencesupportsmeaning a owl:Class ;
+    rdfs:label "referenceSupportsMeaning" ;
+    rdfs:comment "This is the referenceSupportsMeaning property or class within the SBVR ontology." .
+
+sbvr:Representationhasexpression a owl:Class ;
+    rdfs:label "representationHasExpression" ;
+    rdfs:comment "This is the representationHasExpression property or class within the SBVR ontology." .
+
+sbvr:Representationisindesignationcontext a owl:Class ;
+    rdfs:label "representationIsInDesignationContext" ;
+    rdfs:comment "This is the representationIsInDesignationContext property or class within the SBVR ontology." .
+
+sbvr:Representationisinsubjectfield a owl:Class ;
+    rdfs:label "representationIsInSubjectField" ;
+    rdfs:comment "This is the representationIsInSubjectField property or class within the SBVR ontology." .
+
+sbvr:Representationrepresentsmeaning a owl:Class ;
+    rdfs:label "representationRepresentsMeaning" ;
+    rdfs:comment "This is the representationRepresentsMeaning property or class within the SBVR ontology." .
+
+sbvr:Representationusesvocabulary a owl:Class ;
+    rdfs:label "representationUsesVocabulary" ;
+    rdfs:comment "This is the representationUsesVocabulary property or class within the SBVR ontology." .
+
+sbvr:Resissensorymanifestationofsignifier a owl:Class ;
+    rdfs:label "resIsSensoryManifestationOfSignifier" ;
+    rdfs:comment "This is the resIsSensoryManifestationOfSignifier property or class within the SBVR ontology." .
+
+sbvr:Rolebindingbindstobindabletarget a owl:Class ;
+    rdfs:label "roleBindingBindsToBindableTarget" ;
+    rdfs:comment "This is the roleBindingBindsToBindableTarget property or class within the SBVR ontology." .
+
+sbvr:Rolebindingoccursinatomicformulation a owl:Class ;
+    rdfs:label "roleBindingOccursInAtomicFormulation" ;
+    rdfs:comment "This is the roleBindingOccursInAtomicFormulation property or class within the SBVR ontology." .
+
+sbvr:Rolerangesovergeneralconcept a owl:Class ;
+    rdfs:label "roleRangesOverGeneralConcept" ;
+    rdfs:comment "This is the roleRangesOverGeneralConcept property or class within the SBVR ontology." .
+
+sbvr:Rulebook a rdf:Property,
+        owl:Class ;
+    rdfs:label "rulebook" ;
+    rdfs:comment "This is the rulebook property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Rulebookhasuri .
+
+sbvr:Rulebookhasuri a owl:Class ;
+    rdfs:label "rulebookHasURI" ;
+    rdfs:comment "This is the rulebookHasURI property or class within the SBVR ontology." .
+
+sbvr:Rulesetincludeselementofguidance a owl:Class ;
+    rdfs:label "ruleSetIncludesElementOfGuidance" ;
+    rdfs:comment "This is the ruleSetIncludesElementOfGuidance property or class within the SBVR ontology." .
+
+sbvr:SbvrRulebook a owl:Class ;
+    rdfs:label "SbvrRulebook" ;
+    rdfs:comment "This is the SbvrRulebook property or class within the SBVR ontology." .
+
+sbvr:Semanticcommunityhasspeechcommunity a owl:Class ;
+    rdfs:label "semanticCommunityHasSpeechCommunity" ;
+    rdfs:comment "This is the semanticCommunityHasSpeechCommunity property or class within the SBVR ontology." .
+
+sbvr:Semanticcommunitysharesunderstandingofconcept a owl:Class ;
+    rdfs:label "semanticCommunitySharesUnderstandingOfConcept" ;
+    rdfs:comment "This is the semanticCommunitySharesUnderstandingOfConcept property or class within the SBVR ontology." .
+
+sbvr:Sethascardinality a owl:Class ;
+    rdfs:label "setHasCardinality" ;
+    rdfs:comment "This is the setHasCardinality property or class within the SBVR ontology." .
+
+sbvr:Speechcommunitydeterminesspeechcommunityrepresentationset a owl:Class ;
+    rdfs:label "speechCommunityDeterminesSpeechCommunityRepresentationSet" ;
+    rdfs:comment "This is the speechCommunityDeterminesSpeechCommunityRepresentationSet property or class within the SBVR ontology." .
+
+sbvr:Speechcommunityownsowneddefinition a owl:Class ;
+    rdfs:label "speechCommunityOwnsOwnedDefinition" ;
+    rdfs:comment "This is the speechCommunityOwnsOwnedDefinition property or class within the SBVR ontology." .
+
+sbvr:Speechcommunityownsvocabulary a owl:Class ;
+    rdfs:label "speechCommunityOwnsVocabulary" ;
+    rdfs:comment "This is the speechCommunityOwnsVocabulary property or class within the SBVR ontology." .
+
+sbvr:Speechcommunityregulatesitsusageofsignifier a owl:Class ;
+    rdfs:label "speechCommunityRegulatesItsUsageOfSignifier" ;
+    rdfs:comment "This is the speechCommunityRegulatesItsUsageOfSignifier property or class within the SBVR ontology." .
+
+sbvr:Speechcommunityrepresentationsetincludesrepresentation a owl:Class ;
+    rdfs:label "speechCommunityRepresentationSetIncludesRepresentation" ;
+    rdfs:comment "This is the speechCommunityRepresentationSetIncludesRepresentation property or class within the SBVR ontology." .
+
+sbvr:Speechcommunityuseslanguage a owl:Class ;
+    rdfs:label "speechCommunityUsesLanguage" ;
+    rdfs:comment "This is the speechCommunityUsesLanguage property or class within the SBVR ontology." .
+
+sbvr:Speechcommunityusesvocabulary a owl:Class ;
+    rdfs:label "speechCommunityUsesVocabulary" ;
+    rdfs:comment "This is the speechCommunityUsesVocabulary property or class within the SBVR ontology." .
+
+sbvr:Statementexpressesproposition a owl:Class ;
+    rdfs:label "statementExpressesProposition" ;
+    rdfs:comment "This is the statementExpressesProposition property or class within the SBVR ontology." .
+
+sbvr:Terminologicaldictionary a rdf:Property,
+        owl:Class ;
+    rdfs:label "terminologicalDictionary" ;
+    rdfs:comment "This is the terminologicalDictionary property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Terminologicaldictionaryexpressesbodyofsharedmeanings,
+        sbvr:Terminologicaldictionaryhasuri,
+        sbvr:Terminologicaldictionaryincludesrepresentation,
+        sbvr:Terminologicaldictionarypresentsvocabulary .
+
+sbvr:Terminologicaldictionaryexpressesbodyofsharedmeanings a owl:Class ;
+    rdfs:label "terminologicalDictionaryExpressesBodyOfSharedMeanings" ;
+    rdfs:comment "This is the terminologicalDictionaryExpressesBodyOfSharedMeanings property or class within the SBVR ontology." .
+
+sbvr:Terminologicaldictionaryhasuri a owl:Class ;
+    rdfs:label "terminologicalDictionaryHasURI" ;
+    rdfs:comment "This is the terminologicalDictionaryHasURI property or class within the SBVR ontology." .
+
+sbvr:Terminologicaldictionaryincludesrepresentation a owl:Class ;
+    rdfs:label "terminologicalDictionaryIncludesRepresentation" ;
+    rdfs:comment "This is the terminologicalDictionaryIncludesRepresentation property or class within the SBVR ontology." .
+
+sbvr:Terminologicaldictionarypresentsvocabulary a owl:Class ;
+    rdfs:label "terminologicalDictionaryPresentsVocabulary" ;
+    rdfs:comment "This is the terminologicalDictionaryPresentsVocabulary property or class within the SBVR ontology." .
+
+sbvr:Text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:comment "This is the text property or class within the SBVR ontology." .
+
+sbvr:Thing1isthing2 a owl:Class ;
+    rdfs:label "thing1IsThing2" ;
+    rdfs:comment "This is the thing1IsThing2 property or class within the SBVR ontology." .
+
+sbvr:URI a rdf:Property,
+        owl:Class ;
+    rdfs:label "URI" ;
+    rdfs:comment "This is the URI property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Attributivenamespace,
+        sbvr:Communityhasuri,
+        sbvr:Namespace,
+        sbvr:Namespacehasuri,
+        sbvr:Rulebook,
+        sbvr:Rulebookhasuri,
+        sbvr:SbvrRulebook,
+        sbvr:Semanticcommunity,
+        sbvr:Speechcommunity,
+        sbvr:Terminologicaldictionary,
+        sbvr:Terminologicaldictionaryhasuri,
+        sbvr:Vocabularynamespace ;
+    rdfs:range xsd:anyType .
+
+sbvr:Universalquantification a owl:Class ;
+    rdfs:label "universalQuantification" ;
+    rdfs:comment "This is the universalQuantification property or class within the SBVR ontology." .
+
+sbvr:Variablehasprojectionposition a owl:Class ;
+    rdfs:label "variableHasProjectionPosition" ;
+    rdfs:comment "This is the variableHasProjectionPosition property or class within the SBVR ontology." .
+
+sbvr:Variableisfreewithinsemanticformulation a owl:Class ;
+    rdfs:label "variableIsFreeWithinSemanticFormulation" ;
+    rdfs:comment "This is the variableIsFreeWithinSemanticFormulation property or class within the SBVR ontology." .
+
+sbvr:Variablemapstoverbconceptrole a owl:Class ;
+    rdfs:label "variableMapsToVerbConceptRole" ;
+    rdfs:comment "This is the variableMapsToVerbConceptRole property or class within the SBVR ontology." .
+
+sbvr:Variablerangesoverconcept a owl:Class ;
+    rdfs:label "variableRangesOverConcept" ;
+    rdfs:comment "This is the variableRangesOverConcept property or class within the SBVR ontology." .
+
+sbvr:Verbconcepthasverbconceptwording a owl:Class ;
+    rdfs:label "verbConceptHasVerbConceptWording" ;
+    rdfs:comment "This is the verbConceptHasVerbConceptWording property or class within the SBVR ontology." .
+
+sbvr:Verbconceptnominalization a owl:Class ;
+    rdfs:label "verbConceptNominalization" ;
+    rdfs:comment "This is the verbConceptNominalization property or class within the SBVR ontology." .
+
+sbvr:Verbconceptrolehasrolebinding a owl:Class ;
+    rdfs:label "verbConceptRoleHasRoleBinding" ;
+    rdfs:comment "This is the verbConceptRoleHasRoleBinding property or class within the SBVR ontology." .
+
+sbvr:Verbconceptroleisinverbconcept a owl:Class ;
+    rdfs:label "verbConceptRoleIsInVerbConcept" ;
+    rdfs:comment "This is the verbConceptRoleIsInVerbConcept property or class within the SBVR ontology." .
+
+sbvr:Verbconceptwordingincorporatesverbsymbol a owl:Class ;
+    rdfs:label "verbConceptWordingIncorporatesVerbSymbol" ;
+    rdfs:comment "This is the verbConceptWordingIncorporatesVerbSymbol property or class within the SBVR ontology." .
+
+sbvr:Verbconceptwordingisinnamespace a owl:Class ;
+    rdfs:label "verbConceptWordingIsInNamespace" ;
+    rdfs:comment "This is the verbConceptWordingIsInNamespace property or class within the SBVR ontology." .
+
+sbvr:Vocabulary1incorporatesvocabulary2 a owl:Class ;
+    rdfs:label "vocabulary1IncorporatesVocabulary2" ;
+    rdfs:comment "This is the vocabulary1IncorporatesVocabulary2 property or class within the SBVR ontology." .
+
+sbvr:Vocabularyisdesignedforspeechcommunity a owl:Class ;
+    rdfs:label "vocabularyIsDesignedForSpeechCommunity" ;
+    rdfs:comment "This is the vocabularyIsDesignedForSpeechCommunity property or class within the SBVR ontology." .
+
+sbvr:Vocabularyisexpressedinlanguage a owl:Class ;
+    rdfs:label "vocabularyIsExpressedInLanguage" ;
+    rdfs:comment "This is the vocabularyIsExpressedInLanguage property or class within the SBVR ontology." .
+
+sbvr:Vocabularyisusedtoexpressbodyofsharedmeanings a owl:Class ;
+    rdfs:label "vocabularyIsUsedToExpressBodyOfSharedMeanings" ;
+    rdfs:comment "This is the vocabularyIsUsedToExpressBodyOfSharedMeanings property or class within the SBVR ontology." .
+
+sbvr:Vocabularynamespace a rdf:Property,
+        owl:Class ;
+    rdfs:label "vocabularyNamespace" ;
+    rdfs:comment "This is the vocabularyNamespace property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Attributivenamespaceiswithinvocabularynamespace,
+        sbvr:Vocabularynamespaceisderivedfromvocabulary,
+        sbvr:Vocabularynamespaceisforlanguage,
+        sbvr:Vocabularynamespaceisspecifictodesignationcontext,
+        sbvr:Vocabularynamespaceisspecifictosubjectfield .
+
+sbvr:Vocabularynamespaceisderivedfromvocabulary a owl:Class ;
+    rdfs:label "vocabularyNamespaceIsDerivedFromVocabulary" ;
+    rdfs:comment "This is the vocabularyNamespaceIsDerivedFromVocabulary property or class within the SBVR ontology." .
+
+sbvr:Vocabularynamespaceisforlanguage a owl:Class ;
+    rdfs:label "vocabularyNamespaceIsForLanguage" ;
+    rdfs:comment "This is the vocabularyNamespaceIsForLanguage property or class within the SBVR ontology." .
+
+sbvr:Vocabularynamespaceisspecifictodesignationcontext a owl:Class ;
+    rdfs:label "vocabularyNamespaceIsSpecificToDesignationContext" ;
+    rdfs:comment "This is the vocabularyNamespaceIsSpecificToDesignationContext property or class within the SBVR ontology." .
+
+sbvr:Vocabularynamespaceisspecifictosubjectfield a owl:Class ;
+    rdfs:label "vocabularyNamespaceIsSpecificToSubjectField" ;
+    rdfs:comment "This is the vocabularyNamespaceIsSpecificToSubjectField property or class within the SBVR ontology." .
+
+sbvr:Whether-or-notformulationhasconsequent a owl:Class ;
+    rdfs:label "whether-or-notFormulationHasConsequent" ;
+    rdfs:comment "This is the whether-or-notFormulationHasConsequent property or class within the SBVR ontology." .
+
+sbvr:Whether-or-notformulationhasinconsequent a owl:Class ;
+    rdfs:label "whether-or-notFormulationHasInconsequent" ;
+    rdfs:comment "This is the whether-or-notFormulationHasInconsequent property or class within the SBVR ontology." .
+
+sbvr:Advicestatement a owl:Class ;
+    rdfs:label "adviceStatement" ;
+    rdfs:comment "This is the adviceStatement property or class within the SBVR ontology." .
+
+sbvr:At-least-nquantification a rdf:Property,
+        owl:Class ;
+    rdfs:label "at-least-nQuantification" ;
+    rdfs:comment "This is the at-least-nQuantification property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:At-least-nquantificationhasminimumcardinality .
+
+sbvr:At-most-nquantification a rdf:Property,
+        owl:Class ;
+    rdfs:label "at-most-nQuantification" ;
+    rdfs:comment "This is the at-most-nQuantification property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:At-most-nquantificationhasmaximumcardinality .
+
+sbvr:At-most-onequantification a owl:Class ;
+    rdfs:label "at-most-oneQuantification" ;
+    rdfs:comment "This is the at-most-oneQuantification property or class within the SBVR ontology." .
+
+sbvr:Behavioralbusinessrulestatement a owl:Class ;
+    rdfs:label "behavioralBusinessRuleStatement" ;
+    rdfs:comment "This is the behavioralBusinessRuleStatement property or class within the SBVR ontology." .
+
+sbvr:Bodyofsharedmeanings a rdf:Property,
+        owl:Class ;
+    rdfs:label "bodyOfSharedMeanings" ;
+    rdfs:comment "This is the bodyOfSharedMeanings property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bodyofsharedmeaningsincludesbodyofsharedconcepts,
+        sbvr:Bodyofsharedmeaningsincludesbodyofsharedguidance,
+        sbvr:Bodyofsharedmeaningsunitessemanticcommunity,
+        sbvr:Terminologicaldictionaryexpressesbodyofsharedmeanings,
+        sbvr:Vocabularyisusedtoexpressbodyofsharedmeanings .
+
+sbvr:Businesspolicystatement a owl:Class ;
+    rdfs:label "businessPolicyStatement" ;
+    rdfs:comment "This is the businessPolicyStatement property or class within the SBVR ontology." .
+
+sbvr:Businessvocabulary a owl:Class ;
+    rdfs:label "businessVocabulary" ;
+    rdfs:comment "This is the businessVocabulary property or class within the SBVR ontology." .
+
+sbvr:Categorization a owl:Class ;
+    rdfs:label "categorization" ;
+    rdfs:comment "This is the categorization property or class within the SBVR ontology." .
+
+sbvr:Characterization a owl:Class ;
+    rdfs:label "characterization" ;
+    rdfs:comment "This is the characterization property or class within the SBVR ontology." .
+
+sbvr:Classification a owl:Class ;
+    rdfs:label "classification" ;
+    rdfs:comment "This is the classification property or class within the SBVR ontology." .
+
+sbvr:Communicationcontent a rdf:Property,
+        owl:Class ;
+    rdfs:label "communicationContent" ;
+    rdfs:comment "This is the communicationContent property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Communicationcontentiscomposedofrepresentation .
+
+sbvr:Contingencystatement a owl:Class ;
+    rdfs:label "contingencyStatement" ;
+    rdfs:comment "This is the contingencyStatement property or class within the SBVR ontology." .
+
+sbvr:Definitionalbusinessrule a owl:Class ;
+    rdfs:label "definitionalBusinessRule" ;
+    rdfs:comment "This is the definitionalBusinessRule property or class within the SBVR ontology." .
+
+sbvr:Definitionalrule a owl:Class ;
+    rdfs:label "definitionalRule" ;
+    rdfs:comment "This is the definitionalRule property or class within the SBVR ontology." .
+
+sbvr:Definitionalrulestatement a owl:Class ;
+    rdfs:label "definitionalRuleStatement" ;
+    rdfs:comment "This is the definitionalRuleStatement property or class within the SBVR ontology." .
+
+sbvr:Description a rdf:Property,
+        owl:Class ;
+    rdfs:label "description" ;
+    rdfs:comment "This is the description property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Descriptionportraysmeaning .
+
+sbvr:Descriptiveexample a rdf:Property,
+        owl:Class ;
+    rdfs:label "descriptiveExample" ;
+    rdfs:comment "This is the descriptiveExample property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Descriptiveexampleillustratesmeaning .
+
+sbvr:Exactly-nquantification a rdf:Property,
+        owl:Class ;
+    rdfs:label "exactly-nQuantification" ;
+    rdfs:comment "This is the exactly-nQuantification property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Exactly-nquantificationhascardinality .
+
+sbvr:Exactly-onequantification a owl:Class ;
+    rdfs:label "exactly-oneQuantification" ;
+    rdfs:comment "This is the exactly-oneQuantification property or class within the SBVR ontology." .
+
+sbvr:Existentialquantification a owl:Class ;
+    rdfs:label "existentialQuantification" ;
+    rdfs:comment "This is the existentialQuantification property or class within the SBVR ontology." .
+
+sbvr:Formalrepresentation a owl:Class ;
+    rdfs:label "formalRepresentation" ;
+    rdfs:comment "This is the formalRepresentation property or class within the SBVR ontology." .
+
+sbvr:Guidancestatement a rdf:Property,
+        owl:Class ;
+    rdfs:label "guidanceStatement" ;
+    rdfs:comment "This is the guidanceStatement property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Authorityauthorsguidancestatement .
+
+sbvr:Impossibilitystatement a owl:Class ;
+    rdfs:label "impossibilityStatement" ;
+    rdfs:comment "This is the impossibilityStatement property or class within the SBVR ontology." .
+
+sbvr:Individualverbconcept a owl:Class ;
+    rdfs:label "individualVerbConcept" ;
+    rdfs:comment "This is the individualVerbConcept property or class within the SBVR ontology." .
+
+sbvr:Informalrepresentation a owl:Class ;
+    rdfs:label "informalRepresentation" ;
+    rdfs:comment "This is the informalRepresentation property or class within the SBVR ontology." .
+
+sbvr:Is-facet-ofproposition a owl:Class ;
+    rdfs:label "is-facet-ofProposition" ;
+    rdfs:comment "This is the is-facet-ofProposition property or class within the SBVR ontology." .
+
+sbvr:Is-role-ofproposition a owl:Class ;
+    rdfs:label "is-role-ofProposition" ;
+    rdfs:comment "This is the is-role-ofProposition property or class within the SBVR ontology." .
+
+sbvr:Necessitystatement a owl:Class ;
+    rdfs:label "necessityStatement" ;
+    rdfs:comment "This is the necessityStatement property or class within the SBVR ontology." .
+
+sbvr:Non-necessitystatement a owl:Class ;
+    rdfs:label "non-necessityStatement" ;
+    rdfs:comment "This is the non-necessityStatement property or class within the SBVR ontology." .
+
+sbvr:Non-obligationstatement a owl:Class ;
+    rdfs:label "non-obligationStatement" ;
+    rdfs:comment "This is the non-obligationStatement property or class within the SBVR ontology." .
+
+sbvr:Note a rdf:Property,
+        owl:Class ;
+    rdfs:label "note" ;
+    rdfs:comment "This is the note property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Notecommentsonmeaning .
+
+sbvr:Obligationstatement a owl:Class ;
+    rdfs:label "obligationStatement" ;
+    rdfs:comment "This is the obligationStatement property or class within the SBVR ontology." .
+
+sbvr:Optionalitystatement a owl:Class ;
+    rdfs:label "optionalityStatement" ;
+    rdfs:comment "This is the optionalityStatement property or class within the SBVR ontology." .
+
+sbvr:Permissionstatement a owl:Class ;
+    rdfs:label "permissionStatement" ;
+    rdfs:comment "This is the permissionStatement property or class within the SBVR ontology." .
+
+sbvr:Possibilitystatement a owl:Class ;
+    rdfs:label "possibilityStatement" ;
+    rdfs:comment "This is the possibilityStatement property or class within the SBVR ontology." .
+
+sbvr:Prohibitionstatement a owl:Class ;
+    rdfs:label "prohibitionStatement" ;
+    rdfs:comment "This is the prohibitionStatement property or class within the SBVR ontology." .
+
+sbvr:Proposition a rdf:Property,
+        owl:Class ;
+    rdfs:label "proposition" ;
+    rdfs:comment "This is the proposition property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Closedlogicalformulationmeansproposition,
+        sbvr:Propositionisbasedonverbconcept,
+        sbvr:Statementexpressesproposition .
+
+sbvr:Reference a rdf:Property,
+        owl:Class ;
+    rdfs:label "reference" ;
+    rdfs:comment "This is the reference property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Adoptingauthorityadoptselementofguidancefromowningauthoritycitingreference,
+        sbvr:Referencepointstoinformationsource,
+        sbvr:Referencesupportsmeaning,
+        sbvr:Speechcommunityadoptsadopteddefinitioncitingreference ;
+    rdfs:range xsd:anyType .
+
+sbvr:Representation a rdf:Property,
+        owl:Class ;
+    rdfs:label "representation" ;
+    rdfs:comment "This is the representation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Advice,
+        sbvr:Adviceofcontingency,
+        sbvr:Adviceofoptionality,
+        sbvr:Adviceofpermission,
+        sbvr:Adviceofpossibility,
+        sbvr:Association,
+        sbvr:Behavioralbusinessrule,
+        sbvr:Binaryverbconcept,
+        sbvr:Businesspolicy,
+        sbvr:Businessrule,
+        sbvr:Categorization,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Characterization,
+        sbvr:Classification,
+        sbvr:Communicationcontentiscomposedofrepresentation,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Definitionalbusinessrule,
+        sbvr:Definitionalrule,
+        sbvr:Derivableconcept,
+        sbvr:Elementofgovernance,
+        sbvr:Elementofguidance,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Individualverbconcept,
+        sbvr:Integer,
+        sbvr:Is-facet-ofproposition,
+        sbvr:Is-role-ofproposition,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Proposition,
+        sbvr:Quantity,
+        sbvr:Question,
+        sbvr:Representationhasexpression,
+        sbvr:Representationisindesignationcontext,
+        sbvr:Representationisinsubjectfield,
+        sbvr:Representationrepresentsmeaning,
+        sbvr:Representationusesvocabulary,
+        sbvr:Role,
+        sbvr:Rule,
+        sbvr:Situationalrole,
+        sbvr:Speechcommunityrepresentationsetincludesrepresentation,
+        sbvr:Terminologicaldictionaryincludesrepresentation,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:Restrictedpermissionstatement a owl:Class ;
+    rdfs:label "restrictedPermissionStatement" ;
+    rdfs:comment "This is the restrictedPermissionStatement property or class within the SBVR ontology." .
+
+sbvr:Restrictedpossibilitystatement a owl:Class ;
+    rdfs:label "restrictedPossibilityStatement" ;
+    rdfs:comment "This is the restrictedPossibilityStatement property or class within the SBVR ontology." .
+
+sbvr:Rule a owl:Class ;
+    rdfs:label "rule" ;
+    rdfs:comment "This is the rule property or class within the SBVR ontology." .
+
+sbvr:Ruleset a rdf:Property,
+        owl:Class ;
+    rdfs:label "ruleSet" ;
+    rdfs:comment "This is the ruleSet property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bodyofsharedguidanceincludesruleset,
+        sbvr:Rulesetincludeselementofguidance .
+
+sbvr:Rulestatement a owl:Class ;
+    rdfs:label "ruleStatement" ;
+    rdfs:comment "This is the ruleStatement property or class within the SBVR ontology." .
+
+sbvr:Speechcommunity a rdf:Property,
+        owl:Class ;
+    rdfs:label "speechCommunity" ;
+    rdfs:comment "This is the speechCommunity property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Expressionisunambiguoustospeechcommunity,
+        sbvr:Semanticcommunity,
+        sbvr:Semanticcommunityhasspeechcommunity,
+        sbvr:Speechcommunityadoptsadopteddefinitioncitingreference,
+        sbvr:Speechcommunitydeterminesspeechcommunityrepresentationset,
+        sbvr:Speechcommunityownsowneddefinition,
+        sbvr:Speechcommunityownsvocabulary,
+        sbvr:Speechcommunityregulatesitsusageofsignifier,
+        sbvr:Speechcommunityuseslanguage,
+        sbvr:Speechcommunityusesvocabulary,
+        sbvr:Vocabularyisdesignedforspeechcommunity ;
+    rdfs:range xsd:anyType .
+
+sbvr:Speechcommunityrepresentationset a rdf:Property,
+        owl:Class ;
+    rdfs:label "speechCommunityRepresentationSet" ;
+    rdfs:comment "This is the speechCommunityRepresentationSet property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Speechcommunitydeterminesspeechcommunityrepresentationset,
+        sbvr:Speechcommunityrepresentationsetincludesrepresentation .
+
+sbvr:Statement a rdf:Property,
+        owl:Class ;
+    rdfs:label "statement" ;
+    rdfs:comment "This is the statement property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Advice,
+        sbvr:Adviceofcontingency,
+        sbvr:Adviceofoptionality,
+        sbvr:Adviceofpermission,
+        sbvr:Adviceofpossibility,
+        sbvr:Behavioralbusinessrule,
+        sbvr:Businesspolicy,
+        sbvr:Businessrule,
+        sbvr:Categorization,
+        sbvr:Characterization,
+        sbvr:Classification,
+        sbvr:Closedlogicalformulationformalizesstatement,
+        sbvr:Definitionalbusinessrule,
+        sbvr:Definitionalrule,
+        sbvr:Elementofgovernance,
+        sbvr:Elementofguidance,
+        sbvr:Individualverbconcept,
+        sbvr:Is-facet-ofproposition,
+        sbvr:Is-role-ofproposition,
+        sbvr:Proposition,
+        sbvr:Rule,
+        sbvr:Statementexpressesproposition ;
+    rdfs:range xsd:anyType .
+
+sbvr:Statementofadviceofpermission a owl:Class ;
+    rdfs:label "statementOfAdviceOfPermission" ;
+    rdfs:comment "This is the statementOfAdviceOfPermission property or class within the SBVR ontology." .
+
+sbvr:Statementofadviceofpossibility a owl:Class ;
+    rdfs:label "statementOfAdviceOfPossibility" ;
+    rdfs:comment "This is the statementOfAdviceOfPossibility property or class within the SBVR ontology." .
+
+sbvr:Vocabulary a rdf:Property,
+        owl:Class ;
+    rdfs:label "vocabulary" ;
+    rdfs:comment "This is the vocabulary property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Representationusesvocabulary,
+        sbvr:Speechcommunityownsvocabulary,
+        sbvr:Speechcommunityusesvocabulary,
+        sbvr:Terminologicaldictionarypresentsvocabulary,
+        sbvr:Vocabularyisdesignedforspeechcommunity,
+        sbvr:Vocabularyisexpressedinlanguage,
+        sbvr:Vocabularyisusedtoexpressbodyofsharedmeanings,
+        sbvr:Vocabularynamespaceisderivedfromvocabulary .
+
+sbvr:Adopteddefinition a rdf:Property,
+        owl:Class ;
+    rdfs:label "adoptedDefinition" ;
+    rdfs:comment "This is the adoptedDefinition property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Speechcommunityadoptsadopteddefinitioncitingreference ;
+    rdfs:range xsd:anyType .
+
+sbvr:Advice a rdf:Property,
+        owl:Class ;
+    rdfs:label "advice" ;
+    rdfs:comment "This is the advice property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Adviceisderivedfrombusinesspolicy .
+
+sbvr:Adviceofcontingency a owl:Class ;
+    rdfs:label "adviceOfContingency" ;
+    rdfs:comment "This is the adviceOfContingency property or class within the SBVR ontology." .
+
+sbvr:Adviceofoptionality a owl:Class ;
+    rdfs:label "adviceOfOptionality" ;
+    rdfs:comment "This is the adviceOfOptionality property or class within the SBVR ontology." .
+
+sbvr:Adviceofpermission a owl:Class ;
+    rdfs:label "adviceOfPermission" ;
+    rdfs:comment "This is the adviceOfPermission property or class within the SBVR ontology." .
+
+sbvr:Adviceofpossibility a owl:Class ;
+    rdfs:label "adviceOfPossibility" ;
+    rdfs:comment "This is the adviceOfPossibility property or class within the SBVR ontology." .
+
+sbvr:Bagprojection a owl:Class ;
+    rdfs:label "bagProjection" ;
+    rdfs:comment "This is the bagProjection property or class within the SBVR ontology." .
+
+sbvr:Businessrule a rdf:Property,
+        owl:Class ;
+    rdfs:label "businessRule" ;
+    rdfs:comment "This is the businessRule property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Businessruleisderivedfrombusinesspolicy .
+
+sbvr:Closedprojection a rdf:Property,
+        owl:Class ;
+    rdfs:label "closedProjection" ;
+    rdfs:comment "This is the closedProjection property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Closedprojectiondefinesnounconcept,
+        sbvr:Closedprojectiondefinesverbconcept,
+        sbvr:Closedprojectionformalizesdefinition,
+        sbvr:Closedprojectionmeansquestion .
+
+sbvr:Conjunction a owl:Class ;
+    rdfs:label "conjunction" ;
+    rdfs:comment "This is the conjunction property or class within the SBVR ontology." .
+
+sbvr:Definitedescription a owl:Class ;
+    rdfs:label "definiteDescription" ;
+    rdfs:comment "This is the definiteDescription property or class within the SBVR ontology." .
+
+sbvr:Definition a rdf:Property,
+        owl:Class ;
+    rdfs:label "definition" ;
+    rdfs:comment "This is the definition property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Closedprojectionformalizesdefinition,
+        sbvr:Concepthasdefinition,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Derivableconcept,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Integer,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Quantity,
+        sbvr:Role,
+        sbvr:Situationalrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:Disjunction a owl:Class ;
+    rdfs:label "disjunction" ;
+    rdfs:comment "This is the disjunction property or class within the SBVR ontology." .
+
+sbvr:Elementofguidance a rdf:Property,
+        owl:Class ;
+    rdfs:label "elementOfGuidance" ;
+    rdfs:comment "This is the elementOfGuidance property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Adoptingauthorityadoptselementofguidancefromowningauthoritycitingreference,
+        sbvr:Authoritydefineselementofguidance,
+        sbvr:Bodyofsharedguidanceincludeselementofguidance,
+        sbvr:Elementofguidanceacknowledgesaspossiblestateofaffairs,
+        sbvr:Elementofguidanceisinthejurisdictionofauthority,
+        sbvr:Elementofguidancenecessitatesstateofaffairs,
+        sbvr:Elementofguidancepermitsstateofaffairs,
+        sbvr:Rulesetincludeselementofguidance ;
+    rdfs:range xsd:anyType .
+
+sbvr:Equivalence a owl:Class ;
+    rdfs:label "equivalence" ;
+    rdfs:comment "This is the equivalence property or class within the SBVR ontology." .
+
+sbvr:Exclusivedisjunction a owl:Class ;
+    rdfs:label "exclusiveDisjunction" ;
+    rdfs:comment "This is the exclusiveDisjunction property or class within the SBVR ontology." .
+
+sbvr:Extensionaldefinition a owl:Class ;
+    rdfs:label "extensionalDefinition" ;
+    rdfs:comment "This is the extensionalDefinition property or class within the SBVR ontology." .
+
+sbvr:Intensionaldefinition a rdf:Property,
+        owl:Class ;
+    rdfs:label "intensionalDefinition" ;
+    rdfs:comment "This is the intensionalDefinition property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Intensionaldefinitionusesdelimitingcharacteristic .
+
+sbvr:Nandformulation a owl:Class ;
+    rdfs:label "nandFormulation" ;
+    rdfs:comment "This is the nandFormulation property or class within the SBVR ontology." .
+
+sbvr:Norformulation a owl:Class ;
+    rdfs:label "norFormulation" ;
+    rdfs:comment "This is the norFormulation property or class within the SBVR ontology." .
+
+sbvr:Nounform a owl:Class ;
+    rdfs:label "nounForm" ;
+    rdfs:comment "This is the nounForm property or class within the SBVR ontology." .
+
+sbvr:Numericrangequantification a rdf:Property,
+        owl:Class ;
+    rdfs:label "numericRangeQuantification" ;
+    rdfs:comment "This is the numericRangeQuantification property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Numericrangequantificationhasmaximumcardinality,
+        sbvr:Numericrangequantificationhasminimumcardinality .
+
+sbvr:Owneddefinition a rdf:Property,
+        owl:Class ;
+    rdfs:label "ownedDefinition" ;
+    rdfs:comment "This is the ownedDefinition property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Speechcommunityownsowneddefinition .
+
+sbvr:Projection a rdf:Property,
+        owl:Class ;
+    rdfs:label "projection" ;
+    rdfs:comment "This is the projection property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Aggregationformulation,
+        sbvr:Answernominalization,
+        sbvr:Logicalformulationconstrainsprojection,
+        sbvr:Nounconceptnominalization,
+        sbvr:Projectingformulationhasprojection,
+        sbvr:Projectionhasauxiliaryvariable,
+        sbvr:Projectionisonvariable,
+        sbvr:Questionnominalization,
+        sbvr:Verbconceptnominalization ;
+    rdfs:range xsd:anyType .
+
+sbvr:Referencescheme a rdf:Property,
+        owl:Class ;
+    rdfs:label "referenceScheme" ;
+    rdfs:comment "This is the referenceScheme property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Derivableconcept,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Integer,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Quantity,
+        sbvr:Referenceschemeextensionallyusesverbconceptrole,
+        sbvr:Referenceschemeisforconcept,
+        sbvr:Referenceschemesimplyusesverbconceptrole,
+        sbvr:Referenceschemeusescharacteristic,
+        sbvr:Role,
+        sbvr:Situationalrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:Semanticcommunity a rdf:Property,
+        owl:Class ;
+    rdfs:label "semanticCommunity" ;
+    rdfs:comment "This is the semanticCommunity property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bodyofsharedmeaningsunitessemanticcommunity,
+        sbvr:Semanticcommunityhasspeechcommunity,
+        sbvr:Semanticcommunitysharesunderstandingofconcept .
+
+sbvr:Sententialform a owl:Class ;
+    rdfs:label "sententialForm" ;
+    rdfs:comment "This is the sententialForm property or class within the SBVR ontology." .
+
+sbvr:Setprojection a owl:Class ;
+    rdfs:label "setProjection" ;
+    rdfs:comment "This is the setProjection property or class within the SBVR ontology." .
+
+sbvr:Speechcommunityadoptsadopteddefinitioncitingreference a owl:Class ;
+    rdfs:label "speechCommunityAdoptsAdoptedDefinitionCitingReference" ;
+    rdfs:comment "This is the speechCommunityAdoptsAdoptedDefinitionCitingReference property or class within the SBVR ontology." .
+
+sbvr:Verbconceptwording a rdf:Property,
+        owl:Class ;
+    rdfs:label "verbConceptWording" ;
+    rdfs:comment "This is the verbConceptWording property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Characteristic,
+        sbvr:Generalverbconcept,
+        sbvr:Partitiveverbconcept,
+        sbvr:Placeholderisinverbconceptwording,
+        sbvr:Propertyassociation,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconcepthasverbconceptwording,
+        sbvr:Verbconceptwordingincorporatesverbsymbol,
+        sbvr:Verbconceptwordingisinnamespace ;
+    rdfs:range xsd:anyType .
+
+sbvr:Adoptingauthorityadoptselementofguidancefromowningauthoritycitingreference a owl:Class ;
+    rdfs:label "adoptingAuthorityAdoptsElementOfGuidanceFromOwningAuthorityCitingReference" ;
+    rdfs:comment "This is the adoptingAuthorityAdoptsElementOfGuidanceFromOwningAuthorityCitingReference property or class within the SBVR ontology." .
+
+sbvr:Auxiliaryvariable a rdf:Property,
+        owl:Class ;
+    rdfs:label "auxiliaryVariable" ;
+    rdfs:comment "This is the auxiliaryVariable property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Bagprojection,
+        sbvr:Closedprojection,
+        sbvr:Projection,
+        sbvr:Projectionhasauxiliaryvariable,
+        sbvr:Setprojection ;
+    rdfs:range xsd:anyType .
+
+sbvr:Businesspolicy a rdf:Property,
+        owl:Class ;
+    rdfs:label "businessPolicy" ;
+    rdfs:comment "This is the businessPolicy property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Adviceisderivedfrombusinesspolicy,
+        sbvr:Businessruleisderivedfrombusinesspolicy .
+
+sbvr:Designation a rdf:Property,
+        owl:Class ;
+    rdfs:label "designation" ;
+    rdfs:comment "Representation of a concept by a sign which denotes it",
+        "This is the designation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Concepthasdesignation,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Derivableconcept,
+        sbvr:Designationhassignifier,
+        sbvr:Designationisinnamespace,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Integer,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Placeholderusesdesignation,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Quantity,
+        sbvr:Role,
+        sbvr:Situationalrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:Elementofgovernance a owl:Class ;
+    rdfs:label "elementOfGovernance" ;
+    rdfs:comment "This is the elementOfGovernance property or class within the SBVR ontology." .
+
+sbvr:Icon a owl:Class ;
+    rdfs:label "icon" ;
+    rdfs:comment "This is the icon property or class within the SBVR ontology." .
+
+sbvr:Name a rdf:Property,
+        owl:Class ;
+    rdfs:label "name" ;
+    rdfs:comment "This is the name property or class within the SBVR ontology.",
+        "Verbal designation of an individual noun concept" ;
+    rdfs:domain sbvr:Adopteddefinition,
+        sbvr:Adoptingauthorityadoptselementofguidancefromowningauthoritycitingreference,
+        sbvr:Advice,
+        sbvr:Adviceofcontingency,
+        sbvr:Adviceofoptionality,
+        sbvr:Adviceofpermission,
+        sbvr:Adviceofpossibility,
+        sbvr:Advicestatement,
+        sbvr:Aggregationformulation,
+        sbvr:Answernominalization,
+        sbvr:Association,
+        sbvr:At-least-nquantification,
+        sbvr:At-most-nquantification,
+        sbvr:At-most-onequantification,
+        sbvr:Atomicformulation,
+        sbvr:Attributivenamespace,
+        sbvr:Authority,
+        sbvr:Auxiliaryvariable,
+        sbvr:Bagprojection,
+        sbvr:Behavioralbusinessrule,
+        sbvr:Behavioralbusinessrulestatement,
+        sbvr:Binaryverbconcept,
+        sbvr:Bodyofsharedconcepts,
+        sbvr:Bodyofsharedguidance,
+        sbvr:Bodyofsharedmeanings,
+        sbvr:Businesspolicy,
+        sbvr:Businesspolicystatement,
+        sbvr:Businessrule,
+        sbvr:Businessvocabulary,
+        sbvr:Categorization,
+        sbvr:Categorizationscheme,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Characterization,
+        sbvr:Classification,
+        sbvr:Closedlogicalformulation,
+        sbvr:Closedprojection,
+        sbvr:Communicationcontent,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Conjunction,
+        sbvr:Contextualizedconcept,
+        sbvr:Contingencystatement,
+        sbvr:Definitedescription,
+        sbvr:Definition,
+        sbvr:Definitionalbusinessrule,
+        sbvr:Definitionalrule,
+        sbvr:Definitionalrulestatement,
+        sbvr:Derivableconcept,
+        sbvr:Description,
+        sbvr:Descriptiveexample,
+        sbvr:Designation,
+        sbvr:Disjunction,
+        sbvr:Elementofgovernance,
+        sbvr:Elementofguidance,
+        sbvr:ElementsOfConceptSystemStructure,
+        sbvr:Enforcementlevel,
+        sbvr:Equivalence,
+        sbvr:Exactly-nquantification,
+        sbvr:Exactly-onequantification,
+        sbvr:Exclusivedisjunction,
+        sbvr:Existentialquantification,
+        sbvr:Extensionaldefinition,
+        sbvr:Facet,
+        sbvr:Formalrepresentation,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Guidancestatement,
+        sbvr:Icon,
+        sbvr:Implication,
+        sbvr:Impossibilitystatement,
+        sbvr:Individualnounconcept,
+        sbvr:Individualverbconcept,
+        sbvr:Informalrepresentation,
+        sbvr:Instantiationformulation,
+        sbvr:Integer,
+        sbvr:Intensionaldefinition,
+        sbvr:Is-facet-ofproposition,
+        sbvr:Is-role-ofproposition,
+        sbvr:Language,
+        sbvr:Logicalformulationkind,
+        sbvr:Logicalnegation,
+        sbvr:Name,
+        sbvr:Namespace,
+        sbvr:Nandformulation,
+        sbvr:Necessityformulation,
+        sbvr:Necessitystatement,
+        sbvr:Non-necessitystatement,
+        sbvr:Non-obligationstatement,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nonverbaldesignation,
+        sbvr:Norformulation,
+        sbvr:Note,
+        sbvr:Nounconcept,
+        sbvr:Nounconceptnominalization,
+        sbvr:Nounform,
+        sbvr:Number,
+        sbvr:Numericrangequantification,
+        sbvr:Objectification,
+        sbvr:Obligationformulation,
+        sbvr:Obligationstatement,
+        sbvr:Optionalitystatement,
+        sbvr:Owneddefinition,
+        sbvr:Partitiveverbconcept,
+        sbvr:Permissibilityformulation,
+        sbvr:Permissionstatement,
+        sbvr:Placeholder,
+        sbvr:Positiveinteger,
+        sbvr:Possibilityformulation,
+        sbvr:Possibilitystatement,
+        sbvr:Preferreddesignation,
+        sbvr:Prohibiteddesignation,
+        sbvr:Prohibitionstatement,
+        sbvr:Projection,
+        sbvr:Property,
+        sbvr:Propertyassociation,
+        sbvr:Proposition,
+        sbvr:Propositionnominalization,
+        sbvr:Quantity,
+        sbvr:Question,
+        sbvr:Questionnominalization,
+        sbvr:Reference,
+        sbvr:Referencescheme,
+        sbvr:Representation,
+        sbvr:RepresentationFormality,
+        sbvr:Restrictedpermissionstatement,
+        sbvr:Restrictedpossibilitystatement,
+        sbvr:Role,
+        sbvr:Rolebinding,
+        sbvr:Rule,
+        sbvr:Rulebook,
+        sbvr:Ruleset,
+        sbvr:Rulestatement,
+        sbvr:SbvrRulebook,
+        sbvr:Segmentation,
+        sbvr:Semanticcommunity,
+        sbvr:Sententialform,
+        sbvr:Setprojection,
+        sbvr:Situationalrole,
+        sbvr:Speechcommunity,
+        sbvr:Speechcommunityadoptsadopteddefinitioncitingreference,
+        sbvr:Speechcommunityrepresentationset,
+        sbvr:Statement,
+        sbvr:Statementofadviceofpermission,
+        sbvr:Statementofadviceofpossibility,
+        sbvr:Stateofaffairs,
+        sbvr:Subjectfield,
+        sbvr:Term,
+        sbvr:Terminologicaldictionary,
+        sbvr:Text,
+        sbvr:URI,
+        sbvr:Unitaryverbconcept,
+        sbvr:Universalquantification,
+        sbvr:Variable,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptnominalization,
+        sbvr:Verbconceptrole,
+        sbvr:Verbconceptroledesignation,
+        sbvr:Verbconceptwording,
+        sbvr:Verbsymbol,
+        sbvr:Viewpoint,
+        sbvr:Vocabulary,
+        sbvr:Vocabularynamespace,
+        sbvr:Whether-or-notformulation ;
+    rdfs:range xsd:anyType .
+
+sbvr:Nonverbaldesignation a owl:Class ;
+    rdfs:label "nonverbalDesignation" ;
+    rdfs:comment "This is the nonverbalDesignation property or class within the SBVR ontology." .
+
+sbvr:Preferreddesignation a owl:Class ;
+    rdfs:label "preferredDesignation" ;
+    rdfs:comment "This is the preferredDesignation property or class within the SBVR ontology." .
+
+sbvr:Prohibiteddesignation a owl:Class ;
+    rdfs:label "prohibitedDesignation" ;
+    rdfs:comment "This is the prohibitedDesignation property or class within the SBVR ontology." .
+
+sbvr:Variable a rdf:Property,
+        owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:comment "This is the variable property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Logicalformulationrestrictsvariable,
+        sbvr:Projectionisonvariable,
+        sbvr:Quantificationintroducesvariable,
+        sbvr:Variablehasprojectionposition,
+        sbvr:Variableisfreewithinsemanticformulation,
+        sbvr:Variablemapstoverbconceptrole,
+        sbvr:Variablerangesoverconcept .
+
+sbvr:Verbconceptroledesignation a owl:Class ;
+    rdfs:label "verbConceptRoleDesignation" ;
+    rdfs:comment "This is the verbConceptRoleDesignation property or class within the SBVR ontology." .
+
+sbvr:Verbsymbol a rdf:Property,
+        owl:Class ;
+    rdfs:label "verbSymbol" ;
+    rdfs:comment "This is the verbSymbol property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Verbconceptwordingincorporatesverbsymbol .
+
+sbvr:Implication a rdf:Property,
+        owl:Class ;
+    rdfs:label "implication" ;
+    rdfs:comment "This is the implication property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Implicationhasantecedent,
+        sbvr:Implicationhasconsequent .
+
+sbvr:Placeholder a rdf:Property,
+        owl:Class ;
+    rdfs:label "placeholder" ;
+    rdfs:comment "This is the placeholder property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Nounform,
+        sbvr:Placeholderisatstartingcharacterposition,
+        sbvr:Placeholderisinverbconceptwording,
+        sbvr:Placeholderusesdesignation,
+        sbvr:Sententialform,
+        sbvr:Verbconceptwording ;
+    rdfs:range xsd:anyType .
+
+sbvr:Whether-or-notformulation a rdf:Property,
+        owl:Class ;
+    rdfs:label "whether-or-notFormulation" ;
+    rdfs:comment "This is the whether-or-notFormulation property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Whether-or-notformulationhasconsequent,
+        sbvr:Whether-or-notformulationhasinconsequent .
+
+sbvr:Behavioralbusinessrule a rdf:Property,
+        owl:Class ;
+    rdfs:label "behavioralBusinessRule" ;
+    rdfs:comment "This is the behavioralBusinessRule property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Behavioralbusinessrulehasenforcementlevel .
+
+sbvr:Term a owl:Class ;
+    rdfs:label "term" ;
+    rdfs:comment "A verbal designation of a general concept that is in a given subject field" ;
+    rdfs:subClassOf skos:Concept .
+
+sbvr:Conceptofthingascomposite a owl:Class ;
+    rdfs:label "conceptOfThingAsComposite" ;
+    rdfs:comment "This is the conceptOfThingAsComposite property or class within the SBVR ontology." .
+
+sbvr:Conceptofthingascontinuant a owl:Class ;
+    rdfs:label "conceptOfThingAsContinuant" ;
+    rdfs:comment "This is the conceptOfThingAsContinuant property or class within the SBVR ontology." .
+
+sbvr:Conceptofthingasdeveloped a owl:Class ;
+    rdfs:label "conceptOfThingAsDeveloped" ;
+    rdfs:comment "This is the conceptOfThingAsDeveloped property or class within the SBVR ontology." .
+
+sbvr:Conceptofthingasoccurrent a owl:Class ;
+    rdfs:label "conceptOfThingAsOccurrent" ;
+    rdfs:comment "This is the conceptOfThingAsOccurrent property or class within the SBVR ontology." .
+
+sbvr:Conceptofthingasprimitive a owl:Class ;
+    rdfs:label "conceptOfThingAsPrimitive" ;
+    rdfs:comment "This is the conceptOfThingAsPrimitive property or class within the SBVR ontology." .
+
+sbvr:Conceptofthingasunitary a owl:Class ;
+    rdfs:label "conceptOfThingAsUnitary" ;
+    rdfs:comment "This is the conceptOfThingAsUnitary property or class within the SBVR ontology." .
+
+sbvr:Conceptofthingexistingdependently a owl:Class ;
+    rdfs:label "conceptOfThingExistingDependently" ;
+    rdfs:comment "This is the conceptOfThingExistingDependently property or class within the SBVR ontology." .
+
+sbvr:Conceptofthingexistingindependently a owl:Class ;
+    rdfs:label "conceptOfThingExistingIndependently" ;
+    rdfs:comment "This is the conceptOfThingExistingIndependently property or class within the SBVR ontology." .
+
+sbvr:Contextualizedconcept a owl:Class ;
+    rdfs:label "contextualizedConcept" ;
+    rdfs:comment "This is the contextualizedConcept property or class within the SBVR ontology." .
+
+sbvr:Derivableconcept a owl:Class ;
+    rdfs:label "derivableConcept" ;
+    rdfs:comment "This is the derivableConcept property or class within the SBVR ontology." .
+
+sbvr:Facet a rdf:Property,
+        owl:Class ;
+    rdfs:label "facet" ;
+    rdfs:comment "This is the facet property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Categorizationtype,
+        sbvr:Characteristic,
+        sbvr:Characteristictype,
+        sbvr:Concepthasfacet,
+        sbvr:Conceptofthingascomposite,
+        sbvr:Conceptofthingascontinuant,
+        sbvr:Conceptofthingasdeveloped,
+        sbvr:Conceptofthingasoccurrent,
+        sbvr:Conceptofthingasprimitive,
+        sbvr:Conceptofthingasunitary,
+        sbvr:Conceptofthingexistingdependently,
+        sbvr:Conceptofthingexistingindependently,
+        sbvr:Concepttype,
+        sbvr:Contextualizedconcept,
+        sbvr:Derivableconcept,
+        sbvr:Facet,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Generalverbconcept,
+        sbvr:Individualnounconcept,
+        sbvr:Integer,
+        sbvr:Logicalformulationkind,
+        sbvr:Nonnegativeinteger,
+        sbvr:Nounconcept,
+        sbvr:Number,
+        sbvr:Partitiveverbconcept,
+        sbvr:Positiveinteger,
+        sbvr:Propertyassociation,
+        sbvr:Quantity,
+        sbvr:Role,
+        sbvr:Situationalrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:Individualnounconcept a owl:Class ;
+    rdfs:label "individualNounConcept" ;
+    rdfs:comment "This is the individualNounConcept property or class within the SBVR ontology." .
+
+sbvr:Nounconcept a rdf:Property,
+        owl:Class ;
+    rdfs:label "nounConcept" ;
+    rdfs:comment "This is the nounConcept property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Closedprojectiondefinesnounconcept .
+
+sbvr:Number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:comment "This is the number property or class within the SBVR ontology." .
+
+sbvr:Quantity a owl:Class ;
+    rdfs:label "quantity" ;
+    rdfs:comment "This is the quantity property or class within the SBVR ontology." .
+
+sbvr:Role a rdf:Property,
+        owl:Class ;
+    rdfs:label "role" ;
+    rdfs:comment "This is the role property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Rolerangesovergeneralconcept .
+
+sbvr:Integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:comment "This is the integer property or class within the SBVR ontology." .
+
+sbvr:Nonnegativeinteger a owl:Class ;
+    rdfs:label "nonnegativeInteger" ;
+    rdfs:comment "This is the nonnegativeInteger property or class within the SBVR ontology." .
+
+sbvr:Positiveinteger a owl:Class ;
+    rdfs:label "positiveInteger" ;
+    rdfs:comment "This is the positiveInteger property or class within the SBVR ontology." .
+
+sbvr:Verbconceptrole a rdf:Property,
+        owl:Class ;
+    rdfs:label "verbConceptRole" ;
+    rdfs:comment "This is the verbConceptRole property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Association,
+        sbvr:Binaryverbconcept,
+        sbvr:Characteristic,
+        sbvr:Generalverbconcept,
+        sbvr:Partitiveverbconcept,
+        sbvr:Propertyassociation,
+        sbvr:Referenceschemeextensionallyusesverbconceptrole,
+        sbvr:Referenceschemesimplyusesverbconceptrole,
+        sbvr:Unitaryverbconcept,
+        sbvr:Variablemapstoverbconceptrole,
+        sbvr:Verbconcept,
+        sbvr:Verbconceptrolehasrolebinding,
+        sbvr:Verbconceptroleisinverbconcept ;
+    rdfs:range xsd:anyType .
+
+sbvr:Association a owl:Class ;
+    rdfs:label "association" ;
+    rdfs:comment "This is the association property or class within the SBVR ontology." .
+
+sbvr:Binaryverbconcept a owl:Class ;
+    rdfs:label "binaryVerbConcept" ;
+    rdfs:comment "This is the binaryVerbConcept property or class within the SBVR ontology." .
+
+sbvr:Categorizationtype a rdf:Property,
+        owl:Class ;
+    rdfs:label "categorizationType" ;
+    rdfs:comment "This is the categorizationType property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Categorizationtype,
+        sbvr:Categorizationtypeisforgeneralconcept,
+        sbvr:Characteristictype,
+        sbvr:Concepttype,
+        sbvr:Fundamentalconcept,
+        sbvr:Generalconcept,
+        sbvr:Logicalformulationkind,
+        sbvr:Situationalrole ;
+    rdfs:range xsd:anyType .
+
+sbvr:Characteristic a rdf:Property,
+        owl:Class ;
+    rdfs:label "characteristic" ;
+    rdfs:comment "This is the characteristic property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Conceptincorporatescharacteristic,
+        sbvr:Referenceschemeusescharacteristic .
+
+sbvr:Characteristictype a owl:Class ;
+    rdfs:label "characteristicType" ;
+    rdfs:comment "This is the characteristicType property or class within the SBVR ontology." .
+
+sbvr:Concepttype a owl:Class ;
+    rdfs:label "conceptType" ;
+    rdfs:comment "This is the conceptType property or class within the SBVR ontology." .
+
+sbvr:Fundamentalconcept a owl:Class ;
+    rdfs:label "fundamentalConcept" ;
+    rdfs:comment "This is the fundamentalConcept property or class within the SBVR ontology." .
+
+sbvr:Generalconcept a rdf:Property,
+        owl:Class ;
+    rdfs:label "generalConcept" ;
+    rdfs:comment "This is the generalConcept property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Categorizationschemeisforgeneralconcept,
+        sbvr:Categorizationtypeisforgeneralconcept,
+        sbvr:Generalconceptobjectifiesverbconcept,
+        sbvr:Rolerangesovergeneralconcept .
+
+sbvr:Generalverbconcept a owl:Class ;
+    rdfs:label "generalVerbConcept" ;
+    rdfs:comment "This is the generalVerbConcept property or class within the SBVR ontology." .
+
+sbvr:Logicalformulationkind a owl:Class ;
+    rdfs:label "logicalFormulationKind" ;
+    rdfs:comment "This is the logicalFormulationKind property or class within the SBVR ontology." .
+
+sbvr:Partitiveverbconcept a owl:Class ;
+    rdfs:label "partitiveVerbConcept" ;
+    rdfs:comment "This is the partitiveVerbConcept property or class within the SBVR ontology." .
+
+sbvr:Propertyassociation a owl:Class ;
+    rdfs:label "propertyAssociation" ;
+    rdfs:comment "This is the propertyAssociation property or class within the SBVR ontology." .
+
+sbvr:Situationalrole a owl:Class ;
+    rdfs:label "situationalRole" ;
+    rdfs:comment "This is the situationalRole property or class within the SBVR ontology." .
+
+sbvr:Unitaryverbconcept a owl:Class ;
+    rdfs:label "unitaryVerbConcept" ;
+    rdfs:comment "This is the unitaryVerbConcept property or class within the SBVR ontology." .
+
+sbvr:Verbconcept a rdf:Property,
+        owl:Class ;
+    rdfs:label "verbConcept" ;
+    rdfs:comment "This is the verbConcept property or class within the SBVR ontology." ;
+    rdfs:domain sbvr:Atomicformulationisbasedonverbconcept,
+        sbvr:Closedprojectiondefinesverbconcept,
+        sbvr:Generalconceptobjectifiesverbconcept,
+        sbvr:Propositionisbasedonverbconcept,
+        sbvr:Verbconcepthasverbconceptwording,
+        sbvr:Verbconceptroleisinverbconcept .

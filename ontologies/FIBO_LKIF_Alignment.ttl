@@ -1,0 +1,51 @@
+# baseURI: http://finregont.com/fro/ref/FIBO_LKIF_Alignment.ttl
+# imports: http://finregont.com/fro/ref/FinancialReference.ttl
+# imports: http://finregont.com/fro/ref/LegalReference.ttl
+# prefix: fibo-lkif-align
+
+@prefix : <http://finregont.com/fro/ref/FIBO_LKIF_Alignment.ttl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fibo-fbc-fct-rga: <https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/> .
+@prefix fibo-fnd-arr-doc: <https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/> .
+@prefix fibo-fnd-law-jur: <https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/> .
+@prefix fibo-lkif-align: <http://finregont.com/fro/ref/FIBO_LKIF_Alignment.ttl#> .
+@prefix fro-leg-ref: <http://finregont.com/fro/ref/LegalReference.ttl#> .
+@prefix lkif-action: <http://www.estrellaproject.org/lkif-core/action.owl#> .
+@prefix lkif-expr: <http://www.estrellaproject.org/lkif-core/expression.owl#> .
+@prefix lkif-norm: <http://www.estrellaproject.org/lkif-core/norm.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://finregont.com/fro/ref/FIBO_LKIF_Alignment.ttl>
+  rdf:type owl:Ontology ;
+  dct:license "https://opensource.org/licenses/GPL-3.0"^^xsd:string ;
+  dct:license "https://opensource.org/licenses/MIT"^^xsd:string ;
+  sm:author "Jurgen Ziemer"^^xsd:string ;
+  sm:copyright "Jayzed Data Models Inc."^^xsd:string ;
+  rdfs:label "Financial Regulation Ontology: FIBO LIKIF Alignment module" ;
+  rdfs:comment """The ontology matches equivalent classes between FIBO and LKIF: 
+Legal Document, Regulation, Regulatory Agency/Authority, Statute Law
+This is not a complete alignment of all reference ontology concepts. We align classes as needed for FRO."""^^xsd:string ;
+  owl:imports <http://finregont.com/fro/ref/FinancialReference.ttl> ;
+  owl:imports <http://finregont.com/fro/ref/LegalReference.ttl> ;
+  skos:definition "Ontology Alignment of Financial Industry Business Ontology (FIBO) and Legal Knowledge Interchange Format (LKIF). "^^xsd:string ;
+.
+<http://finregont.com/fro/ref/FinancialReference.ttl#Report>
+  owl:equivalentClass fro-leg-ref:Report ;
+.
+fibo-fbc-fct-rga:Regulation
+  owl:equivalentClass lkif-norm:Regulation ;
+.
+fibo-fbc-fct-rga:RegulatoryAgency
+  owl:equivalentClass fro-leg-ref:RegulatoryAuthority ;
+.
+fibo-fnd-arr-doc:LegalDocument
+  owl:equivalentClass lkif-norm:Legal_Document ;
+.
+fibo-fnd-law-jur:StatuteLaw
+  owl:equivalentClass lkif-norm:Statute ;
+.

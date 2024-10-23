@@ -1,0 +1,289 @@
+# baseURI: http://finregont.com/fro/ref/Judging_Contracts_Core.ttl
+# imports: http://www.estrellaproject.org/lkif-core/lkif-core.owl
+# prefix: jc-core
+
+@prefix : <http://finregont.com/fro/ref/Judging_Contracts_Core.ttl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix jc-core: <http://finregont.com/fro/ref/Judging_Contracts_Core.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://finregont.com/fro/ref/Judging_Contracts_Core.ttl>
+  rdf:type owl:Ontology ;
+  rdfs:comment "The original URI, http://judo.googlecode.com/svn/tunk/Judging_Contracts_Core.owl is no longer available. We created this TTL version with a FindRegOn URI." ;
+  rdfs:label "Judging Contracts Core" ;
+  owl:imports <http://www.estrellaproject.org/lkif-core/lkif-core.owl> ;
+  owl:versionInfo """1.0
+""" ;
+.
+jc-core:Adjudication
+  rdf:type owl:Class ;
+  rdfs:comment "The final assessment of a judge on a claim." ;
+  rdfs:label "Adjudication" ;
+  rdfs:subClassOf jc-core:Judgement ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty jc-core:applies ;
+      owl:someValuesFrom jc-core:Judicial_Outcome ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty jc-core:considers ;
+      owl:someValuesFrom jc-core:Judicial_Claim ;
+    ] ;
+.
+jc-core:Agreement
+  rdf:type owl:Class ;
+  rdfs:comment "The empowering attitude of contractual agreements." ;
+  rdfs:label "Agreement" ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/expression.owl#Communicated_Attitude> ;
+.
+jc-core:Contractual_Agreement
+  rdf:type owl:Class ;
+  rdfs:comment "The content of a contract. Takes into consideration a specific Material circumstance and applies a legal status to it." ;
+  rdfs:label "Contractual Agreement" ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/expression.owl#Expression> ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/norm.owl#Norm> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty jc-core:applies ;
+      owl:someValuesFrom jc-core:Legal_Status ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty jc-core:considers ;
+      owl:someValuesFrom jc-core:Material_Circumstance ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://www.estrellaproject.org/lkif-core/expression.owl#attitude> ;
+      owl:someValuesFrom jc-core:Agreement ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://www.estrellaproject.org/lkif-core/expression.owl#medium> ;
+      owl:someValuesFrom <http://www.estrellaproject.org/lkif-core/norm.owl#Contract> ;
+    ] ;
+.
+jc-core:Judgement
+  rdf:type owl:Class ;
+  rdfs:comment "The syntactic representation of a judicial decision's contents" ;
+  rdfs:label "Judgement" ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/expression.owl#Expression> ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/expression.owl#Qualification> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://www.estrellaproject.org/lkif-core/expression.owl#attitude> ;
+      owl:someValuesFrom jc-core:Jurisdiction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://www.estrellaproject.org/lkif-core/expression.owl#medium> ;
+      owl:someValuesFrom <http://www.estrellaproject.org/lkif-core/norm.owl#Precedent> ;
+    ] ;
+.
+jc-core:Judicial_Claim
+  rdf:type owl:Class ;
+  rdfs:comment "Is the claim brought in front of the judge by one of the parties." ;
+  rdfs:label "Judicial Claim" ;
+  rdfs:subClassOf jc-core:Judicially_Qualified ;
+.
+jc-core:Judicial_Interpretation
+  rdf:type owl:Class ;
+  rdfs:comment "Judicial interpretations are performative expressions contained in sentences (i.e. subsumptions). They take into consideration a Factual circumstance and apply a legal status to it." ;
+  rdfs:label "Judicial Interpretation" ;
+  rdfs:subClassOf jc-core:Judgement ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty jc-core:applies ;
+      owl:someValuesFrom jc-core:Legal_Status ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty jc-core:considers ;
+      owl:someValuesFrom jc-core:Material_Circumstance ;
+    ] ;
+.
+jc-core:Judicial_Outcome
+  rdf:type owl:Class ;
+  rdfs:label "Judicial Outcome" ;
+  rdfs:subClassOf jc-core:Judicially_Qualified ;
+  owl:incompatibleWith "Is the outcome applied by the judge to every judicial claim. i.e. \"accepted\", \"rejected\"" ;
+.
+jc-core:Judicially_Qualified
+  rdf:type owl:Class ;
+  rdfs:comment "Anything that is qualified by a judicial expression." ;
+  rdfs:label "Judicially Qualified" ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/expression.owl#Qualified> ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:onProperty jc-core:considered_by ;
+      owl:someValuesFrom jc-core:Judgement ;
+    ] ;
+.
+jc-core:Jurisdiction
+  rdf:type owl:Class ;
+  rdfs:comment "The empowering attitude of judgements" ;
+  rdfs:label "Jurisdiction" ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/expression.owl#Declaration> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://www.estrellaproject.org/lkif-core/legal-action.owl#Public_Body> ;
+      owl:onProperty <http://www.estrellaproject.org/lkif-core/expression.owl#held_by> ;
+    ] ;
+.
+jc-core:Law_Declaration
+  rdf:type owl:Class ;
+  rdfs:comment "The empowering attitude of legal rules" ;
+  rdfs:label "Law Declaration" ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/expression.owl#Declaration> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://www.estrellaproject.org/lkif-core/legal-action.owl#Legislative_Body> ;
+      owl:onProperty <http://www.estrellaproject.org/lkif-core/expression.owl#held_by> ;
+    ] ;
+.
+jc-core:Legal_Consequence
+  rdf:type owl:Class ;
+  rdfs:comment "A legal consequence is the consequent of a legal rule. In the form of regulative rules \"if A then B\", B is the Legal Consequence. i.e. a sanction." ;
+  rdfs:label "Legal Consequence" ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/norm.owl#Normatively_Qualified> ;
+.
+jc-core:Legal_Rule
+  rdf:type owl:Class ;
+  rdfs:comment "The content of a legal document. considers anything having a given (combination of) legal status(es) and applies a (combination of) legal consequence(s) to it." ;
+  rdfs:label "Legal Rule" ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/norm.owl#Legal_Expression> ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/norm.owl#Norm> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom jc-core:Law_Declaration ;
+      owl:onProperty <http://www.estrellaproject.org/lkif-core/expression.owl#attitude> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://www.estrellaproject.org/lkif-core/norm.owl#Legal_Document> ;
+      owl:onProperty <http://www.estrellaproject.org/lkif-core/expression.owl#medium> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty jc-core:applies ;
+      owl:someValuesFrom jc-core:Legal_Consequence ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty jc-core:considers ;
+      owl:someValuesFrom jc-core:Legal_Status ;
+    ] ;
+.
+jc-core:Legal_Status
+  rdf:type owl:Class ;
+  rdfs:comment "A legal status is an abstract concept which is created by a law (or more rarely by doctrine or customs). It can be taken by a judgement or a contract and applied to some Factual circumstance, more or less arbitrarily. I.e. \"knowable\" is a legal status." ;
+  rdfs:label "Legal Status" ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/norm.owl#Normatively_Qualified> ;
+.
+jc-core:Material_Circumstance
+  rdf:type owl:Class ;
+  rdfs:comment "a Factual Circumstance is any fact or act which occurred in the Factual world, and which is taken into consideration by a law, a contract, or a judgement." ;
+  rdfs:label "Material Circumstance" ;
+  rdfs:subClassOf jc-core:Judicially_Qualified ;
+  rdfs:subClassOf <http://www.estrellaproject.org/lkif-core/norm.owl#Normatively_Qualified> ;
+.
+jc-core:applied_by
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf <http://www.estrellaproject.org/lkif-core/expression.owl#qualified_by> ;
+  owl:inverseOf jc-core:applies ;
+.
+jc-core:applies
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf <http://www.estrellaproject.org/lkif-core/expression.owl#qualifies> ;
+.
+jc-core:considered_by
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf <http://www.estrellaproject.org/lkif-core/expression.owl#qualified_by> ;
+  owl:inverseOf jc-core:considers ;
+.
+jc-core:considers
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf <http://www.estrellaproject.org/lkif-core/expression.owl#qualifies> ;
+.
+<http://www.estrellaproject.org/lkif-core/expression.owl#Communicated_Attitude>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/expression.owl#Declaration>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/expression.owl#Expression>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/expression.owl#Qualification>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/expression.owl#Qualified>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/expression.owl#attitude>
+  rdf:type owl:ObjectProperty ;
+.
+<http://www.estrellaproject.org/lkif-core/expression.owl#evaluated_by>
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf jc-core:considered_by ;
+.
+<http://www.estrellaproject.org/lkif-core/expression.owl#evaluates>
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf jc-core:considers ;
+.
+<http://www.estrellaproject.org/lkif-core/expression.owl#held_by>
+  rdf:type owl:ObjectProperty ;
+.
+<http://www.estrellaproject.org/lkif-core/expression.owl#medium>
+  rdf:type owl:ObjectProperty ;
+.
+<http://www.estrellaproject.org/lkif-core/expression.owl#qualified_by>
+  rdf:type owl:ObjectProperty ;
+.
+<http://www.estrellaproject.org/lkif-core/expression.owl#qualifies>
+  rdf:type owl:ObjectProperty ;
+.
+<http://www.estrellaproject.org/lkif-core/legal-action.owl#Legislative_Body>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/legal-action.owl#Public_Body>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/norm.owl#Contract>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/norm.owl#Legal_Document>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/norm.owl#Legal_Expression>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/norm.owl#Norm>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/norm.owl#Normatively_Qualified>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/norm.owl#Precedent>
+  rdf:type owl:Class ;
+.
+<http://www.estrellaproject.org/lkif-core/norm.owl#allowed_by>
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf jc-core:considered_by ;
+.
+<http://www.estrellaproject.org/lkif-core/norm.owl#allows>
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf jc-core:considers ;
+.
+<http://www.estrellaproject.org/lkif-core/norm.owl#disallowed_by>
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf jc-core:considered_by ;
+.
+<http://www.estrellaproject.org/lkif-core/norm.owl#disallows>
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf jc-core:considers ;
+.

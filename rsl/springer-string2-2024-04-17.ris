@@ -1,0 +1,495 @@
+TY  - JOUR
+TI  - A Unified Approach Toward Security Audit and Compliance in Cloud Computing
+AU  - Rajesh, Y. S.
+AU  - Kumar, V. G. Kiran
+AU  - Poojari, Asmita
+T2  - Journal of The Institution of Engineers (India): Series B
+AB  - The use of cloud computing has become a reliable information technology solution over the past decade by providing numerous services and resources on a pay-as-you-use basis and evolving from concept to reality. Despite increasing demand and popularity, the adoption of the cloud is hindered mainly by security concerns. Successful cloud adoption and uncomplicated operation are possible if users, intermediaries, and service providers act reliably according to regulations by assuring shared responsibility policy. The biggest challenge in the audit and assurance of cloud computing is the lack of a de facto approach to meet an enterprise’s requirements. The primary focus is on the challenges and effectiveness of audit and assurance by conducting an exploratory study on industry best practices, auditing standards, required certifications, and regulatory compliance frameworks like GDPR, Sarbanes–Oxley, ENISA, ISO 27001, NIST, EU-SEC, OWASP, BSI C5, CIS, ANSSI, HIPAA, CCM, CSA STAR, PCI DSS, COBIT, and SOC in a cloud environment and classifying on basis of applicability. In this research paper, we provide general guidelines on auditing standards by referring to threads and vulnerabilities analyzed and suggesting a unified approach toward audit considerations in cloud computing environments.
+DA  - 2024/03/23/
+PY  - 2024
+DO  - 10.1007/s40031-024-01034-x
+DP  - Springer Link
+J2  - J. Inst. Eng. India Ser. B
+LA  - en
+SN  - 2250-2114
+UR  - https://doi.org/10.1007/s40031-024-01034-x
+Y2  - 2024/04/17/21:28:39
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs40031-024-01034-x.pdf
+KW  - Audit
+KW  - Cloud computing
+KW  - Cloud security
+KW  - Security auditing
+ER  - 
+
+TY  - JOUR
+TI  - Integrating governance, risk and compliance? A multi-method analysis of the new Three Lines Model
+AU  - Seidenfuss, Kai-Uwe
+AU  - Young, Angus
+AU  - Datwani, Mohan
+T2  - SN Business & Economics
+AB  - As research and practice in corporate governance and risk management evolve, related tools and procedures are also developing in tandem—as is the case with the recent review of the widely adopted and time-tested three lines of defence (TLOD). This new Three Lines Model (TLM) attempts to reflect model criticism and widen the model scope towards integrated governance, naturally setting expectations high. This paper presents the first synopsis of the academic criticisms of TLOD, providing a foundation for analyzing the models. In a multi-method approach, the authors triangulate quantitative approaches from the corpus research with qualitative approaches to inquire about their research questions, in what is the first full review of the two original documents. Several converging results from triangulation support this thesis. The findings reveal a revised model that increases complexity yet gives up important parts of the previous model. While addressing key criticisms and adding important clarifications, the logic and simplicity of the old model seem lost—a conclusion that potentially contributes to the current slow adoption of TLM, not least among regulators. In contrast to the positive initial reactions, this paper concludes that a nuanced and critical view of the revamped TLM is necessary. It points out directions for further improvement—as well as those new elements worth preserving, such as the use of newly introduced principles, so that the model can keep its precision and appeal. This paper also inquires what practitioners should do at this stage, especially considering regulations in specific industries, and how the model authors may further develop the three lines. Finally, research limitations are highlighted as well as four research avenues regarding governance and risk identified.
+DA  - 2023/09/14/
+PY  - 2023
+DO  - 10.1007/s43546-023-00561-x
+DP  - Springer Link
+VL  - 3
+IS  - 10
+SP  - 184
+J2  - SN Bus Econ
+LA  - en
+SN  - 2662-9399
+ST  - Integrating governance, risk and compliance?
+UR  - https://doi.org/10.1007/s43546-023-00561-x
+Y2  - 2024/04/17/21:28:39
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs43546-023-00561-x.pdf
+KW  - Corporate governance
+KW  - Risk management
+KW  - Three Lines Model
+KW  - Three lines of defense
+ER  - 
+
+TY  - JOUR
+TI  - Regtech: steering the regulatory spaceship in the right direction?
+AU  - Papantoniou, Alexandros A.
+T2  - Journal of Banking and Financial Technology
+AB  - A spaceship steers by changing its existing orbit or trajectory. The current regulatory framework for financial institutions, albeit essential, is inefficient, thus steering the regulatory spaceship out of orbit. Regtech is an ever-evolving innovation which may have the potential to become a catalyst in financial services industry regulation. It provides automated solutions for monitoring, reporting and analysing regulatory requirements, thereby significantly reducing costs and improving productivity. This paper, however, argues that Regtech currently lacks the envisaged effective and widespread adoption because of risks, ambiguities, costs and difficulties associated with its application. The future of Regtech, therefore, remains uncertain. Yet through careful modification and implementation of recommendation initiatives, Regtech will be able to transform the way in which regulators and financial institutions observe and implement the current regulatory landscape, steering the regulatory spaceship in the right direction.
+DA  - 2022/06/01/
+PY  - 2022
+DO  - 10.1007/s42786-022-00038-9
+DP  - Springer Link
+VL  - 6
+IS  - 1
+SP  - 1
+EP  - 16
+J2  - J BANK FINANC TECHNOL
+LA  - en
+SN  - 2524-7964
+ST  - Regtech
+UR  - https://doi.org/10.1007/s42786-022-00038-9
+Y2  - 2024/04/17/21:28:40
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs42786-022-00038-9.pdf
+KW  - Black-box
+KW  - DLT
+KW  - Fintech
+KW  - Regtech
+KW  - Regulation technology
+KW  - Suptech
+ER  - 
+
+TY  - JOUR
+TI  - Dialectic tensions in the financial markets: a longitudinal study of pre- and post-crisis regulatory technology
+AU  - Currie, Wendy L.
+AU  - Gozman, Daniel P.
+AU  - Seddon, Jonathan J. M.
+T2  - Journal of Information Technology
+AB  - This article presents the findings from a longitudinal research study on regulatory technology in the UK financial services industry. The financial crisis with serious corporate and mutual fund scandals raised the profile of compliance as governmental bodies, institutional and private investors introduced a ‘tsunami’ of financial regulations. Adopting a multi-level analysis, this study examines how regulatory technology was used by financial firms to meet their compliance obligations, pre- and post-crisis. Empirical data collected over 12 years examine the deployment of an investment management system in eight financial firms. Interviews with public regulatory bodies, financial institutions and technology providers reveal a culture of compliance with increased transparency, surveillance and accountability. Findings show that dialectic tensions arise as the pursuit of transparency, surveillance and accountability in compliance mandates is simultaneously rationalized, facilitated and obscured by regulatory technology. Responding to these challenges, regulatory bodies continue to impose revised compliance mandates on financial firms to force them to adapt their financial technologies in an ever-changing multi-jurisdictional regulatory landscape.
+DA  - 2018/12/01/
+PY  - 2018
+DO  - 10.1057/s41265-017-0047-5
+DP  - Springer Link
+VL  - 33
+IS  - 4
+SP  - 304
+EP  - 325
+J2  - J Inf Technol
+LA  - en
+SN  - 1466-4437
+ST  - Dialectic tensions in the financial markets
+UR  - https://doi.org/10.1057/s41265-017-0047-5
+Y2  - 2024/04/17/21:28:40
+KW  - accountability
+KW  - compliance systems
+KW  - ethics
+KW  - financial crisis
+KW  - financial technology
+KW  - fintech
+KW  - regtech
+KW  - regulatory technology
+KW  - surveillance
+ER  - 
+
+TY  - JOUR
+TI  - Presenting Cloud Business Performance for Manufacturing Organizations
+AU  - Chang, Victor
+T2  - Information Systems Frontiers
+AB  - This paper presents a new concept, Cloud Business Performance (CBP) and describes the method of measurement, data analysis, impacts to manufacturing and case studies about CPB. Three methods can be used for CBP with two case studies illustrated. The first case study presents a small and medium manufacturing enterprise that has adopted backup services for all manufacturing transactions and records. The second case study shows a software manufacturing organization’s forecasting on their business performance and risk. Methods used, results and analysis have been fully justifiable to support the case of CBP for manufacturing organizations. We demonstrate that the use of CBP calculation and prediction analysis is useful for manufacturing organizations that adopt Cloud Computing.
+DA  - 2020/02/01/
+PY  - 2020
+DO  - 10.1007/s10796-017-9798-3
+DP  - Springer Link
+VL  - 22
+IS  - 1
+SP  - 59
+EP  - 75
+J2  - Inf Syst Front
+LA  - en
+SN  - 1572-9419
+UR  - https://doi.org/10.1007/s10796-017-9798-3
+Y2  - 2024/04/17/21:28:40
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10796-017-9798-3.pdf
+KW  - CBP case studies
+KW  - Cloud business performance (CBP) for manufacturing organizations
+KW  - Cloud Computing manufacturing adoption
+KW  - Organizational Sustainability Modeling (OSM)
+ER  - 
+
+TY  - JOUR
+TI  - Ant: a process aware annotation software for regulatory compliance
+AU  - Gyory, Raphaël
+AU  - Restrepo Amariles, David
+AU  - Lewkowicz, Gregory
+AU  - Bersini, Hugues
+T2  - Artificial Intelligence and Law
+AB  - Accurate data annotation is essential to successfully implementing machine learning (ML) for regulatory compliance. Annotations allow organizations to train supervised ML algorithms and to adapt and audit the software they buy. The lack of annotation tools focused on regulatory data is slowing the adoption of established ML methodologies and process models, such as CRISP-DM, in various legal domains, including in regulatory compliance. This article introduces Ant, an open-source annotation software for regulatory compliance. Ant is designed to adapt to complex organizational processes and enable compliance experts to be in control of ML projects. By drawing on Business Process Modeling (BPM), we show that Ant can contribute to lift major technical bottlenecks to effectively implement regulatory compliance through software, such as the access to multiple sources of heterogeneous data and the integration of process complexities in the ML pipeline. We provide empirical data to validate the performance of Ant, illustrate its potential to speed up the adoption of ML in regulatory compliance, and highlight its limitations.
+DA  - 2023/08/09/
+PY  - 2023
+DO  - 10.1007/s10506-023-09372-9
+DP  - Springer Link
+J2  - Artif Intell Law
+LA  - en
+SN  - 1572-8382
+ST  - Ant
+UR  - https://doi.org/10.1007/s10506-023-09372-9
+Y2  - 2024/04/17/21:28:40
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10506-023-09372-9.pdf
+KW  - Annotation tool
+KW  - Audit
+KW  - GRC
+KW  - Ground truth
+KW  - Legal-engineering cooperation
+KW  - Machine learning
+KW  - RegTech
+KW  - Regulatory compliance
+ER  - 
+
+TY  - JOUR
+TI  - Ethical and legal responsibility for Artificial Intelligence
+AU  - Henz, Patrick
+T2  - Discover Artificial Intelligence
+AB  - “In civilized life, law floats in a sea of ethics”, a quote by the former Chief Justice of the United States, Earl Warren. In a democratic society, the constitution defines the country’s values, and the laws define the preferred or at least still tolerated behavior, making deviations sanctionable. As the society is in a continuous flow, also based on scientific and technical developments, law always lags behind. Until regulations can catch up, ethics has to lead society. In less democratic societies, the water gets polluted up to poisoned, ethical behavior may be against ruling law. As for the latter, Robin Hood was a thief, but for most parts of the population, a hero. The less transparent the water, the more difficult to adapt law to new developments. This includes direct corruption, but also unfaithful lobbying. This article discusses the “nature” of Artificial Intelligence, including the risks its posing, and who is responsible for systematic errors, from a moral, but also legal point.
+DA  - 2021/09/22/
+PY  - 2021
+DO  - 10.1007/s44163-021-00002-4
+DP  - Springer Link
+VL  - 1
+IS  - 1
+SP  - 2
+J2  - Discov Artif Intell
+LA  - en
+SN  - 2731-0809
+UR  - https://doi.org/10.1007/s44163-021-00002-4
+Y2  - 2024/04/17/21:28:41
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs44163-021-00002-4.pdf
+ER  - 
+
+TY  - JOUR
+TI  - What could possibly go wrong? A multi-panel Delphi study of organizational social media risk
+AU  - Di Gangi, Paul M.
+AU  - Johnston, Allen C.
+AU  - Worrell, James L.
+AU  - Thompson, Samuel C.
+T2  - Information Systems Frontiers
+AB  - The growth of social media has crossed the boundary from individual to organizational use, bringing with it a set of benefits and risks. To mitigate these risks and ensure the benefits of social media use are realized, organizations have developed a host of new policies, procedures, and hiring practices. However, research to date has yet to provide a comprehensive view on the nature of risk associated with the use of social media by organizations. Using a multi-panel Delphi approach consisting of new entrants to the workforce, certified human resource professionals, and certified Information Technology auditors, this study seeks to understand organizational social media risk. The results of the Delphi panels are compared against a textual analysis of 40 social media policies to provide a comprehensive view of the current state of social media policy development. We conclude with directions for future research that may guide researchers interested in exploring social media risk in organizations.
+DA  - 2018/10/01/
+PY  - 2018
+DO  - 10.1007/s10796-016-9714-2
+DP  - Springer Link
+VL  - 20
+IS  - 5
+SP  - 1097
+EP  - 1116
+J2  - Inf Syst Front
+LA  - en
+SN  - 1572-9419
+ST  - What could possibly go wrong?
+UR  - https://doi.org/10.1007/s10796-016-9714-2
+Y2  - 2024/04/17/21:28:41
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10796-016-9714-2.pdf
+KW  - Information security
+KW  - Organizational risk framework
+KW  - Risk
+KW  - Social media
+KW  - Social media policy
+KW  - Web 2.0
+ER  - 
+
+TY  - JOUR
+TI  - Is green FinTech reshaping the finance sphere? Unravelling through a systematic literature review
+AU  - Geetha, Sreelekshmi
+AU  - Biju, Ajithakumari Vijayappan Nair
+T2  - Environmental Science and Pollution Research
+AB  - The revolutionary and transformative potential of FinTech has led to the Green Digital Finance Alliance, noting the dawn of a new era of FinTech—“the green FinTech”, yet, surprisingly, the scholarly exploration surrounding climate finance in general and green FinTech and climate FinTech remains restrained. In our attempt to decode the intricate interlinkage between green finance and FinTech, the study wrestles with the theoretical complexity of the “green FinTech” concept through a systematic review of relevant studies and conceptual mapping. We develop a comprehensive grasp of the concept, how to leverage it to combat the pressing climate crisis, and its implications for the FinTech segment—the first of its kind in the scanty green FinTech literature. Based on the PRISMA analysis, we find that green FinTech promotes a green economy through its manifold impact on all aspects of the finance sphere, thereby channelling climate finance and promoting sustainability. It has the power to heighten inclusivity, disclosure, trust, and democratisation, thus reducing information asymmetry and greenwashing. Hence, FinTech integration can be game-changing in eliminating the hurdles before conventional green finance. However, the literature remains fragmented, along with a young, growing green FinTech market. Therefore, this study proposes a framework for future researchers by providing a holistic research agenda to fully integrate “green FinTech” into practical real-world applications.
+DA  - 2024/01/01/
+PY  - 2024
+DO  - 10.1007/s11356-023-31382-y
+DP  - Springer Link
+VL  - 31
+IS  - 2
+SP  - 1790
+EP  - 1810
+J2  - Environ Sci Pollut Res
+LA  - en
+SN  - 1614-7499
+ST  - Is green FinTech reshaping the finance sphere?
+UR  - https://doi.org/10.1007/s11356-023-31382-y
+Y2  - 2024/04/17/21:28:41
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs11356-023-31382-y.pdf
+KW  - Climate finance
+KW  - Climate FinTech
+KW  - Financial technology
+KW  - Green finance
+KW  - Green FinTech
+KW  - PRISMA
+KW  - Systematic review
+ER  - 
+
+TY  - JOUR
+TI  - Ethical and preventive legal technology
+AU  - Stathis, Georgios
+AU  - van den Herik, Jaap
+T2  - AI and Ethics
+AB  - Preventive Legal Technology (PLT) is a new field of Artificial Intelligence (AI) investigating the intelligent prevention of disputes. The concept integrates the theories of preventive law and legal technology. Our goal is to give ethics a place in the new technology. By explaining the decisions of PLT, we aim to achieve a higher degree of trustworthiness because explicit explanations are expected to improve the level of transparency and accountability. Trustworthiness is an urgent topic in the discussion on doing AI research ethically and accounting for the regulations. For this purpose, we examine the limitations of rule-based explainability for PLT. Hence, our Problem Statement reads: to what extent is it possible to develop an explainable and trustworthy Preventive Legal Technology? After an insightful literature review, we focus on case studies with applications. The results describe (1) the effectivity of PLT and (2) its responsibility. The discussion is challenging and multivariate, investigating deeply the relevance of PLT for LegalTech applications in light of the development of the AI Act (currently still in its final phase of process) and the work of the High-Level Expert Group (HLEG) on AI. On the ethical side, explaining AI decisions for small PLT domains is clearly possible, with direct effects on trustworthiness due to increased transparency and accountability.
+DA  - 2024/03/18/
+PY  - 2024
+DO  - 10.1007/s43681-023-00413-2
+DP  - Springer Link
+J2  - AI Ethics
+LA  - en
+SN  - 2730-5961
+UR  - https://doi.org/10.1007/s43681-023-00413-2
+Y2  - 2024/04/17/21:28:41
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs43681-023-00413-2.pdf
+KW  - Artificial intelligence
+KW  - Explainability
+KW  - LegalTech
+KW  - Logocratic method
+KW  - Preventive/proactive law
+KW  - Trustworthiness
+ER  - 
+
+TY  - JOUR
+TI  - The role of CIO in digital transformation: an exploratory study
+AU  - Chawla, Raghu Nandan
+AU  - Goyal, Praveen
+AU  - Saxena, Deepak Kumar
+T2  - Information Systems and e-Business Management
+AB  - With a continuous stream of emerging technologies, organizations are increasingly seeking to digitally transform their business towards ever efficient, intelligent, and self-learning business models. As the recognized head of IT, the Chief Information Officer (CIO) is often tasked with the responsibility of successfully implementing Digital Transformation (DT) initiatives. While there are independent studies on CIO role, and on the impact of DT, the role of CIO is not sufficiently examined in the DT context. This study fills this gap by conducting multiple case study of six organizations engaged in DT. Following the role theory, the study emphasizes the CIO as an actor focused on digital strategy and empirically delineates the multidimensional task demands associated with DT regarding the CIO role under the new strategic realities of the digital age. We find that while traditional CIO roles still apply, the DT context adds more nuances in such roles. Moreover, some new roles (e.g., legacy systems integration, risk management and IT security) have become crucial that are not adequately captured in extant literature on CIO roles.
+DA  - 2023/12/01/
+PY  - 2023
+DO  - 10.1007/s10257-023-00651-1
+DP  - Springer Link
+VL  - 21
+IS  - 4
+SP  - 797
+EP  - 835
+J2  - Inf Syst E-Bus Manage
+LA  - en
+SN  - 1617-9854
+ST  - The role of CIO in digital transformation
+UR  - https://doi.org/10.1007/s10257-023-00651-1
+Y2  - 2024/04/17/21:28:41
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10257-023-00651-1.pdf
+KW  - Chief Information Officer
+KW  - CIO
+KW  - Digital transformation
+KW  - DT
+KW  - Leadership
+ER  - 
+
+TY  - JOUR
+TI  - How to Achieve Swift Resilience: the Role of Digital Innovation Enabled Mindfulness
+AU  - Ye, Dandan
+AU  - Liu, Martin J.
+AU  - Luo, Jun
+AU  - Yannopoulou, Natalia
+T2  - Information Systems Frontiers
+AB  - Contributed to by the prevalence of digital technology, various cases of new ventures achieve resilience quickly despite experiencing hardship. Growing attention has been devoted to mindfulness—being alert and acting swiftly—to explain recovery. Scholars have primarily focused on mindful resource preparation pre-crisis. Nevertheless, how to mindfully organize resources as a crisis occurs remains under-explored. Based on an inductive study of a ride-sharing vehicle venture, which rapidly became an open service platform during the COVID-19 pandemic in China, we develop a framework termed “swift resilience” to understand how new ventures mindfully organize resources, driven by digital innovation. In particular, we critically trace three mechanisms—“data-driven stretching,” “collective sharing,” and “rapid pivoting”—and develop a process model to understand how new ventures build swift resilience. Our emerging findings shed light on the scholarship of organizational resilience, mindfulness, and digital entrepreneurship, and provide guidance to managers on achieving resilience quickly.
+DA  - 2024/04/01/
+PY  - 2024
+DO  - 10.1007/s10796-021-10225-6
+DP  - Springer Link
+VL  - 26
+IS  - 2
+SP  - 551
+EP  - 573
+J2  - Inf Syst Front
+LA  - en
+SN  - 1572-9419
+ST  - How to Achieve Swift Resilience
+UR  - https://doi.org/10.1007/s10796-021-10225-6
+Y2  - 2024/04/17/21:28:42
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10796-021-10225-6.pdf
+KW  - Digital Innovation
+KW  - Mindful Organizing
+KW  - Mindfulness
+KW  - Organizational resilience
+ER  - 
+
+TY  - JOUR
+TI  - Multilevel determinants of MNC corruption risk
+AU  - Markscheffel, Juliane
+AU  - Plouffe, Michael
+T2  - Journal of International Business Policy
+AB  - We explore the multi-level determinants of firm-level corruption risk among multinational corporations (MNCs) in both developed and developing market economies in a comparative context. We argue that institutional and regulatory environments affect MNCs’ anti-corruption performance. We employ a comprehensive measure of MNC corruption risk and find evidence for the influence of country-level institutional and regulatory effects, while firm-level financial characteristics also influence anti-corruption performance. Furthermore, the effects of institutional and regulatory environments differ between developed and developing markets. In general, our framework and results highlight the utility of strong legal and regulatory environments, particularly in developing markets, to combat MNC corruption risk.
+DA  - 2022/12/01/
+PY  - 2022
+DO  - 10.1057/s42214-021-00116-7
+DP  - Springer Link
+VL  - 5
+IS  - 4
+SP  - 512
+EP  - 528
+J2  - J Int Bus Policy
+LA  - en
+SN  - 2522-0705
+UR  - https://doi.org/10.1057/s42214-021-00116-7
+Y2  - 2024/04/17/21:28:42
+KW  - corruption
+KW  - institutional environment
+KW  - multilevel analysis
+KW  - multinational corporations (MNCs) and enterprises (MNEs)
+ER  - 
+
+TY  - JOUR
+TI  - AI-driven streamlined modeling: experiences and lessons learned from multiple domains
+AU  - Sunkle, Sagar
+AU  - Saxena, Krati
+AU  - Patil, Ashwini
+AU  - Kulkarni, Vinay
+T2  - Software and Systems Modeling
+AB  - Model-driven technologies (MD*), considered beneficial through abstraction and automation, have not enjoyed widespread adoption in the industry. In keeping with the recent trends, using AI techniques might help the benefits of MD* outweigh their costs. Although the modeling community has started using AI techniques, it is, in our opinion, quite limited and requires a change in perspective. We provide such a perspective through five industrial case studies where we use AI techniques in different modeling activities. We discuss our experiences and lessons learned, in some cases evolving purely modeling solutions with AI techniques, and in others considering the AI aids from the beginning. We believe that these case studies can help the researchers and practitioners make sense of various artifacts and data available to them and use applicable AI techniques to enhance suitable modeling activities.
+DA  - 2022/06/01/
+PY  - 2022
+DO  - 10.1007/s10270-022-00982-6
+DP  - Springer Link
+VL  - 21
+IS  - 3
+SP  - 1
+EP  - 23
+J2  - Softw Syst Model
+LA  - en
+SN  - 1619-1374
+ST  - AI-driven streamlined modeling
+UR  - https://doi.org/10.1007/s10270-022-00982-6
+Y2  - 2024/04/17/21:28:42
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10270-022-00982-6.pdf
+KW  - AI-driven
+KW  - Domain modeling
+KW  - Information extraction
+KW  - Knowledge graphs
+KW  - Natural language processing
+ER  - 
+
+TY  - JOUR
+TI  - ISF Editorial 2020
+AU  - Ramesh, R.
+AU  - Rao, H. R.
+T2  - Information Systems Frontiers
+DA  - 2020/02/01/
+PY  - 2020
+DO  - 10.1007/s10796-020-09987-2
+DP  - Springer Link
+VL  - 22
+IS  - 1
+SP  - 1
+EP  - 9
+J2  - Inf Syst Front
+LA  - en
+SN  - 1572-9419
+UR  - https://doi.org/10.1007/s10796-020-09987-2
+Y2  - 2024/04/17/21:28:42
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10796-020-09987-2.pdf
+ER  - 
+
+TY  - JOUR
+TI  - Decentralizing corporate governance? A praxeological inquiry
+AU  - Mitchell, Scott L.
+AU  - Packard, Mark D.
+AU  - Clark, Brent B.
+T2  - International Journal of Disclosure and Governance
+AB  - The theory and practice of corporate governance has been in something of an arms race with corporate malefactors—as corporate governance mechanisms have incrementally advance, so too have the strategies of malefactors who skirt those governance practices to engage in costly misconduct. Modern centralized governance approaches appear inapt to filling the gaps caused by agency and knowledge problems. Here, we start afresh using the atypical ‘praxeological’ method to reconstruct governance theory anew from basic foundations. The resultant theory is distinctive from prevailing corporate governance theorizing in several key ways. One of the more important conclusions from our reconstructed theory is that governance may benefit from a more ‘market’ or decentralized approach. In short, the governance holes derived from agency and knowledge problems are, or may be, much smaller when governance is decentralized, where employees police each other. While the implementation of such a radical rethinking of governance practice is left ambiguous in our treatment, the theoretical basis for such an approach is compelling.
+DA  - 2022/12/01/
+PY  - 2022
+DO  - 10.1057/s41310-022-00151-7
+DP  - Springer Link
+VL  - 19
+IS  - 4
+SP  - 413
+EP  - 429
+J2  - Int J Discl Gov
+LA  - en
+SN  - 1746-6539
+ST  - Decentralizing corporate governance?
+UR  - https://doi.org/10.1057/s41310-022-00151-7
+Y2  - 2024/04/17/21:28:42
+KW  - Agency theory
+KW  - B53
+KW  - Corporate governance
+KW  - D82
+KW  - D86
+KW  - G30
+KW  - G34
+KW  - Knowledge asymmetry
+KW  - Management
+KW  - O16
+KW  - Ownership
+KW  - Praxeological method
+ER  - 
+
+TY  - JOUR
+TI  - Agile governance theory: operationalization
+AU  - Luna, Alexandre J. H. de O.
+AU  - Marinho, Marcelo L. M.
+AU  - de Moura, Hermano P.
+T2  - Innovations in Systems and Software Engineering
+AB  - Agile governance has emerged as a relatively new, wide, and multidisciplinary area focused on organizational performance and competitiveness, which until recently had lacked in-depth exploration. Aiming to reduce this gap, we recently proposed the Agile Governance Theory to analyze and describe its phenomena, and provide a better understanding of how agility in business can establish effective and responsive governance. This paper describes the process of transposing the theory from a conceptual framework to the real world and developing the necessary measurement elements to test it. We operationalize the emerging theory according to the four remaining steps of part two of Dubin’s method: identifying its propositions, deriving empirical indicators from its constructs, and establishing testable hypotheses. We operationalized the emerging theory by: (1) depicting eight theoretical scenarios that help characterize and describe organizational contexts in the real world, (2) recognizing 11 propositions that allow us to predict the behavior of its elements, (3) identifying 24 empirical indicators to measure its constructs, and (4) developing 16 hypotheses to test the theory as a further study. We operationalize the theory to allow real-world empirical testing based on this work, as further study is necessary to assess the theory’s plausibility. We also make improvements and additions to the methodological approach for theory-building research (including Dubin’s Method), extending it to a multimethod approach.
+DA  - 2020/03/01/
+PY  - 2020
+DO  - 10.1007/s11334-019-00345-3
+DP  - Springer Link
+VL  - 16
+IS  - 1
+SP  - 3
+EP  - 44
+J2  - Innovations Syst Softw Eng
+LA  - en
+SN  - 1614-5054
+ST  - Agile governance theory
+UR  - https://doi.org/10.1007/s11334-019-00345-3
+Y2  - 2024/04/17/21:28:42
+KW  - Agile enterprise
+KW  - Agile governance
+KW  - Agile project management
+KW  - Information systems
+KW  - Software engineering
+ER  - 
+
+TY  - JOUR
+TI  - The Role of Risk Climate and Ethical Self-interest Climate in Predicting Unethical Pro-organisational Behaviour
+AU  - Sheedy, Elizabeth
+AU  - Garcia, Patrick
+AU  - Jepsen, Denise
+T2  - Journal of Business Ethics
+AB  - Unethical pro-organisational behaviour (UPB) is an ongoing concern, prompting the need for more nuanced understanding of the workplace environment most likely to inhibit it. This study considers the role of risk climate, sometimes referred to as risk culture, as well as ethical climate, for reducing UPB. The study investigates whether four risk climate factors (avoidance, valued, proactive and manager) can, by focusing on the long-term consequences of UPB to the organisation, and providing guidance on behavioural norms, reduce UPB misconduct. Surveying employees in three financial institutions we found that only one of the risk climate factors, avoidance, is consistently associated with UPB. On the other hand, a self-interested, (un)ethical climate significantly increases UPB in all samples. In multi-climate analysis, we found that risk climate factors interacted with ethical climate to predict UPB. That is, when employees perceive that the workplace ethos is not self-interested, three factors of risk climate—avoidance, proactive and manager—significantly predict UPB. UPB is least likely when self-interest is low, avoidance risk climate is low, proactive risk climate is high and manager risk climate is high. Implications for leaders are discussed.
+DA  - 2021/10/01/
+PY  - 2021
+DO  - 10.1007/s10551-020-04542-0
+DP  - Springer Link
+VL  - 173
+IS  - 2
+SP  - 281
+EP  - 300
+J2  - J Bus Ethics
+LA  - en
+SN  - 1573-0697
+UR  - https://doi.org/10.1007/s10551-020-04542-0
+Y2  - 2024/04/17/21:28:43
+KW  - Ethical climate
+KW  - Financial services
+KW  - Misconduct
+KW  - Multiple climates
+KW  - Risk climate
+KW  - Risk culture
+KW  - Unethical pro-organisational behaviour
+ER  - 
+

@@ -1,0 +1,274 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Term Extraction Report</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                h1 { color: #333; }
+                h2 { color: #555; }
+                table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+                th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+                th { background-color: #f5f5f5; }
+                .section { margin-bottom: 60px; }
+                .statistics, .classification-report { margin-bottom: 40px; }
+                pre { background-color: #f5f5f5; padding: 10px; }
+                ul { list-style-type: disc; margin-left: 20px; }
+            </style>
+        </head>
+        <body>
+            <h1>Term Extraction Report</h1>
+            <p>The algorithm extracted entities from the sections. For each section, there is a table with the true values, followed by the LLM's response, and an analysis comparing the LLM's findings with the expected entities.</p>
+        <div class='section'>
+<h2>Section: § 275.0-2</h2>
+<pre>
+§ 275.0-2 General procedures for serving non-residents.
+(a) General procedures for serving process, pleadings, or other papers on non-resident investment advisers, general partners and managing agents.  Under Forms ADV and ADV-NR [17 CFR 279.1 and 279.4], a person may serve process, pleadings, or other papers on a non-resident investment adviser, or on a non-resident general partner or non-resident managing agent of an investment adviser by serving any or all of its appointed agents:
+  (1) A person may serve a non-resident investment adviser, non-resident general partner, or non-resident managing agent by furnishing the Commission with one copy of the process, pleadings, or papers, for each named party, and one additional copy for the Commission's records.
+  (2) If process, pleadings, or other papers are served on the Commission as described in this section, the Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.
+  (3) If the Secretary certifies that the Commission was served with process, pleadings, or other papers pursuant to paragraph (a)(1) of this section and forwarded these documents to a named party pursuant to paragraph (a)(2) of this section, this certification constitutes evidence of service upon that party.
+(b) Definitions.  For purposes of this section:
+  (1) Managing agent  means any person, including a trustee, who directs or manages, or who participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.
+  (2) Non-resident  means:
+    (i) An individual who resides in any place not subject to the jurisdiction of the United States;
+    (ii) A corporation that is incorporated in or that has its principal office and place of business in any place not subject to the jurisdiction of the United States; and
+    (iii) A partnership or other unincorporated organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.
+  (3) Principal office and place of business  has the same meaning as in § 275.203A-3(c) of this chapter.
+</pre>
+<h3>True Values</h3>
+<table>
+<tr><th>Signifier</th><th>Definition</th><th>Concept classification</th><th>Source</th></tr>
+<tr><td>Secretary of the Commission</td><td>An officer responsible for official communications and forwarding legal documents on behalf of the commission.</td><td>ContextualizedConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>general procedure</td><td>Procedures related to serving process, pleadings, or other papers on non-resident entities.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>process</td><td>Legal documents served to non-residents.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>pleading</td><td>Legal documents outlining claims or defenses.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>paper</td><td>Legal documents, including process and pleadings, that need to be served on non-resident advisers or agents.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>non-resident</td><td>An individual or entity residing or with its principal office outside the jurisdiction of the U.S.</td><td>GeneralConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>investment adviser</td><td>A person or firm that provides investment advice to clients, particularly non-residents.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>general partner</td><td>A partner in an investment adviser firm responsible for its management, particularly if residing outside the U.S.</td><td>ContextualizedConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>managing agent</td><td>A person, including a trustee, who directs or manages the affairs of an unincorporated organization or association, except a partnership.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>form adv</td><td>A form used to register investment advisers with the SEC.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>form adv-nr</td><td>A form used to register non-resident advisers with the SEC.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>appointed agent</td><td>Designated individuals or entities authorized to accept legal documents on behalf of non-resident investment advisers or partners.</td><td>ContextualizedConcept</td><td>Section N/A Paragraph N/A</td></tr>
+</table>
+<h3>LLM Extracted Entities</h3>
+<table>
+<tr><th>Signifier</th><th>Definition</th><th>Concept classification</th><th>Source</th></tr>
+<tr><td>general procedure</td><td>missing</td><td>GeneralConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>service of process</td><td>missing</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>non-resident</td><td>An individual who resides in any place not subject to the jurisdiction of the United States; a corporation that is incorporated in or that has its principal office and place of business in any place not subject to the jurisdiction of the United States; and a partnership or other unincorporated organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.</td><td>ContextualizedConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>investment adviser</td><td>missing</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>general partner</td><td>missing</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>managing agent</td><td>Any person, including a trustee, who directs or manages, or who participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.</td><td>ContextualizedConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>principal office</td><td>missing</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>place of business</td><td>missing</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+</table>
+<h3>Comparison Statistics</h3>
+<div class='statistics'>
+<h4>Common Items</h4>
+<ul>
+<li>investment adviser</li>
+<li>non-resident</li>
+<li>general procedure</li>
+<li>managing agent</li>
+<li>general partner</li>
+</ul>
+<h4>Missed Items</h4>
+<ul>
+<li>appointed agent</li>
+<li>pleading</li>
+<li>secretary of the commission</li>
+<li>paper</li>
+<li>form adv</li>
+<li>form adv-nr</li>
+<li>process</li>
+</ul>
+<h4>Extra Items</h4>
+<ul>
+<li>service of process</li>
+<li>principal office</li>
+<li>place of business</li>
+</ul>
+<h4>Type Mismatches</h4>
+<ul>
+<li>Type mismatch for 'non-resident': Correct concept_classification='GeneralConcept', Predicted concept_classification='ContextualizedConcept'</li>
+<li>Type mismatch for 'general procedure': Correct concept_classification='NounConcept', Predicted concept_classification='GeneralConcept'</li>
+<li>Type mismatch for 'managing agent': Correct concept_classification='NounConcept', Predicted concept_classification='ContextualizedConcept'</li>
+<li>Type mismatch for 'general partner': Correct concept_classification='ContextualizedConcept', Predicted concept_classification='NounConcept'</li>
+</ul>
+<p>Total matched: 5, Correctly classification matched: 1, Missed: 7, Extra: 3</p>
+</div>
+<h3>Classification Report</h3>
+<div class='classification-report'>
+<table>
+<tr><th>concept_classification</th><th>Precision</th><th>Recall</th><th>F1-Score</th><th>Support</th></tr>
+<tr><td>ContextualizedConcept</td><td>0.00</td><td>0.00</td><td>0.00</td><td>3.0</td></tr>
+<tr><td>GeneralConcept</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.0</td></tr>
+<tr><td>None</td><td>0.00</td><td>0.00</td><td>0.00</td><td>3.0</td></tr>
+<tr><td>NounConcept</td><td>0.20</td><td>0.12</td><td>0.15</td><td>8.0</td></tr>
+</table>
+</div>
+</div>
+<div class='section'>
+<h2>Section: § 275.0-5</h2>
+<pre>
+§ 275.0-5 Procedure with respect to applications and other matters.
+The procedure hereinbelow set forth will be followed with respect to any proceeding initiated by the filing of an application, or upon the Commission's own motion, pursuant to any section of the Act or any rule or regulation thereunder, unless in the particular case a different procedure is provided:
+(a) Notice of the initiation of the proceeding will be published in the Federal Register and will indicate the earliest date upon which an order disposing of the matter may be entered. The notice will also provide that any interested person may, within the period of time specified therein, submit to the Commission in writing any facts bearing upon the desirability of a hearing on the matter and may request that a hearing be held, stating his reasons therefor and the nature of his interest in the matter.
+(b) An order disposing of the matter will be issued as of course following the expiration of the period of time referred to in paragraph (a) of this section, unless the Commission thereafter orders a hearing on the matter.
+(c) The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors, 
+  (1) upon the request of any interested person or 
+  (2) upon its own motion.
+(d) Definition of application. For purposes of this rule, an “application” means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.
+</pre>
+<h3>True Values</h3>
+<table>
+<tr><th>Signifier</th><th>Definition</th><th>Concept classification</th><th>Source</th></tr>
+<tr><td>application</td><td>For purposes of this rule, an 'application' means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>proceeding</td><td>A formal legal process initiated by the filing of an application or upon the Commission's own motion.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>order</td><td>An official decision or ruling by the Commission disposing of the matter after the proceeding.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>hearing</td><td>A formal session to listen to facts and arguments, held if necessary or appropriate in the public interest or for the protection of investors.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>interested person</td><td>Any person with a stake or interest in the matter who may request a hearing or submit facts related to the proceeding.</td><td>ContextualizedConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>Commission</td><td>The body responsible for overseeing and making decisions in proceedings under the Act, including issuing orders and holding hearings.</td><td>IndividualNounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>public interest</td><td>A consideration for holding a hearing if it is necessary or appropriate to benefit the general public or protect investors.</td><td>GeneralConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>Federal Register</td><td>An official publication in which the notice of the initiation of the proceeding is published, indicating the earliest date upon which an order may be entered.</td><td>IndividualNounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>protection of investor</td><td>A reason for the Commission to order a hearing, ensuring that investors are safeguarded.</td><td>GeneralConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>notice</td><td>A formal announcement published in the Federal Register indicating the initiation of the proceeding and the earliest possible date for an order.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+</table>
+<h3>LLM Extracted Entities</h3>
+<table>
+<tr><th>Signifier</th><th>Definition</th><th>Concept classification</th><th>Source</th></tr>
+<tr><td>procedure</td><td>The procedure hereinbelow set forth will be followed with respect to any proceeding initiated by the filing of an application, or upon the Commission's own motion, pursuant to any section of the Act or any rule or regulation thereunder, unless in the particular case a different procedure is provided.</td><td>GeneralConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>application</td><td>For purposes of this rule, an “application” means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>order</td><td>An order disposing of the matter will be issued as of course following the expiration of the period of time referred to in paragraph (a) of this section, unless the Commission thereafter orders a hearing on the matter.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>hearing</td><td>The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors.</td><td>ContextualizedConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>commission</td><td>missing</td><td>IndividualNounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+</table>
+<h3>Comparison Statistics</h3>
+<div class='statistics'>
+<h4>Common Items</h4>
+<ul>
+<li>application</li>
+<li>hearing</li>
+<li>commission</li>
+<li>order</li>
+</ul>
+<h4>Missed Items</h4>
+<ul>
+<li>interested person</li>
+<li>federal register</li>
+<li>proceeding</li>
+<li>notice</li>
+<li>protection of investor</li>
+<li>public interest</li>
+</ul>
+<h4>Extra Items</h4>
+<ul>
+<li>procedure</li>
+</ul>
+<h4>Type Mismatches</h4>
+<ul>
+<li>Type mismatch for 'hearing': Correct concept_classification='NounConcept', Predicted concept_classification='ContextualizedConcept'</li>
+</ul>
+<p>Total matched: 4, Correctly classification matched: 3, Missed: 6, Extra: 1</p>
+</div>
+<h3>Classification Report</h3>
+<div class='classification-report'>
+<table>
+<tr><th>concept_classification</th><th>Precision</th><th>Recall</th><th>F1-Score</th><th>Support</th></tr>
+<tr><td>ContextualizedConcept</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.0</td></tr>
+<tr><td>GeneralConcept</td><td>0.00</td><td>0.00</td><td>0.00</td><td>2.0</td></tr>
+<tr><td>IndividualNounConcept</td><td>1.00</td><td>0.50</td><td>0.67</td><td>2.0</td></tr>
+<tr><td>None</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.0</td></tr>
+<tr><td>NounConcept</td><td>1.00</td><td>0.40</td><td>0.57</td><td>5.0</td></tr>
+</table>
+</div>
+</div>
+<div class='section'>
+<h2>Section: § 275.0-7</h2>
+<pre>
+§ 275.0-7 Small entities under the Investment Advisers Act for purposes of the Regulatory Flexibility Act.
+(a) For purposes of Commission rulemaking in accordance with the provisions of Chapter Six of the Administrative Procedure Act (5 U.S.C. 601 et seq.) and unless otherwise defined for purposes of a particular rulemaking proceeding, the term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that:
+  (1) Has assets under management, as defined under Section 203A(a)(3) of the Act (15 U.S.C. 80b-3a(a)(2)) and reported on its annual updating amendment to Form ADV (17 CFR 279.1), of less than $25 million, or such higher amount as the Commission may by rule deem appropriate under Section 203A(a)(1)(A) of the Act (15 U.S.C. 80b-3a(a)(1)(A));
+  (2) Did not have total assets of $5 million or more on the last day of the most recent fiscal year; and
+  (3) Does not control, is not controlled by, and is not under common control with another investment adviser that has assets under management of $25 million or more (or such higher amount as the Commission may deem appropriate), or any person (other than a natural person) that had total assets of $5 million or more on the last day of the most recent fiscal year.
+(b) For purposes of this section:
+  (1) Control  means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.
+    (i) A person is presumed to control a corporation if the person:
+      (A) Directly or indirectly has the right to vote 25 percent or more of a class of the corporation's voting securities; or
+      (B) Has the power to sell or direct the sale of 25 percent or more of a class of the corporation's voting securities.
+    (ii) A person is presumed to control a partnership if the person has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the partnership.
+    (iii) A person is presumed to control a limited liability company (LLC) if the person:
+      (A) Directly or indirectly has the right to vote 25 percent or more of a class of the interests of the LLC;
+      (B) Has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the LLC; or
+      (C) Is an elected manager of the LLC.
+    (iv) A person is presumed to control a trust if the person is a trustee or managing agent of the trust.
+  (2) Total assets  means the total assets as shown on the balance sheet of the investment adviser or other person described above under paragraph (a)(3) of this section, or the balance sheet of the investment adviser or such other person with its subsidiaries consolidated, whichever is larger.
+</pre>
+<h3>True Values</h3>
+<table>
+<tr><th>Signifier</th><th>Definition</th><th>Concept classification</th><th>Source</th></tr>
+<tr><td>small business</td><td>An investment adviser that meets specific criteria including managing less than $25 million in assets and not controlling or being controlled by another entity with larger assets.</td><td>GeneralConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>small organization</td><td>An investment adviser that meets specific criteria including managing less than $25 million in assets and not controlling or being controlled by another entity with larger assets.</td><td>GeneralConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>asset under management</td><td>The assets managed by an investment adviser, reported on Form ADV and as defined under Section 203A(a)(3) of the Act.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>total asset</td><td>The total assets shown on the balance sheet of the investment adviser or its subsidiaries, whichever is larger.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>control</td><td>The power to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.</td><td>DerivableConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>investment adviser</td><td>A person or firm that provides advice about investments, subject to the regulations of the Investment Advisers Act of 1940.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>partnership</td><td>A legal entity in which individuals share profits and control, often presumed to be controlled by individuals holding 25% or more of capital or voting rights.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>corporation</td><td>A legal entity controlled by individuals holding 25% or more of voting securities or those with the power to sell 25% or more of the securities.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>limited liability company</td><td>A legal entity where control is presumed by individuals holding 25% or more of interests, capital, or acting as an elected manager.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>trust</td><td>A legal entity where control is presumed if the individual acts as trustee or managing agent.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+</table>
+<h3>LLM Extracted Entities</h3>
+<table>
+<tr><th>Signifier</th><th>Definition</th><th>Concept classification</th><th>Source</th></tr>
+<tr><td>small business</td><td>An investment adviser that has assets under management of less than $25 million, did not have total assets of $5 million or more on the last day of the most recent fiscal year, and does not control, is not controlled by, and is not under common control with another investment adviser that has assets under management of $25 million or more, or any person (other than a natural person) that had total assets of $5 million or more on the last day of the most recent fiscal year.</td><td>ContextualizedConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>control</td><td>The power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.</td><td>GeneralConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>total asset</td><td>The total assets as shown on the balance sheet of the investment adviser or other person described above under paragraph (a)(3) of this section, or the balance sheet of the investment adviser or such other person with its subsidiaries consolidated, whichever is larger.</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>investment adviser</td><td>missing</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+<tr><td>asset under management</td><td>missing</td><td>NounConcept</td><td>Section N/A Paragraph N/A</td></tr>
+</table>
+<h3>Comparison Statistics</h3>
+<div class='statistics'>
+<h4>Common Items</h4>
+<ul>
+<li>investment adviser</li>
+<li>asset under management</li>
+<li>total asset</li>
+<li>control</li>
+<li>small business</li>
+</ul>
+<h4>Missed Items</h4>
+<ul>
+<li>corporation</li>
+<li>partnership</li>
+<li>limited liability company</li>
+<li>trust</li>
+<li>small organization</li>
+</ul>
+<h4>Extra Items</h4>
+<ul>
+</ul>
+<h4>Type Mismatches</h4>
+<ul>
+<li>Type mismatch for 'control': Correct concept_classification='DerivableConcept', Predicted concept_classification='GeneralConcept'</li>
+<li>Type mismatch for 'small business': Correct concept_classification='GeneralConcept', Predicted concept_classification='ContextualizedConcept'</li>
+</ul>
+<p>Total matched: 5, Correctly classification matched: 3, Missed: 5, Extra: 0</p>
+</div>
+<h3>Classification Report</h3>
+<div class='classification-report'>
+<table>
+<tr><th>concept_classification</th><th>Precision</th><th>Recall</th><th>F1-Score</th><th>Support</th></tr>
+<tr><td>ContextualizedConcept</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.0</td></tr>
+<tr><td>DerivableConcept</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.0</td></tr>
+<tr><td>GeneralConcept</td><td>0.00</td><td>0.00</td><td>0.00</td><td>2.0</td></tr>
+<tr><td>None</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.0</td></tr>
+<tr><td>NounConcept</td><td>1.00</td><td>0.43</td><td>0.60</td><td>7.0</td></tr>
+</table>
+</div>
+</div>
+
+        </body>
+        </html>
+        

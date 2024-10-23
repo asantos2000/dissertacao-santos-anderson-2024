@@ -1,0 +1,298 @@
+# baseURI: http://finregont.com/fro/ref/FinancialReference.ttl
+# imports: http://finregont.com/fro/ref/FIBO_import.ttl
+# imports: http://finregont.com/fro/ref/Reference.ttl
+# prefix: fro-fin-ref
+
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fibo-be-fct-fct: <https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/> .
+@prefix fibo-be-le-fbo: <https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/> .
+@prefix fibo-fbc-fct-rga: <https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/> .
+@prefix fibo-fbc-pas-fpas: <https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/> .
+@prefix fibo-fnd-aap-agt: <https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/> .
+@prefix fibo-fnd-agr-ctr: <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> .
+@prefix fibo-fnd-arr-cls: <https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/> .
+@prefix fibo-fnd-arr-doc: <https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/> .
+@prefix fibo-fnd-dt-fd: <https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/> .
+@prefix fibo-fnd-pas-pas: <https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/> .
+@prefix fibo-fnd-pty-pty: <https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/> .
+@prefix fibo-fnd-rel-rel: <https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/> .
+@prefix fibo-ind-ind-ind: <https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/> .
+@prefix fro-fin-ref: <http://finregont.com/fro/ref/FinancialReference.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://finregont.com/fro/ref/FinancialReference.ttl>
+  rdf:type owl:Ontology ;
+  dct:license "https://opensource.org/licenses/GPL-3.0" ;
+  dct:license "https://opensource.org/licenses/MIT" ;
+  sm:author "Jurgen Ziemer" ;
+  sm:copyright "Jayzed Data Models Inc." ;
+  rdfs:label "Financial Regulation Ontology: Financial Reference module" ;
+  rdfs:comment """Financial Reference ontology contains extensions to the Financial Industry Business Ontology (FIBO):
+* Asset Under Management related classes and properties.
+* Investment Adviser Act: SEC service types, Private Funds, Fee classifiers.""" ;
+  owl:imports <http://finregont.com/fro/ref/FIBO_import.ttl> ;
+  owl:imports <http://finregont.com/fro/ref/Reference.ttl> ;
+  skos:definition "Financial Reference ontology contains extensions to the Financial Industry Business Ontology (FIBO)" ;
+.
+fro-fin-ref:ClassificationScheme_ServiceFee
+  rdf:type fro-fin-ref:ServiceClassificationScheme ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Fee Classification Scheme" ;
+.
+fro-fin-ref:ClassificationScheme_ServiceType
+  rdf:type fro-fin-ref:ServiceClassificationScheme ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Financial Service Classification Scheme" ;
+.
+fro-fin-ref:FinancialProduct_Securities
+  rdf:type owl:NamedIndividual ;
+  rdf:type fibo-fbc-pas-fpas:FinancialProduct ;
+  rdfs:label "Securities Product" ;
+.
+fro-fin-ref:Foundation
+  rdf:type owl:Class ;
+  rdfs:label "Malboro Non-Profit" ;
+  rdfs:subClassOf fibo-be-fct-fct:FunctionalBusinessEntity ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:intersectionOf (
+          fibo-be-fct-fct:FunctionalBusinessEntity
+          [
+            rdf:type owl:Restriction ;
+            owl:onProperty fibo-fnd-rel-rel:hasIdentity ;
+            owl:someValuesFrom fibo-be-le-fbo:NotForProfitOrganization ;
+          ]
+        ) ;
+    ] ;
+.
+fro-fin-ref:Jayzed_consulting_service
+  rdf:type fro-fin-ref:ProfessionalService ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:comment "A sample professional service" ;
+  rdfs:label "Jayzed consulting services" ;
+.
+fro-fin-ref:MiscellaneousClassificationScheme
+  rdf:type owl:Class ;
+  rdfs:label "Miscellaneous Classification Scheme" ;
+  rdfs:subClassOf fibo-fnd-arr-cls:ClassificationScheme ;
+  skos:definition "A catch-all scheme for any \"other\" classifications. The classifiers are shortcuts that may be removed in the future." ;
+.
+fro-fin-ref:ProfessionalService
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <https://en.wikipedia.org/wiki/Professional_services> ;
+  rdfs:label "Professional service" ;
+  rdfs:subClassOf fibo-fnd-pas-pas:Service ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fro-fin-ref:ServiceType_Consulting ;
+      owl:onProperty fibo-fnd-rel-rel:isClassifiedBy ;
+    ] ;
+  skos:definition "Professional services are occupations in the tertiary sector of the economy requiring special training in the arts or sciences. Some professional services require holding professional licenses such as architects, auditors, engineers, doctors and lawyers. Other professional services involve providing specialist business support to businesses of all sizes and in all sectors; this can include tax advice, supporting a company with accounting, IT services or providing management advice." ;
+.
+fro-fin-ref:ProfessionalServiceProvider
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <https://en.wikipedia.org/wiki/Professional_Services> ;
+  rdfs:label "Professional Service Provider" ;
+  rdfs:subClassOf fibo-fnd-pas-pas:ServiceProvider ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fibo-fnd-rel-rel:provides ;
+      owl:someValuesFrom fro-fin-ref:ProfessionalService ;
+    ] ;
+  skos:definition "Professional services are occupations in the tertiary sector of the economy requiring special training in the arts or sciences. Some professional services require holding professional licenses such as architects, auditors, engineers, doctors and lawyers." ;
+.
+fro-fin-ref:RatingAgency
+  rdf:type owl:Class ;
+  rdfs:comment "The Securities and Exchange Commission exempts \"nationally recognized statistical rating organizations\" from registration as investment advisers." ;
+  rdfs:isDefinedBy <http://en.wikipedia.org/wiki/Credit_rating_agency> ;
+  rdfs:label "Rating Agency" ;
+  rdfs:subClassOf fibo-ind-ind-ind:FinancialInformationPublisher ;
+  skos:definition "A credit rating agency (CRA, also called a ratings service) is a company that assigns credit ratings, which rate a debtor's ability to pay back debt by making timely interest payments and the likelihood of default. An agency may rate the creditworthiness of issuers of debt obligations, of debt instruments, and in some cases, of the servicers of the underlying debt, but not of individual consumers." ;
+.
+fro-fin-ref:Report
+  rdf:type owl:Class ;
+  rdfs:comment "FRO uses this subclass of FIBO Document for financial statements and reports. The Report is also a subclass of the LKIF Document, because LKIF and FIBO Document are equivalent classes. The report must have a Date or Time Period " ;
+  rdfs:isDefinedBy <https://en.wikipedia.org/wiki/Report> ;
+  rdfs:label "Report" ;
+  rdfs:subClassOf fibo-fnd-arr-doc:Document ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fibo-fnd-arr-doc:hasDateOfIssuance ;
+      owl:someValuesFrom [
+          rdf:type owl:Class ;
+          owl:unionOf [
+              rdf:type rdf:List ;
+              rdf:first fibo-fnd-dt-fd:Date ;
+              rdf:rest [
+                  rdf:type rdf:List ;
+                  rdf:first fibo-fnd-dt-fd:DatePeriod ;
+                  rdf:rest () ;
+                ] ;
+            ] ;
+        ] ;
+    ] ;
+  skos:definition "A report is an informational work made with the specific intention of relaying information or recounting certain events in a widely presentable and scrutinized form." ;
+.
+fro-fin-ref:ServiceClassificationScheme
+  rdf:type owl:Class ;
+  rdfs:comment "There are two instances: Service Fee Type and Service Type" ;
+  rdfs:label "Service classification scheme" ;
+  rdfs:subClassOf fibo-fnd-arr-cls:ClassificationScheme ;
+  skos:definition "A scheme to classify services for regulatory compliance." ;
+.
+fro-fin-ref:ServiceFeeType
+  rdf:type owl:Class ;
+  rdfs:label "Service Fee Type" ;
+  rdfs:subClassOf fibo-fnd-arr-cls:Classifier ;
+  skos:definition "The type of service fee charged. The values are from the Securities and Exchange Commission Investment Adviser Public Disclosure report. " ;
+.
+fro-fin-ref:ServiceFeeType_AssetPercentage
+  rdf:type fro-fin-ref:ServiceFeeType ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Asset based fee" ;
+.
+fro-fin-ref:ServiceFeeType_Commissions
+  rdf:type fro-fin-ref:ServiceFeeType ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Commissions" ;
+.
+fro-fin-ref:ServiceFeeType_Fixed
+  rdf:type fro-fin-ref:ServiceFeeType ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Fixed Fees" ;
+.
+fro-fin-ref:ServiceFeeType_Hourly_Charges
+  rdf:type fro-fin-ref:ServiceFeeType ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Hourly charges" ;
+.
+fro-fin-ref:ServiceFeeType_Other
+  rdf:type fro-fin-ref:ServiceFeeType ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Other fee type" ;
+.
+fro-fin-ref:ServiceFeeType_PerformanceBased
+  rdf:type fro-fin-ref:ServiceFeeType ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Performance based" ;
+.
+fro-fin-ref:ServiceFeeType_Subscription
+  rdf:type fro-fin-ref:ServiceFeeType ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Subscription fee" ;
+.
+fro-fin-ref:ServiceType
+  rdf:type owl:Class ;
+  rdfs:comment "The values correspond to Securities and Exchange Commission classification of financial services." ;
+  rdfs:label "Service Type" ;
+  rdfs:subClassOf fibo-fnd-arr-cls:Classifier ;
+  skos:definition "A classification of Service Types." ;
+.
+fro-fin-ref:ServiceType_Account
+  rdf:type fro-fin-ref:ServiceType ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Account Services" ;
+.
+fro-fin-ref:ServiceType_Brokerage
+  rdf:type fro-fin-ref:ServiceType ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Brokerage Services" ;
+.
+fro-fin-ref:ServiceType_Consulting
+  rdf:type fro-fin-ref:ServiceType ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Investment Advice" ;
+.
+fro-fin-ref:ServiceType_Government_Bond_Advice
+  rdf:type fro-fin-ref:ServiceType ;
+  rdfs:label "West Halifax services" ;
+.
+fro-fin-ref:ServiceType_InvestmentAdvice
+  rdf:type fro-fin-ref:ServiceType ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Investment Advice" ;
+.
+fro-fin-ref:hasBusinessName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Note that we would find the Legal Name with FIBO Autonomous Agent" ;
+  rdfs:domain fibo-be-fct-fct:FunctionalBusinessEntity ;
+  rdfs:label "has Business Name" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf fibo-fnd-aap-agt:hasName ;
+  skos:definition "The Business Name of the entity" ;
+.
+fro-fin-ref:hasIncorporationDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fibo-be-fct-fct:FunctionalBusinessEntity ;
+  rdfs:label "has Incorporation Date" ;
+  rdfs:range xsd:dateTime ;
+  rdfs:subPropertyOf fibo-fnd-dt-fd:hasDate ;
+  skos:definition "The date when the business entity was legally incorporated" ;
+.
+fro-fin-ref:hasReportField
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fro-fin-ref:Report ;
+  rdfs:label "has Report Field" ;
+  skos:definition "Generic data property for a field in a report" ;
+.
+fro-fin-ref:isContractParty
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is contract party" ;
+  rdfs:range fibo-fnd-agr-ctr:Contract ;
+  rdfs:subPropertyOf fro-fin-ref:isPartyInRole ;
+  owl:inverseOf fibo-fnd-agr-ctr:hasContractParty ;
+  skos:definition "The inverse of FIBO hasContractParty, identifies the contracts that the party has a role in." ;
+.
+fro-fin-ref:isGovernedBy
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "Legal Status Expression: Defined as Service" ;
+  owl:inverseOf fibo-fnd-rel-rel:governs ;
+  skos:definition "The inverse of FIBO property governs" ;
+.
+fro-fin-ref:isPartyInRole
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Make it easier to navigate from a Business Entity to its contracts in class restrictions." ;
+  rdfs:domain fibo-fnd-pty-pty:PartyInRole ;
+  rdfs:label "is party in role" ;
+  owl:inverseOf fibo-fnd-pty-pty:hasPartyInRole ;
+  skos:definition "The inverse of FIBO hasPartyInRole, identifies an agreement, contract, policy, regulation, or other business relationship that the party has a role in." ;
+.
+fro-fin-ref:isPrincipal
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is Principal" ;
+  rdfs:range fibo-fnd-agr-ctr:Contract ;
+  rdfs:subPropertyOf fro-fin-ref:isContractParty ;
+  owl:inverseOf fibo-fnd-agr-ctr:hasPrincipal ;
+  skos:definition "The inverse of FIBO hasPrincipal links to the contracts, where the Party is the Principal. " ;
+.
+fro-fin-ref:isRegulatedBy
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "regulated by" ;
+  rdfs:range fibo-fbc-fct-rga:RegulatoryAgency ;
+  rdfs:subPropertyOf fro-fin-ref:isGovernedBy ;
+  owl:inverseOf fibo-fbc-fct-rga:regulates ;
+  skos:definition "The inverse of FIBO regulates property." ;
+.
+[
+  owl:maxCardinality "100"^^xsd:nonNegativeInteger ;
+].
+[
+  owl:maxCardinality "100"^^xsd:nonNegativeInteger ;
+].
+[
+  owl:maxCardinality "100"^^xsd:nonNegativeInteger ;
+].
+[
+  owl:maxCardinality "100"^^xsd:nonNegativeInteger ;
+].
+[
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+].
+[
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+].

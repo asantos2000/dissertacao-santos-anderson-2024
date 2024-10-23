@@ -1,0 +1,773 @@
+TY  - CONF
+TI  - Research on Semantic Verification Method of AIXM Data Based on SBVR
+AU  - Wang, Xiaowen
+AU  - Tian, Yungang
+AU  - Fu, Shenghao
+AU  - Musila, Charity Muthoni
+A2  - Liang, Qilian
+A2  - Wang, Wei
+A2  - Mu, Jiasong
+A2  - Liu, Xin
+A2  - Na, Zhenyu
+AB  - Correct and complete aviation data is a prerequisite for SWIM cross-domain information sharing, which will affect the correct operation of the application program of the air traffic control system. The current syntax-based data verification method can verify the good structure of AIXM exchange documents. And rule constraints are usually in raw textual form and cannot be automatically enforced in computerized systems. This paper proposes an automated data semantic verification method for business rules based on SBVR, constructs the semantic rules meta-model of AIXM data, forms a set of AIXM business rules writing methods, and realizes the coding conversion path for implementing this method into system development, which supports automatic verification of more complex business logic and rule constraints.
+C1  - Singapore
+C3  - Artificial Intelligence in China
+DA  - 2023///
+PY  - 2023
+DO  - 10.1007/978-981-99-1256-8_31
+DP  - Springer Link
+SP  - 260
+EP  - 271
+LA  - en
+PB  - Springer Nature
+SN  - 978-981-9912-56-8
+ER  - 
+
+TY  - CONF
+TI  - Human-Centred Automated Reasoning for Regulatory Reporting via Knowledge-Driven Computing
+AU  - Thilakarathne, Dilhan J.
+AU  - Al Haider, Newres
+AU  - Bosman, Joost
+A2  - Fujita, Hamido
+A2  - Fournier-Viger, Philippe
+A2  - Ali, Moonis
+A2  - Sasaki, Jun
+AB  - The rise in both the complexity and volume of regulations in the regulatory landscape have contributed to an increase in the awareness of the level of automation necessary for becoming fully compliant. Nevertheless, the question of how exactly to become fully compliant by adhering to all necessary laws and regulations remains. This paper presents a human-centred, knowledge-driven approach to regulatory reporting. A given regulation is represented in a controlled natural language form including its metadata and bindings, with the assistance of subject matter experts. This representation of a semi-formal controlled natural language translates into a self-executable formal representation via a context-free grammar. A meta reasoner with the knowledge to execute the given self-executable formal representation while generating regulatory reports including explanations on derived results has been developed. Finally, the proposed approach has been implemented as a prototype and validated in the realm of financial regulation: Money Market Statistical Reporting Regulation.
+C1  - Cham
+C3  - Trends in Artificial Intelligence Theory and Applications. Artificial Intelligence Practices
+DA  - 2020///
+PY  - 2020
+DO  - 10.1007/978-3-030-55789-8_35
+DP  - Springer Link
+SP  - 393
+EP  - 406
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-030-55789-8
+ER  - 
+
+TY  - CONF
+TI  - Detecting Constraints and Their Relations from Regulatory Documents Using NLP Techniques
+AU  - Winter, Karolin
+AU  - Rinderle-Ma, Stefanie
+A2  - Panetto, Hervé
+A2  - Debruyne, Christophe
+A2  - Proper, Henderik A.
+A2  - Ardagna, Claudio Agostino
+A2  - Roman, Dumitru
+A2  - Meersman, Robert
+AB  - Extracting constraints and process models from natural language text is an ongoing challenge. While the focus of current research is merely on the extraction itself, this paper presents a three step approach to group constraints as well as to detect and display relations between constraints in order to ease their implementation. For this, the approach uses NLP techniques to extract sentences containing constraints, group them by, e.g., stakeholders or topics, and detect redundant, subsuming, and conflicting pairs of constraints. These relations are displayed using network maps. The approach is prototypically implemented and evaluated based on regulatory documents from the financial sector as well as expert interviews.
+C1  - Cham
+C3  - On the Move to Meaningful Internet Systems. OTM 2018 Conferences
+DA  - 2018///
+PY  - 2018
+DO  - 10.1007/978-3-030-02610-3_15
+DP  - Springer Link
+SP  - 261
+EP  - 278
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-030-02610-3
+ER  - 
+
+TY  - CONF
+TI  - Towards a Framework for Writing Executable Natural Language Rules
+AU  - Barmpis, Konstantinos
+AU  - Kolovos, Dimitrios
+AU  - Hingorani, Justin
+A2  - Pierantonio, Alfonso
+A2  - Trujillo, Salvador
+AB  - The creation of domain-specific data validation rules is commonly performed by the relevant domain experts. Such experts are often not acquainted with the low-level technologies used to actually execute these rules and will hence document them in some informal form, such as in natural language. In order to execute these rules, they need to be transformed by technical experts into a relevant executable language, such as SQL. The technical experts in turn are often not familiar with the business logic these rules are depicting and will thusly have to collaborate with the business experts to gain insight into the semantics of the rules. This paper presents an approach for writing financial data validation rules in constrained natural language, that can then be automatically transformed and executed against the data they are referring to. In order to achieve this, we use the Xtext framework for creating the editor where business experts can create their rules that can then be transformed into executable constraints. We evaluate this approach in terms of its extensibility, coverage and verboseness with respect to the business rules sent to specific UK banks submitting data under one of the Bank of England’s annual reviews.
+C1  - Cham
+C3  - Modelling Foundations and Applications
+DA  - 2018///
+PY  - 2018
+DO  - 10.1007/978-3-319-92997-2_16
+DP  - Springer Link
+SP  - 251
+EP  - 263
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-319-92997-2
+L1  - https://eprints.whiterose.ac.uk/135863/1/ECMFA_2018_paper_48.pdf
+ER  - 
+
+TY  - CONF
+TI  - Legal Patterns for Different Constitutive Rules
+AU  - Ceci, Marcello
+AU  - Butler, Tom
+AU  - O’Brien, Leona
+AU  - Al Khalil, Firas
+A2  - Pagallo, Ugo
+A2  - Palmirani, Monica
+A2  - Casanovas, Pompeu
+A2  - Sartor, Giovanni
+A2  - Villata, Serena
+AB  - The research for solutions for compliance is mainly focused on the representation of regulative rules, i.e. the imperatives that the industry is asked to comply to. Yet, a relevant part of the legal knowledge contained in regulation cannot be expressed in terms of deontic statements, and is instead represented as constitutive rules. This concept was first introduced by philosophers of language such as J.L. Austin and J.R. Searle and further developed in legal philosophy, where constitutive statements are classified in categories according to their legal effects. The present paper presents a heuristic approach for the representation of alethic statements as part of a methodology aimed at ensuring effective translation of the regulatory text into a machine-readable language. The approach is based on a classification of constitutive statements contained in the work of legal philosophers A.G. Conte and G. Carcaterra. The methodology includes an intermediate language, accompanied by an XML persistence model, and introduces a set of “legal concept patterns” to specifically represent the different constitutive statements. The paper identifies five patterns for the corresponding constitutive statements found in financial regulations: legal definitions, commencement rules, amendments, relative necessities, and party to the law statements.
+C1  - Cham
+C3  - AI Approaches to the Complexity of Legal Systems
+DA  - 2018///
+PY  - 2018
+DO  - 10.1007/978-3-030-00178-0_7
+DP  - Springer Link
+SP  - 105
+EP  - 123
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-030-00178-0
+ER  - 
+
+TY  - CONF
+TI  - Challenges in the Implementation of Privacy Enhancing Semantic Technologies (PESTs) Supporting GDPR
+AU  - Saniei, Rana
+A2  - Rodríguez-Doncel, Víctor
+A2  - Palmirani, Monica
+A2  - Araszkiewicz, Michał
+A2  - Casanovas, Pompeu
+A2  - Pagallo, Ugo
+A2  - Sartor, Giovanni
+AB  - The EU General Data Protection Regulation (GDPR) imposes different requirements for data controllers collecting personal data to protect individuals’ privacy. This fact triggered many studies and projects to investigate Privacy Enhancing Technologies (PETs) for the fulfillment of the compliance requirements. In this paper, after reviewing some of the current challenges and gaps in GDPR compliance, we argue the use of Semantic Technologies in PETs in the form of an Intelligent Compliance Agent (ICA) to support data controllers in carrying out a Data Protection Impact Assessment (DPIA). Models and ontologies representing entities involved in the DPIA process can help data controllers determine the risk of their processing activities. Additionally, an inference engine, equipped with a knowledge base of DPIA-related obligations, can effectively assist data controllers in taking specific actions when a legal fact is triggered based on met conditions.
+C1  - Cham
+C3  - AI Approaches to the Complexity of Legal Systems XI-XII
+DA  - 2021///
+PY  - 2021
+DO  - 10.1007/978-3-030-89811-3_20
+DP  - Springer Link
+SP  - 283
+EP  - 297
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-030-89811-3
+ER  - 
+
+TY  - CONF
+TI  - Execution of Multi-perspective Declarative Process Models
+AU  - Ackermann, Lars
+AU  - Schönig, Stefan
+AU  - Petter, Sebastian
+AU  - Schützenmeier, Nicolai
+AU  - Jablonski, Stefan
+A2  - Panetto, Hervé
+A2  - Debruyne, Christophe
+A2  - Proper, Henderik A.
+A2  - Ardagna, Claudio Agostino
+A2  - Roman, Dumitru
+A2  - Meersman, Robert
+AB  - A Process-Aware Information System is a system that executes processes involving people, applications, and data on the basis of process models. At least two process modeling paradigms can be distinguished: procedural models define exactly the execution order of process steps. Declarative process models allow flexible process executions that are restricted by constraints. Execution engines for declarative process models have been extensively investigated in research with a strong focus on behavioral aspects. However, execution approaches for multi-perspective declarative models that involve constraints on data values and resource assignments are still not existing. In this paper, we present an approach for the execution of multi-perspective declarative process models in order to close this gap. The approach builds on a classification strategy for different constraint types evaluating their relevance in different execution contexts. For execution, all constraints are transformed into the execution language Alloy that is used to solve satisfiability (SAT) problems. We implemented a modeling tool including the transformation functionality and the process execution engine itself. The approach has been evaluated in terms of expressiveness and efficiency.
+C1  - Cham
+C3  - On the Move to Meaningful Internet Systems. OTM 2018 Conferences
+DA  - 2018///
+PY  - 2018
+DO  - 10.1007/978-3-030-02671-4_9
+DP  - Springer Link
+SP  - 154
+EP  - 172
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-030-02671-4
+ER  - 
+
+TY  - CONF
+TI  - Logic Based Look-Ahead for the Execution of Multi-perspective Declarative Processes
+AU  - Käppel, Martin
+AU  - Schützenmeier, Nicolai
+AU  - Schönig, Stefan
+AU  - Ackermann, Lars
+AU  - Jablonski, Stefan
+A2  - Reinhartz-Berger, Iris
+A2  - Zdravkovic, Jelena
+A2  - Gulden, Jens
+A2  - Schmidt, Rainer
+AB  - In declarative process models all the activities which do not violate a constraint of the process model can be executed. Consequently, the number of viable paths is large. In turn, when considering multiple perspectives during execution, i.e., constraints on resources and data values, it may happen that the execution of activities or the change of data values may result in the non-executability of crucial activities. Execution engines for single-perspective declarative process models have been extensively discussed in research where, among others look-ahead functionality has been investigated. Execution approaches for multi-perspective declarative models that involve constraints on data and resources, however, are less mature. In this paper, we introduce a logic based look-ahead approach for the execution of multi-perspective declarative processes. We use the look-ahead for simulating a fixed number of execution steps with regard to the existing trace and the choice of the next step. The look-ahead allows for estimating all consequences and effects of certain decisions at any time of process execution. We develop an algorithm for trace generation and checking traces using the logic language Alloy. We extensively evaluate our approach by means of a practical example and give some advice for further optimizations.
+C1  - Cham
+C3  - Enterprise, Business-Process and Information Systems Modeling
+DA  - 2019///
+PY  - 2019
+DO  - 10.1007/978-3-030-20618-5_4
+DP  - Springer Link
+SP  - 53
+EP  - 68
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-030-20618-5
+ER  - 
+
+TY  - CONF
+TI  - A Case Study on Modeling and Validating Financial Regulations Using (Semi-) Automated Compliance Framework
+AU  - Roychoudhury, Suman
+AU  - Sunkle, Sagar
+AU  - Choudhary, Namrata
+AU  - Kholkar, Deepali
+AU  - Kulkarni, Vinay
+A2  - Buchmann, Robert Andrei
+A2  - Karagiannis, Dimitris
+A2  - Kirikova, Marite
+AB  - Modern enterprises operate in an unprecedented regulatory environment where increasing regulation and heavy penalties on non-compliance have placed regulatory compliance among the topmost concerns of enterprises worldwide. Previous research in the field of compliance has established that the manual specification/tagging of the regulations not only fails to ensure their proper coverage but also negatively affects the turnaround time both in proving and maintaining the compliance. Our contribution in this paper is a case study using a subset of European Union Regulation in the financial markets, namely, Money Market Statistical Reporting (MMSR) and that we validated it in the context of our model-driven semi-automated compliance framework. The novelty of the framework is the key participation of domain experts to author regulatory rules in a controlled natural language to enable compliance checking. We demonstrate transformation of regulations present in legal natural language text (English) to a model form via authoring of Structured English rules in the context of MMSR regulations for a large European bank. This generated regulatory model is eventually translated to formal logic that enables formal compliance checking contrary to current industry practice, that provides content management-based, document-driven and expert-dependent ways of managing regulatory compliance.
+C1  - Cham
+C3  - The Practice of Enterprise Modeling
+DA  - 2018///
+PY  - 2018
+DO  - 10.1007/978-3-030-02302-7_18
+DP  - Springer Link
+SP  - 288
+EP  - 302
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-030-02302-7
+L1  - https://link.springer.com/content/pdf/10.1007%2F978-3-030-02302-7_18.pdf
+KW  - Compliance checking
+KW  - Money Market Statistical Reporting
+KW  - Regulatory compliance
+KW  - Structured English
+ER  - 
+
+TY  - CONF
+TI  - A Model-Driven Engineering Approach to Complex Performance Indicators: Towards Self-Service Performance Management (SS-PM)
+AU  - Giunta, Benito
+A2  - Cherfi, Samira
+A2  - Perini, Anna
+A2  - Nurcan, Selmin
+AB  - Every modern organization nowadays produces data and consumes information through Decision-Support Systems (DSS) which produce more and more Complex Performance Indicators (CPI). This allows business monitoring, decision-making support and tracking of decisions effects. With the increasing complexity, DSS suffer from two main limitations that inhibit their use. First, DSS tend to be opaque to Business Managers who cannot observe how the data is treated to produce indicators. Second, DSS are owned by the technicians, resulting in an IT-bottleneck and a business-exclusion. From a Business Management perspective, the consequences are damaging. DSS result in sunk costs of development, fail to receive full confidence from Business Managers and to fit dynamic business environments. In this research, preliminary insights are proposed to build a solution that tackles the previous limitations. The literature review, the research contributions and methodology are presented to conclude with the work plan of the PhD.
+C1  - Cham
+C3  - Research Challenges in Information Science
+DA  - 2021///
+PY  - 2021
+DO  - 10.1007/978-3-030-75018-3_50
+DP  - Springer Link
+SP  - 661
+EP  - 669
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-030-75018-3
+ST  - A Model-Driven Engineering Approach to Complex Performance Indicators
+ER  - 
+
+TY  - CONF
+TI  - Collaborative Business Process Solution Considering an Ontological Dimension of Process Models
+AU  - Sebu, Maria Laura
+AU  - Ciocarlie, Horia
+A2  - Balas, Valentina Emilia
+A2  - Jain, Lakhmi C.
+A2  - Balas, Marius Mircea
+AB  - Considering the potential of collaborative business as a trend, we start from the assumption that collaborations between companies have a higher success rate if a good compatibility from process perspective is detected. The solution is based on the business processes used internally in all participating organizations to collaborations with common business objectives. For un-standardized organizations, we used process mining techniques to formalize processes and to attach them to business scenarios. The process models are reduced to graph format and graph comparison algorithms are used to compute a compatibility factor. Syntactic similarity is unfeasible for real business process comparison in an un-standardized environment. Semantic similarity is resource consuming and could lead to un-predictable results. We propose in the current paper a methodology based on domain specific ontology to calculate the similarity between organizations from process perspective and to offer a collaborative solution, business process based.
+C1  - Cham
+C3  - Soft Computing Applications
+DA  - 2018///
+PY  - 2018
+DO  - 10.1007/978-3-319-62524-9_14
+DP  - Springer Link
+SP  - 177
+EP  - 193
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-319-62524-9
+ER  - 
+
+TY  - CONF
+TI  - Deep Learning for the Identification of Decision Modelling Components from Text
+AU  - Goossens, Alexandre
+AU  - Claessens, Michelle
+AU  - Parthoens, Charlotte
+AU  - Vanthienen, Jan
+A2  - Moschoyiannis, Sotiris
+A2  - Peñaloza, Rafael
+A2  - Vanthienen, Jan
+A2  - Soylu, Ahmet
+A2  - Roman, Dumitru
+AB  - Decision and process descriptions often find themselves encapsulated in long descriptions such as regulations or guidelines. Decision modelling aims at modelling the structure and logic of a decision. For decision modellers, analysing textual documents in search for relevant sentences is a time consuming activity. A promising research topic is to build decision models from text. In this paper, an automatic decision modelling component classifier using deep learning is proposed. Using a large dataset consisting of labeled sentences, the usability of deep learning techniques is investigated. In total three deep learning techniques are evaluated and compared to non-deep learning techniques using both Bag of Words and Term Frequency-Inverse Document Frequency. We conclude that classifying decision modelling components is possible and report that BERT for sequence classification is the best performing technique.
+C1  - Cham
+C3  - Rules and Reasoning
+DA  - 2021///
+PY  - 2021
+DO  - 10.1007/978-3-030-91167-6_11
+DP  - Springer Link
+SP  - 158
+EP  - 171
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-030-91167-6
+ER  - 
+
+TY  - CONF
+TI  - KnIGHT: Mapping Privacy Policies to GDPR
+AU  - Mousavi Nejad, Najmeh
+AU  - Scerri, Simon
+AU  - Lehmann, Jens
+A2  - Faron Zucker, Catherine
+A2  - Ghidini, Chiara
+A2  - Napoli, Amedeo
+A2  - Toussaint, Yannick
+AB  - Although the use of apps and online services comes with accompanying privacy policies, a majority of end-users ignore them due to their length, complexity and unappealing presentation.pite the potential risks. In light of the, now enforced EU-wide, General Data Protection Regulation (GDPR) we present an automatic technique for mapping privacy policies excerpts to relevant GDPR articles so as to support average users in understanding their usage risks and rights as a data subject. KnIGHT (Know your rIGHTs), is a tool that finds candidate sentences in a privacy policy that are potentially related to specific articles in the GDPR. The approach employs semantic text matching in order to find the most appropriate GDPR paragraph, and to the best of our knowledge is one of the first automatic attempts of its kind applied to a company’s policy. Our evaluation shows that on average between 70–90% of the tool’s automatic mappings are at least partially correct, meaning that the tool can be used to significantly guide human comprehension. Following this result, in the future we will utilize domain-specific vocabularies to perform a deeper semantic analysis and improve the results further.
+C1  - Cham
+C3  - Knowledge Engineering and Knowledge Management
+DA  - 2018///
+PY  - 2018
+DO  - 10.1007/978-3-030-03667-6_17
+DP  - Springer Link
+SP  - 258
+EP  - 272
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-030-03667-6
+ST  - KnIGHT
+ER  - 
+
+TY  - CONF
+TI  - Comparing the Performance of GPT-3 with BERT for Decision Requirements Modeling
+AU  - Goossens, Alexandre
+AU  - De Smedt, Johannes
+AU  - Vanthienen, Jan
+A2  - Sellami, Mohamed
+A2  - Vidal, Maria-Esther
+A2  - van Dongen, Boudewijn
+A2  - Gaaloul, Walid
+A2  - Panetto, Hervé
+AB  - Operational decisions such as loan or subsidy allocation are taken with high frequency and require a consistent decision quality which decision models can ensure. Decision models can be derived from textual descriptions describing both the decision logic and decision dependencies. Whilst decision models already help with modeling, implementing and automating decisions, the modelling step would still benefit from a (semi)-automated approach. The introduction of ChatGPT and GPT-3 offers opportunities to automatically discover decision dependencies from a given text. This paper evaluates the performance of two approaches that automatically extract decision dependencies from text, namely the best performing version of GPT-3 with a BERT-based approach. An evaluation with 36 experiments with a dataset of real-life cases and various levels of creativity allowed for GPT-3 concludes that theBERT BERT-based approach outperforms GPT-3 on the real-life dataset but that GPT-3 has promising results and requires further investigation.
+C1  - Cham
+C3  - Cooperative Information Systems
+DA  - 2024///
+PY  - 2024
+DO  - 10.1007/978-3-031-46846-9_26
+DP  - Springer Link
+SP  - 448
+EP  - 458
+LA  - en
+PB  - Springer Nature Switzerland
+SN  - 978-3-031-46846-9
+ER  - 
+
+TY  - CONF
+TI  - Automated Consistency Management in BPMN Based Business Process Models
+AU  - Ishaq, Mamoona
+AU  - Choudhary, M. Abbas
+A2  - Bajwa, Imran Sarwar
+A2  - Kamareddine, Fairouz
+A2  - Costa, Anna
+AB  - The main aim of this paper is emphasis on how to incorporate changes in existing BPMN based business process models considering the correctness and consistency. However, modifications and alterations in existing BPMN models are only time consuming but also error-prone. First, we take a BPMN model as an input and create its XML file. Then, an XML parser is used to parse the xml file and extract the BPMN and UML class elements which will further be verified. Proposed approach will overcome all the inconsistencies in case of modification within existing BPMN models which can enhance the effectiveness of any business process models. Business process exist in a business organization. Bank, open bank account, cheque cash, check balance at ATM, etc. Customer requirements vary with respect of time, then we have to update and improve, refine business processes. The frequent changes in business processes may make them inconsistent with respect to other business process. Such inconsistencies create problems in business activities. It is difficult to identify such inconsistencies manually due to involvement of lot of effort and time. There should be an automated approach or an automated tool that can help in identifying the possible inconsistencies in business processes after changes.
+C1  - Singapore
+C3  - Intelligent Technologies and Applications
+DA  - 2019///
+PY  - 2019
+DO  - 10.1007/978-981-13-6052-7_25
+DP  - Springer Link
+SP  - 289
+EP  - 300
+LA  - en
+PB  - Springer
+SN  - 9789811360527
+ER  - 
+
+TY  - CONF
+TI  - Automating Requirements Elicitation of Cloud-Based ERPs
+AU  - Abd Elmonem, Mohamed A.
+AU  - Nasr, Eman S.
+AU  - Gheith, Mervat H.
+A2  - Hassanien, Aboul Ella
+A2  - Shaalan, Khaled
+A2  - Gaber, Tarek
+A2  - Tolba, Mohamed F.
+AB  - Cloud computing (CC) imposed its presence in various domains as a computing model based on what it offers for enterprises. ERP systems as a domain is one of the beneficiary domains of SaaS applications. Eliciting requirements for cloud ERP systems is a challenging process due to the complex nature of ERP systems in addition to the distributed nature of CC. Most of the current techniques for eliciting ERP requirements do not take into consideration working in cloud environments. This paper is concerned with automating the requirements elicitation process for cloud-based ERPs. It also presents an interactive prototype to be used in a distributed environment, which uses the principals of the Form-Based Model (FBM). We use a real-life case study to demonstrate the automation process.
+C1  - Cham
+C3  - Proceedings of the International Conference on Advanced Intelligent Systems and Informatics 2017
+DA  - 2018///
+PY  - 2018
+DO  - 10.1007/978-3-319-64861-3_16
+DP  - Springer Link
+SP  - 171
+EP  - 180
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-319-64861-3
+ER  - 
+
+TY  - CONF
+TI  - Empowering Business-Level Blockchain Users with a Rules Framework for Smart Contracts
+AU  - Astigarraga, Tara
+AU  - Chen, Xiaoyan
+AU  - Chen, Yaoliang
+AU  - Gu, Jingxiao
+AU  - Hull, Richard
+AU  - Jiao, Limei
+AU  - Li, Yuliang
+AU  - Novotny, Petr
+A2  - Pahl, Claus
+A2  - Vukovic, Maja
+A2  - Yin, Jianwei
+A2  - Yu, Qi
+AB  - The importance and adoption of Blockchain to support secure and trusted collaborations between businesses continues to grow. In today’s practice, most Blockchain smart contracts (which capture the business processing logic) are written primarily by software developers. To enable widespread adoption of Blockchain, business analysts and subject matter experts will need to have direct access to the smart contract logic, including the abilities to understand, modify, and create substantial portions of that logic. This paper describes a fully functioning framework and system for specifying and executing smart contracts in which the core logic is specified by a controlled English, business-level rules language. The framework includes a browser-based smart editor for rules; a parser generator that enables substantial variation in the rules syntax; code generation that maps to a RETE based rules engine; and execution of the rules in either on-chain (using Hyperledger Fabric) or off-chain modes. The paper describes the rules framework and possible extensions, and identifies key aspects of Blockchain that impact the implementation.
+C1  - Cham
+C3  - Service-Oriented Computing
+DA  - 2018///
+PY  - 2018
+DO  - 10.1007/978-3-030-03596-9_8
+DP  - Springer Link
+SP  - 111
+EP  - 128
+LA  - en
+PB  - Springer International Publishing
+SN  - 978-3-030-03596-9
+L1  - https://link.springer.com/content/pdf/10.1007%2F978-3-030-03596-9_8.pdf
+ER  - 
+
+TY  - JOUR
+TI  - Legislation-driven development of a Gift Aid system using Event-B
+AU  - Williams, David M.
+AU  - Darwish, Salaheddin
+AU  - Schneider, Steve
+AU  - Michael, David R.
+T2  - Formal Aspects of Computing
+AB  - This work presents our approach to formally model the Swiftaid system design, a digital platform that enables donors to automatically add Gift Aid to donations made via card payments. Following principles of Behaviour-Driven Development, we use Gherkin to capture requirements specified in legislation, specifically the UK Charity (Gift Aid Declarations) Regulations 2016. The Gherkin scenarios provide a basis for subsequent formal modelling and analysis using Event-B, Rodin and ProB. Interactive model simulations assist communication between domain experts, software architects and other stakeholders during requirements capture and system design, enabling the emergent system behaviour to be validated. Our approach was employed within the development of the real Swiftaid product, launched by Streeva in February 2019. Our analysis helped conclude that there was not a strong enough business case for one of the features, whichwas shown to provide nominal user convenience at the expense of increased complexity. This work provides a case study in allying formal and agile software development to enable rapid development of robust software.
+DA  - 2020/07/01/
+PY  - 2020
+DO  - 10.1007/s00165-020-00512-5
+DP  - Springer Link
+VL  - 32
+IS  - 2
+SP  - 251
+EP  - 273
+J2  - Form Asp Comp
+LA  - en
+SN  - 1433-299X
+UR  - https://doi.org/10.1007/s00165-020-00512-5
+Y2  - 2024/04/17/21:23:22
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs00165-020-00512-5.pdf
+KW  - Behaviour-driven development
+KW  - Event-B
+KW  - Formal modelling
+KW  - Gherkin
+KW  - Gift Aid
+KW  - Swiftaid
+ER  - 
+
+TY  - JOUR
+TI  - Toward automated regulatory compliance
+AU  - Kulkarni, Vinay
+AU  - Sunkle, Sagar
+AU  - Kholkar, Deepali
+AU  - Roychoudhury, Suman
+AU  - Kumar, Rahul
+AU  - Raghunandan, M.
+T2  - CSI Transactions on ICT
+AB  - Businesses are getting increasingly regulated. Regulatory compliance is a board level concern and one of the top-3 CEO level concerns across business verticals. Failure to comply leads not only to heavy fines but reputational risk too. Current practice of regulatory compliance is document-centric, and therefore, heavily reliant on human experts. Given the large size of modern enterprises, their multi-geography operation, increasing dynamics, and frequent changes in regulations, the current practice of regulatory compliance is found wanting on correctness, responsiveness, and scale. Introduction of appropriate technology seems necessary to overcome these challenges. In this paper, we present an AI-aided model-driven automated approach to regulatory compliance and supporting technology infrastructure. We describe how the approach has fared in real-world industry-scale context and outline future work.
+DA  - 2021/06/01/
+PY  - 2021
+DO  - 10.1007/s40012-021-00329-4
+DP  - Springer Link
+VL  - 9
+IS  - 2
+SP  - 95
+EP  - 104
+J2  - CSIT
+LA  - en
+SN  - 2277-9086
+UR  - https://doi.org/10.1007/s40012-021-00329-4
+Y2  - 2024/04/17/21:23:22
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs40012-021-00329-4.pdf
+KW  - AI
+KW  - Model checking
+KW  - Model driven engineering
+KW  - Model transformation
+KW  - NLP
+KW  - RegTech
+KW  - Regulatory compliance
+KW  - Schema mapping
+KW  - Text mining
+ER  - 
+
+TY  - JOUR
+TI  - AI-driven streamlined modeling: experiences and lessons learned from multiple domains
+AU  - Sunkle, Sagar
+AU  - Saxena, Krati
+AU  - Patil, Ashwini
+AU  - Kulkarni, Vinay
+T2  - Software and Systems Modeling
+AB  - Model-driven technologies (MD*), considered beneficial through abstraction and automation, have not enjoyed widespread adoption in the industry. In keeping with the recent trends, using AI techniques might help the benefits of MD* outweigh their costs. Although the modeling community has started using AI techniques, it is, in our opinion, quite limited and requires a change in perspective. We provide such a perspective through five industrial case studies where we use AI techniques in different modeling activities. We discuss our experiences and lessons learned, in some cases evolving purely modeling solutions with AI techniques, and in others considering the AI aids from the beginning. We believe that these case studies can help the researchers and practitioners make sense of various artifacts and data available to them and use applicable AI techniques to enhance suitable modeling activities.
+DA  - 2022/06/01/
+PY  - 2022
+DO  - 10.1007/s10270-022-00982-6
+DP  - Springer Link
+VL  - 21
+IS  - 3
+SP  - 1
+EP  - 23
+J2  - Softw Syst Model
+LA  - en
+SN  - 1619-1374
+ST  - AI-driven streamlined modeling
+UR  - https://doi.org/10.1007/s10270-022-00982-6
+Y2  - 2024/04/17/21:23:22
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10270-022-00982-6.pdf
+KW  - AI-driven
+KW  - Domain modeling
+KW  - Information extraction
+KW  - Knowledge graphs
+KW  - Natural language processing
+ER  - 
+
+TY  - JOUR
+TI  - Modeling compliance specifications in linear temporal logic, event processing language and property specification patterns: a controlled experiment on understandability
+AU  - Czepa, Christoph
+AU  - Amiri, Amirali
+AU  - Ntentos, Evangelos
+AU  - Zdun, Uwe
+T2  - Software and Systems Modeling
+AB  - Mature verification and monitoring approaches, such as complex event processing and model checking, can be applied for checking compliance specifications at design time and runtime. Little is known about the understandability of the different formal and technical languages associated with these approaches. This uncertainty regarding understandability might be a major obstacle for the broad practical adoption of those techniques. This article reports a controlled experiment with 215 participants on the understandability of modeling compliance specifications in representative modeling languages, namely linear temporal logic (LTL), the complex event processing-based event processing language (EPL) and property specification patterns (PSP). The formalizations in PSP were overall more correct. That is, the pattern-based approach provides a higher level of understandability than EPL and LTL. More advanced users, however, seemingly are able to cope equally well with PSP and EPL in modeling compliance specifications.
+DA  - 2019/12/01/
+PY  - 2019
+DO  - 10.1007/s10270-019-00721-4
+DP  - Springer Link
+VL  - 18
+IS  - 6
+SP  - 3331
+EP  - 3371
+J2  - Softw Syst Model
+LA  - en
+SN  - 1619-1374
+ST  - Modeling compliance specifications in linear temporal logic, event processing language and property specification patterns
+UR  - https://doi.org/10.1007/s10270-019-00721-4
+Y2  - 2024/04/17/21:23:23
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10270-019-00721-4.pdf
+KW  - Complex event processing
+KW  - Controlled experiment
+KW  - Event processing language
+KW  - Linear temporal logic
+KW  - Property specification patterns
+KW  - Understandability
+ER  - 
+
+TY  - JOUR
+TI  - Demystifying the Role of Natural Language Processing (NLP) in Smart City Applications: Background, Motivation, Recent Advances, and Future Research Directions
+AU  - Tyagi, Nemika
+AU  - Bhushan, Bharat
+T2  - Wireless Personal Communications
+AB  - Smart cities provide an efficient infrastructure for the enhancement of the quality of life of the people by aiding in fast urbanization and resource management through sustainable and scalable innovative solutions. The penetration of Information and Communication Technology (ICT) in smart cities has been a major contributor to keeping up with the agility and pace of their development. In this paper, we have explored Natural Language Processing (NLP) which is one such technical discipline that has great potential in optimizing ICT processes and has so far been kept away from the limelight. Through this study, we have established the various roles that NLP plays in building smart cities after thoroughly analyzing its architecture, background, and scope. Subsequently, we present a detailed description of NLP’s recent applications in the domain of smart healthcare, smart business, and industry, smart community, smart media, smart research, and development as well as smart education accompanied by NLP’s open challenges at the very end. This work aims to throw light on the potential of NLP as one of the pillars in assisting the technical advancement and realization of smart cities.
+DA  - 2023/05/01/
+PY  - 2023
+DO  - 10.1007/s11277-023-10312-8
+DP  - Springer Link
+VL  - 130
+IS  - 2
+SP  - 857
+EP  - 908
+J2  - Wireless Pers Commun
+LA  - en
+SN  - 1572-834X
+ST  - Demystifying the Role of Natural Language Processing (NLP) in Smart City Applications
+UR  - https://doi.org/10.1007/s11277-023-10312-8
+Y2  - 2024/04/17/21:23:23
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs11277-023-10312-8.pdf
+KW  - Internet of Things
+KW  - Machine Learning
+KW  - Natural Language Processing
+KW  - Security
+KW  - Smart City
+KW  - Smart Home
+ER  - 
+
+TY  - JOUR
+TI  - What is a process model composed of?
+AU  - Adamo, Greta
+AU  - Ghidini, Chiara
+AU  - Di Francescomarino, Chiara
+T2  - Software and Systems Modeling
+AB  - Business process modelling languages typically enable the representation of business process models by employing (graphical) symbols. These symbols can vary depending upon the verbosity of the language, the modelling paradigm, the focus of the language and so on. To make explicit different constructs and rules employed by a specific language, as well as bridge the gap across different languages, meta-models have been proposed in the literature. These meta-models are a crucial source of knowledge on what state-of-the-art literature considers relevant to describe business processes. The goal of this work is to provide the first extensive systematic literature review (SLR) of business process meta-models. This SLR aims to answer research questions concerning: (1) the kind of meta-models proposed in the literature, (2) the recurring constructs they contain, (3) their purposes and (4) their evaluations. The SRL was performed manually considering papers automatically retrieved from reference paper repositories as well as proceedings of the main conferences in the Business Process Management research area. Sixty-five papers were selected and evaluated against four research questions. The results indicate the existence of a reasonable body of work conducted in this specific area, but not a full maturity. In particular, in answering the research questions several challenges have (re-)emerged for the Business Process Community, concerning: (1) the type of elements that constitute a Business Process and their meaning, (2) the absence of a (or several) reference meta-model(s) for the community, (3) the purpose for which meta-models are introduced in the literature and (4) a framework for the evaluation of the meta-models themselves. Moreover, the classification framework devised to answer the four research questions can provide a reference structure for future descriptive categorizations.
+DA  - 2021/08/01/
+PY  - 2021
+DO  - 10.1007/s10270-020-00847-w
+DP  - Springer Link
+VL  - 20
+IS  - 4
+SP  - 1215
+EP  - 1243
+J2  - Softw Syst Model
+LA  - en
+SN  - 1619-1374
+UR  - https://doi.org/10.1007/s10270-020-00847-w
+Y2  - 2024/04/17/21:23:23
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10270-020-00847-w.pdf
+KW  - Business Process Modelling
+KW  - Conceptual Modelling
+KW  - Meta-Models
+ER  - 
+
+TY  - JOUR
+TI  - Logical English meets legal English for swaps and derivatives
+AU  - Kowalski, Robert
+AU  - Datoo, Akber
+T2  - Artificial Intelligence and Law
+AB  - In this paper, we present an informal introduction to Logical English (LE) and illustrate its use to standardise the legal wording of the Automatic Early Termination (AET) clauses of International Swaps and Derivatives Association (ISDA) Agreements. LE can be viewed both as an alternative to conventional legal English for expressing legal documents, and as an alternative to conventional computer languages for automating legal documents. LE is a controlled natural language (CNL), which is designed both to be computer-executable and to be readable by English speakers without special training. The basic form of LE is syntactic sugar for logic programs, in which all sentences have the same standard form, either as rules of the form conclusion if conditions or as unconditional sentences of the form conclusion. However, LE extends normal logic programming by introducing features that are present in other computer languages and other logics. These features include typed variables signalled by common nouns, and existentially quantified variables in the conclusions of sentences signalled by indefinite articles. Although LE translates naturally into a logic programming language such as Prolog or ASP, it can also serve as a neutral standard, which can be compiled into other lower-level computer languages.
+DA  - 2022/06/01/
+PY  - 2022
+DO  - 10.1007/s10506-021-09295-3
+DP  - Springer Link
+VL  - 30
+IS  - 2
+SP  - 163
+EP  - 197
+J2  - Artif Intell Law
+LA  - en
+SN  - 1572-8382
+UR  - https://doi.org/10.1007/s10506-021-09295-3
+Y2  - 2024/04/17/21:23:23
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10506-021-09295-3.pdf
+KW  - Clause taxonomy
+KW  - Close-out netting
+KW  - Controlled Natural Language
+KW  - ISDA
+KW  - Logic Programming
+KW  - Logical English
+ER  - 
+
+TY  - JOUR
+TI  - Evaluating cloud database migration options using workload models
+AU  - Ellison, Martyn
+AU  - Calinescu, Radu
+AU  - Paige, Richard F.
+T2  - Journal of Cloud Computing
+AB  - A key challenge in porting enterprise software systems to the cloud is the migration of their database. Choosing a cloud provider and service option (e.g., a database-as-a-service or a manually configured set of virtual machines) typically requires the estimation of the cost and migration duration for each considered option. Many organisations also require this information for budgeting and planning purposes. Existing cloud migration research focuses on the software components, and therefore does not address this need. We introduce a two-stage approach which accurately estimates the migration cost, migration duration and cloud running costs of relational databases. The first stage of our approach obtains workload and structure models of the database to be migrated from database logs and the database schema. The second stage performs a discrete-event simulation using these models to obtain the cost and duration estimates. We implemented software tools that automate both stages of our approach. An extensive evaluation compares the estimates from our approach against results from real-world cloud database migrations.
+DA  - 2018/03/15/
+PY  - 2018
+DO  - 10.1186/s13677-018-0108-5
+DP  - Springer Link
+VL  - 7
+IS  - 1
+SP  - 6
+J2  - J Cloud Comp
+LA  - en
+SN  - 2192-113X
+UR  - https://doi.org/10.1186/s13677-018-0108-5
+Y2  - 2024/04/17/21:23:23
+L1  - https://link.springer.com/content/pdf/10.1186%2Fs13677-018-0108-5.pdf
+KW  - Cloud migration
+KW  - Database modelling
+KW  - Enterprise systems
+KW  - Model-driven engineering
+ER  - 
+
+TY  - JOUR
+TI  - From enterprise models to low-code applications: mapping DEMO to Mendix; illustrated in the social housing domain
+AU  - Krouwel, Marien R.
+AU  - Op ’t Land, Martin
+AU  - Proper, Henderik A.
+T2  - Software and Systems Modeling
+AB  - Due to hyper-competition, technological advancements, regulatory changes, etc, the conditions under which enterprises need to thrive become increasingly turbulent. Consequently, enterprise agility increasingly determines an enterprise’s chances for success. As software development often is a limiting factor in achieving enterprise agility, enterprise agility and software adaptability become increasingly intertwined. As a consequence, decisions that regard flexibility should not be left to software developers alone. By taking a Model-driven Software Development (MDSD) approach, starting from DEMO ontological enterprise models and explicit (enterprise) implementation design decisions, the aim of this research is to bridge the gap from enterprise agility to software adaptability, in such a way that software development is no longer a limiting factor in achieving enterprise agility. Low-code technology is a growing market trend that builds on MDSD concepts and claims to offer a high degree of software adaptability. Therefore, as a first step to show the potential benefits to use DEMO ontological enterprise models as a base for MDSD, this research shows the design of a mapping from DEMO models to Mendix for the (automated) creation of a low-code application that also intrinsically accommodates run-time implementation design decisions.
+DA  - 2024/04/08/
+PY  - 2024
+DO  - 10.1007/s10270-024-01156-2
+DP  - Springer Link
+J2  - Softw Syst Model
+LA  - en
+SN  - 1619-1374
+ST  - From enterprise models to low-code applications
+UR  - https://doi.org/10.1007/s10270-024-01156-2
+Y2  - 2024/04/17/21:23:24
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10270-024-01156-2.pdf
+KW  - DEMO
+KW  - Enterprise modeling
+KW  - Enterprise ontology
+KW  - Low-code
+KW  - MDSD
+KW  - Mendix
+ER  - 
+
+TY  - JOUR
+TI  - A framework for interoperability between models with hybrid tools
+AU  - Braun, Germán
+AU  - Fillottrani, Pablo Rubén
+AU  - Keet, C. Maria
+T2  - Journal of Intelligent Information Systems
+AB  - Complex system development and maintenance face the challenge of dealing with different types of models due to language affordances, preferences, sizes, and so forth that involve interaction between users with different levels of proficiency. Current conceptual data modelling tools do not fully support these modes of working. It requires that the interaction between multiple models in multiple languages is clearly specified to ensure they keep their intended semantics, which is lacking in extant tools. The key objective is to devise a mechanism to support semantic interoperability in hybrid tools for multi-modal modelling in a plurality of paradigms, all within one system. We propose FaCIL, a framework for such hybrid modelling tools. We design and realise the framework FaCIL, which maps UML, ER and ORM2 into a common metamodel with rules that provide the central point for management among the models and that links to the formalisation and logic-based automated reasoning. FaCIL supports the ability to represent models in different formats while preserving their semantics, and several editing workflows are supported within the framework. It has a clear separation of concerns for typical conceptual modelling activities in an interoperable and extensible way. FaCIL structures and facilitates the interaction between visual and textual conceptual models, their formal specifications, and abstractions as well as tracking and propagating updates across all the representations. FaCIL is compared against the requirements, implemented in crowd 2.0, and assessed with a use case. The proof-of-concept implementation in the web-based modelling tool crowd 2.0 demonstrates its viability. The framework also meets the requirements and fully supports the use case.
+DA  - 2023/04/01/
+PY  - 2023
+DO  - 10.1007/s10844-022-00731-7
+DP  - Springer Link
+VL  - 60
+IS  - 2
+SP  - 437
+EP  - 462
+J2  - J Intell Inf Syst
+LA  - en
+SN  - 1573-7675
+UR  - https://doi.org/10.1007/s10844-022-00731-7
+Y2  - 2024/04/17/21:23:24
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10844-022-00731-7.pdf
+KW  - Conceptual modelling
+KW  - Information systems
+KW  - Logic-based reasoning
+KW  - Ontologies
+KW  - Semantic interoperability
+ER  - 
+
+TY  - JOUR
+TI  - EANM’23 Abstract Book Congress Sep 9-13, 2023
+T2  - European Journal of Nuclear Medicine and Molecular Imaging
+DA  - 2023/09/01/
+PY  - 2023
+DO  - 10.1007/s00259-023-06333-x
+DP  - Springer Link
+VL  - 50
+IS  - 1
+SP  - 1
+EP  - 898
+J2  - Eur J Nucl Med Mol Imaging
+LA  - en
+SN  - 1619-7089
+UR  - https://doi.org/10.1007/s00259-023-06333-x
+Y2  - 2024/04/17/21:23:24
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs00259-023-06333-x.pdf
+ER  - 
+
+TY  - JOUR
+TI  - Suitability Assessment and Carbon Mitigation Potential of Plantations on India’s Railway Land
+AU  - Chaturvedi, Rajiv Kumar
+AU  - Jose, Karun
+AU  - Shruthi, B. V. R.
+AU  - Kariya, Karan Piyush
+AU  - Garg, Amit
+T2  - Anthropocene Science
+AB  - India has one of the largest railway networks in the world, it is proposed that some of its lands could be utilized for tree plantation and carbon sequestration activities. In this study, we make an effort to estimate the potential land available for carrying out plantation activities on Indian railways land and further estimate the carbon mitigation potential from these activities. Two land options are considered for plantation activities, (a) Plantations along Railway Tracks (along the route length) and (b) Plantations around railway sidings. The available land along the railway tracks is derived by systematically eliminating the land parcels that are non-suitable using high-resolution satellite data. We eliminated lands that are either already forested or already having tree cover. Uncultivable wastelands (open barren lands) and railway lines passing through water bodies, bridges, railway station platforms, crossings, etc. are also eliminated. Our analysis suggests that a maximum of total potential area of about 56.5 thousand hectares may be available for plantation and other mitigation actions along railway tracks and railway sidings. We used the CO2 fix model for simulating plot level carbon dynamics, the model is simulated for 35 years from 2015 to 2050. The model has been tested and validated for different forest ecosystems across the world in multiple studies. Plot-level simulations are carried out for each Agro-Ecological Zones (AEZs) as AEZs represent homogenous climatic, ecological, and edaphic units. Plot level mitigation estimates in each of the carbon pools are extrapolated for the available land area and considered for plantation activities in each of the Agro-ecological Zones. This study finds that Indian railways provide a modest mitigation potential (of about 5–25 MtCO2 over 2015–2050, depending on combinations of the area considered for plantations and growth rates), compared to other options available in the Indian landuse change sector such as forest restoration and reclamation of wastelands via tree plantations.
+DA  - 2022/03/01/
+PY  - 2022
+DO  - 10.1007/s44177-022-00015-3
+DP  - Springer Link
+VL  - 1
+IS  - 1
+SP  - 145
+EP  - 163
+J2  - Anthr. Sci.
+LA  - en
+SN  - 2731-3980
+UR  - https://doi.org/10.1007/s44177-022-00015-3
+Y2  - 2024/04/17/21:23:24
+KW  - Climate change mitigation
+KW  - CO2-fix
+KW  - India
+KW  - Paris agreement
+KW  - Railways
+ER  - 
+
+TY  - JOUR
+TI  - Formal Model of Business Processes Integrated with Business Rules
+AU  - Kluza, Krzysztof
+AU  - Nalepa, Grzegorz J.
+T2  - Information Systems Frontiers
+AB  - Business Processes describe the ways in which operations are carried out in order to accomplish the intended objectives of organizations. A process can be depicted using a modeling notation, such as Business Process Model and Notation. Process model can also describe operational aspects of every task; but in a properly designed model, the detailed aspects of low-level logic should be delegated to external services, especially to a Business Rule Engine. Business Rules support the specification of knowledge in a declarative manner and can be successfully used for specification of details for process tasks and events. However, there is no unified model of process integrated with rules that ensures data types consistency. Thus, the paper presents a formal description of the integration of Business Processes with Business Rules. We provide a general model for such integration as well as the model applied to a specific rule representation from the Semantic Knowledge Engineering approach.
+DA  - 2019/10/01/
+PY  - 2019
+DO  - 10.1007/s10796-018-9826-y
+DP  - Springer Link
+VL  - 21
+IS  - 5
+SP  - 1167
+EP  - 1185
+J2  - Inf Syst Front
+LA  - en
+SN  - 1572-9419
+UR  - https://doi.org/10.1007/s10796-018-9826-y
+Y2  - 2024/04/17/21:23:24
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs10796-018-9826-y.pdf
+KW  - Business process modeling
+KW  - Business rules
+KW  - Process with rules integration
+ER  - 
+

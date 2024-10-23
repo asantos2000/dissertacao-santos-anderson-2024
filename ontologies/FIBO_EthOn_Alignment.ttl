@@ -1,0 +1,54 @@
+# baseURI: http://finregont.com/fro/ref/FIBO_EthOn_Alignment.ttl
+# imports: http://ethon.consensys.net/
+# imports: http://finregont.com/fro/ref/FIBO_import.ttl
+# prefix: fibo-ethon-align
+
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ethon: <http://ethon.consensys.net/> .
+@prefix fibo-ethon-align: <http://finregont.com/fro/ref/FIBO_EthOn_Alignment.ttl#> .
+@prefix fibo-fbc-pas-caa: <https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/> .
+@prefix fibo-fnd-agr-ctr: <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> .
+@prefix fibo-fnd-pas-pas: <https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/> .
+@prefix fibo-fnd-plc-vrt: <https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ethon:ExternalAccount
+  rdfs:subClassOf fibo-fbc-pas-caa:Account ;
+.
+ethon:ExternalActor
+  rdfs:subClassOf fibo-fbc-pas-caa:AccountHolder ;
+  rdfs:subClassOf fibo-fnd-agr-ctr:ContractPrincipal ;
+.
+ethon:Node
+  rdfs:subClassOf fibo-fnd-plc-vrt:NetworkLocation ;
+.
+ethon:Tx
+  rdfs:subClassOf fibo-fnd-pas-pas:TransactionEvent ;
+.
+ethon:TxReceipt
+  rdfs:subClassOf fibo-fnd-pas-pas:TransactionConfirmation ;
+.
+<http://finregont.com/fro/ref/FIBO_EthOn_Alignment.ttl>
+  rdf:type owl:Ontology ;
+  dct:license "https://opensource.org/licenses/GPL-3.0" ;
+  dct:license "https://opensource.org/licenses/MIT" ;
+  sm:author "Jurgen Ziemer" ;
+  sm:copyright "Jayzed Data Models Inc." ;
+  rdfs:label "Financial Regulation Ontology: FIBO EthOn Alignment module" ;
+  rdfs:comment """FIBO and EthOn align in all concepts critical to the distributed ledger use case: Accounts, Agents, Transactions, and Network.
+
+Class and graph diagrams of the aligned ontologies show the query and inference paths:
+
+For FIBO interfaced external systems to access blockchain details.
+For Ethereum Smart Contracts to look up external reference data.""" ;
+  rdfs:seeAlso <http://finregont.com/2017/02/21/ethereum_fibo_alignment/> ;
+  owl:imports ethon: ;
+  owl:imports <http://finregont.com/fro/ref/FIBO_import.ttl> ;
+  skos:definition "The ontology alignment creates OWL axioms of equivalency and class subsumption. The Axioms enable inference and SPARQL query across FIBO and the Blockchain . Alignment is the foundation of semantic data integration." ;
+.

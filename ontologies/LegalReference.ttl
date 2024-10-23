@@ -1,0 +1,412 @@
+# baseURI: http://finregont.com/fro/ref/LegalReference.ttl
+# imports: http://finregont.com/fro/ref/AnnotationProperty.ttl
+# imports: http://finregont.com/fro/ref/Reference.ttl
+# imports: http://www.estrellaproject.org/lkif-core/lkif-core.owl
+# prefix: fro-leg-ref
+
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fro-leg-ref: <http://finregont.com/fro/ref/LegalReference.ttl#> .
+@prefix lkif-action: <http://www.estrellaproject.org/lkif-core/action.owl#> .
+@prefix lkif-core: <http://www.estrellaproject.org/lkif-core/lkif-core.owl#> .
+@prefix lkif-expr: <http://www.estrellaproject.org/lkif-core/expression.owl#> .
+@prefix lkif-extd: <http://www.estrellaproject.org/lkif-core/lkif-extended.owl#> .
+@prefix lkif-leg-action: <http://www.estrellaproject.org/lkif-core/legal-action.owl#> .
+@prefix lkif-leg-role: <http://www.estrellaproject.org/lkif-core/legal-role.owl#> .
+@prefix lkif-mereo: <http://www.estrellaproject.org/lkif-core/mereology.owl#> .
+@prefix lkif-norm: <http://www.estrellaproject.org/lkif-core/norm.owl#> .
+@prefix lkif-proc: <http://www.estrellaproject.org/lkif-core/process.owl#> .
+@prefix lkif-rel-places: <http://www.estrellaproject.org/lkif-core/relative-places.owl#> .
+@prefix lkif-role: <http://www.estrellaproject.org/lkif-core/role.owl#> .
+@prefix lkif-rules: <http://www.estrellaproject.org/lkif-core/lkif-rules.owl#> .
+@prefix lkif-time: <http://www.estrellaproject.org/lkif-core/time.owl#> .
+@prefix lkif-time-mod: <http://www.estrellaproject.org/lkif-core/time-modification.owl#> .
+@prefix lkif-top: <http://www.estrellaproject.org/lkif-core/lkif-top.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spinmap: <http://spinrdf.org/spinmap#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<fro-usc-t15-ch2D:r-1-0-4-3-3-6-8-1-6-0-5-1>
+  fro-leg-ref:hasDate "2010-01-01"^^xsd:date ;
+.
+<http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#US_Government_Publishing_Office>
+  rdf:type fro-leg-ref:GovernmentOffice ;
+  rdfs:label "U.S. Government Publishing Office" ;
+.
+<http://finregont.com/fro/ref/LegalReference.ttl>
+  rdf:type owl:Ontology ;
+  dct:license "https://opensource.org/licenses/GPL-3.0" ;
+  dct:license "https://opensource.org/licenses/MIT" ;
+  sm:author "Jurgen Ziemer" ;
+  sm:copyright "Jayzed Data Models Inc." ;
+  rdfs:comment """Legal Reference ontology contains extensions to the Legal Knowledge Interchange Format (LKIF):
+* Prefixes for the LKIF module
+* Classes Exceutive Body, Financial Regulation, Regulatory Authotity etc.
+The extensions are not country/jurisdiction specific.""" ;
+  rdfs:label "Financial Regulation Ontology: Legal Reference module" ;
+  owl:imports <http://finregont.com/fro/ref/AnnotationProperty.ttl> ;
+  owl:imports <http://finregont.com/fro/ref/Reference.ttl> ;
+  owl:imports <http://www.estrellaproject.org/lkif-core/lkif-core.owl> ;
+.
+fro-leg-ref:Chapter
+  rdf:type owl:Class ;
+  rdfs:comment "The defined class enables generic queries across the specific USC and CFR chapter." ;
+  rdfs:label "Chapter" ;
+  rdfs:subClassOf fro-leg-ref:DocumentComponent ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:onProperty fro-leg-ref:divides ;
+      owl:someValuesFrom fro-leg-ref:DocumentTitle ;
+    ] ;
+  skos:definition "A defined class for generic document chapter. The reasoner will infer subclasses USC_Section and CFR_Section" ;
+.
+fro-leg-ref:ChapterDivision
+  rdf:type owl:Class ;
+  rdfs:comment "The defined class enables generic queries, without having to differntiate between Part and Subchapter." ;
+  rdfs:label "Chapter division" ;
+  rdfs:subClassOf fro-leg-ref:DocumentComponent ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:onProperty fro-leg-ref:divides ;
+      owl:someValuesFrom fro-leg-ref:Chapter ;
+    ] ;
+  skos:definition "A defined class for generic document chapter. In the United States Code a chapter is broken down by Subchapter. The Code of Federal Regulations has Part underneith the Chapter. The reasoner will infer the subclasses." ;
+.
+fro-leg-ref:Codification
+  rdf:type owl:Class ;
+  sm:author "Jurgen Ziemer" ;
+  sm:copyright "Jayzed Data Models Inc." ;
+  rdfs:comment "An instances of this class of this class is the release of US Code. The Office of the Law Revision Council is the actor. The medium is the fro-uslo:UnitedStatesCode a LKIF Statute." ;
+  rdfs:isDefinedBy <http://uscode.house.gov/codification/legislation.shtml> ;
+  rdfs:label "Codification" ;
+  rdfs:subClassOf lkif-leg-action:Public_Act ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom lkif-leg-action:Legislative_Body ;
+      owl:onProperty lkif-action:actor ;
+    ] ;
+  skos:definition "Positive law codification by the Office of the Law Revision Counsel is the process of preparing and enacting a codification bill to restate existing law as a positive law title of the United States Code. The restatement conforms to the policy, intent, and purpose of Congress in the original enactments, but the organizational structure of the law is improved, obsolete provisions are eliminated, ambiguous provisions are clarified, inconsistent provisions are resolved, and technical errors are corrected. " ;
+.
+fro-leg-ref:DocumentComponent
+  rdf:type owl:Class ;
+  rdfs:label "Document Component" ;
+  rdfs:subClassOf lkif-expr:Document ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fro-leg-ref:Chapter
+          fro-leg-ref:Paragraph
+          fro-leg-ref:ChapterDivision
+          fro-leg-ref:Section
+          fro-leg-ref:DocumentTitle
+          fro-leg-ref:Chapter
+        ) ;
+    ] ;
+  skos:definition "A defined collection class for generic document components. It is the union of its subclasses: Paragraph, Chapter, ChapterDivision, Section, Document Title" ;
+.
+fro-leg-ref:DocumentEdition
+  rdf:type owl:Class ;
+  rdfs:label "Document Edition" ;
+  rdfs:subClassOf lkif-expr:Document ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:intersectionOf (
+          lkif-expr:Document
+          [
+            rdf:type owl:Restriction ;
+            owl:onProperty fro-leg-ref:hasEditionText ;
+            owl:someValuesFrom xsd:string ;
+          ]
+        ) ;
+    ] ;
+  skos:definition "The Document Edition is the release/version of a Document. FRO differentiates the Document from the Document Components (Title, Section, Paragraph etc.)" ;
+  skos:example """CFR Annual Edition Title 17 (2016)
+USC Edition 114-153 (2016)""" ;
+.
+fro-leg-ref:DocumentTitle
+  rdf:type owl:Class ;
+  rdfs:label "Document Title" ;
+  rdfs:subClassOf fro-leg-ref:DocumentComponent ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:onProperty lkif-mereo:member_of ;
+      owl:someValuesFrom fro-leg-ref:DocumentEdition ;
+    ] ;
+  skos:definition "The Title of a generic document is a subclass of DocumentComponent. Subclasses of this defined class, fro-usc:USC_Title and fro-cfr:CFR_Title are inferred." ;
+.
+fro-leg-ref:ExecutiveBody
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <https://en.wikipedia.org/wiki/Executive_(government)> ;
+  rdfs:label "Executive Body" ;
+  rdfs:subClassOf lkif-leg-action:Public_Body ;
+  owl:disjointWith lkif-leg-action:Legislative_Body ;
+  skos:definition "The executive branch is the body of the government that has its authority and responsibility for the daily administration of the state. The executive branch executes, or enforces the law. " ;
+  skos:example """U.S. Securities and Exchange Commission
+U.S. Government Publishing Office""" ;
+.
+fro-leg-ref:Filing
+  rdf:type owl:Class ;
+  rdfs:label "Manchester Family Office AUM" ;
+  rdfs:subClassOf lkif-expr:Expression ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fro-leg-ref:Filing_Attitude ;
+      owl:onProperty lkif-expr:stated_by ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fro-leg-ref:Legal_Form ;
+      owl:onProperty lkif-expr:medium ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty lkif-expr:stated_by ;
+      owl:someValuesFrom fro-leg-ref:Filing_Attitude ;
+    ] ;
+  skos:definition "The Filing conntexct the Filing Document a LKIF medium  to the Filing Attitude, a LKIF Communicated Attitue that related to the filing firm and receipient regulator." ;
+.
+fro-leg-ref:Filing_Attitude
+  rdf:type owl:Class ;
+  rdfs:label "Filing Attitude" ;
+  rdfs:subClassOf lkif-expr:Communicated_Attitude ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fro-leg-ref:Filing ;
+      owl:onProperty lkif-expr:states ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fro-leg-ref:RegulatoryAuthority ;
+      owl:onProperty lkif-expr:addressee ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty lkif-expr:addressee ;
+      owl:someValuesFrom fro-leg-ref:RegulatoryAuthority ;
+    ] ;
+  skos:definition "The propositional attitude of a Legal Filing. The submitting financial institution (LKIF utterer) states the belief that the filing (LKIF expression) is accurate toward the regulator (LKIF addressee)." ;
+.
+fro-leg-ref:GovernmentOffice
+  rdf:type owl:Class ;
+  rdfs:label "Government Office" ;
+  rdfs:subClassOf fro-leg-ref:ExecutiveBody ;
+.
+fro-leg-ref:GovernmentPublication
+  rdf:type owl:Class ;
+  sm:author "Jurgen Ziemer" ;
+  sm:copyright "Jayzed Data Models Inc." ;
+  rdfs:comment "This is the LKIF Process of Grovernment Publishing. The medium is the actual text of the Law or Regulation. The outcome is a Definitional Expression." ;
+  rdfs:isDefinedBy <https://en.wikipedia.org/wiki/Rulemaking> ;
+  rdfs:label "(Government Publication)" ;
+  rdfs:subClassOf lkif-leg-action:Public_Act ;
+  skos:definition "The Public Act of  producing, procuring, cataloging, indexing, authenticating, disseminating, and preserving the official information products of the Government. In the Government Publishing Office does this." ;
+.
+fro-leg-ref:Legal_Form
+  rdf:type owl:Class ;
+  rdfs:label "Legal Form" ;
+  rdfs:subClassOf lkif-norm:Legal_Document ;
+  skos:definition "A printed or electronic document with bland fields to insert required or requested information," ;
+.
+fro-leg-ref:Paragraph
+  rdf:type owl:Class ;
+  rdfs:comment "The defined class enables generic queries across the specific USC and CFR paragraphs." ;
+  rdfs:label "Paragraph" ;
+  rdfs:subClassOf fro-leg-ref:DocumentComponent ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:onProperty fro-leg-ref:divides ;
+      owl:someValuesFrom fro-leg-ref:Section ;
+    ] ;
+  skos:definition "A defined class for generic document paragraphs. The reasoner will infer subclasses USC and CFR Paragraph" ;
+.
+fro-leg-ref:RegulatoryAuthority
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <https://en.wikipedia.org/wiki/Regulatory_agency> ;
+  rdfs:label "Regulatory Authority" ;
+  rdfs:subClassOf fro-leg-ref:ExecutiveBody ;
+  skos:definition "A regulatory agency (also regulatory authority, regulatory body or regulator) is a public authority or government agency responsible for exercising autonomous authority over some area of human activity in a regulatory or supervisory capacity. An independent regulatory agency is a regulatory agency that is independent from other branches or arms of the government." ;
+.
+fro-leg-ref:Report
+  rdf:type owl:Class ;
+  rdfs:comment "The Financial Regulation Ontology has a Report class in both Legal and Financial Reference. They are equivalent classes and aligned. We have them redundantly to avoid having to include the whole of FIBO and LKIF, if the need is only legal or financial purpose." ;
+  rdfs:comment """This is the LKIF medium - the paper or file containing the report. The medium relates to a Report Expression, which can be a:
+a) financial statement from a company
+b) government publication of financial data
+c) a report from a financial information provider""" ;
+  rdfs:isDefinedBy <https://en.oxforddictionaries.com/> ;
+  rdfs:label "Report" ;
+  rdfs:subClassOf lkif-expr:Document ;
+  skos:definition """An account given of a particular matter, especially in the form of an official document, after thorough investigation or consideration by an appointed person or body.
+For the Financial Regulation Ontology this means an official document of financial information.""" ;
+.
+fro-leg-ref:Rulemaking
+  rdf:type owl:Class ;
+  sm:author "Jurgen Ziemer" ;
+  sm:copyright "Jayzed Data Models Inc." ;
+  rdfs:comment "An instances of this class of this class are Notices of Public Rulemaking. SEC or  FED are the actors tied to the release of rule. The rulemaking bears the text, a LKIF medium. " ;
+  rdfs:isDefinedBy <https://en.wikipedia.org/wiki/Rulemaking> ;
+  rdfs:label "Rulemaking" ;
+  rdfs:subClassOf lkif-leg-action:Public_Act ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty lkif-action:actor ;
+      owl:someValuesFrom fro-leg-ref:RegulatoryAuthority ;
+    ] ;
+  skos:definition "In administrative law, rule-making is the process that executive and independent agencies use to create, or promulgate, regulations. In general, legislatures first set broad policy mandates by passing statutes, then agencies create more detailed regulations through rulemaking." ;
+.
+fro-leg-ref:Section
+  rdf:type owl:Class ;
+  rdfs:comment "The defined class enables generic queries across the specific USC and CFR sections." ;
+  rdfs:label "Document Section" ;
+  rdfs:subClassOf fro-leg-ref:DocumentComponent ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:onProperty fro-leg-ref:divides ;
+      owl:someValuesFrom fro-leg-ref:ChapterDivision ;
+    ] ;
+  skos:definition "A defined class for generic document sections. The reasoner will infer subclasses USC_Section and CFR_Section" ;
+.
+fro-leg-ref:SupervisoryMandate
+  rdf:type owl:Class ;
+  rdfs:label "Supervisory Mandate" ;
+  rdfs:subClassOf lkif-leg-action:Mandate ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty lkif-action:actor ;
+      owl:someValuesFrom fro-leg-ref:ExecutiveBody ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty lkif-mereo:contained_in ;
+      owl:someValuesFrom lkif-leg-action:Act_of_Law ;
+    ] ;
+  skos:definition "The legal mandate that empowers a government agency to supervise financial intuitions." ;
+  skos:example """The SEC has a Supervisory mandate to oversee Investment Companies and Investment Advisers.
+The Federal Reserve Bank has a supervisory mandate to oversee Banks.""" ;
+.
+fro-leg-ref:divided_by
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "divided by" ;
+  rdfs:subPropertyOf lkif-mereo:component ;
+  owl:inverseOf fro-leg-ref:divides ;
+  skos:definition "The inverse of divides. A subproperty of lkif-mereo:component. We adopt the United States Code Legislative Model term 'divides'. It signifies that the division is complete. E.g. all the subsections that divide a section." ;
+.
+fro-leg-ref:divides
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "divides" ;
+  rdfs:subPropertyOf lkif-mereo:component_of ;
+  skos:definition "A subproperty of lkif-mereo:component. We adopt the United States Code Legislative Model term 'divides'. It signifies that the division is complete. E.g. all the subsections that divide a section." ;
+.
+fro-leg-ref:hasCodeReference
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain lkif-expr:Expression ;
+  rdfs:label "has Code Reference" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          lkif-norm:Regulation
+          lkif-norm:Statute
+        ) ;
+    ] ;
+  rdfs:subPropertyOf lkif-expr:medium ;
+  skos:definition "A subproperty of LIKIF medium, where the range is some Legal Code." ;
+.
+fro-leg-ref:hasComponentIdentifier
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fro-leg-ref:DocumentComponent ;
+  rdfs:label "Component Identifier" ;
+  rdfs:range xsd:string ;
+  skos:definition "The identifying property of a Document Component. This can be a system generated ID or index string. The values in this property will be inferred from the subproperties defined in Untited States Code and Code of Federal Regulations." ;
+  skos:example "/us/usc/t15/s80b–2/a/1 (fro-usc:hasIdentifier for the same paragraph)" ;
+  skos:example "idd04f5b23-0c74-11e6-aa53-e455a13f2ad9 (fro-usc-hasId for a USC Paragraph)" ;
+.
+fro-leg-ref:hasComponentName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fro-leg-ref:DocumentComponent ;
+  rdfs:label "Component Name" ;
+  rdfs:range xsd:string ;
+  skos:definition "The short name is to be inferred from a component's heading or subject." ;
+.
+fro-leg-ref:hasComponentText
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fro-leg-ref:DocumentComponent ;
+  rdfs:label "Component Text" ;
+  rdfs:range xsd:string ;
+  skos:definition "The component test is a superproperty for longer text properties.  E.g. Paragraph, Note, Chapeau text." ;
+.
+fro-leg-ref:hasDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "The FR ontology converts the USLM Reference into this data property. The format is identical to the hasIdentifierText." ;
+  rdfs:label "Date" ;
+  rdfs:range xsd:date ;
+  skos:definition "The xsd:date of a date within fro-usc:hasElement text. The USC_TextBlock is a concatenation of XML text fragments, including dates.  " ;
+  skos:note "The xsd:date of a date within fro-usc:hasElement text. The USC_TextBlock is a concatenation of XML text fragments, including dates.  " ;
+.
+fro-leg-ref:hasEditionText
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Edition Text" ;
+  rdfs:range xsd:string ;
+  skos:definition "The text (name) of a Document edition" ;
+  skos:example """CFR Annual Edition Title 17 (2016)
+USC Edition 114-153 (2016)""" ;
+.
+fro-leg-ref:hasForm
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain lkif-expr:Expression ;
+  rdfs:label "has Form" ;
+  rdfs:range fro-leg-ref:Legal_Form ;
+  rdfs:subPropertyOf lkif-expr:medium ;
+  skos:definition "A subproperty of LIKIF medium, where the range is a Legal Form." ;
+.
+fro-leg-ref:hasSequenceNumber
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fro-leg-ref:DocumentComponent ;
+  rdfs:label "Sequence Number" ;
+  rdfs:range xsd:integer ;
+  skos:definition "The value in this field is generated by the XML import. It is a sequence number for instances. The values in this fied are ordinal (there may be gaps), but they can be sorted to reproduce the order (sequence) in the regulatory document" ;
+.
+fro-leg-ref:hasTitleText
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Title Text" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf fro-leg-ref:hasComponentName ;
+  skos:definition "A property for a short title text or name" ;
+.
+fro-leg-ref:refered_by
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The inverse of refers_to. This has the  Elements that point to the instance." ;
+  rdfs:label "refered by " ;
+  owl:inverseOf fro-leg-ref:refers_to ;
+.
+fro-leg-ref:refers_to
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The data property points to the Document Element (range) that the instance (domain) refers to. Subproterties are (plain) Element, Chapeau and Note references." ;
+  rdfs:label "refers to USC" ;
+.
+fro-leg-ref:refers_toNote
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The data property points to the USC_Notes (range) that the instance (domain) refers to." ;
+  rdfs:label "refers to Note" ;
+  rdfs:subPropertyOf fro-leg-ref:refers_to ;
+.
+fro-leg-ref:regulated_as
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "regulated as" ;
+  owl:propertyChainAxiom (
+      <http://judo.googlecode.com/svn/tunk/Judging_Contracts_Core.owl#considered_by>
+      <http://judo.googlecode.com/svn/tunk/Judging_Contracts_Core.owl#applies>
+    ) ;
+.
+lkif-norm:Regulation
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty lkif-expr:bears ;
+      owl:someValuesFrom fro-leg-ref:Rulemaking ;
+    ] ;
+.

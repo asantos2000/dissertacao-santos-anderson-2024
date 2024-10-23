@@ -1,0 +1,336 @@
+TY  - JOUR
+T1  - Towards the adoption of OMG standards in the development of SOA-based IoT systems
+AU  - Costa, Bruno
+AU  - Pires, Paulo F.
+AU  - Delicato, Flávia C.
+JO  - Journal of Systems and Software
+VL  - 169
+SP  - 110720
+PY  - 2020
+DA  - 2020/11/01/
+SN  - 0164-1212
+DO  - https://doi.org/10.1016/j.jss.2020.110720
+UR  - https://www.sciencedirect.com/science/article/pii/S0164121220301588
+KW  - Internet of Things
+KW  - Application
+KW  - Model-Driven Development
+KW  - Service-Oriented Architecture
+AB  - A common feature of the Internet of Things (IoT) is the high heterogeneity, regarding network protocols, data formats, hardware and software platforms. Aiming to deal with such a degree of heterogeneity, several frameworks have applied the Model-Driven Development (MDD) to build IoT applications. On the software architecture viewpoint, the literature has shown that the Service-Oriented Architecture (SOA) is a promising style to address the interoperability of entities composing these solutions. Some features of IoT make it challenging to analyze the impact of design decisions on the SOA-based IoT applications behavior. Thus, it is a key requirement to simulate the model to verify whether the system performs as expected before its implementation. Although the literature has identified that the SOA style is suitable for addressing the interoperability, existing modeling languages do not consider SOA elements as first-class citizens when designing IoT applications. Furthermore, although existing MDD frameworks provide modeling languages comprising well-defined syntax, they lack execution semantics, thus, are not suitable for model execution and analysis. This work aims at addressing these issues by introducing IoTDraw. The framework provides a fully OMG-compliant executable modeling language for SOA-based IoT systems; thus, its specifications can be implemented by any tool implementing OMG standards.
+ER  - 
+
+TY  - JOUR
+T1  - Extracting SBVR business vocabularies and business rules from UML use case diagrams
+AU  - Skersys, Tomas
+AU  - Danenas, Paulius
+AU  - Butleris, Rimantas
+JO  - Journal of Systems and Software
+VL  - 141
+SP  - 111
+EP  - 130
+PY  - 2018
+DA  - 2018/07/01/
+SN  - 0164-1212
+DO  - https://doi.org/10.1016/j.jss.2018.03.061
+UR  - https://www.sciencedirect.com/science/article/pii/S016412121830061X
+KW  - SBVR business vocabulary
+KW  - SBVR business rules
+KW  - UML use case diagram
+KW  - Model-to-model transformation
+AB  - In model-driven information systems engineering, model transformations reside at the very core of this paradigm. Indeed, model transformations (in particular, model-to-model, or M2M) are a must-have feature of any modern model-driven approach supported by CASE technology. Model transformations are intended to raise quality of the models under development, and also speed-up the modeling itself by bringing in certain level of automation into the development process. Nevertheless, due to certain objective reasons, the level of such automation is spread unevenly throughout the development process – in this respect, Business Modeling and System Analysis are, arguably, the most underdeveloped phases of the model-driven information systems development life cycle. In this paper, we show how M2M transformation technology was used to extract well-structured business vocabularies and business rules from formal use case models represented through a set of use case diagrams; Object Management Group's (OMG) standards Semantics for Business Vocabulary and Rules (SBVR) and Unified Modeling Language (UML) were used for this purpose. The proposed solution consists of two concurrent approaches, namely, automatic and semi-automatic, which may be used selectively to achieve the best expected result. Basic implementation aspects of the solution integrating both approaches are also briefly presented in the paper. While UML use case models is the main subject in this research, the proposed solution may be adopted for other UML and MOF-based models as well.
+ER  - 
+
+TY  - CHAP
+T1  - Chapter 14 - Rental Cars-R-Us case study
+AU  - Harmon, Paul
+A2  - Harmon, Paul
+BT  - Business Process Change (Fourth Edition)
+PB  - Morgan Kaufmann
+SP  - 343
+EP  - 366
+PY  - 2019
+DA  - 2019/01/01/
+SN  - 978-0-12-815847-0
+DO  - https://doi.org/10.1016/B978-0-12-815847-0.00014-5
+UR  - https://www.sciencedirect.com/science/article/pii/B9780128158470000145
+KW  - As-Is diagram
+KW  - Business Process Model and Notation (BPMN) diagram
+KW  - Cause-effect diagram
+KW  - Concept model
+KW  - Human performance problems
+KW  - Organization analysis
+KW  - Policies and business rules
+KW  - Problem analysis worksheet
+KW  - Process management problems
+KW  - Scope diagramming
+KW  - Stakeholder analysis
+KW  - Subprocess analysis
+KW  - To-Be diagram
+KW  - Use case diagram
+AB  - This chapter walks us through the phases of an auto rental business redesign project showing how a process redesign team applies the redesign methodology to a real process problem.
+ER  - 
+
+TY  - JOUR
+T1  - Tackling rapid technology changes by applying enterprise engineering theories
+AU  - Dvořák, Ondřej
+AU  - Pergl, Robert
+JO  - Science of Computer Programming
+VL  - 215
+SP  - 102747
+PY  - 2022
+DA  - 2022/03/01/
+SN  - 0167-6423
+DO  - https://doi.org/10.1016/j.scico.2021.102747
+UR  - https://www.sciencedirect.com/science/article/pii/S0167642321001404
+KW  - ADA
+KW  - Component-based systems
+KW  - Enterprise engineering
+KW  - Technology acceleration
+KW  - Evolvability
+AB  - Moore's law states that the number of transistors on a chip will double every two years. A similar force appears to drive the progress of information technology (IT). IT companies tend to struggle to keep up with the latest technological developments, and software solutions are becoming increasingly outdated. The ability for software to change easily is defined as evolvability. One of the major fields researching evolvability is enterprise engineering (EE). The EE research paradigm applies theories from other fields to the evolvability of organisations. We argue that such theories can be applied to software engineering (SE) as well, which can contribute to the construction of software with a clear separation of dynamically changing technologies based on a relatively stable description of functions required for a specific user. EE theories introduce notions of function, construction, and affordance. We reify these concepts in terms of SE. Based on this reification, we propose affordance-driven assembling (ADA) as a software design approach that can aid in the construction of more evolvable software solutions. We exemplify the implementation of ADA in a case study on a commercial system and measure its effectiveness in terms of the impact of changes, as defined by the normalised systems theory.
+ER  - 
+
+TY  - JOUR
+T1  - BIGOWL4DQ: Ontology-driven approach for Big Data quality meta-modelling, selection and reasoning
+AU  - Barba-González, Cristóbal
+AU  - Caballero, Ismael
+AU  - Varela-Vaca, Ángel Jesús
+AU  - Cruz-Lemus, José A.
+AU  - Gómez-López, María Teresa
+AU  - Navas-Delgado, Ismael
+JO  - Information and Software Technology
+VL  - 167
+SP  - 107378
+PY  - 2024
+DA  - 2024/03/01/
+SN  - 0950-5849
+DO  - https://doi.org/10.1016/j.infsof.2023.107378
+UR  - https://www.sciencedirect.com/science/article/pii/S0950584923002331
+KW  - Data quality evaluation and measurement
+KW  - Data quality information model
+KW  - Big Data
+KW  - Ontology
+KW  - Decision model and notation
+AB  - Context:
+Data quality should be at the core of many Artificial Intelligence initiatives from the very first moment in which data is required for a successful analysis. Measurement and evaluation of the level of quality are crucial to determining whether data can be used for the tasks at hand. Conscientious of this importance, industry and academia have proposed several data quality measurements and assessment frameworks over the last two decades. Unfortunately, there is no common and shared vocabulary for data quality terms. Thus, it is difficult and time-consuming to integrate data quality analysis within a (Big) Data workflow for performing Artificial Intelligence tasks. One of the main reasons is that, except for a reduced number of proposals, the presented vocabularies are neither machine-readable nor processable, needing human processing to be incorporated.
+Objective:
+This paper proposes a unified data quality measurement and assessment information model. This model can be used in different environments and contexts to describe data quality measurement and evaluation concerns.
+Method:
+The model has been developed as an ontology to make it interoperable and machine-readable. For better interoperability and applicability, this ontology, BIGOWL4DQ, has been developed as an extension of a previously developed ontology for describing knowledge management in Big Data analytics.
+Conclusions:
+This extended ontology provides a data quality measurement and assessment framework required when designing Artificial Intelligence workflows and integrated reasoning capacities. Thus, BIGOWL4DQ can be used to describe Big Data analysis and assess the data quality before the analysis.
+Result:
+Our proposal has been validated with two use cases. First, the semantic proposal has been assessed using an academic use case. And second, a real-world case study within an Artificial Intelligence workflow has been conducted to endorse our work.
+ER  - 
+
+TY  - JOUR
+T1  - Characterizing and evaluating the quality of software process modeling language: Comparison of ten representative model-based languages
+AU  - García-García, J.A.
+AU  - Enríquez, J.G.
+AU  - Domínguez-Mayo, F.J.
+JO  - Computer Standards & Interfaces
+VL  - 63
+SP  - 52
+EP  - 66
+PY  - 2019
+DA  - 2019/03/01/
+SN  - 0920-5489
+DO  - https://doi.org/10.1016/j.csi.2018.11.008
+UR  - https://www.sciencedirect.com/science/article/pii/S0920548918302757
+KW  - Quality Evaluation Framework (QuEF)
+KW  - Quality Model
+KW  - Software Process Modeling Language
+KW  - comparative study
+AB  - Software organizations are very conscious that deployments of well-defined software processes improve software product development and its quality. Over last decade, many Software Process Modeling Languages (SPMLs) have been proposed to describe and manage software processes. However, each one presents advantages and disadvantages. The main challenge for an organization is to choose the best and most suitable SPML to meet its requirements. This paper proposes a Quality Model (QM) which has been defined conforms to QuEF (Quality Evaluation Framework). This QM allows to compare model-based SPMLs and it could be used by organizations to choose the most useful model-based SPML for their particular requirements. This paper also instances our QM to evaluate and compare 10 representative SPMLs of the various alternative approaches (metamodel-level approaches; SPML based on UML and approaches based on standards). Finally, this paper concludes there are many model-based proposals for SPM, but it is very difficult to establish with could be the commitment to follow. Some non-considered aspects until now have been identified (e.g., validation within enterprise environments, friendly support tools, mechanisms to carry out continuous improvement, mechanisms to establish business rules and elements for software process orchestrating).
+ER  - 
+
+TY  - JOUR
+T1  - Natural language processing-enhanced extraction of SBVR business vocabularies and business rules from UML use case diagrams
+AU  - Danenas, Paulius
+AU  - Skersys, Tomas
+AU  - Butleris, Rimantas
+JO  - Data & Knowledge Engineering
+VL  - 128
+SP  - 101822
+PY  - 2020
+DA  - 2020/07/01/
+SN  - 0169-023X
+DO  - https://doi.org/10.1016/j.datak.2020.101822
+UR  - https://www.sciencedirect.com/science/article/pii/S0169023X1930299X
+KW  - SBVR business vocabulary and rules
+KW  - UML use case diagram
+KW  - Model-to-model transformation
+KW  - Controlled natural language
+KW  - Natural language processing
+KW  - Information extraction
+AB  - Discovery, specification and proper representation of various aspects of business knowledge plays crucial part in model-driven information systems engineering, especially when it comes to the early stages of systems development. Being among the most applicable and advanced features of model-driven development, model transformation could help improving one of the most time- and resource-consuming efforts in this process, namely, discovery and specification of business vocabularies and business rules within the problem domain. One of our latest developments in this area was the solution for the automatic extraction of SBVR business vocabularies and business rules from UML use case diagrams, which was arguably one of the most comprehensive developments of this kind currently available in public. In this paper, we present an enhancement to our previous development by introducing a novel natural language processing component to it. This enhancement provides more advanced extraction capabilities (such as recognition of entities, entire noun and verb phrases, multinary associations) and better quality of the extraction results compared to our previous solution. The main contributions presented in this paper are pre- and post-processing algorithms, and two extraction algorithms using custom-trained POS tagger. Based on the related work findings, it is safe to state that the presented solution is novel and original in its approach of combining together M2M transformation of UML and SBVR models with natural language processing techniques in the field of model-driven information systems engineering.
+ER  - 
+
+TY  - CHAP
+T1  - Chapter 3 - Key Concepts
+AU  - McGilvray, Danette
+A2  - McGilvray, Danette
+BT  - Executing Data Quality Projects (Second Edition)
+PB  - Academic Press
+SP  - 29
+EP  - 72
+PY  - 2021
+DA  - 2021/01/01/
+SN  - 978-0-12-818015-0
+DO  - https://doi.org/10.1016/B978-0-12-818015-0.00009-8
+UR  - https://www.sciencedirect.com/science/article/pii/B9780128180150000098
+KW  - Framework for Information Quality (FIQ)
+KW  - information life cycle
+KW  - data life cycle
+KW  - lineage
+KW  - data quality dimensions
+KW  - business impact techniques
+KW  - data categories
+KW  - master data
+KW  - data specifications
+KW  - metadata
+KW  - data standards
+KW  - reference data
+KW  - data models
+KW  - business rules
+KW  - data governance
+KW  - data stewardship
+KW  - Ten Steps Process
+KW  - data quality improvement cycle
+AB  - This chapter introduces fundamental ideas, the understanding of which, will aid data quality work and use of the Ten Steps Process. Information, like financial and human resources, must be properly managed throughout its life cycle to get the full use and benefit from it, so the information life cycle is discussed with the acronym POSMAD as an easy way to remember the six phases of the information life cycle: Plan, Obtain, Store and Share, Maintain, Apply, and Dispose. POSMAD plus several additional concepts are summarized in the Framework for Information Quality (FIQ), which provides an at-a-glance view of the components necessary to have high quality information. Other concepts central to understanding and managing data are discussed, such as data quality dimensions, business impact techniques, data categories, and data specifications (with a focus on metadata, data standards, reference data, data models, and business rules), data governance and stewardship. An overview of each of the steps in the Ten Steps Process is given, along with their relationship to the concepts.
+ER  - 
+
+TY  - JOUR
+T1  - Importing participatory practices of the socio-environmental systems community to the process system engineering community: An application to supply chain
+AU  - Roth, Anastasia
+AU  - Pinta, François
+AU  - Negny, Stéphane
+AU  - Montastruc, Ludovic
+JO  - Computers & Chemical Engineering
+VL  - 155
+SP  - 107530
+PY  - 2021
+DA  - 2021/12/01/
+SN  - 0098-1354
+DO  - https://doi.org/10.1016/j.compchemeng.2021.107530
+UR  - https://www.sciencedirect.com/science/article/pii/S0098135421003082
+KW  - Supply chain
+KW  - Multi agent modeling
+KW  - Design
+AB  - The Process System Engineering community has an extensive knowledge and skills on supply chain design: from the time dimension (production and flow planning) to the space dimension (geographic position of facilities). Nevertheless, supply chains are also social networks where multiple stakeholders have to collaborate while they have different, and sometimes, diverging objectives. For this reason, having a more realistic model representing collaboration between the various stakeholders involved is necessary and new methods that facilitate the development of a shared representation of the system must be introduced. We propose to import a participatory method, PARDI (Problematic, Actors, Resources, Dynamics and Interactions), from the Socio-Environmental System community to the practices of the Process System Engineering community. Based on this method, we develop a participatory process in order to collect the necessary knowledge on the supply chain and its context. Following this participatory process, we then develop an Agent-Based Model as a simulation and decision making tool to support collective scenario analyses and collectively draw solutions with stakeholders. Our participatory modeling approach necessarily imposes a multi stakeholders vision (within the modeling but also in the result analyses) and therefore the search for a modeling consensus. Thus, it brings a better inclusion of social aspects in problem solving which are usually poorly considered leading to implementation failure sometimes. By comparing our approach with the classic one of the Process Systems Engineering community, we highlight the strengths and weaknesses of both and how complementary they can be. A case study on the already existing supply chain of the chestnut wood in Cévennes area (France) illustrates the capabilities of our participatory methodology. It focuses on the socio-economic model design of the first two steps (forestry activities to harvest) in the supply chain as the latter is locked because of economic and social organisation issues. The objective is to find the best action levers to unlock the resistance that forest plot owners have to remove declining wood from their land.
+ER  - 
+
+TY  - JOUR
+T1  - A comprehensive review on resolving ambiguities in natural language processing
+AU  - Yadav, Apurwa
+AU  - Patel, Aarshil
+AU  - Shah, Manan
+JO  - AI Open
+VL  - 2
+SP  - 85
+EP  - 92
+PY  - 2021
+DA  - 2021/01/01/
+SN  - 2666-6510
+DO  - https://doi.org/10.1016/j.aiopen.2021.05.001
+UR  - https://www.sciencedirect.com/science/article/pii/S2666651021000127
+KW  - Natural language processing
+KW  - Requirement engineering
+KW  - Machine learning
+KW  - Ambiguity
+KW  - Disambiguation
+AB  - Natural language processing is a known technology behind the development of some widely known AI assistants such as: SIRI, Natasha, and Watson. However, NLP is a diverse technology used for numerous purposes. NLP based tools are widely used for disambiguation in requirement engineering which will be the primary focus of this paper. A requirement document is a medium for the user to deliver one's expectations from the software. Hence, an ambiguous requirement document may eventually lead to misconceptions in a software. Various tools are available for disambiguation in RE based on different techniques. In this paper, we analyzed different disambiguation tools in order to compare and evaluate them. In our survey, we noticed that even though some disambiguation tools reflect promising results and can supposedly be relied upon, they fail to completely eliminate the ambiguities. In order to avoid ambiguities, the requirement document has to be written using formal language, which is not preferred by users due to its lack of lucidity and readability. Nevertheless, some of the tools we mentioned in this paper are still under development and in future might become capable of eliminating ambiguities. In this paper, we attempt to analyze some existing research work and present an elaborative review of various disambiguation tools.
+ER  - 
+
+TY  - JOUR
+T1  - An integrated socio-technical enterprise modelling: A scenario of healthcare system analysis and design
+AU  - Fayoumi, Amjad
+AU  - Williams, Richard
+JO  - Journal of Industrial Information Integration
+VL  - 23
+SP  - 100221
+PY  - 2021
+DA  - 2021/09/01/
+SN  - 2452-414X
+DO  - https://doi.org/10.1016/j.jii.2021.100221
+UR  - https://www.sciencedirect.com/science/article/pii/S2452414X21000212
+KW  - Enterprise Modelling
+KW  - Socio-technical Systems
+KW  - Enterprise Integrated Model
+KW  - Conceptual Modelling
+KW  - Healthcare System
+AB  - One of the crucial issues facing enterprise modelling (EM) practices is that EM is considered technical, and rarely or never has a social focus. Social aspects referred to here are the soft aspects of the organisation that lead to organic organisation development (communication, collaboration, culture, skills and personal goals). There are many EM approaches and enterprise architecture frameworks were proposed recently. These cover different enterprise aspects, perspectives, artefacts and models with different qualities and levels of details. Yet, the imperative determination has overlaid the declarative exploration in EM as a necessity of the design effort. Rethinking the assumptions underlying EM should bring a new and different understanding on how EM can be tackled within the enterprise, in particular the joint development and optimisation of socio-technical systems. This paper discusses EM from a socio-technical systems (STS) perspective, and towards forming a new model of EM that is driven from STS theory and combined with STS practices. Then proposes a conceptual integrated model that incorporates the new concepts of STS toward building an EM framework for balanced socio-technical joint development and optimisation. The approach is illustrated in a scenario from healthcare industry. A combination between modelling and STS practices proved powerful for holistic IT modernisation, future work discussed toward the end of the paper.
+ER  - 
+
+TY  - JOUR
+T1  - On the declarative paradigm in hybrid business process representations: A conceptual framework and a systematic literature study
+AU  - Abbad Andaloussi, Amine
+AU  - Burattin, Andrea
+AU  - Slaats, Tijs
+AU  - Kindler, Ekkart
+AU  - Weber, Barbara
+JO  - Information Systems
+VL  - 91
+SP  - 101505
+PY  - 2020
+DA  - 2020/07/01/
+SN  - 0306-4379
+DO  - https://doi.org/10.1016/j.is.2020.101505
+UR  - https://www.sciencedirect.com/science/article/pii/S0306437920300168
+KW  - Hybrid process model
+KW  - Understandability of process models
+KW  - Process flexibility
+KW  - Declarative process modeling
+KW  - Business process modeling
+AB  - Process modeling plays a central role in the development of today’s process-aware information systems both on the management level (e.g., providing input for requirements elicitation and fostering communication) and on the enactment level (providing a blue-print for process execution and enabling simulation). The literature comprises a variety of process modeling approaches proposing different modeling languages (i.e., imperative and declarative languages) and different types of process artifact support (i.e., process models, textual process descriptions, and guided simulations). However, the use of an individual modeling language or a single type of process artifact is usually not enough to provide a clear and concise understanding of the process. To overcome this limitation, a set of so-called “hybrid” approaches combining languages and artifacts have been proposed, but no common grounds have been set to define and categorize them. This work aims at providing a fundamental understanding of these hybrid approaches by defining a unified terminology, providing a conceptual framework and proposing an overarching overview to identify and analyze them. Since no common terminology has been used in the literature, we combined existing concepts and ontologies to define a “Hybrid Business Process Representation” (HBPR). Afterwards, we conducted a Systematic Literature Review (SLR) to identify and investigate the characteristics of HBPRs combining imperative and declarative languages or artifacts. The SLR resulted in 30 articles which were analyzed. The results indicate the presence of two distinct research lines and show common motivations driving the emergence of HBPRs, a limited maturity of existing approaches, and diverse application domains. Moreover, the results are synthesized into a taxonomy classifying different types of representations. Finally, the outcome of the study is used to provide a research agenda delineating the directions for future work.
+ER  - 
+
+TY  - JOUR
+T1  - AuMixDw: Towards an automated hybrid approach for building XML data warehouses
+AU  - Ouaret, Zoubir
+AU  - Boukraa, Doulkifli
+AU  - Boussaid, Omar
+AU  - Chalal, Rachid
+JO  - Data & Knowledge Engineering
+VL  - 120
+SP  - 60
+EP  - 82
+PY  - 2019
+DA  - 2019/03/01/
+SN  - 0169-023X
+DO  - https://doi.org/10.1016/j.datak.2019.01.004
+UR  - https://www.sciencedirect.com/science/article/pii/S0169023X18302477
+KW  - XML
+KW  - SBVR
+KW  - BIR
+KW  - Data warehouse
+KW  - User requirement
+KW  - Dimensional modelling
+AB  - In this paper, we present a mixed approach for building XML data warehouses from both XML data sources and user requirements. Our proposed approach aims at obtaining a unique multidimensional schema of theXML data warehouse. The approach follows three steps. During the first step, an intermediate SBVR model extended with template rules is used to accommodate a data warehousing system and to facilitate the automatic identification of facts and dimensions from the user requirements. After modelling XML data sources in UML, the second step corresponds to identifying candidate DW schemata from such data sources. The third step compares these candidate schemata with the reference model obtained from the user requirements. In this step, we propose to adapt similarity metric-extended Boolean models (BIR) and to use them in order to measure, rank and select the most appropriate data warehouse schema. Such a schema should best describe the data sources and exhaustively cover all the needed user requirements. To demonstrate our approach, we present a case study of the bibliographic database dblp.
+ER  - 
+
+TY  - JOUR
+T1  - Integration of Business Applications with the Blockchain: Odoo and Hyperledger Fabric Open Source Proof of Concept
+AU  - Belhi, Abdelhak
+AU  - Gasmi, Houssem
+AU  - Bouras, Abdelaziz
+AU  - Aouni, Belaid
+AU  - Khalil, Ibrahim
+JO  - IFAC-PapersOnLine
+VL  - 54
+IS  - 1
+SP  - 817
+EP  - 824
+PY  - 2021
+DA  - 2021/01/01/
+T2  - 17th IFAC Symposium on Information Control Problems in Manufacturing INCOM 2021
+SN  - 2405-8963
+DO  - https://doi.org/10.1016/j.ifacol.2021.08.185
+UR  - https://www.sciencedirect.com/science/article/pii/S2405896321009551
+KW  - Blockchain
+KW  - Supply Chain
+KW  - ERP
+KW  - Odoo
+KW  - Hyperledger Fabric
+KW  - Software Integration
+AB  - Since its revolution in the financial sector, the blockchain technology disrupted the majority of collaboration-based applications including supply chain management. The supply chain is one of the most important sectors benefiting from all the advantages of blockchain. Through this paper, we are mainly focusing on the practical aspects of integrating blockchain technology with traditional and existing business applications. Indeed, most businesses and corporations will find it hard to shift from traditional architectures to a decentralized one with fears related to upgrading risks, unknown tools, and resistance to change. Thus, we mainly propose several scenarios for blockchain integration focusing on the most used Enterprise Resource Planning (ERP) platforms. Besides, we present our proof of concept integration that uses the HyperLedger Fabric blockchain platform and the Odoo ERP framework. The selection of these two solutions for our study was mainly influenced by the fact that Hyperledger is the most used open-source blockchain platform in the industry and that Odoo is the most used open-source ERP framework. Nevertheless, we believe that our proposed solution can easily be used with proprietary ERP platforms and business applications.
+ER  - 

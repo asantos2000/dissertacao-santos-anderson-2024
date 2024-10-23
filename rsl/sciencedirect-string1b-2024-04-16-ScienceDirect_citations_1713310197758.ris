@@ -1,0 +1,740 @@
+TY  - JOUR
+T1  - Automated formalization of structured natural language requirements
+AU  - Giannakopoulou, Dimitra
+AU  - Pressburger, Thomas
+AU  - Mavridou, Anastasia
+AU  - Schumann, Johann
+JO  - Information and Software Technology
+VL  - 137
+SP  - 106590
+PY  - 2021
+DA  - 2021/09/01/
+SN  - 0950-5849
+DO  - https://doi.org/10.1016/j.infsof.2021.106590
+UR  - https://www.sciencedirect.com/science/article/pii/S0950584921000707
+KW  - Requirements
+KW  - Structured natural language
+KW  - Temporal logic
+KW  - Verification
+KW  - Testing
+KW  - Analysis
+AB  - The use of structured natural languages to capture requirements provides a reasonable trade-off between ambiguous natural language and unintuitive formal notations. There are two major challenges in making structured natural language amenable to formal analysis: (1) formalizing requirements as formulas that can be processed by analysis tools and (2) ensuring that the formulas conform to the semantics of the structured natural language. fretish is a structured natural language that incorporates features from existing research and from NASA applications. Even though fretish is quite expressive, its underlying semantics is determined by the types of four fields: scope, condition, timing, and response. Each combination of field types defines a template with Real-Time Graphical Interval Logic (RTGIL) semantics. We have developed a framework that constructs temporal logic formulas for each template compositionally, from its fields. The compositional nature of our algorithms facilitates maintenance and extensibility. Our goal is to be inclusive not only in terms of language expressivity, but also in terms of requirements analysis tools that we can interface with. For this reason we generate metric-temporal logic formulas with (1) exclusively future-time operators, over both finite and infinite traces, and (2) exclusively past-time operators. To establish trust in the produced formalizations for each template, our framework: (1) extensively tests the generated formulas against the template semantics and (2) proves equivalence between its past-time and future-time formulas. Our approach is available through the open-source tool fret and has been used to capture and analyze requirements for a Lockheed Martin Cyber–Physical System challenge.
+ER  - 
+
+TY  - JOUR
+T1  - 14th European Congress on Digital Pathology
+JO  - Journal of Pathology Informatics
+VL  - 10
+IS  - 1
+SP  - 32
+PY  - 2019
+DA  - 2019/01/01/
+SN  - 2153-3539
+DO  - https://doi.org/10.4103/2153-3539.270744
+UR  - https://www.sciencedirect.com/science/article/pii/S2153353922003959
+ER  - 
+
+TY  - JOUR
+T1  - A distributed approach to compliance monitoring of business process event streams
+AU  - Loreti, Daniela
+AU  - Chesani, Federico
+AU  - Ciampolini, Anna
+AU  - Mello, Paola
+JO  - Future Generation Computer Systems
+VL  - 82
+SP  - 104
+EP  - 118
+PY  - 2018
+DA  - 2018/05/01/
+SN  - 0167-739X
+DO  - https://doi.org/10.1016/j.future.2017.12.043
+UR  - https://www.sciencedirect.com/science/article/pii/S0167739X17317909
+KW  - Business process management
+KW  - Distributed compliance monitoring
+KW  - Stream processing
+KW  - MapReduce
+AB  - In recent years, the significant advantages brought to business processes by process mining account for its evolution as a major concern in both industrial and academic research. In particular, increasing attention has been turned to compliance monitoring as a way to identify when a sequence of events deviates from the expected behaviour. As we are entering the IoT era, an increasing variety of smart objects can be introduced in business processes (e.g., tags to track products in a plant, smartphones and badge swiping to draw the activities of customers and employees in a shopping centre, etc.). All these objects produce large volumes of log data in the form of streams, which need to be run-time analysed to extract further knowledge about the underlying business process and to identify unexpected, non-conforming events. Albeit rather straightforward on a small log file, compliance verification techniques may show poor performances when dealing with big data and streams, thus calling for scalable approaches. This work investigates the possibility of spreading the compliance monitoring task over a network of computing nodes, achieving the desired scalability. The monitor is realised through the existing SCIFF framework for compliance checking, which provides a high level logic-based language for expressing the properties to be monitored and nicely supports the partitioning of the monitoring task. The distributed computation is achieved through a MapReduce approach and the adoption of an existing general engine for large scale stream processing. Experimental results show the feasibility of the approach as well as the advantages in performance brought to the compliance monitoring task.
+ER  - 
+
+TY  - JOUR
+T1  - Early validation of system requirements and design through correctness-by-construction
+AU  - Stachtiari, Emmanouela
+AU  - Mavridou, Anastasia
+AU  - Katsaros, Panagiotis
+AU  - Bliudze, Simon
+AU  - Sifakis, Joseph
+JO  - Journal of Systems and Software
+VL  - 145
+SP  - 52
+EP  - 78
+PY  - 2018
+DA  - 2018/11/01/
+SN  - 0164-1212
+DO  - https://doi.org/10.1016/j.jss.2018.07.053
+UR  - https://www.sciencedirect.com/science/article/pii/S016412121830150X
+KW  - Rigorous system design
+KW  - Requirements formalization
+KW  - Model-based design
+KW  - Correctness-by-construction
+AB  - Early validation of requirements aims to reduce the need for the high-cost validation testing and corrective measures at late development stages. This work introduces a systematic process for the unambiguous specification of system requirements and the guided derivation of formal properties, which should be implied by the system ’s structure and behavior in conjunction with its external stimuli. This rigorous design takes place through the incremental construction of a model using the BIP (Behavior-Interaction-Priorities) component framework. It allows building complex designs by composing simpler reusable designs enforcing given properties. If some properties are neither enforced nor verified, the model is refined or certain requirements are revised. A validated model provides evidence of requirements’ consistency and design correctness. The process is semi-automated through a new tool and existing verification tools. Its effectiveness was evaluated on a set of requirements for the control software of the CubETH nanosatellite and an extract of software requirements for a Low Earth Orbit observation satellite. Our experience and obtained results helped in identifying open challenges for applying the method in industrial context. These challenges concern with the domain knowledge representation, the expressiveness of used specification languages, the library of reusable designs and scalability.
+ER  - 
+
+TY  - JOUR
+T1  - Knowledge-oriented modeling for influencing factors of battle damage in military industrial logistics: An integrated method
+AU  - Li, Xiong
+AU  - Zhao, Xiao-dong
+AU  - Pu, Wei
+JO  - Defence Technology
+VL  - 16
+IS  - 3
+SP  - 571
+EP  - 587
+PY  - 2020
+DA  - 2020/06/01/
+SN  - 2214-9147
+DO  - https://doi.org/10.1016/j.dt.2019.09.001
+UR  - https://www.sciencedirect.com/science/article/pii/S2214914719305732
+KW  - Battle damage
+KW  - Industrial logistics
+KW  - Entity-relationship approach
+KW  - Social network analysis
+KW  - Agent-based simulation
+AB  - Modeling influencing factors of battle damage is one of essential works in implementing military industrial logistics simulation to explore battle damage laws knowledge. However, one of key challenges in designing the simulation system could be how to reasonably determine simulation model input and build a bridge to link battle damage model and battle damage laws knowledge. In this paper, we propose a novel knowledge-oriented modeling method for influencing factors of battle damage in military industrial logistics, integrating conceptual analysis, conceptual modeling, quantitative modeling and simulation implementation. We conceptualize influencing factors of battle damage by using the principle of hierarchical decomposition, thus classifying the related battle damage knowledge logically. Then, we construct the conceptual model of influencing factors of battle damage by using Entity-Relationship approach, thus describing their interactions reasonably. Subsequently, we extract the important influencing factors by using social network analysis, thus evaluating their importance quantitatively and further clarifying the elements of simulation. Finally, we develop an agent-based military industry logistics simulation system by taking the modeling results on influencing factors of battle damage as simulation model input, and obtain simulation model output, i.e., new battle damage laws knowledge, thus verifying feasibility and effectiveness of the proposed method. The results show that this method can be used to support human decision-making and action.
+ER  - 
+
+TY  - JOUR
+T1  - Processes, methods, and tools in model-based engineering—A qualitative multiple-case study
+AU  - Holtmann, Jörg
+AU  - Liebel, Grischa
+AU  - Steghöfer, Jan-Philipp
+JO  - Journal of Systems and Software
+VL  - 210
+SP  - 111943
+PY  - 2024
+DA  - 2024/04/01/
+SN  - 0164-1212
+DO  - https://doi.org/10.1016/j.jss.2023.111943
+UR  - https://www.sciencedirect.com/science/article/pii/S0164121223003382
+KW  - Model-based engineering
+KW  - Development processes
+KW  - Modeling methods
+AB  - Research on model-based engineering (MBE) has occasionally touched upon the relationship between development processes and concrete MBE practices. However, the alignment of these elements has rarely been the central focus of these studies. As a result, important questions regarding the alignment of MBE and development processes, as well as the impact of development processes on the utilization and success of MBE, have remained unanswered. To address this research gap, we conducted a multiple-case study involving 14 individuals from nine different companies, conducting a total of 12 interviews. Building upon seven propositions derived from existing literature, our investigation sought to understand how MBE is aligned with the development process and explore the application of MBE in this context. Additionally, we identified challenges and needs in this area. Our findings challenge some previously reported results, such as the perceived conflicts between agile development processes and MBE. Furthermore, we unearthed previously unreported issues, like the importance of considering the perspectives of tool vendors in MBE discussions. Overall, this paper makes a significant contribution by providing a comprehensive and up-to-date perspective on how MBE is integrated into development processes, along with an examination of the social and organizational aspects inherent to these processes. Editor’s note: Open Science material was validated by the Journal of Systems and Software Open Science Board.
+ER  - 
+
+TY  - JOUR
+T1  - Verification of the European Rail Traffic Management System in Real-Time Maude
+AU  - Berger, Ulrich
+AU  - James, Phillip
+AU  - Lawrence, Andrew
+AU  - Roggenbach, Markus
+AU  - Seisenberger, Monika
+JO  - Science of Computer Programming
+VL  - 154
+SP  - 61
+EP  - 88
+PY  - 2018
+DA  - 2018/03/01/
+T2  - Formal Techniques for Safety-Critical Systems 2015
+SN  - 0167-6423
+DO  - https://doi.org/10.1016/j.scico.2017.10.011
+UR  - https://www.sciencedirect.com/science/article/pii/S016764231730223X
+KW  - Railway signalling
+KW  - ERTMS/ETCS
+KW  - Hybrid systems
+KW  - Real-Time Maude
+KW  - Model-checking
+AB  - The European Rail Traffic Management System (ERTMS) is a state-of-the-art train control system designed as a standard for railways across Europe. It generalises traditional discrete interlocking systems to a world in which trains hold on-board equipment for signalling, and trains and interlockings communicate via radio block processors. The ERTMS aims at improving performance and capacity of rail traffic systems without compromising their safety. The ERTMS system is of hybrid nature, in contrast to classical railway signalling systems which deal with discrete data only. Consequently, the switch to ERTMS poses a number of research questions to the formal methods community, most prominently: How can safety be guaranteed? In this paper we present the first formal modelling of ERTMS comprising all subsystems participating in its control cycle. We capture what safety means in physical and in logical terms, and we demonstrate that it is feasible to prove safety of ERTMS systems utilising Real-Time Maude model-checking by considering a number of bi-directional track layouts. ERTMS is currently being installed in many countries. It will be the main train control standard for the foreseeable future. The concepts presented in this paper offer applicable methods supporting the design of dependable ERTMS systems. We demonstrate model-checking to be a viable option in the analysis of large and complex real-time systems. Furthermore, we establish Real-Time Maude as a modelling and verification tool applicable to the railway domain. The approach given in this paper is a rigorous one. In order to avoid modelling errors, we follow a systematic approach: First, as a requirement specification, we identify the event-response structures present in the ERTMS. Then, we model these structures in Real-Time Maude in a traceable way, i.e., specification text in Real-Time Maude can be directly mapped to requirements. We explore our models by checking if they have the desired behaviour, and apply systematic model-exploration through error injection – both these steps are carried out using the formal method Real-Time Maude. Finally, we analyse ERTMS by model-checking, thus applying a formal method to the railway domain, and we mathematically prove that our analysis of ERTMS by model-checking is complete, i.e., that it guarantees safety at all times.
+ER  - 
+
+TY  - JOUR
+T1  - Improving comprehension of knowledge representation languages: A case study with Description Logics
+AU  - Warren, Paul
+AU  - Mulholland, Paul
+AU  - Collins, Trevor
+AU  - Motta, Enrico
+JO  - International Journal of Human-Computer Studies
+VL  - 122
+SP  - 145
+EP  - 167
+PY  - 2019
+DA  - 2019/02/01/
+SN  - 1071-5819
+DO  - https://doi.org/10.1016/j.ijhcs.2018.08.009
+UR  - https://www.sciencedirect.com/science/article/pii/S1071581918305068
+KW  - Description Logics
+KW  - Manchester OWL Syntax
+KW  - User studies
+KW  - Psychological theories of reasoning
+AB  - Knowledge representation languages are frequently difficult to understand, particularly for those not trained in formal logic. This is the case for Description Logics, which have been adopted for knowledge representation on the Web and in a number of application areas. This work looks at the difficulties experienced with Description Logics; and in particular with the widely-used Manchester OWL Syntax, which employs natural language keywords. The work comprises three studies. The first two identify a number of difficulties which users experience, e.g. with negated intersection, functional properties, the use of subproperties and restrictions. Insights from cognitive psychology and the study of language are applied to understand these difficulties. Whilst these difficulties are in part inherent in reasoning about logic, and Description Logics in particular, they are made worse by the syntax. In the third study, alternative syntactic constructs are proposed which demonstrate some improvement in accuracy and efficiency of comprehension. In addition to proposing alternative syntactic constructs, the work makes some suggestions regarding training and support systems for Description Logics.
+ER  - 
+
+TY  - JOUR
+T1  - LOT: An industrial oriented ontology engineering framework
+AU  - Poveda-Villalón, María
+AU  - Fernández-Izquierdo, Alba
+AU  - Fernández-López, Mariano
+AU  - García-Castro, Raúl
+JO  - Engineering Applications of Artificial Intelligence
+VL  - 111
+SP  - 104755
+PY  - 2022
+DA  - 2022/05/01/
+SN  - 0952-1976
+DO  - https://doi.org/10.1016/j.engappai.2022.104755
+UR  - https://www.sciencedirect.com/science/article/pii/S0952197622000525
+KW  - Ontology engineering
+KW  - Ontology development methodology
+KW  - Ontology development software support
+KW  - Collaborative ontology development
+KW  - Ontology industrial development
+AB  - Ontology Engineering has captured much attention during the last decades leading to the proliferation of numerous works regarding methodologies, guidelines, tools, resources, etc. including topics which are still being investigated. Even though, there are still many open questions when addressing a new ontology development project, regarding how to manage the overall project and articulate transitions between activities or which tasks and tools are recommended for each step. In this work we propose the Linked Open Terms (LOT) methodology, an overall and lightweight methodology for building ontologies based on existing methodologies and oriented to semantic web developments and technologies. The LOT methodology focuses on the alignment with industrial development, in addition to academic and research projects, and software development, that is making ontology development part of the software industry. This methodology includes lessons learnt from more than 20 years in ontological engineering and its application on 18 projects is reported.
+ER  - 
+
+TY  - JOUR
+T1  - A cloud-edge based data security architecture for sharing and analysing cyber threat information
+AU  - Chadwick, David W
+AU  - Fan, Wenjun
+AU  - Costantino, Gianpiero
+AU  - de Lemos, Rogerio
+AU  - Di Cerbo, Francesco
+AU  - Herwono, Ian
+AU  - Manea, Mirko
+AU  - Mori, Paolo
+AU  - Sajjad, Ali
+AU  - Wang, Xiao-Si
+JO  - Future Generation Computer Systems
+VL  - 102
+SP  - 710
+EP  - 722
+PY  - 2020
+DA  - 2020/01/01/
+SN  - 0167-739X
+DO  - https://doi.org/10.1016/j.future.2019.06.026
+UR  - https://www.sciencedirect.com/science/article/pii/S0167739X19300895
+KW  - Data security architecture
+KW  - Data outsourcing
+KW  - Cyber threat information
+KW  - Edge computing
+KW  - Cloud-edge trust
+KW  - Cloud security
+AB  - Cyber-attacks affect every aspect of our lives. These attacks have serious consequences, not only for cyber-security, but also for safety, as the cyber and physical worlds are increasingly linked. Providing effective cyber-security requires cooperation and collaboration among all the entities involved. Increasing the amount of cyber threat information (CTI) available for analysis allows better prediction, prevention and mitigation of cyber-attacks. However, organizations are deterred from sharing their CTI over concerns that sensitive and confidential information may be revealed to others. We address this concern by providing a flexible framework that allows the confidential sharing of CTI for analysis between collaborators. We propose a five-level trust model for a cloud-edge based data sharing infrastructure. The data owner can choose an appropriate trust level and CTI data sanitization approach, ranging from plain text, through anonymization/pseudonymization to homomorphic encryption, in order to manipulate the CTI data prior to sharing it for analysis. Furthermore, this sanitization can be performed by either an edge device or by the cloud service provider, depending upon the level of trust the organization has in the latter. We describe our trust model, our cloud-edge infrastructure, and its deployment model, which are designed to satisfy the broadest range of requirements for confidential CTI data sharing. Finally we briefly describe our implementation and the testing that has been carried out so far by four pilot projects that are validating our infrastructure.
+ER  - 
+
+TY  - JOUR
+T1  - Assisted pattern mining for discovering interactive behaviours on the web
+AU  - Apaolaza, Aitor
+AU  - Vigo, Markel
+JO  - International Journal of Human-Computer Studies
+VL  - 130
+SP  - 196
+EP  - 208
+PY  - 2019
+DA  - 2019/10/01/
+SN  - 1071-5819
+DO  - https://doi.org/10.1016/j.ijhcs.2019.06.012
+UR  - https://www.sciencedirect.com/science/article/pii/S1071581919300813
+KW  - Interaction logs
+KW  - Assisted pattern mining
+KW  - User interface evaluation
+AB  - When the hypotheses about users’ behaviour on interactive systems are unknown or weak, mining user interaction logs in a data-driven fashion can provide valuable insights. Yet, this process is full of challenges that prevent broader adoption of data-driven methods. We address these pitfalls by assisting user researchers in customising event sets, filtering the noisy outputs of the algorithms and providing tools for analysing such outputs in an exploratory fashion. This tooling facilitates the agile testing and refinement of the formulated hypotheses of use. A user study with twenty participants indicates that compared to the baseline approach, assisted pattern mining is perceived to be more useful and produces more actionable insights, despite being more difficult to learn.
+ER  - 
+
+TY  - CHAP
+T1  - Chapter 3 - Evaluation and visualization of healthcare semantic models
+AU  - Nikiforova, Anastasija
+AU  - Rovite, Vita
+AU  - Tiwari, Sanju
+AU  - Klovins, Janis
+AU  - Kante, Normunds
+A2  - Tiwari, Sanju
+A2  - Ortiz Rodriguez, Fernando
+A2  - Jabbar, M.A.
+BT  - Semantic Models in IoT and eHealth Applications
+PB  - Academic Press
+SP  - 39
+EP  - 68
+PY  - 2022
+DA  - 2022/01/01/
+T2  - Intelligent Data-Centric Systems
+SN  - 978-0-323-91773-5
+DO  - https://doi.org/10.1016/B978-0-32-391773-5.00009-1
+UR  - https://www.sciencedirect.com/science/article/pii/B9780323917735000091
+KW  - Healthcare semantic model
+KW  - Ontology visualization
+KW  - Internet of medical things
+KW  - Internet of things
+KW  - Knowledge representation
+KW  - Data management
+KW  - Biomedicine
+AB  - Today, the popularity of semantic models and ontologies is increasing rapidly. This leads not only to the high number of general ontologies, but also to a variety of domain-specific ontologies where the medical or healthcare domains play a major role. Their increasing popularity, particularly in different non-IT domains, has an impact on the need for support tools such as visualization. However, what are the benefits of ontology visualization? And how to choose not only the most suitable ontology, but also its visualization and evaluate its suitability for a given case? whether the “silver bullet” exists? and whether they are well suited to non-IT experts? Ontology itself is relatively complex concept that requires a special set of expertise to involve and maintain it. This chapter focuses on the current visualization techniques that make it easier to understand and process health-care data with a focus on the biomedical subdomain. The chapter should allow researchers and practitioners to understand the purposes and priorities of existing techniques by establishing support to choose the most appropriate depending on a use-case.
+ER  - 
+
+TY  - JOUR
+T1  - Natural language aggregate query over RDF data
+AU  - Hu, Xin
+AU  - Dang, Depeng
+AU  - Yao, Yingting
+AU  - Ye, Luting
+JO  - Information Sciences
+VL  - 454-455
+SP  - 363
+EP  - 381
+PY  - 2018
+DA  - 2018/07/01/
+SN  - 0020-0255
+DO  - https://doi.org/10.1016/j.ins.2018.04.042
+UR  - https://www.sciencedirect.com/science/article/pii/S0020025516310611
+KW  - RDF
+KW  - Question answering
+KW  - Natural language
+KW  - Aggregate query
+AB  - Natural language question/answering over RDF (Resource Description Framework) data has received widespread attention. Although several studies can address a small number of aggregate queries, these studies have many restrictions (e.g., interactive information, controlled questions or query templates). Thus far, there has been no natural language querying mechanism that can process general aggregate queries over RDF data. Therefore, we propose a framework called NLAQ (Natural Language Aggregate Query). First, we propose a novel algorithm to automatically understand a user's query intention, which primarily contains semantic relations and aggregations. Second, to build a better bridge between the query intention and RDF data, we propose an extended paraphrase dictionary ED to obtain more candidate mappings for semantic relations, and we introduce a predicate-type adjacent set PT to filter out inappropriate candidate mapping combinations in semantic relations and basic graph patterns. Third, we design a suitable translation plan for each aggregate category and effectively distinguish whether an aggregate item is numeric, which will greatly affect the aggregate result. Finally, we conduct extensive experiments over real datasets (QALD benchmark and DBpedia). The experimental results demonstrate that our solution is effective.
+ER  - 
+
+TY  - JOUR
+T1  - Machine identification of potential manufacturing process failure modes based on process constituent elements
+AU  - Wu, Zhongyi
+AU  - Zhang, Hong
+AU  - Liu, Weidong
+AU  - Li, Zhenzhen
+AU  - Zheng, Weijie
+JO  - Advanced Engineering Informatics
+VL  - 51
+SP  - 101491
+PY  - 2022
+DA  - 2022/01/01/
+SN  - 1474-0346
+DO  - https://doi.org/10.1016/j.aei.2021.101491
+UR  - https://www.sciencedirect.com/science/article/pii/S1474034621002408
+KW  - PFMEA
+KW  - Process failure modes
+KW  - Process constituent elements
+KW  - Extension operator
+KW  - Similarity
+AB  - It is urgent to solve the problems of low efficiency, high cost and lack of system integrity when PFMEA identifies potential process failure modes in the process of multi-variety and small batch production. Current study innovatively proposes a machine identification method of potential process failure modes based on the combination of process constituent elements (PCE) model and feature case-basedreasoning represented by extension. Firstly, the specific description of the process content is developed with the PCE and the way of expression is standardized through the method of data mining. Then, the PCE of the normative knowledge representation of extension feature cases were constructed, and natural language processing (NLP) technology is employed to solve the feature similarity between the same PCE after the specification of the sentence and chunk features respectively, and case-based reasoning and extension operator are applied to carry out analogical reasoning and calculation for the feature cases with high similarity degree of feature attributes, so as to realize the machine identification of the potential process failure modes in the manufacturing process. Finally, the proposed method is specifically applied to the three parts assembly process of an aircraft assembly to verify the effectiveness and applicability of the proposed method.
+ER  - 
+
+TY  - JOUR
+T1  - Data-driven construction of SPARQL queries by approximate question graph alignment in question answering over knowledge graphs
+AU  - Bakhshi, Mahdi
+AU  - Nematbakhsh, Mohammadali
+AU  - Mohsenzadeh, Mehran
+AU  - Rahmani, Amir Masoud
+JO  - Expert Systems with Applications
+VL  - 146
+SP  - 113205
+PY  - 2020
+DA  - 2020/05/15/
+SN  - 0957-4174
+DO  - https://doi.org/10.1016/j.eswa.2020.113205
+UR  - https://www.sciencedirect.com/science/article/pii/S0957417420300312
+KW  - Knowledge graph
+KW  - Answering natural language questions
+KW  - Disambiguation of interpretations
+KW  - Pairwise graph alignment
+AB  - As increasingly more semantic real-world data is stored in knowledge graphs, providing intuitive and effective query methods for end-users is a fundamental and challenging task. Since there is a gap between the plain natural language question (NLQ) and structured data, most RDF question/answering (Q/A) systems construct SPARQL queries from NLQs and obtain precise answers from knowledge graphs. A major challenge is how to disambiguate the mapping of phrases and relations in a question to the dataset items, especially in complex questions. In this paper, we propose a novel data-driven graph similarity framework for RDF Q/A to extract the query graph patterns directly from the knowledge graph instead of constructing them with semantically mapped items. An uncertain question graph is presented to model the interpretations of an NLQ, based on which our problem is reduced to a graph alignment problem. In formulating the alignment, both the lexical and structural similarity of graphs are considered, hence, the target RDF subgraph is used as a query graph pattern to construct the final query. We create a pruned entity graph dynamically based on the complexity of an input question to reduce the search space on the knowledge graph. Moreover, to reduce the calculating cost of the graph similarity, we compute the similarity scores only for same-distance graph elements and equip the process with an edge association-aware surface form extraction method. Empirical studies over real datasets indicate that our proposed approach is flexible and effective as it outperforms state-of-the-art methods significantly.
+ER  - 
+
+TY  - JOUR
+T1  - Uncertainty-aware specification and analysis for hardware-in-the-loop testing of cyber-physical systems
+AU  - Shin, Seung Yeob
+AU  - Chaouch, Karim
+AU  - Nejati, Shiva
+AU  - Sabetzadeh, Mehrdad
+AU  - Briand, Lionel C.
+AU  - Zimmer, Frank
+JO  - Journal of Systems and Software
+VL  - 171
+SP  - 110813
+PY  - 2021
+DA  - 2021/01/01/
+SN  - 0164-1212
+DO  - https://doi.org/10.1016/j.jss.2020.110813
+UR  - https://www.sciencedirect.com/science/article/pii/S0164121220302132
+KW  - Test case specification and analysis
+KW  - Cyber-physical systems
+KW  - UML profile
+KW  - Simulation
+KW  - Model checking
+KW  - Machine learning
+AB  - Hardware-in-the-loop (HiL) testing is important for developing cyber-physical systems (CPS). HiL test cases manipulate hardware, are time-consuming and their behaviors are impacted by the uncertainties in the CPS environment. To mitigate the risks associated with HiL testing, engineers have to ensure that (1) test cases are well-behaved, e.g., they do not damage hardware, and (2) test cases can execute within a time budget. Leveraging the UML profile mechanism, we develop a domain-specific language, HITECS, for HiL test case specification. Using HITECS, we provide uncertainty-aware analysis methods to check the well-behavedness of HiL test cases. In addition, we provide a method to estimate the execution times of HiL test cases before the actual HiL testing. We apply HITECS to an industrial case study from the satellite domain. Our results show that: (1) HITECS helps engineers define more effective assertions to check HiL test cases, compared to the assertions defined without any systematic guidance; (2) HITECS verifies in practical time that HiL test cases are well-behaved; (3) HITECS is able to resolve uncertain parameters of HiL test cases by synthesizing conditions under which test cases are guaranteed to be well-behaved; and (4) HITECS accurately estimates HiL test case execution times.
+ER  - 
+
+TY  - JOUR
+T1  - NLP-assisted software testing: A systematic mapping of the literature
+AU  - Garousi, Vahid
+AU  - Bauer, Sara
+AU  - Felderer, Michael
+JO  - Information and Software Technology
+VL  - 126
+SP  - 106321
+PY  - 2020
+DA  - 2020/10/01/
+SN  - 0950-5849
+DO  - https://doi.org/10.1016/j.infsof.2020.106321
+UR  - https://www.sciencedirect.com/science/article/pii/S0950584920300744
+KW  - Software testing
+KW  - Natural Language Processing (NLP)
+KW  - Systematic literature mapping
+KW  - Systematic literature review
+AB  - Context
+To reduce manual effort of extracting test cases from natural-language requirements, many approaches based on Natural Language Processing (NLP) have been proposed in the literature. Given the large amount of approaches in this area, and since many practitioners are eager to utilize such techniques, it is important to synthesize and provide an overview of the state-of-the-art in this area.
+Objective
+Our objective is to summarize the state-of-the-art in NLP-assisted software testing which could benefit practitioners to potentially utilize those NLP-based techniques. Moreover, this can benefit researchers in providing an overview of the research landscape.
+Method
+To address the above need, we conducted a survey in the form of a systematic literature mapping (classification). After compiling an initial pool of 95 papers, we conducted a systematic voting, and our final pool included 67 technical papers.
+Results
+This review paper provides an overview of the contribution types presented in the papers, types of NLP approaches used to assist software testing, types of required input requirements, and a review of tool support in this area. Some key results we have detected are: (1) only four of the 38 tools (11%) presented in the papers are available for download; (2) a larger ratio of the papers (30 of 67) provided a shallow exposure to the NLP aspects (almost no details).
+Conclusion
+This paper would benefit both practitioners and researchers by serving as an “index” to the body of knowledge in this area. The results could help practitioners utilizing the existing NLP-based techniques; this in turn reduces the cost of test-case design and decreases the amount of human resources spent on test activities. After sharing this review with some of our industrial collaborators, initial insights show that this review can indeed be useful and beneficial to practitioners.
+ER  - 
+
+TY  - JOUR
+T1  - Analyzing privacy policies through syntax-driven semantic analysis of information types
+AU  - Hosseini, Mitra Bokaei
+AU  - Breaux, Travis D.
+AU  - Slavin, Rocky
+AU  - Niu, Jianwei
+AU  - Wang, Xiaoyin
+JO  - Information and Software Technology
+VL  - 138
+SP  - 106608
+PY  - 2021
+DA  - 2021/10/01/
+SN  - 0950-5849
+DO  - https://doi.org/10.1016/j.infsof.2021.106608
+UR  - https://www.sciencedirect.com/science/article/pii/S0950584921000859
+KW  - Privacy policy
+KW  - Ambiguity
+KW  - Generality
+KW  - Ontology
+AB  - Context:
+Several government laws and app markets, such as Google Play, require the disclosure of app data practices to users. These data practices constitute critical privacy requirements statements, since they underpin the app’s functionality while describing how various personal information types are collected, used, and with whom they are shared.
+Objective:
+Abstract and ambiguous terminology in requirements statements concerning information types (e.g., “we collect your device information”), can reduce shared understanding among app developers, policy writers, and users.
+Method:
+To address this challenge, we propose a syntax-driven method that first parses a given information type phrase (e.g. mobile device identifier) into its constituents using a context-free grammar and second infers semantic relationships between constituents using semantic rules. The inferred semantic relationships between a given phrase and its constituents generate a hierarchy that models the generality and ambiguity of phrases. Through this method, we infer relations from a lexicon consisting of a set of information type phrases to populate a partial ontology. The resulting ontology is a knowledge graph that can be used to guide requirements authors in the selection of the most appropriate information type terms.
+Results:
+We evaluate the method’s performance using two criteria: (1) expert assessment of relations between information types; and (2) non-expert preferences for relations between information types. The results suggest performance improvement when compared to a previously proposed method. We also evaluate the reliability of the method considering the information types extracted from different data practices (e.g., collection, usage, sharing, etc.) in privacy policies for mobile or web-based apps in various app domains.
+Contributions:
+The method achieves average of 89% precision and 87% recall considering information types from various app domains and data practices. Due to these results, we conclude that the method can be generalized reliably in inferring relations and reducing the ambiguity and abstraction in privacy policies.
+ER  - 
+
+TY  - JOUR
+T1  - Designing and constructing internet-of-Things systems: An overview of the ecosystem
+AU  - Dias, João Pedro
+AU  - Restivo, André
+AU  - Ferreira, Hugo Sereno
+JO  - Internet of Things
+VL  - 19
+SP  - 100529
+PY  - 2022
+DA  - 2022/08/01/
+SN  - 2542-6605
+DO  - https://doi.org/10.1016/j.iot.2022.100529
+UR  - https://www.sciencedirect.com/science/article/pii/S2542660522000312
+KW  - Internet-of-Things
+KW  - Software engineering
+KW  - Embedded systems
+KW  - Large-scale systems
+KW  - System design
+KW  - System development
+AB  - The current complexity of IoT systems and devices is a barrier to reach a healthy ecosystem, mainly due to technological fragmentation and inherent heterogeneity. Meanwhile, the field has scarcely adopted any engineering practices currently employed in other types of large-scale systems. Although many researchers and practitioners are aware of the current state of affairs and strive to address these problems, compromises have been hard to reach, making them settle for sub-optimal solutions. This paper surveys the current state of the art in designing and constructing IoT systems from the software engineering perspective, without overlooking hardware concerns, revealing current trends and research directions.
+ER  - 
+
+TY  - JOUR
+T1  - An ontological approach for pathology assessment and diagnosis of tunnels
+AU  - Dimitrova, Vania
+AU  - Mehmood, Muhammad Owais
+AU  - Thakker, Dhavalkumar
+AU  - Sage-Vallier, Bastien
+AU  - Valdes, Joaquin
+AU  - Cohn, Anthony G.
+JO  - Engineering Applications of Artificial Intelligence
+VL  - 90
+SP  - 103450
+PY  - 2020
+DA  - 2020/04/01/
+SN  - 0952-1976
+DO  - https://doi.org/10.1016/j.engappai.2019.103450
+UR  - https://www.sciencedirect.com/science/article/pii/S0952197619303446
+KW  - Tunnel diagnosis
+KW  - Ontology
+KW  - Intelligent decision support systems
+KW  - Linear transport structures
+AB  - Tunnel maintenance requires complex decision making, which involves pathology diagnosis and risk assessment, to ensure full safety while optimising maintenance and repair costs. A Decision Support System (DSS) can play a key role in this process by supporting the decision makers in identifying pathologies based on disorders present in various tunnel portions and contextual factors affecting a tunnel. Another key aspect is to identify which spatial stretches within a tunnel contain pathologies of similar kinds within neighbouring tunnel segments. This paper presents PADTUN, a novel intelligent decision support system that assists with pathology diagnosis and assessment of tunnels with respect to their disorders and diagnosis influencing factors. It utilises semantic web technologies for knowledge capture, representation, and reasoning. The core of PADTUN is a family of ontologies which represent the main concepts and relations associated with pathology assessment, and capture the decision process concerning tunnel maintenance. Tunnel inspection data is linked to these ontologies to take advantage of inference capabilities offered by semantic technologies. In addition, an intelligent mechanism is presented which exploits abstraction and inference capabilities. Thus PADTUN provides the world’s first semantically based intelligent DSS for tunnel maintenance. PADTUN was developed by an interdisciplinary team of tunnel experts and knowledge engineers in real-world settings offered by the NeTTUN EU Project. An evaluation of the PADTUN system is performed using real-world tunnel data and diagnosis tasks. We show how the use of semantic technologies allows addressing the complex issues of tunnel pathology inferencing, aiding in, and matching transportation experts’ expectations of decision support. The methodology is applicable to any linear transport structures, offering intelligent ways to aid with complex decision processes related to diagnosis and maintenance.
+ER  - 
+
+TY  - JOUR
+T1  - Qualifying and measuring transparency: A medical data system case study
+AU  - Spagnuelo, Dayana
+AU  - Bartolini, Cesare
+AU  - Lenzini, Gabriele
+JO  - Computers & Security
+VL  - 91
+SP  - 101717
+PY  - 2020
+DA  - 2020/04/01/
+SN  - 0167-4048
+DO  - https://doi.org/10.1016/j.cose.2020.101717
+UR  - https://www.sciencedirect.com/science/article/pii/S016740481830823X
+KW  - Transparency
+KW  - GDPR
+KW  - Metric
+KW  - Measurement
+KW  - Requirement engineering
+KW  - Medical data system
+AB  - Transparency is a data processing principle enforced by the GDPR but purposely left open to interpretation. As such, the means to adhere to it are left unspecified. Article 29 Working Party provides practical guidance on how to interpret transparency, however there are no defined requirements nor ways to verify the quality of the implementation of transparency in a service. We address this problem. We discuss and define applicable metrics for transparency, propose how a measurement can be conducted in an operative system, and suggest a practical way in which these metrics can be interpreted in order to increase confidence that transparency is realised in a system.
+ER  - 
+
+TY  - JOUR
+T1  - Cognitive checkpoint: Emerging technologies for biometric-enabled watchlist screening
+AU  - Yanushkevich, Svetlana N.
+AU  - Sundberg, Kelly W.
+AU  - Twyman, Nathan W.
+AU  - Guest, Richard M.
+AU  - Shmerko, Vlad P.
+JO  - Computers & Security
+VL  - 85
+SP  - 372
+EP  - 385
+PY  - 2019
+DA  - 2019/08/01/
+SN  - 0167-4048
+DO  - https://doi.org/10.1016/j.cose.2019.05.002
+UR  - https://www.sciencedirect.com/science/article/pii/S0167404819300951
+KW  - Cognitive checkpoint
+KW  - Biometric-enabled watchlist
+KW  - Layered security
+KW  - Risks
+KW  - Modeling
+KW  - Privacy
+KW  - Mass-transit hubs
+KW  - E-borders
+KW  - E-interviewer
+KW  - Conflict resolving
+AB  - This paper revisits the problem of individual risk assessment in the layered security model. It contributes to the concept of balancing security and privacy via cognitive-centric machine called an ‘e-interviewer’. Cognitive checkpoint is a cyber-physical security frontier in mass-transit hubs that provides an automated screening using all types of identity (attributed, biometric, and biographical) from both physical and virtual worlds. We investigate how the development of the next generation of watchlist for rapid screening impacts a sensitive balancing mechanism between security and privacy. We identify directions of such an impact, trends in watchlist technologies, and propose ways to mitigate the potential risks.
+ER  - 
+
+TY  - JOUR
+T1  - Machine Learning in Production Planning and Control: A Review of Empirical Literature
+AU  - Cadavid, Juan Pablo Usuga
+AU  - Lamouri, Samir
+AU  - Grabot, Bernard
+AU  - Fortin, Arnaud
+JO  - IFAC-PapersOnLine
+VL  - 52
+IS  - 13
+SP  - 385
+EP  - 390
+PY  - 2019
+DA  - 2019/01/01/
+T2  - 9th IFAC Conference on Manufacturing Modelling, Management and Control MIM 2019
+SN  - 2405-8963
+DO  - https://doi.org/10.1016/j.ifacol.2019.11.155
+UR  - https://www.sciencedirect.com/science/article/pii/S2405896319311048
+KW  - Machine Learning
+KW  - Artificial Intelligence
+KW  - Industry 4.0
+KW  - Smart Manufacturing
+KW  - Production Planning
+KW  - Control
+AB  - Proper Production Planning and Control (PPC) is capital to have an edge over competitors, reduce costs and respect delivery dates. With regard to PPC, Machine Learning (ML) provides new opportunities to make intelligent decisions based on data. Therefore, this paper provides an initial systematic review of publications on ML applied in PPC. The research objective of this study is to identify standard activities as well as techniques to apply ML in PPC. Additionally, the commonly used data sources in literature to implement a ML-aided PPC are identified. Finally, results are analyzed and gaps leading to further research are highlighted.
+ER  - 
+
+TY  - JOUR
+T1  - Towards a data-driven predictive-reactive production scheduling approach based on inventory availability
+AU  - Takeda Berger, Satie Ledoux
+AU  - Zanella, Renata Mariani
+AU  - Frazzon, Enzo Morosini
+JO  - IFAC-PapersOnLine
+VL  - 52
+IS  - 13
+SP  - 1343
+EP  - 1348
+PY  - 2019
+DA  - 2019/01/01/
+T2  - 9th IFAC Conference on Manufacturing Modelling, Management and Control MIM 2019
+SN  - 2405-8963
+DO  - https://doi.org/10.1016/j.ifacol.2019.11.385
+UR  - https://www.sciencedirect.com/science/article/pii/S2405896319313667
+KW  - Predictive-reactive scheduling
+KW  - manufacturing system
+KW  - data-driven
+KW  - machine learning
+KW  - simulation-based optimization
+AB  - To survive in a competitive business environment, manufacturing systems require the proper deployment of advanced technologies coming from Industry 4.0. These technologies allow access to quasi-real-time data that provide a continuously updated picture of the production system, including the state of available inventory. Data-driven predictive-reactive production scheduling has the potential to support the anticipation and prompt reaction to overcome different kinds of disruptions that occur in production execution nowadays. This research paper aims to propose a conceptual model for a data-driven predictive-reactive production scheduling approach combining machine learning and simulation-based optimization, considering current inventory of raw material, work in process and final products inventory to characterize a job-shop production execution state. The approach supports decision-making in dynamic situations related to inventory availability that can affect production schedules.
+ER  - 
+
+TY  - JOUR
+T1  - Schema-agnostic SPARQL-driven faceted search benchmark generation
+AU  - Stadler, Claus
+AU  - Bin, Simon
+AU  - Wenige, Lisa
+AU  - Bühmann, Lorenz
+AU  - Lehmann, Jens
+JO  - Journal of Web Semantics
+VL  - 65
+SP  - 100614
+PY  - 2020
+DA  - 2020/12/01/
+SN  - 1570-8268
+DO  - https://doi.org/10.1016/j.websem.2020.100614
+UR  - https://www.sciencedirect.com/science/article/pii/S1570826820300482
+KW  - Faceted search
+KW  - Benchmark
+KW  - SPARQL
+KW  - RDF
+KW  - Benchmark generator
+KW  - Triple store
+AB  - In this work, we present a schema-agnostic faceted browsing benchmark generation framework for RDF data and SPARQL engines. Faceted search is a technique that allows narrowing down sets of information items by applying constraints over their properties, whereas facets correspond to properties of these items. While our work can be used to realise real-world faceted search user interfaces, our focus lies on the construction and benchmarking of faceted search queries over knowledge graphs. The RDF model exhibits several traits that seemingly make it a natural foundation for faceted search: all information items are represented as RDF resources, property values typically already correspond to meaningful semantic classifications, and with SPARQL there is a standard language for uniformly querying instance and schema information. However, although faceted search is ubiquitous today, it is typically not performed on the RDF model directly. Two major sources of concern are the complexity of query generation and the query performance. To overcome the former, our framework comes with an intermediate domain-specific language. Thereby our approach is SPARQL-driven which means that every faceted search information need is intensionally expressed as a single SPARQL query. In regard to the latter, we investigate the possibilities and limits of real-time SPARQL-driven faceted search on contemporary triple stores. We report on our findings by evaluating systems performance and correctness characteristics when executing a benchmark generated using our generation framework. All components, namely the benchmark generator, the benchmark runners and the underlying faceted search framework, are published freely available as open source.
+ER  - 
+
+TY  - JOUR
+T1  - A COSMIC function points based test effort estimation model for mobile applications
+AU  - Kaur, Anureet
+AU  - Kaur, Kulwant
+JO  - Journal of King Saud University - Computer and Information Sciences
+VL  - 34
+IS  - 3
+SP  - 946
+EP  - 963
+PY  - 2022
+DA  - 2022/03/01/
+SN  - 1319-1578
+DO  - https://doi.org/10.1016/j.jksuci.2019.03.001
+UR  - https://www.sciencedirect.com/science/article/pii/S131915781831317X
+KW  - Mobile applications
+KW  - COSMIC
+KW  - Estimation
+KW  - Multiple linear regression
+KW  - Test effort
+AB  - With the substantial proliferation in demand for applications running on mobile devices, developers and testers are foreseen to release applications with high caliber, on time and inside budget. Mobile application testing is imperative and perilous activity in the application development lifecycle, which confirms quality and unswervingly impacts the development effort and affluence of the application. The estimation of effort for testing of apps is a key figure that helps test managers in making approximate accurate decisions for coordinating testing resources. In this study, a regression model is presented to predict test effort for mobile applications considering COSMIC Function Size Measurement (FSM), mobile app characteristics/factors and test factors. The major benefit of this model is that it tends to be utilized at the beginning of mobile app testing life cycle, and thus can assist testers to effectively lead early effort estimation. The model presented is further validated and evaluated for their effectiveness by using a k-fold cross-validation method. MRE, MMRE, MdMRE, PRED (0.25) and PRED (0.50) indices are used for measuring the accuracy of the model and findings suggest that the proposed model gives a good prediction and can be exercised in the mobile software industry for predicting test effort.
+ER  - 
+
+TY  - JOUR
+T1  - FritzBot: A data-driven conversational agent for physical-computing system design
+AU  - Chen, Taizhou
+AU  - Xu, Lantian
+AU  - Zhu, Kening
+JO  - International Journal of Human-Computer Studies
+VL  - 155
+SP  - 102699
+PY  - 2021
+DA  - 2021/11/01/
+SN  - 1071-5819
+DO  - https://doi.org/10.1016/j.ijhcs.2021.102699
+UR  - https://www.sciencedirect.com/science/article/pii/S1071581921001178
+KW  - Natural-language interaction
+KW  - User interface
+KW  - Physical computing
+KW  - Design
+KW  - BiLSTM
+KW  - CRF
+AB  - Creating physical-computing systems, especially selecting correct electronic components, assembling the circuit, and implementing the program, can be challenging for novice users. In this paper, we present FritzBot, a data-driven conversational agent supporting novice users on creating physical-computing systems through natural-language interaction. FritzBot is built upon the structure of a BiLSTM-CRF (bi-directional Long Short-term Memory Network and Conditional Random Field) neural network, as a plug-in for Fritzing. The neural network is trained on a lexical circuit-event database derived from 152 students’ reports on their physical-computing course projects. By processing the user’s textual description on his/her physical-computing idea, FritzBot can extract the causal relationships between the input and the output events, identify the corresponding electronic components, and generate the Arduino-based circuit and the code along with the step-by-step construction guidelines. Our user study shows that compared to the original Arduino software and the circuit-autocompletion software available in the commercial market, FritzBot significantly shortens the time spent, reduces the perceived workload, and enhances the satisfaction/joy for inexperienced users on designing and prototyping physical-computing systems.
+ER  - 
+
+TY  - JOUR
+T1  - The interface issue in second language acquisition research: An interdisciplinary perspective
+AU  - Foryś-Nogala, Małgorzata
+AU  - Krajewski, Grzegorz
+AU  - Haman, Ewa
+JO  - Lingua
+VL  - 271
+SP  - 103243
+PY  - 2022
+DA  - 2022/05/01/
+SN  - 0024-3841
+DO  - https://doi.org/10.1016/j.lingua.2022.103243
+UR  - https://www.sciencedirect.com/science/article/pii/S0024384122000043
+KW  - The interface issue
+KW  - L2 syntactic acquisition
+KW  - Implicit knowledge
+KW  - Explicit knowledge
+KW  - The declarative/procedural model
+AB  - The interface issue concerning the nature of interactions between explicit and implicit linguistic knowledge in second language acquisition (SLA) has been a focus of widespread academic interest for almost four decades. However, despite intense debate at the theoretical level and emerging methodologically rigorous studies related to the topic, the issue remains unresolved. With this overview paper, we hope to offer a contribution to the pending theoretical and methodological topics related to the interface in acquiring L2 syntax. First, the paper discusses the definitions and operationalization criteria of implicit and explicit knowledge, as well as their interface. Then, we review the methods and findings of representative studies on domain-general learning and second language acquisition that have explored the interactions between implicit and explicit learning systems. Specifically, we identify the types of interactions that are tenable according to the literature in cognitive psychology and seek evidence for those interactions in the results of published state-of-the-art research. Finally, we compile methodological recommendations for further SLA studies exploring the interface. Following other scholars, throughout the discussion, we argue that bringing the field closer to resolving the interface issue requires an interdisciplinary approach that combines insights and methods from linguistic, psychological and neurocognitive research traditions.
+ER  - 
+
+TY  - CHAP
+T1  - Chapter 3 - Adding command knowledge “At the Human Edge”
+AU  - Goranson, H.T.
+A2  - Lawless, William F.
+A2  - Mittu, Ranjeev
+A2  - Sofge, Donald A.
+BT  - Human-Machine Shared Contexts
+PB  - Academic Press
+SP  - 45
+EP  - 65
+PY  - 2020
+DA  - 2020/01/01/
+SN  - 978-0-12-820543-3
+DO  - https://doi.org/10.1016/B978-0-12-820543-3.00003-1
+UR  - https://www.sciencedirect.com/science/article/pii/B9780128205433000031
+KW  - Situation theory
+KW  - Concept fusion
+KW  - Categoric types
+KW  - Reactive queries
+KW  - Dynamic ontologies
+AB  - We have a substantial appreciation of “understanding,” in the sense that we have methods and tools to help us take collected information and derive synthesized insights for a specific purpose. However, we still have a long way to go in representation, synthesis, and presentation of human qualities, unknowns, and their nonergodic futures. Military and intelligence systems are a useful example domain, in part because their problems are crisply identifiable. Usually, examinations of such systems focus on what works, but in our research, we also model what does not work, what is not modeled, and why. This chapter reviews the existing, critical edge-cases that compromised systems to the extent of being untrustworthy and putting nations and their people at risk. While the examples are from the military, we believe the analyses, partial mitigation, and research agenda are widely applicable to other domains, including shared contexts.
+ER  - 
+
+TY  - CHAP
+T1  - Chapter 12 - Natural Language Core Tasks and Applications
+AU  - Gudivada, Venkat N.
+A2  - Gudivada, Venkat N.
+A2  - Rao, C.R.
+BT  - Handbook of Statistics
+PB  - Elsevier
+VL  - 38
+SP  - 403
+EP  - 428
+PY  - 2018
+DA  - 2018/01/01/
+T2  - Computational Analysis and Understanding of Natural Languages: Principles, Methods and Applications
+SN  - 0169-7161
+DO  - https://doi.org/10.1016/bs.host.2018.07.010
+UR  - https://www.sciencedirect.com/science/article/pii/S0169716118300257
+KW  - Language identification
+KW  - Text segmentation
+KW  - Word-sense disambiguation
+KW  - Language modeling
+KW  - Part of Speech tagging
+KW  - Parsing
+KW  - Named entity recognition
+KW  - Word segmentation
+KW  - Question-answering systems
+KW  - Machine translation
+KW  - Information extraction
+KW  - Natural language user interfaces
+KW  - Parsing
+AB  - This chapter describes core tasks that are routinely performed on natural language texts. Some of these tasks are often considered as preprocessing and form the foundation for developing natural language processing applications. We begin with the need for annotated language corpora and discuss the following tasks: language identification, text and word segmentation, word-sense disambiguation, language modeling, Part of Speech (PoS) tagging, parsing, named entity recognition, machine translation, information extraction, text summarization, question-answering systems, and natural language user interfaces. By design, we describe these tasks at a conceptual level and provide pointers to relevant literature.
+ER  - 
+
+TY  - JOUR
+T1  - Internet of Things (IoT), mobile cloud, cloudlet, mobile IoT, IoT cloud, fog, mobile edge, and edge emerging computing paradigms: Disambiguation and research directions
+AU  - Elazhary, Hanan
+JO  - Journal of Network and Computer Applications
+VL  - 128
+SP  - 105
+EP  - 140
+PY  - 2019
+DA  - 2019/02/15/
+SN  - 1084-8045
+DO  - https://doi.org/10.1016/j.jnca.2018.10.021
+UR  - https://www.sciencedirect.com/science/article/pii/S1084804518303497
+KW  - Cloudlet computing
+KW  - Crowdsensing
+KW  - Crowdsourcing
+KW  - Edge computing
+KW  - Fog computing
+KW  - Internet of things
+KW  - Mobile cloud
+KW  - Mobile cloud computing
+KW  - Mobile edge computing
+KW  - Opportunistic sensing
+KW  - Participatory sensing
+KW  - Semantic web of things
+KW  - Web of things
+KW  - Wisdom web of things
+AB  - Currently, we are experiencing a technological shift, which is expected to change the way we program and interact with the world. Cloud computing and mobile computing are two prominent research areas that have already had such an impact. The Internet of Things (IoT), which is concerned with building a network of Internet-enabled devices to promote a smart environment, is another promising area of research. Numerous emerging computing paradigms related to those areas of research and/or their intersections have come into play. These include Mobile Cloud Computing (MCC), cloudlet computing, mobile clouds, mobile IoT computing, IoT cloud computing, fog computing, Mobile Edge Computing (MEC), edge computing, the Web of Things (WoT), the Semantic WoT (SWoT), the Wisdom WoT (W2T), opportunistic sensing, participatory sensing, mobile crowdsensing, and mobile crowdsourcing. Unfortunately, those paradigms suffer from the lack of standard definitions, and so we frequently encounter a single term referring to various paradigms or several terms referring to a single paradigm. Accordingly, this paper attempts to disambiguate those paradigms and explain how and where they fit in the above three areas of research and/or their intersections before it becomes a serious problem. They are tracked back to their inception as much as possible. This is in addition to discussing research directions in each area. The paper also introduces technologies related to the IoT such as ubiquitous and pervasive computing, the Internet of Nano Things (IoNT), and the Internet of Underwater Things (IoUT).
+ER  - 

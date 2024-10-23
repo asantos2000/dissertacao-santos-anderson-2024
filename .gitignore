@@ -1,0 +1,9 @@
+misc
+papers
+.env
+.ipynb_checkpoints
+dissertation
+storage
+storage_txts
+lib
+__pycache__

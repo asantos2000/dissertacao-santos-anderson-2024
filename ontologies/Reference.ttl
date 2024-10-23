@@ -1,0 +1,39 @@
+# baseURI: http://finregont.com/fro/ref/Reference.ttl
+# imports: http://finregont.com/fro/ref/AnnotationProperty.ttl
+# imports: http://finregont.com/fro/ref/LLC_import.ttl
+# prefix: fro-ref
+
+@prefix AnnotationProperty: <http://finregont.com/fro/ref/AnnotationProperty.ttl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fro-ref: <http://finregont.com/fro/ref/Reference.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://finregont.com/fro/ref/Reference.ttl>
+  rdf:type owl:Ontology ;
+  dct:license "https://opensource.org/licenses/GPL-3.0" ;
+  sm:author "Jurgen Ziemer" ;
+  sm:copyright "Jayzed Data Models Inc." ;
+  rdfs:comment "Both LegalReference.ttl and FinancialReference.ttl import this ontology." ;
+  rdfs:label "Financial Regulation Ontology: Reference module" ;
+  owl:imports <http://finregont.com/fro/ref/AnnotationProperty.ttl> ;
+  owl:imports <http://finregont.com/fro/ref/LLC_import.ttl> ;
+  skos:definition "Reference concepts common to both Legal and Finance." ;
+.
+fro-ref:hasSourceInstance
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The object property range points to the CFR/USC element instance. This facilitates lineage from an instance in the target ontology to the CFR_FDSys_Schema or USC schema element instance." ;
+  rdfs:label "Source Instance" ;
+  skos:definition "The source of THIS instance." ;
+.
+fro-ref:hasTargetInstance
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The object property range points to the Code_Federal_Regulations or United_States_Code element instance. " ;
+  rdfs:label "Target Instance" ;
+  owl:inverseOf fro-ref:hasSourceInstance ;
+  skos:definition "The inverse of hasSourceInstance. It is the target of THIS instance." ;
+.

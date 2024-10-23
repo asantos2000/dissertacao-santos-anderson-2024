@@ -1,0 +1,129 @@
+# baseURI: http://finregont.com/fro/ref/US_LegalReference.ttl
+# imports: http://finregont.com/fro/ref/LegalReference.ttl
+# prefix: fro-us-leg-ref
+
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fro-leg-ref: <http://finregont.com/fro/ref/LegalReference.ttl#> .
+@prefix fro-us-leg-ref: <http://finregont.com/fro/ref/US_LegalReference.ttl#> .
+@prefix lkif-action: <http://www.estrellaproject.org/lkif-core/action.owl#> .
+@prefix lkif-expr: <http://www.estrellaproject.org/lkif-core/expression.owl#> .
+@prefix lkif-leg-action: <http://www.estrellaproject.org/lkif-core/legal-action.owl#> .
+@prefix lkif-mereo: <http://www.estrellaproject.org/lkif-core/mereology.owl#> .
+@prefix lkif-norm: <http://www.estrellaproject.org/lkif-core/norm.owl#> .
+@prefix lkif-proc: <http://www.estrellaproject.org/lkif-core/process.owl#> .
+@prefix lkif-top: <http://www.estrellaproject.org/lkif-core/lkif-top.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#CFR_Annual_Edition_2016_Title_12>
+  lkif-expr:bears fro-us-leg-ref:Definitional_Expression_US_Dodd_Frank_Act ;
+.
+<http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#CFR_Annual_Edition_2016_Title_17>
+  lkif-expr:bears fro-us-leg-ref:Definitional_Expression_US_Investment_Adviser_Regulation ;
+.
+fro-leg-ref:Act_of_Law_1940_InvestmentAdvisorAct
+  rdf:type lkif-leg-action:Act_of_Law ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "1940 U.S. Investment Advisers Act" ;
+.
+fro-leg-ref:Act_of_Law_Dodd_Frank
+  rdf:type lkif-leg-action:Act_of_Law ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Dodd–Frank Wall Street Reform and Consumer Protection Act" ;
+.
+fro-leg-ref:Definitional_Expression_US_AdvisorAct
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Definitional expression for Investment Advisors" ;
+.
+fro-leg-ref:Legislative_Body_US_Congress
+  rdf:type lkif-leg-action:Legislative_Body ;
+  rdf:type owl:NamedIndividual ;
+  lkif-action:actor_in fro-leg-ref:Act_of_Law_1940_InvestmentAdvisorAct ;
+  rdfs:label "U.S. Congress" ;
+.
+fro-leg-ref:OfficeLawRevisionCouncil
+  rdf:type lkif-leg-action:Legislative_Body ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Office of the Law Revision Council" ;
+.
+fro-leg-ref:Regulation_AIFMD
+  rdf:type lkif-norm:Regulation ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Alternative Investment Fund Manager Directive" ;
+.
+fro-leg-ref:Regulation_InvestorAdvisersAct
+  rdf:type lkif-norm:Regulation ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "US Investment Advisors regulation" ;
+.
+fro-leg-ref:Rulemaking_IAA_Amended_2012
+  rdf:type fro-leg-ref:Rulemaking ;
+  rdf:type owl:NamedIndividual ;
+  lkif-action:actor fro-us-leg-ref:SecuritiesExchangeCommission ;
+  rdfs:label "Rulemaking IAA [amended P.L. 112-90]" ;
+.
+fro-leg-ref:USC_114-156
+  rdf:type fro-leg-ref:Codification ;
+  rdf:type owl:NamedIndividual ;
+  lkif-action:actor fro-leg-ref:OfficeLawRevisionCouncil ;
+  rdfs:label "Public Law 114-156 " ;
+.
+fro-leg-ref:USC_114-219
+  rdf:type fro-leg-ref:Codification ;
+  rdf:type owl:NamedIndividual ;
+  lkif-action:actor fro-leg-ref:OfficeLawRevisionCouncil ;
+  rdfs:label "Public Law 114-219" ;
+.
+fro-leg-ref:hasComponentIdentifier
+  skos:definition "An identifiying property of the Document Component. For United States Code this will be inferred from the subproperties ID and Identifier text." ;
+.
+<http://finregont.com/fro/ref/US_LegalReference.ttl>
+  rdf:type owl:Ontology ;
+  dct:license "https://opensource.org/licenses/GPL-3.0" ;
+  dct:license "https://opensource.org/licenses/MIT" ;
+  sm:author "Jurgen Ziemer" ;
+  sm:copyright "Jayzed Data Models Inc." ;
+  rdfs:comment "Extension to Legal Reference specific to the USA. This ontology module has instances for US regulatory agents like SEC, FED and lawmakers." ;
+  rdfs:label "Financial Regulation Ontology: US Legal Reference module" ;
+  owl:imports <http://finregont.com/fro/ref/LegalReference.ttl> ;
+.
+fro-us-leg-ref:Definitional_Expression_US_Dodd_Frank_Act
+  rdf:type lkif-norm:Definitional_Expression ;
+  rdf:type owl:NamedIndividual ;
+  lkif-expr:medium <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#CFR_Annual_Edition_2016_Title_12> ;
+  lkif-proc:created_by fro-leg-ref:Rulemaking_IAA_Amended_2012 ;
+  rdfs:label "Definitional expression for Dodd Frank Act" ;
+.
+fro-us-leg-ref:Definitional_Expression_US_Investment_Adviser_Regulation
+  rdf:type lkif-norm:Definitional_Expression ;
+  rdf:type owl:NamedIndividual ;
+  lkif-expr:medium <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#CFR_Annual_Edition_2016_Title_12> ;
+  lkif-expr:medium <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#CFR_Annual_Edition_2016_Title_17> ;
+  lkif-proc:created_by fro-leg-ref:Rulemaking_IAA_Amended_2012 ;
+  lkif-proc:resource_for <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#GovernmentPublication_US_Investment_Adviser_Regulation> ;
+  rdfs:label "Definitional expression for Investment Adviser Regulation" ;
+.
+fro-us-leg-ref:Definitional_Expression__WallStreet_Reform
+  rdf:type lkif-norm:Definitional_Expression ;
+  rdfs:label "Definitional Expression Wall Street Reform Act" ;
+.
+fro-us-leg-ref:Federal_Reserve
+  rdf:type fro-leg-ref:RegulatoryAuthority ;
+  rdfs:label "Federal Reserve" ;
+.
+fro-us-leg-ref:Rulemaking_WallStreet_Reform
+  rdf:type fro-leg-ref:Rulemaking ;
+  lkif-action:actor fro-us-leg-ref:Federal_Reserve ;
+  rdfs:label "Notice of Rulemaking" ;
+.
+fro-us-leg-ref:SecuritiesExchangeCommission
+  rdf:type fro-leg-ref:RegulatoryAuthority ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "U.S. Securities and Exchange Commission" ;
+.

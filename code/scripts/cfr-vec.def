@@ -1,0 +1,9 @@
+gpt   
+ embedder openai
+ model text-embedding-3-small
+ if-exists supersede   
+ api-key ""open_ai_api_key""
+ vector-database-name "cfr-3m-vec"
+ limit 1000000
+ include-predicates <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#hasParagraphText> <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#hasParagraphEnumText>
+ include-types <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#CFR_Parapraph>

@@ -1,0 +1,356 @@
+@prefix : <http://finregont.com/fro/ref/AnnotationProperty.ttl#> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix fro-ref-antn-prop: <http://finregont.com/fro/ref/AnnotationProperty.ttl#> .
+@base <http://finregont.com/fro/ref/AnnotationProperty.ttl> .
+
+<http://finregont.com/fro/ref/AnnotationProperty.ttl> rdf:type owl:Ontology ;
+                                                       sm:author "Jurgen Ziemer"^^xsd:string ;
+                                                       sm:copyright "http://purl.org"^^xsd:string ;
+                                                       owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+                                                       sm:copyright "http://www.w3.org"^^xsd:string ;
+                                                       rdfs:comment """A minimalistic set of OLW Annotation Properties.
+http://purl.org/dc/terms/ : creator, license and rights
+http://www.w3.org/2004/02/skos/core# : note
+The import of this file can be replaced with the original skos and dc files."""^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+dct:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/author
+sm:author rdf:type owl:AnnotationProperty ;
+          rdfs:label "author"^^xsd:string ;
+          skos:definition "author identifies the individual or organization that originated the model or specification (range can be a dct:Agent or string)"^^xsd:string ;
+          rdfs:subPropertyOf dct:creator .
+
+
+###  http://www.omg.org/techprocess/ab/SpecificationMetadata/copyright
+sm:copyright rdf:type owl:AnnotationProperty ;
+             rdfs:label "copyright"^^xsd:string ;
+             skos:definition "Copyright statement for the specification version, content, or model/electronic file"^^xsd:string ;
+             rdfs:subPropertyOf dct:rights ;
+             rdfs:range xsd:string .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty ;
+                rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+                rdfs:label "definition"@en ;
+                skos:definition "A statement or formal explanation of the meaning of a concept."@en ;
+                rdfs:subPropertyOf skos:note .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty ;
+             rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+             rdfs:label "example"@en ;
+             skos:definition "An example of the use of a concept."@en ;
+             rdfs:subPropertyOf skos:note .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty ;
+          rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+          rdfs:label "note"@en ;
+          skos:definition "A general note, for any purpose."@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://spec.edmcouncil.org/fibo/FND/Utilities/AnnotationVocabulary/> sm:copyright """Copyright (c) 2013-2014 EDM Council, Inc.
+Copyright (c) 2013-2014 Object Management Group, Inc."""^^xsd:string ;
+                                                                      dct:license "http://www.omg.org/techprocess/ab/SpecificationMetadata/MITLicense"^^xsd:anyURI .
+
+
+<http://spec.edmcouncil.org/fibo/FND/Utilities/AnnotationVocabulary/abbreviation> skos:definition "An abbreviation is short form for a particular designation that can be substituted for the primary representation."^^xsd:string .
+
+
+<http://spec.edmcouncil.org/fibo/FND/Utilities/AnnotationVocabulary/adaptedFrom> skos:definition "the document from which a given term (or its definition) was adapted; the range for this annotation can be a string (either xsd:string or fibo-fnd-utl-bt:text), URI (either xsd:anyURI or fibo-fnd-utl-bt:uri), or BibliographicCitation"^^xsd:string .
+
+
+<http://spec.edmcouncil.org/fibo/FND/Utilities/AnnotationVocabulary/definitionOrigin> skos:definition "Document from which a given definition was taken directly; the range for this annotation can be a string (either xsd:string or fibo-fnd-utl-bt:text), URI (either xsd:anyURI or fibo-fnd-utl-bt:uri), or BibliographicCitation"^^xsd:string .
+
+
+<http://spec.edmcouncil.org/fibo/FND/Utilities/AnnotationVocabulary/modifiedBy> skos:definition "identifies the organization or person responsible for making a change to a model element in the body of an ontology"^^xsd:string .
+
+
+<http://spec.edmcouncil.org/fibo/FND/Utilities/AnnotationVocabulary/modifiedOn> skos:definition "identifies the date a model element in the body of an ontology was changed"^^xsd:string .
+
+
+<http://spec.edmcouncil.org/fibo/FND/Utilities/AnnotationVocabulary/nameOrigin> skos:definition "provides the means to document the name of the original term in the source referenced via termOrigin; the range for this annotation can be a string (either xsd:string or fibo-fnd-utl-bt:text), URI (either xsd:anyURI or fibo-fnd-utl-bt:uri), or BibliographicCitation"^^xsd:string .
+
+
+<http://spec.edmcouncil.org/fibo/FND/Utilities/AnnotationVocabulary/synonym> skos:definition "A synonym is another designation that can be substituted for the primary representation. It is a designation for the same concept."^^xsd:string .
+
+
+<http://spec.edmcouncil.org/fibo/FND/Utilities/AnnotationVocabulary/termOrigin> skos:definition "Document from which a given term was taken directly; the range for this annotation can be a string (either xsd:string or fibo-fnd-utl-bt:text), URI (either xsd:anyURI or fibo-fnd-utl-bt:uri), or BibliographicCitation"^^xsd:string .
+
+
+sm: dct:license "http://opensource.org/licenses/mit-license.php"^^xsd:anyURI ;
+    sm:copyright """Copyright (c) 2012-2013 Adaptive
+Copyright (c) 2012-2013 Object Management Group, Inc.
+Copyright (c) 2012-2013 Thematix Partners LLC"""^^xsd:string ;
+    dct:license """The MIT License:  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+AND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""^^xsd:string .
+
+
+sm:BibliographicCitation skos:definition "This class provides a placeholder for mapping to any ontology that defines the format for bibliographic citations.  Because the form is often specific to the domain, publication, or community, we do not dictate this.  Either FRBR or ISO 690 provide reasonable approaches if none is explicitly required."^^xsd:string .
+
+
+sm:MediaType skos:definition "MIME media type as defined by the IANA standard"^^xsd:string .
+
+
+sm:Organization skos:definition "An organization is a social group that distributes tasks for a collective goal (Wikipedia)."^^xsd:string .
+
+
+sm:Specification skos:definition "A specification is an explicit set of requirements to be satisfied by a material, product, or service.[Wikipedia]"^^xsd:string .
+
+
+sm:SpecificationFamily skos:definition "a family of specifications, such as the OMG's Financial Industry Business Ontology (FIBO) or the Information Exchange Framework (IEF)"^^xsd:string .
+
+
+sm:TypeOfContent skos:definition "The content type for the model or module, for example, MOF metamodel, UML profile, UML model, vocabulary, ontology, ruleset, etc.  The actual content language for the module (for example, RDF Schema or SBVR vocabulary) should be specified using the contentLanguage annotation property.  Valid values are specified as individuals."^^xsd:string .
+
+
+sm:addressForComments skos:definition "Provides a mailing list or web page where questions, discussion, and issues can be raised"^^xsd:string .
+
+
+sm:contentLanguage skos:definition "a link to the core language and/or specification of the model/electronic file, for example, UML, OWL, SysML, BPMN, including linking to the version of the language in question"^^xsd:string .
+
+
+sm:contentType skos:definition "indicates the content type, for example, MOF metamodel, UML profile, UML model, SBVR or RDF vocabulary, OWL or CL ontology"^^xsd:string .
+
+
+sm:contributor skos:definition "an organization or individual that has made a significant contribution to the specification"^^xsd:string .
+
+
+sm:dependsOn skos:definition "the bibliographic reference for and/or URL of any electronic files or documents (e.g., document version URL if applicable) on which this specification or ontology depends; if the ontology contains multiple modules, then dependencies should reflect those of the ontology in question"^^xsd:string .
+
+
+sm:directSource skos:definition "Document used as a primary, direct source for content in developing this specification or model (range can be a string, URI, or BibliographicCitation)"^^xsd:string .
+
+
+sm:documentNumber skos:definition "OMG document number (for the document or file this metadata is associated with); note that a single OMG document number may be associated with many files, for example in the case of an archive containing all of the ontologies associated with a given FIBO specification"^^xsd:string .
+
+
+sm:documentURL skos:definition "Document URL (for the specific document or model file this metadata is associated with)"^^xsd:string .
+
+
+sm:editor skos:definition "an editor of this version of the specification, module, or individual file or ontology, which may include the primary contact organization from an OMG perspective, or RTF/FTF chair (organization), depending on where the specification is in the process"^^xsd:string .
+
+
+sm:familyAbbreviation skos:definition "abbreviation or acronym for the specification family"^^xsd:string .
+
+
+sm:familyAbstract skos:definition "A short textual description of the family of specifications"^^xsd:string .
+
+
+sm:familyTitle skos:definition "specification family title (for example, Financial Industry Business Ontology)"^^xsd:string .
+
+
+sm:familyURL skos:definition "URL where the specification family is published"^^xsd:string .
+
+
+sm:fileAbbreviation skos:definition "Abbreviation or acronym for the file, such as a namespace prefix, if distinct from that of the specification"^^xsd:string .
+
+
+sm:fileAbstract skos:definition "A short textual description of the file"^^xsd:string .
+
+
+sm:fileVersion skos:definition "file version, if distinct from the specification or module version"^^xsd:string .
+
+
+sm:filename skos:definition "name of the electronic document or file this metadata is associated with"^^xsd:string .
+
+
+sm:formalVersion skos:definition "a link to the latest published formal specification (document)"^^xsd:string .
+
+
+sm:format skos:definition "serialization format for the file in terms of its MIME Type, such as xmi, rdf/xml, owl/xml, etc."^^xsd:string .
+
+
+sm:informativeReference skos:definition "informative reference, standard, or document"^^xsd:string .
+
+
+sm:isNormative skos:definition "boolean value indicating whether or not the file is a normative component of a specification"^^xsd:string .
+
+
+sm:keyword skos:definition "keyword relevant to the specification, such as ontology, vocabulary, metadata, SKOS that are appropriate for this ontology"^^xsd:string .
+
+
+sm:moduleAbbreviation skos:definition "Abbreviation or acronym for the module, if distinct from that of the specification"^^xsd:string .
+
+
+sm:moduleAbstract skos:definition "A short textual description of the module"^^xsd:string .
+
+
+sm:moduleName skos:definition "module name, if distinct from the specification title"^^xsd:string .
+
+
+sm:moduleShortTitle skos:definition "a short title for the component or module"^^xsd:string .
+
+
+sm:moduleVersion skos:definition "module version, if distinct from the specification version"^^xsd:string .
+
+
+sm:normativeReference skos:definition "from an OMG perspective, a normative reference, standard, or document, cited in the specification documentation as well as in the ontology that references it"^^xsd:string .
+
+
+sm:priorSpecificationVersion skos:definition "a link to the immediately preceding OMG formal specification version"^^xsd:string .
+
+
+sm:priorVersion skos:definition "a link to the immediately preceding version at the file level"^^xsd:string .
+
+
+sm:publicationDate skos:definition "the date this version of the specification was published"^^xsd:string .
+
+
+sm:relatedSpecification skos:definition "specification or standard (range can be xsd:string, xsd:anyURI, or BibliographicCitation)"^^xsd:string .
+
+
+sm:responsibleTaskForce skos:definition "Task force or working group responsible for the original RFP/RFC and specification adoption"^^xsd:string .
+
+
+sm:revisedBy skos:definition "Task force or working group responsible for this revision of the specification"^^xsd:string .
+
+
+sm:shortTitle skos:definition "a short, commonly used, or preferred name, for a given specification or module"^^xsd:string .
+
+
+sm:specificationAbbreviation skos:definition "official abbreviation or acronym for the specification and related electronic files"^^xsd:string .
+
+
+sm:specificationAbstract skos:definition "A short textual description for the specification"^^xsd:string .
+
+
+sm:specificationTitle skos:definition "the full (complete) formal title of the specification, without abbreviations"^^xsd:string .
+
+
+sm:specificationURL skos:definition "URL for the specification directory on the OMG web site"^^xsd:string .
+
+
+sm:specificationVersionURL skos:definition "Explicit URI where the specification version is published"^^xsd:string .
+
+
+sm:submitter skos:definition "a contributor that is an OMG member, identified member of the submission team, and filed the requisite LOI, responsible for the content of the specification or model"^^xsd:string .
+
+
+sm:taskForceReport skos:definition "Provides a link to the FTF or RTF report, if applicable"^^xsd:string .
+
+
+sm:technologyArea skos:definition "Technology area relevant to the specification, for example, analysis and design modeling, business process modeling, information exchange and interoperability, middleware, etc."^^xsd:string .
+
+
+sm:thisVersion skos:definition "the version identifier for this version of the specification"^^xsd:string .
+
+
+sm:topicArea skos:definition "topic or area of interest that this particular specification relates to, for example, real time, robotics"^^xsd:string .
+
+
+<http://www.w3.org/2004/02/skos/core> dct:creator "Sean Bechhofer" ,
+                                                  "Alistair Miles" .
+
+
+skos:Collection skos:definition "A meaningful collection of concepts."@en .
+
+
+skos:Concept skos:definition "An idea or notion; a unit of thought."@en .
+
+
+skos:ConceptScheme skos:definition "A set of concepts, optionally including statements about semantic relationships between those concepts."@en ;
+                   skos:example "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies."@en .
+
+
+skos:OrderedCollection skos:definition "An ordered collection of concepts, where both the grouping and the ordering are meaningful."@en .
+
+
+skos:altLabel skos:example "Acronyms, abbreviations, spelling variants, and irregular plural/singular forms may be included among the alternative labels for a concept. Mis-spelled terms are normally included as hidden labels (see skos:hiddenLabel)."@en ;
+              skos:definition "An alternative lexical label for a resource."@en .
+
+
+skos:broadMatch skos:definition "skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en .
+
+
+skos:broader skos:definition "Relates a concept to a concept that is more general in meaning."@en .
+
+
+skos:broaderTransitive skos:definition "skos:broaderTransitive is a transitive superproperty of skos:broader." .
+
+
+skos:closeMatch skos:definition "skos:closeMatch is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications. In order to avoid the possibility of \"compound errors\" when combining mappings across more than two concept schemes, skos:closeMatch is not declared to be a transitive property."@en .
+
+
+skos:exactMatch skos:definition "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch."@en .
+
+
+skos:hasTopConcept skos:definition "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies."@en .
+
+
+skos:hiddenLabel skos:definition "A lexical label for a resource that should be hidden when generating visual displays of the resource, but should still be accessible to free text search operations."@en .
+
+
+skos:inScheme skos:definition "Relates a resource (for example a concept) to a concept scheme in which it is included."@en .
+
+
+skos:mappingRelation skos:definition "Relates two concepts coming, by convention, from different schemes, and that have comparable meanings"@en .
+
+
+skos:member skos:definition "Relates a collection to one of its members."@en .
+
+
+skos:memberList skos:definition "Relates an ordered collection to the RDF list containing its members."@en .
+
+
+skos:narrowMatch skos:definition "skos:narrowMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en .
+
+
+skos:narrower skos:definition "Relates a concept to a concept that is more specific in meaning."@en .
+
+
+skos:narrowerTransitive skos:definition "skos:narrowerTransitive is a transitive superproperty of skos:narrower." .
+
+
+skos:notation skos:definition "A notation, also known as classification code, is a string of characters such as \"T58.5\" or \"303.4833\" used to uniquely identify a concept within the scope of a given concept scheme."@en .
+
+
+skos:prefLabel skos:definition "The preferred lexical label for a resource, in a given language."@en .
+
+
+skos:related skos:definition "Relates a concept to a concept with which there is an associative semantic relationship."@en .
+
+
+skos:relatedMatch skos:definition "skos:relatedMatch is used to state an associative mapping link between two conceptual resources in different concept schemes."@en .
+
+
+skos:semanticRelation skos:definition "Links a concept to a concept related by meaning."@en .
+
+
+skos:topConceptOf skos:definition "Relates a concept to the concept scheme that it is a top level concept of."@en .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

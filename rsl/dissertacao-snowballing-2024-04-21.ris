@@ -1,0 +1,783 @@
+TY  - JOUR
+AB  - Natural Language (NL) is the root cause of ambiguity in the SRS document. The quality of the software development process can be improved by mitigating the risk with the use of semantically controlled representation. A possible solution to handle ambiguity can be the use of a mathematical formal logic representation in place of NL to capture software requirements. However, the use of formal logic is a complex task. A wrongly written formal logic will be difficult to handle and it will create serious problems in later stages of software development. Furthermore, stakeholders are typically not able to understand mathematical logic. Hence, this solution does not look feasible. Another possible way of addressing above discussed ambiguity problem is the use of controlled natural languages (CNL). It can work as a bridge between NL and formal representation. Since Requirement Analysis is based on communication and the analyst’s experience, it can be modeled up to a certain limit. This limit gives birth to controlled language. If the document is written in a controlled language, it will be feasible for the development team to use a simpler and less costly linguistic tool. The CNLs are syntactically unambiguous, semantically consistent and, controlled. Several CNLs could be found in literature such as ACE, PENG, CPL, Formalized-English, and Semantics of Business Vocabulary and Rules (SBVR), etc. We aim to use an SBVR based CNL to capture stakeholder’s requirements and prepare an SRS document using SBVR. Such software requirements will not only be syntactically clear but also semantically consistent.
+AU  - Ashfaq, Fariha
+AU  - Bajwa, Imran Sarwar
+DA  - 2021/11//
+DO  - 10.1007/s10515-021-00291-0
+IS  - 2
+KW  - Ambiguity Resolution
+KW  - SBVR
+KW  - Semantic annotation
+KW  - Software requirements
+PB  - Springer
+PY  - 2021
+TI  - Natural language ambiguity resolution by intelligent semantic annotation of software requirements
+T2  - Automated Software Engineering
+VL  - 28
+ER  -
+TY  - JOUR
+AB  - In the early phases of software development, both of business analysts and IT architects collaborate to define the business needs in a consistent and unambiguous format before exploiting them to produce a software solution to the problem have been defined. Given the divergence of the interest areas of each intervenor, the natural language remains the most adequate format to define the business needs in order to avoid misunderstanding. This informal support suffers from ambiguity leading to inconsistencies, which will affect the reliability of the final solution. Accordingly, the Object Management Group (OMG) has proposed the “Semantic Business Vocabulary and Rules” (SBVR) standard which offers the opportunity to gather business rules in a natural language format having a formal logic aspect, letting the possibility to be understood by not only the different stakeholders but also directly processed by the machine. Since the SBVR standard is born to represent business rules by combining business vocabulary, it would be wise to give a great attention to the latter. In this paper we present an approach to extract business vocabulary according to SBVR Structured English as one of possibly notation that can map to the SBVR Meta-Model, with a view to provide a relevant resource for the next software deployment steps.
+AU  - Haj, Abdellatif
+AU  - Balouki, Youssef
+AU  - Gadi, Taoufiq
+DO  - 10.1007/978-3-030-11914-0_19/COVER
+KW  - Business rules
+KW  - Business vocabulary
+KW  - Natural Language Processing
+KW  - SBVR
+KW  - SBVR structured English
+KW  - Semantic of Business Vocabulary and Rule
+PB  - Springer
+PY  - 2019
+SP  - 170
+EP  - 182
+TI  - Automatic extraction of SBVR based business vocabulary from natural language business rules
+T2  - Lecture Notes in Networks and Systems
+UR  - https://link-springer-com.ez67.periodicos.capes.gov.br/chapter/10.1007/978-3-030-11914-0_19
+VL  - 66
+ER  -
+TY  - JOUR
+AB  - Semantics of Business Vocabulary and Business Rules (SBVR) is OMG adopted metamodel allowing defining noun concepts, verb concepts and business rules of a problem domain in structured natural language based on formal logics. SBVR business vocabulary and business rules are capable of representing ontologies. There are some research works devoted to transforming SBVR into Web Ontology Language OWL2. The reverse way of representing ontology concepts with SBVR structured language was not investigated though there are much more ontologies than SBVR vocabularies. Our research is concentrated on methodology for creating SBVR vocabularies and rules from OWL2 ontologies without a loss of the expressive power, characteristic for ontologies, as some ontology-specific concepts have no direct representation in SBVR. The particular attention is devoted to applying SBVR vocabulary in semantic search. © Springer-Verlag Berlin Heidelberg 2013.
+AU  - Bernotaityte, Gintare
+AU  - Nemuraite, Lina
+AU  - Butkiene, Rita
+AU  - Paradauskas, Bronius
+DO  - 10.1007/978-3-642-41947-8_13/COVER
+KW  - OWL 2
+KW  - SBVR
+KW  - business rules
+KW  - business vocabulary
+KW  - domain ontology
+KW  - lexical ontology
+PB  - Springer Verlag
+PY  - 2013
+SN  - 9783642419461
+SP  - 134
+EP  - 145
+TI  - Developing SBVR vocabularies and business rules from OWL2 ontologies
+T2  - Communications in Computer and Information Science
+UR  - https://link-springer-com.ez67.periodicos.capes.gov.br/chapter/10.1007/978-3-642-41947-8_13
+VL  - 403
+ER  -
+TY  - JOUR
+AB  - This paper addresses the problem of extracting formal statements, in the form of business rules, from free text descriptions of financial products or services. This automatic process is integrated in the banking software factory, permitting business analysts the formal specification, direct implementation and fast deployment of new products. This system is fully integrated with the typical software methodologies and architectures used in the banking industry for conventional development of backoffice or online applications. © 2008 Springer-Verlag Berlin Heidelberg.
+AU  - Martínez-Fernández, José L.
+AU  - González, José C.
+AU  - Villena, Julio
+AU  - Martínez, Paloma
+DO  - 10.1007/978-3-540-69858-6_29/COVER
+KW  - Banking industry
+KW  - Business rules
+KW  - Financial ontologies
+KW  - Natural language processing
+PB  - Springer, Berlin, Heidelberg
+PY  - 2008
+SN  - 3540698574
+SP  - 299
+EP  - 310
+TI  - A preliminary approach to the automatic extraction of business rules from unrestricted text in the banking industry
+T2  - Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)
+UR  - https://link-springer-com.ez67.periodicos.capes.gov.br/chapter/10.1007/978-3-540-69858-6_29
+VL  - 5039 LNCS
+ER  -
+TY  - JOUR
+AB  - To support decision making, organizations tend to operate according to Business Rules, which are usually represented in a natural language format easily understood by all intervenors. According to the business rules manifesto by the Business Rules Group (OMG), rules build on facts, and facts build on concepts as expressed by terms. To avoid ambiguity and misunderstanding, the standardization of the terminology used at the business level becomes a persistent need. However, doing so manually is error prone and time consuming, especially that the Business Rules are the subject of continuous updating. In this paper, we present an automated approach to generate the Business Vocabulary from textual statements of Business Rules. Our approach is distinguished from existing works in that it extracts the Terminological Dictionary as described by the Semantic of Business Vocabulary and Rules (SBVR) standard to provide a more comprehensive meaning for each concept. Accordingly, an in-depth Natural Language Processing (NLP) is used to extract not only flat list of terms and relations, but also extra specifications and implicit knowledge. With a satisfactory result, our approach has proved its capability to automatically generate the SBVR Terminological Dictionary from large number of natural language business rules statements.
+AU  - Haj, Abdellatif
+AU  - Balouki, Youssef
+AU  - Gadi, Taoufiq
+DA  - 2021/5//
+DO  - 10.1002/SMR.2339
+IS  - 5
+KW  - SBVR
+KW  - business rules
+KW  - business vocabulary
+KW  - software automation
+KW  - terminological dictionary
+PB  - John Wiley & Sons, Ltd
+PY  - 2021
+SP  - e2339
+EP  - e2339
+TI  - Automated generation of terminological dictionary from textual business rules
+T2  - Journal of Software: Evolution and Process
+UR  - https://onlinelibrary-wiley.ez67.periodicos.capes.gov.br/doi/full/10.1002/smr.2339
+UR  - https://onlinelibrary-wiley.ez67.periodicos.capes.gov.br/doi/abs/10.1002/smr.2339
+UR  - https://onlinelibrary-wiley.ez67.periodicos.capes.gov.br/doi/10.1002/smr.2339
+VL  - 33
+ER  -
+TY  - JOUR
+AB  - In this paper, we present a novel approach of translating natural languages specification to SBVR business rules.
+AU  - Bajwa, Imran S
+AU  - Lee, Mark G
+AU  - Bordbar, Behzad
+KW  - AAAI Technical Report SS-11-03
+PY  - 2010
+TI  - SBVR Business Rules Generation from Natural Language Specification
+UR  - https://scholar.archive.org/work/nx32wkcwmvg4nk5nrqbuqngsja/access/wayback/http://www.cs.bham.ac.uk/~bxb/Papres/sbvrvsnl.pdf
+ER  -
+TY  - JOUR
+AB  - UML is currently the most widely used modeling language for the specification of the conceptual schema (CS) of an information system (IS). However, UML falls short when it comes to allow business people to define in their own language (e.g. using their own terms in natural language) the policies and rules by which they run their business. To this purpose, the semantics of business vocabulary and business rules (SBVR) metamodel specification was proposed. SBVR is conceptualized optimally for business people and it is designed to be used for business purposes, independently of information systems designs. Clearly, SBVR and unified modeling language (UML) cannot be considered as isolated languages. Many of the business rules specified by business people must be automatically executed by the underlying information system, and thus, they must also appear in its UML CS. In this sense, the main goal of this paper is to bridge the gap between UML and SBVR by providing an automatic transformation from UML to SBVR specifications. Thanks to our transformation, designers will be able to interact with the business people (in their own language) to refine and validate the information modeled in the CS before the generation of the final IS implementation. Our transformation also takes into account all possible textual object constraint language (OCL) expressions that complement the UML graphical elements. © 2009 Elsevier B.V. All rights reserved.
+AU  - Cabot, Jordi
+AU  - Pau, Raquel
+AU  - Raventós, Ruth
+DA  - 2010/6//
+DO  - 10.1016/J.IS.2008.12.002
+IS  - 4
+KW  - Model transformation
+KW  - OCL
+KW  - SBVR
+KW  - UML
+PB  - Pergamon
+PY  - 2010
+SP  - 417
+EP  - 440
+TI  - From UML/OCL to SBVR specifications: A challenging transformation
+T2  - Information Systems
+VL  - 35
+ER  -
+TY  - JOUR
+AB  - In spite of the proliferation of the business process and data compliance checking approaches, in practice, regulatory compliance management still demands considerable manual intervention. Previous research in the field of compliance has established that the manual specification/tagging of the regulations not only fails to ensure their proper coverage but also negatively affects the turnaround time both in proving and maintaining the compliance. Our contribution is an (semi-) automated transformation of the legal NL (English) text to SBVR Model via authoring of Structured English (SE) rules. The key benefit of our approach is the direct involvement of the domain experts to specify regulations using SE, which is close to English, rather than a formal specification language. We substantiate the approach using an example from industry regulations in banking and financial services domain.
+AU  - Roychoudhury, Suman
+AU  - Sunkle, Sagar
+AU  - Kholkar, Deepali
+AU  - Kulkarni, Vinay
+DA  - 2017/10//
+DO  - 10.1109/EDOC.2017.19
+KW  - Controlled Natural English
+KW  - Information Extraction
+KW  - Model Authoring
+KW  - Regulatory Compliance
+KW  - Semantic of Business Vocabulary and Rules
+PB  - Institute of Electrical and Electronics Engineers Inc.
+PY  - 2017
+SN  - 9781509030453
+SP  - 73
+EP  - 78
+TI  - From Natural Language to SBVR Model Authoring Using Structured English for Compliance Checking
+T2  - Proceedings - 2017 IEEE 21st International Enterprise Distributed Object Computing Conference, EDOC 2017
+VL  - 2017-January
+ER  -
+TY  - JOUR
+AB  - In Requirement Engineering, requirements are usually written in sentences of natural language and natural languages are ambiguous and inconsistent, so the requirements written in natural languages also tend to be ambiguous. To avoid this problem of ambiguity we present an approach of model transformation to generate requirements based on SBVR (Semantics of Business Vocabulary and Business Rules). The information provided in source metamodel (NL) is automatically transformed into target metamodel (SBVR). SBVR metamodel can not only be processed by machine but also provides precise and reliable model for software design. The standard SBVR metamodel is already available but for natural language we proposed our own metamodel because there is no standard metamodel available for natural languages.
+AU  - Ramzan, Shabana
+AU  - Bajwa, Imran Sarwar
+AU  - Ul Haq, Ikram
+AU  - Naeem, M. Asif
+DA  - 2014/12//
+DO  - 10.1109/ICDIM.2014.6991430
+KW  - Model Transformation
+KW  - Requirement specification
+KW  - SBVR
+KW  - Transformation Rules
+PB  - Institute of Electrical and Electronics Engineers Inc.
+PY  - 2014
+SN  - 9781479954209
+SP  - 220
+EP  - 225
+TI  - A model transformation from NL to SBVR
+T2  - 2014 9th International Conference on Digital Information Management, ICDIM 2014
+ER  -
+TY  - JOUR
+AB  - Abstract: Business Rules (BR) are usually written by different stakeholders, which makes them vulnerable to contain different designations for a same concept. Such problem can be the source of a not well orchestrated behaviors. Whereas identification of synonyms is manual or totally neglected in most approaches dealing with natural language Business Rules. In this paper, we present an automated approach to identify semantic similarity between terms in textual BR using Natural Language Processing and knowledge-based algorithm refined using heuristics. Our method is unique in that it also identifies abbreviations/expansions (as a special case of synonym) which is not possible using a dictionary. Then, results are saved in a standard format (SBVR) for reusability purposes. Our approach was applied on more than 160 BR statements divided on three cases with an accuracy between 69% and 87% which suggests it to be an indispensable enhancement for other methods dealing with textual BR.
+AU  - Haj, Abdellatif
+AU  - Balouki, Youssef
+AU  - Gadi, Taoufiq
+DO  - 10.22266/IJIES2021.0228.15
+IS  - 1
+KW  - Abbreviation identification
+KW  - Business rules
+KW  - NLP.
+KW  - Semantic similarity
+KW  - Synonym extraction
+PB  - Intelligent Network and Systems Society
+PY  - 2020
+SP  - 147
+EP  - 156
+TI  - Automated Identification of Semantic Similarity between Concepts of Textual Business Rules
+T2  - International Journal of Intelligent Engineering and Systems
+VL  - 14
+ER  -
+TY  - JOUR
+AB  - The opportunity to automate and monitor the execution of legal contracts is gaining increasing interest in Business and Academia, thanks to the advent of smart contracts, blockchain technologies, and the Internet of Things. A critical issue in developing smart contract systems is the formalization of legal contracts, which are traditionally expressed in natural language with all the pitfalls that this entails. This paper presents a systematic literature review of papers for the main steps related to the transformation of a legal contract expressed in natural language into a formal specification. Key research studies have been identified, classified, and analyzed according to a four-step transformation process: (a) structural and semantic annotation to identify legal concepts in text, (b) identification of relationships among concepts, (c) contract domain modeling, and (d) generation of a formal specification. Each one of these steps poses serious research challenges that have been the subject of research for decades. The systematic review offers an overview of the most relevant research efforts undertaken to address each step and identifies promising approaches, best practices, and existing gaps in the literature.
+AU  - Soavi, Michele
+AU  - Zeni, Nicola
+AU  - Mylopoulos, John
+AU  - Mich, Luisa
+DA  - 2022/9//
+DO  - 10.1007/S42979-022-01228-4
+IS  - 5
+KW  - Conceptual model
+KW  - Legal contract
+KW  - Requirement
+KW  - Semantic annotation
+KW  - Specification
+KW  - Systematic literature review
+PB  - Springer
+PY  - 2022
+TI  - From Legal Contracts to Formal Specifications: A Systematic Literature Review
+T2  - SN Computer Science
+VL  - 3
+ER  -
+TY  - JOUR
+AB  - Legal texts express conditions in natural language describing what is permitted, forbidden or mandatory in the context they regulate. Despite the numerous approaches tackling the problem of moving from a natural language legal text to the respective set of machine-readable conditions, results are still unsatisfiable and it remains a major open challenge. In this paper, we propose a preliminary approach which combines different Natural Language Processing techniques towards the extraction of rules from legal documents. More precisely, we combine the linguistic information provided by WordNet together with a syntax-based extraction of rules from legal texts, and a logic-based extraction of dependencies between chunks of such texts. Such a combined approach leads to a powerful solution towards the extraction of machine-readable rules from legal documents. We evaluate the proposed approach over the Australian “Telecommunications consumer protections code”.
+AU  - Dragoni, Mauro
+AU  - Villata, Serena
+AU  - Rizzi, Williams
+AU  - Governatori, Guido
+DO  - 10.1007/978-3-030-00178-0_19/COVER
+PB  - Springer Verlag
+PY  - 2018
+SP  - 287
+EP  - 300
+TI  - Combining Natural Language Processing Approaches for Rule Extraction from Legal Documents
+T2  - Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)
+UR  - https://link.springer.com/chapter/10.1007/978-3-030-00178-0_19
+VL  - 10791
+ER  -
+TY  - JOUR
+AB  - Business rules are generally captured in a natural language. The inherit ambiguity of the latter is often seen as a cause for project failure, which makes it necessary to translate natural language business rules statements to another language sufficiently formal. However, business experts are generally not familiar with formal languages, which can complicate the communication between stakeholders. For this reason, Object Management Group (OMG) had proposed SBVR Standard (2008) for modeling complex organizations in a natural language but in a formal and detailed way. As a result, several studies have succeeded to increase the accuracy of their approaches by transforming their models from/to SBVR standard. Clearly then, the success of these approaches depends on the quality of the SBVR based statements used or generated. This paper presents an approach for checking conformance of both lexicon and syntax of Business Rules (BR) expressed with Semantic of Business Vocabulary and Rules (SBVR), to SBVR Structured English notation (SBVR-SE) using Natural Language Processing (NLP).
+AU  - Haj, Abdellatif
+AU  - Balouki, Youssef
+AU  - Gadi, Taoufiq
+DO  - 10.1007/978-3-030-11928-7_63/COVER
+KW  - BR
+KW  - Business rules
+KW  - NLP
+KW  - Natural language processing
+KW  - SBVR
+KW  - SBVR structured english
+KW  - Semantic of business vocabulary and rules
+PB  - Springer Verlag
+PY  - 2019
+SN  - 9783030119270
+SP  - 697
+EP  - 706
+TI  - Automated checking of conformance to SBVR structured english notation
+T2  - Advances in Intelligent Systems and Computing
+UR  - https://link.springer.com/chapter/10.1007/978-3-030-11928-7_63
+VL  - 915
+ER  -
+TY  - JOUR
+AB  - Industry governance, risk, and compliance (GRC) solutions stand to gain from various analyses offered by formal compliance checking approaches. Such adoption is made difficult by the fact that most formal approaches assume that a mapping between concepts of regulations and models of operational specifics exists. Industry solutions offer tagging mechanisms to map regulations to operational specifics; however, they are mostly semi-formal in nature and tend to rely extensively on experts. We propose to use Semantics of Business Vocabularies and Rules along with similarity measures to create an explicit mapping between concepts of regulations and models of operational specifics of the enterprise. We believe that our work-in-progress takes a step toward adapting and leveraging formal compliance checking approaches in industry GRC solutions.
+AU  - Sunkle, Sagar
+AU  - Kholkar, Deepali
+AU  - Kulkarni, Vinay
+DA  - 2015/12//
+DO  - 10.7250/CSIMQ.2015-5.04
+IS  - 5
+KW  - Regulatory compliance
+KW  - SBVR
+KW  - business process models
+KW  - operations
+KW  - semantic similarity
+PB  - CEUR-WS
+PY  - 2015
+SP  - 39
+EP  - 60
+TI  - Toward Better Mapping between Regulations and Operations of Enterprises Using Vocabularies and Semantic Similarity
+T2  - Complex Systems Informatics and Modeling Quarterly
+UR  - https://csimq-journals.rtu.lv/article/view/csimq.2015-5.04
+VL  - 0
+ER  -
+TY  - JOUR
+AB  - With recent regulatory advances, modern enterprises have to not only comply with regulations but have to be prepared to provide explanation of proof of (non-)compliance. On top of compliance checking, this necessitates modeling concepts from regulations and enterprise operations so that stakeholder-specific and close to natural language explanations could be generated. We take a step in this direction by using Semantics of Business Vocabulary and Rules to model and map vocabularies of regulations and operations of enterprise. Using these vocabularies and leveraging proof generation abilities of an existing compliance engine, we show how such explanations can be created. Basic natural language explanations that we generate can be easily enriched by adding requisite domain knowledge to the vocabularies.
+AU  - Sunkle, Sagar
+AU  - Kholkar, Deepali
+AU  - Kulkarni, Vinay
+DO  - 10.1007/978-3-319-21542-6_25/COVER
+KW  - Explanation of proof
+KW  - Proof of compliance
+KW  - Regulatory compliance
+KW  - SBVR
+PB  - Springer Verlag
+PY  - 2015
+SN  - 9783319215419
+SP  - 388
+EP  - 403
+TI  - Explanation of proofs of regulatory (Non-)compliance using semantic vocabularies
+T2  - Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)
+UR  - https://link.springer.com/chapter/10.1007/978-3-319-21542-6_25
+VL  - 9202
+ER  -
+TY  - JOUR
+AB  - Governance, Risk and Compliance (GRC) is an emerging topic in the business and information technology world. However to this day the concept behind the acronym has neither been adequately researched, nor is there a common understanding among professionals. The research at hand provides a frame of reference for research of integrated GRC that was derived from the first scientifically grounded definition of the term. By means of a literature review the authors merge observations, an analysis of existing definitions and results from prior surveys in the derivation of a single-phrase definition. The definition is evaluated and improved through a survey among GRC professionals. Finally a frame of reference for GRC research is constructed. © 2010 Springer-Verlag.
+AU  - Racz, Nicolas
+AU  - Weippl, Edgar
+AU  - Seufert, Andreas
+DO  - 10.1007/978-3-642-13241-4_11/COVER
+KW  - GRC
+KW  - compliance
+KW  - definition
+KW  - governance
+KW  - integrated
+KW  - risk
+PB  - Springer, Berlin, Heidelberg
+PY  - 2010
+SN  - 3642132405
+SP  - 106
+EP  - 117
+TI  - A frame of reference for research of integrated Governance, Risk and Compliance (GRC)
+T2  - Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)
+UR  - https://link.springer.com/chapter/10.1007/978-3-642-13241-4_11
+VL  - 6109 LNCS
+ER  -
+TY  - JOUR
+AB  - The Object Management Group (OMG) has put considerable effort into the standardization of various business modeling aspects within the context of model-driven systems development. Indeed, the Business Process Model and Notation (BPMN) is now arguably the most popular process modeling language. At the same time, the Semantics of Business Vocabulary and Business Rules (SBVR), which is a novel and formally sound standard for the specification of virtually any kind of knowledge using controlled natural language, is also gaining its grounds. Nonetheless, the integration between these two very much related standards remains weak. In this paper, we present one such integration effort, namely an approach for the extraction of SBVR process rules from BPMN processes. To accomplish this, we utilized model-to-model transformation technology, which is one of the core features of Model-Driven Architecture. At the core of the presented solution stands a set of model transformation rules and two algorithms specifying the formation of formally defined process rules from process models. Basic implementation aspects, together with the source code of the solution, are also presented in the paper. The experimental results acquired from the automatic model transformation have shown full compliance with the benchmark results and cover the entirety of the specified flow of work defined in the experimental process models. Following this, it is safe to conclude that the set of specified transformation rules and algorithms was sufficient for the given scope of the experiment, providing a solid background for the practical application and future developments of the solution.
+AU  - Skersys, Tomas
+AU  - Danenas, Paulius
+AU  - Mickeviciute, Egle
+AU  - Butleris, Rimantas
+DA  - 2022/9//
+DO  - 10.3390/APP12188976
+IS  - 18
+KW  - BPMN
+KW  - SBVR
+KW  - business process model
+KW  - model transformation
+KW  - process rules
+PB  - Multidisciplinary Digital Publishing Institute
+PY  - 2022
+SP  - 8976
+EP  - 8976
+TI  - Transforming BPMN Processes to SBVR Process Rules with Deontic Modalities
+T2  - Applied Sciences 2022, Vol. 12, Page 8976
+UR  - https://www.mdpi.com/2076-3417/12/18/8976/htm
+UR  - https://www.mdpi.com/2076-3417/12/18/8976
+VL  - 12
+ER  -
+TY  - JOUR
+AB  - Business rules control and constrain the behavior and structure of the business system in terms of its policies and principles. Business rules are restructured frequently as per the internal or external circumstances based on market opportunities, statutory regulations, and business focus. The current practice in industry, of detecting inconsistencies manually, is error prone, due to the size, complexity and ambiguity in representation using natural language. Our work detects inconsistencies in business rules based on model checking that exploits the FOL basis of SBVR specification. We aim to reduce the burden on solvers and obtain effective system level test data, leading to the development of a novel inconsistency rule checker based on extracting the unsatisfiable cores using solvers like Z3, CVC4, etc. We introduce the concept of graphical clusters, to partition SBVR vocabularies and represent the former exploiting the many-sorted logic and graph reachability algorithm, thus reducing the domain of quantification and the number of uninterpreted functions. The translation of SBVR to SMT-LIBv2 is implemented as part of our tool BuRRiTo. Experimental results are shown on industrial level rule sets.
+AU  - Anand, Kritika
+AU  - Chittimalli, Pavan Kumar
+AU  - Naik, Ravindra
+DO  - 10.1007/978-3-319-73305-0_6/COVER
+KW  - Business rules
+KW  - First order logic
+KW  - SBVR
+KW  - SMT solvers
+PB  - Springer Verlag
+PY  - 2018
+SN  - 9783319733043
+SP  - 80
+EP  - 96
+TI  - An automated detection of inconsistencies in SBVR-based business rules using many-sorted logic
+T2  - Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)
+UR  - https://link.springer.com/chapter/10.1007/978-3-319-73305-0_6
+VL  - 10702 LNCS
+ER  -
+TY  - JOUR
+AB  - Rules in regulations such as found in the US Federal Code of Regulations can be expressed using conditional and deontic rules. Identifying and extracting such rules from the language of the source material would be useful for automating rulebook management and translating into an executable logic. The paper presents a linguistically-oriented, rule-based approach, which is in contrast to a machine learning approach. It outlines use cases, discusses the source materials, reviews the methodology, then provides initial results and future steps. © 2011 The authors and IOS Press. All rights reserved.
+AU  - Wyner, Adam
+AU  - Peters, Wim
+DO  - 10.3233/978-1-60750-981-3-113
+KW  - Conditionals
+KW  - Deontic Logic
+KW  - Regulation
+KW  - Text analysis
+PB  - IOS Press
+PY  - 2011
+SN  - 9781607509806
+SP  - 113
+EP  - 122
+TI  - On Rule Extraction from Regulations
+T2  - Frontiers in Artificial Intelligence and Applications
+UR  - https://ebooks.iospress.nl/doi/10.3233/978-1-60750-981-3-113
+VL  - 235
+ER  -
+TY  - JOUR
+AB  - What happens if the way in which we handle a genuine deontic conflict -i.e., a deontic ambiguity-matters regarding the application of other norms that are not directly affected by that conflict? We argue that the law requires sometimes propagating the ambiguity to other norms and sometimes confining it to some norms only. We explore this issue and model different reasoning patterns. The problem is addressed in a new variant of Defeasible Deontic Logic. The contribution of this paper is threefold: (a) we extend the treatment of ambiguity blocking and propagation to Defeasible Deontic Logic; (b) we discuss reasoning patterns in the law, especially in criminal law, where we need to deal with both ambiguity blocking and ambiguity propagation in the same legal system and logic; (c) we devise an annotated variant of Defeasible Deontic Logic where we distinguish literals that must be obtained through an ambiguity-blocking mechanism from those that are derived using an ambiguity-propagating mechanism.
+AU  - Governatori, Guido
+AU  - Rotolo, Antonino
+DA  - 2023/6//
+DO  - 10.1145/3594536.3595175
+KW  - Automated reason-ing
+KW  - CCS CONCEPTS • Theory of computation → Proof theory
+KW  - • Applied computing → Law KEYWORDS Defeasible Deontic Logic, Deontic Ambiguities, Ambiguity Block-ing, Ambiguity Propagation
+PB  - Association for Computing Machinery (ACM)
+PY  - 2023
+SN  - 9798400701979
+SP  - 91
+EP  - 100
+TI  - Deontic Ambiguities in Legal Reasoning
+UR  - https://dl-acm-org.ez67.periodicos.capes.gov.br/doi/10.1145/3594536.3595175
+ER  -
+TY  - JOUR
+AB  - Contracts are agreements between parties engaging in economic transactions. They specify deontic modalities that the signatories should be held responsible for and state the penalties or actions to be taken if the stated agreements are not met. Additionally, contracts have also been known to be source of Software Engineering (SE) requirements. Identifying the deontic modalities in contracts can therefore add value to the Requirements Engineering (RE) phase of SE. The complex and ambiguous language of contracts make it difficult and time-consuming to identify the deontic modalities (obligations, permissions, prohibitions), embedded in the text. State-of-art neural network models are effective for text classification; however, they require substantial amounts of training data. The availability of contracts data is sparse owing to the confidentiality concerns of customers. In this paper, we leverage the linguistic and taxonomical similarities between regulations (available abundantly in the public domain) and contracts to demonstrate that it is possible to use regulations as training data for classifying deontic modalities in real-life contracts. We discuss the results of a range of experiments from the use of rule-based approach to Bidirectional Encoder Representations from Transformers (BERT) for automating the classification of deontic modalities. With BERT, we obtained an average precision and recall of 90% and 89.66% respectively.
+AU  - Joshi, Vivek
+AU  - Anish, Preethu Rose
+AU  - Ghaisas, Smita
+DA  - 2021/8//
+DO  - 10.1145/3468264.3473921
+KW  - BERT
+KW  - BiLSTM
+KW  - Business Contract
+KW  - Deep Learning Models
+KW  - Deontic Modality
+KW  - Domain Adaptation
+KW  - Regulation
+PB  - Association for Computing Machinery, Inc
+PY  - 2021
+SN  - 9781450385626
+SP  - 1275
+EP  - 1280
+TI  - Domain adaptation for an automated classification of deontic modalities in software engineering contracts
+T2  - ESEC/FSE 2021 - Proceedings of the 29th ACM Joint Meeting European Software Engineering Conference and Symposium on the Foundations of Software Engineering
+UR  - https://dl-acm-org.ez67.periodicos.capes.gov.br/doi/10.1145/3468264.3473921
+VL  - 21
+ER  -
+TY  - JOUR
+AB  - The online publication of legal materials by governments and administrations is not recent, nevertheless, nowadays some of these materials are being made available in machine readable formats, and follow the Linked Open Data principles: URI naming of resources, assertions about named relationships between resources or between resources and data values, and the possibility to easily extend, update and modify these relationships and resources.The combination of the publication of legislation, regulations, judicial cases, or administrative decisions as Linked Open Legal Data together with the availability of legal OWL/RDF ontologies and SKOS thesauri, could offer new possibilities to enhance not only access but also understanding of legal information.  This paper outlines the possibilities offered by the use Open Legal Data, and gives a preliminary description of the ongoing work on the reuse of the Code of Federal Regulations and one of its finding aids, the Thesaurus of Indexing Terms.  An improved version of this paper has been accepted for presentation at the AAAI Fall Symposium on Open Government Knowledge: AI Opportunities and Challenges, November 5-6, Arlington, VA. It will be published as part of the Technical Reports.
+AU  - Casellas, Núria
+AU  - Vallbé, Joan-Josep
+AU  - Bruce, Thomas Robert
+DA  - 2011/9//
+DO  - 10.2139/SSRN.1959931
+KW  - CFR
+KW  - From Legal Information to Open Legal Data: A Case Study in U.S. Federal Legal Information
+KW  - Joan-Josep Vallbé
+KW  - Núria Casellas
+KW  - RDF
+KW  - SKOS
+KW  - SSRN
+KW  - Thomas Robert Bruce
+KW  - legal information
+KW  - legal ontologies
+KW  - open legal data
+KW  - thesaurus
+PB  - Elsevier BV
+PY  - 2011
+TI  - From Legal Information to Open Legal Data: A Case Study in U.S. Federal Legal Information
+T2  - SSRN Electronic Journal
+UR  - https://papers.ssrn.com/abstract=1959931
+ER  -
+TY  - JOUR
+AB  - Federal government agencies and organizations doing business with them have to adhere to the Code of Federal Regulations (CFR). The CFRs are currently available as large text documents that are not...
+AU  - Joshi, Karuna Pande
+AU  - Saha, Srishty
+DA  - 2020/11//
+DO  - 10.1145/3425192
+IS  - 3
+KW  - Deep learning
+KW  - Semantic Web
+KW  - compliance
+KW  - legal text analytics
+PB  - 
+		ACM
+		PUB27
+		New York, NY, USA
+PY  - 2020
+TI  - A Semantically Rich Framework for Knowledge Representation of Code of Federal Regulations
+T2  - Digital Government: Research and Practice
+UR  - https://dl.acm.org/doi/10.1145/3425192
+VL  - 1
+ER  -
+TY  - JOUR
+AB  - Knowledge Graphs (KGs) have made a qualitative leap and effected a real revolution in knowledge representation. This is leveraged by the underlying structure of the KG which underpins a better comprehension, reasoning and interpretation of knowledge for both human and machine. Therefore, KGs continue to be used as the main means of tackling a plethora of real-life problems in various domains. However, there is no consensus in regard to a plausible and inclusive definition of a domain-specific KG. Further, in conjunction with several limitations and deficiencies, various domain-specific KG construction approaches are far from perfect. This survey is the first to offer a comprehensive definition of a domain-specific KG. Also, the paper presents a thorough review of the state-of-the-art approaches drawn from academic works relevant to seven domains of knowledge. An examination of current approaches reveals a range of limitations and deficiencies. At the same time, uncharted territories on the research map are highlighted to tackle extant issues in the literature and point to directions for future research.
+AU  - Abu-Salih, Bilal
+DA  - 2021/7//
+DO  - 10.1016/J.JNCA.2021.103076
+KW  - Domain ontology
+KW  - Domain-specific knowledge graph
+KW  - Knowledge graph
+KW  - Knowledge graph construction
+KW  - Knowledge graph embeddings
+KW  - Knowledge graph evaluation
+KW  - Survey
+PB  - Academic Press
+PY  - 2021
+SP  - 103076
+EP  - 103076
+TI  - Domain-specific knowledge graphs: A survey
+T2  - Journal of Network and Computer Applications
+VL  - 185
+ER  -
+TY  - JOUR
+AB  - The contemporary LLMs are prone to producing hallucinations, stemming mainly from the knowledge gaps within the models. To address this critical limitation, researchers employ diverse strategies to augment the LLMs by incorporating external knowledge, aiming to reduce hallucinations and enhance reasoning accuracy. Among these strategies, leveraging knowledge graphs as a source of external information has demonstrated promising results. In this survey, we conduct a comprehensive review of these knowledge-graph-based knowledge augmentation techniques in LLMs, focusing on their efficacy in mitigating hallucinations. We systematically categorize these methods into three overarching groups, offering both methodological comparisons and empirical evaluations of their performance. Lastly, the paper explores the challenges associated with these techniques and outlines potential avenues for future research in this emerging field.
+AU  - Agrawal, Garima
+AU  - Kumarage, Tharindu
+AU  - Alghami, Zeyad
+AU  - Liu, Huan
+DA  - 2023/11//
+PY  - 2023
+TI  - Can Knowledge Graphs Reduce Hallucinations in LLMs? : A Survey
+UR  - https://arxiv.org/abs/2311.07914v1
+ER  -
+TY  - JOUR
+AB  - The application of Linked Open Data (LOD) principles to legal information (URI naming of resources, assertions about named relationships between resources or between resources and data values, and the possibility to easily extend, update and modify these relationships and resources) could offer better access and understanding of regulatory information to individual citizens, businesses and government agencies and administrations, and allow its sharing and reuse across applications, organizations and jurisdictions. © 2012 Authors.
+AU  - Casellas, Nuria
+AU  - Bruce, Thomas R.
+AU  - Frug, Sara S.
+AU  - Bouwman, Sarah
+AU  - Dias, Dallas
+AU  - Lin, Jie
+AU  - Marathe, Sharvari
+AU  - Rai, Krithi
+AU  - Singh, Ankit
+AU  - Sinha, Debraj
+AU  - Venkataraman, Sanjna
+DO  - 10.1145/2307729.2307785
+KW  - RDF
+KW  - SKOS
+KW  - information extraction
+KW  - linked data
+PY  - 2012
+SN  - 9781450314039
+SP  - 280
+EP  - 281
+TI  - Linked legal data: Improving access to regulations
+T2  - ACM International Conference Proceeding Series
+UR  - https://dl.acm.org/doi/10.1145/2307729.2307785
+ER  -
+TY  - JOUR
+AB  - Standards are a necessary adjunct to many kinds of new technology development. This paper explores an emerging new kind of standard in which business meaning is standardized using formal ontology. Some issues are identified in terms of the characteristics of different ontologies and how these may apply to different intended uses. By way of illustration, an account of the origins, history and intended uses of an industry standard called the Financial Industry Business Ontology (FIBO) is given, along with a summary of other financial industry standards. It is suggested that an understanding of the ontology characterizations described here may be instructive in developing industry standards at the level of semantics and in making use of these standards.
+AU  - Bennett, Michael G.
+DO  - 10.1007/978-3-030-89906-6_47/COVER
+KW  - FIBO
+KW  - Finance
+KW  - Ontology
+KW  - Standards
+PB  - Springer Science and Business Media Deutschland GmbH
+PY  - 2022
+SN  - 9783030899059
+SP  - 717
+EP  - 729
+TI  - Standards for Knowledge Graphs in the Financial Sector
+T2  - Lecture Notes in Networks and Systems
+UR  - https://link.springer.com/chapter/10.1007/978-3-030-89906-6_47
+VL  - 358 LNNS
+ER  -
+TY  - JOUR
+AB  - The goal of the paper is to analyse the relevance of the proposed transformation from SBVR business vocabularies and business rules to the corresponding OWL 2 ontologies. The transformation was aimed to be model driven, lossless and reversible; covering transformable SBVR concepts and as much as possible OWL 2 concepts, especially those that are important for inference; supporting the consistency and normalization of resulting ontologies. The paper presents the detailed comparison of the proposed solution with the most advanced, to our knowledge, related works and experimental investigation of the implemented transformation prototype with nine SBVR business vocabularies and business rule sets with regards to defined desirable criteria.DOI: http://dx.doi.org/10.5755/j01.itc.45.2.8873
+AU  - Karpovič, Jaroslav
+AU  - Ablonskis, Linas
+AU  - Nemuraitė, Lina
+AU  - Paradauskas, Bronius
+DA  - 2016/6//
+DO  - 10.5755/J01.ITC.45.2.8873
+IS  - 2
+KW  - OWL 2.
+KW  - SBVR
+KW  - business rules
+KW  - business vocabulary
+KW  - meaning
+KW  - ontology
+KW  - representation
+KW  - transformation
+PB  - Kauno Technologijos Universitetas
+PY  - 2016
+SP  - 195
+EP  - 207
+TI  - Experimental investigation of transformations from SBVR business vocabularies and business rules to owl 2 ontologies
+T2  - Information Technology and Control 
+UR  - https://itc.ktu.lt/index.php/ITC/article/view/8873
+VL  - 45
+ER  -
+TY  - JOUR
+AB  - Enterprises model the behavior of their business to prepare a communication standard for business analysts and to specify requirements to Information Technology (IT) people. The communication gap between IT group and business analysts, who lie on the opposite end of the business spectrum exists due to the different terminologies used in their respective fields regarding the same context. This gap has led to major software failures which prompted the OMG group has come up with a new standard - Semantic of Business Vocabulary and Business Rules (SBVR). Declarative models are provided by SBVR to represent Business Vocabulary and Business Rules which can be understood by everyone working throughout the business spectrum. Each business is governed by business rules which are constrained by the regulation policy set up by the policy guidelines of the organization and government regulations set up on the organization. Business rules are specified in documents like user guides, requirement documents, terms and conditions, do's and don'ts. Typically a Business Analyst interprets the document and manually extracts rules based on his understanding which leads to potential discrepancies, ambiguities and quality issues in the software system. To minimize such errors, in this paper we present an unsupervised approach to automatically extract SBVR vocabularies and rules from domain-specific business documents. We also present our initial results and comparative study with our earlier approach.
+AU  - Kumar, Pavan
+AU  - Prakash, Chandan
+AU  - Naik, Ravindra
+AU  - Bhattacharyya, Abhidip
+DA  - 2020/2//
+DO  - 10.1145/3385032.3385046
+KW  - Business rules extraction
+KW  - Natural language processing
+KW  - Rule components
+KW  - Rule document
+KW  - Sbvr
+KW  - Text mining
+PB  - Association for Computing Machinery
+PY  - 2020
+SN  - 9781450375948
+TI  - An Approach to Mine SBVR Vocabularies and Rules from Business Documents
+T2  - ACM International Conference Proceeding Series
+UR  - https://dl.acm.org/doi/10.1145/3385032.3385046
+ER  -
+TY  - JOUR
+AB  - The wide and complex spectrum of regulations, especially in the financial services industry, calls for machine assistance in making sense of, and in consuming, regulatory text. This paper describes an approach to interpreting regulations with SBVR. The purpose is to clarify ambiguity in regulations by developing a shared vocabulary and shared guidance based on the regulatory text. The ongoing work presented in this paper is part of the Governance, Risk and Compliance Technology Centre's (Ireland) current research activities that include the development of policy advice on compliance with US Anti-Money Laundering (AML) regulations for companies that are governed by these regulations. The approach is based on the navigation of US public databases-Federal Register, Code of Federal Regulations and US Code-to identify subsets of AML regulation relevant to companies based outside the USA. These subsets are imported into an SBVR toolset, where they are analysed and, if necessary, interpreted by the legal and financial experts on the team. A standardized vocabulary for AML is being developed in SBVR, together with advice on regulatory intent and formal expression of rules with which regulated companies must comply.
+AU  - Abi-Lahoud, Elie
+AU  - Butler, Tom
+AU  - Chapin, Donald
+AU  - Hall, John
+KW  - SBVR
+KW  - case study
+KW  - compliance
+KW  - human language
+KW  - regulation
+PY  - 2013
+TI  - Interpreting Regulations with SBVR
+T2  - Citeseer
+UR  - https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=3ea90bb7488e8c15acfc62daf0d9eca3d21d62ec
+ER  -
+TY  - JOUR
+AB  - This paper presents an approach for legal compliance checking in the Semantic Web which can be effectively applied for applications in the Linked Open Data environment. It is based on modeling deontic norms in terms of ontology classes and ontology property restrictions. It is also shown how this approach can handle norm defeasibility. Such methodology is implemented by decidable fragments of OWL 2, while legal reasoning is carried out by available decidable reasoners. The approach is generalised by presenting patterns for modeling deontic norms and norms compliance checking.
+AU  - Francesconi, Enrico
+AU  - Governatori, Guido
+DA  - 2023/9//
+DO  - 10.1007/S10506-022-09317-8
+IS  - 3
+KW  - Legal reasoning
+KW  - Norm compliance
+KW  - OWL 2
+KW  - Semantic Web
+PB  - Institute for Ionics
+PY  - 2023
+SP  - 445
+EP  - 464
+TI  - Patterns for legal compliance checking in a decidable framework of linked open data
+T2  - Artificial Intelligence and Law
+VL  - 31
+ER  -
+TY  - JOUR
+AB  - This paper presents an approach used for automated generations of software constraints. In this model, the SBVR (Semantics of Business Vocabulary and Rules) based semi-formal representation is obtained from the syntactic and semantic analysis of a NL (Natural Language)(such as English) sentence. A SBVR representation is easy to translate to other formal languages as SBVR is based on higher-order logic like other formal languages such as OCL (Object Constraint Language). The proposed model endows with a systematic and powerful system of incorporating NL knowledge on the formal languages. A prototype is constructed in Java (an Eclipse plug-in) as a proof of the concept. The performance was tested for a few sample texts taken from existing research thesis reports and books.
+AU  - Bajwa, Imran Sarwar
+AU  - Shahzada, Muhammad Anwar
+DA  - 2017/4//
+DO  - 10.22581/MUET1982.1702.04
+IS  - 2
+PB  - Mehran University of Engineering and Technology
+PY  - 2017
+SP  - 243
+EP  - 254
+TI  - Automated Generation of OCL Constraints: NL based Approach vs Pattern Based Approach
+T2  - Mehran University Research Journal of Engineering and Technology
+VL  - 37
+ER  -
+TY  - JOUR
+AB  - An enterprise system enables business by providing various services that are guided by set of well-defined processes, and adhere to certain business rules and constraints. The business rules are usually written using English in operating procedures, terms and conditions, and various other supporting documents. For implementing the business rules in a software system, or expressing them as UML use-case specifications, analysts manually interpret the documents, leading to potential discrepancies, ambiguities, and quality issues in the software system that can be resolved only after testing. To minimize such errors, we propose a novel method to mine the documents automatically to extract the fundamental atomic facts in every sentence - called as business rule intents. We adopt dependency tree parser to parse the rule sentences and extract rule intents from them. Our experiments using few publicly available sample documents in the financial domain yielded very promising results, where rule intents extraction produced an average precision of 78% and recall of 80%.
+AU  - Bhattacharyya, Abhidip
+AU  - Chittimalli, Pavan Kumar
+AU  - Naik, Ravindra
+DA  - 2017/2//
+DO  - 10.1145/3021460.3021470
+PB  - Association for Computing Machinery
+PY  - 2017
+SN  - 9781450348560
+SP  - 96
+EP  - 106
+TI  - An approach to mine business rule intents from domain-specific documents
+T2  - ACM International Conference Proceeding Series
+UR  - https://dl.acm.org/doi/10.1145/3021460.3021470
+ER  -
+TY  - JOUR
+AB  - Business Rules exists at the core of any Business Organization. For efficient execution of the business system, all the business rules must be in machine-interpretable format. There is an absence of such a system that can convert the business rule sentences into corresponding structured format automatically. We present BRMiner, a system which automatically converts business rules represented as Natural Language sentences to the corresponding SBVR format which is a structured representation that can be further converted to the machine-interpretable format. BRMiner is based on the idea of Open Information Extraction (OIE). We have shown that existing OIE systems are not suitable for SBVR rule formation that leads to the development of a new OIE system BRMiner, with more accurate prediction and additional capabilities. BRMiner uses the state of the art dependency parser to convert an unstructured business rule to the corresponding structured format. We have used internal as well as publically available datasets for our system evaluation and the results are encouraging which we have shown in the paper.
+AU  - Prakash, Chandan
+AU  - Chittimalli, Pavan Kumar
+AU  - Naik, Ravindra
+DA  - 2021/2//
+DO  - 10.1145/3452383.3452396
+KW  - Business Rules
+KW  - Controlled Natural Language
+KW  - Dependency Parser
+KW  - Open Information Extraction
+KW  - SBVR
+PB  - Association for Computing Machinery
+PY  - 2021
+SN  - 9781450390460
+TI  - Open Information Extraction Using Dependency Parser for Business Rule Mining in SBVR Format
+T2  - ACM International Conference Proceeding Series
+UR  - https://dl.acm.org/doi/10.1145/3452383.3452396
+ER  -
+TY  - JOUR
+AB  - Portable Document Format (PDF) is a popular choice for a secure communication and persistence of business information and is a universally accepted format by businesses choosing to become digital. PDF provides multiple ways to make the information visually appealing and readable, and device independent rendering. To achieve this, PDF stores metadata with individual text characters, graphic components and other layout elements. Such atomic component wise meta-data makes machine processing of information in the PDF format very challenging; the challenge is further extended due to the difficulty of stitching together the original semantics from the componentized information. We propose a generic approach for extracting the hierarchy of the document structure while separating the content from header and footer, and extracting metadata associated with checkboxes to annotate the business information contained in PDF for tasks like mining specifications and rules from the document. Our prototype is able to process real-life, large PDF documents each running into roughly 400 pages, with nearly 95% of the extraction requiring no human intervention.
+AU  - Shere, Rohit Prakash
+AU  - Chittimalli, Pavan Kumar
+AU  - Naik, Ravindra
+DA  - 2022/2//
+DO  - 10.1145/3511430.3511440
+KW  - Business documents
+KW  - Document Section Hierarchy Extraction
+KW  - PDF Text Extraction
+KW  - PDFBox
+PB  - Association for Computing Machinery
+PY  - 2022
+SN  - 9781450396189
+TI  - Identifying and extracting hierarchical information from business PDF documents
+T2  - ACM International Conference Proceeding Series
+UR  - https://dl.acm.org/doi/10.1145/3511430.3511440
+ER  -
+TY  - JOUR
+AB  - Business enterprises in today's world have complex rules and process as their foundation. The rules and processes continuously change to reflect the enterprise's evolution and progress, market demands and regulations. This constant flux demands an automatic way to check these business rules for correctness and consistency. In the recent times, few methods were proposed for automated checks. In our literature review for this subject matter, however, we did not find a proper survey, which could present a consolidated picture of the properties, advantages and drawbacks of the different methods. The randomly scattered state of art for specifying business rules and analyzing them for inconsistencies is hindering the relevant research space. We conduct a systematic literature review of various solutions discussed in the field of consistency checking for business rules, especially rules in Semantics of Business Vocabularies and Rules (SBVR) format. We highlight the progress made in the field, aspects that can be developed further, and the current gaps in the methods so that future work can be channelized to address and close the gaps by proposing new or enhanced methods.
+AU  - Mitra, Sayandeep
+AU  - Chittimalli, Pavan Kumar
+KW  - Business Rules
+KW  - Consistency
+KW  - Re-dundancy
+KW  - Rule Verification
+KW  - SBVR
+PY  - 2017
+TI  - A Systematic Review of Methods for Consistency Checking in SBVR-based Business Rules.
+UR  - https://ceur-ws.org/Vol-1819/modsym2017-paper2.pdf
+ER  -
+TY  - JOUR
+AB  - Traditionally, business rules are expressed informally in English, captured eventually, as a part of UML use-cases. Detecting anomalies in business rules is extremely difficult to automate, due to their informal nature, and manually error-prone due to the size and complexity. In recent times, business rules are being expressed increasingly using standard representations (such as Semantics of Business Vocabularies and Rules (SBVR)). We present a method to detect inconsistencies amongst the rules, based on the model checking. We exploit the First Order Logic (FOL) basis of SBVR representation to propose a method that is independent of the business domain. We present a case-study of business rules for well-known example of car-rental, and our method shows promising results to detect inconsistencies.
+AU  - Chittimalli, Pavan Kumar
+AU  - Anand, Kritika
+DA  - 2016/9//
+DO  - 10.1145/2975941.2975943
+PB  - Association for Computing Machinery (ACM)
+PY  - 2016
+SP  - 9
+EP  - 16
+TI  - Domain-independent method of detecting inconsistencies in SBVR-based business rules
+UR  - https://dl.acm.org/doi/10.1145/2975941.2975943
+ER  -
+TY  - JOUR
+AB  - In modern times, business rules have grown exponentially with enterprises becoming more complex in diverse fields. Due to this growth, different forms of anomalies creep into the business rules, causing business enterprise to take wrong decisions, which can impact it's performance and reputation. It is time and resource consuming to examine the rules manually due to the large number of rules intermingled with each other. The process of manual verification is also not free of human induced errors. Thus, automatic verification of business rules is the need of the hour. We present a tool to detect different anomalies in business rules represented in SBVR format. The tool uses a combination of Directed Graphs and SMT solvers to perform the verification task. We show the implementation of our tool along with it's evaluation on industry level benchmarks.
+AU  - Mitra, S
+AU  - Anand, K
+AU  - (2), PK Chittimalli - ICEIS
+AU  - 2018, undefined
+DO  - 10.5220/0006669802150222
+KW  - Anomalies
+KW  - Business Rules
+KW  - Clustering
+KW  - Directed Graph
+KW  - SBVR
+KW  - SMT
+KW  - Verification
+PY  - 2018
+SN  - 9789897582981
+SP  - 215
+EP  - 222
+TI  - Identifying Anomalies in SBVR-based Business Rules using Directed Graphs and SMT-LIBv2.
+T2  - scitepress.orgS Mitra, K Anand, PK ChittimalliICEIS (2), 2018•scitepress.org
+UR  - https://www.scitepress.org/Papers/2018/66698/66698.pdf
+ER  -
+TY  - JOUR
+AB  - Presently, business organizations are regulating their activities with the aid of Business Rules (BR's). A single rule set of an organization contains large and diverse categories of BR's, thereby making it difficult for Business Analysts and end users to analyze and extract relevant BR's. Rule Search with natural language terms fail due to their inability to capture logical semantics present in BR's. In this paper, we present a novel approach to give correct and complete sets of SBVR (Semantics of Business Vocabulary and Business Rules) based BR's based on a specified query. We integrate conventional Information Retrieval Approach of text based searches over the rule base and corresponding meta-data with a SMT (Satisfiability Modulo Theory) based approach capturing the higher first order logic of the rules. The major applications of this approach are change impact analysis when rules are added, deleted or modified from a rule set, identifying the candidate set of rules affected due to change in the rule set and during match and gap analysis where we compare two sets of BR's identifying similarity and difference in business functionality between them. We show the implementation of our tool along with its performance on industry level datasets.
+AU  - Anand, Kritika
+AU  - Mitra, Sayandeep
+AU  - Chittimalli, Pavan Kumar
+DO  - 10.5220/0007710700470058
+KW  - Business Rules
+KW  - First Order Logic
+KW  - Information Retrieval
+KW  - SBVR
+KW  - SMT Solvers
+PB  - SciTePress
+PY  - 2019
+SN  - 9789897583759
+SP  - 47
+EP  - 58
+TI  - Semantic search and query over SBVR-based business rules using SMT based approach and information retrieval method
+T2  - ENASE 2019 - Proceedings of the 14th International Conference on Evaluation of Novel Approaches to Software Engineering
+UR  - https://dl.acm.org/doi/10.5220/0007710700470058
+ER  -
+TY  - JOUR
+AB  - After years of research on ontology matching, it is reasonable to consider several questions: is the field of ontology matching still making progress? Is this progress significant enough to pursue further research? If so, what are the particularly promising directions? To answer these questions, we review the state of the art of ontology matching and analyze the results of recent ontology matching evaluations. These results show a measurable improvement in the field, the speed of which is albeit slowing down. We conjecture that significant improvements can be obtained only by addressing important challenges for ontology matching. We present such challenges with insights on how to approach them, thereby aiming to direct research into the most promising tracks and to facilitate the progress of the field. © 1989-2012 IEEE.
+AU  - Shvaiko, Pavel
+AU  - Euzenat, Jérôme
+DO  - 10.1109/TKDE.2011.253
+IS  - 1
+KW  - Semantic heterogeneity
+KW  - ontology alignment
+KW  - ontology matching
+KW  - schema matching
+KW  - semantic technologies
+PY  - 2013
+SP  - 158
+EP  - 176
+TI  - Ontology matching: State of the art and future challenges
+T2  - IEEE Transactions on Knowledge and Data Engineering
+VL  - 25
+ER  -

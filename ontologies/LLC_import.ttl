@@ -1,0 +1,30 @@
+# baseURI: http://finregont.com/fro/ref/LLC_import.ttl
+# imports: http://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/
+# imports: http://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/
+# imports: http://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/
+# imports: http://www.omg.org/spec/LCC/Languages/ISO639-2-LanguageCodes/
+
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix lcc-3166-1: <http://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/> .
+@prefix lcc-3166-2: <http://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://finregont.com/fro/ref/LLC_import.ttl>
+  rdf:type owl:Ontology ;
+  dct:license "https://opensource.org/licenses/GPL-3.0" ;
+  dct:license "https://opensource.org/licenses/MIT" ;
+  sm:author "Jurgen Ziemer" ;
+  sm:copyright "Jayzed Data Models Inc." ;
+  rdfs:comment "The ontology imports ISO Country and Language codes from OMG." ;
+  rdfs:label "Financial Regulation Ontology: LLC import module" ;
+  owl:imports lcc-3166-1: ;
+  owl:imports lcc-3166-2: ;
+  owl:imports <http://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/> ;
+  owl:imports <http://www.omg.org/spec/LCC/Languages/ISO639-2-LanguageCodes/> ;
+  skos:definition "The ontology imports ISO Country and Language codes from OMG." ;
+.

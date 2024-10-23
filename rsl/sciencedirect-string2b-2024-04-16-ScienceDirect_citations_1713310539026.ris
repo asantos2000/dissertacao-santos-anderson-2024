@@ -1,0 +1,540 @@
+TY  - JOUR
+T1  - Illuminating and bridging the vortex between tacit and explicit knowledge: Counterbalancing information asymmetry in high-value low-frequency transactions
+AU  - Hoksbergen, Mark
+AU  - Chan, Johnny
+AU  - Peko, Gabrielle
+AU  - Sundaram, David
+JO  - Decision Support Systems
+VL  - 149
+SP  - 113605
+PY  - 2021
+DA  - 2021/10/01/
+SN  - 0167-9236
+DO  - https://doi.org/10.1016/j.dss.2021.113605
+UR  - https://www.sciencedirect.com/science/article/pii/S0167923621001159
+KW  - Decisions
+KW  - Decision making
+KW  - Decision support
+KW  - Knowledge management
+KW  - Knowledge transformation
+KW  - Tacit knowledge
+KW  - Explicit knowledge
+KW  - High-value low-frequency transaction
+KW  - Dark side of knowledge
+KW  - Real estate
+AB  - Asymmetric information could harm a stakeholder in a transaction when they are not aware of the disparity of the information among the various stakeholders. Understanding the relationship and interaction among stakeholders is imperative for making informed decisions. It becomes even more critical in the context of high-value low-frequency transaction (HVLFT). This paper delves into the different forms of knowledge (data, information, knowledge, wisdom, understanding, experience and learning) that are essential to support HVLFT. If a form of knowledge can be categorised as neither tacit nor explicit, it belongs to the proposed knowledge dimension X. This paper further explores the transformation of different dimensions of knowledge at the disruptive vortex between tacit, explicit, and X. The interactions between these three dimensions of knowledge are validated through a study of knowledge asymmetry among HVLFT stakeholders in the real estate industry of NZ. We conclude with the proposal of a blockchain-based architecture to counterbalance information asymmetry caused by X.
+ER  - 
+
+TY  - JOUR
+T1  - Identity and access management in cloud environment: Mechanisms and challenges
+AU  - Indu, I.
+AU  - Anand, P.M. Rubesh
+AU  - Bhaskar, Vidhyacharan
+JO  - Engineering Science and Technology, an International Journal
+VL  - 21
+IS  - 4
+SP  - 574
+EP  - 588
+PY  - 2018
+DA  - 2018/08/01/
+SN  - 2215-0986
+DO  - https://doi.org/10.1016/j.jestch.2018.05.010
+UR  - https://www.sciencedirect.com/science/article/pii/S2215098617316750
+KW  - Access management
+KW  - Authentication
+KW  - Authorization
+KW  - Cloud computing
+KW  - Security
+KW  - Web services
+AB  - Cloud computing is a complex system with combination of diverse networked devices that supports demanded services. The architecture of cloud computing consists of different kinds of configurable distributed systems with a wide variety of connectivity and usage. The organizations are adapting to cloud networks at a rapid pace due to the benefits like cost-effectiveness, scalability, reliability and flexibility. Though the primary merits of cloud computing are promising facts, cloud networks are vulnerable to various kinds of network attacks and privacy issues. The features like multi tenancy and the third party managed infrastructure in cloud environment necessitates the requirement of identity and access management mechanism. The problems involved in secure access to cloud resources have been addressed by many academicians and industry personnel. In this paper, the issues related to authentication, access management, security and services in cloud environment are surveyed along with the techniques proposed to overcome the same. A detailed comparative study of the existing techniques in the perspective of cloud service providers and cloud users that include identity and access management, security issues and services in the cloud environment are highlighted.
+ER  - 
+
+TY  - JOUR
+T1  - Customer relationships and interdependences in the internationalization process of the firm
+AU  - Limp, André
+AU  - Rezende, Sérgio Fernando Loureiro
+AU  - Versiani, Ângela França
+JO  - RAUSP Management Journal
+VL  - 53
+IS  - 1
+SP  - 109
+EP  - 121
+PY  - 2018
+DA  - 2018/01/01/
+SN  - 2531-0488
+DO  - https://doi.org/10.1016/j.rauspm.2017.10.001
+UR  - https://www.sciencedirect.com/science/article/pii/S2531048817300275
+KW  - Customer relationships
+KW  - Interdependence
+KW  - International trajectory
+KW  - Internationalization process
+KW  - Networks
+KW  - Relacionamento com clientes
+KW  - Interdependência
+KW  - Trajetória internacional
+KW  - Processo de internacionalização
+KW  - Redes
+AB  - In this article, we analyze the influence of customer relationships in driving interdependences between the firm's international trajectories. We built a qualitative, backward-looking embedded case study of the internationalization process of a born-global firm from an emerging country. Based on an extensive data collection, we found that customer relationships drove the firm abroad, as well as affected its subsequent moves, both taking place in overlapping networks that spanned more than one foreign market. That is, customer relationships through interdependences between the firm's international trajectories enabled it to simultaneously footprint and evolve in five different foreign markets in less than a decade. This points out to a new conceptualization of the internationalization process of the firm as comprising a multitude of interdependent international trajectories.
+Resumo
+Neste artigo, foi analisada a influência dos relacionamentos com clientes em promover interdependências entre as trajetórias internacionais da firma. Construiu-se um estudo de caso incorporado de natureza qualitativa e perspectiva longitudinal de um processo de internacionalização de uma firma nascida global oriunda de uma economia emergente. Baseados em uma extensa coleta de dados, descobriu-se que os relacionamentos com os clientes impulsionaram a firma para operar em mercados estrangeiros, bem como influenciaram os movimentos subsequentes da firma nesses mercados, sendo que ambos os processos aconteceram em redes sobrepostas que abrangeram mais de um mercado estrangeiro. Isso significa que, por meio da interdependência entre as trajetórias internacionais da firma, os relacionamentos com os clientes permitiram a firma iniciar e evoluir em suas operações internacionais em cinco mercados estrangeiros diferentes em menos de uma década. Tal achado sugere uma nova concepção acerca do processo de internacionalização da firma como sendo composto por inúmeras trajetórias internacionais interdependentes.
+ER  - 
+
+TY  - JOUR
+T1  - On distributed ledgers security and illegal uses
+AU  - Moubarak, Joanna
+AU  - Chamoun, Maroun
+AU  - Filiol, Eric
+JO  - Future Generation Computer Systems
+VL  - 113
+SP  - 183
+EP  - 195
+PY  - 2020
+DA  - 2020/12/01/
+SN  - 0167-739X
+DO  - https://doi.org/10.1016/j.future.2020.06.044
+UR  - https://www.sciencedirect.com/science/article/pii/S0167739X17330650
+KW  - Blockchain
+KW  - Bitcoin
+KW  - Ethereum
+KW  - Hyperledger
+KW  - Algorand
+KW  - Ripple
+KW  - IOTA
+KW  - Tangle
+KW  - Smart contracts
+KW  - Hashing
+KW  - Security
+KW  - Cryptography
+KW  - Trust
+KW  - Attacks
+KW  - Vulnerabilities
+KW  - Consensus
+AB  - Distributed ledgers stimulate innovative services and enabled new applications in several domains, creating new concepts for trust and regulation. However, this backbone that is enabling novelties and abridging businesses comes with drawbacks and security flaws. In this paper, we evaluate several Distributed Ledger Technologies (DLTs) features depicting the Bitcoin, Ripple, Ethereum, Hyperledger, Algorand and IOTA networks. We focus on their security challenges and expose numerous threats and vulnerabilities. For instance, we have simulated a few of their possible attacks proving them non-immune. In the other hand, we show a few of their malicious use cases. Meticulously presenting DLTs menaces and flaws, we are not involved in preferring any specific DLT network.
+ER  - 
+
+TY  - JOUR
+T1  - Moving from a ‘human-as-problem” to a ‘human-as-solution” cybersecurity mindset
+AU  - Zimmermann, Verena
+AU  - Renaud, Karen
+JO  - International Journal of Human-Computer Studies
+VL  - 131
+SP  - 169
+EP  - 187
+PY  - 2019
+DA  - 2019/11/01/
+T2  - 50 years of the International Journal of Human-Computer Studies. Reflections on the past, present and future of human-centred technologies
+SN  - 1071-5819
+DO  - https://doi.org/10.1016/j.ijhcs.2019.05.005
+UR  - https://www.sciencedirect.com/science/article/pii/S1071581919300540
+KW  - Cybersecurity
+KW  - Human’s Role
+KW  - Problematization
+KW  - Socio-technical System
+AB  - Cybersecurity has gained prominence, with a number of widely publicised security incidents, hacking attacks and data breaches reaching the news over the last few years. The escalation in the numbers of cyber incidents shows no sign of abating, and it seems appropriate to take a look at the way cybersecurity is conceptualised and to consider whether there is a need for a mindset change. To consider this question, we applied a “problematization” approach to assess current conceptualisations of the cybersecurity problem by government, industry and hackers. Our analysis revealed that individual human actors, in a variety of roles, are generally considered to be “a problem”. We also discovered that deployed solutions primarily focus on preventing adverse events by building resistance: i.e. implementing new security layers and policies that control humans and constrain their problematic behaviours. In essence, this treats all humans in the system as if they might well be malicious actors, and the solutions are designed to prevent their ill-advised behaviours. Given the continuing incidences of data breaches and successful hacks, it seems wise to rethink the status quo approach, which we refer to as “Cybersecurity, Currently”. In particular, we suggest that there is a need to reconsider the core assumptions and characterisations of the well-intentioned human’s role in the cybersecurity socio-technical system. Treating everyone as a problem does not seem to work, given the current cyber security landscape. Benefiting from research in other fields, we propose a new mindset i.e. “Cybersecurity, Differently”. This approach rests on recognition of the fact that the problem is actually the high complexity, interconnectedness and emergent qualities of socio-technical systems. The “differently” mindset acknowledges the well-intentioned human’s ability to be an important contributor to organisational cybersecurity, as well as their potential to be “part of the solution” rather than “the problem”. In essence, this new approach initially treats all humans in the system as if they are well-intentioned. The focus is on enhancing factors that contribute to positive outcomes and resilience. We conclude by proposing a set of key principles and, with the help of a prototypical fictional organisation, consider how this mindset could enhance and improve cybersecurity across the socio-technical system.
+ER  - 
+
+TY  - JOUR
+T1  - The significance of securing as a critical component of information security: An Australian narrative
+AU  - Burdon, Mark
+AU  - Coles-Kemp, Lizzie
+JO  - Computers & Security
+VL  - 87
+SP  - 101601
+PY  - 2019
+DA  - 2019/11/01/
+SN  - 0167-4048
+DO  - https://doi.org/10.1016/j.cose.2019.101601
+UR  - https://www.sciencedirect.com/science/article/pii/S0167404819301555
+KW  - Security studies
+KW  - Usable security
+KW  - Information security messaging
+KW  - Human aspects
+KW  - Organisational culture
+KW  - Ontological security
+KW  - Information security management
+AB  - As information security is called upon to operate in increasingly unstable spaces, the role of the information security practitioner becomes ever more complex. Successful information security practice depends on tactics and strategies that situate the need for protection within organisational goals. These tactics and strategies have become progressively important as organisations are disrupted by digital technology. The locus of control is unpredictably distributed across groups within an organisation. Finding consensus about the need for security thus becomes challenging. Information security controls are an important part of the control structure but increasingly they are negotiated controls, making the process of securing as important as the security mechanisms themselves. We employ broader political and social theories of security, most notably Smith (2005), to analyse data from nine semi-structured interviews of Australian information security practitioners. Our findings delineate the interlinking concepts of securing and security. Security is straightforward. It is a state of being secure. Securing, on the other hand, is complex. It is a consensus-seeking, value-engagement process that enables the attainment of security. Through this analysis, we identify processes and techniques of securing tacitly employed by the participants. Central to effective securing practice is a participant's ability to, ‘get the security message right.’ The message is used to create an agreed value consensus across conflict-ridden environments. We contend that securing is often undervalued and not recognised as a distinct theoretical part of the discipline of information security. However, given the complexity and uncertainty of information security practice, we argue that securing needs to be considered as a critical component of being secure.
+ER  - 
+
+TY  - JOUR
+T1  - CloudFNF: An ontology structure for functional and non-functional features of cloud services
+AU  - Al-Sayed, Mustafa M.
+AU  - Hassan, Hesham A.
+AU  - Omara, Fatma A.
+JO  - Journal of Parallel and Distributed Computing
+VL  - 141
+SP  - 143
+EP  - 173
+PY  - 2020
+DA  - 2020/07/01/
+SN  - 0743-7315
+DO  - https://doi.org/10.1016/j.jpdc.2020.03.019
+UR  - https://www.sciencedirect.com/science/article/pii/S0743731519300437
+KW  - Cloud computing
+KW  - Cloud ontology
+KW  - Cloud taxonomy
+KW  - QoS
+KW  - Cloud service recommendation
+AB  - Recently, cloud computing becomes one of the main orientations of many researchers and companies in the IT area. Therefore, a huge number of cloud services have been developed. Because of the diversity and heterogeneity in providing these services, it is urgently needed to develop a unified cloud ontology. Such ontology can classify these services appropriately and participate as a mapping layer to present such services in a unified description format. Although many studies have been conducted to build cloud ontologies, they have adopted the cloud service layers-based structure. On the other hand, the existing cloud services may involve functionalities from different layers due to the continual increase in the complexity of customer demands. Unfortunately, there are no clear relations to organize the interventions among these layers. Therefore, such services may be difficult to be classified into a specific cloud service layer. Additionally, the layers-based structure of ontologies represents an obstacle to address important issues, such as cloud service recommendation. Despite there are few cloud service functionality-based cloud ontologies, they suffer from many overlaps, lack of semantic relations, or poor granularity of concepts. Also, all the existing cloud ontologies (i.e., layers-based and functionality-based) lack important criteria, such as completeness, consistency, conciseness, clarity, preciseness, and granularity. In this paper, a comprehensive cloud ontology called CloudFNF has been proposed to overcome such drawbacks. According to the structure of the proposed ontology, cloud services are classified as functionality-based instead of layers-based. Also, non-functional features of cloud services (i.e., configuration and QoS features) are considered to enable services of the same functionalities to be ranked efficiently. Based on our previously suggested cloud ontology evaluation framework, our proposed cloud ontology has been evaluated compared to the most related cloud ontologies. The evaluation results show that the proposed CloudFNF ontology outperforms the other ontologies.
+ER  - 
+
+TY  - JOUR
+T1  - The interdiscursive appeal of risk matrices: Collective symbols, flexibility normalism and the interplay of ‘risk’ and ‘uncertainty’
+AU  - Jordan, Silvia
+AU  - Mitterhofer, Hermann
+AU  - Jørgensen, Lene
+JO  - Accounting, Organizations and Society
+VL  - 67
+SP  - 34
+EP  - 55
+PY  - 2018
+DA  - 2018/05/01/
+SN  - 0361-3682
+DO  - https://doi.org/10.1016/j.aos.2016.04.003
+UR  - https://www.sciencedirect.com/science/article/pii/S0361368216300447
+KW  - Risk matrix
+KW  - Visualization
+KW  - Interdiscourse
+KW  - Governmentality
+KW  - Inscription
+KW  - Collective symbols
+AB  - In this paper, we investigate risk matrices as an increasingly popular technology of risk assessment and visualization. Drawing on governmentality studies and Jürgen Link's interdiscourse analysis, we analyze the interdiscursive character of risk matrices, the ways in which they appeal to a variety of users in different organizational contexts and disciplines and act as technologies that mediate between specialized and everyday discourses. We illustrate the interdiscursive appeal of risk matrices in terms of the ways in which they have been promoted as functional in different disciplines and application contexts, and we analyze the specific symbolism engaged by risk matrices in these different discursive contexts. Based on Link's interdiscourse theory, we argue that risk matrices ‘speak to’ the user and work as application templates for processes of identification through semantic connotations and analogies that go far beyond concerns with precise measurement and mathematically correct manipulation of risk-related data. Risk matrices become ‘understood’ and are powerful precisely because they point beyond the specific events and processes represented on the matrix. As such, the widespread appeal of risk matrices is fundamentally constituted through their symbolic connotations by means of which complex and potentially not well understood processes come to appear simple, imaginable and ‘manageable’. More broadly, Link's interdiscourse theory contributes a semantic analysis to governmentality studies in accounting. It draws attention to the semantic connotations and analogies by means of which visual technologies of government mediate between broader programmatic ideas and the practices of local users. Furthermore, this analysis contributes to the debate on the visual nature of calculative inscriptions, illustrating how specific visual elements of risk matrix inscriptions relate to their (inter-)discursive promotion and proliferation, and it discusses how ideals of ‘judgment’, in combination with ideals of algorithmic formulation, are at play in the promotion of calculative inscription devices.
+ER  - 
+
+TY  - JOUR
+T1  - Factors influencing effective use of big data: A research framework
+AU  - Surbakti, Feliks P. Sejahtera
+AU  - Wang, Wei
+AU  - Indulska, Marta
+AU  - Sadiq, Shazia
+JO  - Information & Management
+VL  - 57
+IS  - 1
+SP  - 103146
+PY  - 2020
+DA  - 2020/01/01/
+T2  - Big data and business analytics: A research agenda for realizing business value
+SN  - 0378-7206
+DO  - https://doi.org/10.1016/j.im.2019.02.001
+UR  - https://www.sciencedirect.com/science/article/pii/S0378720617308649
+KW  - Big data
+KW  - Effective use
+KW  - Factors
+KW  - Framework
+AB  - Information systems (IS) research has explored “effective use” in a variety of contexts. However, it is yet to specifically consider it in the context of the unique characteristics of big data. Yet, organizations have a high appetite for big data, and there is growing evidence that investments in big data solutions do not always lead to the derivation of intended value. Accordingly, there is a need for rigorous academic guidance on what factors enable effective use of big data. With this paper, we aim to guide IS researchers such that the expansion of the body of knowledge on the effective use of big data can proceed in a structured and systematic manner and can subsequently lead to empirically driven guidance for organizations. Namely, with this paper, we cast a wide net to understand and consolidate from literature the potential factors that can influence the effective use of big data, so they may be further studied. To do so, we first conduct a systematic literature review. Our review identifies 41 factors, which we categorize into 7 themes, namely data quality; data privacy and security and governance; perceived organizational benefit; process management; people aspects; systems, tools, and technologies; and organizational aspects. To explore the existence of these themes in practice, we then analyze 45 published case studies that document insights into how specific companies use big data successfully. Finally, we propose a framework for the study of effective use of big data as a basis for future research. Our contributions aim to guide researchers in establishing the relevance and relationships within the identified themes and factors and are a step toward developing a deeper understanding of effective use of big data.
+ER  - 
+
+TY  - JOUR
+T1  - Business analytics and AGI in corporate management systems
+AU  - Sukhobokov, Artem A.
+JO  - Procedia Computer Science
+VL  - 145
+SP  - 533
+EP  - 544
+PY  - 2018
+DA  - 2018/01/01/
+T2  - Postproceedings of the 9th Annual International Conference on Biologically Inspired Cognitive Architectures, BICA 2018 (Ninth Annual Meeting of the BICA Society), held August 22-24, 2018 in Prague, Czech Republic
+SN  - 1877-0509
+DO  - https://doi.org/10.1016/j.procs.2018.11.118
+UR  - https://www.sciencedirect.com/science/article/pii/S1877050918324062
+KW  - Descriptive Analytics
+KW  - Predictive Analytics
+KW  - Predicative Analytics
+KW  - Implicative Analytics
+KW  - Prescriptive Analytics
+KW  - Executive Analytics
+KW  - Reflexive Analytics
+KW  - AGI
+AB  - The article proposes a classification of tools and stages of business analytics development, extending previously known examples of such classifications. As the highest point of business analytics tools development, AGI is considered. It is substantiated that corporate management systems are the most likely environment in which the first copies of AGI will be created. The process of corporate management systems evolution is considered in conjunction with the time shift between the development of ideas and the practical use of the corresponding class of systems. A forecast of time frames of AGI introduction in these systems is made.
+ER  - 
+
+TY  - JOUR
+T1  - Pandemics and environmental shocks: What aviation managers should learn from COVID-19 for long-term planning
+AU  - Linden, Erik
+JO  - Journal of Air Transport Management
+VL  - 90
+SP  - 101944
+PY  - 2021
+DA  - 2021/01/01/
+SN  - 0969-6997
+DO  - https://doi.org/10.1016/j.jairtraman.2020.101944
+UR  - https://www.sciencedirect.com/science/article/pii/S0969699720305275
+KW  - Air transport
+KW  - Environmental shocks
+KW  - Uncertainty
+KW  - Strategic planning
+KW  - Strategy process
+AB  - This article gives guidance to aviation managers being struck by environmental shocks. The introduced frameworks support aviation managers to think strategically during times of shocks and help them to prepare for future shocks by developing more resilient and learning organizations. Practical, short-term recommendations include strategically orienting or reorienting and not exaggerating the current, short-term developments due to unproductive uncertainty. Further, and to prepare for future shocks, the results of this study suggest that aviation managers should develop a common strategy language, introduce uncertainty as a standard factor for long-term planning, manage uncertainty proactively and make long-term plans accordingly by fostering a dialogue with various stake- and shareholders, being aware of the strategy tools in use, making the board a co-creating team and introducing a three-step process in sensing, seizing and transforming the organization accordingly.
+ER  - 
+
+TY  - JOUR
+T1  - Paradoxical tensions in the implementation of digital security governance: Toward an ambidextrous approach to governing digital security
+AU  - Schinagl, Stef
+AU  - Shahim, Abbas
+AU  - Khapova, Svetlana
+JO  - Computers & Security
+VL  - 122
+SP  - 102903
+PY  - 2022
+DA  - 2022/11/01/
+SN  - 0167-4048
+DO  - https://doi.org/10.1016/j.cose.2022.102903
+UR  - https://www.sciencedirect.com/science/article/pii/S0167404822002966
+KW  - Digital security governance
+KW  - Ambidexterity
+KW  - Paradox
+KW  - Tensions
+KW  - Cybersecurity governance
+KW  - Cyberattacks
+AB  - Due to increasing numbers of cyberattacks, security is one of the leading challenges to contemporary organizations. As contradictory demands (e.g., tensions in digital organizations) intensify, organizations increasingly find it difficult to implement digital security governance (DSG) as part of their regular organizational change activities. Based on data from forty-two interviews with Dutch CISOs and CIOs of large organizations that are active in various sectors, we identify three key paradoxical tensions that affect DSG implementation. We found that in a digital context, paradoxical tensions are pressurized and become out of balance. Disbalance among tensions exposes friction that hinders the implementation of DSG mechanisms. Finally, we present a conceptual model that sets direction for ambidextrous digital security. Understanding how to engage with tensions in an ambidextrous way determines the success of DSG implementations in today's complex digital environments.
+ER  - 
+
+TY  - JOUR
+T1  - Evaluation of Commercial Next-Generation Sequencing Bioinformatics Software Solutions
+AU  - Gullapalli, Rama R.
+JO  - The Journal of Molecular Diagnostics
+VL  - 22
+IS  - 2
+SP  - 147
+EP  - 158
+PY  - 2020
+DA  - 2020/02/01/
+SN  - 1525-1578
+DO  - https://doi.org/10.1016/j.jmoldx.2019.09.007
+UR  - https://www.sciencedirect.com/science/article/pii/S152515781930412X
+AB  - Next-generation sequencing (NGS) diagnostics continue to expand rapidly in clinical medicine. An ever-expanding menu of molecular biomarkers is deemed important for diagnostic, prognostic, and therapeutic assessment in patients. The increasing role of NGS in the clinic is driven mainly by the falling costs of sequencing. However, the data-intensive nature of NGS makes bioinformatic analysis a major challenge to many clinical laboratories. Critically needed NGS bioinformatics personnel are hard to recruit and retain in small- to mid-size clinical laboratories. Also, NGS software often lacks the scalability necessary for expanded clinical laboratory testing volumes. Commercial software solutions aim to bridge the bioinformatics barrier via turnkey informatics solutions tailored specifically for the clinical workplace. Yet, there has been no systematic assessment of these software solutions thus far. This article presents an end-to-end vendor evaluation experience of commercial NGS bioinformatics solutions. Six different commercial vendor solutions were assessed systematically. Key metrics of NGS software evaluation to aid in the robust assessment of software solutions are described. Comprehensive feedback, provided by the TriCore Reference Laboratories molecular pathology team, enabled the final vendor selection. Many key lessons were learned during the software evaluation process, which are described herein. This article aims to provide a detailed road map for small- to mid-size clinical laboratories interested in evaluating commercial bioinformatics solutions available in the marketplace.
+ER  - 
+
+TY  - JOUR
+T1  - Validation of a socio-technical management process for optimising cybersecurity practices
+AU  - Malatji, Masike
+AU  - Marnewick, Annlizé
+AU  - von Solms, Suné
+JO  - Computers & Security
+VL  - 95
+SP  - 101846
+PY  - 2020
+DA  - 2020/08/01/
+SN  - 0167-4048
+DO  - https://doi.org/10.1016/j.cose.2020.101846
+UR  - https://www.sciencedirect.com/science/article/pii/S016740482030119X
+KW  - Cybersecurity
+KW  - Information security
+KW  - Optimisation
+KW  - Socio-technical
+KW  - Systems security
+AB  - This study developed a socio-technical management process to optimise both technical and non-technical security measures to provide optimal, rather than adequate, enterprise security safeguards. The rationale was that over the last decade, studies have consistently shown that the human being remains the weakest link in the entire enterprise security chain. As a result, the majority of cyberattacks have resulted from human behaviour or error. Despite this, evidence suggests that many enterprises are still taking overly technocentric approaches to cybersecurity risk and this has increased the chances of missing the bigger picture. Thus, a mechanism to optimise both technical and non-technical security measures by identifying and closing socio-technical security gaps in existing enterprise security frameworks was required. The mechanism was derived from the literature and validated by industry practitioners where it was found that practitioners could categorise security controls into social (human included), technical and environmental dimensions. Through this, it was found that there were mainly non-technical (social and environmental dimensions) security gaps at practitioners’ organisations. To further demonstrate how this security challenge can be identified and addressed, a desktop application of the management process was carried out on the COBIT 5 for Information Security framework. The results reveal the non-technical security gaps on COBIT 5 and the management process demonstrates how these could be closed and optimised. The importance of this study is to highlight that taking overly technocentric approaches to enterprise security risk does not yield significantly positive results in protecting assets. A new approach is required and the socio-technical management process is this paper's contribution to address that security challenge.
+ER  - 
+
+TY  - JOUR
+T1  - Impact of comprehensive information security awareness and cognitive characteristics on security incident management – an empirical study
+AU  - Thangavelu, Manisekaran
+AU  - Krishnaswamy, Venkataraghavan
+AU  - Sharma, Mayank
+JO  - Computers & Security
+VL  - 109
+SP  - 102401
+PY  - 2021
+DA  - 2021/10/01/
+SN  - 0167-4048
+DO  - https://doi.org/10.1016/j.cose.2021.102401
+UR  - https://www.sciencedirect.com/science/article/pii/S016740482100225X
+KW  - Security awareness
+KW  - Situation awareness
+KW  - System awareness
+KW  - Self-efficacy
+KW  - Metacognitive awareness
+KW  - Security incident management
+AB  - Organizations deploy a team of dedicated security professionals and spend significant resources safeguarding their digital assets. Despite best efforts, security incidents are on the rise and remain a key challenge. The literature has focused inadequately on the lack of professionals’ awareness of security, system, or situational aspects. Extant literature on the impact of awareness on threat management tasks is disjointed and does not adequately consider the metacognitive awareness and self-efficacy of security professionals. To this effect, we propose and empirically validate a model to study the relationship between security, system, situational awareness, and security professionals’ ability to detect, assess, and mitigate threats. We also investigate the effects of metacognitive awareness and self-efficacy on the relationship between awareness and threat management tasks. We validate the model using a survey of 100 information security professionals. Results indicate a significant relationship between awareness, metacognitive awareness, self-efficacy, and threat management task performance. The analysis also demonstrates that metacognitive awareness and self-efficacy mediated the impact of awareness on threat management task performance. We discuss the effects and implications of this study for practice and research.
+ER  - 
+
+TY  - JOUR
+T1  - A Survey on Large Language Model (LLM) Security and Privacy: The Good, The Bad, and The Ugly
+AU  - Yao, Yifan
+AU  - Duan, Jinhao
+AU  - Xu, Kaidi
+AU  - Cai, Yuanfang
+AU  - Sun, Zhibo
+AU  - Zhang, Yue
+JO  - High-Confidence Computing
+VL  - 4
+IS  - 2
+SP  - 100211
+PY  - 2024
+DA  - 2024/06/01/
+SN  - 2667-2952
+DO  - https://doi.org/10.1016/j.hcc.2024.100211
+UR  - https://www.sciencedirect.com/science/article/pii/S266729522400014X
+KW  - Large Language Model (LLM)
+KW  - LLM security
+KW  - LLM privacy
+KW  - ChatGPT
+KW  - LLM attacks
+KW  - LLM vulnerabilities
+AB  - Large Language Models (LLMs), such as ChatGPT and Bard, have revolutionized natural language understanding and generation. They possess deep language comprehension, human-like text generation capabilities, contextual awareness, and robust problem-solving skills, making them invaluable in various domains (e.g., search engines, customer support, translation). In the meantime, LLMs have also gained traction in the security community, revealing security vulnerabilities and showcasing their potential in security-related tasks. This paper explores the intersection of LLMs with security and privacy. Specifically, we investigate how LLMs positively impact security and privacy, potential risks and threats associated with their use, and inherent vulnerabilities within LLMs. Through a comprehensive literature review, the paper categorizes the papers into “The Good” (beneficial LLM applications), “The Bad” (offensive applications), and “The Ugly” (vulnerabilities of LLMs and their defenses). We have some interesting findings. For example, LLMs have proven to enhance code security (code vulnerability detection) and data privacy (data confidentiality protection), outperforming traditional methods. However, they can also be harnessed for various attacks (particularly user-level attacks) due to their human-like reasoning abilities. We have identified areas that require further research efforts. For example, Research on model and parameter extraction attacks is limited and often theoretical, hindered by LLM parameter scale and confidentiality. Safe instruction tuning, a recent development, requires more exploration. We hope that our work can shed light on the LLMs’ potential to both bolster and jeopardize cybersecurity.
+ER  - 
+
+TY  - JOUR
+T1  - Analyzing pedagogical approaches used in second auditing courses
+AU  - Reinstein, Alan
+AU  - Churyk, Natalie Tatiana
+AU  - Tate, Stefanie L.
+JO  - Advances in Accounting
+VL  - 42
+SP  - 110
+EP  - 124
+PY  - 2018
+DA  - 2018/09/01/
+SN  - 0882-6110
+DO  - https://doi.org/10.1016/j.adiac.2018.05.001
+UR  - https://www.sciencedirect.com/science/article/pii/S0882611018300646
+KW  - Auditing education
+KW  - Course development
+KW  - Course content
+KW  - Pedagogy
+AB  - To help professors develop, design and improve second auditing classes, we surveyed members of the American Accounting Association's Auditing Section to identify programs that offer second auditing courses, the textbooks used for such courses, and the learning activities used. Total and second auditing course only respondents (n = 252 and n = 80, respectively) identified university, program, and auditing course demographics, while second auditing course respondents identified the classroom activities that extend the second auditing course beyond the basics found in textbooks. Results reveal the textbooks used for first and second auditing courses, learning objectives, website resources, manual and computerized cases, group projects, software programs, video presentations, supplementary materials, and an analysis of national syllabi. These results, drawn from a diverse group of institutions, can serve as a resource to help professors develop and improve the content for a second auditing course.
+ER  - 
+
+TY  - CHAP
+T1  - Chapter 2 - Cornell BEST: Keys to successful institutionalization of career and professional development programming
+AU  - Varvayanis, Susi
+AU  - Schaffer, Chris B.
+AU  - August, Avery
+A2  - Infante Lara, Lorena
+A2  - Daniel, Laura
+A2  - Chalkley, Roger
+BT  - BEST
+PB  - Academic Press
+SP  - 11
+EP  - 24
+PY  - 2020
+DA  - 2020/01/01/
+SN  - 978-0-12-820759-8
+DO  - https://doi.org/10.1016/B978-0-12-820759-8.00002-4
+UR  - https://www.sciencedirect.com/science/article/pii/B9780128207598000024
+KW  - Ph.D. career development
+KW  - Experiential learning
+KW  - Graduate professional development
+AB  - Cornell University's BEST award took advantage of its rural environment, rich collaborative history, and prior successful models on which to build a new career and professional development program for Ph.D.s. By addressing employer skill gaps through flexible experiential learning opportunities and a method to ascertain participant needs, we garnered faculty buy-in by alleviating their pain points. Here we share specific examples and some lessons learned, such as to pivot early, to reiterate based on participant feedback, and to leverage on campus and external collaborations. By setting out with the intent to institutionalize the program, and using flexible funding to address changing needs, we are able to address society's need for Ph.D.s in many sectors of employment. This experience exemplifies a roadmap for institutionalizing activities to help prepare Ph.D.s for the many varied careers in and outside academia.
+ER  - 
+
+TY  - CHAP
+T1  - 1 - Information and Data Management
+AU  - Ott, Florence
+A2  - Ott, Florence
+BT  - Records Management At the Heart of Business Processes
+PB  - ISTE
+SP  - 1
+EP  - 50
+PY  - 2021
+DA  - 2021/01/01/
+SN  - 978-1-78548-043-0
+DO  - https://doi.org/10.1016/B978-1-78548-043-0.50001-9
+UR  - https://www.sciencedirect.com/science/article/pii/B9781785480430500019
+KW  - Big data
+KW  - Business processes
+KW  - Data governance
+KW  - Digital environment
+KW  - Information
+KW  - Open data
+KW  - Protection of personal data
+KW  - Records continuum
+KW  - Three ages
+AB  - Abstract:
+While the digital world brings advantages by simplifying many processes, it also makes the context of records production more complex and difficult to understand according to traditional archival principles. The explosion in the volume of information leads to the multiplication of actors, the acceleration of exchanges, and the atomization and fragmentation of information with numerous digital files to replace what was formerly a paper document or the reproduction of several copies.
+ER  - 
+
+TY  - JOUR
+T1  - The management of moral hazard through the implementation of a Moral Compliance Model (MCM)
+AU  - San-Jose, Leire
+AU  - Gonzalo, Jose Felix
+AU  - Ruiz-Roqueñi, Maite
+JO  - European Research on Management and Business Economics
+VL  - 28
+IS  - 1
+SP  - 100182
+PY  - 2022
+DA  - 2022/01/01/
+SN  - 2444-8834
+DO  - https://doi.org/10.1016/j.iedeen.2021.100182
+UR  - https://www.sciencedirect.com/science/article/pii/S2444883421000413
+KW  - Corporate governance
+KW  - Compliance
+KW  - Risk management
+KW  - Corporate management
+KW  - Stakeholder
+KW  - Moral hazard
+KW  - Moral entrepreneurship
+AB  - Moral hazard in an organization occurs when people make decisions and take a high risk for their own benefit, given that they would not have to bear all the negative ensuing consequences should they occur. This risk transferred to third parties is generally due to the catalysts that foster this risk, namely, information asymmetries, power, trust and temporality. The contribution of our research lies in the inclusion of moral decisions in project management, thus demonstrating the feasibility of a Moral Compliance Model (MCM). This model is a complement to legal compliance and allows a connection to be established between Risk Management, Governance & Compliance. In 2019, experimental action research, combined with a Plan-Do-Check-Action applied to a company, were used to perform the analysis. The findings show that implementing this moral model in organisations is possible. However, what moral hazard is needs to be shown, along with identifying moral hazard situations and planning how to introduce moral hazard into the risk management model in order to reduce its negative effect or, ideally, eliminate it. We provide an overview of risks, including those around moral dilemma decisions; moral hazard situations that will expand compliance to integrated compliance in which not only legal, but also moral aspects are identified and assessed. Incorporating ethical dilemmas in strategic decisions is a robust advance towards responsible businesses.
+ER  - 
+
+TY  - JOUR
+T1  - The role of informational mechanisms in the adoption of Green IS to achieve eco-sustainability in municipalities
+AU  - Butler, Tom
+AU  - Hackney, Ray
+JO  - Information & Management
+VL  - 58
+IS  - 3
+SP  - 103320
+PY  - 2021
+DA  - 2021/04/01/
+SN  - 0378-7206
+DO  - https://doi.org/10.1016/j.im.2020.103320
+UR  - https://www.sciencedirect.com/science/article/pii/S0378720620302536
+KW  - Green IS
+KW  - Eco-sustainability
+KW  - Informational mechanisms
+KW  - Institutional mechanisms
+KW  - Institutional theory
+AB  - This paper identifies, categorizes, and elaborates the informational mechanisms that governments and municipalities employ to become eco-sustainable. Specifically, it illustrates how municipalities are successfully reducing greenhouse gas emissions using Green IS. Based on case studies of Bristol and Manchester, the findings are significant in that they demonstrate how Green IS can be comprehended, adopted, implemented, and assimilated in municipalities and organizational fields. The findings are also noteworthy in that they advance the use of mechanism-based institutional theory in IS research. Thus, this paper helps to inform society on how it can address its greatest challenge—the climate emergency.
+ER  - 
+
+TY  - CHAP
+T1  - 11 - Will the new security trends achieve the skin in the game? (Lesson learned from recent IOCs)
+AU  - Bottazzi, Giovanni
+AU  - Me, Gianluigi
+AU  - Rutigliano, Giuseppe Giulio
+AU  - Perrone, Pierluigi
+AU  - Capone, Luciano
+A2  - Jahankhani, Hamid
+A2  - O’Dell, Liam M.
+A2  - Bowen, Gordon
+A2  - Hagan, Daniel
+A2  - Jamal, Arshad
+BT  - Strategy, Leadership, and AI in the Cyber Ecosystem
+PB  - Academic Press
+SP  - 243
+EP  - 264
+PY  - 2021
+DA  - 2021/01/01/
+SN  - 978-0-12-821442-8
+DO  - https://doi.org/10.1016/B978-0-12-821442-8.00008-2
+UR  - https://www.sciencedirect.com/science/article/pii/B9780128214428000082
+KW  - Cybersecurity
+KW  - Shortage
+KW  - Skills
+KW  - Professionals
+AB  - The state of the art on information security seems to highlight on the one hand a research activity heavily committed to identify technological solutions increasingly smart that can be easily integrated and deployed and on the other hand the constant and recurring presence of threats and attacks based on vulnerabilities considered dated or, in some scenarios, no longer in use. The purpose of this chapter is to stimulate the discussion on the reasons that led to this observable gap. The main aim is to better understand why in the cybersecurity game the defenders, pitted so far against attackers, seem to need some more time to set up properly, and perhaps they don’t know the match is already started long time ago.
+ER  - 
+
+TY  - CHAP
+T1  - Chapter 6 - Smart Sensor and Big Data Security and Resilience
+AU  - Venticinque, Salvatore
+AU  - Amato, Alba
+A2  - Ficco, Massimo
+A2  - Palmieri, Francesco
+BT  - Security and Resilience in Intelligent Data-Centric Systems and Communication Networks
+PB  - Academic Press
+SP  - 123
+EP  - 141
+PY  - 2018
+DA  - 2018/01/01/
+T2  - Intelligent Data-Centric Systems
+SN  - 978-0-12-811373-8
+DO  - https://doi.org/10.1016/B978-0-12-811373-8.00006-9
+UR  - https://www.sciencedirect.com/science/article/pii/B9780128113738000069
+KW  - Smart sensors
+KW  - Big Data
+KW  - Security
+KW  - Resilience
+AB  - The Internet of Things (IoT) has accelerated data generation in the past few years. The real value of collecting and leveraging data is gained by extracting new knowledge and feeding smart applications. Big Data analytic, machine learning, semantic reasoning, and cognitive computing represent some of the recent technologies that have huge potential to extract value and enhance services. On the other hand, the increasing complexity of Information and Communication Technologies (ICT), hyperconnectivity, as well as the generation of significant amounts of data, will also mean increasing vulnerability, both to malicious attacks and unintentional incidents. In particular, to enable the flow of data from source to application it needs to address architectural challenges and to meet some relevant requirements such as security and resilience. In this paper, we provide a survey about the intersection of the IoT and Big Data focusing on security issues and resilience, which must be taken in mind when addressing system design and data management.
+ER  - 

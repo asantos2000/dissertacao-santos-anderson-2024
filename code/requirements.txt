@@ -1,0 +1,41 @@
+# Core dependencies
+pandas
+pydantic
+openpyxl
+numpy
+
+# AI/ML and NLP libraries
+openai
+transformers
+huggingface_hub
+sentencepiece
+scikit-learn
+spacy
+instructor
+llama_index
+llama-index-graph-stores-neo4j
+
+# Graph and RDF libraries
+agraph-python
+networkx
+pygraphviz
+rdflib
+
+# Visualization libraries
+matplotlib
+plotly
+seaborn
+
+# Web scraping and diffing
+beautifulsoup4
+deepdiff
+
+# Miscellaneous utilities
+inflect
+pyyaml
+
+# Jupyter environment
+jupyterlab
+
+# Additional notes:
+# pygraphviz depends on sudo apt-get install graphviz graphviz-dev

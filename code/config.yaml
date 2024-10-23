@@ -1,0 +1,40 @@
+# Logging configuration
+LOG_LEVEL: INFO
+DEFAULT_LOG_DIR: "../logs"
+
+# LLM Configuration
+LLM:
+  OPENAI_API_KEY: null # You can set this with environment variables
+  MODEL: "gpt-4o"
+  EMBEDDING_MODEL: "text-embedding-3-small"
+  TEMPERATURE: 0
+  MAX_TOKENS: 4095  # Max for gpt-4o
+
+# AllegroGraph Configuration
+ALLEGROGRAPH:
+  REPO: "cfr2sbvr"
+  CATALOG: "root"
+  HOST: "localhost"  # ag1eawvuu0p3zv35.allegrograph.cloud for AllegroGraph cloud
+  PORT: 10035  # 443 for AllegroGraph cloud
+  USER: "super"  # admin for AllegroGraph cloud
+  PASSWORD: "2002"  # Replace with your password
+  HOME_DIR: "/home/adsantos/agraph-8.2.1"
+
+# Directories and Files
+DEFAULT_DATA_DIR: "../data"
+DEFAULT_CHECKPOINT_DIR: "../checkpoints"
+DEFAULT_OUTPUT_DIR: "../outputs"
+DEFAULT_CHECKPOINT_FILE: null  # to be set programmatically
+DEFAULT_EXTRACTION_REPORT_FILE: null  # to be set programmatically
+DEFAULT_EXCEL_FILE: "../outputs/compare_items_metrics.xlsx"
+
+# FIBO Graph Configuration
+FIBO_GRAPH: "fibo:FIBO_Graph"
+FIBO_GRAPH_VECTOR_STORE: "fibo-glossary-3m-vec"
+
+# CFR_SBVR Graph Configuration
+CFR_SBVR_GRAPH: "cfr-sbvr:CFR_SBVR"
+CFR_SBVR_GRAPH_VECTOR_STORE: "cfr-sbvr-3m-vec"
+
+# Similarity search threshold for exact match
+SIMILARITY_THRESHOLD: 0.99

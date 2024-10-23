@@ -1,0 +1,636 @@
+@prefix ex: <http://example.org/schema/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:9.2 a ex:Section ;
+    rdfs:label "Definitional rules" ;
+    ex:definition "Definitional rules constrains how we define a construct created or used by the organization or the industry within which it operates. Definitional rules can in turn be categorized as:" ;
+    ex:hasSubsection ex:9.2.1,
+        ex:9.2.2,
+        ex:9.2.3,
+        ex:9.2.4,
+        ex:9.2.5,
+        ex:9.2.6,
+        ex:9.2.7 ;
+    ex:sectionID "9.2" .
+
+ex:9.3 a ex:Section ;
+    rdfs:label "Data rules" ;
+    ex:definition "Data rules (all of which are operative rules) constrains the data included in a transaction (a form or message) or a persistent dataset (e.g., a database record). Data rules can in turn be categorized as:" ;
+    ex:hasSubsection ex:9.3.1,
+        ex:9.3.2,
+        ex:9.3.3 ;
+    ex:sectionID "9.3" .
+
+ex:9.4 a ex:Section ;
+    rdfs:label "Activity rules" ;
+    ex:definition "Activity rules (all of which are operative rules) constrains the operation of one or more business processes or other activities. Activity rules can in turn be categorized as:" ;
+    ex:hasSubsection ex:9.4.1,
+        ex:9.4.2,
+        ex:9.4.3 ;
+    ex:sectionID "9.4" .
+
+ex:9.5 a ex:Section ;
+    rdfs:label "Party rules" ;
+    ex:definition "Party rules (all of which are operative rules) restricts the parties who can perform a process or activity or play a role. Party rules can in turn be categorized as:" ;
+    ex:hasSubsection ex:9.5.1,
+        ex:9.5.2,
+        ex:9.5.3,
+        ex:9.5.4 ;
+    ex:sectionID "9.5" .
+
+ex:19 a ex:Template ;
+    rdfs:label "19" .
+
+ex:9.2.1 a ex:Section ;
+    rdfs:label "Formal term definitions" ;
+    ex:definition "A formal term definition defines a particular business term in a formal manner. They are categorized as:" ;
+    ex:hasSubsection ex:9.2.1.1,
+        ex:9.2.1.2,
+        ex:9.2.1.3 ;
+    ex:sectionID "9.2.1" .
+
+ex:9.2.1.1 a ex:Section ;
+    rdfs:label "Formal intensional definitions" ;
+    ex:definition "A formal intensional definition defines the subject business term using an intensional definition: one that cites both a hypernym (a term that refers to a superset of the set referred to by the original term) and the characteristics that distinguish members of the set referred to by the original term." ;
+    ex:hasTemplate ex:T7 ;
+    ex:sectionID "9.2.1.1" .
+
+ex:9.2.1.2 a ex:Section ;
+    rdfs:label "Formal extensional definitions" ;
+    ex:definition "Formal extensional definition defines the subject business term by using an extensional definition: one that lists a complete set of hyponyms (terms that refer to subsets of the set referred to by the original term)." ;
+    ex:hasTemplate ex:T8 ;
+    ex:sectionID "9.2.1.2" .
+
+ex:9.2.1.3 a ex:Section ;
+    rdfs:label "Symbolic literal definitions" ;
+    ex:definition "A symbolic literal definition defines the subject business term using one or more literals." ;
+    ex:hasTemplate ex:T9 ;
+    ex:sectionID "9.2.1.3" .
+
+ex:9.2.2 a ex:Section ;
+    rdfs:label "Categorization scheme enumerations" ;
+    ex:definition "A categorization scheme enumeration defines the members of a categorization scheme that is both mutually exclusive and jointly exhaustive." ;
+    ex:hasTemplate ex:T10 ;
+    ex:sectionID "9.2.2" .
+
+ex:9.2.3 a ex:Section ;
+    rdfs:label "Category transition constraints" ;
+    ex:definition "A category transition constraint specifies allowed or disallowed transitions between categories or statuses." ;
+    ex:hasTemplate ex:T11 ;
+    ex:sectionID "9.2.3" .
+
+ex:9.2.4 a ex:Section ;
+    rdfs:label "Complex concept structure rules" ;
+    ex:definition "A complex concept structure rule defines a particular constraint on one or more components of a complex concept. They are categorized as:" ;
+    ex:hasSubsection ex:9.2.4.1,
+        ex:9.2.4.2,
+        ex:9.2.4.3 ;
+    ex:sectionID "9.2.4" .
+
+ex:9.2.4.1 a ex:Section ;
+    rdfs:label "Complex concept cardinality rules" ;
+    ex:definition "A complex concept cardinality rule defines the number of (or minimum and/or maximum number of) components of a particular type within a particular concept." ;
+    ex:hasTemplate ex:T12 ;
+    ex:sectionID "9.2.4.1" .
+
+ex:9.2.4.2 a ex:Section ;
+    rdfs:label "Complex concept equivalence rules" ;
+    ex:definition "A complex concept equivalence rule defines a pair of components within a particular concept that are of necessity the same." ;
+    ex:hasTemplate ex:T13 ;
+    ex:sectionID "9.2.4.2" .
+
+ex:9.2.4.3 a ex:Section ;
+    rdfs:label "Complex concept set constraints" ;
+    ex:definition "A complex concept set constraint defines two sets of components within a particular concept that must be identical." ;
+    ex:hasTemplate ex:T14 ;
+    ex:sectionID "9.2.4.3" .
+
+ex:9.2.5 a ex:Section ;
+    rdfs:label "Valid value definitions" ;
+    ex:definition "A valid value definition defines the valid values of a particular measure as a range or (occasionally) as a list of discrete values." ;
+    ex:hasTemplate ex:T15 ;
+    ex:sectionID "9.2.5" .
+
+ex:9.2.6 a ex:Section ;
+    rdfs:label "Data calculation rules" ;
+    ex:definition "A data calculation rule defines the algorithm or formula for a particular quantity or a conversion factor between two units. They are categorized as:" ;
+    ex:hasSubsection ex:9.2.6.1,
+        ex:9.2.6.2 ;
+    ex:sectionID "9.2.6" .
+
+ex:9.2.6.1 a ex:Section ;
+    rdfs:label "Data calculation algorithms" ;
+    ex:definition "A data calculation algorithm defines how a particular quantity or amount (whether for operational purposes, such as a fee, or for business intelligence purposes, such as a performance measure) is calculated." ;
+    ex:hasTemplate ex:T16 ;
+    ex:sectionID "9.2.6.1" .
+
+ex:9.2.6.2 a ex:Section ;
+    rdfs:label "Conversion factor definitions" ;
+    ex:definition "A conversion factor definition defines a conversion factor between two units of measurement." ;
+    ex:hasTemplate ex:T17 ;
+    ex:sectionID "9.2.6.2" .
+
+ex:9.2.7 a ex:Section ;
+    rdfs:label "Standard format definitions" ;
+    ex:definition "A standard format definition defines the standard format for data items of a particular type in terms of individual characters and/or component data items." ;
+    ex:hasTemplate ex:T18 ;
+    ex:sectionID "9.2.7" .
+
+ex:9.3.1 a ex:Section ;
+    rdfs:label "Data cardinality rules" ;
+    ex:definition "A data cardinality rule requires the presence or absence of a data item and/or places a restriction on the maximum or minimum number of occurrences of a data item" ;
+    ex:hasSubsection ex:9.3.1.1,
+        ex:9.3.1.2,
+        ex:9.3.1.3,
+        ex:9.3.1.4,
+        ex:9.3.1.5 ;
+    ex:sectionID "9.3.1" .
+
+ex:9.3.1.1 a ex:Section ;
+    rdfs:label "Mandatory data rules" ;
+    ex:definition "A mandatory data rule mandates the presence of data:" ;
+    ex:hasSubsection ex:9.3.1.1.1,
+        ex:9.3.1.1.2,
+        ex:9.3.1.1.3 ;
+    ex:sectionID "9.3.1.1" .
+
+ex:9.3.1.1.1 a ex:Section ;
+    rdfs:label "Mandatory data item rules" ;
+    ex:definition "A mandatory data item rule requires that a particular data item be present." ;
+    ex:hasTemplate ex:T19 ;
+    ex:sectionID "9.3.1.1.1" .
+
+ex:9.3.1.1.2 a ex:Section ;
+    rdfs:label "Mandatory option selection rules" ;
+    ex:definition "A mandatory option selection rule requires that one of a set of pre-defined options be specified. Use T20 for multiple options, and T21 for a single option." ;
+    ex:hasTemplate ex:T20,
+        ex:T21 ;
+    ex:sectionID "9.3.1.1.2" .
+
+ex:9.3.1.1.3 a ex:Section ;
+    rdfs:label "Mandatory group rules: " ;
+    ex:definition "A mandatory group rule requires that at least one of a group of data items be present. Use T22 for two data items, and T23 for more than two data items." ;
+    ex:hasTemplate ex:T22,
+        ex:T23 ;
+    ex:sectionID "9.3.1.1.3" .
+
+ex:9.3.1.2 a ex:Section ;
+    rdfs:label "Prohibited data rules" ;
+    ex:definition "A prohibited data rule mandates the absence of some data item in a particular situation." ;
+    ex:hasTemplate ex:T24 ;
+    ex:sectionID "9.3.1.2" .
+
+ex:9.3.1.3 a ex:Section ;
+    rdfs:label "Maximum cardinality rules" ;
+    ex:definition "A maximum cardinality rule places an upper limit (usually but not necessarily one) on how many instances of a particular data item there may be." ;
+    ex:hasTemplate ex:T25 ;
+    ex:sectionID "9.3.1.3" .
+
+ex:9.3.1.4 a ex:Section ;
+    rdfs:label "Multiple data rules" ;
+    ex:definition "A multiple data rule mandates the presence of two or more instances of a particular data item in a particular situation. These rule statements `<cardinality>` may only take one of the following forms: 1. exactly `<positive integer>`, where `<positive integer>` is at least two; 2. at least `<positive integer>`, where `<positive integer>` is at least two; 3. at least `<positive integer 1>` and at most `<positive integer 2>`, where `<positive integer 1>` is at least two." ;
+    ex:hasTemplate ex:19 ;
+    ex:sectionID "9.3.1.4" .
+
+ex:9.3.1.5 a ex:Section ;
+    rdfs:label "Dependent cardinality rules" ;
+    ex:definition "A dependent cardinality rule mandates how many of a particular data item must be present based on the value of another data item." ;
+    ex:hasTemplate ex:T26 ;
+    ex:sectionID "9.3.1.5" .
+
+ex:9.3.2 a ex:Section ;
+    rdfs:label "Data content rules" ;
+    ex:definition "A data content rule places a restriction on the values contained in a data item or set of data items (rather than whether they must be present and how many there may or must be)." ;
+    ex:hasSubsection ex:9.3.2.1,
+        ex:9.3.2.2,
+        ex:9.3.2.3,
+        ex:9.3.2.4,
+        ex:9.3.2.5,
+        ex:9.3.2.6,
+        ex:9.3.2.7,
+        ex:9.3.2.8 ;
+    ex:sectionID "9.3.2" .
+
+ex:9.3.2.1 a ex:Section ;
+    rdfs:label "Value set rules" ;
+    ex:definition "A value set rule requires either: that the content of a data item be (or not be) one of a particular set of values (either a fixed set, or a set that may change over time), or; that the content of a combination of data items match or not match a corresponding combination in a set of records;" ;
+    ex:hasSubsection ex:9.3.2.1.1,
+        ex:9.3.2.1.2 ;
+    ex:sectionID "9.3.2.1" .
+
+ex:9.3.2.1.1 a ex:Section ;
+    rdfs:label "Value set rules constraining single data items" ;
+    ex:definition "" ;
+    ex:hasTemplate ex:T27 ;
+    ex:sectionID "9.3.2.1.1" .
+
+ex:9.3.2.1.2 a ex:Section ;
+    rdfs:label "Value set rules constraining combinations of data items" ;
+    ex:definition "" ;
+    ex:hasTemplate ex:T28 ;
+    ex:sectionID "9.3.2.1.2" .
+
+ex:9.3.2.2 a ex:Section ;
+    rdfs:label "Range rules" ;
+    ex:definition "A range rule requires that the content of a data item be a value within a particular inclusive or exclusive single-bounded or double-bounded range." ;
+    ex:hasTemplate ex:T29 ;
+    ex:sectionID "9.3.2.2" .
+
+ex:9.3.2.3 a ex:Section ;
+    rdfs:label "Equality rules" ;
+    ex:definition "An equality rule requires that the content of a data item be the same as or not the same as that of some other data item." ;
+    ex:hasTemplate ex:T30 ;
+    ex:sectionID "9.3.2.3" .
+
+ex:9.3.2.4 a ex:Section ;
+    rdfs:label "Uniqueness constraints" ;
+    ex:definition "AA uniqueness constraint requires that the content of a data item (or combination or set of data items) be different from that of the corresponding data item(s) in the same or other records or transactions;" ;
+    ex:hasSubsection ex:9.3.2.4.1,
+        ex:9.3.2.4.2,
+        ex:9.3.2.4.3 ;
+    ex:sectionID "9.3.2.4" .
+
+ex:9.3.2.4.1 a ex:Section ;
+    rdfs:label "Uniqueness constraints constraining single data items" ;
+    ex:definition "" ;
+    ex:hasTemplate ex:T31 ;
+    ex:sectionID "9.3.2.4.1" .
+
+ex:9.3.2.4.2 a ex:Section ;
+    rdfs:label "Uniqueness constraints constraining combinations of data items" ;
+    ex:definition "" ;
+    ex:hasTemplate ex:T32 ;
+    ex:sectionID "9.3.2.4.2" .
+
+ex:9.3.2.4.3 a ex:Section ;
+    rdfs:label "Uniqueness constraints constraining sets of data items" ;
+    ex:definition "" ;
+    ex:hasTemplate ex:T33 ;
+    ex:sectionID "9.3.2.4.3" .
+
+ex:9.3.2.5 a ex:Section ;
+    rdfs:label "Data consistency rules" ;
+    ex:definition "A data consistency rule requires the content of multiple data items to be consistent with each other, other than as provided for by a value set rule, range rule, or equality rule;" ;
+    ex:hasSubsection ex:9.3.2.5.1,
+        ex:9.3.2.5.2,
+        ex:9.3.2.5.3 ;
+    ex:sectionID "9.3.2.5" .
+
+ex:9.3.2.5.1 a ex:Section ;
+    rdfs:label "Data consistency rules constraining a combination of data items" ;
+    ex:definition "" ;
+    ex:hasTemplate ex:T34 ;
+    ex:sectionID "9.3.2.5.1" .
+
+ex:9.3.2.5.2 a ex:Section ;
+    rdfs:label "Data consistency rules constraining a set function" ;
+    ex:definition "" ;
+    ex:hasTemplate ex:T35 ;
+    ex:sectionID "9.3.2.5.2" .
+
+ex:9.3.2.5.3 a ex:Section ;
+    rdfs:label "Data consistency rules constraining a set" ;
+    ex:definition "" ;
+    ex:hasTemplate ex:T36 ;
+    ex:sectionID "9.3.2.5.3" .
+
+ex:9.3.2.6 a ex:Section ;
+    rdfs:label "Temporal data constraints" ;
+    ex:definition "A temporal data constraint constrains one or more temporal data items (data items that represent time points or time periods). There are various subcategories of temporal constraint:" ;
+    ex:hasSubsection ex:9.3.2.6.1,
+        ex:9.3.2.6.2,
+        ex:9.3.2.6.3,
+        ex:9.3.2.6.4,
+        ex:9.3.2.6.5,
+        ex:9.3.2.6.6 ;
+    ex:sectionID "9.3.2.6" .
+
+ex:9.3.2.6.1 a ex:Section ;
+    rdfs:label "Simple temporal data constraints" ;
+    ex:definition "A simple temporal data constraint requires that a particular date or time fall within a certain temporal range." ;
+    ex:hasExample ex:R373 ;
+    ex:hasTemplate ex:T29 ;
+    ex:sectionID "9.3.2.6.1" .
+
+ex:9.3.2.6.2 a ex:Section ;
+    rdfs:label "Temporal data non-overlap constraints" ;
+    ex:definition "Temporal data non-overlap constraint requires that the time periods specified in a set of records do not overlap each other." ;
+    ex:hasTemplate ex:T37 ;
+    ex:sectionID "9.3.2.6.2" .
+
+ex:9.3.2.6.3 a ex:Section ;
+    rdfs:label "Temporal data completeness constraints" ;
+    ex:definition "A temporal data completeness constraint requires that the time periods specified in a set of records be contiguous and between them completely span some other time period." ;
+    ex:hasTemplate ex:T38 ;
+    ex:sectionID "9.3.2.6.3" .
+
+ex:9.3.2.6.4 a ex:Section ;
+    rdfs:label "Temporal data inclusion constraints" ;
+    ex:definition "AA temporal data inclusion constraint requires that the time periods specified in a set of records do not fall outside some other time period." ;
+    ex:hasTemplate ex:T38 ;
+    ex:sectionID "9.3.2.6.4" .
+
+ex:9.3.2.6.5 a ex:Section ;
+    rdfs:label "Temporal single record constraints" ;
+    ex:definition "A temporal single record constraint requires that a temporal state of affairs be recorded using a single record rather than multiple records. Use T39 for single data item and T40 for combination of data items." ;
+    ex:hasTemplate ex:T39,
+        ex:T40 ;
+    ex:sectionID "9.3.2.6.5" .
+
+ex:9.3.2.6.6 a ex:Section ;
+    rdfs:label "Day type constraints" ;
+    ex:definition "A day type constraint restricts a date to one or more days of the week or a particular type of day such as a working day (typically but not necessarily any day other than a Saturday, Sunday, or public holiday)." ;
+    ex:hasTemplate ex:T41 ;
+    ex:sectionID "9.3.2.6.6" .
+
+ex:9.3.2.7 a ex:Section ;
+    rdfs:label "Spatial data constraints" ;
+    ex:definition "A spatial data constraint prescribes or prohibits relationships between data items representing spatial properties (points, line segments or polygons)." ;
+    ex:hasTemplate ex:T41 ;
+    ex:sectionID "9.3.2.7" .
+
+ex:9.3.2.8 a ex:Section ;
+    rdfs:label "Data item format rules" ;
+    ex:definition "A data item format rule specifies the required format of a data item." ;
+    ex:hasTemplate ex:T43 ;
+    ex:sectionID "9.3.2.8" .
+
+ex:9.3.3 a ex:Section ;
+    rdfs:label "Data update rules" ;
+    ex:definition "A data update rule either prohibits update of a data item or places restrictions on the new value of a data item in terms of its existing value. There are three subcategories of data update rule:" ;
+    ex:hasSubsection ex:9.3.3.1,
+        ex:9.3.3.2,
+        ex:9.3.3.3 ;
+    ex:sectionID "9.3.3" .
+
+ex:9.3.3.1 a ex:Section ;
+    rdfs:label "Data update prohibition rules" ;
+    ex:definition "A data update prohibition rule prohibits update of a particular data item or set of data items. Use T44 for non-transferable relationships and T45 for other data update." ;
+    ex:hasTemplate ex:T44,
+        ex:T45 ;
+    ex:sectionID "9.3.3.1" .
+
+ex:9.3.3.2 a ex:Section ;
+    rdfs:label "State transition constraints" ;
+    ex:definition "A state transition constraint limits the changes in a data item to a set of valid transitions." ;
+    ex:hasTemplate ex:T46 ;
+    ex:sectionID "9.3.3.2" .
+
+ex:9.3.3.3 a ex:Section ;
+    rdfs:label "Monotonic transition constraints" ;
+    ex:definition "A monotonic transition constraint requires that a numeric value either only increase or only decrease." ;
+    ex:hasTemplate ex:T47 ;
+    ex:sectionID "9.3.3.3" .
+
+ex:9.4.1 a ex:Section ;
+    rdfs:label "Activity restriction rules" ;
+    ex:definition "An activity restriction rule restricts a business process or other activity in some way. There are various subcategories of activity restriction rules:" ;
+    ex:hasSubsection ex:9.4.1.1,
+        ex:9.4.1.2,
+        ex:9.4.1.3,
+        ex:9.4.1.4,
+        ex:9.4.1.5 ;
+    ex:sectionID "9.4.1" .
+
+ex:9.4.1.1 a ex:Section ;
+    rdfs:label "Rules restricting when an activity can occur" ;
+    ex:definition "Many activity restriction rules place time restrictions on activities." ;
+    ex:hasSubsection ex:9.4.1.1.1,
+        ex:9.4.1.1.2,
+        ex:9.4.1.1.3 ;
+    ex:sectionID "9.4.1.1" .
+
+ex:9.4.1.1.1 a ex:Section ;
+    rdfs:label "Activity time limit rules" ;
+    ex:definition "An activity time limit rule restricts a business process or other activity to within a particular time period." ;
+    ex:hasTemplate ex:T48 ;
+    ex:sectionID "9.4.1.1.1" .
+
+ex:9.4.1.1.2 a ex:Section ;
+    rdfs:label "Activity exclusion period rules" ;
+    ex:definition "An activity exclusion period rule prohibits a business process or other activity during a particular time period." ;
+    ex:hasTemplate ex:T49 ;
+    ex:sectionID "9.4.1.1.2" .
+
+ex:9.4.1.1.3 a ex:Section ;
+    rdfs:label "Activity obligation rule" ;
+    ex:definition "An activity obligation rule requires a business process or other activity to occur either within a maximum time after a particular event (such as the completion of some other process) or as soon as practical after a particular event." ;
+    ex:hasTemplate ex:T49 ;
+    ex:sectionID "9.4.1.1.3" .
+
+ex:9.4.1.2 a ex:Section ;
+    rdfs:label "Activity pre-condition rules" ;
+    ex:definition "An activity pre-condition rule prohibits a business process or other activity unless some other activity or event has previously occurred or some prerequisite condition exists." ;
+    ex:hasTemplate ex:T50 ;
+    ex:sectionID "9.4.1.2" .
+
+ex:9.4.1.3 a ex:Section ;
+    rdfs:label "Activity prohibition rules" ;
+    ex:definition "An activity prohibition rule prohibits a business process or other activity if some event or other process has previously occurred or some dangerous or illegal condition exists." ;
+    ex:hasTemplate ex:T51 ;
+    ex:sectionID "9.4.1.3" .
+
+ex:9.4.1.4 a ex:Section ;
+    rdfs:label "Information retention rules" ;
+    ex:definition "An information retention rule defines the minimum period for which a particular type of information is retained." ;
+    ex:hasTemplate ex:T49 ;
+    ex:sectionID "9.4.1.4" .
+
+ex:9.4.1.5 a ex:Section ;
+    rdfs:label "Activity conflict rules" ;
+    ex:definition "An activity conflict rule restricts the simultaneous occurrence of multiple processes or other activities." ;
+    ex:hasExample ex:R136 ;
+    ex:sectionID "9.4.1.5" .
+
+ex:9.4.2 a ex:Section ;
+    rdfs:label "Process decision rules" ;
+    ex:definition "A process decision rule determines what action a business process or device is to take in specific situations;" ;
+    ex:hasTemplate ex:T52 ;
+    ex:sectionID "9.4.2" .
+
+ex:9.4.3 a ex:Section ;
+    rdfs:label "Activity obligation rules" ;
+    ex:definition "An activity obligation rule requires a business process or other activity to occur either within a maximum time after a particular event (such as the completion of some other process) or when particular conditions apply." ;
+    ex:hasExample ex:R138 ;
+    ex:sectionID "9.4.3" .
+
+ex:9.5.1 a ex:Section ;
+    rdfs:label "Party restriction rules" ;
+    ex:definition "A party restriction rule places restrictions on who can perform some processes or activities or play some roles, based on age, some other physical characteristic or capability, or training, testing, and certification in the appropriate skills." ;
+    ex:hasTemplate ex:T53 ;
+    ex:sectionID "9.5.1" .
+
+ex:9.5.2 a ex:Section ;
+    rdfs:label "Role separation and binding rules" ;
+    ex:definition "A role separation rule prohibits the same party from performing two activities." ;
+    ex:hasTemplate ex:T54 ;
+    ex:sectionID "9.5.2" .
+
+ex:9.5.3 a ex:Section ;
+    rdfs:label "Information access rules" ;
+    ex:definition "An information access rule defines who can view, create, or update particular information." ;
+    ex:hasTemplate ex:T55 ;
+    ex:sectionID "9.5.3" .
+
+ex:9.5.4 a ex:Section ;
+    rdfs:label "Responsibility rules" ;
+    ex:definition "A responsibility rule defines who is responsible for performing a particular process or liable for a particular fee, duty, or tax." ;
+    ex:hasTemplate ex:T56 ;
+    ex:sectionID "9.5.4" .
+
+ex:R136 a ex:Example ;
+    rdfs:label "R136" .
+
+ex:R138 a ex:Example ;
+    rdfs:label "R138" .
+
+ex:R373 a ex:Example ;
+    rdfs:label "R373" .
+
+ex:T10 a ex:Template ;
+    rdfs:label "T10" .
+
+ex:T11 a ex:Template ;
+    rdfs:label "T11" .
+
+ex:T12 a ex:Template ;
+    rdfs:label "T12" .
+
+ex:T13 a ex:Template ;
+    rdfs:label "T13" .
+
+ex:T14 a ex:Template ;
+    rdfs:label "T14" .
+
+ex:T15 a ex:Template ;
+    rdfs:label "T15" .
+
+ex:T16 a ex:Template ;
+    rdfs:label "T16" .
+
+ex:T17 a ex:Template ;
+    rdfs:label "T17" .
+
+ex:T18 a ex:Template ;
+    rdfs:label "T18" .
+
+ex:T19 a ex:Template ;
+    rdfs:label "T19" .
+
+ex:T20 a ex:Template ;
+    rdfs:label "T20" .
+
+ex:T21 a ex:Template ;
+    rdfs:label "T21" .
+
+ex:T22 a ex:Template ;
+    rdfs:label "T22" .
+
+ex:T23 a ex:Template ;
+    rdfs:label "T23" .
+
+ex:T24 a ex:Template ;
+    rdfs:label "T24" .
+
+ex:T25 a ex:Template ;
+    rdfs:label "T25" .
+
+ex:T26 a ex:Template ;
+    rdfs:label "T26" .
+
+ex:T27 a ex:Template ;
+    rdfs:label "T27" .
+
+ex:T28 a ex:Template ;
+    rdfs:label "T28" .
+
+ex:T30 a ex:Template ;
+    rdfs:label "T30" .
+
+ex:T31 a ex:Template ;
+    rdfs:label "T31" .
+
+ex:T32 a ex:Template ;
+    rdfs:label "T32" .
+
+ex:T33 a ex:Template ;
+    rdfs:label "T33" .
+
+ex:T34 a ex:Template ;
+    rdfs:label "T34" .
+
+ex:T35 a ex:Template ;
+    rdfs:label "T35" .
+
+ex:T36 a ex:Template ;
+    rdfs:label "T36" .
+
+ex:T37 a ex:Template ;
+    rdfs:label "T37" .
+
+ex:T39 a ex:Template ;
+    rdfs:label "T39" .
+
+ex:T40 a ex:Template ;
+    rdfs:label "T40" .
+
+ex:T43 a ex:Template ;
+    rdfs:label "T43" .
+
+ex:T44 a ex:Template ;
+    rdfs:label "T44" .
+
+ex:T45 a ex:Template ;
+    rdfs:label "T45" .
+
+ex:T46 a ex:Template ;
+    rdfs:label "T46" .
+
+ex:T47 a ex:Template ;
+    rdfs:label "T47" .
+
+ex:T48 a ex:Template ;
+    rdfs:label "T48" .
+
+ex:T50 a ex:Template ;
+    rdfs:label "T50" .
+
+ex:T51 a ex:Template ;
+    rdfs:label "T51" .
+
+ex:T52 a ex:Template ;
+    rdfs:label "T52" .
+
+ex:T53 a ex:Template ;
+    rdfs:label "T53" .
+
+ex:T54 a ex:Template ;
+    rdfs:label "T54" .
+
+ex:T55 a ex:Template ;
+    rdfs:label "T55" .
+
+ex:T56 a ex:Template ;
+    rdfs:label "T56" .
+
+ex:T7 a ex:Template ;
+    rdfs:label "T7" .
+
+ex:T8 a ex:Template ;
+    rdfs:label "T8" .
+
+ex:T9 a ex:Template ;
+    rdfs:label "T9" .
+
+ex:T29 a ex:Template ;
+    rdfs:label "T29" .
+
+ex:T38 a ex:Template ;
+    rdfs:label "T38" .
+
+ex:T41 a ex:Template ;
+    rdfs:label "T41" .
+
+ex:T49 a ex:Template ;
+    rdfs:label "T49" .
+

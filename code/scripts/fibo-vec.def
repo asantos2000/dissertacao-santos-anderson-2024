@@ -1,0 +1,9 @@
+gpt   
+ embedder openai
+ model text-embedding-3-small
+ if-exists supersede   
+ api-key "open_ai_api_key"
+ vector-database-name "fibo-glossary-3m-vec"
+ limit 1000000
+ include-predicates <http://www.w3.org/2000/01/rdf-schema\#label>
+ include-types <http://www.w3.org/2002/07/owl\#Class> <http://www.w3.org/2002/07/owl\#NamedIndividual>
