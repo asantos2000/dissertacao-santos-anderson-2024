@@ -428,3 +428,150 @@
 2024-10-22 21:05:48 - INFO - Finished processing documents.
 2024-10-22 21:05:48 - INFO - Checkpoint restored.
 2024-10-22 21:16:05 - ERROR - Checkpoint file '../checkpoints/documents-2024-10-22-4.json' not found, initializing new checkpoint.
+2024-10-22 22:48:29 - INFO - Logging is set up with daily rotation.
+2024-10-22 22:48:29 - ERROR - Checkpoint file '../checkpoints/documents-2024-10-22-4.json' not found, initializing new checkpoint.
+2024-10-22 22:48:29 - INFO - Checkpoint saved.
+2024-10-22 22:48:29 - INFO - SECTIONS:
+2024-10-22 22:48:29 - INFO - section docs: ['§ 275.0-2', '§ 275.0-5', '§ 275.0-7']
+2024-10-22 22:48:29 - INFO - § 275.0-2: Total number of lines: 14, total number of words: 362, and average words per line: 26
+2024-10-22 22:48:29 - INFO - § 275.0-5: Total number of lines: 10, total number of words: 262, and average words per line: 26
+2024-10-22 22:48:29 - INFO - § 275.0-7: Total number of lines: 19, total number of words: 513, and average words per line: 27
+2024-10-22 22:48:29 - INFO - Processing document: § 275.0-2_P1 ...
+2024-10-22 22:48:29 - INFO - retrieve P1
+2024-10-22 22:48:29 - INFO - Processing document: § 275.0-5_P1 ...
+2024-10-22 22:48:29 - INFO - retrieve P1
+2024-10-22 22:48:29 - INFO - Processing document: § 275.0-7_P1 ...
+2024-10-22 22:48:29 - INFO - retrieve P1
+2024-10-22 22:48:29 - INFO - Processing document: § 275.0-2_P2 ...
+2024-10-22 22:48:29 - INFO - retrieve P2
+2024-10-22 22:48:29 - INFO - Processing document: § 275.0-5_P2 ...
+2024-10-22 22:48:29 - INFO - retrieve P2
+2024-10-22 22:48:29 - INFO - Processing document: § 275.0-7_P2 ...
+2024-10-22 22:48:29 - INFO - retrieve P2
+2024-10-22 22:48:30 - INFO - Checkpoint saved.
+2024-10-22 22:48:30 - INFO - Checkpoint restored.
+2024-10-22 22:48:30 - INFO - Processing document: § 275.0-2
+2024-10-22 22:48:30 - INFO - P1. Extracting elements...
+2024-10-22 22:49:32 - INFO - Logging is set up with daily rotation.
+2024-10-22 22:49:32 - ERROR - Checkpoint file '../checkpoints/documents-2024-10-22-5.json' not found, initializing new checkpoint.
+2024-10-22 22:49:32 - INFO - Checkpoint saved.
+2024-10-22 22:49:33 - INFO - SECTIONS:
+2024-10-22 22:49:33 - INFO - section docs: ['§ 275.0-2', '§ 275.0-5', '§ 275.0-7']
+2024-10-22 22:49:33 - INFO - § 275.0-2: Total number of lines: 14, total number of words: 362, and average words per line: 26
+2024-10-22 22:49:33 - INFO - § 275.0-5: Total number of lines: 10, total number of words: 262, and average words per line: 26
+2024-10-22 22:49:33 - INFO - § 275.0-7: Total number of lines: 19, total number of words: 513, and average words per line: 27
+2024-10-22 22:49:33 - INFO - Processing document: § 275.0-2_P1 ...
+2024-10-22 22:49:33 - INFO - retrieve P1
+2024-10-22 22:49:33 - INFO - Processing document: § 275.0-5_P1 ...
+2024-10-22 22:49:33 - INFO - retrieve P1
+2024-10-22 22:49:33 - INFO - Processing document: § 275.0-7_P1 ...
+2024-10-22 22:49:33 - INFO - retrieve P1
+2024-10-22 22:49:33 - INFO - Processing document: § 275.0-2_P2 ...
+2024-10-22 22:49:33 - INFO - retrieve P2
+2024-10-22 22:49:33 - INFO - Processing document: § 275.0-5_P2 ...
+2024-10-22 22:49:33 - INFO - retrieve P2
+2024-10-22 22:49:33 - INFO - Processing document: § 275.0-7_P2 ...
+2024-10-22 22:49:33 - INFO - retrieve P2
+2024-10-22 22:49:33 - INFO - Checkpoint saved.
+2024-10-22 22:49:33 - INFO - Checkpoint restored.
+2024-10-22 22:49:33 - INFO - Processing document: § 275.0-2
+2024-10-22 22:49:33 - INFO - P1. Extracting elements...
+2024-10-22 22:49:46 - INFO - Logging is set up with daily rotation.
+2024-10-22 22:49:46 - ERROR - Checkpoint file '../checkpoints/documents-2024-10-22-6.json' not found, initializing new checkpoint.
+2024-10-22 22:49:46 - INFO - Checkpoint saved.
+2024-10-22 22:49:46 - INFO - SECTIONS:
+2024-10-22 22:49:46 - INFO - section docs: ['§ 275.0-2', '§ 275.0-5', '§ 275.0-7']
+2024-10-22 22:49:46 - INFO - § 275.0-2: Total number of lines: 14, total number of words: 362, and average words per line: 26
+2024-10-22 22:49:46 - INFO - § 275.0-5: Total number of lines: 10, total number of words: 262, and average words per line: 26
+2024-10-22 22:49:46 - INFO - § 275.0-7: Total number of lines: 19, total number of words: 513, and average words per line: 27
+2024-10-22 22:49:46 - INFO - Processing document: § 275.0-2_P1 ...
+2024-10-22 22:49:46 - INFO - retrieve P1
+2024-10-22 22:49:46 - INFO - Processing document: § 275.0-5_P1 ...
+2024-10-22 22:49:46 - INFO - retrieve P1
+2024-10-22 22:49:46 - INFO - Processing document: § 275.0-7_P1 ...
+2024-10-22 22:49:46 - INFO - retrieve P1
+2024-10-22 22:49:46 - INFO - Processing document: § 275.0-2_P2 ...
+2024-10-22 22:49:46 - INFO - retrieve P2
+2024-10-22 22:49:46 - INFO - Processing document: § 275.0-5_P2 ...
+2024-10-22 22:49:46 - INFO - retrieve P2
+2024-10-22 22:49:46 - INFO - Processing document: § 275.0-7_P2 ...
+2024-10-22 22:49:46 - INFO - retrieve P2
+2024-10-22 22:49:47 - INFO - Checkpoint saved.
+2024-10-22 22:49:47 - INFO - Checkpoint restored.
+2024-10-22 22:49:47 - INFO - Processing document: § 275.0-2
+2024-10-22 22:49:47 - INFO - P1. Extracting elements...
+2024-10-22 22:50:19 - INFO - Logging is set up with daily rotation.
+2024-10-22 22:50:20 - ERROR - Checkpoint file '../checkpoints/documents-2024-10-22-7.json' not found, initializing new checkpoint.
+2024-10-22 22:50:20 - INFO - Checkpoint saved.
+2024-10-22 22:50:20 - INFO - SECTIONS:
+2024-10-22 22:50:20 - INFO - section docs: ['§ 275.0-2', '§ 275.0-5', '§ 275.0-7']
+2024-10-22 22:50:20 - INFO - § 275.0-2: Total number of lines: 14, total number of words: 362, and average words per line: 26
+2024-10-22 22:50:20 - INFO - § 275.0-5: Total number of lines: 10, total number of words: 262, and average words per line: 26
+2024-10-22 22:50:20 - INFO - § 275.0-7: Total number of lines: 19, total number of words: 513, and average words per line: 27
+2024-10-22 22:50:20 - INFO - Processing document: § 275.0-2_P1 ...
+2024-10-22 22:50:20 - INFO - retrieve P1
+2024-10-22 22:50:20 - INFO - Processing document: § 275.0-5_P1 ...
+2024-10-22 22:50:20 - INFO - retrieve P1
+2024-10-22 22:50:20 - INFO - Processing document: § 275.0-7_P1 ...
+2024-10-22 22:50:20 - INFO - retrieve P1
+2024-10-22 22:50:20 - INFO - Processing document: § 275.0-2_P2 ...
+2024-10-22 22:50:20 - INFO - retrieve P2
+2024-10-22 22:50:20 - INFO - Processing document: § 275.0-5_P2 ...
+2024-10-22 22:50:20 - INFO - retrieve P2
+2024-10-22 22:50:20 - INFO - Processing document: § 275.0-7_P2 ...
+2024-10-22 22:50:20 - INFO - retrieve P2
+2024-10-22 22:50:20 - INFO - Checkpoint saved.
+2024-10-22 22:50:20 - INFO - Checkpoint restored.
+2024-10-22 22:50:20 - INFO - Processing document: § 275.0-2
+2024-10-22 22:50:20 - INFO - P1. Extracting elements...
+2024-10-22 22:51:12 - INFO - Logging is set up with daily rotation.
+2024-10-22 22:51:12 - ERROR - Checkpoint file '../checkpoints/documents-2024-10-22-8.json' not found, initializing new checkpoint.
+2024-10-22 22:51:12 - INFO - Checkpoint saved.
+2024-10-22 22:51:12 - INFO - SECTIONS:
+2024-10-22 22:51:12 - INFO - section docs: ['§ 275.0-2', '§ 275.0-5', '§ 275.0-7']
+2024-10-22 22:51:12 - INFO - § 275.0-2: Total number of lines: 14, total number of words: 362, and average words per line: 26
+2024-10-22 22:51:12 - INFO - § 275.0-5: Total number of lines: 10, total number of words: 262, and average words per line: 26
+2024-10-22 22:51:12 - INFO - § 275.0-7: Total number of lines: 19, total number of words: 513, and average words per line: 27
+2024-10-22 22:51:12 - INFO - Processing document: § 275.0-2_P1 ...
+2024-10-22 22:51:12 - INFO - retrieve P1
+2024-10-22 22:51:12 - INFO - Processing document: § 275.0-5_P1 ...
+2024-10-22 22:51:12 - INFO - retrieve P1
+2024-10-22 22:51:12 - INFO - Processing document: § 275.0-7_P1 ...
+2024-10-22 22:51:12 - INFO - retrieve P1
+2024-10-22 22:51:12 - INFO - Processing document: § 275.0-2_P2 ...
+2024-10-22 22:51:12 - INFO - retrieve P2
+2024-10-22 22:51:12 - INFO - Processing document: § 275.0-5_P2 ...
+2024-10-22 22:51:12 - INFO - retrieve P2
+2024-10-22 22:51:12 - INFO - Processing document: § 275.0-7_P2 ...
+2024-10-22 22:51:12 - INFO - retrieve P2
+2024-10-22 22:51:12 - INFO - Checkpoint saved.
+2024-10-22 22:51:12 - INFO - Checkpoint restored.
+2024-10-22 22:51:12 - INFO - Processing document: § 275.0-2
+2024-10-22 22:51:12 - INFO - P1. Extracting elements...
+2024-10-22 22:51:37 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-22 22:51:37 - INFO - Execution time for query_instruct_llm: 24.29 seconds
+2024-10-22 22:51:37 - INFO - P2. Extracting terms and relationships...
+2024-10-22 22:52:13 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-22 22:52:13 - INFO - Execution time for query_instruct_llm: 32.68 seconds
+2024-10-22 22:52:13 - INFO - Saving llm_response to checkpoint...
+2024-10-22 22:52:13 - INFO - Checkpoint saved.
+2024-10-22 22:52:13 - INFO - Processing document: § 275.0-5
+2024-10-22 22:52:13 - INFO - P1. Extracting elements...
+2024-10-22 22:52:32 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-22 22:52:32 - INFO - Execution time for query_instruct_llm: 14.97 seconds
+2024-10-22 22:52:32 - INFO - P2. Extracting terms and relationships...
+2024-10-22 22:52:44 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-22 22:52:44 - INFO - Execution time for query_instruct_llm: 12.80 seconds
+2024-10-22 22:52:44 - INFO - Saving llm_response to checkpoint...
+2024-10-22 22:52:44 - INFO - Checkpoint saved.
+2024-10-22 22:52:44 - INFO - Processing document: § 275.0-7
+2024-10-22 22:52:44 - INFO - P1. Extracting elements...
+2024-10-22 22:53:02 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-22 22:53:02 - INFO - Execution time for query_instruct_llm: 13.75 seconds
+2024-10-22 22:53:02 - INFO - P2. Extracting terms and relationships...
+2024-10-22 22:53:18 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-22 22:53:18 - INFO - Execution time for query_instruct_llm: 15.99 seconds
+2024-10-22 22:53:18 - INFO - Saving llm_response to checkpoint...
+2024-10-22 22:53:18 - INFO - Checkpoint saved.
+2024-10-22 22:53:18 - INFO - Finished processing documents.
+2024-10-22 22:53:18 - INFO - Checkpoint restored.
