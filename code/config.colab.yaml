@@ -25,10 +25,10 @@ ALLEGROGRAPH:
 ALLEGROGRAPH_CLOUD:
   REPO: "cfr2sbvr"
   CATALOG: "root"
-  HOST: "ag1eawvuu0p3zv35.allegrograph.cloud"
+  HOST: "your-hostname"
   PORT: 443 
   USER: "admin"
-  PASSWORD: "GYL6N1KPB4R4xdWKIZqrYw"  # Replace with your password
+  PASSWORD: "your-password"  # Replace with your password
 
 # Directories and Files
 DEFAULT_DATA_DIR: "../data"
