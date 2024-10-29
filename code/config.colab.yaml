@@ -15,10 +15,10 @@ LLM:
 ALLEGROGRAPH:
   REPO: "cfr2sbvr"
   CATALOG: "root"
-  HOST: "localhost"  # ag1eawvuu0p3zv35.allegrograph.cloud for AllegroGraph cloud
-  PORT: 10035  # 443 for AllegroGraph cloud
-  USER: "super"  # admin for AllegroGraph cloud
-  PASSWORD: "2002"  # Replace with your password
+  HOST: "localhost"
+  PORT: 10035
+  USER: "super"
+  PASSWORD: "2002"
   HOME_DIR: "/home/adsantos/agraph-8.2.1"
 
 # AllegroGraph Configuration
