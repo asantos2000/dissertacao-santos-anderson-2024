@@ -6,19 +6,21 @@ numpy
 
 # AI/ML and NLP libraries
 openai
-transformers
-huggingface_hub
+# transformers
+# huggingface_hub
 sentencepiece
 scikit-learn
 spacy
 instructor
-llama_index
-llama-index-graph-stores-neo4j
+# llama_index
+# llama-index-graph-stores-neo4j
+anthropic
+google-generativeai
 
 # Graph and RDF libraries
 agraph-python
-networkx
-pygraphviz
+# networkx
+# pygraphviz
 rdflib
 
 # Visualization libraries
@@ -33,6 +35,7 @@ deepdiff
 # Miscellaneous utilities
 inflect
 pyyaml
+jsonref
 
 # Jupyter environment
 jupyterlab
