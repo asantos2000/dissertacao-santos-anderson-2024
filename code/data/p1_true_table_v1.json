@@ -4,7 +4,7 @@
         "type": "true_table",
         "content": {
             "section": "\u00a7 275.0-2",
-            "summary": "This document outlines the general procedures for serving legal documents such as process, pleadings, or other papers on non-resident investment advisers, general partners, and managing agents. It specifies how a person can serve these documents through appointed agents and the role of the Commission's Secretary in forwarding these documents. It also provides definitions for terms like 'Managing agent', 'Non-resident', and 'Principal office and place of business'.",
+            "summary": "This document outlines the general procedures for serving process, pleadings, or other papers on non-resident investment advisers, general partners, and managing agents. It specifies how a person can serve these entities through appointed agents and the role of the Commission's Secretary in forwarding documents. It also provides definitions for terms like 'Managing agent', 'Non-resident', and 'Principal office and place of business'.",
             "elements": [
                 {
                     "id": 1,
@@ -43,7 +43,7 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Appointed agents",
+                            "term": "Appointed agent",
                             "classification": "Common Noun"
                         }
                     ],
@@ -79,6 +79,10 @@
                             "classification": "Proper Noun"
                         },
                         {
+                            "term": "Copy",
+                            "classification": "Common Noun"
+                        },
+                        {
                             "term": "Process",
                             "classification": "Common Noun"
                         },
@@ -95,13 +99,14 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Commission's records",
+                            "term": "Record",
                             "classification": "Common Noun"
                         }
                     ],
                     "verb_symbols": [
                         "may serve",
-                        "by furnishing"
+                        "by furnishing",
+                        "with"
                     ],
                     "classification": "Fact Type",
                     "source": "(a)(1)"
@@ -127,8 +132,12 @@
                             "classification": "Proper Noun"
                         },
                         {
-                            "term": "Secretary of the Commission",
+                            "term": "Secretary",
                             "classification": "Proper Noun"
+                        },
+                        {
+                            "term": "Copy",
+                            "classification": "Common Noun"
                         },
                         {
                             "term": "Named party",
@@ -149,7 +158,8 @@
                     ],
                     "verb_symbols": [
                         "are served",
-                        "will forward"
+                        "will forward",
+                        "by"
                     ],
                     "classification": "Rule",
                     "source": "(a)(2)"
@@ -179,7 +189,11 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Paragraph (a)(1)",
+                            "term": "Paragraph",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Document",
                             "classification": "Common Noun"
                         },
                         {
@@ -187,15 +201,15 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Paragraph (a)(2)",
-                            "classification": "Common Noun"
-                        },
-                        {
                             "term": "Certification",
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Evidence of service",
+                            "term": "Evidence",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Service",
                             "classification": "Common Noun"
                         }
                     ],
@@ -225,7 +239,7 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Affairs",
+                            "term": "Affair",
                             "classification": "Common Noun"
                         },
                         {
@@ -245,7 +259,8 @@
                         "means",
                         "directs",
                         "manages",
-                        "participates"
+                        "participates in directing",
+                        "participates in managing"
                     ],
                     "classification": "Fact Type",
                     "source": "(b)(1)"
@@ -267,21 +282,30 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Jurisdiction of the United States",
+                            "term": "Jurisdiction",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "United States",
                             "classification": "Proper Noun"
                         }
                     ],
                     "verb_symbols": [
                         "means",
-                        "resides"
+                        "resides in",
+                        "subject to"
                     ],
                     "classification": "Fact Type",
                     "source": "(b)(2)(i)"
                 },
                 {
                     "id": 7,
-                    "expression": "A corporation that is incorporated in or that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
+                    "expression": "Non-resident means a corporation that is incorporated in or that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
                     "terms": [
+                        {
+                            "term": "Non-resident",
+                            "classification": "Common Noun"
+                        },
                         {
                             "term": "Corporation",
                             "classification": "Common Noun"
@@ -299,21 +323,31 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Jurisdiction of the United States",
+                            "term": "Jurisdiction",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "United States",
                             "classification": "Proper Noun"
                         }
                     ],
                     "verb_symbols": [
-                        "is incorporated",
-                        "has"
+                        "means",
+                        "is incorporated in",
+                        "has",
+                        "subject to"
                     ],
                     "classification": "Fact Type",
                     "source": "(b)(2)(ii)"
                 },
                 {
                     "id": 8,
-                    "expression": "A partnership or other unincorporated organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
+                    "expression": "Non-resident means a partnership or other unincorporated organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
                     "terms": [
+                        {
+                            "term": "Non-resident",
+                            "classification": "Common Noun"
+                        },
                         {
                             "term": "Partnership",
                             "classification": "Common Noun"
@@ -339,12 +373,18 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Jurisdiction of the United States",
+                            "term": "Jurisdiction",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "United States",
                             "classification": "Proper Noun"
                         }
                     ],
                     "verb_symbols": [
-                        "has"
+                        "means",
+                        "has",
+                        "subject to"
                     ],
                     "classification": "Fact Type",
                     "source": "(b)(2)(iii)"
@@ -362,8 +402,12 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "\u00a7 275.203A-3(c)",
-                            "classification": "Proper Noun"
+                            "term": "Meaning",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Chapter",
+                            "classification": "Common Noun"
                         }
                     ],
                     "verb_symbols": [
@@ -380,7 +424,7 @@
         "type": "true_table",
         "content": {
             "section": "\u00a7 275.0-5",
-            "summary": "This document outlines the procedure for proceedings initiated by the filing of an application or by the Commission's own motion under any section of the Act or related rules. It specifies the publication of notice in the Federal Register, the process for interested persons to submit facts or request hearings, and the conditions under which the Commission will order a hearing. It also defines 'application' for the purposes of this rule.",
+            "summary": "This document outlines the procedure for proceedings initiated by the filing of an application or by the Commission's own motion under any section of the Act or related rules. It specifies the publication of notice in the Federal Register, the process for interested persons to submit facts or request a hearing, and the conditions under which the Commission will order a hearing. It also defines what constitutes an 'application' for the purposes of this rule.",
             "elements": [
                 {
                     "id": 1,
@@ -391,7 +435,11 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Initiation of the proceeding",
+                            "term": "Initiation",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Proceeding",
                             "classification": "Common Noun"
                         },
                         {
@@ -399,7 +447,7 @@
                             "classification": "Proper Noun"
                         },
                         {
-                            "term": "Earliest date",
+                            "term": "Date",
                             "classification": "Common Noun"
                         },
                         {
@@ -428,7 +476,7 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Period of time",
+                            "term": "Period",
                             "classification": "Common Noun"
                         },
                         {
@@ -440,7 +488,11 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Desirability of a hearing",
+                            "term": "Desirability",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Hearing",
                             "classification": "Common Noun"
                         },
                         {
@@ -452,7 +504,11 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Nature of interest",
+                            "term": "Nature",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Interest",
                             "classification": "Common Noun"
                         }
                     ],
@@ -463,7 +519,7 @@
                         "be held",
                         "stating"
                     ],
-                    "classification": "Rule",
+                    "classification": "Fact Type",
                     "source": "(a)"
                 },
                 {
@@ -479,7 +535,15 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Expiration of the period of time",
+                            "term": "Expiration",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Period",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Paragraph",
                             "classification": "Common Noun"
                         },
                         {
@@ -497,12 +561,12 @@
                         "referred to",
                         "orders"
                     ],
-                    "classification": "Rule",
+                    "classification": "Fact Type",
                     "source": "(b)"
                 },
                 {
                     "id": 4,
-                    "expression": "The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors.",
+                    "expression": "The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors, upon the request of any interested person or upon its own motion.",
                     "terms": [
                         {
                             "term": "Commission",
@@ -521,7 +585,23 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Protection of investors",
+                            "term": "Protection",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Investors",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Request",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Interested person",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Motion",
                             "classification": "Common Noun"
                         }
                     ],
@@ -529,15 +609,24 @@
                         "will order",
                         "appears",
                         "is necessary",
-                        "is appropriate"
+                        "is appropriate",
+                        "upon"
                     ],
                     "classification": "Rule",
                     "source": "(c)"
                 },
                 {
                     "id": 5,
-                    "expression": "An 'application' means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.",
+                    "expression": "For purposes of this rule, an \u201capplication\u201d means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.",
                     "terms": [
+                        {
+                            "term": "Purposes",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Rule",
+                            "classification": "Common Noun"
+                        },
                         {
                             "term": "Application",
                             "classification": "Common Noun"
@@ -580,7 +669,7 @@
         "type": "true_table",
         "content": {
             "section": "\u00a7 275.0-7",
-            "summary": "This document defines what constitutes a 'small business' or 'small organization' under the Investment Advisers Act of 1940 for the purposes of the Regulatory Flexibility Act. It specifies criteria related to assets under management, total assets, and control relationships. It also provides definitions for 'control' and 'total assets' in the context of investment advisers.",
+            "summary": "This document defines what constitutes a 'small business' or 'small organization' under the Investment Advisers Act of 1940 for the purposes of the Regulatory Flexibility Act. It specifies criteria related to assets under management, total assets, and control relationships to determine if an investment adviser qualifies as a small entity. It also provides definitions for 'control' and 'total assets' in this context.",
             "elements": [
                 {
                     "id": 1,
@@ -639,7 +728,11 @@
                             "classification": "Common Noun"
                         },
                         {
-                            "term": "Fiscal year",
+                            "term": "Last day",
+                            "classification": "Common Noun"
+                        },
+                        {
+                            "term": "Most recent fiscal year",
                             "classification": "Common Noun"
                         }
                     ],
@@ -675,6 +768,10 @@
                             "classification": "Common Noun"
                         },
                         {
+                            "term": "Common control",
+                            "classification": "Common Noun"
+                        },
+                        {
                             "term": "Assets under management",
                             "classification": "Common Noun"
                         }
@@ -683,7 +780,7 @@
                         "shall mean",
                         "does not control",
                         "is not controlled by",
-                        "is not under common control with"
+                        "is not under"
                     ],
                     "classification": "Fact Type",
                     "source": "(a)(3)"
@@ -723,7 +820,8 @@
                     ],
                     "verb_symbols": [
                         "means",
-                        "to direct"
+                        "to direct",
+                        "whether through"
                     ],
                     "classification": "Fact Type",
                     "source": "(b)(1)"
