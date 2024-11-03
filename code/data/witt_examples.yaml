@@ -1,0 +1,21 @@
+example_list:
+  - id: "R373"   
+    text: |
+      The departure time of the outgoing flight
+        specified in each flight booking confirmation
+        that is made online
+      must be no earlier than 3 h
+        after the booking confirmation time
+        of that flight booking confirmation.
+
+  - id: "R136"
+    text: |
+      A folder
+      must not be renamed
+      while any file within that folder is open for editing.
+
+  - id: "R138"
+    text: |
+      Each electronic device that is being used on an aircraft
+      must be switched off
+      no later than 1 min after the start of the descent of that aircraft.

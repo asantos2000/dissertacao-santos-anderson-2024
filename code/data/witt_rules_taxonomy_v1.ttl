@@ -1,0 +1,1026 @@
+@prefix ns1: <http://example.org/schema#> .
+
+ns1:T1 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T1" ;
+    ns1:text """{Each|The} <operative rule statement subject>
+must <rule statement predicate>
+{{if|unless} <conditional clause>|}.
+""" ;
+    ns1:usesSubtemplate ns1:S1,
+        ns1:S13 .
+
+ns1:T10 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T10" ;
+    ns1:text """{{A|An} <category attribute term>|
+The <category attribute term>
+  of {a |an} <entity class term>}
+is by definition
+{either <literal 1> or <literal 2>|
+one of the following: [<literal 3>, or]}.
+""" .
+
+ns1:T11 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T11" ;
+    ns1:text """A transition
+  of the <category attribute term> of {a|an} <entity class term>
+  from {<literal 1>| [<literal 2>, or]}
+  to {<literal 3>| [<literal 4>, or]}
+is by definition
+impossible.
+""" .
+
+ns1:T12 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T12" ;
+    ns1:text """{A|An} <term 1>
+<verb phrase> by definition
+{<cardinality>|at most <positive integer>} <term 2>
+  {{for |in} {each|the} <term 3>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S3 .
+
+ns1:T13 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T13" ;
+    ns1:text """The <term 1>
+  <qualifying clause 1>
+is by definition
+the same as the <term 2>
+  <qualifying clause 2>.
+""" .
+
+ns1:T14 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T14" ;
+    ns1:text """The set of <term 1>
+  <qualifying clause 1>
+is by definition
+the same as the set of <term 1>
+  <qualifying clause 2>.
+""" .
+
+ns1:T15 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T15" ;
+    ns1:text """{The| } <attribute term>
+  {of {a|an} <entity class term>| }
+is by definition
+{<inequality operator> <literal 1>
+  {and <inequality operator> <literal 2>| } |
+  [<literal 3>, or]}.
+""" ;
+    ns1:usesSubtemplate ns1:S6 .
+
+ns1:T16 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T16" ;
+    ns1:text """{The| } <attribute term>
+  {of | for} {a|an} <entity class term>
+  {<qualifying clause>| }
+is by definition calculated as
+<expression>.
+""" ;
+    ns1:usesSubtemplate ns1:S12,
+        ns1:S14 .
+
+ns1:T17 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T17" ;
+    ns1:text """<literal 1>
+is by definition {approximately | } equal to
+<literal 2>.
+""" .
+
+ns1:T18 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T18" ;
+    ns1:text """A valid <term>
+is by definition composed of
+<format definition>.
+""" ;
+    ns1:usesSubtemplate ns1:S19 .
+
+ns1:T19 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T19" ;
+    ns1:text """Each <transaction signifier>
+must {specify|contain} <cardinality> <data item term>
+  {{in| for} {each|the} <subform term> {(if any)| }
+  {<qualifying clause>| } | }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S14,
+        ns1:S3,
+        ns1:S8 .
+
+ns1:T2 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T2" ;
+    ns1:text """{A|An|The} <operative rule statement subject>
+must not <rule statement predicate>
+{{if|unless} <conditional clause>|}.
+""" ;
+    ns1:usesSubtemplate ns1:S1,
+        ns1:S13 .
+
+ns1:T20 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T20" ;
+    ns1:text """Each <transaction signifier>
+must
+{({if |unless} <conditional clause>) | }
+specify whether {it |{the |each} <term>
+  {<qualifying clause>| }}
+<verb phrase> [<object>, or].
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S13,
+        ns1:S14,
+        ns1:S8 .
+
+ns1:T21 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T21" ;
+    ns1:text """Each <transaction signifier>
+must
+{({if |unless} <conditional clause>) | }
+specify whether {or not| } {it |{the |each} <term>
+  {<qualifying clause>| }}
+<verb phrase> {<object>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S13,
+        ns1:S14,
+        ns1:S8 .
+
+ns1:T22 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T22" ;
+    ns1:text """Each <transaction signifier>
+must {specify|contain}
+  {{in| for} {each|the} <subform term> {(if any)| }
+  {<qualifying clause>| } | }
+  {a|an} <data item term 1>, {a|an} <data item term 2>
+  {, or|but not} both
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S14,
+        ns1:S8 .
+
+ns1:T23 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T23" ;
+    ns1:text """Each <transaction signifier>
+must
+{({if |unless} <conditional clause>) | }
+{specify |contain}
+  {{in| for} {each|the} <subform term> {(if any)| }
+  {<qualifying clause>| } | }
+  <cardinality> of the following:
+  [<data item term>, or].
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S14,
+        ns1:S3,
+        ns1:S8 .
+
+ns1:T24 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T24" ;
+    ns1:text """{A|An} <transaction signifier>
+must not {specify |contain} a <data item term>
+  {{in | for} {any|the} <subform term> {(if any)| }
+  {<qualifying clause>| } | }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S14,
+        ns1:S8 .
+
+ns1:T25 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T25" ;
+    ns1:text """{A|An} <transaction signifier>
+must not {specify |contain} more than <positive integer>
+  <data item term>
+  {{in | for} {any one|the} <subform term> {(if any)| }
+  {<qualifying clause>| } | }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S14,
+        ns1:S8 .
+
+ns1:T26 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T26" ;
+    ns1:text """The number of <data item term 1>
+  {specified|contained}
+  {{in| for} {the|each} <subform term> {(if any) | } | }
+  in each <transaction signifier>
+must be {{no|} {more|less} than|equal to} the <data item term 2>
+  {<qualifying clause>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S14,
+        ns1:S8 .
+
+ns1:T28 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T28" ;
+    ns1:text """{The|Each} combination of [<data item term 1>, and] {(if any)| }
+  specified {{in| for} {the|each} <subform term> {(if any)| } | }
+  in each <transaction signifier>
+must be one of the combinations of [<data item term 2>, and]
+  {<qualifying clause>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S14,
+        ns1:S8 .
+
+ns1:T29 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T29" ;
+    ns1:text """{The|Each} <data item term> {(if any)| }
+  specified {{in| for} {the|each} <subform term> {(if any)| } | }
+  in each <transaction signifier>
+must be <inequality operator> <object> {and <inequality operator> <object>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S13,
+        ns1:S6,
+        ns1:S8 .
+
+ns1:T3 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T3" ;
+    ns1:text """{Each|The} <operative rule statement subject>
+may <rule statement predicate>
+only <conditional conjunction> <conditional clause>.
+""" ;
+    ns1:usesSubtemplate ns1:S1,
+        ns1:S13 .
+
+ns1:T30 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T30" ;
+    ns1:text """{The|Each} <data item term> {(if any)| }
+  specified {{in| for} {the|each} <subform term> {(if any)| } | }
+  in each <transaction signifier>
+must be <equality operator> <object>
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S13,
+        ns1:S7,
+        ns1:S8 .
+
+ns1:T31 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T31" ;
+    ns1:text """{The|Each} <data item term 1> {(if any)| }
+  <verb part> {the <subform term 1> {(if any)| }
+  in|} each <transaction signifier 1>
+  {<qualifying clause 1>| }
+must be different from the <data item term 1>
+  <verb part> {{the |any other} <subform term 1> {(if any)| }
+  in| } {that |any other} <transaction signifier 1>
+  {<qualifying clause 2>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S9 .
+
+ns1:T32 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T32" ;
+    ns1:text """{The|Each} combination of [<data item term 1>, and] {(if any)| }
+  <verb part> {the <subform term 1> {(if any)| }
+  in| } each <transaction signifier 1>
+  {<qualifying clause 1>| }
+must be different from the combination of [<data item term 1>, and]
+  <verb part> {{the|any other} <subform term 1> {(if any) | }
+  in| } {that |any other} <transaction signifier 1>
+  {<qualifying clause 2>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S9 .
+
+ns1:T33 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T33" ;
+    ns1:text """{The|Each} set of <data item term 1> {(if any)| }
+  <verb part> {the <subform term 1> {(if any)| }
+  in|} each <transaction signifier 1>
+  {<qualifying clause 1>| }
+must be different from the set of <data item term 1>
+  <verb part> {{the |any other} <subform term 1> {(if any)| }
+  in| } {that |any other} <transaction signifier 1>
+  {<qualifying clause 2>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S9 .
+
+ns1:T34 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T34" ;
+    ns1:text """{The|Each} combination of [<data item term>, and] {(if any)| }
+  specified {{in| for} {the|each} <subform term> {(if any)| } | }
+  in each <transaction signifier>
+  {<qualifying clause>| }
+must be such that <conditional clause 1>
+{{if |unless} <conditional clause 2>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S14,
+        ns1:S8 .
+
+ns1:T35 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T35" ;
+    ns1:text """The <set function> of {the| } <data item term> {(if any)| }
+  specified {{in| for} {the|each} <subform term> {(if any)| } | }
+  in each <transaction signifier>
+  {<qualifying clause>| }
+must be {<inequality operator>|<equality operator>} <object>
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S13,
+        ns1:S14,
+        ns1:S5,
+        ns1:S6,
+        ns1:S7,
+        ns1:S8 .
+
+ns1:T36 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T36" ;
+    ns1:text """{The|Each} set of <data item term> {(if any)| }
+  specified {{in| for} {the|each} <subform term> {(if any)| } | }
+  in each <transaction signifier>
+  {<qualifying clause 1>| }
+must {be {the same as| different from} |include} the set of <term>
+  {<qualifying clause 2>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S8 .
+
+ns1:T37 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T37" ;
+    ns1:text """{The|Each} <time period term 1> {(if any)| }
+  specified {{in| for} {the|each} <subform term 1> {(if any)| } | }
+  in each <transaction signifier 1>
+  {<qualifying clause 1>| }
+must not overlap the <time period term 1>
+  specified {{in| for} {the|each} <subform term 1> {(if any)| } | }
+  in any other <transaction signifier 1>
+  {<qualifying clause 2>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13 .
+
+ns1:T38 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T38" ;
+    ns1:text """Each <time period term 1>
+  within the <time period term 2> {(if any)| }
+  specified {{in| for} {the|each} <subform term 1> {(if any)| } | }
+  in each <transaction signifier 1>
+  {<qualifying clause 1>| }
+must be within the <time period term 3>
+  specified {{in| for} {the|each} <subform term 2> {(if any)| } | }
+  in <cardinality> <transaction signifier 2>
+  {<qualifying clause 2>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S3 .
+
+ns1:T39 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T39" ;
+    ns1:text """{The|Each} <data item term 1> {(if any)| }
+  specified {{in| for} {the|each} <subform term 1> {(if any)| } | }
+  in each <transaction signifier 1>
+must be different from the <data item term 1>
+  specified {{in| for} {the|each} <subform term 1> {(if any)| } | }
+  in the latest of the earlier <transaction signifier 1>
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13 .
+
+ns1:T4 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T4" ;
+    ns1:text """{Each|The} <operative rule statement subject>
+must
+{({if|unless} <conditional clause>)|}
+<rule statement predicate>.
+""" ;
+    ns1:usesSubtemplate ns1:S1,
+        ns1:S13 .
+
+ns1:T40 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T40" ;
+    ns1:text """{The|Each} combination of [<data item term 1>, and] {(if any)| }
+  specified {{in| for} {the|each} <subform term 1> {(if any)| } | }
+  in each <transaction signifier 1>
+must be different from the combination of [<data item term 1>, and]
+  specified {{in| for} {the|each} <subform term 1> {(if any)| } | }
+  in the latest of the earlier <transaction signifier 1>
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13 .
+
+ns1:T41 a ns1:Template ;
+    ns1:explanation """Much the same conditions apply to the use of each option or placeholder as in template T27. Note that, if only one day of the week is permitted, use <literal 1>, otherwise list the days of the week separated by commas (with the last two day names in the list separated by ‘or’ or, if adhering to U.S. punctuation conventions, a comma and ‘or’);
+The same conditions also apply as in template T27 regarding the fact types that should be present in the fact model.
+""" ;
+    ns1:id "T41" ;
+    ns1:text """{The|Each} <data item term> {(if any)| }
+  specified {{in| for} {the|each} <subform term> {(if any)| } | }
+  in each <transaction signifier>
+must be a {<term>|<literal 1>| [<literal 2>, or]}
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S8,
+        ns1:T27 .
+
+ns1:T42 a ns1:Template ;
+    ns1:explanation """1. <spatial term 1> is the name of the spatial data item whose values are constrained;
+2. if ‘must’ is not followed by ‘not’, ‘Each’ is required if that data item can appear more than once in an instance of the transaction or subform, whereas ‘The’ is required if that data item can appear only once in an instance of the transaction or subform;
+3. if ‘must’ is followed by ‘not’, ‘A’ or ‘An’ is required;
+4. ‘(if any)’ is required if and only if the data item is optional;
+5. the <spatial operator> placeholder can be replaced by anything defined in the subtemplate.
+""" ;
+    ns1:id "T42" ;
+    ns1:text """{The|Each|A|An} <spatial term 1> {(if any)| }
+  <qualifying clause 1>
+must {not| } <spatial operator> the <spatial term 2>
+  <qualifying clause 2>
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S20 .
+
+ns1:T43 a ns1:Template ;
+    ns1:explanation """Much the same conditions apply to the use of each option or placeholder as in template T27. In addition:
+1. ‘represented using’ should be included in the rule statement if the data type is one that admits different representations: for example, the same date can be represented as ‘25/12/2011’, ‘12/25/2011’, or ‘25 December 2011’;
+2. <term> must be defined in a standard format definition. The same conditions also apply as in template T27 regarding the fact types that should be present in the fact model.
+""" ;
+    ns1:id "T43" ;
+    ns1:text """The <data item term> {(if any)| }
+  specified {{in| for} {the|each} <subform term> {(if any)| } | }
+  in each <transaction signifier>
+must be {represented using| } a valid <term>
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S8,
+        ns1:T27 .
+
+ns1:T44 a ns1:Template ;
+    ns1:explanation """<transaction signifier 1> is the term used for the transaction (paper or electronic form or message) or persistent data record which is not allowed to be updated while <transaction signifier 2> is the term used for those objects to which <transaction signifier 1> refers; options for <transaction signifier> are listed in subtemplate S8; There should be a fact type connecting the principal term in each transaction signifier, although the verb phrase in that fact type does not appear in this type of rule statement.
+""" ;
+    ns1:id "T44" ;
+    ns1:text """{A|An} <transaction signifier 1>
+must not be transferred
+  from one <transaction signifier 2> to another <transaction signifier 2>
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13 .
+
+ns1:T45 a ns1:Template ;
+    ns1:explanation """Much the same conditions apply to the use of each option or placeholder in this template as in template T27. In addition, the term ‘data item’ can be used in place of the <data item term> placeholder.
+The same conditions that apply in template T27 regarding the fact types that should be present in the fact model also apply to this template, except when ‘data item’ is used in place of the <data item term> placeholder.
+""" ;
+    ns1:id "T45" ;
+    ns1:text """{The|A|An} <data item term> {(if any)| }
+  {{in |for} {any|the} <subform term> {(if any)| } | }
+  {in|of} a <transaction signifier>
+must not be updated
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S8,
+        ns1:T27 .
+
+ns1:T46 a ns1:Template ;
+    ns1:explanation """Much the same conditions apply to the use of each option or placeholder as in template T27.
+if the rule covers only transitions to a single category, use <literal 1>, otherwise list the categories separated by commas (with the last two categories in the list separated by ‘or’ or, if adhering to U.S. punctuation conventions, a comma and ‘or’).
+""" ;
+    ns1:id "T46" ;
+    ns1:text """The <data item term> {(if any)| }
+  {{in |for} {any|the} <subform term> {(if any)| } | }
+  {in|of} a <transaction signifier>
+may be updated to {<literal 1>| [<literal 2>, or]}
+only if <conditional clause>.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S8,
+        ns1:T27 .
+
+ns1:T47 a ns1:Template ;
+    ns1:explanation """Much the same conditions apply to the use of each option or placeholder as in template T27.
+The same conditions also apply as in template T27 regarding the fact types that should be present in the fact model.
+""" ;
+    ns1:id "T47" ;
+    ns1:text """The <data item term> {(if any)| }
+  {{in| for} {any|the} <subform term> {(if any)| } | }
+  {in |of} a <transaction signifier>
+must not be {increased|decreased}
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S8,
+        ns1:T27 .
+
+ns1:T48 a ns1:Template ;
+    ns1:explanation """Rule statements in which the subject is the term signifying the process or other activity, such as R385, R386, and R389.
+""" ;
+    ns1:id "T48" ;
+    ns1:text """{The| } <process term> {of | for} {a|an} <object term>
+  {<qualifying clause>| }
+{must {not| } occur|may occur only}
+<time restriction 1> {{and| or} <time restriction 2>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S14 .
+
+ns1:T49 a ns1:Template ;
+    ns1:explanation """Rule statements in which the subject is either:
+a. the term signifying the object of the process or other activity, such as R387, R388, or R390, or
+b. the term signifying the party or device performing the process or other activity.
+""" ;
+    ns1:id "T49" ;
+    ns1:text """{Each|A|An} <term>
+  {<qualifying clause 1>| }
+{must {not| } <verb phrase 1> {<object 1>| }
+  {<qualifying clause 2>| } |
+may <verb phrase 2> {<object 2>| }
+  {<qualifying clause 3>| } only}
+<time restriction 1> {{and| or} <time restriction 2>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13 .
+
+ns1:T5 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T5" ;
+    ns1:text """{Each|The} <operative rule statement subject>
+may <verb phrase>
+only <qualified list>.
+""" ;
+    ns1:usesSubtemplate ns1:S1 .
+
+ns1:T50 a ns1:Template ;
+    ns1:explanation """1. <subject term> is the term used for the parties or things that are the focus of the activity;
+2. <qualifying clause> is used if not every instance of <subject term> is subject to the rule; the options for <qualifying clause> are listed in subtemplate S14;
+3. <verb phrase> is followed by <object> if transitive (e.g., ‘board’, ‘undergo’) but not if intransitive (e.g., ‘be deleted’);
+4. <time restriction> is used if the activity is prohibited unless some other activity or event has previously occurred, whereas ‘if <conditional clause>’ is used if the activity is prohibited unless some prerequisite condition exists; the options for <time restriction> are listed in subtemplate S21, while the options for <conditional clause> are listed in subtemplate S13.
+""" ;
+    ns1:id "T50" ;
+    ns1:text """{A|An} <subject term>
+  {<qualifying clause>| }
+may <verb phrase> {<object>| }
+only {<time restriction>| if <conditional clause>}.
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S13,
+        ns1:S14,
+        ns1:S21 .
+
+ns1:T51 a ns1:Template ;
+    ns1:explanation """1. <subject term> is the term used for the parties or things that are the focus of the activity;
+2. <qualifying clause> is used if not every instance of <subject term> is subject to the rule; the options for <qualifying clause> are listed in subtemplate S14;
+3. <verb phrase> is followed by <object> if transitive (e.g., ‘board’, ‘undergo’) but not if intransitive (e.g., ‘be deleted’);
+4. the options for <conditional clause> are listed in subtemplate S13.
+""" ;
+    ns1:id "T51" ;
+    ns1:text """{A|An} <subject term>
+  {<qualifying clause>| }
+must not <verb phrase> {<object>| }
+if <conditional clause>.
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S13,
+        ns1:S14 .
+
+ns1:T52 a ns1:Template ;
+    ns1:explanation """1. <actor term> is the term signifying the business process or device;
+2. <verb phrase> (and <object>, if present) defines the action to be taken in the situation defined by <qualifying clause> or <conditional clause>.
+""" ;
+    ns1:id "T52" ;
+    ns1:text """Each <actor term>
+must <verb phrase> {<object>| }
+  {<qualifying clause>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S13,
+        ns1:S14 .
+
+ns1:T53 a ns1:Template ;
+    ns1:explanation """1. <party signifier 1> is a generic term signifying all parties covered by the rule, such as ‘person’, ‘employee’, or ‘organization’;
+2. the same term must be substituted in place of each <party signifier 1>;
+3. <qualifying clause> is used if the rule governs some proper subset of the parties signified by <party signifier 1>; the options for a <qualifying clause> are listed in subtemplate S14;
+4. <predicate 1> signifies the restricted activity or role;
+5. ‘the <attribute signifier> of ’ is used if some attribute of a party qualifies that party to perform the activity or play the role;
+6. <predicate 2> signifies the value of <attribute signifier>, if used, or some relationship in which a party must participate in order to qualify for the activity or role.
+""" ;
+    ns1:id "T53" ;
+    ns1:text """A <party signifier 1>
+  {<qualifying clause>| }
+may <predicate 1>
+only if {the <attribute signifier> of| } that <party signifier 1>
+  <predicate 2>.
+""" ;
+    ns1:usesSubtemplate ns1:S14 .
+
+ns1:T54 a ns1:Template ;
+    ns1:explanation """1. <party signifier 1> is a generic term signifying all parties covered by the rule, such as ‘person’, ‘employee’, or ‘organization’;
+2. the same term must be substituted in place of each <party signifier 1>;
+3. <qualifying clause 1> defines one of the activities while <qualifying clause 2> defines the other; the options for a <qualifying clause> are listed in subtemplate S14.
+""" ;
+    ns1:id "T54" ;
+    ns1:text """The <party signifier 1>
+  <qualifying clause 1>
+must {not| } be {the same|one of the} <party signifier 1>
+  <qualifying clause 2>
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13 .
+
+ns1:T55 a ns1:Template ;
+    ns1:explanation """These templates have the following important options and placeholders:
+1. <information signifier> is the term signifying the information item to which access is restricted;
+2. <qualifying clause> is used to specify precisely which instances of that information item are subject to restricted access;
+3. <information access process> defines the form of access that is restricted; the <information access process> placeholder can be replaced by anything defined in the following subtemplate.
+""" ;
+    ns1:id "T55" ;
+    ns1:text """{The|A|An} <information signifier>
+  <qualifying clause>
+may be <information access process> by
+only {<object 1>| [<object 2>, or]}
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S14,
+        ns1:S22 .
+
+ns1:T56 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T56" ;
+    ns1:text """{The|A|An| } <responsibility signifier>
+  {<qualifying clause 1>| }
+must <verb phrase> {the |a|an} <party signifier>
+  {<qualifying clause 2>| }
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13 .
+
+ns1:T6 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T6" ;
+    ns1:text """{A|An|The|} <definitional rule statement subject>
+  {<qualifying clause>|}
+<verb phrase> by definition
+<definition>.
+""" ;
+    ns1:usesSubtemplate ns1:S14 .
+
+ns1:T7 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T7" ;
+    ns1:text """{A|An} <term 1>
+  {of {a|an} <term 2>| }
+is by definition
+{a|an|the} <term 3>
+  <qualifying clause>.
+""" ;
+    ns1:usesSubtemplate ns1:S14 .
+
+ns1:T8 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T8" ;
+    ns1:text """{A|An} <term 1>
+  {of {a|an} <term 2>| }
+is by definition
+[<article> <term 3>, or]
+  {of that <term 2>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S2 .
+
+ns1:T9 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T9" ;
+    ns1:text """{<literal 1>|{A|An} <term 1>
+  {of {a|an} <term 2>| }}
+is by definition
+{<literal 2>|
+[<literal 3>, or] from a <literal 4> to the following <literal 5>}.
+""" .
+
+ns1:S10 a ns1:Subtemplate ;
+    ns1:explanation """A predicate is whatever may follow a subject in a clause.
+""" ;
+    ns1:id "S10" ;
+    ns1:text """<predicate>::=
+{{<verb phrase>| is {<equality operator>|<inequality operator>}}
+  <object>|
+<verb phrase> {[<object>, and] | [<object>, or] | }}
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S6,
+        ns1:S7 .
+
+ns1:S15 a ns1:Subtemplate ;
+    ns1:explanation "" ;
+    ns1:id "S15" ;
+    ns1:text """<and-qualifying clause>::=
+{that |who}
+{[<verb phrase> {<object>| } and]|
+is [<verb part> {<object>| } and]
+<verb phrase> [<object> and]}
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S9 .
+
+ns1:S16 a ns1:Subtemplate ;
+    ns1:explanation "" ;
+    ns1:id "S16" ;
+    ns1:text """<both-and-qualifying clause>::=
+{that |who}
+{both <verb phrase> {<object>| } and <verb phrase> {<object>| } |
+{is |are} both <verb part> {<object>| } and <verb part> {<object>| } |
+<verb phrase> both <object> and <object>}
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S9 .
+
+ns1:S17 a ns1:Subtemplate ;
+    ns1:explanation "" ;
+    ns1:id "S17" ;
+    ns1:text """<or-qualifying clause>::=
+{that |who}
+{[<verb phrase> {<object>| } or] |
+is [<verb part> {<object>| } or]
+<verb phrase> [<object> or]}
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S9 .
+
+ns1:S18 a ns1:Subtemplate ;
+    ns1:explanation "" ;
+    ns1:id "S18" ;
+    ns1:text """<either-or-qualifying clause>::=
+{that |who}
+{either <verb phrase> {<object>|} or <verb phrase> {<object>| } |
+{is |are} either <verb part> {<object>|} or <verb part> {<object>| } |
+<verb phrase> either <object> or <object>}
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S9 .
+
+ns1:S19 a ns1:Subtemplate ;
+    ns1:explanation """The <format definition> placeholder can be replaced by anything defined in the subtemplate.
+""" ;
+    ns1:id "S19" ;
+    ns1:text """<format definition>::=
+{{exactly|at least |up to} <positive integer 1>|
+from <positive integer 2> to <positive integer 3>} <term>
+{followed by <format definition>| }
+""" .
+
+ns1:S20 a ns1:Subtemplate ;
+    ns1:explanation """The <spatial operator> placeholder can be replaced by anything defined in the subtemplate.
+""" ;
+    ns1:id "S20" ;
+    ns1:text """<spatial operator>::=
+{overlap|be within|enclose|span|intersect|meet|be on}
+""" .
+
+ns1:S21 a ns1:Subtemplate ;
+    ns1:explanation """Note that the word 'after' may be used as a conjunction (in which case it is shown as 'after') or a preposition (in which case it is shown as 'after'). This is also true of 'before' and 'until'. Other words and phrases operate only as one or the other: for example, 'while' operates only as a conjunction, while 'during', 'within', 'earlier than', and 'later than' operate only as prepositions.
+""" ;
+    ns1:id "S21" ;
+    ns1:text """<time restriction>::=
+{at any time| }
+{{before|after|during|until|within|{no|} {earlier|later} than} <object>| }
+{{before|after|during|until|within|on} <object>|
+{before|after|while|until} <conditional clause>}
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S13 .
+
+ns1:S22 a ns1:Subtemplate ;
+    ns1:explanation """<information access process> defines the form of access that is restricted.
+""" ;
+    ns1:id "S22" ;
+    ns1:text """<information access process>::=
+{viewed|created|updated|deleted}
+""" .
+
+ns1:S12 a ns1:Subtemplate ;
+    ns1:explanation """An expression is a verbal statement of a calculation.
+""" ;
+    ns1:id "S12" ;
+    ns1:text """<expression>::=
+{<object>|
+<set function> of {<determiner>| } <term> {<qualifying clause>| } |
+<expression> {plus|minus|multiplied by|divided by} <expression>|
+{sum|product} of [<expression>, and] |
+{square|cube} {root |} of <expression>}
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S14,
+        ns1:S4,
+        ns1:S5 .
+
+ns1:S2 a ns1:Subtemplate ;
+    ns1:explanation "" ;
+    ns1:id "S2" ;
+    ns1:text """<article>::={a |an|the}
+""" .
+
+ns1:S4 a ns1:Subtemplate ;
+    ns1:explanation """One or more determiners can be used before a noun to provide some information as to which (or how many) instances of the noun's concept are being referred to.
+The most commonly used determiners are articles.
+Specific determiners are used to limit the noun to referring only to a specific instance or instances.
+There is an infinite set of ordinal numbers: 'first', 'second', 'third', etc. Any of these may be used between 'the' and a noun to indicate which member of some sequence is referred to, as in “the first stop”. There are other words or phrases that may be used in a similar way.
+General determiners limit the number of instances referred to by a noun without being specific as to which instance or instances are referenced. The indefinite articles ('a' and 'an') are general determiners, as are also:
+1. the cardinal numbers ('one', 'two', 'ten', etc.) and various other words defining how many instances are involved;
+2. the quantifiers 'all', 'both', 'every', 'each', 'any', 'no', etc.;
+3. 'another', 'other' (but not 'the other', which is a specific determiner);
+4. 'either', 'neither'.
+There is an infinite set of cardinal numbers: 'one', 'two', 'three', etc. Any of these may be preceded by one of the following:
+1. 'exactly' to express a more rigorous statement as to how many instances are involved;
+2. 'at least' or 'from', to express the minimum number of instances involved;
+3. 'at most' (or 'up to'), to similarly express the maximum number of instances involved.
+""" ;
+    ns1:id "S4" ;
+    ns1:text """<determiner>::=
+{<article>|each|that |those|
+<cardinality>|at most <positive integer>|
+the {{first | last} or only|second or any subsequent|previous|next|same}|
+any {other |more}}
+""" ;
+    ns1:usesSubtemplate ns1:S2,
+        ns1:S3 .
+
+ns1:S5 a ns1:Subtemplate ;
+    ns1:explanation """A set function is any scalar numeric property of a set of data items.
+""" ;
+    ns1:id "S5" ;
+    ns1:text """<set function>::=
+{number |sum| total |maximum|minimum|average|mean|median|
+latest | earliest}
+""" .
+
+ns1:S7 a ns1:Subtemplate ;
+    ns1:explanation "" ;
+    ns1:id "S7" ;
+    ns1:text """<equality operator>::=
+{the same as| different from|equal to|unequal to}
+""" .
+
+ns1:S6 a ns1:Subtemplate ;
+    ns1:explanation """An inequality operator in a rule statement can be any of the following:
+1. 'more than', 'less than', 'later than', 'earlier than', 'no more than', 'no less than', 'no later than', 'no earlier than';
+2. 'at least <literal> more than', 'at most <literal> more than', 'at least <literal> later than', 'at most <literal> later than';
+3. 'later than <literal> after', 'earlier than <literal> after', 'later than <literal> before', 'earlier than <literal> before'.
+""" ;
+    ns1:id "S6" ;
+    ns1:text """<inequality operator>::=
+{{no|} {more|less | later | earlier} than|
+at {least |most} <literal> {more| later} than|
+{no|} {later | earlier} than <literal> {after |before}}
+""" .
+
+ns1:S1 a ns1:Subtemplate ;
+    ns1:explanation "" ;
+    ns1:id "S1" ;
+    ns1:text """<operative rule statement subject>::=
+{<term>|combination of [<term>, and]|set of <term>}
+  {<qualifying clause>|}
+""" ;
+    ns1:usesSubtemplate ns1:S14 .
+
+ns1:S3 a ns1:Subtemplate ;
+    ns1:explanation "" ;
+    ns1:id "S3" ;
+    ns1:text """<cardinality>::=
+{exactly|at least {<positive integer 1> and at most| }}
+<positive integer 2>
+""" .
+
+ns1:T27 a ns1:Template ;
+    ns1:explanation "" ;
+    ns1:id "T27" ;
+    ns1:text """{The|Each} <data item term> {(if any)| }
+  specified {{in| for} {the|each} <subform term> {(if any)| } | }
+  in each <transaction signifier>
+must be
+  {{other than| } one of the <term> <qualifying clause>| [<literal>, or]}
+{{if |unless} <conditional clause>| }.
+""" ;
+    ns1:usesSubtemplate ns1:S13,
+        ns1:S14,
+        ns1:S8 .
+
+ns1:S9 a ns1:Subtemplate ;
+    ns1:explanation """A verb part may be used wherever 'is' or 'be' may be dropped from a verb phrase.
+""" ;
+    ns1:id "S9" ;
+    ns1:text """<verb part>::=
+{<participle>|<adjective>| } <preposition>
+""" .
+
+ns1:S11 a ns1:Subtemplate ;
+    ns1:explanation """An object is whatever may follow a verb phrase.
+""" ;
+    ns1:id "S11" ;
+    ns1:text """<object>::=
+{{<determiner>|the <set function> of {<determiner>| } | } <term>
+  {<qualifying clause>| } |
+{<determiner>| } <literal>}
+""" ;
+    ns1:usesSubtemplate ns1:S14,
+        ns1:S4,
+        ns1:S5 .
+
+ns1:S8 a ns1:Subtemplate ;
+    ns1:explanation """A transaction signifier is either a term or a reference to a combination of terms, possibly qualified.
+""" ;
+    ns1:id "S8" ;
+    ns1:text """<transaction signifier>::=
+{<term>|{record of a| } combination of [<term>, and]}
+  {<qualifying clause>| }
+""" ;
+    ns1:usesSubtemplate ns1:S14 .
+
+ns1:S14 a ns1:Subtemplate ;
+    ns1:explanation """A qualifying clause (also known as a restrictive relative clause) can be used after a term in two ways:
+1. Following the subject term of a rule statement, a qualifying clause restricts the scope of that rule statement to a subset of the set of objects signified by that term, rather than the set of all objects signified by that term.
+2. Following any other term in a rule statement, a qualifying clause makes any stated constraint more specific than if the qualifying clause were absent.
+Thus any of the following can be substituted in place of a <qualifying clause> placeholder:
+1. 'that' or 'who' followed by a verb phrase and an optional object (see subtemplate S11): for example, 'that includes an international flight';
+2. a verb part (see subtemplate S9) followed by an object: for example, 'specified in a real property transaction';
+3. 'other than' followed by either
+  a. an object, or
+  b. a list of objects, the last two objects in the list separated by 'or' (or a comma and 'or' if adhering to U.S. punctuation standards) and each other pair of objects in the list separated by a comma;
+4. a conditional clause (see subtemplate S13) preceded by either
+  a. a preposition followed by 'which' or 'whom', or
+  b. 'whose';
+5. 'that' or 'who' followed by a verb phrase, 'that', 'if', or 'whether', and a conditional clause;
+6. a qualifying clause involving multiple criteria separated by 'and' or 'or'.
+""" ;
+    ns1:id "S14" ;
+    ns1:text """<qualifying clause>::=
+{{that |who} <verb phrase> {<object>| } |
+<verb part> <object>|
+other than {<object>| [<object>, or]} |
+{<preposition> {which|whom}|whose} <conditional clause>|
+{that |who} <verb phrase> {that | if |whether} <conditional clause>|
+<and-qualifying clause>|
+<or-qualifying clause>|
+<both-and-qualifying clause>|
+<either-or-qualifying clause>}
+""" ;
+    ns1:usesSubtemplate ns1:S11,
+        ns1:S13,
+        ns1:S15,
+        ns1:S16,
+        ns1:S17,
+        ns1:S18,
+        ns1:S9 .
+
+ns1:S13 a ns1:Subtemplate ;
+    ns1:explanation """Conditional clauses can be used after conditional conjunctions to restrict the scope of a rule statement.
+""" ;
+    ns1:id "S13" ;
+    ns1:text """<conditional clause>::=
+{{<determiner> <term> {<qualifying clause>| } |<expression>| it}
+{<predicate>| [<predicate> and]| [<predicate> or]} |
+[<conditional clause> and] | [<conditional clause> or]}
+""" ;
+    ns1:usesSubtemplate ns1:S10,
+        ns1:S12,
+        ns1:S14,
+        ns1:S4 .
+

@@ -16,6 +16,8 @@ instructor
 # llama-index-graph-stores-neo4j
 anthropic
 google-generativeai
+tiktoken
+humanize
 
 # Graph and RDF libraries
 agraph-python

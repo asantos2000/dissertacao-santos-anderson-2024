@@ -1,13 +1,42 @@
 
-import json
 import os
+import json
 import time
 import re
 import glob
 import yaml
 from datetime import datetime
+from pathlib import Path
 
-DEFAULT_CONFIG_DIR: str = '../config.yaml' # Google drive: "/content/drive/MyDrive/cfr2sbvr/config.yaml
+DEFAULT_CONFIG_DIR: str = '../config.yaml'  # Google drive: "/content/drive/MyDrive/cfr2sbvr/config.yaml"
+
+def _get_sorted_file_info(file_dir: str, file_prefix: str, extension: str):
+    """
+    Helper function to retrieve and sort file information based on a specific prefix and extension.
+
+    Args:
+        file_dir (str): Directory to search for files.
+        file_prefix (str): Prefix for the filenames.
+        extension (str): File extension.
+
+    Returns:
+        list: Sorted list of file information dictionaries containing 'filename', 'date', and 'number' keys.
+    """
+    path = Path(file_dir)
+    path.mkdir(parents=True, exist_ok=True)
+
+    files = list(path.glob(f"{file_prefix}-*.{extension}"))
+    file_info_list = []
+
+    pattern = re.compile(rf'^{file_prefix}-(\d{{4}}-\d{{2}}-\d{{2}})-(\d+)\.{extension}$')
+    for filepath in files:
+        match = pattern.match(filepath.name)
+        if match:
+            date_str = match.group(1)
+            number = int(match.group(2))
+            file_info_list.append({'filename': filepath.name, 'date': date_str, 'number': number})
+
+    return sorted(file_info_list, key=lambda x: (x['date'], x['number']), reverse=True)
 
 def get_next_filename(file_dir: str, file_prefix: str, extension: str) -> str:
     """
@@ -16,67 +45,27 @@ def get_next_filename(file_dir: str, file_prefix: str, extension: str) -> str:
 
     The filename format is: `{file_prefix}-{YYYY-MM-DD}-{N}.{extension}`,
     where `N` is an incrementing integer for files with the same date.
-
-    Args:
-        file_dir (str): The directory where the files are stored.
-        file_prefix (str): The prefix used in the filenames.
-        extension (str): The file extension (e.g., 'json', 'txt').
-
-    Returns:
-        str: The full path to the next filename in the sequence.
-
-    Example:
-        next_file = get_next_filename(DEFAULT_CHECKPOINTS_DIR, 'documents', 'json')
-        print(next_file)
-        # Output might be: ../checkpoints/documents-2024-10-19-5.json
     """
-    today_str: str = datetime.today().strftime('%Y-%m-%d')
-    path: str = file_dir
+    today_str = datetime.today().strftime('%Y-%m-%d')
+    sorted_files = _get_sorted_file_info(file_dir, file_prefix, extension)
 
-    # Ensure the directory exists
-    if not os.path.exists(path):
-        os.makedirs(path)
-
-    files = os.listdir(path)
-
-    # Create the pattern dynamically using file_prefix and extension
-    pattern = re.compile(
-        r'^' + re.escape(file_prefix) + r'-(\d{4}-\d{2}-\d{2})-(\d+)\.' + re.escape(extension) + r'$'
-    )
-
-    file_info_list = []
-
-    for filename in files:
-        match = pattern.match(filename)
-        if match:
-            date_str: str = match.group(1)
-            number: int = int(match.group(2))
-            file_info_list.append({'filename': filename, 'date': date_str, 'number': number})
-
-    if file_info_list:
-        # Sort by date and number in descending order
-        sorted_files = sorted(
-            file_info_list,
-            key=lambda x: (x['date'], x['number']),
-            reverse=True
-        )
-
-        latest_file_info = sorted_files[0]
-        latest_date: str = latest_file_info['date']
-        latest_number: int = latest_file_info['number']
-
-        if latest_date == today_str:
-            new_number: int = latest_number + 1
-        else:
-            new_number = 1
+    if sorted_files and sorted_files[0]['date'] == today_str:
+        new_number = sorted_files[0]['number'] + 1
     else:
         new_number = 1
 
-    new_filename: str = f'{file_prefix}-{today_str}-{new_number}.{extension}'
-    new_filepath: str = os.path.join(path, new_filename)
+    new_filename = f'{file_prefix}-{today_str}-{new_number}.{extension}'
+    return str(Path(file_dir) / new_filename)
 
-    return new_filepath
-
+def get_last_filename(file_dir: str, file_prefix: str, extension: str) -> str:
+    """
+    Retrieves the most recent filename based on the highest date and sequence number
+    for files with a specific prefix and extension in the specified directory.
+    """
+    sorted_files = _get_sorted_file_info(file_dir, file_prefix, extension)
+    if sorted_files:
+        return str(Path(file_dir) / sorted_files[0]['filename'])
+    return None
 
 # Load the YAML config file
 def load_config(config_file: str = None):

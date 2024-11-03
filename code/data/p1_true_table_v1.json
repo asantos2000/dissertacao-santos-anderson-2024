@@ -161,7 +161,7 @@
                         "will forward",
                         "by"
                     ],
-                    "classification": "Rule",
+                    "classification": "Operative Rule",
                     "source": "(a)(2)"
                 },
                 {
@@ -219,7 +219,7 @@
                         "forwarded",
                         "constitutes"
                     ],
-                    "classification": "Rule",
+                    "classification": "Operative Rule",
                     "source": "(a)(3)"
                 },
                 {
@@ -612,7 +612,7 @@
                         "is appropriate",
                         "upon"
                     ],
-                    "classification": "Rule",
+                    "classification": "Operative Rule",
                     "source": "(c)"
                 },
                 {
@@ -851,7 +851,7 @@
                         "is presumed to control",
                         "has"
                     ],
-                    "classification": "Rule",
+                    "classification": "Operative Rule",
                     "source": "(b)(1)(i)(A)"
                 },
                 {
@@ -879,7 +879,7 @@
                         "is presumed to control",
                         "has"
                     ],
-                    "classification": "Rule",
+                    "classification": "Operative Rule",
                     "source": "(b)(1)(ii)"
                 },
                 {
@@ -907,7 +907,7 @@
                         "is presumed to control",
                         "has"
                     ],
-                    "classification": "Rule",
+                    "classification": "Operative Rule",
                     "source": "(b)(1)(iii)(A)"
                 },
                 {
@@ -935,7 +935,7 @@
                         "is presumed to control",
                         "is"
                     ],
-                    "classification": "Rule",
+                    "classification": "Operative Rule",
                     "source": "(b)(1)(iv)"
                 },
                 {

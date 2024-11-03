@@ -1,4 +1,3 @@
----
 - section_id: '9.2'
   section_title: Definitional rules
   section_definition: 'Definitional rules constrains how we define a construct created
@@ -111,11 +110,11 @@
     section_title: Data cardinality rules
     section_definition: A data cardinality rule requires the presence or absence of
       a data item and/or places a restriction on the maximum or minimum number of
-      occurrences of a data item
+      occurrences of a data item.
     subsections:
     - section_id: 9.3.1.1
       section_title: Mandatory data rules
-      section_definition: 'A mandatory data rule mandates the presence of data:'
+      section_definition: A mandatory data rule mandates the presence of data.
       subsections:
       - section_id: 9.3.1.1.1
         section_title: Mandatory data item rules
@@ -132,7 +131,7 @@
         - T20
         - T21
       - section_id: 9.3.1.1.3
-        section_title: 'Mandatory group rules: '
+        section_title: Mandatory group rules
         section_definition: A mandatory group rule requires that at least one of a
           group of data items be present. Use T22 for two data items, and T23 for
           more than two data items.
@@ -162,7 +161,7 @@
         `<positive integer 1>` and at most `<positive integer 2>`, where `<positive
         integer 1>` is at least two.'
       templates:
-      - '19'
+      - T19
     - section_id: 9.3.1.5
       section_title: Dependent cardinality rules
       section_definition: A dependent cardinality rule mandates how many of a particular
@@ -207,9 +206,9 @@
       - T30
     - section_id: 9.3.2.4
       section_title: Uniqueness constraints
-      section_definition: AA uniqueness constraint requires that the content of a
-        data item (or combination or set of data items) be different from that of
-        the corresponding data item(s) in the same or other records or transactions;
+      section_definition: A uniqueness constraint requires that the content of a data
+        item (or combination or set of data items) be different from that of the corresponding
+        data item(s) in the same or other records or transactions;
       subsections:
       - section_id: 9.3.2.4.1
         section_title: Uniqueness constraints constraining single data items
@@ -396,8 +395,10 @@
       section_title: Activity conflict rules
       section_definition: An activity conflict rule restricts the simultaneous occurrence
         of multiple processes or other activities.
-      examples: 
+      examples:
       - R136
+      templates:
+      - T?
   - section_id: 9.4.2
     section_title: Process decision rules
     section_definition: A process decision rule determines what action a business
@@ -412,6 +413,8 @@
       apply.
     examples:
     - R138
+    templates:
+    - T?
 - section_id: '9.5'
   section_title: Party rules
   section_definition: 'Party rules (all of which are operative rules) restricts the
@@ -420,7 +423,7 @@
   subsections:
   - section_id: 9.5.1
     section_title: Party restriction rules
-    section_description: A party restriction rule places restrictions on who can perform
+    section_definition: A party restriction rule places restrictions on who can perform
       some processes or activities or play some roles, based on age, some other physical
       characteristic or capability, or training, testing, and certification in the
       appropriate skills.
@@ -428,19 +431,19 @@
     - T53
   - section_id: 9.5.2
     section_title: Role separation and binding rules
-    section_description: A role separation rule prohibits the same party from performing
+    section_definition: A role separation rule prohibits the same party from performing
       two activities.
     templates:
     - T54
   - section_id: 9.5.3
     section_title: Information access rules
-    section_description: An information access rule defines who can view, create,
-      or update particular information.
+    section_definition: An information access rule defines who can view, create, or
+      update particular information.
     templates:
     - T55
   - section_id: 9.5.4
     section_title: Responsibility rules
-    section_description: A responsibility rule defines who is responsible for performing
+    section_definition: A responsibility rule defines who is responsible for performing
       a particular process or liable for a particular fee, duty, or tax.
     templates:
     - T56
