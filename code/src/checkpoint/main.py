@@ -299,22 +299,52 @@ class DocumentProcessor:
                             self.elements_names.append(term_dict)
                             self.elements_names_set.add(signifier)
 
-    def get_unique_terms(self):
+    # def get_unique_terms(self):
+    #     """
+    #     Returns the set of unique terms found in the documents.
+
+    #     Returns:
+    #         set: Set of unique terms.
+    #     """
+    #     return self.elements_terms_set
+
+    # def get_unique_names(self):
+    #     """
+    #     Returns the set of unique names found in the documents.
+
+    #     Returns:
+    #         set: Set of unique names.
+    #     """
+    #     return self.elements_names_set
+
+    def get_unique_terms(self, doc_id=None):
         """
-        Returns the set of unique terms found in the documents.
+        Returns the set of unique terms found in the documents. If doc_id is provided,
+        returns only the unique terms for that specific document.
+
+        Args:
+            doc_id (str, optional): Identifier of the document. Defaults to None.
 
         Returns:
             set: Set of unique terms.
         """
+        if doc_id:
+            return {term["signifier"] for term in self.elements_terms if term["doc_id"] == doc_id}
         return self.elements_terms_set
 
-    def get_unique_names(self):
+    def get_unique_names(self, doc_id=None):
         """
-        Returns the set of unique names found in the documents.
+        Returns the set of unique names found in the documents. If doc_id is provided,
+        returns only the unique names for that specific document.
+
+        Args:
+            doc_id (str, optional): Identifier of the document. Defaults to None.
 
         Returns:
             set: Set of unique names.
         """
+        if doc_id:
+            return {name["signifier"] for name in self.elements_names if name["doc_id"] == doc_id}
         return self.elements_names_set
 
     def get_terms(self):

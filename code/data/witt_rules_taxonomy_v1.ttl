@@ -1,7 +1,9 @@
 @prefix ns1: <http://example.org/schema#> .
 
 ns1:T1 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """An operative rule statement is a statement of an operative rule.
+This template is too general for easy use in creating rule statements that correctly express each type of operative rule.
+""" ;
     ns1:id "T1" ;
     ns1:text """{Each|The} <operative rule statement subject>
 must <rule statement predicate>
@@ -11,7 +13,12 @@ must <rule statement predicate>
         ns1:S13 .
 
 ns1:T10 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. "{A|An} <category attribute term>" is used if that term is used for category attributes that belong to the same categorization scheme (i.e., have the same categories) irrespective of the entity or object class in which they appear;
+2. "The <category attribute term> of {a|an} <entity class term>" is used if the named category attribute of the named entity class belongs to a categorization scheme that is specific to that category attribute of that entity class;
+3. "either <literal 1> or <literal 2>" is used when there are only two categories in the categorization scheme, as in R328;
+4. "one of the following: [<literal 3>, or]" is used when there are more than two categories in the categorization scheme, as in R329: the categories are listed separated by commas (with the last two categories in the list separated by "or" or, if adhering to U.S. punctuation conventions, a comma and "or").
+""" ;
     ns1:id "T10" ;
     ns1:text """{{A|An} <category attribute term>|
 The <category attribute term>
@@ -22,7 +29,12 @@ one of the following: [<literal 3>, or]}.
 """ .
 
 ns1:T11 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <category attribute term>is the term used for the category attribute which is subject to the transition constraint;
+2. <entity class term> is the term used for the entity or object class in which the category attribute appears;
+3. if there is only one category from which the quoted transition is impossible, use <literal 1>, otherwise list the categories separated by commas (with the last two categories in the list separated by "or" or, if adhering to U.S. punctuation conventions, a comma and "or");
+4. if there is only one category to which the quoted transition is impossible, use <literal 3>, otherwise list the categories.
+""" ;
     ns1:id "T11" ;
     ns1:text """A transition
   of the <category attribute term> of {a|an} <entity class term>
@@ -33,7 +45,15 @@ impossible.
 """ .
 
 ns1:T12 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <term 1> is the term used for the complex concept;
+2. <verb phrase> is the verb phrase used for the relationship between <term 1> and <term 2>;
+3. <cardinality> defines the number of (or the minimum number of) components; <cardinality> options are listed in subtemplate S3;
+4. <term 2> is the term used for the components;
+5. "{for | in} {each|the} <term 3>" is optional:
+  a. it can be used with "each" where there is a restriction on the number of components of one type for each component of some other type: for example, a return journey (consisting of two flights) has only one departure port for each flight: in this case, <term 3> is the term used for the component of the other type (flight in this example);
+  b. it can be used with "the" where there is a restriction on the number of components of one type for a single component of some other type: for example, a one-way journey (consisting of one flight) has only one departure port for that flight: in this case, <term 3> is the term used for the component of the other type (flight in this example).
+""" ;
     ns1:id "T12" ;
     ns1:text """{A|An} <term 1>
 <verb phrase> by definition
@@ -43,7 +63,12 @@ ns1:T12 a ns1:Template ;
     ns1:usesSubtemplate ns1:S3 .
 
 ns1:T13 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following placeholders:
+1. <term 1> is the term used for the component that must match;
+2. <qualifying clause 1> defines the relationship of that component to the complex concept; the options for a <qualifying clause> are listed in subtemplate S14;
+3. <term 2> is the term used for the component that the <term 1> component must match;
+4. <qualifying clause 2> defines the relationship of the <term 2> component either to the complex concept or to the <term 1> component.
+""" ;
     ns1:id "T13" ;
     ns1:text """The <term 1>
   <qualifying clause 1>
@@ -53,7 +78,11 @@ the same as the <term 2>
 """ .
 
 ns1:T14 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following placeholders:
+1. <term 1> is the term used for the components in the set that must match;
+2. <qualifying clause 1> defines the relationship of that set of components to the complex concept; the options for a <qualifying clause> are listed in subtemplate S14;
+3. <qualifying clause 2> defines the relationship of the second set of components to the complex concept.
+""" ;
     ns1:id "T14" ;
     ns1:text """The set of <term 1>
   <qualifying clause 1>
@@ -63,7 +92,11 @@ the same as the set of <term 1>
 """ .
 
 ns1:T15 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <attribute term> is the term used for the quantitative attribute used to record the measure;
+2. "of {a|an}<entity class term>" is optional and can be used if the values of the quantitative attribute are specific to the use of that attribute by that entity class;
+3. use one or both "<inequality operator> <literal>" elements to define the minimum and/or maximum values of the attribute, or (if there is a set of discrete valid values) list them, separated by commas (with the last two values in the list separated by "or" or, if adhering to U.S. punctuation conventions, a comma and "or"); the options for an <inequality operator> are listed in subtemplate S6.
+""" ;
     ns1:id "T15" ;
     ns1:text """{The| } <attribute term>
   {of {a|an} <entity class term>| }
@@ -75,7 +108,12 @@ is by definition
     ns1:usesSubtemplate ns1:S6 .
 
 ns1:T16 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <attribute term> is the term used for the quantitative attribute for which the calculation is being defined;
+2. <entity class term> is the term used for the entity class to which the attribute belongs;
+3. <qualifying clause> is optional, to be used if the calculation does not apply to all instances of the nominated entity class; the options for <qualifying clause> are listed in subtemplate S14;
+4. the options for <expression> are listed in subtemplate S12.
+""" ;
     ns1:id "T16" ;
     ns1:text """{The| } <attribute term>
   {of | for} {a|an} <entity class term>
@@ -87,7 +125,11 @@ is by definition calculated as
         ns1:S14 .
 
 ns1:T17 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following options and placeholders:
+1. <literal 1> is a standard quantity (usually 1) together with one of the units of measurement;
+2. "approximately" is used if and only if the conversion is approximate;
+3. <literal 2> is the corresponding quantity for the other unit of measurement, together with that unit of measurement.
+""" ;
     ns1:id "T17" ;
     ns1:text """<literal 1>
 is by definition {approximately | } equal to
@@ -95,7 +137,10 @@ is by definition {approximately | } equal to
 """ .
 
 ns1:T18 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following placeholders:
+1. <term> is the term used for the type of data item;
+2. the <format definition> placeholder can be replaced by anything defined in the following subtemplate S19.
+""" ;
     ns1:id "T18" ;
     ns1:text """A valid <term>
 is by definition composed of
@@ -104,7 +149,21 @@ is by definition composed of
     ns1:usesSubtemplate ns1:S19 .
 
 ns1:T19 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; the options for <transaction signifier> are listed in subtemplate S8;
+2. <cardinality> must be one of
+  a. exactly <positive integer>,
+  b. at least <positive integer>,
+  c. at least <positive integer> and at most <positive integer>;
+3. <data item term> is the name of the required data item;
+4. "{in | for} {each|the} <subform term> {(if any)|} {<qualifying clause>| }":
+  a. this phrase is required if the data item signified by <data item term> is (if present) contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+  e. <qualifying clause> is required if and only if it is necessary to relate<subform term> back to a term in <transaction signifier>; the options for <qualifying clause> are listed in subtemplate S14;
+5. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; the options for <conditional clause> are listed in subtemplate S13.
+""" ;
     ns1:id "T19" ;
     ns1:text """Each <transaction signifier>
 must {specify|contain} <cardinality> <data item term>
@@ -118,7 +177,9 @@ must {specify|contain} <cardinality> <data item term>
         ns1:S8 .
 
 ns1:T2 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """An operative rule statement is a statement of an operative rule.
+This template is too general for easy use in creating rule statements that correctly express each type of operative rule.
+""" ;
     ns1:id "T2" ;
     ns1:text """{A|An|The} <operative rule statement subject>
 must not <rule statement predicate>
@@ -128,7 +189,16 @@ must not <rule statement predicate>
         ns1:S13 .
 
 ns1:T20 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """Rule statements for rules with two or more options.
+Rule statements for rules with a single option which may or may not be the case.
+Both these templates have the following options and placeholders:
+1. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+2. "({if |unless} <conditional clause>)" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for <conditional clause> are listed in subtemplate S13;
+3. "it" is used if and only if the subject of what is being specified by the transaction is the transaction itself and the transaction signifier contains no intervening qualifying clause (as in R343); otherwise a term is used, preceded by "the" or "each" as appropriate, and optionally followed by a qualifying clause; options for <qualifying clause> are listed in subtemplate S14;
+4. <verb phrase> is followed either by
+  a. a single <object> (in T21), or
+  b. a list of as many alternative<objects>as are required (in T20), the last two separated by "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of alternatives separated by a comma; options for <object> are listed in subtemplate S11.
+""" ;
     ns1:id "T20" ;
     ns1:text """Each <transaction signifier>
 must
@@ -143,7 +213,8 @@ specify whether {it |{the |each} <term>
         ns1:S8 .
 
 ns1:T21 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """Rule statements for rules with a single option which may or may not be the case.
+""" ;
     ns1:id "T21" ;
     ns1:text """Each <transaction signifier>
 must
@@ -158,7 +229,20 @@ specify whether {or not| } {it |{the |each} <term>
         ns1:S8 .
 
 ns1:T22 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """If there are only two data items in the group.
+Both these templates have the following options and placeholders:
+1. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record which contains the group of data; options for <transaction signifier> are listed in subtemplate S8;
+2. "{in | for} {each|the} <subform term> {(if any)|} {<qualifying clause>| }":
+  a. this phrase is required if the group of data items (signified by <data item term 1> and <data item term 2>, or by <data item term>) is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+  e. <qualifying clause>is required if and only if it is necessary to relate<subform term>back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+3. The data items in the group are specified using either
+  a. <data item term 1> and <data item term 2> (in T22), or
+  b. "[<data item term>, or]" (in T23), in which as many terms as required are listed, separated by commas except for the last two, which are separated by "or" (or a comma and "or" if U.S. punctuation standards are followed); in this case <cardinality> (options for which are listed in subtemplate S3) is used to indicate how many data items are required;
+4. "({if |unless} <conditional clause>)" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for <conditional clause> are listed in subtemplate S13.
+""" ;
     ns1:id "T22" ;
     ns1:text """Each <transaction signifier>
 must {specify|contain}
@@ -173,7 +257,8 @@ must {specify|contain}
         ns1:S8 .
 
 ns1:T23 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """If there are more than two data items in the group.
+""" ;
     ns1:id "T23" ;
     ns1:text """Each <transaction signifier>
 must
@@ -190,7 +275,19 @@ must
         ns1:S8 .
 
 ns1:T24 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+2. <data item term> is the name of the data item that must be absent;
+3. "{in | for} {any|the} <subform term> {(if any)|} {<qualifying clause>| }":
+  a. this phrase is required if the data item signified by <data item term> would (if present) be contained in a complex data item or subform;
+  b. "any" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may
+    i. appear only once in an instance of the transaction, and
+    ii. be omitted from an instance of the transaction; 
+  e. <qualifying clause>is required if and only if it is necessary to relate<subform term>back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+4. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is always required since a prohibited data rule only makes sense when applied to a subset of the governed transactions; options for <conditional clause> are listed in subtemplate S13.
+""" ;
     ns1:id "T24" ;
     ns1:text """{A|An} <transaction signifier>
 must not {specify |contain} a <data item term>
@@ -203,7 +300,19 @@ must not {specify |contain} a <data item term>
         ns1:S8 .
 
 ns1:T25 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+2. <data item term> is the name of the restricted data item;
+3. "{in | for} {any one|the} <subform term> {(if any)|} {<qualifying clause>| }":
+  a. this phrase is required if the data item signified by <data item term> is (if present) contained in a complex data item or subform;
+  b. "any one" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may
+    i. appear only once in an instance of the transaction, and
+    ii. be omitted from an instance of the transaction;
+  e. <qualifying clause>is required if and only if it is necessary to relate<subform term>back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+4. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for <conditional clause> are listed in subtemplate S13.
+""" ;
     ns1:id "T25" ;
     ns1:text """{A|An} <transaction signifier>
 must not {specify |contain} more than <positive integer>
@@ -217,7 +326,18 @@ must not {specify |contain} more than <positive integer>
         ns1:S8 .
 
 ns1:T26 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term 1> is the name of the data item for which the cardinality is constrained;
+2. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by<data item term 1>is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+3. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+4. <data item term 2> is the name of the data item whose value constrains the cardinality of the data item signified by <data item term 1>;
+5. <qualifying clause> is required if and only if it is necessary to relate <data item term 2> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+6. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
+""" ;
     ns1:id "T26" ;
     ns1:text """The number of <data item term 1>
   {specified|contained}
@@ -232,7 +352,20 @@ must be {{no|} {more|less} than|equal to} the <data item term 2>
         ns1:S8 .
 
 ns1:T28 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. "[<data item term 1>, and]" is a list of the data items whose values are constrained, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of data item names is separated with a comma;
+2. "Each" is required if the combination of data items can appear more than once in an instance of the transaction or subform, whereas "The" is required if the combination of data items can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data items are optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+c. <subform term> is the name of the complex data item or subform;
+d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. "[<data item term 2>, and]" is a list of the data items with which values of the constrained combination of data items are to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of data item names is separated with a comma;
+7. <qualifying clause> is required to relate the listed terms back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
+""" ;
     ns1:id "T28" ;
     ns1:text """{The|Each} combination of [<data item term 1>, and] {(if any)| }
   specified {{in| for} {the|each} <subform term> {(if any)| } | }
@@ -246,7 +379,20 @@ must be one of the combinations of [<data item term 2>, and]
         ns1:S8 .
 
 ns1:T29 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
+""" ;
     ns1:id "T29" ;
     ns1:text """{The|Each} <data item term> {(if any)| }
   specified {{in| for} {the|each} <subform term> {(if any)| } | }
@@ -260,7 +406,9 @@ must be <inequality operator> <object> {and <inequality operator> <object>| }
         ns1:S8 .
 
 ns1:T3 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """An operative rule statement is a statement of an operative rule.
+This template is too general for easy use in creating rule statements that correctly express each type of operative rule.
+""" ;
     ns1:id "T3" ;
     ns1:text """{Each|The} <operative rule statement subject>
 may <rule statement predicate>
@@ -270,7 +418,20 @@ only <conditional conjunction> <conditional clause>.
         ns1:S13 .
 
 ns1:T30 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
+""" ;
     ns1:id "T30" ;
     ns1:text """{The|Each} <data item term> {(if any)| }
   specified {{in| for} {the|each} <subform term> {(if any)| } | }
@@ -284,7 +445,26 @@ must be <equality operator> <object>
         ns1:S8 .
 
 ns1:T31 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13;
+9. the same term must be substituted in place of each <data item term 1>;
+10. "the <subform term 1> {(if any)|} in" and "{the |any other} <subform term 1> {(if any)|}in" are the phrases required if the data item signified by <data item term> is contained in a complex data item or subform;
+11. the same term must be substituted in place of each <subform term 1> (if used);
+12. the same term(s) and qualifying clause(s) (if any) must be substituted in place of each <transaction signifier 1>;
+13. if <qualifying clause 1> is used, <qualifying clause 2> should also be used and will generally be the same as <qualifying clause 1>;
+14. the words "any other" must appear either before the second appearance of <subform term 1> or the second appearance of <transaction signifier 1>.
+""" ;
     ns1:id "T31" ;
     ns1:text """{The|Each} <data item term 1> {(if any)| }
   <verb part> {the <subform term 1> {(if any)| }
@@ -300,7 +480,27 @@ must be different from the <data item term 1>
         ns1:S9 .
 
 ns1:T32 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13;
+9. the same term must be substituted in place of each <data item term 1>;
+10. "the <subform term 1> {(if any)|} in" and "{the |any other} <subform term 1> {(if any)|}in" are the phrases required if the data item signified by <data item term> is contained in a complex data item or subform;
+11. the same term must be substituted in place of each <subform term 1> (if used);
+12. the same term(s) and qualifying clause(s) (if any) must be substituted in place of each <transaction signifier 1>;
+13. if <qualifying clause 1> is used, <qualifying clause 2> should also be used and will generally be the same as <qualifying clause 1>;
+14. the words "any other" must appear either before the second appearance of <subform term 1> or the second appearance of <transaction signifier 1>;
+15. both lists of terms ("[<data item term 1>, and]") should in general be the same.
+""" ;
     ns1:id "T32" ;
     ns1:text """{The|Each} combination of [<data item term 1>, and] {(if any)| }
   <verb part> {the <subform term 1> {(if any)| }
@@ -316,7 +516,26 @@ must be different from the combination of [<data item term 1>, and]
         ns1:S9 .
 
 ns1:T33 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13;
+9. the same term must be substituted in place of each <data item term 1>;
+10. "the <subform term 1> {(if any)|} in" and "{the |any other} <subform term 1> {(if any)|}in" are the phrases required if the data item signified by <data item term> is contained in a complex data item or subform;
+11. the same term must be substituted in place of each <subform term 1> (if used);
+12. the same term(s) and qualifying clause(s) (if any) must be substituted in place of each <transaction signifier 1>;
+13. if <qualifying clause 1> is used, <qualifying clause 2> should also be used and will generally be the same as <qualifying clause 1>;
+14. the words "any other" must appear either before the second appearance of <subform term 1> or the second appearance of <transaction signifier 1>.
+""" ;
     ns1:id "T33" ;
     ns1:text """{The|Each} set of <data item term 1> {(if any)| }
   <verb part> {the <subform term 1> {(if any)| }
@@ -332,7 +551,20 @@ must be different from the set of <data item term 1>
         ns1:S9 .
 
 ns1:T34 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. "[<data item term 1>, and]" is a list of the data items whose values are constrained, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of data item names is separated with a comma;
+2. "Each" is required if the combination of data items can appear more than once in an instance of the transaction or subform, whereas "The" is required if the combination of data items can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data items are optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+c. <subform term> is the name of the complex data item or subform;
+d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. "[<data item term 2>, and]" is a list of the data items with which values of the constrained combination of data items are to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of data item names is separated with a comma;
+7. <qualifying clause> is required to relate the listed terms back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
+""" ;
     ns1:id "T34" ;
     ns1:text """{The|Each} combination of [<data item term>, and] {(if any)| }
   specified {{in| for} {the|each} <subform term> {(if any)| } | }
@@ -345,7 +577,21 @@ must be such that <conditional clause 1>
         ns1:S8 .
 
 ns1:T35 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
+9.Only quantitative comparisons are relevant for this type of rule statement. Options for <equality operator> are defined in subtemplate S7.
+""" ;
     ns1:id "T35" ;
     ns1:text """The <set function> of {the| } <data item term> {(if any)| }
   specified {{in| for} {the|each} <subform term> {(if any)| } | }
@@ -363,7 +609,21 @@ must be {<inequality operator>|<equality operator>} <object>
         ns1:S8 .
 
 ns1:T36 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
+9.Only quantitative comparisons are relevant for this type of rule statement. Options for <equality operator> are defined in subtemplate S7.
+""" ;
     ns1:id "T36" ;
     ns1:text """{The|Each} set of <data item term> {(if any)| }
   specified {{in| for} {the|each} <subform term> {(if any)| } | }
@@ -377,7 +637,23 @@ must {be {the same as| different from} |include} the set of <term>
         ns1:S8 .
 
 ns1:T37 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13;
+9. the same term must be substituted in place of each <time period term 1>;
+10. the same term(s) and qualifying clause(s) (if any) must be substituted in place of each <transaction signifier 1>;
+11. if <qualifying clause 1> is used, <qualifying clause 2> should also be used and will generally be the same as <qualifying clause 1>.
+""" ;
     ns1:id "T37" ;
     ns1:text """{The|Each} <time period term 1> {(if any)| }
   specified {{in| for} {the|each} <subform term 1> {(if any)| } | }
@@ -392,7 +668,21 @@ must not overlap the <time period term 1>
     ns1:usesSubtemplate ns1:S13 .
 
 ns1:T38 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13;
+9. day is the most common term to be substituted in place of <time period term 1> although any term signifying a time period may be used as required.
+""" ;
     ns1:id "T38" ;
     ns1:text """Each <time period term 1>
   within the <time period term 2> {(if any)| }
@@ -409,7 +699,21 @@ must be within the <time period term 3>
         ns1:S3 .
 
 ns1:T39 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """A single data item is involved.
+This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13;
+""" ;
     ns1:id "T39" ;
     ns1:text """{The|Each} <data item term 1> {(if any)| }
   specified {{in| for} {the|each} <subform term 1> {(if any)| } | }
@@ -422,7 +726,9 @@ must be different from the <data item term 1>
     ns1:usesSubtemplate ns1:S13 .
 
 ns1:T4 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """An operative rule statement is a statement of an operative rule.
+This template is too general for easy use in creating rule statements that correctly express each type of operative rule.
+""" ;
     ns1:id "T4" ;
     ns1:text """{Each|The} <operative rule statement subject>
 must
@@ -433,7 +739,21 @@ must
         ns1:S13 .
 
 ns1:T40 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """A combination of data items is involved.
+This template has the following important options and placeholders:
+1. "[<data item term 1>, and]" is a list of the data items whose values are constrained, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of data item names is separated with a comma;
+2. "Each" is required if the combination of data items can appear more than once in an instance of the transaction or subform, whereas "The" is required if the combination of data items can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data items are optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+c. <subform term> is the name of the complex data item or subform;
+d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. "[<data item term 2>, and]" is a list of the data items with which values of the constrained combination of data items are to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of data item names is separated with a comma;
+7. <qualifying clause> is required to relate the listed terms back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
+""" ;
     ns1:id "T40" ;
     ns1:text """{The|Each} combination of [<data item term 1>, and] {(if any)| }
   specified {{in| for} {the|each} <subform term 1> {(if any)| } | }
@@ -446,8 +766,20 @@ must be different from the combination of [<data item term 1>, and]
     ns1:usesSubtemplate ns1:S13 .
 
 ns1:T41 a ns1:Template ;
-    ns1:explanation """Much the same conditions apply to the use of each option or placeholder as in template T27. Note that, if only one day of the week is permitted, use <literal 1>, otherwise list the days of the week separated by commas (with the last two day names in the list separated by ‘or’ or, if adhering to U.S. punctuation conventions, a comma and ‘or’);
-The same conditions also apply as in template T27 regarding the fact types that should be present in the fact model.
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13;
+9. if only one day of the week is permitted, use <literal 1>, otherwise list the days of the week separated by commas (with the last two day names in the list separated by "or" or, if adhering to U.S. punctuation conventions, a comma and "or");
 """ ;
     ns1:id "T41" ;
     ns1:text """{The|Each} <data item term> {(if any)| }
@@ -462,9 +794,9 @@ must be a {<term>|<literal 1>| [<literal 2>, or]}
 
 ns1:T42 a ns1:Template ;
     ns1:explanation """1. <spatial term 1> is the name of the spatial data item whose values are constrained;
-2. if ‘must’ is not followed by ‘not’, ‘Each’ is required if that data item can appear more than once in an instance of the transaction or subform, whereas ‘The’ is required if that data item can appear only once in an instance of the transaction or subform;
-3. if ‘must’ is followed by ‘not’, ‘A’ or ‘An’ is required;
-4. ‘(if any)’ is required if and only if the data item is optional;
+2. if "must" is not followed by "not", "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. if "must" is followed by "not", "A" or "An" is required;
+4. "(if any)" is required if and only if the data item is optional;
 5. the <spatial operator> placeholder can be replaced by anything defined in the subtemplate.
 """ ;
     ns1:id "T42" ;
@@ -478,9 +810,21 @@ must {not| } <spatial operator> the <spatial term 2>
         ns1:S20 .
 
 ns1:T43 a ns1:Template ;
-    ns1:explanation """Much the same conditions apply to the use of each option or placeholder as in template T27. In addition:
-1. ‘represented using’ should be included in the rule statement if the data type is one that admits different representations: for example, the same date can be represented as ‘25/12/2011’, ‘12/25/2011’, or ‘25 December 2011’;
-2. <term> must be defined in a standard format definition. The same conditions also apply as in template T27 regarding the fact types that should be present in the fact model.
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
+9. "represented using" should be included in the rule statement if the data type is one that admits different representations: for example, the same date can be represented as "25/12/2011", "12/25/2011", or "25 December 2011";
+10. <term> must be defined in a standard format definition. The same conditions also apply as in template T27 regarding the fact types that should be present in the fact model.
 """ ;
     ns1:id "T43" ;
     ns1:text """The <data item term> {(if any)| }
@@ -494,7 +838,20 @@ must be {represented using| } a valid <term>
         ns1:T27 .
 
 ns1:T44 a ns1:Template ;
-    ns1:explanation """<transaction signifier 1> is the term used for the transaction (paper or electronic form or message) or persistent data record which is not allowed to be updated while <transaction signifier 2> is the term used for those objects to which <transaction signifier 1> refers; options for <transaction signifier> are listed in subtemplate S8; There should be a fact type connecting the principal term in each transaction signifier, although the verb phrase in that fact type does not appear in this type of rule statement.
+    ns1:explanation """Rule statements for rules governing non-transferable relationships.
+This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
 """ ;
     ns1:id "T44" ;
     ns1:text """{A|An} <transaction signifier 1>
@@ -505,8 +862,20 @@ must not be transferred
     ns1:usesSubtemplate ns1:S13 .
 
 ns1:T45 a ns1:Template ;
-    ns1:explanation """Much the same conditions apply to the use of each option or placeholder in this template as in template T27. In addition, the term ‘data item’ can be used in place of the <data item term> placeholder.
-The same conditions that apply in template T27 regarding the fact types that should be present in the fact model also apply to this template, except when ‘data item’ is used in place of the <data item term> placeholder.
+    ns1:explanation """Rule statements for other data update prohibition rules.
+This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
 """ ;
     ns1:id "T45" ;
     ns1:text """{The|A|An} <data item term> {(if any)| }
@@ -520,8 +889,20 @@ must not be updated
         ns1:T27 .
 
 ns1:T46 a ns1:Template ;
-    ns1:explanation """Much the same conditions apply to the use of each option or placeholder as in template T27.
-if the rule covers only transitions to a single category, use <literal 1>, otherwise list the categories separated by commas (with the last two categories in the list separated by ‘or’ or, if adhering to U.S. punctuation conventions, a comma and ‘or’).
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
+9. if the rule covers only transitions to a single category, use <literal 1>, otherwise list the categories separated by commas (with the last two categories in the list separated by "or" or, if adhering to U.S. punctuation conventions, a comma and "or").
 """ ;
     ns1:id "T46" ;
     ns1:text """The <data item term> {(if any)| }
@@ -535,8 +916,19 @@ only if <conditional clause>.
         ns1:T27 .
 
 ns1:T47 a ns1:Template ;
-    ns1:explanation """Much the same conditions apply to the use of each option or placeholder as in template T27.
-The same conditions also apply as in template T27 regarding the fact types that should be present in the fact model.
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
 """ ;
     ns1:id "T47" ;
     ns1:text """The <data item term> {(if any)| }
@@ -550,7 +942,15 @@ must not be {increased|decreased}
         ns1:T27 .
 
 ns1:T48 a ns1:Template ;
-    ns1:explanation """Rule statements in which the subject is the term signifying the process or other activity, such as R385, R386, and R389.
+    ns1:explanation """This template has the following important options and placeholders:
+1. <process term> is the term used for the activity that is subject to the restriction;
+2. <object term> is the term used for the object of the activity;
+3. <term> is the term used for either the object of the activity or the party or device performing the activity;
+4. each <qualifying clause> is used only if not all instances of the object, party, or device are subject to the rule; the options for <qualifying clause> are listed in subtemplate S14;
+5. "must" should be used if the activity must occur during the period defined by the <time restrictions>, whereas "must not" should be used if the activity must not occur during that period, and "may" with "only" should be used if the activity may only occur during that period;
+6. <verb phrase> after "must", "must not", or "may" is followed by an <object> if transitive (e.g., "be used by", "be operated by") but not if intransitive (e.g., "be used", "be operated");
+7. up to two <time restriction>(s) may be used to define the period during which the activity must occur, must not occur, or may only occur; the options for <time restriction> are listed in subtemplate S21;
+8. "{if |unless} <conditional clause>" is required if and only if no <time restriction> is used; the options for <conditional clause> are listed in subtemplate S13.
 """ ;
     ns1:id "T48" ;
     ns1:text """{The| } <process term> {of | for} {a|an} <object term>
@@ -563,9 +963,15 @@ ns1:T48 a ns1:Template ;
         ns1:S14 .
 
 ns1:T49 a ns1:Template ;
-    ns1:explanation """Rule statements in which the subject is either:
-a. the term signifying the object of the process or other activity, such as R387, R388, or R390, or
-b. the term signifying the party or device performing the process or other activity.
+    ns1:explanation """This template has the following important options and placeholders:
+1. <process term> is the term used for the activity that is subject to the restriction;
+2. <object term> is the term used for the object of the activity;
+3. <term> is the term used for either the object of the activity or the party or device performing the activity;
+4. each <qualifying clause> is used only if not all instances of the object, party, or device are subject to the rule; the options for <qualifying clause> are listed in subtemplate S14;
+5. "must" should be used if the activity must occur during the period defined by the <time restrictions>, whereas "must not" should be used if the activity must not occur during that period, and "may" with "only" should be used if the activity may only occur during that period;
+6. <verb phrase> after "must", "must not", or "may" is followed by an <object> if transitive (e.g., "be used by", "be operated by") but not if intransitive (e.g., "be used", "be operated");
+7. up to two <time restriction>(s) may be used to define the period during which the activity must occur, must not occur, or may only occur; the options for <time restriction> are listed in subtemplate S21;
+8. "{if |unless} <conditional clause>" is required if and only if no <time restriction> is used; the options for <conditional clause> are listed in subtemplate S13.
 """ ;
     ns1:id "T49" ;
     ns1:text """{Each|A|An} <term>
@@ -580,7 +986,9 @@ may <verb phrase 2> {<object 2>| }
     ns1:usesSubtemplate ns1:S13 .
 
 ns1:T5 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """An operative rule statement is a statement of an operative rule.
+This template is too general for easy use in creating rule statements that correctly express each type of operative rule.
+""" ;
     ns1:id "T5" ;
     ns1:text """{Each|The} <operative rule statement subject>
 may <verb phrase>
@@ -589,10 +997,11 @@ only <qualified list>.
     ns1:usesSubtemplate ns1:S1 .
 
 ns1:T50 a ns1:Template ;
-    ns1:explanation """1. <subject term> is the term used for the parties or things that are the focus of the activity;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <subject term> is the term used for the parties or things that are the focus of the activity;
 2. <qualifying clause> is used if not every instance of <subject term> is subject to the rule; the options for <qualifying clause> are listed in subtemplate S14;
-3. <verb phrase> is followed by <object> if transitive (e.g., ‘board’, ‘undergo’) but not if intransitive (e.g., ‘be deleted’);
-4. <time restriction> is used if the activity is prohibited unless some other activity or event has previously occurred, whereas ‘if <conditional clause>’ is used if the activity is prohibited unless some prerequisite condition exists; the options for <time restriction> are listed in subtemplate S21, while the options for <conditional clause> are listed in subtemplate S13.
+3. <verb phrase> is followed by <object> if transitive (e.g., "board", "undergo") but not if intransitive (e.g., "be deleted");
+4. <time restriction> is used if the activity is prohibited unless some other activity or event has previously occurred, whereas "if <conditional clause>" is used if the activity is prohibited unless some prerequisite condition exists; the options for <time restriction> are listed in subtemplate S21, while the options for <conditional clause> are listed in subtemplate S13.
 """ ;
     ns1:id "T50" ;
     ns1:text """{A|An} <subject term>
@@ -606,9 +1015,10 @@ only {<time restriction>| if <conditional clause>}.
         ns1:S21 .
 
 ns1:T51 a ns1:Template ;
-    ns1:explanation """1. <subject term> is the term used for the parties or things that are the focus of the activity;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <subject term> is the term used for the parties or things that are the focus of the activity;
 2. <qualifying clause> is used if not every instance of <subject term> is subject to the rule; the options for <qualifying clause> are listed in subtemplate S14;
-3. <verb phrase> is followed by <object> if transitive (e.g., ‘board’, ‘undergo’) but not if intransitive (e.g., ‘be deleted’);
+3. <verb phrase> is followed by <object> if transitive (e.g., "board", "undergo") but not if intransitive (e.g., "be deleted");
 4. the options for <conditional clause> are listed in subtemplate S13.
 """ ;
     ns1:id "T51" ;
@@ -622,7 +1032,8 @@ if <conditional clause>.
         ns1:S14 .
 
 ns1:T52 a ns1:Template ;
-    ns1:explanation """1. <actor term> is the term signifying the business process or device;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <actor term> is the term signifying the business process or device;
 2. <verb phrase> (and <object>, if present) defines the action to be taken in the situation defined by <qualifying clause> or <conditional clause>.
 """ ;
     ns1:id "T52" ;
@@ -636,11 +1047,12 @@ must <verb phrase> {<object>| }
         ns1:S14 .
 
 ns1:T53 a ns1:Template ;
-    ns1:explanation """1. <party signifier 1> is a generic term signifying all parties covered by the rule, such as ‘person’, ‘employee’, or ‘organization’;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <party signifier 1> is a generic term signifying all parties covered by the rule, such as "person", "employee", or "organization";
 2. the same term must be substituted in place of each <party signifier 1>;
 3. <qualifying clause> is used if the rule governs some proper subset of the parties signified by <party signifier 1>; the options for a <qualifying clause> are listed in subtemplate S14;
 4. <predicate 1> signifies the restricted activity or role;
-5. ‘the <attribute signifier> of ’ is used if some attribute of a party qualifies that party to perform the activity or play the role;
+5. "the <attribute signifier> of " is used if some attribute of a party qualifies that party to perform the activity or play the role;
 6. <predicate 2> signifies the value of <attribute signifier>, if used, or some relationship in which a party must participate in order to qualify for the activity or role.
 """ ;
     ns1:id "T53" ;
@@ -653,7 +1065,8 @@ only if {the <attribute signifier> of| } that <party signifier 1>
     ns1:usesSubtemplate ns1:S14 .
 
 ns1:T54 a ns1:Template ;
-    ns1:explanation """1. <party signifier 1> is a generic term signifying all parties covered by the rule, such as ‘person’, ‘employee’, or ‘organization’;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <party signifier 1> is a generic term signifying all parties covered by the rule, such as "person", "employee", or "organization";
 2. the same term must be substituted in place of each <party signifier 1>;
 3. <qualifying clause 1> defines one of the activities while <qualifying clause 2> defines the other; the options for a <qualifying clause> are listed in subtemplate S14.
 """ ;
@@ -670,7 +1083,11 @@ ns1:T55 a ns1:Template ;
     ns1:explanation """These templates have the following important options and placeholders:
 1. <information signifier> is the term signifying the information item to which access is restricted;
 2. <qualifying clause> is used to specify precisely which instances of that information item are subject to restricted access;
-3. <information access process> defines the form of access that is restricted; the <information access process> placeholder can be replaced by anything defined in the following subtemplate.
+3. <information access process> defines the form of access that is restricted; the <information access process> placeholder can be replaced by anything defined in the subtemplate S22.
+4. the verb phrase defining the form of access is followed by
+  a. a single <object> if only one role or position is allowed access, or
+  b. a list of the roles or positions allowed access, the last two separated by "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair separated by a comma.
+Options for <object> are listed in subtemplate S11.
 """ ;
     ns1:id "T55" ;
     ns1:text """{The|A|An} <information signifier>
@@ -684,7 +1101,12 @@ only {<object 1>| [<object 2>, or]}
         ns1:S22 .
 
 ns1:T56 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """These templates have the following important options and placeholders:
+1. <responsibility signifier> is the term signifying the process, fee, duty, or tax;
+2. <qualifying clause 1> is used if necessary to specify precisely which instances of that process, fee, duty, or tax are subject to the responsibility rule;
+3. <party signifier> is the term signifying the party responsible for performing the process or liable for the fee, duty, or tax;
+4. <qualifying clause 2> is used if necessary to specify precisely which instance or instances of that party are responsible.
+""" ;
     ns1:id "T56" ;
     ns1:text """{The|A|An| } <responsibility signifier>
   {<qualifying clause 1>| }
@@ -695,7 +1117,9 @@ must <verb phrase> {the |a|an} <party signifier>
     ns1:usesSubtemplate ns1:S13 .
 
 ns1:T6 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """A definitional rule statement is a statement of a definitional rule.
+This template is too general for easy use in creating rule statements that correctly express each type of definitional rule.
+""" ;
     ns1:id "T6" ;
     ns1:text """{A|An|The|} <definitional rule statement subject>
   {<qualifying clause>|}
@@ -705,7 +1129,12 @@ ns1:T6 a ns1:Template ;
     ns1:usesSubtemplate ns1:S14 .
 
 ns1:T7 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <term 1> is the term being defined;
+2. "of {a|an} <term 2>" is only required if <term 1> is an attribute term;
+3. <term 3> is the hypernym of <term 1>;
+4. <qualifying clause>is used to state the characteristics that distinguish members of the set signified by <term 1> from members of the sets signified by other hyponyms of <term3>; the options for a <qualifying clause> are listed in subtemplate S14. 
+""" ;
     ns1:id "T7" ;
     ns1:text """{A|An} <term 1>
   {of {a|an} <term 2>| }
@@ -716,18 +1145,31 @@ is by definition
     ns1:usesSubtemplate ns1:S14 .
 
 ns1:T8 a ns1:Template ;
-    ns1:explanation "" ;
-    ns1:id "T8" ;
-    ns1:text """{A|An} <term 1>
-  {of {a|an} <term 2>| }
-is by definition
-[<article> <term 3>, or]
-  {of that <term 2>| }.
+    ns1:explanation """This template has the following important options and placeholders:
+1. <term 1> is the term being defined;
+2. "of {a|an} <term 2>" is only required if <term 1> is an attribute term or role term;
+3. "[<article><term 3>, or]" is a list of the hyponyms making up the definition of <term 1>, the last two articles and terms in the list separated by "or" (or a comma and "or" if adhering to U.S. punctuation standards), and each other pair of articles and terms in the list separated by a comma;
+4. "of that <term 2>" is only required if <term 1> is an attribute term or role term; if it is used,
+the term substituted in place of <term 2> after "[<article> <term 3>, or]" should be the same
+as the term substituted in place of <term 2> after <term 1>.
+text: |
+  {A|An} <term 1>
+    {of {a|an} <term 2>| }
+  is by definition
+  [<article> <term 3>, or]
+    {of that <term 2>| }.
 """ ;
+    ns1:id "T8" ;
     ns1:usesSubtemplate ns1:S2 .
 
 ns1:T9 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <literal 1> or <term 1> is the term being defined;
+2. "of {a|an} <term 2>" is only required in conjunction with <term 1> if <term 1> is an attribute term;
+3. <literal 2> is used when a single value defines the term;
+4. "[<literal 3>, or] from a <literal 4> to the following <literal 5>" is used for definitions of terms
+signifying durations that may vary depending on the year or month (as in R327).
+""" ;
     ns1:id "T9" ;
     ns1:text """{<literal 1>|{A|An} <term 1>
   {of {a|an} <term 2>| }}
@@ -737,7 +1179,13 @@ is by definition
 """ .
 
 ns1:S10 a ns1:Subtemplate ;
-    ns1:explanation """A predicate is whatever may follow a subject in a clause.
+    ns1:explanation """Thus any of the following can be substituted in place of a <predicate> placeholder:
+1. a verb phrase followed by a single object: for example, ‘is specified by that transaction’;
+2. ‘is’ and an equality operator or inequality operator followed by a single object: for example, ‘is equal to the fee payable’, ‘is less than the maximum price’;
+3. a verb phrase followed by
+  a. a list of objects, the last two objects in the list separated by ‘and’ (or a comma and ‘and’ if adhering to U.S. punctuation standards), and each other pair of objects in the list separated by a comma: for example, ‘specifies a discount code and a promotion code’;
+  b. a list of objects, the last two objects in the list separated by ‘or’ (or a comma and ‘or’ if adhering to U.S. punctuation standards), and each other pair of objects in the list separated by a comma: for example, ‘is 0 or 1’;
+4. a verb phrase alone: for example, ‘is closed’.
 """ ;
     ns1:id "S10" ;
     ns1:text """<predicate>::=
@@ -750,7 +1198,13 @@ ns1:S10 a ns1:Subtemplate ;
         ns1:S7 .
 
 ns1:S15 a ns1:Subtemplate ;
-    ns1:explanation "" ;
+    ns1:explanation """Subtemplate S15 allows for any of the forms illustrated by the following examples:
+1. ‘who has a passport and is booked on an international flight’;
+2. ‘that is international and has more than one intermediate stop’;
+3. ‘that is specified in that document and recorded on the register’;
+4. ‘that is specified in that document and registered’;
+5. ‘that specifies an urgency code and a rural delivery address’.
+""" ;
     ns1:id "S15" ;
     ns1:text """<and-qualifying clause>::=
 {that |who}
@@ -762,7 +1216,11 @@ is [<verb part> {<object>| } and]
         ns1:S9 .
 
 ns1:S16 a ns1:Subtemplate ;
-    ns1:explanation "" ;
+    ns1:explanation """Subtemplate S16 allows for any of the forms illustrated by the following examples:
+1. ‘who both has a passport and is booked on an international flight’;
+2. ‘that is both specified in that document and recorded on the register’;
+3. ‘that specifies both an urgency code and a rural delivery address’.
+""" ;
     ns1:id "S16" ;
     ns1:text """<both-and-qualifying clause>::=
 {that |who}
@@ -774,7 +1232,13 @@ ns1:S16 a ns1:Subtemplate ;
         ns1:S9 .
 
 ns1:S17 a ns1:Subtemplate ;
-    ns1:explanation "" ;
+    ns1:explanation """Subtemplate S17 allows for any of the forms illustrated by the following examples:
+1. ‘who has a passport or is booked on an international flight’;
+2. ‘that is international or has more than one intermediate stop’;
+3. ‘that is specified in that document or recorded on the register’;
+4. ‘that is specified in that document or registered’;
+5. ‘that specifies an urgency code or a rural delivery address’.
+""" ;
     ns1:id "S17" ;
     ns1:text """<or-qualifying clause>::=
 {that |who}
@@ -786,7 +1250,11 @@ is [<verb part> {<object>| } or]
         ns1:S9 .
 
 ns1:S18 a ns1:Subtemplate ;
-    ns1:explanation "" ;
+    ns1:explanation """Subtemplate S18 allows for any of the forms illustrated by the following examples:
+1. ‘who both has a passport or is booked on an international flight’;
+2. ‘that is both specified in that document or recorded on the register’;
+3. ‘that specifies both an urgency code or a rural delivery address’.
+""" ;
     ns1:id "S18" ;
     ns1:text """<either-or-qualifying clause>::=
 {that |who}
@@ -799,6 +1267,9 @@ ns1:S18 a ns1:Subtemplate ;
 
 ns1:S19 a ns1:Subtemplate ;
     ns1:explanation """The <format definition> placeholder can be replaced by anything defined in the subtemplate.
+1. "exactly", "at least", or "up to", followed by a positive integer and a term: for example, "exactly two digits", "at least three letters", "up to nine digits";
+2. "from", a positive integer, "to", and another positive integer followed by a term: for example, "from two to seven digits";
+3. any number of any of the above, each separated from the next by "followed by". For example, "exactly two digits followed by a hyphen followed by exactly two digits".
 """ ;
     ns1:id "S19" ;
     ns1:text """<format definition>::=
@@ -837,7 +1308,12 @@ ns1:S22 a ns1:Subtemplate ;
 """ .
 
 ns1:S12 a ns1:Subtemplate ;
-    ns1:explanation """An expression is a verbal statement of a calculation.
+    ns1:explanation """Thus any of the following can be substituted in place of the <expression> placeholder:
+1. an object (see subtemplate S11): for example, ‘the order quantity of that order line’;
+2. a set function followed by a term with optional preceding determiner and optional following qualifying clause: for example, ‘the number of order lines’, ‘the sum of the extensions for each order line’;
+3. any two expressions joined by ‘plus’, ‘minus’, ‘multiplied by’, or ‘divided by’: for example, ‘1 minus the discount for that customer’, ‘1 minus the discount for that customer multiplied by the unit price of that product’;
+4. ‘sum of’ or ‘product of’, followed by a list of expressions each separated from the next by a comma and/or ‘and’: for example, ‘the sum of the base fare, fuel levy, booking fee, and credit card charge for that booking’;
+5. ‘square’, ‘cube’, ‘square root’, or ‘cube root’, followed by an expression: for example, ‘the square of the speed of light’.
 """ ;
     ns1:id "S12" ;
     ns1:text """<expression>::=
@@ -893,7 +1369,8 @@ latest | earliest}
 """ .
 
 ns1:S7 a ns1:Subtemplate ;
-    ns1:explanation "" ;
+    ns1:explanation """There are various equality operators, some appropriate to non-quantitative comparisons and others to quantitative comparisons.
+""" ;
     ns1:id "S7" ;
     ns1:text """<equality operator>::=
 {the same as| different from|equal to|unequal to}
@@ -922,7 +1399,8 @@ ns1:S1 a ns1:Subtemplate ;
     ns1:usesSubtemplate ns1:S14 .
 
 ns1:S3 a ns1:Subtemplate ;
-    ns1:explanation "" ;
+    ns1:explanation """For example, "exactly one", "at least two", "at least one and at most four".
+""" ;
     ns1:id "S3" ;
     ns1:text """<cardinality>::=
 {exactly|at least {<positive integer 1> and at most| }}
@@ -930,7 +1408,20 @@ ns1:S3 a ns1:Subtemplate ;
 """ .
 
 ns1:T27 a ns1:Template ;
-    ns1:explanation "" ;
+    ns1:explanation """This template has the following important options and placeholders:
+1. <data item term> is the name of the data item whose values are constrained;
+2. "Each" is required if that data item can appear more than once in an instance of the transaction or subform, whereas "The" is required if that data item can appear only once in an instance of the transaction or subform;
+3. "(if any)" is required if and only if the data item is optional;
+4. "{in | for} {the |each} <subform term> {(if any)| }":
+  a. this phrase is required if the data item signified by <data item term> is contained in a complex data item or subform;
+  b. "each" is required if the complex data item or subform can appear more than once in an instance of the transaction, whereas "the" is required if the complex data item or subform can appear only once in an instance of the transaction;
+  c. <subform term> is the name of the complex data item or subform;
+  d. "(if any)" is required if and only if the complex data item or subform may be omitted from an instance of the transaction;
+5. <transaction signifier>is the term used for the transaction (paper or electronic form or message) or persistent data record in which a data item is required; options for <transaction signifier> are listed in subtemplate S8;
+6. if used, <term> must be the name of the data item with which values of the constrained data item are to be compared, in which case <qualifying clause> is required to relate <term> back to a term in <transaction signifier>; options for <qualifying clause> are listed in subtemplate S14;
+7. as an alternative to <term>, "[<literal>, or]" is a list of the literal values with which the constrained data item is to be compared, in which the last two are separated with "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of values is separated with a comma;
+8. "{if |unless} <conditional clause>" (or a qualifying clause in <transaction signifier>) is only required if not all instances of the transaction are subject to the rule; options for<conditional clause> are listed in subtemplate S13.
+""" ;
     ns1:id "T27" ;
     ns1:text """{The|Each} <data item term> {(if any)| }
   specified {{in| for} {the|each} <subform term> {(if any)| } | }
@@ -944,7 +1435,10 @@ must be
         ns1:S8 .
 
 ns1:S9 a ns1:Subtemplate ;
-    ns1:explanation """A verb part may be used wherever 'is' or 'be' may be dropped from a verb phrase.
+    ns1:explanation """Thus any of the following can be substituted in place of a <verb part> placeholder:
+1. a preposition preceded by a participle: for example, ‘specified by’;
+2. a preposition preceded by an adjective: for example, ‘available in’;
+3. a preposition alone: for example, ‘of ’.
 """ ;
     ns1:id "S9" ;
     ns1:text """<verb part>::=
@@ -952,7 +1446,10 @@ ns1:S9 a ns1:Subtemplate ;
 """ .
 
 ns1:S11 a ns1:Subtemplate ;
-    ns1:explanation """An object is whatever may follow a verb phrase.
+    ns1:explanation """Thus any of the following can be substituted in place of an <object> placeholder:
+1. a term optionally preceded by a determiner and optionally followed by a qualifying clause: for example, ‘the credit card with which the booking was paid for’, ‘employees in receipt of this allowance’;
+2. a term preceded by ‘the <set function> of’ and an optional determiner, and optionally followed by a qualifying clause: for example, ‘the number of employees in the team’, ‘the sum of the fares’;
+3. a literal optionally preceded by a determiner: for example, ‘1 January 2012’, ‘that 24 h’.
 """ ;
     ns1:id "S11" ;
     ns1:text """<object>::=
@@ -965,7 +1462,9 @@ ns1:S11 a ns1:Subtemplate ;
         ns1:S5 .
 
 ns1:S8 a ns1:Subtemplate ;
-    ns1:explanation """A transaction signifier is either a term or a reference to a combination of terms, possibly qualified.
+    ns1:explanation """Thus any of the following can be substituted in place of a <transaction signifier> placeholder:
+1. a term, optionally followed by a qualifying clause;
+2. a list of terms, optionally followed by a qualifying clause, and preceded by ‘combination of’ or ‘record of a combination of’; the last two objects in the list are separated by ‘and’ (or a comma and ‘and’ if adhering to U.S. punctuation standards) and each other pair of objects in the list is separated by a comma.
 """ ;
     ns1:id "S8" ;
     ns1:text """<transaction signifier>::=
@@ -975,20 +1474,22 @@ ns1:S8 a ns1:Subtemplate ;
     ns1:usesSubtemplate ns1:S14 .
 
 ns1:S14 a ns1:Subtemplate ;
-    ns1:explanation """A qualifying clause (also known as a restrictive relative clause) can be used after a term in two ways:
-1. Following the subject term of a rule statement, a qualifying clause restricts the scope of that rule statement to a subset of the set of objects signified by that term, rather than the set of all objects signified by that term.
-2. Following any other term in a rule statement, a qualifying clause makes any stated constraint more specific than if the qualifying clause were absent.
-Thus any of the following can be substituted in place of a <qualifying clause> placeholder:
-1. 'that' or 'who' followed by a verb phrase and an optional object (see subtemplate S11): for example, 'that includes an international flight';
-2. a verb part (see subtemplate S9) followed by an object: for example, 'specified in a real property transaction';
-3. 'other than' followed by either
+    ns1:explanation """Thus any of the following can be substituted in place of a <qualifying clause> placeholder:
+1. "that" or "who" followed by a verb phrase and an optional object (see subtemplate S11): for example, "that includes an international flight";
+2. a verb part (see subtemplate S9) followed by an object: for example, "specified in a real property transaction";
+3. "other than" followed by either
   a. an object, or
-  b. a list of objects, the last two objects in the list separated by 'or' (or a comma and 'or' if adhering to U.S. punctuation standards) and each other pair of objects in the list separated by a comma;
+  b. a list of objects, the last two objects in the list separated by "or" (or a comma and "or" if adhering to U.S. punctuation standards) and each other pair of objects in the list separated by a comma: for example, "other than a cash payment or a direct debit payment";
 4. a conditional clause (see subtemplate S13) preceded by either
-  a. a preposition followed by 'which' or 'whom', or
-  b. 'whose';
-5. 'that' or 'who' followed by a verb phrase, 'that', 'if', or 'whether', and a conditional clause;
-6. a qualifying clause involving multiple criteria separated by 'and' or 'or'.
+  a. a preposition followed by "which" or "whom", or
+  b. "whose": for example, "for which the payment is made", "whose name appears on the passport";
+5. "that" or "who" followed by
+  a. a verb phrase,
+  b. "that", "if", or "whether", and
+  c. a conditional clause: for example, "who checks whether the passport has expired";
+6. a qualifying clause involving multiple criteria:
+  a. separated by "and", with or without "both", as defined in subtemplates S15 and S16,
+  b. separated by "or", with or without "either", as defined in subtemplates S17 and S18.
 """ ;
     ns1:id "S14" ;
     ns1:text """<qualifying clause>::=
@@ -1011,7 +1512,18 @@ other than {<object>| [<object>, or]} |
         ns1:S9 .
 
 ns1:S13 a ns1:Subtemplate ;
-    ns1:explanation """Conditional clauses can be used after conditional conjunctions to restrict the scope of a rule statement.
+    ns1:explanation """Thus any of the following can be substituted in place of a <conditional clause> placeholder:
+1. a single conditional clause, consisting of
+  a. either
+    i. a term preceded by a determiner and optionally followed by a qualifying clause: for example, ‘the employee who submitted the application’,
+    ii. an expression (see subtemplate S12), or
+    iii. ‘it’;
+  b. followed by one of
+    i. a single predicate (see subtemplate S10),
+    ii. a list of predicates, each pair of predicates in the list separated by ‘and’,
+    iii. a list of predicates, each pair of predicates in the list separated by ‘or’;
+2. a list of conditional clauses, each pair of clauses in the list separated by ‘and’;
+3. a list of conditional clauses, each pair of clauses in the list separated by ‘or’.
 """ ;
     ns1:id "S13" ;
     ns1:text """<conditional clause>::=

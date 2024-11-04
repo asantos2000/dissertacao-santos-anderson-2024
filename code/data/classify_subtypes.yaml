@@ -18,6 +18,11 @@
         original term.'
       templates:
       - T7
+      examples:
+      - R70
+      - R71
+      - R321
+      - R322
     - section_id: 9.2.1.2
       section_title: Formal extensional definitions
       section_definition: 'Formal extensional definition defines the subject business
@@ -26,24 +31,45 @@
         term).'
       templates:
       - T8
+      examples:
+      - R72
+      - R327
+      - R324
+      - R325
     - section_id: 9.2.1.3
       section_title: Symbolic literal definitions
       section_definition: A symbolic literal definition defines the subject business
         term using one or more literals.
       templates:
       - T9
+      examples:
+      - R73
+      - R74
+      - R326
+      - R327
   - section_id: 9.2.2
     section_title: Categorization scheme enumerations
     section_definition: A categorization scheme enumeration defines the members of
       a categorization scheme that is both mutually exclusive and jointly exhaustive.
     templates:
     - T10
+    examples:
+    - R75
+    - R76
+    - R77
+    - R78
+    - R328
+    - R329
   - section_id: 9.2.3
     section_title: Category transition constraints
     section_definition: A category transition constraint specifies allowed or disallowed
       transitions between categories or statuses.
     templates:
     - T11
+    examples:
+    - R79
+    - R330
+    - R331
   - section_id: 9.2.4
     section_title: Complex concept structure rules
     section_definition: 'A complex concept structure rule defines a particular constraint
@@ -56,24 +82,36 @@
         a particular concept.
       templates:
       - T12
+      examples:
+      - R80
+      - R332
     - section_id: 9.2.4.2
       section_title: Complex concept equivalence rules
       section_definition: A complex concept equivalence rule defines a pair of components
         within a particular concept that are of necessity the same.
       templates:
       - T13
+      examples:
+      - R81
+      - R333
     - section_id: 9.2.4.3
       section_title: Complex concept set constraints
       section_definition: A complex concept set constraint defines two sets of components
         within a particular concept that must be identical.
       templates:
       - T14
+      examples:
+      - R82
+      - R334
   - section_id: 9.2.5
     section_title: Valid value definitions
     section_definition: A valid value definition defines the valid values of a particular
       measure as a range or (occasionally) as a list of discrete values.
     templates:
     - T15
+    examples:
+    - R83
+    - R335
   - section_id: 9.2.6
     section_title: Data calculation rules
     section_definition: 'A data calculation rule defines the algorithm or formula
@@ -87,12 +125,19 @@
         intelligence purposes, such as a performance measure) is calculated.
       templates:
       - T16
+      examples:
+      - R84
+      - R336
+      - R337
     - section_id: 9.2.6.2
       section_title: Conversion factor definitions
       section_definition: A conversion factor definition defines a conversion factor
         between two units of measurement.
       templates:
       - T17
+      examples:
+      - R85
+      - R338
   - section_id: 9.2.7
     section_title: Standard format definitions
     section_definition: A standard format definition defines the standard format for
@@ -100,6 +145,11 @@
       data items.
     templates:
     - T18
+    examples:
+    - R86
+    - R87
+    - R125
+    - R339
 - section_id: '9.3'
   section_title: Data rules
   section_definition: 'Data rules (all of which are operative rules) constrains the
@@ -122,6 +172,16 @@
           data item be present.
         templates:
         - T19
+        examples:
+        - R88
+        - R89
+        - R90
+        - R91
+        - R92
+        - R93
+        - R340
+        - R341
+        - R342
       - section_id: 9.3.1.1.2
         section_title: Mandatory option selection rules
         section_definition: A mandatory option selection rule requires that one of
@@ -130,6 +190,14 @@
         templates:
         - T20
         - T21
+        examples:
+        - R94
+        - R95
+        - R343
+        - R344
+        - R345
+        - R346
+        - R347
       - section_id: 9.3.1.1.3
         section_title: Mandatory group rules
         section_definition: A mandatory group rule requires that at least one of a
@@ -138,12 +206,22 @@
         templates:
         - T22
         - T23
+        examples:
+        - R96
+        - R97
+        - R98
+        - '348'
+        - R349
+        - R350
     - section_id: 9.3.1.2
       section_title: Prohibited data rules
       section_definition: A prohibited data rule mandates the absence of some data
         item in a particular situation.
       templates:
       - T24
+      examples:
+      - R99
+      - R351
     - section_id: 9.3.1.3
       section_title: Maximum cardinality rules
       section_definition: A maximum cardinality rule places an upper limit (usually
@@ -151,6 +229,12 @@
         may be.
       templates:
       - T25
+      examples:
+      - R100
+      - R101
+      - R102
+      - R352
+      - R353
     - section_id: 9.3.1.4
       section_title: Multiple data rules
       section_definition: 'A multiple data rule mandates the presence of two or more
@@ -162,12 +246,17 @@
         integer 1>` is at least two.'
       templates:
       - T19
+      examples:
+      - R103
     - section_id: 9.3.1.5
       section_title: Dependent cardinality rules
       section_definition: A dependent cardinality rule mandates how many of a particular
         data item must be present based on the value of another data item.
       templates:
       - T26
+      examples:
+      - R104
+      - R354
   - section_id: 9.3.2
     section_title: Data content rules
     section_definition: A data content rule places a restriction on the values contained
@@ -186,11 +275,19 @@
         section_definition: ''
         templates:
         - T27
+        examples:
+        - R105
+        - R106
+        - R355
+        - R356
       - section_id: 9.3.2.1.2
         section_title: Value set rules constraining combinations of data items
         section_definition: ''
         templates:
         - T28
+        examples:
+        - R107
+        - R357
     - section_id: 9.3.2.2
       section_title: Range rules
       section_definition: A range rule requires that the content of a data item be
@@ -198,12 +295,26 @@
         range.
       templates:
       - T29
+      examples:
+      - R108
+      - R109
+      - R110
+      - R358
+      - R359
+      - R360
     - section_id: 9.3.2.3
       section_title: Equality rules
       section_definition: An equality rule requires that the content of a data item
         be the same as or not the same as that of some other data item.
       templates:
       - T30
+      examples:
+      - R111
+      - R112
+      - R361
+      - R362
+      - R363
+      - R364
     - section_id: 9.3.2.4
       section_title: Uniqueness constraints
       section_definition: A uniqueness constraint requires that the content of a data
@@ -215,16 +326,26 @@
         section_definition: ''
         templates:
         - T31
+        examples:
+        - R113
+        - R365
+        - R366
+        - R367
       - section_id: 9.3.2.4.2
         section_title: Uniqueness constraints constraining combinations of data items
         section_definition: ''
         templates:
         - T32
+        examples:
+        - R114
+        - R368
       - section_id: 9.3.2.4.3
         section_title: Uniqueness constraints constraining sets of data items
         section_definition: ''
         templates:
         - T33
+        examples:
+        - R369
     - section_id: 9.3.2.5
       section_title: Data consistency rules
       section_definition: A data consistency rule requires the content of multiple
@@ -236,16 +357,23 @@
         section_definition: ''
         templates:
         - T34
+        examples:
+        - R115
+        - R370
       - section_id: 9.3.2.5.2
         section_title: Data consistency rules constraining a set function
         section_definition: ''
         templates:
         - T35
+        examples:
+        - R371
       - section_id: 9.3.2.5.3
         section_title: Data consistency rules constraining a set
         section_definition: ''
         templates:
         - T36
+        examples:
+        - R372
     - section_id: 9.3.2.6
       section_title: Temporal data constraints
       section_definition: 'A temporal data constraint constrains one or more temporal
@@ -259,6 +387,7 @@
         templates:
         - T29
         examples:
+        - R117
         - R373
       - section_id: 9.3.2.6.2
         section_title: Temporal data non-overlap constraints
@@ -266,6 +395,9 @@
           time periods specified in a set of records do not overlap each other.
         templates:
         - T37
+        examples:
+        - R118
+        - R374
       - section_id: 9.3.2.6.3
         section_title: Temporal data completeness constraints
         section_definition: A temporal data completeness constraint requires that
@@ -273,6 +405,9 @@
           them completely span some other time period.
         templates:
         - T38
+        examples:
+        - R119
+        - R375
       - section_id: 9.3.2.6.4
         section_title: Temporal data inclusion constraints
         section_definition: AA temporal data inclusion constraint requires that the
@@ -280,6 +415,9 @@
           time period.
         templates:
         - T38
+        examples:
+        - R120
+        - R376
       - section_id: 9.3.2.6.5
         section_title: Temporal single record constraints
         section_definition: A temporal single record constraint requires that a temporal
@@ -288,6 +426,9 @@
         templates:
         - T39
         - T40
+        examples:
+        - R121
+        - R377
       - section_id: 9.3.2.6.6
         section_title: Day type constraints
         section_definition: A day type constraint restricts a date to one or more
@@ -295,6 +436,9 @@
           but not necessarily any day other than a Saturday, Sunday, or public holiday).
         templates:
         - T41
+        examples:
+        - R122
+        - R378
     - section_id: 9.3.2.7
       section_title: Spatial data constraints
       section_definition: A spatial data constraint prescribes or prohibits relationships
@@ -302,12 +446,18 @@
         or polygons).
       templates:
       - T41
+      examples:
+      - R123
+      - R379
     - section_id: 9.3.2.8
       section_title: Data item format rules
       section_definition: A data item format rule specifies the required format of
         a data item.
       templates:
       - T43
+      examples:
+      - R124
+      - R380
   - section_id: 9.3.3
     section_title: Data update rules
     section_definition: 'A data update rule either prohibits update of a data item
@@ -322,18 +472,29 @@
       templates:
       - T44
       - T45
+      examples:
+      - R126
+      - R127
+      - R381
+      - R382
     - section_id: 9.3.3.2
       section_title: State transition constraints
       section_definition: A state transition constraint limits the changes in a data
         item to a set of valid transitions.
       templates:
       - T46
+      examples:
+      - R128
+      - R383
     - section_id: 9.3.3.3
       section_title: Monotonic transition constraints
       section_definition: A monotonic transition constraint requires that a numeric
         value either only increase or only decrease.
       templates:
       - T47
+      examples:
+      - R129
+      - R384
 - section_id: '9.4'
   section_title: Activity rules
   section_definition: 'Activity rules (all of which are operative rules) constrains
@@ -357,20 +518,33 @@
           or other activity to within a particular time period.
         templates:
         - T48
+        examples:
+        - R130
+        - R131
+        - R385
+        - R386
+        - R387
       - section_id: 9.4.1.1.2
         section_title: Activity exclusion period rules
         section_definition: An activity exclusion period rule prohibits a business
           process or other activity during a particular time period.
         templates:
         - T49
+        examples:
+        - R132
+        - R133
+        - R388
       - section_id: 9.4.1.1.3
-        section_title: Activity obligation rule
+        section_title: Activity obligation rules
         section_definition: An activity obligation rule requires a business process
           or other activity to occur either within a maximum time after a particular
           event (such as the completion of some other process) or as soon as practical
           after a particular event.
         templates:
         - T49
+        examples:
+        - R138
+        - R390
     - section_id: 9.4.1.2
       section_title: Activity pre-condition rules
       section_definition: An activity pre-condition rule prohibits a business process
@@ -378,6 +552,10 @@
         or some prerequisite condition exists.
       templates:
       - T50
+      examples:
+      - R134
+      - R391
+      - R392
     - section_id: 9.4.1.3
       section_title: Activity prohibition rules
       section_definition: An activity prohibition rule prohibits a business process
@@ -385,36 +563,37 @@
         some dangerous or illegal condition exists.
       templates:
       - T51
+      examples:
+      - R135
+      - R393
     - section_id: 9.4.1.4
-      section_title: Information retention rules
-      section_definition: An information retention rule defines the minimum period
-        for which a particular type of information is retained.
-      templates:
-      - T49
-    - section_id: 9.4.1.5
       section_title: Activity conflict rules
       section_definition: An activity conflict rule restricts the simultaneous occurrence
         of multiple processes or other activities.
       examples:
       - R136
+      - R389
       templates:
-      - T?
+      - T48
+    - section_id: 9.4.1.5
+      section_title: Information retention rules
+      section_definition: An information retention rule defines the minimum period
+        for which a particular type of information is retained.
+      templates:
+      - T49
+      examples:
+      - R137
+      - R394
   - section_id: 9.4.2
     section_title: Process decision rules
     section_definition: A process decision rule determines what action a business
       process or device is to take in specific situations;
     templates:
     - T52
-  - section_id: 9.4.3
-    section_title: Activity obligation rules
-    section_definition: An activity obligation rule requires a business process or
-      other activity to occur either within a maximum time after a particular event
-      (such as the completion of some other process) or when particular conditions
-      apply.
     examples:
-    - R138
-    templates:
-    - T?
+    - R139
+    - R395
+    - R396
 - section_id: '9.5'
   section_title: Party rules
   section_definition: 'Party rules (all of which are operative rules) restricts the
@@ -429,21 +608,47 @@
       appropriate skills.
     templates:
     - T53
-  - section_id: 9.5.2
-    section_title: Role separation and binding rules
+    examples:
+    - R140
+    - R141
+    - R142
+    - R143
+    - R397
+    - R398
+  - section_id: 9.5.2a
+    section_title: Role separation rules
     section_definition: A role separation rule prohibits the same party from performing
       two activities.
     templates:
     - T54
+    examples:
+    - R144
+    - R399
+  - section_id: 9.5.2b
+    section_title: Role binding rules
+    section_definition: A role binding rule requires that the party performing the
+      second of two activities be the same as the party who performed the first of
+      those activities.
+    templates:
+    - T54
+    examples:
+    - R145
+    - R400
   - section_id: 9.5.3
     section_title: Information access rules
     section_definition: An information access rule defines who can view, create, or
       update particular information.
     templates:
     - T55
+    examples:
+    - R146
+    - R401
   - section_id: 9.5.4
     section_title: Responsibility rules
     section_definition: A responsibility rule defines who is responsible for performing
       a particular process or liable for a particular fee, duty, or tax.
     templates:
     - T56
+    examples:
+    - R147
+    - R402

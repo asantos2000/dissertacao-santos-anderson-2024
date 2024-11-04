@@ -1,4 +1,868 @@
 example_list:
+  - id: "R70"
+    text: |
+      A senior passenger
+      is by definition
+      a passenger whose age is at least 70 years at the time of travel.
+
+  - id: "R71"
+    text: |
+      An employer of a person
+      is by definition
+      an organization that employs that person.
+
+  - id: "R72"
+    text: |
+      An immediate family member of a person
+      is by definition
+      a parent, sibling, spouse, or child of that person.
+
+  - id: "R73"
+    text: |
+      End of financial year
+      is by definition
+      June 30.
+
+  - id: "R74"
+    text: |
+      A calendar year
+      is by definition
+      365 days or 366 days from a January 1 to the following December 31.
+
+  - id: "R75"
+    text: |
+      A person
+      is by definition
+      either an adult or a minor.
+
+  - id: "R76"
+    text: |
+      A payment
+      is by definition
+      one of the following: a cash payment, a credit card payment, or an
+      electronic funds transfer payment.
+
+  - id: "R77"
+    text: |
+      The gender of a person
+      is by definition
+      either male or female.
+
+  - id: "R78"
+    text: |
+      The status of an employee
+      is by definition
+      one of the following: probational, permanent, or temporary.
+
+  - id: "R79"
+    text: |
+      A transition of the status of a customer from current to prospect
+      is by definition
+      impossible.
+
+  - id: "R80"
+    text: |
+      A flight
+      has by definition
+      exactly one destination port.
+
+  - id: "R81"
+    text: |
+      The destination city of the last or only return flight of a return journey
+      is by definition
+      the same as the origin city of the first or only outgoing flight of that return journey.
+
+  - id: "R82"
+    text: |
+      The set of passengers
+        booked on each flight
+        specified in a flight booking confirmation
+        is by definition
+      the same as the set of passengers
+        booked on each other flight
+        specified in that flight booking confirmation.
+
+  - id: "R83"
+    text: |
+      Water temperature
+      is by definition
+      at least 0C and at most 100C.
+
+  - id: "R84"
+    text: |
+      The year-to-date sales total for a product on a date
+      is by definition calculated as
+      the sum of the extension for each order line for that product that
+      - has an order date within the same calendar year as that date and
+      - was not cancelled within the same calendar year as that date.
+
+  - id: "R85"
+    text: |
+      1 ft
+      is by definition equal to
+      12 in.
+
+  - id: "R86"
+    text: |
+      A valid product code
+      is by definition composed of
+      exactly 2 letters followed by 6 digits.
+
+  - id: "R87"
+    text: |
+      A valid flight number
+      is by definition composed of
+      a valid airline code followed by up to 4 digits.
+
+  - id: "R88"
+    text: |
+      Each flight booking request
+      must specify exactly one departure date.
+
+  - id: "R89"
+    text: |
+      Each flight booking confirmation
+      must specify at least one passenger name.
+
+  - id: "R90"
+    text: |
+      Each flight booking confirmation for a return journey
+      must specify exactly two flights.
+
+  - id: "R91"
+    text: |
+      Each flight booking confirmation
+      must specify exactly one travel class for each flight.
+
+  - id: "R92"
+    text: |
+      Each flight booking confirmation
+      must specify exactly one set of passport details for each passenger
+      if any flight specified in that flight booking confirmation is international.
+
+  - id: "R93"
+    text: |
+      Each combination of departure date, flight number, and departure city
+      must be allocated exactly one departure time.
+
+  - id: "R94"
+    text: |
+      Each flight booking request
+      must specify whether it is for a return journey, a one-way journey, or a multi-stop journey.
+
+  - id: "R95"
+    text: |
+      Each flight booking request
+      must specify whether or not the travel dates specified in that flight booking request are
+      moveable.
+
+  - id: "R96"
+    text: |
+      Each flight booking confirmation
+      must specify a mobile phone number, an e-mail address, or both.
+
+  - id: "R97"
+    text: |
+      Each flight booking confirmation
+      must specify a credit card or an electronic funds transfer payment receipt but not both.
+
+  - id: "R98"
+    text: |
+      Each flight booking confirmation
+      must specify exactly one of the following:
+      a postal address, an e-mail address, or a fax number.
+
+  - id: "R99"
+    text: |
+      A flight booking request for a one-way journey
+      must not specify a return date.
+
+  - id: "R100"
+    text: |
+      A flight booking confirmation
+      must not specify more than one insurance option.
+
+  - id: "R101"
+    text: |
+      A flight booking confirmation
+      must not specify more than one frequent flier membership
+
+  - id: "R102"
+    text: |
+      A combination of departure date, flight number, and departure city
+      must not be allocated more than one passenger
+        for any one seat number.
+
+  - id: "R103"
+    text: |
+      Each flight booking confirmation for a return journey
+      must specify at least two flights.
+
+  - id: "R104"
+    text: |
+      The number of passenger names
+        specified in each flight booking confirmation
+      must be equal to
+      the number of passengers
+        specified in the flight booking request
+        that gives rise to that flight booking confirmation.
+
+  - id: "R105"
+    text: |
+      The travel class specified in each flight booking request
+      must be ‘first class’, ‘business class’, ‘premium economy class’, or ‘economy class’.
+
+  - id: "R106"
+    text: |
+      The origin city specified in each flight booking request
+      must be one of the cities served by the airline.
+
+  - id: "R107"
+    text: |
+      The combination of place name and postal code
+        included in the postal address (if any)
+        specified in each insurance application
+      must be one of the combinations of place name and postal code
+        allocated by the postal authority
+        of the country
+        in which that postal address is located.
+
+  - id: "R108"
+    text: |
+      The number of passengers specified in each flight booking request
+      must be at least 1.
+
+  - id: "R109"
+    text: |
+      The number of passengers specified in each flight booking request
+      must be at least 1 and at most 9.
+
+  - id: "R110"
+    text: |
+      The departure date specified in each flight booking request
+      must be no earlier than today.
+
+  - id: "R111"
+    text: |
+      The origin city
+        of the outgoing flight
+        specified in each flight booking confirmation
+      must be the same as the origin city
+        specified in the flight booking request
+        that gives rise to that flight booking confirmation.
+
+  - id: "R112"
+    text: |
+      The destination city specified in each flight booking request
+      must be different from the origin city specified in that flight booking request.
+
+  - id: "R113"
+    text: |
+      The record locator
+        allocated to each flight booking confirmation
+      must be different from the record locator
+        allocated to any other flight booking confirmation.
+
+  - id: "R114"
+    text: |
+      The combination of
+        departure date, flight number, departure city, and seat number
+        specified in each seat allocation
+      must be different from
+      the combination of
+        departure date, flight number, departure city, and seat number
+        specified in any other seat allocation.
+
+  - id: "R115"
+    text: |
+      The combination of start date and end date
+        specified in each leave application
+      must be such that the end date is no earlier than the start date.
+
+  - id: "R116"
+    text: |
+      The sum of the shares held by the proprietors of each real property parcel must be
+      equal to 1.
+
+  - id: "R117"
+    text: |
+      The return date (if any) specified in each flight booking request
+      must be no earlier than
+      the departure date specified in that flight booking request.
+
+  - id: "R118"
+    text: |
+      The time period specified in each employee leave record
+      must not overlap
+      the time period specified in any other employee leave record
+        for the same employee.
+
+  - id: "R119"
+    text: |
+      Each day within the employment period
+        specified in each employee record
+      must be within
+      the time period specified in exactly one employee pay record
+        for the same employee.
+
+  - id: "R120"
+    text: |
+      Each day within the time period
+        specified in each employee leave record
+      must be within
+      the time period specified in the employment record
+        for the same employee.
+
+  - id: "R121"
+    text: |
+      Each grade specified in an employee grade record
+      must be different from
+      the grade specified in the latest of the earlier employee grade records
+        for the same employee.
+
+  - id: "R122"
+    text: |
+      The payment due date specified in each invoice
+      must be a working day.
+
+  - id: "R123"
+    text: |
+      The polygon
+        that constitutes each individual parcel
+        in a real estate subdivision
+      must not overlap
+      the polygon
+        that constitutes any other individual parcel
+        in any real estate subdivision.
+
+  - id: "R124"
+    text: |
+      The mobile phone number (if any)
+        specified in each flight booking confirmation
+      must be a valid phone number.
+
+  - id: "R125"
+    text: |
+      A valid phone number
+      is by definition
+      composed of from 9 to 12 digits.
+
+  - id: "R126"
+    text: |
+      A data item in a financial transaction
+      must not be updated.
+
+  - id: "R127"
+    text: |
+      An order
+      must not be transferred from one customer to another customer.
+
+  - id: "R128"
+    text: |
+      The marital status of an employee
+      may be updated to never married
+      only if the marital status
+        that is currently recorded for that employee
+        is unknown.
+
+  - id: "R129"
+    text: |
+      The hourly pay rate of an employee
+      must not be decreased.
+
+  - id: "R130"
+    text: |
+      Online check-in for a flight
+      may occur
+        only during the 24 h before the departure time of that flight.
+
+  - id: "R131"
+    text: |
+      Acknowledgment of an order
+      must occur
+        during the 24 h after the receipt of that order.
+
+  - id: "R132"
+    text: |
+      Online check-in for a flight
+      must not occur
+        earlier than 24 h before the departure time of that flight.
+
+  - id: "R133"
+    text: |
+      An electronic device
+      must not be operated on an aircraft
+      at any time after pushback23 of that aircraft
+      until a cabin crew member advises that
+        electronic devices may be operated safely.
+
+  - id: "R134"
+    text: |
+      A passenger
+      may board a flight
+      only after that passenger checks in for that flight.
+
+  - id: "R135"
+    text: |
+      A driver
+      must not operate any vehicle
+      if that driver is intoxicated.
+
+  - id: "R136"
+    text: |
+      A folder
+      must not be renamed
+      while any file within that folder is open for editing.
+
+  - id: "R137"
+    text: |
+      Information
+        that is relevant to Australian income tax payment in a financial year
+      must not be deleted
+        during the 7 years after the end of that financial year.
+
+  - id: "R138"
+    text: |
+      Each electronic device that is being used on an aircraft
+      must be switched off
+      no later than 1 min after the start of the descent of that aircraft.
+
+  - id: "R139"
+    text: |
+      Each ticket barrier
+      must retain each ticket that is not valid for any more journeys.
+
+  - id: "R140"
+    text: |
+      A person
+      may travel alone
+      only if the age of that person is at least 2 years.
+
+  - id: "R141"
+    text: |
+      A person
+      may be employed as a cabin crew member
+      only if the height of that person is at least 160 cm.
+
+  - id: "R142"
+    text: |
+      A passenger
+      may be allocated to a seat in an exit row
+      only if that passenger is able to open an aircraft door.
+
+  - id: "R143"
+    text: |
+      A person
+      may be rostered on a flight crew
+      only if that person holds an airline transport pilot license
+        that is current
+      and a type endorsement
+        that is current for each aircraft type to be flown by that flight crew.
+
+  - id: "R144"
+    text: |
+      The cabin crew member
+        who checks that an aircraft door is disarmed
+      must not be the same cabin crew member
+        who disarmed that aircraft door.
+
+  - id: "R145"
+    text: |
+      The flight crew member
+        who signs the pre-flight check report
+      must be the same flight crew member
+        who performed the pre-flight check
+        documented in that pre-flight check report.
+
+  - id: "R146"
+    text: |
+      The leave records of an employee
+      may be viewed by only
+        that employee,
+        the supervisor of that employee,
+        or a human resources officer.
+
+  - id: "R147"
+    text: |
+      The flight crew member
+        who signs the flight check report
+      must be the same flight crew member
+        who performed the flight check
+        documented in that flight check report.
+
+  - id: "R321"
+    text: |
+      A minor
+      is by definition
+      a person
+        whose age is less than 18 years.
+
+  - id: "R322"
+    text: |
+      A mother
+        of a person
+      is by definition
+      the person
+        who is female and is the parent of the first person.
+
+  - id: "R323"
+    text: |
+      A parent
+        of a person
+      is by definition
+      the mother or father
+        of that person.
+
+  - id: "R324"
+    text: |
+      A party
+      is by definition
+      a person or an organization.
+
+  - id: "R325"
+    text: |
+      A journey
+      is by definition
+      a one-way journey, a return journey, or a multi-stop journey.
+
+  - id: "R326"
+    text: |
+      Freezing point
+      is by definition
+      0C.
+
+  - id: "R327"
+    text: |
+      A financial year
+        is by definition
+        365 days or 366 days from a July 1 to the following June 30.
+
+  - id: "R328"
+    text: |
+      The status
+        of a payroll deduction
+      is by definition
+      either before-tax or after-tax.
+
+  - id: "R329"
+    text: |
+      The status
+        of a loan application
+      is by definition
+      one of the following: awaiting approval, approved, or rejected.
+
+  - id: "R330"
+    text: |
+      A transition
+        of the marital status of a person
+        from married, widowed, separated, or divorced
+        to never married
+      is by definition
+      impossible.
+
+  - id: "R331"
+    text: |
+      A transition
+        of the marital status of a person
+        from divorced
+        to widowed or separated
+      is by definition
+      impossible.
+
+  - id: "R332"
+    text: |
+      A flight
+      has by definition
+      exactly one departure time.
+
+  - id: "R333"
+    text: |
+      The departure date
+        of a journey
+      is by definition
+      the same as the departure date
+        of the outgoing flight of that journey.
+
+  - id: "R334"
+    text: |
+      The set of flights
+        booked for each passenger in a flight booking confirmation
+      is by definition
+      the same as the set of flights
+        booked for each other passenger in that flight booking confirmation.
+
+  - id: "R335"
+    text: |
+      Discount rate
+      is by definition
+      at least 0% and at most 100%.
+
+  - id: "R336"
+    text: |
+      The extension
+        for an order line
+      is by definition calculated as
+      the product of the order quantity and the unit price
+        for that order line.
+
+  - id: "R337"
+    text: |
+      The total order value
+        of an order
+      is by definition calculated as
+      the sum of the extensions
+        for each order line.
+
+  - id: "R338"
+    text: |
+      1 mile
+      is by definition approximately equal to
+      1.6 km.
+
+  - id: "R339"
+    text: |
+      A valid airline code
+      is by definition composed of
+      exactly two letters.
+
+  - id: "R340"
+    text: |
+      Each flight booking request
+        that is for a multi-stop journey
+      must specify exactly one travel date
+        for each flight in that journey
+      unless that flight booking request is for an open-dated journey.
+
+  - id: "R341"
+    text: |
+      Each combination of departure date, flight number, and departure city
+      must be allocated
+      exactly one flight crew.
+
+  - id: "R342"
+    text: |
+      Each record of a combination of student and course
+      must specify exactly one year of initial study.
+
+  - id: "R343"
+    text: |
+      Each flight booking request
+      must specify whether it
+      is for a return journey, a one-way journey, or a multi-stop journey.
+
+  - id: "R344"
+    text: |
+      Each flight booking confirmation
+      must specify whether the payment
+        specified in that flight booking confirmation
+      is a credit card payment or an electronic funds transfer payment.
+
+  - id: "R345"
+    text: |
+      Each flight booking confirmation
+      must specify whether or not the paying party
+        specified in the flight booking confirmation
+      wishes to include a CO2 offset payment.
+
+  - id: "R346"
+    text: |
+      Each record of a combination of supplier and product
+      must specify whether or not that supplier
+      is a preferred supplier for that product.
+
+  - id: "R347"
+    text: |
+      Each flight booking confirmation
+        that specifies a destination city that is in a country other than Australia
+      must specify whether each passenger
+        specified in that flight booking confirmation
+      has a passport issued by that country or a visa issued by that country.
+
+  - id: "R348"    
+    text: |
+      Each customer complaint
+      must specify a mobile phone number, an e-mail address,
+        or both.
+
+  - id: "R349"
+    text: |
+      Each flight booking confirmation
+        for an international journey
+      must specify for each passenger
+        specified in that flight booking request
+        a passport number or a visa number
+        but not both.
+
+  - id: "R350"
+    text: |
+      Each concert ticket purchase
+      must specify exactly one of the following:
+        a postal address, an e-mail address, or a fax number.
+
+  - id: "R351"
+    text: |
+      A flight booking confirmation
+        that specifies an insurance option
+      must not specify an electronic funds transfer payment receipt.
+
+  - id: "R352"
+    text: |
+      A change of name registration
+      must not specify more than one party.
+
+  - id: "R353"
+    text: |
+      A purchase order
+      must not specify more than one discount code for any one product.
+
+  - id: "R354"
+    text: |
+      The number of flights
+        specified in each round-trip special booking
+      must be no less than the minimum number of flights
+        defined for the special offer code
+        specified in that round-trip special booking.
+
+  - id: "R355"
+    text: |
+      The frequent flier membership number
+        specified for each passenger
+        in each flight booking confirmation
+      must be one of the frequent flier membership numbers
+        recognized by the airline
+        with which that flight booking confirmation is made.
+
+  - id: "R356"
+    text: |
+      The departure date
+        specified in each award flight booking request
+      must be other than one of the award flight unavailability dates
+        nominated by the airline
+        to which that award flight booking request is made.
+
+  - id: "R357"
+    text: |
+      The combination of reward program and reward membership number
+        specified in each online order
+      must be one of the combinations of
+        reward program and reward membership number
+        recognized by the vendor
+        with which that online order is placed.
+
+  - id: "R358"
+    text: |
+      The order quantity
+        specified for each product
+        in each online order
+      must be at least 1.
+
+  - id: "R359"
+    text: |
+      The return date (if any)
+        specified in each flight booking request
+      must be no earlier than the departure date
+        specified in that flight booking request.
+
+  - id: "R360"
+    text: |
+      The departure time
+        of the return flight (if any)
+        specified in each flight booking confirmation
+      must be no earlier than 1 h
+        after the arrival time
+        of the outgoing flight
+        specified in that flight booking confirmation.
+
+  - id: "R361"
+    text: |
+      The origin city
+        of the outgoing flight
+        specified in a flight booking confirmation
+      must be the same as the origin city
+        specified in the flight booking request
+        that gives rise to that flight booking confirmation.
+
+  - id: "R362"
+    text: |
+      The new full name
+        specified in each change of name request
+      must be different from the previous full name
+        specified in that change of name request.
+
+  - id: "R363"
+    text: |
+      The payment amount
+        specified in a flight booking payment confirmation
+      must be equal to the total amount payable
+        specified in the flight booking confirmation response
+        that gives rise to that flight booking payment confirmation.
+
+  - id: "R364"
+    text: |
+      The registry instrument count
+        specified in each lodgment information report
+      must be equal to the number of registry instruments
+        contained in the lodgment case
+        that contains that lodgment information report.
+
+  - id: "R365"
+    text: |
+      Stamp duty on a real property transfer
+      must be paid by the parties receiving.
+
+  - id: "R366"
+    text: |
+      Each allowance code
+        specified in each employee payroll record
+      must be different from any other allowance code
+        specified in that employee payroll record.
+  
+  - id: "R367"
+    text: |
+      The seat number
+        specified for each passenger
+        in each advance seat allocation
+      must be different from the seat number
+        specified for any other passenger
+        in that advance seat allocation
+
+  - id: "R368"
+    text: |
+      The combination of employee ID and project code
+        specified in each employee assignment
+      must be different from the combination of employee ID and project code
+        specified in any other employee assignment.
+
+  - id: "R369"
+    text: |
+      The set of full names
+        specified for each share received
+        in each real property transfer instrument
+      must be different from the set of full names
+        specified for any other share received
+        in that real property transfer instrument.
+
+  - id: "R370"
+    text: |
+      The combination of start date and end date
+        specified in each project assignment
+      must be such that the end date is no earlier than the start date.
+
+  - id: "R371"
+    text: |
+      The sum of the shares transferred
+        specified in each real property transfer instrument
+      must be no more than 100%.
+
+  - id: "R372"
+    text: |
+      The set of passengers
+        specified for each flight
+        in each flight booking confirmation
+      must be the same as the set of passengers
+        specified for each other flight
+        in that flight booking confirmation.
+
   - id: "R373"   
     text: |
       The departure time of the outgoing flight
@@ -8,14 +872,203 @@ example_list:
         after the booking confirmation time
         of that flight booking confirmation.
 
-  - id: "R136"
+  - id: "R374"
     text: |
-      A folder
-      must not be renamed
-      while any file within that folder is open for editing.
+      The time period
+        specified in each employee grade record
+      must not overlap the time period
+        specified in any other employee grade record
+        for the same employee.
 
-  - id: "R138"
+  - id: "R375"
     text: |
-      Each electronic device that is being used on an aircraft
-      must be switched off
-      no later than 1 min after the start of the descent of that aircraft.
+      Each day
+        within the employment period
+        specified in each employee record
+      must be within the time period
+        specified in exactly one employee grade record
+        for the same employee.
+
+  - id: "R376"
+    text: |
+      Each date
+        within the time period
+        specified in each employee grade record
+      must be within the time period
+        specified in the employment record
+        for the same employee.
+
+  - id: "R377"
+    text: |
+      Each leave type
+        specified in an employee leave record
+      must be different from the leave type
+        specified in the latest of the earlier employee leave records
+        for the same employee.
+
+  - id: "R378"
+    text: |
+      Each instalment due date
+        specified in each property tax notice
+      must be a working day.
+
+  - id: "R379"
+    text: |
+      The polygon
+        that constitutes each individual parcel
+        in a real estate subdivision
+      must be within the polygon
+        that constitutes the real estate subdivision.
+
+  - id: "R380"
+    text: |
+      The contact phone number
+        specified in each online order
+      must be a valid phone number.
+
+  - id: "R381"
+    text: |
+      A data item
+        in a financial transaction
+      must not be updated.
+
+  - id: "R382"
+    text: |
+      An order
+      must not be transferred
+        from one customer to another customer.
+
+  - id: "R383"
+    text: |
+      The status
+        of a loan application
+      may be updated to approved
+      only if the status
+        of that loan application
+        is review complete.
+
+  - id: "R384"
+    text: |
+      The hourly pay rate
+      of an employee
+      must not be decreased.
+
+  - id: "R385"
+    text: |
+      Bag drop for a flight
+      may occur
+      only during the 4 h before the departure time of that flight.
+
+  - id: "R386"
+    text: |
+      Acknowledgment of a service request
+        that is made before 2 pm
+      must occur
+      before 5 pm on the day on which that service request is made.
+
+  - id: "R387"
+    text: |
+      A daily ticket
+      may be used
+      only until 2 am on the day
+        after the day on which the ticket is validated.
+
+  - id: "R388"
+    text: |
+      Construction machinery
+      must not be operated
+        in a residential area
+        before 7:30 am or after 7:30 pm on a weekday.
+
+  - id: "R389"
+    text: |
+      Online banking
+      must not occur
+      during system maintenance.
+
+  - id: "R390"
+    text: |
+      A replenishment order
+      must be raised for a part
+      no later than 24 h
+      after the quantity on hand of that part falls below
+        the reorder point for that part.
+
+  - id: "R391"
+    text: |
+      A passenger
+      may board an international flight
+      only after that passenger undergoes departure control.
+
+  - id: "R392"
+    text: |
+      A laptop computer
+      may undergo security screening
+      only if that laptop computer has been removed from any bag.
+
+  - id: "R393"
+    text: |
+      A driver
+      must not operate any vehicle
+      if that driver is intoxicated.
+
+  - id: "R394"
+    text: |
+      An order
+      must not be deleted
+      until 6 months after the payment for that order.
+
+  - id: "R395"
+    text: |
+      Each ticket barrier
+      must retain each ticket
+        that is not valid for any more journeys.
+
+  - id: "R396"
+    text: |
+      Each ticket barrier
+      must retain each ticket
+        that is expired.
+
+  - id: "R397"
+    text: |
+      A person
+      may be rostered as the pilot in command
+        on a flight crew
+      only if that person holds a command endorsement
+        that is current.
+
+  - id: "R398"
+    text: |
+      A person
+      may be rostered as a flight crew member
+      only if the current medical status of that person is A1.
+
+  - id: "R399"
+    text: |
+      The consultant
+        who performs the quality review
+        of a project deliverable
+      must not be one of the consultants
+        who updated that project deliverable.
+
+  - id: "R400"
+    text: |
+      The consultant
+        who signs the quality review report
+      must be the same consultant
+        who performed the quality review
+        documented in that quality review report.
+
+  - id: "R401"
+    text: |
+      A payroll record
+        of an employee
+      may be viewed by
+      only that employee, the supervisor of that employee, or a payroll officer.
+
+  - id: "R402"
+    text: |
+      The final quality review
+        of each project deliverable
+      must be performed by the quality assurance officer.
