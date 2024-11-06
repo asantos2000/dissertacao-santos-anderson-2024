@@ -23,7 +23,7 @@
             "elements": [
                 {
                     "id": 1,
-                    "expression": "A person may serve process, pleadings, or other papers on a non-resident investment adviser, or on a non-resident general partner or non-resident managing agent of an investment adviser by serving any or all of its appointed agents.",
+                    "statement": "A person may serve process, pleadings, or other papers on a non-resident investment adviser, or on a non-resident general partner or non-resident managing agent of an investment adviser by serving any or all of its appointed agents.",
                     "terms": [
                         {
                             "term": "Person",
@@ -71,7 +71,7 @@
                 },
                 {
                     "id": 2,
-                    "expression": "A person may serve a non-resident investment adviser, non-resident general partner, or non-resident managing agent by furnishing the Commission with one copy of the process, pleadings, or papers, for each named party, and one additional copy for the Commission's records.",
+                    "statement": "A person may serve a non-resident investment adviser, non-resident general partner, or non-resident managing agent by furnishing the Commission with one copy of the process, pleadings, or papers, for each named party, and one additional copy for the Commission's records.",
                     "terms": [
                         {
                             "term": "Person",
@@ -128,7 +128,7 @@
                 },
                 {
                     "id": 3,
-                    "expression": "If process, pleadings, or other papers are served on the Commission as described in this section, the Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.",
+                    "statement": "If process, pleadings, or other papers are served on the Commission as described in this section, the Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.",
                     "terms": [
                         {
                             "term": "Process",
@@ -181,7 +181,7 @@
                 },
                 {
                     "id": 4,
-                    "expression": "If the Secretary certifies that the Commission was served with process, pleadings, or other papers pursuant to paragraph (a)(1) of this section and forwarded these documents to a named party pursuant to paragraph (a)(2) of this section, this certification constitutes evidence of service upon that party.",
+                    "statement": "If the Secretary certifies that the Commission was served with process, pleadings, or other papers pursuant to paragraph (a)(1) of this section and forwarded these documents to a named party pursuant to paragraph (a)(2) of this section, this certification constitutes evidence of service upon that party.",
                     "terms": [
                         {
                             "term": "Secretary",
@@ -239,7 +239,7 @@
                 },
                 {
                     "id": 5,
-                    "expression": "Managing agent means any person, including a trustee, who directs or manages, or who participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.",
+                    "statement": "Managing agent means any person, including a trustee, who directs or manages, or who participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.",
                     "terms": [
                         {
                             "term": "Managing agent",
@@ -282,7 +282,7 @@
                 },
                 {
                     "id": 6,
-                    "expression": "Non-resident means an individual who resides in any place not subject to the jurisdiction of the United States.",
+                    "statement": "Non-resident means an individual who resides in any place not subject to the jurisdiction of the United States.",
                     "terms": [
                         {
                             "term": "Non-resident",
@@ -315,7 +315,7 @@
                 },
                 {
                     "id": 7,
-                    "expression": "Non-resident means a corporation that is incorporated in or that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
+                    "statement": "Non-resident means a corporation that is incorporated in or that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
                     "terms": [
                         {
                             "term": "Non-resident",
@@ -357,7 +357,7 @@
                 },
                 {
                     "id": 8,
-                    "expression": "Non-resident means a partnership or other unincorporated organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
+                    "statement": "Non-resident means a partnership or other unincorporated organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
                     "terms": [
                         {
                             "term": "Non-resident",
@@ -406,7 +406,7 @@
                 },
                 {
                     "id": 9,
-                    "expression": "Principal office and place of business has the same meaning as in \u00a7 275.203A-3(c) of this chapter.",
+                    "statement": "Principal office and place of business has the same meaning as in \u00a7 275.203A-3(c) of this chapter.",
                     "terms": [
                         {
                             "term": "Principal office",
@@ -443,7 +443,7 @@
             "elements": [
                 {
                     "id": 1,
-                    "expression": "Notice of the initiation of the proceeding will be published in the Federal Register and will indicate the earliest date upon which an order disposing of the matter may be entered.",
+                    "statement": "Notice of the initiation of the proceeding will be published in the Federal Register and will indicate the earliest date upon which an order disposing of the matter may be entered.",
                     "terms": [
                         {
                             "term": "Notice",
@@ -484,7 +484,7 @@
                 },
                 {
                     "id": 2,
-                    "expression": "Any interested person may, within the period of time specified therein, submit to the Commission in writing any facts bearing upon the desirability of a hearing on the matter and may request that a hearing be held, stating his reasons therefor and the nature of his interest in the matter.",
+                    "statement": "Any interested person may, within the period of time specified therein, submit to the Commission in writing any facts bearing upon the desirability of a hearing on the matter and may request that a hearing be held, stating his reasons therefor and the nature of his interest in the matter.",
                     "terms": [
                         {
                             "term": "Interested person",
@@ -539,7 +539,7 @@
                 },
                 {
                     "id": 3,
-                    "expression": "An order disposing of the matter will be issued as of course following the expiration of the period of time referred to in paragraph (a) of this section, unless the Commission thereafter orders a hearing on the matter.",
+                    "statement": "An order disposing of the matter will be issued as of course following the expiration of the period of time referred to in paragraph (a) of this section, unless the Commission thereafter orders a hearing on the matter.",
                     "terms": [
                         {
                             "term": "Order",
@@ -581,7 +581,7 @@
                 },
                 {
                     "id": 4,
-                    "expression": "The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors, upon the request of any interested person or upon its own motion.",
+                    "statement": "The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors, upon the request of any interested person or upon its own motion.",
                     "terms": [
                         {
                             "term": "Commission",
@@ -632,7 +632,7 @@
                 },
                 {
                     "id": 5,
-                    "expression": "For purposes of this rule, an \u201capplication\u201d means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.",
+                    "statement": "For purposes of this rule, an \u201capplication\u201d means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.",
                     "terms": [
                         {
                             "term": "Purposes",
@@ -688,7 +688,7 @@
             "elements": [
                 {
                     "id": 1,
-                    "expression": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that has assets under management of less than $25 million.",
+                    "statement": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that has assets under management of less than $25 million.",
                     "terms": [
                         {
                             "term": "Small business",
@@ -720,7 +720,7 @@
                 },
                 {
                     "id": 2,
-                    "expression": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that did not have total assets of $5 million or more on the last day of the most recent fiscal year.",
+                    "statement": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that did not have total assets of $5 million or more on the last day of the most recent fiscal year.",
                     "terms": [
                         {
                             "term": "Small business",
@@ -760,7 +760,7 @@
                 },
                 {
                     "id": 3,
-                    "expression": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that does not control, is not controlled by, and is not under common control with another investment adviser that has assets under management of $25 million or more.",
+                    "statement": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that does not control, is not controlled by, and is not under common control with another investment adviser that has assets under management of $25 million or more.",
                     "terms": [
                         {
                             "term": "Small business",
@@ -802,7 +802,7 @@
                 },
                 {
                     "id": 4,
-                    "expression": "Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.",
+                    "statement": "Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.",
                     "terms": [
                         {
                             "term": "Control",
@@ -843,7 +843,7 @@
                 },
                 {
                     "id": 5,
-                    "expression": "A person is presumed to control a corporation if the person directly or indirectly has the right to vote 25 percent or more of a class of the corporation's voting securities.",
+                    "statement": "A person is presumed to control a corporation if the person directly or indirectly has the right to vote 25 percent or more of a class of the corporation's voting securities.",
                     "terms": [
                         {
                             "term": "Person",
@@ -871,7 +871,7 @@
                 },
                 {
                     "id": 6,
-                    "expression": "A person is presumed to control a partnership if the person has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the partnership.",
+                    "statement": "A person is presumed to control a partnership if the person has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the partnership.",
                     "terms": [
                         {
                             "term": "Person",
@@ -899,7 +899,7 @@
                 },
                 {
                     "id": 7,
-                    "expression": "A person is presumed to control a limited liability company (LLC) if the person directly or indirectly has the right to vote 25 percent or more of a class of the interests of the LLC.",
+                    "statement": "A person is presumed to control a limited liability company (LLC) if the person directly or indirectly has the right to vote 25 percent or more of a class of the interests of the LLC.",
                     "terms": [
                         {
                             "term": "Person",
@@ -927,7 +927,7 @@
                 },
                 {
                     "id": 8,
-                    "expression": "A person is presumed to control a trust if the person is a trustee or managing agent of the trust.",
+                    "statement": "A person is presumed to control a trust if the person is a trustee or managing agent of the trust.",
                     "terms": [
                         {
                             "term": "Person",
@@ -955,7 +955,7 @@
                 },
                 {
                     "id": 9,
-                    "expression": "Total assets means the total assets as shown on the balance sheet of the investment adviser or other person described above under paragraph (a)(3) of this section.",
+                    "statement": "Total assets means the total assets as shown on the balance sheet of the investment adviser or other person described above under paragraph (a)(3) of this section.",
                     "terms": [
                         {
                             "term": "Total assets",
@@ -1506,7 +1506,7 @@
             "elements": [
                 {
                     "id": 1,
-                    "expression": "A person may serve process, pleadings, or other papers on a non-resident investment adviser, or on a non-resident general partner or non-resident managing agent of an investment adviser by serving any or all of its appointed agents.",
+                    "statement": "A person may serve process, pleadings, or other papers on a non-resident investment adviser, or on a non-resident general partner or non-resident managing agent of an investment adviser by serving any or all of its appointed agents.",
                     "terms": [
                         {
                             "term": "Person",
@@ -1554,7 +1554,7 @@
                 },
                 {
                     "id": 2,
-                    "expression": "A person may serve a non-resident investment adviser, non-resident general partner, or non-resident managing agent by furnishing the Commission with one copy of the process, pleadings, or papers, for each named party, and one additional copy for the Commission's records.",
+                    "statement": "A person may serve a non-resident investment adviser, non-resident general partner, or non-resident managing agent by furnishing the Commission with one copy of the process, pleadings, or papers, for each named party, and one additional copy for the Commission's records.",
                     "terms": [
                         {
                             "term": "Person",
@@ -1606,7 +1606,7 @@
                 },
                 {
                     "id": 3,
-                    "expression": "If process, pleadings, or other papers are served on the Commission as described in this section, the Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.",
+                    "statement": "If process, pleadings, or other papers are served on the Commission as described in this section, the Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.",
                     "terms": [
                         {
                             "term": "Process",
@@ -1654,7 +1654,7 @@
                 },
                 {
                     "id": 4,
-                    "expression": "If the Secretary certifies that the Commission was served with process, pleadings, or other papers pursuant to paragraph (a)(1) of this section and forwarded these documents to a named party pursuant to paragraph (a)(2) of this section, this certification constitutes evidence of service upon that party.",
+                    "statement": "If the Secretary certifies that the Commission was served with process, pleadings, or other papers pursuant to paragraph (a)(1) of this section and forwarded these documents to a named party pursuant to paragraph (a)(2) of this section, this certification constitutes evidence of service upon that party.",
                     "terms": [
                         {
                             "term": "Secretary",
@@ -1708,7 +1708,7 @@
                 },
                 {
                     "id": 5,
-                    "expression": "Managing agent means any person, including a trustee, who directs or manages, or who participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.",
+                    "statement": "Managing agent means any person, including a trustee, who directs or manages, or who participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.",
                     "terms": [
                         {
                             "term": "Managing agent",
@@ -1750,7 +1750,7 @@
                 },
                 {
                     "id": 6,
-                    "expression": "Non-resident means an individual who resides in any place not subject to the jurisdiction of the United States.",
+                    "statement": "Non-resident means an individual who resides in any place not subject to the jurisdiction of the United States.",
                     "terms": [
                         {
                             "term": "Non-resident",
@@ -1778,7 +1778,7 @@
                 },
                 {
                     "id": 7,
-                    "expression": "A corporation that is incorporated in or that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
+                    "statement": "A corporation that is incorporated in or that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
                     "terms": [
                         {
                             "term": "Corporation",
@@ -1810,7 +1810,7 @@
                 },
                 {
                     "id": 8,
-                    "expression": "A partnership or other unincorporated organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
+                    "statement": "A partnership or other unincorporated organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
                     "terms": [
                         {
                             "term": "Partnership",
@@ -1849,7 +1849,7 @@
                 },
                 {
                     "id": 9,
-                    "expression": "Principal office and place of business has the same meaning as in \u00a7 275.203A-3(c) of this chapter.",
+                    "statement": "Principal office and place of business has the same meaning as in \u00a7 275.203A-3(c) of this chapter.",
                     "terms": [
                         {
                             "term": "Principal office",
@@ -2031,7 +2031,7 @@
             "elements": [
                 {
                     "id": 1,
-                    "expression": "Notice of the initiation of the proceeding will be published in the Federal Register and will indicate the earliest date upon which an order disposing of the matter may be entered.",
+                    "statement": "Notice of the initiation of the proceeding will be published in the Federal Register and will indicate the earliest date upon which an order disposing of the matter may be entered.",
                     "terms": [
                         {
                             "term": "Notice",
@@ -2068,7 +2068,7 @@
                 },
                 {
                     "id": 2,
-                    "expression": "Any interested person may, within the period of time specified therein, submit to the Commission in writing any facts bearing upon the desirability of a hearing on the matter and may request that a hearing be held, stating his reasons therefor and the nature of his interest in the matter.",
+                    "statement": "Any interested person may, within the period of time specified therein, submit to the Commission in writing any facts bearing upon the desirability of a hearing on the matter and may request that a hearing be held, stating his reasons therefor and the nature of his interest in the matter.",
                     "terms": [
                         {
                             "term": "Interested person",
@@ -2115,7 +2115,7 @@
                 },
                 {
                     "id": 3,
-                    "expression": "An order disposing of the matter will be issued as of course following the expiration of the period of time referred to in paragraph (a) of this section, unless the Commission thereafter orders a hearing on the matter.",
+                    "statement": "An order disposing of the matter will be issued as of course following the expiration of the period of time referred to in paragraph (a) of this section, unless the Commission thereafter orders a hearing on the matter.",
                     "terms": [
                         {
                             "term": "Order",
@@ -2149,7 +2149,7 @@
                 },
                 {
                     "id": 4,
-                    "expression": "The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors.",
+                    "statement": "The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors.",
                     "terms": [
                         {
                             "term": "Commission",
@@ -2183,7 +2183,7 @@
                 },
                 {
                     "id": 5,
-                    "expression": "An 'application' means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.",
+                    "statement": "An 'application' means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.",
                     "terms": [
                         {
                             "term": "Application",
@@ -2324,7 +2324,7 @@
             "elements": [
                 {
                     "id": 1,
-                    "expression": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that has assets under management of less than $25 million.",
+                    "statement": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that has assets under management of less than $25 million.",
                     "terms": [
                         {
                             "term": "Small business",
@@ -2356,7 +2356,7 @@
                 },
                 {
                     "id": 2,
-                    "expression": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that did not have total assets of $5 million or more on the last day of the most recent fiscal year.",
+                    "statement": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that did not have total assets of $5 million or more on the last day of the most recent fiscal year.",
                     "terms": [
                         {
                             "term": "Small business",
@@ -2392,7 +2392,7 @@
                 },
                 {
                     "id": 3,
-                    "expression": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that does not control, is not controlled by, and is not under common control with another investment adviser that has assets under management of $25 million or more.",
+                    "statement": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that does not control, is not controlled by, and is not under common control with another investment adviser that has assets under management of $25 million or more.",
                     "terms": [
                         {
                             "term": "Small business",
@@ -2430,7 +2430,7 @@
                 },
                 {
                     "id": 4,
-                    "expression": "Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.",
+                    "statement": "Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.",
                     "terms": [
                         {
                             "term": "Control",
@@ -2470,7 +2470,7 @@
                 },
                 {
                     "id": 5,
-                    "expression": "A person is presumed to control a corporation if the person directly or indirectly has the right to vote 25 percent or more of a class of the corporation's voting securities.",
+                    "statement": "A person is presumed to control a corporation if the person directly or indirectly has the right to vote 25 percent or more of a class of the corporation's voting securities.",
                     "terms": [
                         {
                             "term": "Person",
@@ -2498,7 +2498,7 @@
                 },
                 {
                     "id": 6,
-                    "expression": "A person is presumed to control a partnership if the person has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the partnership.",
+                    "statement": "A person is presumed to control a partnership if the person has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the partnership.",
                     "terms": [
                         {
                             "term": "Person",
@@ -2526,7 +2526,7 @@
                 },
                 {
                     "id": 7,
-                    "expression": "A person is presumed to control a limited liability company (LLC) if the person directly or indirectly has the right to vote 25 percent or more of a class of the interests of the LLC.",
+                    "statement": "A person is presumed to control a limited liability company (LLC) if the person directly or indirectly has the right to vote 25 percent or more of a class of the interests of the LLC.",
                     "terms": [
                         {
                             "term": "Person",
@@ -2554,7 +2554,7 @@
                 },
                 {
                     "id": 8,
-                    "expression": "A person is presumed to control a trust if the person is a trustee or managing agent of the trust.",
+                    "statement": "A person is presumed to control a trust if the person is a trustee or managing agent of the trust.",
                     "terms": [
                         {
                             "term": "Person",
@@ -2582,7 +2582,7 @@
                 },
                 {
                     "id": 9,
-                    "expression": "Total assets means the total assets as shown on the balance sheet of the investment adviser or other person described above under paragraph (a)(3) of this section.",
+                    "statement": "Total assets means the total assets as shown on the balance sheet of the investment adviser or other person described above under paragraph (a)(3) of this section.",
                     "terms": [
                         {
                             "term": "Total assets",

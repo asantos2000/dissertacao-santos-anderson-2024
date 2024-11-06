@@ -268,8 +268,8 @@ class DocumentProcessor:
                     verb_symbols = []
                 element_dict = {
                     "doc_id": doc_id,
-                    "expression_id": element_id,
-                    "expression": element.get("expression"),
+                    "statement_id": element_id,
+                    "statement": element.get("statement"),
                     "source": element.get("source"),
                     "terms": element.get("terms", []),
                     "verb_symbols": verb_symbols
@@ -288,7 +288,7 @@ class DocumentProcessor:
                         term_dict = {
                             "doc_id": doc_id,
                             "signifier": signifier,
-                            "expression_id": element_id,
+                            "statement_id": element_id,
                             "definition": self.elements_terms_definition.get(doc_id, {}).get(signifier),
                             "source": element.get("source")
                         }
@@ -298,24 +298,6 @@ class DocumentProcessor:
                         else:
                             self.elements_names.append(term_dict)
                             self.elements_names_set.add(signifier)
-
-    # def get_unique_terms(self):
-    #     """
-    #     Returns the set of unique terms found in the documents.
-
-    #     Returns:
-    #         set: Set of unique terms.
-    #     """
-    #     return self.elements_terms_set
-
-    # def get_unique_names(self):
-    #     """
-    #     Returns the set of unique names found in the documents.
-
-    #     Returns:
-    #         set: Set of unique names.
-    #     """
-    #     return self.elements_names_set
 
     def get_unique_terms(self, doc_id=None):
         """
@@ -347,23 +329,62 @@ class DocumentProcessor:
             return {name["signifier"] for name in self.elements_names if name["doc_id"] == doc_id}
         return self.elements_names_set
 
-    def get_terms(self):
+    # def get_terms(self):
+    #     """
+    #     Returns the list of terms with detailed information.
+
+    #     Returns:
+    #         list: List of terms.
+    #     """
+    #     return self.elements_terms
+
+    # def get_names(self):
+    #     """
+    #     Returns the list of names with detailed information.
+
+    #     Returns:
+    #         list: List of names.
+    #     """
+    #     return self.elements_names
+
+    def get_terms(self, definition_filter="all"):
         """
-        Returns the list of terms with detailed information.
+        Returns the list of terms with detailed information, filtered by the presence of a definition.
+
+        Args:
+            definition_filter (str): Filter for terms based on definition presence. 
+                                    "non_null" returns terms with definitions,
+                                    "null" returns terms without definitions,
+                                    "all" returns all terms regardless of definition.
 
         Returns:
             list: List of terms.
         """
+        if definition_filter == "non_null":
+            return [term for term in self.elements_terms if term.get("definition") is not None]
+        elif definition_filter == "null":
+            return [term for term in self.elements_terms if term.get("definition") is None]
         return self.elements_terms
 
-    def get_names(self):
+    def get_names(self, definition_filter="all"):
         """
-        Returns the list of names with detailed information.
+        Returns the list of names with detailed information, filtered by the presence of a definition.
+
+        Args:
+            definition_filter (str): Filter for names based on definition presence. 
+                                    "non_null" returns names with definitions,
+                                    "null" returns names without definitions,
+                                    "all" returns all names regardless of definition.
 
         Returns:
             list: List of names.
         """
+        if definition_filter == "non_null":
+            return [name for name in self.elements_names if name.get("definition") is not None]
+        elif definition_filter == "null":
+            return [name for name in self.elements_names if name.get("definition") is None]
         return self.elements_names
+
 
     def get_facts(self):
         """
@@ -401,7 +422,7 @@ class DocumentProcessor:
                     return {
                         "definition": definition,
                         "source": term_dict["source"],
-                        "expression_id": term_dict["expression_id"]
+                        "statement_id": term_dict["statement_id"]
                     }
         return None
 
@@ -421,27 +442,27 @@ class DocumentProcessor:
                 return {
                     "definition": name_dict.get("definition"),
                     "source": name_dict["source"],
-                    "expression_id": name_dict["expression_id"]
+                    "statement_id": name_dict["statement_id"]
                 }
         return None
 
-    def get_fact_info(self, doc_id, expression_id):
+    def get_fact_info(self, doc_id, statement_id):
         """
         Retrieves information about a specific fact from elements.
 
         Args:
             doc_id (str): Document identifier.
-            expression_id (str): Expression identifier of the fact.
+            statement_id (str): statement identifier of the fact.
 
         Returns:
             dict or None: A dictionary containing fact information if found, otherwise None.
         """
         for fact_dict in self.elements_facts:
-            if fact_dict["doc_id"] == doc_id and fact_dict["expression_id"] == expression_id:
+            if fact_dict["doc_id"] == doc_id and fact_dict["statement_id"] == statement_id:
                 terms = [term.get("term") for term in fact_dict.get("terms", []) if term.get("classification") == "Common Noun"]
                 names = [term.get("term") for term in fact_dict.get("terms", []) if term.get("classification") == "Proper Noun"]
                 return {
-                    "expression": fact_dict["expression"],
+                    "statement": fact_dict["statement"],
                     "source": fact_dict["source"],
                     "terms": terms,
                     "names": names,
@@ -449,23 +470,23 @@ class DocumentProcessor:
                 }
         return None
 
-    def get_rule_info(self, doc_id, expression_id):
+    def get_rule_info(self, doc_id, statement_id):
         """
         Retrieves information about a specific rule from elements.
 
         Args:
             doc_id (str): Document identifier.
-            expression_id (str): Expression identifier of the rule.
+            statement_id (str): statement identifier of the rule.
 
         Returns:
             dict or None: A dictionary containing rule information if found, otherwise None.
         """
         for rule_dict in self.elements_rules:
-            if rule_dict["doc_id"] == doc_id and rule_dict["expression_id"] == expression_id:
+            if rule_dict["doc_id"] == doc_id and rule_dict["statement_id"] == statement_id:
                 terms = [term.get("term") for term in rule_dict.get("terms", []) if term.get("classification") == "Common Noun"]
                 names = [term.get("term") for term in rule_dict.get("terms", []) if term.get("classification") == "Proper Noun"]
                 return {
-                    "expression": rule_dict.get("expression"),
+                    "statement": rule_dict.get("statement"),
                     "source": rule_dict.get("source"),
                     "terms": terms,
                     "names": names,

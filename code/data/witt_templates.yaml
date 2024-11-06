@@ -78,12 +78,12 @@ template_list:
       4. "of that <term 2>" is only required if <term 1> is an attribute term or role term; if it is used,
       the term substituted in place of <term 2> after "[<article> <term 3>, or]" should be the same
       as the term substituted in place of <term 2> after <term 1>.
-      text: |
-        {A|An} <term 1>
-          {of {a|an} <term 2>| }
-        is by definition
-        [<article> <term 3>, or]
-          {of that <term 2>| }.
+    text: |
+      {A|An} <term 1>
+        {of {a|an} <term 2>| }
+      is by definition
+      [<article> <term 3>, or]
+        {of that <term 2>| }.
 
   - id: "T9"
     explanation: |
