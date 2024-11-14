@@ -1,5 +1,6 @@
 subtemplate_list:
   - id: "S1"
+    title: "operative rule statement subject"
     explanation: |
       
     text: |
@@ -8,12 +9,14 @@ subtemplate_list:
         {<qualifying clause>|}
 
   - id: "S2"
+    title: "article"
     explanation: |
       
     text: |
       <article>::={a |an|the}
 
   - id: "S3"
+    title: "cardinality"
     explanation: |
       For example, "exactly one", "at least two", "at least one and at most four".
     text: |
@@ -22,6 +25,7 @@ subtemplate_list:
       <positive integer 2>
 
   - id: "S4"
+    title: "determiner"
     explanation: |
       One or more determiners can be used before a noun to provide some information as to which (or how many) instances of the noun's concept are being referred to.
       The most commonly used determiners are articles.
@@ -44,6 +48,7 @@ subtemplate_list:
       any {other |more}}
 
   - id: "S5"
+    title: "set function"
     explanation: |
       A set function is any scalar numeric property of a set of data items.
     text: |
@@ -52,6 +57,7 @@ subtemplate_list:
       latest | earliest}
 
   - id: "S6"
+    title: "inequality operator"
     explanation: |
       An inequality operator in a rule statement can be any of the following:
       1. 'more than', 'less than', 'later than', 'earlier than', 'no more than', 'no less than', 'no later than', 'no earlier than';
@@ -64,6 +70,7 @@ subtemplate_list:
       {no|} {later | earlier} than <literal> {after |before}}
 
   - id: "S7"
+    title: "equality operator"
     explanation: |
       There are various equality operators, some appropriate to non-quantitative comparisons and others to quantitative comparisons.
     text: |
@@ -71,34 +78,37 @@ subtemplate_list:
       {the same as| different from|equal to|unequal to}
 
   - id: "S8"
+    title: "transaction signifier"
     explanation: |
       Thus any of the following can be substituted in place of a <transaction signifier> placeholder:
       1. a term, optionally followed by a qualifying clause;
-      2. a list of terms, optionally followed by a qualifying clause, and preceded by ‘combination of’ or ‘record of a combination of’; the last two objects in the list are separated by ‘and’ (or a comma and ‘and’ if adhering to U.S. punctuation standards) and each other pair of objects in the list is separated by a comma.
+      2. a list of terms, optionally followed by a qualifying clause, and preceded by "combination of" or "record of a combination of"; the last two objects in the list are separated by "and" (or a comma and "and" if adhering to U.S. punctuation standards) and each other pair of objects in the list is separated by a comma.
     text: |
       <transaction signifier>::=
       {<term>|{record of a| } combination of [<term>, and]}
         {<qualifying clause>| }
 
   - id: "S9"
+    title: "verb part"
     explanation: |
       Thus any of the following can be substituted in place of a <verb part> placeholder:
-      1. a preposition preceded by a participle: for example, ‘specified by’;
-      2. a preposition preceded by an adjective: for example, ‘available in’;
-      3. a preposition alone: for example, ‘of ’.
+      1. a preposition preceded by a participle: for example, "specified by";
+      2. a preposition preceded by an adjective: for example, "available in";
+      3. a preposition alone: for example, "of ".
     text: |
       <verb part>::=
       {<participle>|<adjective>| } <preposition>
 
   - id: "S10"
+    title: "predicate"
     explanation: |
       Thus any of the following can be substituted in place of a <predicate> placeholder:
-      1. a verb phrase followed by a single object: for example, ‘is specified by that transaction’;
-      2. ‘is’ and an equality operator or inequality operator followed by a single object: for example, ‘is equal to the fee payable’, ‘is less than the maximum price’;
+      1. a verb phrase followed by a single object: for example, "is specified by that transaction";
+      2. "is" and an equality operator or inequality operator followed by a single object: for example, "is equal to the fee payable", "is less than the maximum price";
       3. a verb phrase followed by
-        a. a list of objects, the last two objects in the list separated by ‘and’ (or a comma and ‘and’ if adhering to U.S. punctuation standards), and each other pair of objects in the list separated by a comma: for example, ‘specifies a discount code and a promotion code’;
-        b. a list of objects, the last two objects in the list separated by ‘or’ (or a comma and ‘or’ if adhering to U.S. punctuation standards), and each other pair of objects in the list separated by a comma: for example, ‘is 0 or 1’;
-      4. a verb phrase alone: for example, ‘is closed’.
+        a. a list of objects, the last two objects in the list separated by "and" (or a comma and "and" if adhering to U.S. punctuation standards), and each other pair of objects in the list separated by a comma: for example, "specifies a discount code and a promotion code";
+        b. a list of objects, the last two objects in the list separated by "or" (or a comma and "or" if adhering to U.S. punctuation standards), and each other pair of objects in the list separated by a comma: for example, "is 0 or 1";
+      4. a verb phrase alone: for example, "is closed".
     text: |
       <predicate>::=
       {{<verb phrase>| is {<equality operator>|<inequality operator>}}
@@ -106,11 +116,12 @@ subtemplate_list:
       <verb phrase> {[<object>, and] | [<object>, or] | }}
 
   - id: "S11"
+    title: "object"
     explanation: |
       Thus any of the following can be substituted in place of an <object> placeholder:
-      1. a term optionally preceded by a determiner and optionally followed by a qualifying clause: for example, ‘the credit card with which the booking was paid for’, ‘employees in receipt of this allowance’;
-      2. a term preceded by ‘the <set function> of’ and an optional determiner, and optionally followed by a qualifying clause: for example, ‘the number of employees in the team’, ‘the sum of the fares’;
-      3. a literal optionally preceded by a determiner: for example, ‘1 January 2012’, ‘that 24 h’.
+      1. a term optionally preceded by a determiner and optionally followed by a qualifying clause: for example, "the credit card with which the booking was paid for", "employees in receipt of this allowance";
+      2. a term preceded by "the <set function> of" and an optional determiner, and optionally followed by a qualifying clause: for example, "the number of employees in the team", "the sum of the fares";
+      3. a literal optionally preceded by a determiner: for example, "1 January 2012", "that 24 h".
     text: |
       <object>::=
       {{<determiner>|the <set function> of {<determiner>| } | } <term>
@@ -118,13 +129,14 @@ subtemplate_list:
       {<determiner>| } <literal>}
 
   - id: "S12"
+    title: "expression"
     explanation: |
       Thus any of the following can be substituted in place of the <expression> placeholder:
-      1. an object (see subtemplate S11): for example, ‘the order quantity of that order line’;
-      2. a set function followed by a term with optional preceding determiner and optional following qualifying clause: for example, ‘the number of order lines’, ‘the sum of the extensions for each order line’;
-      3. any two expressions joined by ‘plus’, ‘minus’, ‘multiplied by’, or ‘divided by’: for example, ‘1 minus the discount for that customer’, ‘1 minus the discount for that customer multiplied by the unit price of that product’;
-      4. ‘sum of’ or ‘product of’, followed by a list of expressions each separated from the next by a comma and/or ‘and’: for example, ‘the sum of the base fare, fuel levy, booking fee, and credit card charge for that booking’;
-      5. ‘square’, ‘cube’, ‘square root’, or ‘cube root’, followed by an expression: for example, ‘the square of the speed of light’.
+      1. an object (see subtemplate S11): for example, "the order quantity of that order line";
+      2. a set function followed by a term with optional preceding determiner and optional following qualifying clause: for example, "the number of order lines", "the sum of the extensions for each order line";
+      3. any two expressions joined by "plus", "minus", "multiplied by", or "divided by": for example, "1 minus the discount for that customer", "1 minus the discount for that customer multiplied by the unit price of that product";
+      4. "sum of" or "product of", followed by a list of expressions each separated from the next by a comma and/or "and": for example, "the sum of the base fare, fuel levy, booking fee, and credit card charge for that booking";
+      5. "square", "cube", "square root", or "cube root", followed by an expression: for example, "the square of the speed of light".
     text: |
       <expression>::=
       {<object>|
@@ -134,19 +146,20 @@ subtemplate_list:
       {square|cube} {root |} of <expression>}
 
   - id: "S13"
+    title: "conditional clause"
     explanation: |
       Thus any of the following can be substituted in place of a <conditional clause> placeholder:
       1. a single conditional clause, consisting of
         a. either
-          i. a term preceded by a determiner and optionally followed by a qualifying clause: for example, ‘the employee who submitted the application’,
+          i. a term preceded by a determiner and optionally followed by a qualifying clause: for example, "the employee who submitted the application",
           ii. an expression (see subtemplate S12), or
-          iii. ‘it’;
+          iii. "it";
         b. followed by one of
           i. a single predicate (see subtemplate S10),
-          ii. a list of predicates, each pair of predicates in the list separated by ‘and’,
-          iii. a list of predicates, each pair of predicates in the list separated by ‘or’;
-      2. a list of conditional clauses, each pair of clauses in the list separated by ‘and’;
-      3. a list of conditional clauses, each pair of clauses in the list separated by ‘or’.
+          ii. a list of predicates, each pair of predicates in the list separated by "and",
+          iii. a list of predicates, each pair of predicates in the list separated by "or";
+      2. a list of conditional clauses, each pair of clauses in the list separated by "and";
+      3. a list of conditional clauses, each pair of clauses in the list separated by "or".
     text: |
       <conditional clause>::=
       {{<determiner> <term> {<qualifying clause>| } |<expression>| it}
@@ -154,6 +167,7 @@ subtemplate_list:
       [<conditional clause> and] | [<conditional clause> or]}
 
   - id: "S14"
+    title: "qualifying clause"
     explanation: |
       Thus any of the following can be substituted in place of a <qualifying clause> placeholder:
       1. "that" or "who" followed by a verb phrase and an optional object (see subtemplate S11): for example, "that includes an international flight";
@@ -184,13 +198,14 @@ subtemplate_list:
       <either-or-qualifying clause>}
 
   - id: "S15"
+    title: "and-qualifying clause"
     explanation: |
       Subtemplate S15 allows for any of the forms illustrated by the following examples:
-      1. ‘who has a passport and is booked on an international flight’;
-      2. ‘that is international and has more than one intermediate stop’;
-      3. ‘that is specified in that document and recorded on the register’;
-      4. ‘that is specified in that document and registered’;
-      5. ‘that specifies an urgency code and a rural delivery address’.
+      1. "who has a passport and is booked on an international flight";
+      2. "that is international and has more than one intermediate stop";
+      3. "that is specified in that document and recorded on the register";
+      4. "that is specified in that document and registered";
+      5. "that specifies an urgency code and a rural delivery address".
     text: |
       <and-qualifying clause>::=
       {that |who}
@@ -199,11 +214,12 @@ subtemplate_list:
       <verb phrase> [<object> and]}
 
   - id: "S16"
+    title: "both-and-qualifying clause"
     explanation: |
       Subtemplate S16 allows for any of the forms illustrated by the following examples:
-      1. ‘who both has a passport and is booked on an international flight’;
-      2. ‘that is both specified in that document and recorded on the register’;
-      3. ‘that specifies both an urgency code and a rural delivery address’.
+      1. "who both has a passport and is booked on an international flight";
+      2. "that is both specified in that document and recorded on the register";
+      3. "that specifies both an urgency code and a rural delivery address".
     text: |
       <both-and-qualifying clause>::=
       {that |who}
@@ -212,13 +228,14 @@ subtemplate_list:
       <verb phrase> both <object> and <object>}
 
   - id: "S17"
+    title: "or-qualifying clause"
     explanation: |
       Subtemplate S17 allows for any of the forms illustrated by the following examples:
-      1. ‘who has a passport or is booked on an international flight’;
-      2. ‘that is international or has more than one intermediate stop’;
-      3. ‘that is specified in that document or recorded on the register’;
-      4. ‘that is specified in that document or registered’;
-      5. ‘that specifies an urgency code or a rural delivery address’.
+      1. "who has a passport or is booked on an international flight";
+      2. "that is international or has more than one intermediate stop";
+      3. "that is specified in that document or recorded on the register";
+      4. "that is specified in that document or registered";
+      5. "that specifies an urgency code or a rural delivery address".
     text: |
       <or-qualifying clause>::=
       {that |who}
@@ -227,11 +244,12 @@ subtemplate_list:
       <verb phrase> [<object> or]}
 
   - id: "S18"
+    title: "either-or-qualifying clause"
     explanation: |
       Subtemplate S18 allows for any of the forms illustrated by the following examples:
-      1. ‘who both has a passport or is booked on an international flight’;
-      2. ‘that is both specified in that document or recorded on the register’;
-      3. ‘that specifies both an urgency code or a rural delivery address’.
+      1. "who both has a passport or is booked on an international flight";
+      2. "that is both specified in that document or recorded on the register";
+      3. "that specifies both an urgency code or a rural delivery address".
     text: |
       <either-or-qualifying clause>::=
       {that |who}
@@ -240,6 +258,7 @@ subtemplate_list:
       <verb phrase> either <object> or <object>}
 
   - id: "S19"
+    title: "format definition"
     explanation: |
       The <format definition> placeholder can be replaced by anything defined in the subtemplate.
       1. "exactly", "at least", or "up to", followed by a positive integer and a term: for example, "exactly two digits", "at least three letters", "up to nine digits";
@@ -252,6 +271,7 @@ subtemplate_list:
       {followed by <format definition>| }
 
   - id: "S20"
+    title: "spatial operator"
     explanation: |
       The <spatial operator> placeholder can be replaced by anything defined in the subtemplate.
     text: |
@@ -259,6 +279,7 @@ subtemplate_list:
       {overlap|be within|enclose|span|intersect|meet|be on}
 
   - id: "S21"
+    title: "time restriction"
     explanation: |
       Note that the word 'after' may be used as a conjunction (in which case it is shown as 'after') or a preposition (in which case it is shown as 'after'). This is also true of 'before' and 'until'. Other words and phrases operate only as one or the other: for example, 'while' operates only as a conjunction, while 'during', 'within', 'earlier than', and 'later than' operate only as prepositions.
     text: |
@@ -269,6 +290,7 @@ subtemplate_list:
       {before|after|while|until} <conditional clause>}
 
   - id: "S22"
+    title: "information access process"
     explanation: |
       <information access process> defines the form of access that is restricted.
     text: |

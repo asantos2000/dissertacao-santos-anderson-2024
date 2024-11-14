@@ -4,14 +4,18 @@ from pydantic import BaseModel, Field
 import logging
 import json
 from json import JSONDecodeError
+from pathlib import Path
+import re
+import unicodedata
 
 # Set up basic logging configuration for the checkpoint module
 logging.basicConfig(
     level=logging.INFO,  # Set to INFO or another level as needed
-    format='%(asctime)s - %(levelname)s - %(message)s',  # Log format
-    datefmt='%Y-%m-%d %H:%M:%S'
+    format="%(asctime)s - %(levelname)s - %(message)s",  # Log format
+    datefmt="%Y-%m-%d %H:%M:%S",
 )
 logger = logging.getLogger(__name__)
+
 
 def convert_set_to_list(data: Any) -> Any:
     """
@@ -33,15 +37,31 @@ def convert_set_to_list(data: Any) -> Any:
         return data
 
 
+def normalize_str(s: str) -> str:
+    """
+    Normalize a string using Unicode normalization to ensure consistent representation.
+
+    Args:
+        s (str): The string to normalize.
+
+    Returns:
+        str: The normalized string.
+    """
+    return unicodedata.normalize("NFKD", s).strip()
+
+
 # Define a model for the Document
 class Document(BaseModel):
     id: str
     type: str  # New field to represent the type of the document
     content: Any  # Content can be any data type: list, dict, string, etc.
 
+
 # Define the DocumentManager class
 class DocumentManager(BaseModel):
-    documents: Dict[Tuple[str, str], Document] = Field(default_factory=dict)  # Keys are tuples (id, type)
+    documents: Dict[Tuple[str, str], Document] = Field(
+        default_factory=dict
+    )  # Keys are tuples (id, type)
 
     def add_document(self, doc: Document) -> None:
         """
@@ -50,7 +70,15 @@ class DocumentManager(BaseModel):
         Args:
             doc (Document): The document to add.
         """
-        key = (doc.id, doc.type)
+        # Normalize the document ID and type to avoid inconsistencies
+        normalized_id = normalize_str(doc.id)
+        normalized_type = normalize_str(doc.type)
+
+        key = (normalized_id, normalized_type)
+
+        # Debug logging for added document keys
+        logger.debug(f"Adding document with normalized key: {key}")
+
         self.documents[key] = doc
 
     def retrieve_document(self, doc_id: str, doc_type: str) -> Optional[Document]:
@@ -64,7 +92,15 @@ class DocumentManager(BaseModel):
         Returns:
             Optional[Document]: The retrieved document, or None if not found.
         """
-        key = (doc_id, doc_type)
+        # Normalize the identifiers before using them to access the dictionary
+        normalized_id = normalize_str(doc_id)
+        normalized_type = normalize_str(doc_type)
+
+        key = (normalized_id, normalized_type)
+
+        # Debug logging for retrieval attempt
+        logger.debug(f"Retrieving document with key: {key}")
+
         return self.documents.get(key)
 
     def list_document_ids(self, doc_type: Optional[str] = None) -> List[str]:
@@ -78,8 +114,15 @@ class DocumentManager(BaseModel):
             List[str]: A list of document ids.
         """
         if doc_type:
-            return [doc_id for (doc_id, d_type) in self.documents.keys() if d_type == doc_type]
+            normalized_type = normalize_str(doc_type)
+            logger.debug(f"Listing documents filtered by type: {normalized_type}")
+            return [
+                doc_id
+                for (doc_id, d_type) in self.documents.keys()
+                if d_type == normalized_type
+            ]
         else:
+            logger.debug("Listing all documents without type filter.")
             return [doc_id for (doc_id, _) in self.documents.keys()]
 
     def exclude_document(self, doc_id: str, doc_type: str) -> None:
@@ -90,8 +133,14 @@ class DocumentManager(BaseModel):
             doc_id (str): The ID of the document to exclude.
             doc_type (str): The type of the document.
         """
-        key = (doc_id, doc_type)
+        # Normalize identifiers before attempting exclusion
+        normalized_id = normalize_str(doc_id)
+        normalized_type = normalize_str(doc_type)
+
+        key = (normalized_id, normalized_type)
+
         if key in self.documents:
+            logger.debug(f"Excluding document with key: {key}")
             del self.documents[key]
 
     def persist_to_file(self, filename: str) -> None:
@@ -101,12 +150,16 @@ class DocumentManager(BaseModel):
         Args:
             filename (str): The filename to save the documents.
         """
-        serializable_documents = {f"{doc_id}|{doc_type}": convert_set_to_list(doc.dict()) for (doc_id, doc_type), doc in self.documents.items()}
-        with open(filename, 'w') as file:
+        serializable_documents = {
+            f"{doc_id}|{doc_type}": convert_set_to_list(doc.dict())
+            for (doc_id, doc_type), doc in self.documents.items()
+        }
+        with open(filename, "w") as file:
             json.dump(serializable_documents, file, indent=4)
+        logger.info(f"DocumentManager state persisted to file: {filename}")
 
     @classmethod
-    def restore_from_file(cls, filename: str) -> 'DocumentManager':
+    def restore_from_file(cls, filename: str) -> "DocumentManager":
         """
         Restores the state from a file, converting string keys back to tuples.
 
@@ -116,10 +169,15 @@ class DocumentManager(BaseModel):
         Returns:
             DocumentManager: The restored DocumentManager instance.
         """
-        with open(filename, 'r') as file:
+        with open(filename, "r") as file:
             data = json.load(file)
-            documents = {(doc_id.split('|')[0], doc_id.split('|')[1]): Document(**doc_data) for doc_id, doc_data in data.items()}
+            documents = {
+                (doc_id.split("|")[0], doc_id.split("|")[1]): Document(**doc_data)
+                for doc_id, doc_data in data.items()
+            }
+            logger.info(f"DocumentManager restored from file: {filename}")
             return cls(documents=documents)
+
 
 def restore_checkpoint(filename: Optional[str]) -> DocumentManager:
     """
@@ -147,8 +205,11 @@ def restore_checkpoint(filename: Optional[str]) -> DocumentManager:
         logger.info(f"Checkpoint restored from {filename}.")
     except (FileNotFoundError, JSONDecodeError):
         restored_docs = DocumentManager()
-        logger.error(f"Checkpoint file '{filename}' not found or is empty, initializing new checkpoint.")
+        logger.error(
+            f"Checkpoint file '{filename}' not found or is empty, initializing new checkpoint."
+        )
     return restored_docs
+
 
 def save_checkpoint(filename: Optional[str], manager: DocumentManager) -> None:
     """
@@ -164,7 +225,10 @@ def save_checkpoint(filename: Optional[str], manager: DocumentManager) -> None:
         manager.persist_to_file(filename=filename)
         logger.info("Checkpoint saved.")
     except FileNotFoundError:
-        logger.error("Error saving checkpoint. Check the directory path and permissions.")
+        logger.error(
+            "Error saving checkpoint. Check the directory path and permissions."
+        )
+
 
 def get_all_checkpoints(checkpoint_dir, prefix="documents", extension="json"):
     managers = []
@@ -173,21 +237,141 @@ def get_all_checkpoints(checkpoint_dir, prefix="documents", extension="json"):
 
     path.mkdir(parents=True, exist_ok=True)
 
-    files = list(path.glob(f"{file_prefix}-*.{extension}"))
+    files = list(path.glob(f"{prefix}-*.{extension}"))
     file_info_list = []
 
-    pattern = re.compile(rf'^{file_prefix}-(\d{{4}}-\d{{2}}-\d{{2}})-(\d+)\.{extension}$')
+    pattern = re.compile(rf"^{prefix}-(\d{{4}}-\d{{2}}-\d{{2}})-(\d+)\.{extension}$")
     for filepath in files:
         match = pattern.match(filepath.name)
         if match:
             date_str = match.group(1)
             number = int(match.group(2))
-            file_info_list.append({'filename': filepath.name, 'date': date_str, 'number': number})
-            
-            print(filepath)
-            managers.append(manager.restore_from_file(filepath))
-    
+            file_info_list.append(
+                {"filename": filepath.name, "date": date_str, "number": number}
+            )
+
+            logger.debug(f"filepath: {filepath}")
+            managers.append(DocumentManager.restore_from_file(filepath))
+
     return managers, file_info_list
+
+
+def get_elements_from_checkpoints(checkpoint_dir):
+    managers, file_info_list = get_all_checkpoints(checkpoint_dir)
+
+    pred_operative_rules = []
+    pred_facts = []
+    pred_terms = []
+    pred_names = []
+    pred_files = []
+
+    for manager, file_info in zip(managers, file_info_list):
+        # Process documents
+        processor = DocumentProcessor(manager)
+
+        # Access processed data
+        # unique_terms = processor.get_unique_terms()
+        # unique_names = processor.get_unique_names()
+        pred_operative_rules += processor.get_rules()
+        pred_facts += processor.get_facts()
+        pred_terms += processor.get_terms(definition_filter="non_null")
+        pred_names += processor.get_names(definition_filter="non_null")
+        pred_files.append(file_info)
+
+    logger.debug(f"Rules: {pred_operative_rules}")
+    logger.debug(f"Facts: {pred_facts}")
+    logger.debug(f"Terms: {pred_terms}")
+    logger.debug(f"Names: {pred_names}")
+    logger.info(f"Rules to evaluate: {len(pred_operative_rules)}")
+    logger.info(f"Facts to evaluate: {len(pred_facts)}")
+    logger.info(f"Terms to evaluate: {len(pred_terms)}")
+    logger.info(f"Names to evaluate: {len(pred_names)}")
+
+    return pred_operative_rules, pred_facts, pred_terms, pred_names, pred_files
+
+
+def get_true_table_files(data_dir):
+    true_table_files = [
+        {
+            "path": f"{data_dir}/classify_p1_operative_rules_true_table.json",
+            "id": "classify_P1|true_table",
+        },
+        {
+            "path": f"{data_dir}/classify_p2_definitional_facts_true_table.json",
+            "id": "classify_P2_Definitional_facts|true_table",
+        },
+        {
+            "path": f"{data_dir}/classify_p2_definitional_names_true_table.json",
+            "id": "classify_P2_Definitional_names|true_table",
+        },
+        {
+            "path": f"{data_dir}/classify_p2_definitional_terms_true_table.json",
+            "id": "classify_P2_Definitional_terms|true_table",
+        },
+        {
+            "path": f"{data_dir}/classify_p2_operative_rules_true_table.json",
+            "id": "classify_P2_Operative_rules|true_table",
+        },
+    ]
+
+    return true_table_files
+
+
+def get_elements_from_true_tables(data_dir):
+    true_table_files = get_true_table_files(data_dir)
+
+    true_operative_rules_p1 = []
+    true_facts_p2 = []
+    true_names_p2 = []
+    true_terms_p2 = []
+    true_operative_rules_p2 = []
+
+    for table in true_table_files:
+        manager_true_elements = restore_checkpoint(table["path"])
+        match table["id"]:
+            case "classify_P1|true_table":
+                true_operative_rules_p1 = manager_true_elements.retrieve_document(
+                    "classify_P1", "true_table"
+                ).content
+                logger.debug(f"P1: True Operative Rules: {true_operative_rules_p1}")
+                logger.info(
+                    f"P1: Operative Rules to evaluate: {len(true_operative_rules_p1)}"
+                )
+            case "classify_P2_Definitional_facts|true_table":
+                true_facts_p2 = manager_true_elements.retrieve_document(
+                    "classify_P2_Definitional_facts", "true_table"
+                ).content
+                logger.debug(f"P2: True Facts: {true_facts_p2}")
+                logger.info(f"P2: Facts to evaluate: {len(true_facts_p2)}")
+            case "classify_P2_Definitional_names|true_table":
+                true_names_p2 = manager_true_elements.retrieve_document(
+                    "classify_P2_Definitional_names", "true_table"
+                ).content
+                logger.debug(f"P2: True Names: {true_names_p2}")
+                logger.info(f"P2: Names to evaluate: {len(true_names_p2)}")
+            case "classify_P2_Definitional_terms|true_table":
+                true_terms_p2 = manager_true_elements.retrieve_document(
+                    "classify_P2_Definitional_terms", "true_table"
+                ).content
+                logger.debug(f"P2: True Terms: {true_terms_p2}")
+                logger.info(f"P2: Terms to evaluate: {len(true_terms_p2)}")
+            case "classify_P2_Operative_rules|true_table":
+                true_operative_rules_p2 = manager_true_elements.retrieve_document(
+                    "classify_P2_Operative_rules", "true_table"
+                ).content
+                logger.debug(f"P2: True Operative Rules: {true_operative_rules_p2}")
+                logger.info(
+                    f"P2: Operative Rules to evaluate: {len(true_operative_rules_p2)}"
+                )
+
+    return (
+        true_operative_rules_p1,
+        true_facts_p2,
+        true_names_p2,
+        true_terms_p2,
+        true_operative_rules_p2,
+    )
+
 
 class DocumentProcessor:
     """
@@ -204,13 +388,7 @@ class DocumentProcessor:
         elements_terms_definition (dict): Dictionary to store terms definitions by document ID.
     """
 
-    def __init__(self, manager):
-        """
-        Initializes the DocumentProcessor instance and processes the documents.
-
-        Args:
-            manager: Object used to manage document retrieval.
-        """
+    def __init__(self, manager: DocumentManager):
         self.manager = manager
         self.elements_terms_set = set()
         self.elements_names_set = set()
@@ -219,10 +397,382 @@ class DocumentProcessor:
         self.elements_facts = []
         self.elements_rules = []
         self.elements_terms_definition = {}
-        
-        # Automatically process definitions and elements when instantiated
-        self.process_definitions()
-        self.process_elements()
+        self.operative_rules_classifications = (
+            []
+        )  # To store classifications with type and subtype for operative rules
+        self.facts_classifications = (
+            []
+        )  # To store classifications with type and subtype for facts
+        self.terms_classifications = (
+            []
+        )  # To store classifications with type, subtype, and confidence for definitional terms
+        self.names_classifications = (
+            []
+        )  # To store classifications with type, subtype, and confidence for definitional names
+
+        # Automatically process definitions, classifications, and elements when instantiated
+        try:
+            self.process_definitions()
+        except Exception as e:
+            logger.error(f"Error processing definitions: {e}")
+
+        try:
+            self.process_operative_rules_classifications()
+        except Exception as e:
+            logger.info(
+                f"Document did not have operative rules classifications to process: {e}"
+            )
+
+        try:
+            self.process_facts_classifications()
+        except Exception as e:
+            logger.info(f"Document did not have facts classifications to process: {e}")
+
+        try:
+            self.process_terms_classifications()
+        except Exception as e:
+            logger.info(f"Document did not have terms classifications to process: {e}")
+
+        try:
+            self.process_names_classifications()
+        except Exception as e:
+            logger.info(f"Document did not have names classifications to process: {e}")
+
+        try:
+            self.process_elements()
+        except Exception as e:
+            logger.error(f"Error processing elements: {e}")
+            raise e
+
+        try:
+            self.process_transformed_elements()
+        except Exception as e:
+            logger.error(f"Error processing transformed elements: {e}")
+            raise e
+
+        try:
+            self.process_validations()
+        except Exception as e:
+            logger.error(f"Error processing validations: {e}")
+            raise e
+
+    def process_validations(self):
+        """
+        Processes validation documents and updates elements with validation scores and findings.
+        """
+        validation_docs = {
+            "validation_judge_Operative_Rules": self.elements_rules,
+            "validation_judge_Fact_Types": self.elements_facts,
+            "validation_judge_Terms": self.elements_terms,
+            "validation_judge_Names": self.elements_names,
+        }
+
+        for doc_name, elements_list in validation_docs.items():
+            try:
+                # Retrieve the validation document
+                validation_doc = self.manager.retrieve_document(doc_name, "llm_validation")
+                if not validation_doc or not validation_doc.content:
+                    logger.warning(f"Validation document '{doc_name}' not found or empty.")
+                    continue
+
+                # Iterate over items in the validation document
+                for item in validation_doc.content:
+                    doc_id = normalize_str(item.get("doc_id"))
+                    statement_id = normalize_str(str(item.get("statement_id")))
+                    source = item.get("source")
+
+                    # Fields to add
+                    semscore = item.get("semscore")
+                    similarity_score = item.get("similarity_score")
+                    similarity_score_confidence = item.get("similarity_score_confidence")
+                    transformation_accuracy = item.get("transformation_accuracy")
+                    grammar_syntax_accuracy = item.get("grammar_syntax_accuracy")
+                    findings = item.get("findings")
+
+                    # Find matching element in elements_list
+                    for element in elements_list:
+                        if (
+                            normalize_str(element.get("doc_id")) == doc_id
+                            and normalize_str(str(element.get("statement_id"))) == statement_id
+                            and element.get("source") == source
+                        ):
+                            # Update element with new fields
+                            element.update({
+                                "semscore": semscore,
+                                "similarity_score": similarity_score,
+                                "similarity_score_confidence": similarity_score_confidence,
+                                "transformation_accuracy": transformation_accuracy,
+                                "grammar_syntax_accuracy": grammar_syntax_accuracy,
+                                "findings": findings,
+                            })
+                            break  # Exit the loop after finding the matching element
+            except Exception as e:
+                logger.error(f"Error processing validation document '{doc_name}': {e}")
+
+
+    def process_transformed_elements(self):
+        """
+        Processes the transformed elements from the llm_response_transform document types and updates the transformed attribute in each relevant list.
+        """
+        transform_docs = [
+            "transform_Fact_Types",
+            "transform_Terms",
+            "transform_Names",
+            "transform_Operative_Rules",
+        ]
+
+        for transform_doc_id in transform_docs:
+            transform_doc_content = self.manager.retrieve_document(
+                transform_doc_id, "llm_response_transform"
+            ).content
+
+            for item in transform_doc_content:
+                logger.debug(f"{item=}")
+                doc_id = normalize_str(item.get("doc_id"))
+                statement_id = normalize_str(str(item.get("statement_id")))
+                source = item.get("statement_source")
+                transformed = item.get("transformed")
+
+                logger.debug(
+                    f"doc_id: {doc_id} - statement_id: {statement_id} - transformed: {transformed}"
+                )
+
+                # Update the transformed attribute in each relevant list based on the type of document
+                logger.debug(f"{transform_doc_id=}")
+                if "Fact_Types" in transform_doc_id:
+                    for element in self.elements_facts:
+                        if (
+                            normalize_str(element["doc_id"]) == doc_id
+                            and normalize_str(str(element["statement_id"]))
+                            == statement_id
+                            and element["source"] == source
+                        ):
+                            element["transformed"] = transformed
+                            logger.debug(f"{element=}")
+                elif "Terms" in transform_doc_id:
+                    for element in self.elements_terms:
+                        logger.debug(f"{element=}")
+                        if (
+                            normalize_str(element["doc_id"]) == doc_id
+                            and normalize_str(str(element["statement_id"]))
+                            == statement_id
+                            and element["source"] == source
+                        ):
+                            element["transformed"] = transformed
+                elif "Names" in transform_doc_id:
+                    for element in self.elements_names:
+                        if (
+                            normalize_str(element["doc_id"]) == doc_id
+                            and normalize_str(str(element["statement_id"]))
+                            == statement_id
+                            and element["source"] == source
+                        ):
+                            element["transformed"] = transformed
+                elif "Operative_Rules" in transform_doc_id:
+                    for element in self.elements_rules:
+                        if (
+                            normalize_str(element["doc_id"]) == doc_id
+                            and normalize_str(str(element["statement_id"]))
+                            == statement_id
+                            and element["source"] == source
+                        ):
+                            element["transformed"] = transformed
+
+    def process_names_classifications(self):
+        """
+        Processes classification information specifically for names from 'classify_P2_Definitional_names'
+        document and stores the type, subtype, subtype confidence, and subtype explanation.
+        The type is always set to 'Definitional'.
+        """
+        # Document identifier we are interested in
+        doc_classification = "classify_P2_Definitional_names"
+
+        # Retrieve document content
+        doc = self.manager.retrieve_document(
+            doc_classification, "llm_response_classification"
+        )
+        if not doc or not doc.content:
+            logger.warning(
+                f"Document '{doc_classification}' not found or has empty content."
+            )
+            return
+
+        doc_content = doc.content
+
+        # Iterate over each item in the document content
+        for item in doc_content:
+            doc_id = normalize_str(item.get("doc_id"))
+            statement_id = normalize_str(str(item.get("statement_id")))
+            classifications = item.get("classification", [])
+
+            # Iterate over each classification to extract the highest confidence one for names
+            for classification in classifications:
+                confidence = classification.get("confidence", 0)
+
+                # Check if this classification already exists in names_classifications
+                existing_name = next(
+                    (
+                        name
+                        for name in self.names_classifications
+                        if name["doc_id"] == doc_id
+                        and name["statement_id"] == statement_id
+                    ),
+                    None,
+                )
+
+                # Initialize if not found
+                if existing_name is None:
+                    existing_name = {
+                        "doc_id": doc_id,
+                        "statement_id": statement_id,
+                        "type": "Definitional",  # Set type as "Definitional"
+                        "subtype": None,
+                        "confidence": -1,
+                        "explanation": "",
+                        "templates_ids": [],
+                    }
+                    self.names_classifications.append(existing_name)
+
+                # Update subtype information if the confidence is higher than the existing one
+                if confidence > existing_name["confidence"]:
+                    existing_name["subtype"] = classification.get("subtype")
+                    existing_name["confidence"] = confidence
+                    existing_name["explanation"] = classification.get("explanation", "")
+                    existing_name["templates_ids"] = classification.get(
+                        "templates_ids", []
+                    )
+
+        # Log the final classification for debugging purposes
+        logger.debug(f"{self.names_classifications=}")
+
+    def process_facts_classifications(self):
+        """
+        Processes classification information specifically for facts from 'classify_P2_Definitional_facts'
+        document and stores the type, subtype, subtype confidence, and subtype explanation.
+        The type is always set to 'Definitional'.
+        """
+        # Document identifier we are interested in
+        doc_classification = "classify_P2_Definitional_facts"
+
+        # Retrieve document content
+        doc_content = self.manager.retrieve_document(
+            doc_classification, "llm_response_classification"
+        ).content
+
+        # Iterate over each item in the document content
+        for item in doc_content:
+            doc_id = normalize_str(item.get("doc_id"))
+            statement_id = normalize_str(str(item.get("statement_id")))
+            classifications = item.get("classification", [])
+
+            # Iterate over each classification to extract the highest confidence one for facts
+            for classification in classifications:
+                confidence = classification.get("confidence", 0)
+
+                # Check if this classification already exists in facts_classifications
+                existing_fact = next(
+                    (
+                        fact
+                        for fact in self.facts_classifications
+                        if fact["doc_id"] == doc_id
+                        and fact["statement_id"] == statement_id
+                    ),
+                    None,
+                )
+
+                # Initialize if not found
+                if existing_fact is None:
+                    existing_fact = {
+                        "doc_id": doc_id,
+                        "statement_id": statement_id,
+                        "type": "Definitional",  # Set type as "Definitional"
+                        "subtype": None,
+                        "subtype_confidence": -1,
+                        "subtype_explanation": "",
+                        "templates_ids": [],
+                    }
+                    self.facts_classifications.append(existing_fact)
+
+                # Update subtype information if the confidence is higher than the existing one
+                if confidence > existing_fact["subtype_confidence"]:
+                    existing_fact["subtype"] = classification.get("subtype")
+                    existing_fact["subtype_confidence"] = confidence
+                    existing_fact["subtype_explanation"] = classification.get(
+                        "explanation", ""
+                    )
+                    existing_fact["templates_ids"] = classification.get(
+                        "templates_ids", []
+                    )
+
+        # Log the final classification for debugging purposes
+        logger.debug(f"{self.facts_classifications=}")
+
+    def process_terms_classifications(self):
+        """
+        Processes classification information specifically for terms from 'classify_P2_Definitional_terms'
+        document and stores the type, subtype, subtype confidence, and subtype explanation.
+        The type is always set to 'Definitional'.
+        """
+        # Document identifier we are interested in
+        doc_classification = "classify_P2_Definitional_terms"
+
+        # Retrieve document content
+        doc = self.manager.retrieve_document(
+            doc_classification, "llm_response_classification"
+        )
+        if not doc or not doc.content:
+            logger.warning(
+                f"Document '{doc_classification}' not found or has empty content."
+            )
+            return
+
+        doc_content = doc.content
+
+        # Iterate over each item in the document content
+        for item in doc_content:
+            doc_id = normalize_str(item.get("doc_id"))
+            statement_id = normalize_str(str(item.get("statement_id")))
+            classifications = item.get("classification", [])
+
+            # Iterate over each classification to extract the highest confidence one for terms
+            for classification in classifications:
+                confidence = classification.get("confidence", 0)
+
+                # Check if this classification already exists in terms_classifications
+                existing_term = next(
+                    (
+                        term
+                        for term in self.terms_classifications
+                        if term["doc_id"] == doc_id
+                        and term["statement_id"] == statement_id
+                    ),
+                    None,
+                )
+
+                # Initialize if not found
+                if existing_term is None:
+                    existing_term = {
+                        "doc_id": doc_id,
+                        "statement_id": statement_id,
+                        "type": "Definitional",  # Set type as "Definitional"
+                        "subtype": None,
+                        "confidence": -1,
+                        "explanation": "",
+                        "templates_ids": [],
+                    }
+                    self.terms_classifications.append(existing_term)
+
+                # Update subtype information if the confidence is higher than the existing one
+                if confidence > existing_term["confidence"]:
+                    existing_term["subtype"] = classification.get("subtype")
+                    existing_term["confidence"] = confidence
+                    existing_term["explanation"] = classification.get("explanation", "")
+                    existing_term["templates_ids"] = classification.get(
+                        "templates_ids", []
+                    )
+
+        # Log the final classification for debugging purposes
+        logger.debug(f"{self.terms_classifications=}")
 
     def add_definition(self, doc_id, term, definition):
         """
@@ -239,23 +789,118 @@ class DocumentProcessor:
         """
         Processes document terms definitions and stores them in elements_terms_definition.
         """
-        docs_p2 = [s for s in self.manager.list_document_ids(doc_type="llm_response") if s.endswith("_P2")]
+        docs_p2 = [
+            s
+            for s in self.manager.list_document_ids(doc_type="llm_response")
+            if s.endswith("_P2")
+        ]
 
         for doc in docs_p2:
             doc_id = doc.replace("_P2", "")
-            doc_content = self.manager.retrieve_document(doc, doc_type="llm_response").content
+            doc_content = self.manager.retrieve_document(
+                doc, doc_type="llm_response"
+            ).content
             doc_terms = doc_content.get("terms", [])
             for term in doc_terms:
                 self.add_definition(doc_id, term.get("term"), term.get("definition"))
+
+    def process_operative_rules_classifications(self):
+        """
+        Processes classification information specifically for operative rules from
+        'classify_P1' and 'classify_P2_Operative_rules' documents, and stores the type, subtype,
+        confidence, and explanation.
+        """
+        # Get only the specific documents we are interested in
+        docs_classification = [
+            s
+            for s in self.manager.list_document_ids(
+                doc_type="llm_response_classification"
+            )
+            if s in ["classify_P1", "classify_P2_Operative_rules"]
+        ]
+
+        # A temporary dictionary to group classifications by (doc_id, statement_id)
+        classification_dict = {}
+
+        # Iterate over each document
+        for doc in docs_classification:
+            # Retrieve document content for each classification document
+            doc_content = self.manager.retrieve_document(
+                doc, "llm_response_classification"
+            ).content
+
+            # Iterate over each item in the document content
+            for item in doc_content:
+                doc_id = normalize_str(item.get("doc_id"))
+                statement_id = normalize_str(str(item.get("statement_id")))
+                classifications = item.get("classification", [])
+
+                # Create a key for grouping classifications
+                key = (doc_id, statement_id)
+
+                # Initialize the classification entry if it doesn't exist
+                if key not in classification_dict:
+                    classification_dict[key] = {
+                        "doc_id": doc_id,
+                        "statement_id": statement_id,
+                        "type": None,
+                        "type_confidence": -1,  # Initialize with a negative value to ensure first confidence is updated
+                        "type_explanation": "",
+                        "subtype": None,
+                        "subtype_confidence": -1,  # Initialize with a negative value to ensure first confidence is updated
+                        "subtype_explanation": "",
+                        "templates_ids": [],
+                    }
+
+                # Iterate over each classification to extract the highest confidence one
+                for classification in classifications:
+                    # Extract confidence and other classification details
+                    confidence = classification.get("confidence", 0)
+                    current_classification = classification_dict[key]
+
+                    # Update based on document type and ensure we retain both type and subtype
+                    if doc == "classify_P1":
+                        # Update type if this document is from classify_P1 and has higher confidence
+                        if confidence > current_classification["type_confidence"]:
+                            current_classification["type"] = classification.get("type")
+                            current_classification["type_confidence"] = confidence
+                            current_classification["type_explanation"] = (
+                                classification.get("explanation", "")
+                            )
+
+                    elif doc == "classify_P2_Operative_rules":
+                        # Update subtype if this document is from classify_P2_Operative_rules and has higher confidence
+                        if confidence > current_classification["subtype_confidence"]:
+                            current_classification["subtype"] = classification.get(
+                                "subtype"
+                            )
+                            current_classification["subtype_confidence"] = confidence
+                            current_classification["subtype_explanation"] = (
+                                classification.get("explanation", "")
+                            )
+                            current_classification["templates_ids"] = (
+                                classification.get("templates_ids", [])
+                            )
+
+        # Convert the classification_dict to a list and assign to operative_rules_classifications
+        self.operative_rules_classifications = list(classification_dict.values())
+        logger.debug(f"{self.operative_rules_classifications=}")
 
     def process_elements(self):
         """
         Processes elements from documents and categorizes them into terms, names, facts, and rules.
         """
-        docs_p1 = [s for s in self.manager.list_document_ids(doc_type="llm_response") if s.endswith("_P1")]
+        # Get the list of documents that end with '_P1'
+        docs_p1 = [
+            s
+            for s in self.manager.list_document_ids(doc_type="llm_response")
+            if s.endswith("_P1")
+        ]
 
         for doc in docs_p1:
-            doc_content = self.manager.retrieve_document(doc, doc_type="llm_response").content
+            doc_content = self.manager.retrieve_document(
+                doc, doc_type="llm_response"
+            ).content
             doc_id = doc_content.get("section")
             doc_elements = doc_content.get("elements", [])
             for element in doc_elements:
@@ -272,7 +917,8 @@ class DocumentProcessor:
                     "statement": element.get("statement"),
                     "source": element.get("source"),
                     "terms": element.get("terms", []),
-                    "verb_symbols": verb_symbols
+                    "verb_symbols": verb_symbols,
+                    "element_name": element_classification,
                 }
 
                 match element_classification:
@@ -287,15 +933,19 @@ class DocumentProcessor:
                         signifier = term.get("term")
                         term_dict = {
                             "doc_id": doc_id,
-                            "signifier": signifier,
-                            "statement_id": element_id,
-                            "definition": self.elements_terms_definition.get(doc_id, {}).get(signifier),
-                            "source": element.get("source")
+                            "statement_id": signifier,
+                            # "statement_id": element_id,
+                            "definition": self.elements_terms_definition.get(
+                                doc_id, {}
+                            ).get(signifier),
+                            "source": element.get("source"),
                         }
                         if term.get("classification") == "Common Noun":
+                            term_dict["element_name"] = "Term"
                             self.elements_terms.append(term_dict)
                             self.elements_terms_set.add(signifier)
                         else:
+                            term_dict["element_name"] = "Name"
                             self.elements_names.append(term_dict)
                             self.elements_names_set.add(signifier)
 
@@ -311,7 +961,11 @@ class DocumentProcessor:
             set: Set of unique terms.
         """
         if doc_id:
-            return {term["signifier"] for term in self.elements_terms if term["doc_id"] == doc_id}
+            return {
+                term["signifier"]
+                for term in self.elements_terms
+                if term["doc_id"] == doc_id
+            }
         return self.elements_terms_set
 
     def get_unique_names(self, doc_id=None):
@@ -326,187 +980,347 @@ class DocumentProcessor:
             set: Set of unique names.
         """
         if doc_id:
-            return {name["signifier"] for name in self.elements_names if name["doc_id"] == doc_id}
+            return {
+                name["signifier"]
+                for name in self.elements_names
+                if name["doc_id"] == doc_id
+            }
         return self.elements_names_set
 
-    # def get_terms(self):
-    #     """
-    #     Returns the list of terms with detailed information.
-
-    #     Returns:
-    #         list: List of terms.
-    #     """
-    #     return self.elements_terms
-
-    # def get_names(self):
-    #     """
-    #     Returns the list of names with detailed information.
-
-    #     Returns:
-    #         list: List of names.
-    #     """
-    #     return self.elements_names
-
-    def get_terms(self, definition_filter="all"):
+    def get_terms(self, doc_id=None, term_id=None, definition_filter="all"):
         """
-        Returns the list of terms with detailed information, filtered by the presence of a definition.
+        Returns the list of terms extracted from documents, enriched with type, subtype, confidence, and explanation.
+        If doc_id and term_id are provided, returns a specific term.
+        If only doc_id is provided, returns all terms for that specific document.
 
         Args:
-            definition_filter (str): Filter for terms based on definition presence. 
+            doc_id (str, optional): Document identifier to filter a specific term or all terms in the document.
+            term_id (str, optional): Term identifier to filter a specific term.
+            definition_filter (str): Filter for terms based on definition presence.
                                     "non_null" returns terms with definitions,
                                     "null" returns terms without definitions,
                                     "all" returns all terms regardless of definition.
 
         Returns:
-            list: List of terms.
+            list or dict: List of enriched terms, or a dictionary with a specific term if both doc_id and term_id are provided.
         """
-        if definition_filter == "non_null":
-            return [term for term in self.elements_terms if term.get("definition") is not None]
-        elif definition_filter == "null":
-            return [term for term in self.elements_terms if term.get("definition") is None]
-        return self.elements_terms
+        # Create a lookup dictionary for terms classifications for efficient access
+        term_classification_lookup = {
+            (
+                normalize_str(classification["doc_id"]),
+                normalize_str(str(classification["statement_id"])),
+            ): classification
+            for classification in self.terms_classifications
+        }
 
-    def get_names(self, definition_filter="all"):
-        """
-        Returns the list of names with detailed information, filtered by the presence of a definition.
+        enriched_terms = []
 
-        Args:
-            definition_filter (str): Filter for names based on definition presence. 
-                                    "non_null" returns names with definitions,
-                                    "null" returns names without definitions,
-                                    "all" returns all names regardless of definition.
+        # Enrich terms with classification information
+        for term in self.elements_terms:
+            term_key = (
+                normalize_str(term["doc_id"]),
+                normalize_str(term.get("statement_id", "")),
+            )
+            classification = term_classification_lookup.get(term_key)
 
-        Returns:
-            list: List of names.
-        """
-        if definition_filter == "non_null":
-            return [name for name in self.elements_names if name.get("definition") is not None]
-        elif definition_filter == "null":
-            return [name for name in self.elements_names if name.get("definition") is None]
-        return self.elements_names
-
-
-    def get_facts(self):
-        """
-        Returns the list of facts extracted from documents.
-
-        Returns:
-            list: List of facts.
-        """
-        return self.elements_facts
-
-    def get_rules(self):
-        """
-        Returns the list of rules extracted from documents.
-
-        Returns:
-            list: List of rules.
-        """
-        return self.elements_rules
-
-    def get_term_info(self, doc_id, term):
-        """
-        Retrieves information about a specific term from elements.
-
-        Args:
-            doc_id (str): Document identifier.
-            term (str): Term to retrieve information for.
-
-        Returns:
-            dict or None: A dictionary containing term information if found, otherwise None.
-        """
-        definition = self.elements_terms_definition.get(doc_id, {}).get(term)
-        if definition:
-            for term_dict in self.elements_terms + self.elements_names:
-                if term_dict["doc_id"] == doc_id and term_dict["signifier"] == term:
-                    return {
-                        "definition": definition,
-                        "source": term_dict["source"],
-                        "statement_id": term_dict["statement_id"]
+            if classification:
+                term.update(
+                    {
+                        "type": classification.get("type"),
+                        "subtype": classification.get("subtype"),
+                        "confidence": classification.get("confidence"),
+                        "explanation": classification.get("explanation"),
+                        "templates_ids": classification.get("templates_ids", []),
                     }
-        return None
+                )
 
-    def get_name_info(self, doc_id, name):
+            enriched_terms.append(term)
+
+        # Apply filtering based on definition presence
+        if definition_filter == "non_null":
+            enriched_terms = [term for term in enriched_terms if term.get("definition")]
+        elif definition_filter == "null":
+            enriched_terms = [
+                term for term in enriched_terms if not term.get("definition")
+            ]
+
+        # If both doc_id and term_id are provided, return the specific term
+        if doc_id and term_id:
+            for term in enriched_terms:
+                if normalize_str(term["doc_id"]) == normalize_str(
+                    doc_id
+                ) and normalize_str(term.get("statement_id", "")) == normalize_str(
+                    term_id
+                ):
+                    return term
+
+            # Return None if no matching term is found
+            logger.debug(f"No term found for doc_id='{doc_id}', term_id='{term_id}'")
+            return None
+
+        # If only doc_id is provided, return all terms that match the given doc_id
+        if doc_id:
+            filtered_terms = [
+                term
+                for term in enriched_terms
+                if normalize_str(term["doc_id"]) == normalize_str(doc_id)
+            ]
+
+            if not filtered_terms:
+                logger.debug(f"No terms found for doc_id='{doc_id}'")
+                return []
+
+            return filtered_terms
+
+        # If neither doc_id nor term_id is provided, return all enriched terms
+        return enriched_terms
+
+    def get_names(self, doc_id=None, name_id=None, definition_filter="all"):
         """
-        Retrieves information about a specific name from elements.
+        Returns the list of names extracted from documents, enriched with type, subtype, confidence, and explanation.
+        If doc_id and name_id are provided, returns a specific name.
+        If only doc_id is provided, returns all names for that specific document.
 
         Args:
-            doc_id (str): Document identifier.
-            name (str): Name to retrieve information for.
+            doc_id (str, optional): Document identifier to filter a specific name or all names in the document.
+            name_id (str, optional): Name identifier to filter a specific name.
+            definition_filter (str, optional): Filter for names based on definition presence.
+                                            "non_null" returns names with definitions,
+                                            "null" returns names without definitions,
+                                            "all" returns all names regardless of definition.
 
         Returns:
-            dict or None: A dictionary containing name information if found, otherwise None.
+            list or dict: List of enriched names, or a dictionary with a specific name if both doc_id and name_id are provided.
         """
-        for name_dict in self.elements_names:
-            if name_dict["doc_id"] == doc_id and name_dict["signifier"] == name:
-                return {
-                    "definition": name_dict.get("definition"),
-                    "source": name_dict["source"],
-                    "statement_id": name_dict["statement_id"]
-                }
-        return None
+        # Create a lookup dictionary for names classifications for efficient access
+        name_classification_lookup = {
+            (
+                normalize_str(classification["doc_id"]),
+                normalize_str(str(classification["statement_id"])),
+            ): classification
+            for classification in self.names_classifications
+        }
 
-    def get_fact_info(self, doc_id, statement_id):
+        enriched_names = []
+
+        # Enrich names with classification information
+        for name in self.elements_names:
+            name_key = (
+                normalize_str(name["doc_id"]),
+                normalize_str(name.get("statement_id", "")),
+            )
+            classification = name_classification_lookup.get(name_key)
+
+            if classification:
+                name.update(
+                    {
+                        "type": classification.get("type"),
+                        "subtype": classification.get("subtype"),
+                        "confidence": classification.get("confidence"),
+                        "explanation": classification.get("explanation"),
+                        "templates_ids": classification.get("templates_ids", []),
+                    }
+                )
+
+            enriched_names.append(name)
+
+        # Apply filtering based on definition presence
+        if definition_filter == "non_null":
+            enriched_names = [name for name in enriched_names if name.get("definition")]
+        elif definition_filter == "null":
+            enriched_names = [
+                name for name in enriched_names if not name.get("definition")
+            ]
+
+        # If both doc_id and name_id are provided, return the specific name
+        if doc_id and name_id:
+            for name in enriched_names:
+                if normalize_str(name["doc_id"]) == normalize_str(
+                    doc_id
+                ) and normalize_str(name.get("statement_id", "")) == normalize_str(
+                    name_id
+                ):
+                    return name
+
+            # Return None if no matching name is found
+            logger.debug(f"No name found for doc_id='{doc_id}', name_id='{name_id}'")
+            return None
+
+        # If only doc_id is provided, return all names that match the given doc_id
+        if doc_id:
+            filtered_names = [
+                name
+                for name in enriched_names
+                if normalize_str(name["doc_id"]) == normalize_str(doc_id)
+            ]
+
+            if not filtered_names:
+                logger.debug(f"No names found for doc_id='{doc_id}'")
+                return []
+
+            return filtered_names
+
+        # If neither doc_id nor name_id is provided, return all enriched names
+        return enriched_names
+
+    def get_facts(self, doc_id=None, statement_id=None):
         """
-        Retrieves information about a specific fact from elements.
+        Returns the list of facts extracted from documents, enriched with type, subtype, confidence, and explanation.
+        If doc_id and statement_id are provided, returns a specific fact.
+        If only doc_id is provided, returns all facts for that specific document.
 
         Args:
-            doc_id (str): Document identifier.
-            statement_id (str): statement identifier of the fact.
+            doc_id (str, optional): Document identifier to filter a specific fact or all facts in the document.
+            statement_id (str, optional): Statement identifier to filter a specific fact.
 
         Returns:
-            dict or None: A dictionary containing fact information if found, otherwise None.
+            list or dict: List of enriched facts, or a dictionary with a specific fact if both doc_id and statement_id are provided.
         """
-        for fact_dict in self.elements_facts:
-            if fact_dict["doc_id"] == doc_id and fact_dict["statement_id"] == statement_id:
-                terms = [term.get("term") for term in fact_dict.get("terms", []) if term.get("classification") == "Common Noun"]
-                names = [term.get("term") for term in fact_dict.get("terms", []) if term.get("classification") == "Proper Noun"]
-                return {
-                    "statement": fact_dict["statement"],
-                    "source": fact_dict["source"],
-                    "terms": terms,
-                    "names": names,
-                    "verb_symbols": fact_dict.get("verb_symbols", [])
-                }
-        return None
+        # Create a lookup dictionary for facts classifications for efficient access
+        fact_classification_lookup = {
+            (
+                normalize_str(classification["doc_id"]),
+                normalize_str(str(classification["statement_id"])),
+            ): classification
+            for classification in self.facts_classifications
+        }
 
-    def get_rule_info(self, doc_id, statement_id):
+        enriched_facts = []
+
+        # Enrich facts with classification information
+        for fact in self.elements_facts:
+            fact_key = (
+                normalize_str(fact["doc_id"]),
+                normalize_str(str(fact["statement_id"])),
+            )
+            classification = fact_classification_lookup.get(fact_key)
+
+            if classification:
+                fact.update(
+                    {
+                        "type": classification.get("type"),
+                        "subtype": classification.get("subtype"),
+                        "subtype_confidence": classification.get("subtype_confidence"),
+                        "subtype_explanation": classification.get(
+                            "subtype_explanation"
+                        ),
+                        "templates_ids": classification.get("templates_ids", []),
+                    }
+                )
+
+            enriched_facts.append(fact)
+
+        # If both doc_id and statement_id are provided, return the specific fact
+        if doc_id and statement_id:
+            for fact in enriched_facts:
+                if normalize_str(fact["doc_id"]) == normalize_str(
+                    doc_id
+                ) and normalize_str(str(fact["statement_id"])) == normalize_str(
+                    str(statement_id)
+                ):
+                    return fact
+
+            # Return None if no matching fact is found
+            logger.debug(
+                f"No fact found for doc_id='{doc_id}', statement_id='{statement_id}'"
+            )
+            return None
+
+        # If only doc_id is provided, return all facts that match the given doc_id
+        if doc_id:
+            filtered_facts = [
+                fact
+                for fact in enriched_facts
+                if normalize_str(fact["doc_id"]) == normalize_str(doc_id)
+            ]
+
+            if not filtered_facts:
+                logger.debug(f"No facts found for doc_id='{doc_id}'")
+                return []
+
+            return filtered_facts
+
+        # If neither doc_id nor statement_id is provided, return all enriched facts
+        return enriched_facts
+
+    def get_rules(self, doc_id=None, statement_id=None):
         """
-        Retrieves information about a specific rule from elements.
+        Returns the list of rules extracted from documents, enriched with type, subtype, confidence, and explanation.
+        If doc_id and statement_id are provided, returns a specific rule.
+        If only doc_id is provided, returns all rules for that specific document.
 
         Args:
-            doc_id (str): Document identifier.
-            statement_id (str): statement identifier of the rule.
+            doc_id (str, optional): Document identifier to filter a specific rule or all rules in the document.
+            statement_id (str, optional): Statement identifier to filter a specific rule.
 
         Returns:
-            dict or None: A dictionary containing rule information if found, otherwise None.
+            list or dict: List of enriched rules, or a dictionary with a specific rule if both doc_id and statement_id are provided.
         """
-        for rule_dict in self.elements_rules:
-            if rule_dict["doc_id"] == doc_id and rule_dict["statement_id"] == statement_id:
-                terms = [term.get("term") for term in rule_dict.get("terms", []) if term.get("classification") == "Common Noun"]
-                names = [term.get("term") for term in rule_dict.get("terms", []) if term.get("classification") == "Proper Noun"]
-                return {
-                    "statement": rule_dict.get("statement"),
-                    "source": rule_dict.get("source"),
-                    "terms": terms,
-                    "names": names,
-                    "verb_symbols": rule_dict.get("verb_symbols", [])
-                }
-        return None
+        # Create a lookup dictionary for rules classifications for efficient access
+        rule_classification_lookup = {
+            (
+                normalize_str(classification["doc_id"]),
+                normalize_str(str(classification["statement_id"])),
+            ): classification
+            for classification in self.operative_rules_classifications
+        }
 
-# # Example usage
-# processor = DocumentProcessor(manager)
+        enriched_rules = []
 
-# # Access processed data
-# unique_terms = processor.get_unique_terms()
-# unique_names = processor.get_unique_names()
-# terms = processor.get_terms()
-# names = processor.get_names()
-# facts = processor.get_facts()
-# rules = processor.get_rules()
+        # Enrich rules with classification information
+        for rule in self.elements_rules:
+            rule_key = (
+                normalize_str(rule["doc_id"]),
+                normalize_str(str(rule["statement_id"])),
+            )
+            classification = rule_classification_lookup.get(rule_key)
 
-# print(f"Unique terms: {len(unique_terms)}")
-# print(f"Unique names: {len(unique_names)}")
+            if classification:
+                rule.update(
+                    {
+                        "type": classification.get("type"),
+                        "type_confidence": classification.get("type_confidence"),
+                        "type_explanation": classification.get("type_explanation"),
+                        "subtype": classification.get("subtype"),
+                        "subtype_confidence": classification.get("subtype_confidence"),
+                        "subtype_explanation": classification.get(
+                            "subtype_explanation"
+                        ),
+                        "templates_ids": classification.get("templates_ids"),
+                    }
+                )
 
-# print(f'Rules from § 275.0-2: {processor.get_rule_info("§ 275.0-2", 3)}')
-# print(f'Facts from § 275.0-2: {processor.get_fact_info("§ 275.0-2", 2)}')
+            enriched_rules.append(rule)
+
+        # If both doc_id and statement_id are provided, return the specific rule
+        if doc_id and statement_id:
+            for rule in enriched_rules:
+                if normalize_str(rule["doc_id"]) == normalize_str(
+                    doc_id
+                ) and normalize_str(str(rule["statement_id"])) == normalize_str(
+                    str(statement_id)
+                ):
+                    return rule
+
+            # Return None if no matching rule is found
+            logger.debug(
+                f"No rule found for doc_id='{doc_id}', statement_id='{statement_id}'"
+            )
+            return None
+
+        # If only doc_id is provided, return all rules that match the given doc_id
+        if doc_id:
+            filtered_rules = [
+                rule
+                for rule in enriched_rules
+                if normalize_str(rule["doc_id"]) == normalize_str(doc_id)
+            ]
+
+            if not filtered_rules:
+                logger.debug(f"No rules found for doc_id='{doc_id}'")
+                return []
+
+            return filtered_rules
+
+        # If neither doc_id nor statement_id is provided, return all enriched rules
+        return enriched_rules

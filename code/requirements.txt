@@ -3,6 +3,7 @@ pandas
 pydantic
 openpyxl
 numpy
+statsmodels
 
 # AI/ML and NLP libraries
 openai
@@ -24,15 +25,18 @@ agraph-python
 # networkx
 # pygraphviz
 rdflib
+defusedxml
 
 # Visualization libraries
 matplotlib
 plotly
 seaborn
+XlsxWriter
+xelatex
 
-# Web scraping and diffing
-beautifulsoup4
-deepdiff
+# # Web scraping and diffing
+# beautifulsoup4
+# deepdiff
 
 # Miscellaneous utilities
 inflect

@@ -2,7 +2,7 @@
 	{
 		"section_id": "9.2",
 		"section_title": "Definitional rules",
-		"section_definition": "Definitional rules constrains how we define a construct created or used by the organization or the industry within which it operates. Definitional rules can in turn be categorized as:",
+		"section_definition": "Definitional rules constrain how we define a construct created or used by the organization or the industry within which it operates. Definitional rules are constraints that specify how constructs used by an organization or industry are defined, including formal definitions of terms, valid value ranges, and calculation formulas. Identifying definitional rules involves analyzing the formal descriptions, enumerations, relationships, and valid values of key concepts and their components within a system.",
 		"subsections": [
 			{
 				"section_id": "9.2.1",
@@ -114,7 +114,7 @@
 	{
 		"section_id": "9.3",
 		"section_title": "Data rules",
-		"section_definition": "Data rules (all of which are operative rules) constrains the data included in a transaction (a form or message) or a persistent dataset (e.g., a database record). Data rules can in turn be categorized as:",
+		"section_definition": "Data rules (all of which are operative rules) constrain the data included in a transaction (a form or message) or a persistent dataset (e.g., a database record). Data rules are constraints that ensure the integrity and consistency of data by defining requirements on its presence, values, and permissible updates.",
 		"subsections": [
 			{
 				"section_id": "9.3.1",
@@ -373,7 +373,7 @@
 	{
 		"section_id": "9.4",
 		"section_title": "Activity rules",
-		"section_definition": "Activity rules (all of which are operative rules) constrains the operation of one or more business processes or other activities. Activity rules can in turn be categorized as:",
+		"section_definition": "Activity rules (all of which are operative rules) constrain the operation of one or more business processes or other activities. Activity rules are constraints on the execution of business processes or other activities, including when activities can occur, prerequisites, prohibitions, conflict management, and process-specific decisions. Identifying activity rules involves analyzing the conditions under which an activity is restricted, triggered, or must be executed within a specific time frame.",
 		"subsections": [
 			{
 				"section_id": "9.4.1",
@@ -450,7 +450,7 @@
 	{
 		"section_id": "9.5",
 		"section_title": "Party rules",
-		"section_definition": "Party rules (all of which are operative rules) restricts the parties who can perform a process or activity or play a role. Party rules can in turn be categorized as:",
+		"section_definition": "Party rules (all of which are operative rules) restrict the parties who can perform a process or activity or play a role. Party rules are constraints that determine which parties can perform certain processes, activities, or roles, often based on characteristics like age, certification, or specific responsibilities. Identifying party rules involves analyzing the qualifications, restrictions, and access permissions required for parties to execute activities or hold certain roles in a business context.",
 		"subsections": [
 			{
 				"section_id": "9.5.1",

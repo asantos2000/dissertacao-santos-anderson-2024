@@ -23,7 +23,7 @@ def _get_sorted_file_info(file_dir: str, file_prefix: str, extension: str):
         list: Sorted list of file information dictionaries containing 'filename', 'date', and 'number' keys.
     """
     path = Path(file_dir)
-    path.mkdir(parents=True, exist_ok=True)
+    #path.mkdir(parents=True, exist_ok=True)
 
     files = list(path.glob(f"{file_prefix}-*.{extension}"))
     file_info_list = []

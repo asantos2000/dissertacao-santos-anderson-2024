@@ -266,46 +266,57 @@ class RulesTemplateProvider:
         str
             A formatted string representation of the template data.
         """
-        output = f"# {template_key}\n\n"
+        title = template_data.get('title', '')
+        output = f"## {template_key}: {title}\n\n" if title else f"## {template_key}\n\n"
+
         if not template_data:
             output += "Template data not found.\n\n"
             return output
+
+        # Format subtemplates in use as a bullet list with titles if available
         if 'usesSubtemplate' in template_data:
-            uses_subtemplate = template_data['usesSubtemplate']
-            if isinstance(uses_subtemplate, list):
-                uses_subtemplate = ', '.join(uses_subtemplate)
-            output += f"## usesSubtemplate\n{uses_subtemplate}\n\n"
+            output += "### Subtemplate(s) in use\n"
+            subtemplate_list = []
+            for sub_key in template_data['usesSubtemplate']:
+                sub_data = self._get_template_data(sub_key, self.data_dicts['witt_subtemplates_data'])
+                sub_title = sub_data.get('title', '') if sub_data else "Unknown"
+                subtemplate_list.append(f"- {sub_key}: {sub_title}")
+            output += "\n".join(subtemplate_list) + "\n\n"
+        
         if 'text' in template_data:
-            output += f"## text\n\n{template_data['text']}\n\n"
+            output += f"### Text\n\n{template_data['text']}\n\n"
         if 'explanation' in template_data:
-            output += f"## explanation\n\n{template_data['explanation']}\n\n"
+            output += f"### Explanation\n\n{template_data['explanation']}\n\n"
         return output
 
     def _process_template(self, template_key, processed_keys=None):
         """
-        Processes a template or subtemplate recursively, including any subtemplates used.
+        Processes a template or subtemplate recursively, including any subtemplates used,
+        and avoids processing duplicates.
 
         Parameters:
         -----------
         template_key : str
             The key of the template or subtemplate to be processed.
         processed_keys : set, optional
-            A set of keys that have already been processed to prevent circular references.
+            A set of keys that have already been processed to prevent duplicate entries.
 
         Returns:
         --------
         str
-            A formatted string representation of the template and its subtemplates.
+            A formatted string representation of the template and its subtemplates, without duplicates.
         """
         if processed_keys is None:
             processed_keys = set()
 
+        # If this template or subtemplate has already been processed, skip it
         if template_key in processed_keys:
             return ''
         processed_keys.add(template_key)
 
         template_data = None
 
+        # Determine whether it's a main template or subtemplate based on key prefix
         if template_key.startswith('T'):
             template_data = self._get_template_data(template_key, self.data_dicts['witt_templates_data']) or {}
             uses_subtemplate = self._get_template_data(template_key, self.data_dicts['witt_template_relationship_data'])
@@ -322,6 +333,7 @@ class RulesTemplateProvider:
 
         output = self._format_template_output(template_key, template_data)
 
+        # Process each subtemplate recursively, avoiding duplicates
         if 'usesSubtemplate' in template_data:
             subtemplate_keys = template_data['usesSubtemplate']
             subtemplate_keys = [subtemplate_keys] if isinstance(subtemplate_keys, str) else subtemplate_keys
@@ -331,21 +343,32 @@ class RulesTemplateProvider:
 
         return output
 
-    def get_rules_template(self, template_key):
+    def get_rules_template(self, template_keys):
         """
-        Retrieves the formatted rules template for the specified template key.
+        Retrieves the formatted rules templates for the specified list of template keys, avoiding duplicate subtemplates.
 
         Parameters:
         -----------
-        template_key : str
-            The key of the template to be retrieved.
+        template_keys : str or list of str
+            The key(s) of the template(s) to be retrieved. Can be a single string key or a list of keys.
 
         Returns:
         --------
         str
-            A formatted string representation of the template and its associated subtemplates.
+            A formatted string representation of each template and its associated subtemplates, without duplicates.
         """
-        return self._process_template(template_key)
+        # If a single template key is provided as a string, convert it to a list
+        if isinstance(template_keys, str):
+            template_keys = [template_keys]
+
+        output = ""
+        processed_subtemplates = set()  # Track processed templates and subtemplates to avoid duplicates
+
+        for template_key in template_keys:
+            output += self._process_template(template_key, processed_keys=processed_subtemplates)
+            output += "\n\n"  # Separate each template with extra newlines for readability
+
+        return output
 
 # Example usage:
 # rule_information_provider = RuleInformationProvider("../data")

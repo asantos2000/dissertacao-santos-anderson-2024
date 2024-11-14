@@ -61,7 +61,7 @@ template_list:
       1. <term 1> is the term being defined;
       2. "of {a|an} <term 2>" is only required if <term 1> is an attribute term;
       3. <term 3> is the hypernym of <term 1>;
-      4. <qualifying clause>is used to state the characteristics that distinguish members of the set signified by <term 1> from members of the sets signified by other hyponyms of <term3>; the options for a <qualifying clause> are listed in subtemplate S14. 
+      4. <qualifying clause> is used to state the characteristics that distinguish members of the set signified by <term 1> from members of the sets signified by other hyponyms of <term3>; the options for a <qualifying clause> are listed in subtemplate S14. 
     text: |
       {A|An} <term 1>
         {of {a|an} <term 2>| }
