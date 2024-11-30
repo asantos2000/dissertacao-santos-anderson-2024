@@ -55,7 +55,8 @@ class Document(BaseModel):
     id: str
     type: str  # New field to represent the type of the document
     content: Any  # Content can be any data type: list, dict, string, etc.
-
+    elapsed_times: Optional[list[float]] = None  # Optional field for elapsed time
+    completions: Optional[list[Dict]] = None  # Optional field for completion status
 
 # Define the DocumentManager class
 class DocumentManager(BaseModel):
@@ -256,7 +257,7 @@ def get_all_checkpoints(checkpoint_dir, prefix="documents", extension="json"):
     return managers, file_info_list
 
 
-def get_elements_from_checkpoints(checkpoint_dir):
+def get_elements_from_checkpoints(checkpoint_dir, merge=True):
     managers, file_info_list = get_all_checkpoints(checkpoint_dir)
 
     pred_operative_rules = []
@@ -267,7 +268,7 @@ def get_elements_from_checkpoints(checkpoint_dir):
 
     for manager, file_info in zip(managers, file_info_list):
         # Process documents
-        processor = DocumentProcessor(manager)
+        processor = DocumentProcessor(manager, merge=merge)
 
         # Access processed data
         # unique_terms = processor.get_unique_terms()
@@ -290,35 +291,19 @@ def get_elements_from_checkpoints(checkpoint_dir):
     return pred_operative_rules, pred_facts, pred_terms, pred_names, pred_files
 
 
-def get_true_table_files(data_dir):
-    true_table_files = [
-        {
-            "path": f"{data_dir}/classify_p1_operative_rules_true_table.json",
-            "id": "classify_P1|true_table",
-        },
-        {
-            "path": f"{data_dir}/classify_p2_definitional_facts_true_table.json",
-            "id": "classify_P2_Definitional_facts|true_table",
-        },
-        {
-            "path": f"{data_dir}/classify_p2_definitional_names_true_table.json",
-            "id": "classify_P2_Definitional_names|true_table",
-        },
-        {
-            "path": f"{data_dir}/classify_p2_definitional_terms_true_table.json",
-            "id": "classify_P2_Definitional_terms|true_table",
-        },
-        {
-            "path": f"{data_dir}/classify_p2_operative_rules_true_table.json",
-            "id": "classify_P2_Operative_rules|true_table",
-        },
+def get_true_table_keys():
+    return [
+        "classify_P1|true_table",
+        "classify_P2_Definitional_facts|true_table",
+        "classify_P2_Definitional_names|true_table",
+        "classify_P2_Definitional_terms|true_table",
+        "classify_P2_Operative_rules|true_table",
     ]
-
-    return true_table_files
 
 
 def get_elements_from_true_tables(data_dir):
-    true_table_files = get_true_table_files(data_dir)
+    true_table_file = f"{data_dir}/documents_true_table.json"
+    true_table_keys = get_true_table_keys()
 
     true_operative_rules_p1 = []
     true_facts_p2 = []
@@ -326,9 +311,10 @@ def get_elements_from_true_tables(data_dir):
     true_terms_p2 = []
     true_operative_rules_p2 = []
 
-    for table in true_table_files:
-        manager_true_elements = restore_checkpoint(table["path"])
-        match table["id"]:
+    manager_true_elements = restore_checkpoint(true_table_file)
+
+    for key in true_table_keys:
+        match key:
             case "classify_P1|true_table":
                 true_operative_rules_p1 = manager_true_elements.retrieve_document(
                     "classify_P1", "true_table"
@@ -388,7 +374,7 @@ class DocumentProcessor:
         elements_terms_definition (dict): Dictionary to store terms definitions by document ID.
     """
 
-    def __init__(self, manager: DocumentManager):
+    def __init__(self, manager: DocumentManager, merge: bool = False):
         self.manager = manager
         self.elements_terms_set = set()
         self.elements_names_set = set()
@@ -444,6 +430,15 @@ class DocumentProcessor:
             logger.error(f"Error processing elements: {e}")
             raise e
 
+        # Conditionally merge elements if `merge` is True
+        if merge:
+            try:
+                self.merge_terms()
+                self.merge_names()
+            except Exception as e:
+                logger.error(f"Error merging elements: {e}")
+                raise e
+            
         try:
             self.process_transformed_elements()
         except Exception as e:
@@ -479,7 +474,7 @@ class DocumentProcessor:
                 for item in validation_doc.content:
                     doc_id = normalize_str(item.get("doc_id"))
                     statement_id = normalize_str(str(item.get("statement_id")))
-                    source = item.get("source")
+                    sources = item.get("sources")
 
                     # Fields to add
                     semscore = item.get("semscore")
@@ -494,7 +489,7 @@ class DocumentProcessor:
                         if (
                             normalize_str(element.get("doc_id")) == doc_id
                             and normalize_str(str(element.get("statement_id"))) == statement_id
-                            and element.get("source") == source
+                            and set(element["sources"]) == set(sources) 
                         ):
                             # Update element with new fields
                             element.update({
@@ -509,74 +504,52 @@ class DocumentProcessor:
             except Exception as e:
                 logger.error(f"Error processing validation document '{doc_name}': {e}")
 
+    def _update_element(self, elements_list, doc_id, statement_id, sources, transformed):
+        """
+        Updates the transformed attribute for the matching element in the given list.
+        """
+        for element in elements_list:
+            logger.debug(f'{doc_id}, {statement_id}, {sources} == {normalize_str(element["doc_id"])}, {str(element["statement_id"])}, {element["sources"]}')
+            if (
+                normalize_str(element["doc_id"]) == doc_id
+                and normalize_str(str(element["statement_id"])) == statement_id
+                and set(element["sources"]) == set(sources)  # Updated comparison for list
+            ):  
+                logger.debug('MATCH')
+                element["transformed"] = transformed
+                logger.debug(f"Updated element: {element}")
+                break
 
     def process_transformed_elements(self):
         """
         Processes the transformed elements from the llm_response_transform document types and updates the transformed attribute in each relevant list.
         """
-        transform_docs = [
-            "transform_Fact_Types",
-            "transform_Terms",
-            "transform_Names",
-            "transform_Operative_Rules",
-        ]
+        transform_docs = {
+            "transform_Fact_Types": self.elements_facts,
+            "transform_Terms": self.elements_terms,
+            "transform_Names": self.elements_names,
+            "transform_Operative_Rules": self.elements_rules,
+        }
 
-        for transform_doc_id in transform_docs:
-            transform_doc_content = self.manager.retrieve_document(
-                transform_doc_id, "llm_response_transform"
-            ).content
+        for transform_doc_id, elements_list in transform_docs.items():
+            transform_doc = self.manager.retrieve_document(transform_doc_id, "llm_response_transform")
+
+            if transform_doc is None or not transform_doc.content:
+                logger.warning(f"Document '{transform_doc_id}' of type 'llm_response_transform' not found or empty.")
+                continue  # Skip this document and move to the next iteration
+
+            transform_doc_content = transform_doc.content
 
             for item in transform_doc_content:
                 logger.debug(f"{item=}")
                 doc_id = normalize_str(item.get("doc_id"))
                 statement_id = normalize_str(str(item.get("statement_id")))
-                source = item.get("statement_source")
+                sources = item.get("statement_sources")
                 transformed = item.get("transformed")
 
-                logger.debug(
-                    f"doc_id: {doc_id} - statement_id: {statement_id} - transformed: {transformed}"
-                )
+                logger.debug(f"doc_id: {doc_id} - statement_id: {statement_id} - transformed: {transformed}")
+                self._update_element(elements_list, doc_id, statement_id, sources, transformed)
 
-                # Update the transformed attribute in each relevant list based on the type of document
-                logger.debug(f"{transform_doc_id=}")
-                if "Fact_Types" in transform_doc_id:
-                    for element in self.elements_facts:
-                        if (
-                            normalize_str(element["doc_id"]) == doc_id
-                            and normalize_str(str(element["statement_id"]))
-                            == statement_id
-                            and element["source"] == source
-                        ):
-                            element["transformed"] = transformed
-                            logger.debug(f"{element=}")
-                elif "Terms" in transform_doc_id:
-                    for element in self.elements_terms:
-                        logger.debug(f"{element=}")
-                        if (
-                            normalize_str(element["doc_id"]) == doc_id
-                            and normalize_str(str(element["statement_id"]))
-                            == statement_id
-                            and element["source"] == source
-                        ):
-                            element["transformed"] = transformed
-                elif "Names" in transform_doc_id:
-                    for element in self.elements_names:
-                        if (
-                            normalize_str(element["doc_id"]) == doc_id
-                            and normalize_str(str(element["statement_id"]))
-                            == statement_id
-                            and element["source"] == source
-                        ):
-                            element["transformed"] = transformed
-                elif "Operative_Rules" in transform_doc_id:
-                    for element in self.elements_rules:
-                        if (
-                            normalize_str(element["doc_id"]) == doc_id
-                            and normalize_str(str(element["statement_id"]))
-                            == statement_id
-                            and element["source"] == source
-                        ):
-                            element["transformed"] = transformed
 
     def process_names_classifications(self):
         """
@@ -774,16 +747,20 @@ class DocumentProcessor:
         # Log the final classification for debugging purposes
         logger.debug(f"{self.terms_classifications=}")
 
-    def add_definition(self, doc_id, term, definition):
+    def add_definition(self, doc_id, term, definition, isLocalScope):
         """
-        Adds a term definition to the elements_terms_definition dictionary.
+        Adds a term definition and isLocalScope to the elements_terms_definition dictionary.
 
         Args:
             doc_id (str): Identifier of the document.
             term (str): The term to be defined.
             definition (str): The definition of the term.
+            isLocalScope (bool): The isLocalScope value.
         """
-        self.elements_terms_definition.setdefault(doc_id, {})[term] = definition
+        self.elements_terms_definition.setdefault(doc_id, {})[term] = {
+            'definition': definition,
+            'isLocalScope': isLocalScope
+        }
 
     def process_definitions(self):
         """
@@ -802,7 +779,81 @@ class DocumentProcessor:
             ).content
             doc_terms = doc_content.get("terms", [])
             for term in doc_terms:
-                self.add_definition(doc_id, term.get("term"), term.get("definition"))
+                self.add_definition(
+                    doc_id,
+                    term.get("term"),
+                    term.get("definition"),
+                    term.get("isLocalScope")
+                )
+
+    def process_elements(self):
+        """
+        Processes elements from documents and categorizes them into terms, names, facts, and rules.
+        """
+        # Get the list of documents that end with '_P1'
+        docs_p1 = [
+            s
+            for s in self.manager.list_document_ids(doc_type="llm_response")
+            if s.endswith("_P1")
+        ]
+
+        for doc in docs_p1:
+            doc_content = self.manager.retrieve_document(
+                doc, doc_type="llm_response"
+            ).content
+            doc_id = doc_content.get("section")
+            doc_elements = doc_content.get("elements", [])
+            for element in doc_elements:
+                element_classification = element.get("classification")
+                element_id = element.get("id")
+                verb_symbols = element.get("verb_symbols") or element.get("verb_symbol")
+                if isinstance(verb_symbols, str):
+                    verb_symbols = [verb_symbols]
+                elif verb_symbols is None:
+                    verb_symbols = []
+                element_dict = {
+                    "doc_id": doc_id,
+                    "statement_id": element_id,
+                    "statement_title": element.get("title"),
+                    "statement": element.get("statement"),
+                    "sources": element.get("sources"),
+                    "terms": element.get("terms", []),
+                    "verb_symbols": verb_symbols,
+                    "element_name": element_classification,
+                }
+                logger.debug(f"{element_dict=}")
+
+                match element_classification:
+                    case "Fact" | "Fact Type":
+                        self.elements_facts.append(element_dict)
+                    case "Operative Rule":
+                        self.elements_rules.append(element_dict)
+
+                element_terms = element.get("terms", [])
+                if element_terms:
+                    for term in element_terms:
+                        signifier = term.get("term")
+                        # Retrieve definition and isLocalScope
+                        term_info = self.elements_terms_definition.get(doc_id, {}).get(signifier, {})
+                        definition = term_info.get('definition')
+                        isLocalScope = term_info.get('isLocalScope')
+
+                        term_dict = {
+                            "doc_id": doc_id,
+                            "statement_id": signifier,  # Using signifier as statement_id
+                            "definition": definition,
+                            "isLocalScope": isLocalScope,
+                            "sources": element.get("sources"),
+                            "element_name": "Term" if term.get("classification") == "Common Noun" else "Name",
+                        }
+
+                        # Append new term
+                        if term_dict["element_name"] == "Term":
+                            self.elements_terms.append(term_dict)
+                            self.elements_terms_set.add(signifier)
+                        else:
+                            self.elements_names.append(term_dict)
+                            self.elements_names_set.add(signifier)
 
     def process_operative_rules_classifications(self):
         """
@@ -886,68 +937,72 @@ class DocumentProcessor:
         self.operative_rules_classifications = list(classification_dict.values())
         logger.debug(f"{self.operative_rules_classifications=}")
 
-    def process_elements(self):
+    def merge_terms(self):
         """
-        Processes elements from documents and categorizes them into terms, names, facts, and rules.
+        Merges term elements with the same doc_id and statement_id by combining sources lists and 
+        retaining fields from the element with the highest semscore and similarity_score.
         """
-        # Get the list of documents that end with '_P1'
-        docs_p1 = [
-            s
-            for s in self.manager.list_document_ids(doc_type="llm_response")
-            if s.endswith("_P1")
-        ]
+        # Build a dictionary to group terms by (doc_id, statement_id)
+        grouped_terms = {}
+        for term in self.elements_terms:
+            key = (term['doc_id'], term['statement_id'])
+            grouped_terms.setdefault(key, []).append(term)
+        
+        # Now process each group to merge elements
+        merged_terms = []
+        for key, terms in grouped_terms.items():
+            # Collect all 'sources' lists into a combined list and remove duplicates
+            sources = []
+            for term in terms:
+                sources.extend(term.get('sources', []))
+            sources = list(set(sources))  # Remove duplicates
+            
+            # Find the term with the highest 'semscore' and 'similarity_score'
+            best_term = max(terms, key=lambda t: (t.get('similarity_score', 0), t.get('semscore', 0)))
+            
+            # Create a new term with merged data
+            merged_term = best_term.copy()
+            merged_term['sources'] = sources
+            
+            # Add the merged term to the list
+            merged_terms.append(merged_term)
+        
+        # Replace self.elements_terms with the merged_terms
+        self.elements_terms = merged_terms
 
-        for doc in docs_p1:
-            doc_content = self.manager.retrieve_document(
-                doc, doc_type="llm_response"
-            ).content
-            doc_id = doc_content.get("section")
-            doc_elements = doc_content.get("elements", [])
-            for element in doc_elements:
-                element_classification = element.get("classification")
-                element_id = element.get("id")
-                verb_symbols = element.get("verb_symbols") or element.get("verb_symbol")
-                if isinstance(verb_symbols, str):
-                    verb_symbols = [verb_symbols]
-                elif verb_symbols is None:
-                    verb_symbols = []
-                element_dict = {
-                    "doc_id": doc_id,
-                    "statement_id": element_id,
-                    "statement": element.get("statement"),
-                    "source": element.get("source"),
-                    "terms": element.get("terms", []),
-                    "verb_symbols": verb_symbols,
-                    "element_name": element_classification,
-                }
+    def merge_names(self):
+        """
+        Merges name elements with the same doc_id and statement_id by combining sources lists and 
+        retaining fields from the element with the highest semscore and similarity_score.
+        """
+        # Build a dictionary to group names by (doc_id, statement_id)
+        grouped_names = {}
+        for name in self.elements_names:
+            key = (name['doc_id'], name['statement_id'])
+            grouped_names.setdefault(key, []).append(name)
+        
+        # Now process each group to merge elements
+        merged_names = []
+        for key, names in grouped_names.items():
+            # Collect all 'sources' lists into a combined list and remove duplicates
+            sources = []
+            for name in names:
+                sources.extend(name.get('sources', []))
+            sources = list(set(sources))  # Remove duplicates
+            
+            # Find the name with the highest 'semscore' and 'similarity_score'
+            best_name = max(names, key=lambda n: (n.get('similarity_score', 0), n.get('semscore', 0)))
+            
+            # Create a new name with merged data
+            merged_name = best_name.copy()
+            merged_name['sources'] = sources
+            
+            # Add the merged name to the list
+            merged_names.append(merged_name)
+        
+        # Replace self.elements_names with the merged_names
+        self.elements_names = merged_names
 
-                match element_classification:
-                    case "Fact" | "Fact Type":
-                        self.elements_facts.append(element_dict)
-                    case "Operative Rule":
-                        self.elements_rules.append(element_dict)
-
-                element_terms = element.get("terms", [])
-                if element_terms:
-                    for term in element_terms:
-                        signifier = term.get("term")
-                        term_dict = {
-                            "doc_id": doc_id,
-                            "statement_id": signifier,
-                            # "statement_id": element_id,
-                            "definition": self.elements_terms_definition.get(
-                                doc_id, {}
-                            ).get(signifier),
-                            "source": element.get("source"),
-                        }
-                        if term.get("classification") == "Common Noun":
-                            term_dict["element_name"] = "Term"
-                            self.elements_terms.append(term_dict)
-                            self.elements_terms_set.add(signifier)
-                        else:
-                            term_dict["element_name"] = "Name"
-                            self.elements_names.append(term_dict)
-                            self.elements_names_set.add(signifier)
 
     def get_unique_terms(self, doc_id=None):
         """

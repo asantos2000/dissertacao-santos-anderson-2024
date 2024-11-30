@@ -5,3 +5,5 @@ bin/agtool export \
     --compress \
     http://super:2002@localhost:10035/repositories/cfr2sbvr \
     cfr2sbvr.gzip
+
+    

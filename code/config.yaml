@@ -9,17 +9,30 @@ LLM:
   MODEL: "gpt-4o"
   EMBEDDING_MODEL: "text-embedding-3-small"
   TEMPERATURE: 0
-  MAX_TOKENS: 4095  # Max for gpt-4o
+  MAX_TOKENS: 8192  # Max for gpt-4o
+
+REFERENCE_MODELS:
+  MAX_CONTEXT_LENGTH:
+    gpt-4o-2024-08-06: 128_000  # GPT-4 context length
+    GPT-3.5: 96_000  # Example context length for GPT-3.5
+  PRICE_PER_MILLION_TOKENS:
+    gpt-4o-2024-08-06: 2.50  # USD as of 2024-10-31
+    GPT-3.5: 1.00  # Example price for GPT-3.5
 
 # AllegroGraph Configuration
-ALLEGROGRAPH:
+ALLEGROGRAPH_HOSTING: "ALLEGROGRAPH_LOCAL"  # ALLEGROGRAPH_LOCAL or ALLEGROGRAPH_CLOUD
+
+ALLEGROGRAPH_FORCE_RUN: True # Force run the script. If set to True, the script will run regardless of risk of data loss.
+ALLEGROGRAPH_CLEAN_BEFORE_RUN: True # Clean the repository before running the script.
+
+ALLEGROGRAPH_LOCAL:
   REPO: "cfr2sbvr"
   CATALOG: "root"
   HOST: "localhost"  # ag1eawvuu0p3zv35.allegrograph.cloud for AllegroGraph cloud
   PORT: 10035  # 443 for AllegroGraph cloud
   USER: "super"  # admin for AllegroGraph cloud
   PASSWORD: "2002"  # Replace with your password
-  HOME_DIR: "/home/adsantos/agraph-8.2.1"
+  HOME_DIR: "/home/adsantos/agraph-8.3.0"
 
 # AllegroGraph Configuration
 ALLEGROGRAPH_CLOUD:
@@ -37,6 +50,7 @@ DEFAULT_OUTPUT_DIR: "../outputs"
 DEFAULT_CHECKPOINT_FILE: null  # to be set programmatically
 DEFAULT_EXTRACTION_REPORT_FILE: null  # to be set programmatically
 DEFAULT_EXCEL_FILE: "../outputs/compare_items_metrics.xlsx"
+DEFAULT_SCRIPTS_DIR: "../scripts"
 
 # GitHub Configuration
 GITHUB_REPO: "https://github.com/asantos2000/master-degree-santos-anderson.git"  # You can set this with environment variables

@@ -1072,3 +1072,223 @@ example_list:
       The final quality review
         of each project deliverable
       must be performed by the quality assurance officer.
+
+  - id: "F188"
+    text: |
+      minor is a category of person
+
+  - id: "F189"
+    text: |
+      age is of person
+
+  - id: "F190"
+    text: |
+      mother is of person
+
+  - id: "F191"
+    text: |
+      mother is a category of person
+
+  - id: "F192"
+    text: |
+      person is female
+
+  - id: "F193"
+    text: |
+      person is parent of person
+  
+  - id: "F194"
+    text: |
+      mother is a category of parent
+
+  - id: "F195"
+    text: |
+      father is a category of parent
+
+  - id: "F196"
+    text: |
+      parent is of person
+
+  - id: "F197"
+    text: |
+      person is a category of party
+
+  - id: "F198"
+    text: |
+      organization is a category of party
+
+  - id: "F199"
+    text: |
+      one-way journey is a category of journey
+
+  - id: "F200"
+    text: |
+      return journey is a category of journey
+
+  - id: "F201"
+    text: |
+      multi-stop journey is a category of journey
+
+  - id: "F205"
+    text: |
+      flight has departure time
+  
+  - id: "F206"
+    text: |
+      departure date is of journey
+
+  - id: "F207"
+    text: |
+      departure date is of flight of journey
+
+  - id: "F208"
+    text: |
+      outgoing flight is a category of flight
+
+  - id: "F209"
+    text: |
+      project assignment specifies date as start date
+
+  - id: "F210"
+    text: |
+      project assignment specifies date as end date
+
+  - id: "F211"
+    text: |
+      date is no earlier than date
+
+  - id: "F313"
+    text: | 
+      bag drop is for flight
+
+  - id: "F314"
+    text: | 
+      activity occurs during time period
+
+  - id: "F315"
+    text: | 
+      departure time is of flight
+
+  - id: "F316"
+    text: | 
+      acknowledgment is of service request
+
+  - id: "F317"
+    text: | 
+      service request is made before time
+
+  - id: "F318"
+    text: | 
+      activity occurs before time
+
+  - id: "F319"
+    text: | 
+      service request is made on day
+
+  - id: "F320"
+    text: | 
+      daily ticket is used
+
+  - id: "F321"
+    text: | 
+      activity occurs until time
+
+  - id: "F322"
+    text: | 
+      ticket is validated on day
+
+  - id: "F323"
+    text: | 
+      construction machinery is operated in residential area
+
+  - id: "F324"
+    text: | 
+      activity occurs after time
+
+  - id: "F325"
+    text: | 
+      online banking occurs
+
+  - id: "F326"
+    text: | 
+      activity occurs during system maintenance
+
+  - id: "F327"
+    text: | 
+      replenishment order is raised for part
+
+  - id: "F328"
+    text: | 
+      activity occurs no later than time
+
+  - id: "F329"
+    text: | 
+      quantity on hand is of part
+
+  - id: "F330"
+    text: | 
+      quantity on hand falls below reorder point
+
+  - id: "F332"
+    text: | 
+      passenger boards international flight
+
+  - id: "F333"
+    text: | 
+      passenger undergoes departure control
+
+  - id: "F334"
+    text: | 
+      laptop computer undergoes security screening
+
+  - id: "F335"
+    text: | 
+      laptop computer is removed from bag
+
+  - id: "F341"
+    text: |
+      ticket barrier retains ticket
+
+  - id: "F342"
+    text: |
+      ticket is valid for journey
+
+  - id: "F343"
+    text: |
+      ticket is expired
+
+  - id: "F344"
+    text: |
+      person is rostered as pilot in command on flight crew
+
+  - id: "F345"
+    text: |
+      person holds command endorsement
+
+  - id: "F346"
+    text: |
+      command endorsement is current
+
+  - id: "F347"
+    text: |
+      person is rostered as flight crew member
+
+  - id: "F348"  
+    text: |
+      current medical status is of person
+
+  - id: "F354"
+    text: |
+      payroll record is of employee
+
+  - id: "F355"
+    text: |
+      payroll record is viewed by person
+
+  - id: "F356"
+    text: |
+      final quality review is of project deliverable
+
+  - id: "F357"
+    text: |
+      final quality review is performed by person

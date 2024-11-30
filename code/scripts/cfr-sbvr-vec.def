@@ -2,7 +2,7 @@ gpt
  embedder openai
  model text-embedding-3-small
  if-exists supersede   
- api-key "open_ai_api_key"
+ api-key "{open_ai_api_key}"
  vector-database-name "cfr-sbvr-3m-vec"
  limit 1000000
  include-predicates <https://www.omg.org/spec/SBVR/20190601\#signifier>

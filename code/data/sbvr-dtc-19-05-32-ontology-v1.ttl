@@ -267,7 +267,7 @@ sbvr:expression a rdf:Property ;
         sbvr:Term,
         sbvr:VerbConceptRoledesignation,
         sbvr:VerbConceptwording,
-        sbvr:Verbsymbol ;
+        sbvr:VerbSymbol ;
     rdfs:range xsd:anyType .
 
 sbvr:extension a rdf:Property ;
@@ -429,7 +429,7 @@ sbvr:isImplicitlyUnderstood a rdf:Property ;
         sbvr:Prohibiteddesignation,
         sbvr:Term,
         sbvr:VerbConceptRoledesignation,
-        sbvr:Verbsymbol ;
+        sbvr:VerbSymbol ;
     rdfs:range xsd:boolean .
 
 sbvr:isPracticable a rdf:Property ;
@@ -575,7 +575,7 @@ sbvr:meaning a rdf:Property ;
         sbvr:Term,
         sbvr:VerbConceptRoledesignation,
         sbvr:VerbConceptwording,
-        sbvr:Verbsymbol ;
+        sbvr:VerbSymbol ;
     rdfs:range xsd:anyType .
 
 sbvr:minimumCardinality a rdf:Property ;
@@ -790,7 +790,7 @@ sbvr:signifier a rdf:Property ;
         sbvr:Speechcommunityregulatesitsusageofsignifier,
         sbvr:Term,
         sbvr:VerbConceptRoledesignation,
-        sbvr:Verbsymbol ;
+        sbvr:VerbSymbol ;
     rdfs:range xsd:anyType .
 
 sbvr:simplyUsedRole a rdf:Property ;
@@ -1998,7 +1998,7 @@ sbvr:Speechcommunityrepresentationset a rdf:Property,
     rdfs:domain sbvr:Speechcommunitydeterminesspeechcommunityrepresentationset,
         sbvr:Speechcommunityrepresentationsetincludesrepresentation .
 
-sbvr:Statement a rdf:Property,
+sbvr:statement a rdf:Property,
         owl:Class ;
     rdfs:label "statement" ;
     rdfs:comment "This is the statement property or class within the SBVR ontology." ;
@@ -2554,7 +2554,7 @@ sbvr:Name a rdf:Property,
         sbvr:VerbConceptRole,
         sbvr:VerbConceptRoledesignation,
         sbvr:VerbConceptwording,
-        sbvr:Verbsymbol,
+        sbvr:VerbSymbol,
         sbvr:Viewpoint,
         sbvr:Vocabulary,
         sbvr:VocabularyNamespace,
@@ -2589,7 +2589,7 @@ sbvr:VerbConceptRoledesignation a owl:Class ;
     rdfs:label "verbConceptRoleDesignation" ;
     rdfs:comment "This is the verbConceptRoleDesignation property or class within the SBVR ontology." .
 
-sbvr:Verbsymbol a rdf:Property,
+sbvr:VerbSymbol a rdf:Property,
         owl:Class ;
     rdfs:label "verbSymbol" ;
     rdfs:comment "This is the verbSymbol property or class within the SBVR ontology." ;

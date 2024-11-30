@@ -23,7 +23,7 @@ def measure_time(func):
         end_time = time.perf_counter()
         elapsed_time = end_time - start_time
         logger.info(f"Execution time for {func.__name__}: {elapsed_time:.2f} seconds")
-        return result
+        return result[0], result[1], elapsed_time
     return wrapper
 
 @measure_time
@@ -47,7 +47,7 @@ def query_instruct_llm(system_prompt: str,
         Exception: If the API call fails.
     """
     client = instructor.from_openai(OpenAI())
-    resp = client.chat.completions.create(
+    resp, completion = client.chat.completions.create_with_completion(
         model=llm_model,
         response_model=document_model,
         temperature=temperature,
@@ -60,4 +60,5 @@ def query_instruct_llm(system_prompt: str,
             {"role": "user", "content": user_prompt},
         ],
     )
-    return resp
+    logger.info(f"Tokes used: {completion.usage}")
+    return resp, completion

@@ -1,0 +1,758 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# SPARQL queries",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## CFR_SBVR",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "verb symbols",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\n\nSELECT ?s ?p ?o\nWHERE {\n  GRAPH cfr-sbvr:CFR_SBVR {\n    { ?s ?p sbvr:VerbSymbol . BIND(sbvr:VerbSymbol AS ?o) }\n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "terms and names",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\n\nSELECT ?s ?p ?o\nWHERE {\n  GRAPH cfr-sbvr:CFR_SBVR {\n    { ?s ?p sbvr:Term . BIND(sbvr:Term AS ?o) }\n    UNION\n    { ?s ?p sbvr:Name . BIND(sbvr:Name AS ?o) }\n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "facts and rules",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\n\nSELECT ?s ?p ?o\nWHERE {\n  GRAPH cfr-sbvr:CFR_SBVR {\n    { ?s ?p sbvr:Fact . BIND(sbvr:Fact AS ?o) }\n    UNION\n    { ?s ?p sbvr:Rule . BIND(sbvr:Rule AS ?o) }\n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Or",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\n\nSELECT ?s ?p ?o\nWHERE {\n  GRAPH cfr-sbvr:CFR_SBVR {\n    ?s ?p ?o .\n    FILTER (?o = sbvr:Fact || ?o = sbvr:Rule)\n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "upsert_term_cfr_sbvr_graph",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\n\nWITH cfr-sbvr:CFR_SBVR_Graph\nDELETE {\n    cfr-sbvr:TotalAssetTerm ?p ?o .\n    cfr-sbvr:TotalAssetConcept ?p1 ?o1 .\n    cfr-sbvr:TotalAssetDefinition ?p2 ?o2 .\n}\nINSERT {\n    cfr-sbvr:TotalAssetTerm a sbvr:Term ;\n        sbvr:signifier \"total asset\" ;\n        \n        sbvr:closeMatch <https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/AssetClass> ;\nsbvr:closeMatch <https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/FinancialAsset> ;\nsbvr:closeMatch <https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/TangibleAsset> ;\nsbvr:closeMatch <https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/Asset> ;\nsbvr:closeMatch <https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/AccountAsAnAsset> ;\nsbvr:closeMatch <https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/PhysicalAsset> ;\n\n        sbvr:isImplicitlyUnderstood \"false\"^^xsd:boolean ;\n        sbvr:meaning cfr-sbvr:TotalAssetConcept .\n\n    cfr-sbvr:TotalAssetConcept a sbvr:Concept, skos:Concept ;\n        sbvr:definition cfr-sbvr:TotalAssetDefinition ;\n        sbvr:designation cfr-sbvr:TotalAssetTerm ;\n        skos:prefLabel \"total asset\" .\n\n    cfr-sbvr:TotalAssetDefinition a sbvr:IntensionalDefinition ;\n        sbvr:text \"The total assets as shown on the balance sheet of the investment adviser or another relevant person, or the consolidated balance sheet of the adviser with its subsidiaries.\" .\n}\nWHERE {\n    # Match all existing triples related to TotalAsset\n    OPTIONAL { cfr-sbvr:TotalAssetTerm ?p ?o . }\n    OPTIONAL { cfr-sbvr:TotalAssetConcept ?p1 ?o1 . }\n    OPTIONAL { cfr-sbvr:TotalAssetDefinition ?p2 ?o2 . }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "similar_search_cfr_sbvr",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/> \nPREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\n\nSELECT ?uri (xsd:decimal(?score) as ?score_percent) ?s ?p ?definition\nFROM cfr-sbvr:CFR_SBVR\nWHERE {{\n    (?uri ?score ?originalText ?p) llm:nearestNeighbor (\"total asset\" \"cfr-sbvr-3s-vec\" 5 0.8) .\n    \n    ?s ?p ?originalText .\n\n    OPTIONAL { ?s sbvr:expression ?definition . }\n        \n}}\nORDER BY DESC(?score)",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/> \nPREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\n\nSELECT ?uri (xsd:decimal(?score) as ?score_percent) ?s ?p ?definition\nFROM fibo:FIBO_Graph\nWHERE {{\n    (?uri ?score ?originalText ?p) llm:nearestNeighbor (\"total asset\" \"fibo-glossary-3m-vec\" 5 0.85) .\n    \n    ?s ?p ?originalText .\n\n    OPTIONAL { ?s sbvr:expression ?definition . }\n        \n}}\nORDER BY DESC(?score)",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "select_voc_association",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\n\nSELECT ?s ?p {\n  ?s sbvr:vocabulary1IncorporatesVocabulary2 ?p .\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "select_vocabularies",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\n\nSELECT ?s ?p ?o\n#FROM NAMED cfr-sbvr:CFR_SBVR\n{ \n  #graph ?g {\n    #?s ?p sbvr:VocabularyNamespace .\n    ?s ?p sbvr:Vocabulary .\n  #}\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "select_NS",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/QuickFIBOProd#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\nPREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\n\nSELECT ?s ?p ?o\n{\n  ?s ?p sbvr:Vocabulary .\n\n  #fro-cfr:CFR_Title_17_Part_275_NS  ?p ?o .\n\n  #fibo:FIBO_NS  ?p ?o .\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "add_voc_with_association",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\n\nDELETE {\n    cfr-sbvr:CFR_SBVR_275_0_2_VOC ?p ?o .\n}\nINSERT {\n    cfr-sbvr:CFR_SBVR_275_0_2_VOC\n        a owl:Class, sbvr:Vocabulary .\n\n    cfr-sbvr:CFR_SBVR_VOC sbvr:vocabulary1IncorporatesVocabulary2 cfr-sbvr:CFR_SBVR_275_0_2_VOC .\n}\nWHERE {\n    # Match all existing triples related to 275_0_2\n    cfr-sbvr:275_0_2_VOC ?p ?o .\n} ",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "all_triples_cfr_sbvr_graph",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/> \nPREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\n\nSELECT ?s ?p ?o\nFROM cfr-sbvr:CFR_SBVR\nWHERE {\n    ?s ?p ?o .\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "delete_voc_association",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\n\nDELETE DATA {\n    cfr-sbvr:CFR_SBVR_VOC sbvr:vocabulary1IncorporatesVocabulary2 cfr-sbvr:CFR_SBVR_275_0_2_VOC .\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "delete_where_NS",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/QuickFIBOProd#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\nPREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\n\nDELETE WHERE\n{\n  cfr-sbvr:CFR_SBVR_NS ?p ?o .\n\n  #fro-cfr:CFR_Title_17_Part_275_NS  ?p ?o .\n\n  #fibo:FIBO_NS  ?p ?o .\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "designation_NS",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\n\nSELECT ?s ?o\nFROM NAMED cfr-sbvr:CFR_SBVR\n{ \n  graph ?g {\n    ?s sbvr:designationIsInNamespace ?o .\n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "get_term_cfr_sbvr_graph",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX cfr-sbvr:<http://cfr2sbvr.com/cfr#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\n\n# View unique named graphs\nselect ?designation ?reference\nFROM NAMED cfr-sbvr:CFR_SBVR\n{ \n  graph ?g {\n    #?s a cfr-sbvr:TotalAssetTerm .\n    #cfr-sbvr:TotalAssetTerm a sbvr:Term .\n      ?designation sbvr:referenceSupportsMeaning ?reference .\n  } \n}\n\n# PREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\n# PREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\n\n# SELECT ?term ?signifier ?meaning\n# WHERE {\n#   GRAPH cfr-sbvr:CFR_SBVR {\n#     cfr-sbvr:TotalAssetTerm a sbvr:Term ;\n#       sbvr:signifier ?signifier ;\n#       sbvr:meaning ?meaning .\n#     BIND(cfr-sbvr:TotalAssetTerm AS ?term)\n#   }\n# }",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "get_terms_from_cfr_sbvr_graph",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX cfr-sbvr:<http://cfr2sbvr.com/cfr#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\n\nselect ?p ?o\nFROM NAMED cfr-sbvr:CFR_SBVR_Graph\n{ \n  graph ?g {\n      cfr-sbvr:TotalAssetTerm ?p ?o .\n  } \n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "insert_term_query",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/200http://127.0.0.1:10035/webview1/XMLSchema#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\n\nINSERT DATA {\n  GRAPH cfr-sbvr:CFR_SBVR_Graph {\n    cfr-sbvr:TotalAssetTerm a sbvr:Term ;\n      sbvr:signifier \"total asset\" ;\n      sbvr:closeMatch <https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/AssetClass>,\n<https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/FinancialAsset>,\n<https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/TangibleAsset>,\n<https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/Asset>,\n<https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/AccountAsAnAsset>,\n<https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/PhysicalAsset> ;\n      sbvr:isImplicitlyUnderstood \"false\"^^xsd:boolean ;\n      sbvr:meaning cfr-sbvr:TotalAssetConcept .\n\n    cfr-sbvr:TotalAssetConcept a sbvr:Concept, skos:Concept ;\n      sbvr:definition cfr-sbvr:TotalAssetIntensionalDefinition ;\n      sbvr:designation cfr-sbvr:TotalAssetTerm ;\n      skos:prefLabel \"total asset\" .\n\n    cfr-sbvr:TotalAssetDefinition a sbvr:IntensionalDefinition ;\n      sbvr:text \"The total assets as shown on the balance sheet of the investment adviser or another relevant person, or the consolidated balance sheet of the adviser with its subsidiaries.\" .\n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "insert_terms_cfr_sbvr_graph",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/200http://127.0.0.1:10035/webview1/XMLSchema#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\n\nINSERT DATA {\n  GRAPH cfr-sbvr:CFR_SBVR_Graph {\n    cfr-sbvr:TotalAssetTerm a sbvr:Term ;\n      sbvr:signifier \"total asset\" ;\n      sbvr:closeMatch <https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/AssetClass>,\n<https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/FinancialAsset>,\n<https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/TangibleAsset>,\n<https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/Asset>,\n<https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/AccountAsAnAsset>,\n<https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/PhysicalAsset> ;\n      sbvr:isImplicitlyUnderstood \"false\"^^xsd:boolean ;\n      sbvr:meaning cfr-sbvr:TotalAssetConcept .\n\n    cfr-sbvr:TotalAssetConcept a sbvr:Concept, skos:Concept ;\n      sbvr:definition cfr-sbvr:TotalAssetIntensionalDefinition ;\n      sbvr:designation cfr-sbvr:TotalAssetTerm ;\n      skos:prefLabel \"total asset\" .\n\n    cfr-sbvr:TotalAssetIntensionalDefinition a sbvr:IntensionalDefinition ;\n      sbvr:text \"The total assets as shown on the balance sheet of the investment adviser or another relevant person, or the consolidated balance sheet of the adviser with its subsidiaries.\" .\n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## SBVR ontology",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Exploring",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# [endpoint=./data/prod.fibo-quickstart-2024Q2.ttl]\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX lcc-lr: <https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/> \n\nselect ?s ?p ?o { ?s lcc-lr:isMemberOf ?o}\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# [endpoint=./data/prod.fibo-quickstart-2024Q2.ttl]\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\n\nSELECT ?subject ?predicate ?object\nWHERE {\n  ?predicate rdf:type owl:ObjectProperty .\n  ?subject ?predicate ?object .\n}\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# [endpoint=./data/prod.fibo-quickstart-2024Q2.ttl]\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\n\nselect ?s ?p ?o { ?s owl:ObjectProperty ?o}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# [endpoint=./data/prod.fibo-quickstart-2024Q2.ttl]\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX lcc-lr: <https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/> \n\nselect ?s ?p ?o\n{ \n    ?s ?p ?o\n}\nLIMIT 100\nis member of",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# [endpoint=./data/prod.fibo-quickstart-2024Q2.ttl]\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX lcc-lr: <https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/> \n\nselect ?s ?p ?o\n{ \n    ?s ?p ?o\n}\nLIMIT 100",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# [endpoint=./data/prod.fibo-quickstart-2024Q2.ttl]\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX lcc-lr: <https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/> \n\nselect ?s ?o\n{ \n    ?s <https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/isPublishedBy> ?o\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# [endpoint=./data/prod.fibo-quickstart-2024Q2.ttl]\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nselect ?label ?def ?s\n{ ?s a owl:ObjectProperty ;\nskos:definition ?def ;\nrdfs:label ?label .\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Object type",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# [endpoint=./data/prod.fibo-quickstart-2024Q2.ttl]\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX sbvr-cfr: <http://adsantos.dev/sbvr/cfr#>\nPREFIX cmns-av: <https://www.omg.org/spec/Commons/AnnotationVocabulary/>\n\nSELECT ?s ?last_word ?subject ?label ?definition ?isDefinedBy ?sbvrType ?vocabulary ?synonym ?abbreviation\n# CONSTRUCT {\n#     ?subject\n#         a owl:Class ;\n#         rdfs:label ?label ;\n#         skos:definition ?definition ;\n#         rdfs:isDefinedBy ?isDefinedBy ;\n#         sbvr:vocabulary ?directory ;\n#         sbvr:type sbvr:Object .\n# }\nWHERE {\n  {\n    ?s a owl:Class ;\n    rdfs:label ?label ;\n    skos:definition ?definition .\n    OPTIONAL { ?s cmns-av:synonym ?synonym ; }\n    #OPTIONAL { ?s rdfs:isDefinedBy ?isDefinedBy ;}\n    OPTIONAL { ?s cmns-av:abbreviation ?abbreviation ; }\n  }\n  UNION\n  {\n    ?s a owl:NamedIndividual ;\n    rdfs:label ?label ;\n    skos:definition ?definition .\n    OPTIONAL { ?s cmns-av:synonym ?synonym ; }\n    #OPTIONAL { ?s rdfs:isDefinedBy ?isDefinedBy ;}\n    OPTIONAL { ?s cmns-av:abbreviation ?abbreviation ; }\n  }\n\n  BIND(REPLACE(STR(?s), '^.*[#/]', '') AS ?last_word)\n  BIND(REPLACE(STR(?s), '^https://(spec\\\\.edmcouncil\\\\.org/fibo/ontology|www\\\\.omg\\\\.org/spec)/([^/]+)/.*$', '$2') AS ?directory)\n\n  BIND(\n    URI(\n    CONCAT('http://adsantos.dev/sbvr/cfr#', ?last_word)\n    )\n    AS ?subject\n  )\n\n  BIND(?s AS ?isDefinedBy)\n\n  #OPTIONAL { ?s sbvr:Vocabulary ?directory . }\n  BIND(?directory AS ?vocabulary)\n\n  BIND(sbvr:Object AS ?sbvrType)\n\n  # variable interest entity share\n  # special purpose vehicle\n  # common share\n  # chief executive officer\n  # contingent credit default swap\n  FILTER(STR(?label) = \"contingent credit default swap\")\n         #&& (LANG(?label) = \"en\" || LANG(?label) = \"en-US\" || LANG(?label) = \"\"))\n\n}\n#LIMIT 10\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Properties - Fact Types",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# [endpoint=./data/prod.fibo-quickstart-2024Q2.ttl]\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX sbvr-cfr: <http://adsantos.dev/sbrv/cfr#>\n\nSELECT ?subject ?label ?object\nWHERE {\n  ?predicate rdf:type owl:ObjectProperty ;\n    rdfs:label ?label .\n  ?subject ?predicate ?object .\n}\nOFFSET 15000\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Ontology",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# View unique classes\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\n# View unique named graphs\nselect ?s ?p\nFROM NAMED sbvr:SBVR_Ontology\n{ \n  graph ?g {\n    ?s ?p sbvr:Term\n  } \n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## FIBO",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "similar_search_fibo",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/> \nPREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX cfr-sbvr: <http://cfr2sbvr.com/cfr#>\n\nSELECT ?uri (xsd:decimal(?score) as ?score_percent) ?s ?p ?definition\nFROM fibo:FIBO_Graph\nWHERE {{\n    (?uri ?score ?originalText ?p) llm:nearestNeighbor (\"total asset\" \"fibo-glossary-3m-vec\" 5 0.8) .\n    \n    ?s ?p ?originalText .\n\n    OPTIONAL { ?s skos:definition ?definition . }\n        \n}}\nORDER BY DESC(?score)",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "similarity-search-fibo-vec",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/> \nPREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX fro-cfr: <http://cfr2sbvr.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nselect ?uri (xsd:decimal(?score) as ?score_percent) ?s ?p ?definition\nFROM fibo:FIBO_Graph\n{\n  (?uri ?score ?originalText) llm:nearestNeighbor (\"non-resident\" \"fibo-glossary-3m-vec\" 5 0.8) .\n\n  ?s ?p ?originalText ;\n     skos:definition ?definition .\n  \n  # {\n  #   ?term a owl:Class ;\n  #   skos:definition ?definition ;\n  #   ?o ?originalText .\n  # }\n  # UNION\n  # {\n  #   ?term a owl:NamedIndividual ;\n  #   skos:definition ?definition ;\n  #   ?o ?originalText .\n  # }\n}\nORDER BY DESC(?score)",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "query_multi_graph",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/> \n\nSELECT ?g ?s ?p ?originalText ?definition ?score ?type\nFROM NAMED fibo:FIBO_Graph\nWHERE { \n  (?uri ?score ?originalText ?p ?type) llm:nearestNeighbor (\"asset\" \"fibo-glossary-3m-vec\" 5 0.8) .\n  graph ?g {\n    ?s a ?type .\n    ?s ?p ?originalText ;\n       skos:definition ?definition . \n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "query-embedding-llm-count",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "SELECT DISTINCT (COUNT(?id) AS ?qty_terms)\n{\n  ?id a ?type.\n  ?id ?pred ?text.\n  FILTER (isLiteral(?text))\n  VALUES ?pred {<http://www.w3.org/2000/01/rdf-schema#label>}\n  VALUES ?type {<http://www.w3.org/2002/07/owl#Class> <http://www.w3.org/2002/07/owl#NamedIndividual>}\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "query-embedding-llm",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "SELECT DISTINCT ?id ?text ?pred ?type \n{\n  ?id a ?type.\n  ?id ?pred ?text.\n  FILTER (isLiteral(?text))\n  VALUES ?pred {<http://www.w3.org/2000/01/rdf-schema#label>}\n  VALUES ?type {<http://www.w3.org/2002/07/owl#Class> <http://www.w3.org/2002/07/owl#NamedIndividual>}\n}\nLIMIT 100",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "get_term_from_fibo_kg",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/> \n\nSELECT ?g ?s ?p ?originalText ?definition ?score ?type\nFROM NAMED fibo:FIBO_Graph\nWHERE { \n  (?uri ?score ?originalText ?p ?type) llm:nearestNeighbor (\"asset\" \"fibo-glossary-3m-vec\" 5 0.8) .\n  graph ?g {\n    ?s a ?type .\n    ?s ?p ?originalText ;\n       skos:definition ?definition . \n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX cmns-av: <https://www.omg.org/spec/Commons/AnnotationVocabulary/>\n\nSELECT DISTINCT ?class ?label ?definition ?usage_note ?explanatory_note ?description ?see_also\nWHERE {\n  #?class a owl:Class .\n  ?class a owl:AnnotationProperty .\n  #?class rdfs:label ?label .\n  OPTIONAL { ?class rdfs:label ?label}\n  OPTIONAL { ?class rdfs:comment ?description}\n  OPTIONAL { ?class skos:definition ?definition}\n  OPTIONAL { ?class rdfs:seeAlso ?see_also }\n  OPTIONAL { ?class cmns-av:usageNote ?usage_note }\n  OPTIONAL { ?class cmns-av:explanatoryNote ?explanatory_note }\n  \n  FILTER(?label = \"abstract\" || ?label = \"source\")\n}\nLIMIT 50",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "How many definitions",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# How many definitions\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT (COUNT(?item) AS ?count)\nWHERE {\n  ?item skos:definition ?definition .\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "AnnotationVocabulary",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX sbvr: <http://adsantos.dev/sbvr#>\nPREFIX cmns-av: <https://www.omg.org/spec/Commons/AnnotationVocabulary/>\n\nSELECT ?s ?last_word ?subject ?label ?definition ?isDefinedBy ?sbvrType ?synonym\n# CONSTRUCT {\n#     ?subject\n#         a owl:Class ;\n#         rdfs:label ?label ;\n#         skos:definition ?definition ;\n#         rdfs:isDefinedBy ?isDefinedBy ;\n#         sbvr:type sbvr:Object .\n# } \n\nWHERE {\n  {\n    ?s a owl:Class ;\n    rdfs:label ?label ;\n    skos:definition ?definition ;\n    rdfs:isDefinedBy ?isDefinedBy ;\n    cmns-av:synonym ?synonym .\n  }\n  UNION\n  {\n    ?s a owl:NamedIndividual ;\n    rdfs:label ?label ;\n    skos:definition ?definition ;\n    rdfs:isDefinedBy ?isDefinedBy .\n  }\n\n  BIND(REPLACE(STR(?s), '^.*[#/]', '') AS ?last_word)\n  BIND(REPLACE(STR(?s), '^https://(spec\\\\.edmcouncil\\\\.org/fibo/ontology|www\\\\.omg\\\\.org/spec)/([^/]+)/.*$', '$2') AS ?directory)\n\n  BIND(\n    URI(\n    CONCAT('http://adsantos.dev/sbvr#', ?directory, \"_\", ?last_word)\n    )\n    AS ?subject\n  )\n\n   BIND(sbvr:Object AS ?sbvrType)\n\n   FILTER(?last_word = \"CooperativeSociety\")\n}\nLIMIT 10\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "FIBO-Term-Definition",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# View unique named graphs\n#select distinct ?g { graph ?g { ?s ?p ?o } }\n\nPREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX fro-cfr: <http://cfr2sbvr.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT *\n    FROM NAMED fibo:FIBO_Graph\nWHERE {\n    GRAPH ?g {\n      ?term a owl:Class ;\n        skos:definition ?definition .\n\n      ?term a owl:NamedIndividual ;\n        skos:definition ?definition .\n    }\n}\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "fibo-class-glossary-qty",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX fro-cfr: <http://cfr2sbvr.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\n# View quads\nSELECT (COUNT(?term) as ?qty_terms)\n#FROM fro-cfr:Code_Federal_Regulations_Graph\nFROM fibo:FIBO_Graph\nWHERE { \n  ?term a owl:Class .\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "fibo-class-glossary",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX fro-cfr: <http://cfr2sbvr.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\n# View quads\nSELECT ?term ?definition\n#FROM fro-cfr:Code_Federal_Regulations_Graph\nFROM fibo:FIBO_Graph\nWHERE { \n  ?term a owl:Class ;\n  skos:definition ?definition .\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "fibo-glossary-count",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX fro-cfr: <http://cfr2sbvr.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT (COUNT(?term) AS ?qty_terms)\n#FROM fro-cfr:Code_Federal_Regulations_Graph\nFROM fibo:FIBO_Graph\nWHERE { \n  { ?term a owl:NamedIndividual ;\n  skos:definition ?definition . }\n  UNION\n  { ?term a owl:Class ;\n  skos:definition ?definition . }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "fibo-glossary",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX fro-cfr: <http://cfr2sbvr.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT ?term ?definition\nFROM fibo:FIBO_Graph\nWHERE { \n  { ?term a owl:NamedIndividual ;\n  skos:definition ?definition . }\n  UNION\n  { ?term a owl:Class ;\n  skos:definition ?definition . }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "get_all_terms_from_figo_kg",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/> \n\nSELECT ?g ?s ?p ?originalText ?definition ?score ?type\nFROM NAMED fibo:FIBO_Graph\nWHERE { \n  #(?uri ?score ?originalText ?p ?type) llm:nearestNeighbor (\"asset\" \"fibo-glossary-3m-vec\" 5 0.8) .\n  graph ?g {\n    ?s a ?type .\n    ?s ?p ?originalText ;\n       skos:definition ?definition . \n  }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## CFR",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "semantic_search_cfr",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/> \nPREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\n\nSELECT ?s ?uri ?score ?originalText ?p\nFROM fro-cfr:Code_Federal_Regulations_Graph\nWHERE {\n  (?uri ?score ?originalText ?p) llm:nearestNeighbor (\"Secretary of the Commission\" \"cfr-3m-vec\" 1 0.9) .\n\n  ?s ?p ?originalText .\n  \n}\nORDER BY DESC(?score)",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "section_num similarity search no joinCrossProduct",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/> \nPREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX fro-leg-ref: <http://finregont.com/fro/ref/LegalReference.ttl#>\n\nSELECT ?uri (xsd:decimal(?score) AS ?score_percent) ?section ?section_num ?paragraph ?originalText\nFROM fro-cfr:Code_Federal_Regulations_Graph\nWHERE {\n  # Get the nearest neighbor matches\n  (?uri ?score ?originalText) llm:nearestNeighbor (\"Secretary of the Commission\" \"cfr-3m-vec\" 5 0.8) .\n\n  # Find the paragraph that matches the original text\n  ?paragraph a fro-cfr:CFR_Parapraph ;\n             fro-cfr:hasParagraphText ?originalText ;\n             fro-leg-ref:divides ?section .\n  \n  # Get the section and its number\n  ?section a fro-cfr:CFR_Section ;\n           fro-cfr:hasSectionNumber ?section_num .\n}\nORDER BY DESC(?score)\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "section of paragraph text",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX fro-leg-ref: <http://finregont.com/fro/ref/LegalReference.ttl#>\n\nSELECT ?section_num\nWHERE {\n  ?paragraph a fro-cfr:CFR_Parapraph ;\n             fro-cfr:hasParagraphText ?paragraph_text ;\n             fro-leg-ref:divides ?section .\n  \n  ?section a fro-cfr:CFR_Section ;\n           fro-cfr:hasSectionNumber ?section_num .\n\n  # Filter for a specific paragraph text\n  FILTER (?paragraph_text = \"(a)\")\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "section of paragraph",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX fro-leg-ref: <http://finregont.com/fro/ref/LegalReference.ttl#>\nPREFIX : <http://finregont.com/fro/cfr/FRO_CFR_Title_17_Part_275.ttl#>\n\nSELECT ?section_num ?paragraph\nWHERE {\n  ?paragraph a fro-cfr:CFR_Parapraph ;\n             fro-leg-ref:divides ?section .\n\n  ?section a fro-cfr:CFR_Section ;\n           fro-cfr:hasSectionNumber ?section_num .\n\n  # Filter for a specific CFR Paragraph by IRI or unique identifier\n  FILTER (?paragraph = :r-1-9-6)\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "retrieve_all_sections",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX fro-leg-ref: <http://finregont.com/fro/ref/LegalReference.ttl#>\n\nSELECT ?section ?section_seq ?section_num ?section_subject ?section_citation ?section_notes ?divide ?divide_seq ?paragraph_enum ?paragraph_text\nWHERE {\n  ?section a fro-cfr:CFR_Section ;\n    fro-leg-ref:hasSequenceNumber ?section_seq ;\n    fro-cfr:hasSectionNumber ?section_num ;\n    fro-cfr:hasSectionSubject ?section_subject .\n  OPTIONAL {?section fro-leg-ref:refers_toNote ?section_notes} .\n  OPTIONAL {?section fro-cfr:hasSectionCitation ?section_citation} .\n  \n  ?divide fro-leg-ref:divides ?section ; # rdf:type fro-cfr:CFR_Parapraph\n    fro-leg-ref:hasSequenceNumber ?divide_seq ;\n    fro-cfr:hasParagraphText ?paragraph_text ;\n    fro-leg-ref:hasSequenceNumber ?paragraph_seq . \n  OPTIONAL {?divide fro-cfr:hasParagraphEnumText ?paragraph_enum} .\n\n  #FILTER(\"§ 275.0-2\" = ?section_num)\n}\nORDER BY ?section_num ?section ?divide_seq",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "retrieve_section_by_num",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX fro-leg-ref: <http://finregont.com/fro/ref/LegalReference.ttl#>\n\nSELECT ?section ?section_seq ?section_num ?section_subject ?section_citation ?section_notes ?divide ?divide_seq ?paragraph_enum ?paragraph_text\nWHERE {\n  ?section a fro-cfr:CFR_Section ;\n    fro-leg-ref:hasSequenceNumber ?section_seq ;\n    fro-cfr:hasSectionNumber ?section_num ;\n    fro-cfr:hasSectionSubject ?section_subject .\n  OPTIONAL {?section fro-leg-ref:refers_toNote ?section_notes} .\n  OPTIONAL {?section fro-cfr:hasSectionCitation ?section_citation} .\n  \n  ?divide fro-leg-ref:divides ?section ; # rdf:type fro-cfr:CFR_Parapraph\n    fro-leg-ref:hasSequenceNumber ?divide_seq ;\n    fro-cfr:hasParagraphText ?paragraph_text ;\n    fro-leg-ref:hasSequenceNumber ?paragraph_seq . \n  OPTIONAL {?divide fro-cfr:hasParagraphEnumText ?paragraph_enum} .\n\n  FILTER(\"§ 275.0-7\" = ?section_num)\n}\nORDER BY ?section_num ?section ?divide_seq",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "query-llm",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# This query demonstrates the use of `response` SPARQL function.\n# It returns a single string response to the given prompt.\n\nPREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/>\nSELECT ?response {\n  BIND (llm:response(\"What is Place of business at https://www.ecfr.gov/current/title-17/chapter-II/part-275\") AS ?response)\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX fro-leg-ref: <http://finregont.com/fro/ref/LegalReference.ttl#>\nPREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#> \n\nSELECT DISTINCT ?class ?paragraph_enum_text ?paragraph_text ?divides\nWHERE {\n  #?class a owl:Class .\n  ?class a fro-cfr:CFR_Parapraph .\n  #?class rdfs:label ?label .\n  OPTIONAL { ?class fro-cfr:hasParagraphEnumText ?paragraph_enum_text}\n  OPTIONAL { ?class fro-cfr:hasParagraphText ?paragraph_text}\n  OPTIONAL { ?class fro-leg-ref:divides ?divides}\n  \n  FILTER(contains(?paragraph_enum_text,\"Definitions\"))\n}\nLIMIT 50",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Paragraphs-per-section",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# Paragraphs per section\nPREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX fro-leg-ref: <http://finregont.com/fro/ref/LegalReference.ttl#>\nPREFIX fro-cfr-t17-p275: <http://finregont.com/fro/cfr/FRO_CFR_Title_17_Part_275.ttl#>\n\nSELECT ?section ?section_num ?section_subject (COUNT(?divide) AS ?qty_paragraphs)\nWHERE {\n  ?section a fro-cfr:CFR_Section ;\n             fro-cfr:hasSectionNumber ?section_num ;\n             fro-cfr:hasSectionSubject ?section_subject .\n  \n  ?divide fro-leg-ref:divides ?section ;\n          fro-cfr:hasParagraphText ?paragraph_text .\n  \n  FILTER (strlen(?paragraph_text) > 3) .\n  #FILTER (?section = <http://finregont.com/fro/cfr/FRO_CFR_Title_17_Part_275.ttl#r-1-25>) .\n    FILTER (?section = <http://finregont.com/fro/cfr/FRO_CFR_Title_17_Part_275.ttl#r-1-9>) .\n  \n}\nGROUP BY ?section ?section_num ?section_subject\nORDER BY ?section_num",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Section_num similarity search\n\nSection number from similarity search (paragraph text)",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/> \nPREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX fro-leg-ref: <http://finregont.com/fro/ref/LegalReference.ttl#>\n\nselect ?uri (xsd:decimal(?score) as ?score_percent) ?section ?section_num ?paragraph\nFROM fro-cfr:Code_Federal_Regulations_Graph\n{\n  (?uri ?score ?originalText) llm:nearestNeighbor (\"Non-resident\" \"cfr-paragraph-vec\" 5 0.8) .\n\n  ?paragraph a fro-cfr:CFR_Parapraph ;\n             fro-cfr:hasParagraphText ?paragraph_text ;\n             fro-leg-ref:divides ?section .\n  \n  ?section a fro-cfr:CFR_Section ;\n           fro-cfr:hasSectionNumber ?section_num .\n\n  # Filter for a specific paragraph text\n  FILTER (?paragraph_text = ?originalText)\n\n}\nORDER BY DESC(?score)",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "cfr llm similarity search",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX llm: <http://franz.com/ns/allegrograph/8.0.0/llm/> \nPREFIX fibo: <https://spec.edmcouncil.org/fibo/ontology/master/2024Q2/QuickFIBOProd#>\nPREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX fro-leg-ref: <http://finregont.com/fro/ref/LegalReference.ttl#>\n\nSELECT ?uri (xsd:decimal(?score) AS ?score_percent) ?section ?section_num ?paragraph ?originalText\nFROM fro-cfr:Code_Federal_Regulations_Graph\nWHERE {\n  # Get the nearest neighbor matches - cfr-3m-vec, cfr-paragraph-vec\n  (?uri ?score ?originalText) llm:nearestNeighbor (\"Non-resident\" \"cfr-3m-vec\" 5 0.8) .\n\n  # Find the paragraph that matches the original text\n  ?paragraph a fro-cfr:CFR_Parapraph ;\n             fro-cfr:hasParagraphText ?originalText ;\n             fro-leg-ref:divides ?section .\n  \n  # Get the section and its number\n  ?section a fro-cfr:CFR_Section ;\n           fro-cfr:hasSectionNumber ?section_num .\n}\nORDER BY DESC(?score)\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "find paragraph",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\n\nSELECT DISTINCT ?id ?text ?pred ?type\nFROM fro-cfr:Code_Federal_Regulations_Graph \n{\n  ?id a ?type.\n  ?id ?pred ?text.\n  FILTER (isLiteral(?text)) \n  VALUES ?pred {fro-cfr:hasParagraphText}\n  VALUES ?type {fro-cfr:CFR_Parapraph }\n  FILTER (STRSTARTS(?text, \"(2)means:\"))\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Statistics",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# How many sections and paragraphs\nPREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\nSELECT ?type (COUNT(?item) AS ?count)\nWHERE {\n  ?item rdf:type ?type .\n  FILTER(?type IN (fro-cfr:CFR_Parapraph, fro-cfr:CFR_Section))\n}\nGROUP BY ?type",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# Classes\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX fro-cfr: <http://finregont.com/fro/cfr/Code_Federal_Regulations.ttl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\nSELECT ?type (COUNT(?item) AS ?count)\nWHERE {\n  ?item rdf:type ?type .\n  FILTER(?type IN (fro-cfr:CFR_Parapraph, fro-cfr:CFR_Section, owl:AnnotationProperty, owl:NamedIndividual, owl:AllDifferent, owl:ObjectProperty, owl:DatatypeProperty, owl:Class, owl:Restriction, skos:definition, owl:Ontology))\n}\nGROUP BY ?type",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Misc",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX sbvr-cfr: <http://adsantos.dev/sbvr/cfr#>\nPREFIX cmns-av: <https://www.omg.org/spec/Commons/AnnotationVocabulary/>\n\nSELECT ?s\n\n\nWHERE {\n  {\n    ?s a owl:Class ;\n    rdfs:label ?label;# \"class action\" ;\n    # skos:definition ?definition ;\n    # rdfs:isDefinedBy ?isDefinedBy ;\n    # cmns-av:synonym ?synonym .\n\n   # OPTIONAL { ?s cmns-av:abbreviation ?abbreviation ; }\n    #FILTER(LANG(?label) = \"en\" || LANG(?label) = \"\" || LANG(?label) = \"en-US\")\n  }\n\n # FILTER((?label = \"class action\") \n           # && (LANG(?label) = \"en\" || LANG(?label) = \"en-US\" || LANG(?label) = \"\"))\nFILTER(?label = \"class action\"@en)\n\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX sbvr-cfr: <http://adsantos.dev/sbvr/cfr#>\n\nSELECT ?s ?last_word ?middle_string\nWHERE {\n  {\n    ?s a owl:Class ;\n    rdfs:label ?label ;\n    skos:definition ?definition ;\n    rdfs:isDefinedBy ?isDefinedBy .\n  }\n  UNION\n  {\n    ?s a owl:NamedIndividual ;\n    rdfs:label ?label ;\n    skos:definition ?definition ;\n    rdfs:isDefinedBy ?isDefinedBy .\n  }\n\n  BIND(REPLACE(STR(?s), '^.*[#/]', '') AS ?last_word)\n  BIND(REPLACE(STR(?s), '^https://(spec\\\\.edmcouncil\\\\.org/fibo/ontology|www\\\\.omg\\\\.org/spec)/([^/]+)/.*$', '$2') AS ?middle_string)\n}\nOFFSET 500 LIMIT 10\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Create a graph from a SPARQL query",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX sbvr-cfr: <http://adsantos.dev/sbvr/cfr#>\n\nINSERT {\n  GRAPH sbvr-cfr:SBVR_graph {\n    ?subject a owl:Class ;\n             rdfs:label ?label ;\n             skos:definition ?definition ;\n             rdfs:isDefinedBy ?isDefinedBy ;\n             sbvr:type sbvr:Object .\n  }\n}\nWHERE {\n  {\n    ?s a owl:Class ;\n    rdfs:label ?label ;\n    skos:definition ?definition ;\n    rdfs:isDefinedBy ?isDefinedBy .\n  }\n  UNION\n  {\n    ?s a owl:NamedIndividual ;\n    rdfs:label ?label ;\n    skos:definition ?definition ;\n    rdfs:isDefinedBy ?isDefinedBy .\n  }\n\n  BIND(REPLACE(STR(?s), '^.*[#/]', '') AS ?last_word)\n  BIND(REPLACE(STR(?s), '^https://(spec\\\\.edmcouncil\\\\.org/fibo/ontology|www\\\\.omg\\\\.org/spec)/([^/]+)/.*$', '$2') AS ?directory)\n\n  BIND(\n    URI(\n    CONCAT('http://adsantos.dev/sbvr#', ?directory, \"_\", ?last_word)\n    )\n    AS ?subject\n  )\n\n  BIND(sbvr-cfr:Object AS ?sbvrType)\n}\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX sbvr: <https://www.omg.org/spec/SBVR/20190601#>\nPREFIX sbvr-cfr: <http://adsantos.dev/sbvr/cfr#>\n\nSELECT  ?s ?label ?definition ?isDefinedBy\n# CONSTRUCT {\n#     URI(CONCAT(\"http://adsantos.dev/sbvr#\", MD5(STR(?label)))) ;\n#     rdfs:label ?label ;\n#     skos:definition ?definition ;\n#     rdfs:isDefinedBy ?isDefinedBy .\n# }\nWHERE {\n  {\n    ?s a owl:Class ;\n    rdfs:label ?label ;\n    skos:definition ?definition ;\n    rdfs:isDefinedBy ?isDefinedBy .\n    #?p ?o .\n  }\n  UNION\n  {\n    ?s a owl:NamedIndividual ;\n    rdfs:label ?label ;\n    skos:definition ?definition ;\n    rdfs:isDefinedBy ?isDefinedBy .\n  }\n}\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# connect do allegrograph\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX sbvr-cfr: <http://adsantos.dev/sbvr/cfr#>\n\n#SELECT (URI(CONCAT(\"http://adsantos.dev/sbvr/cfr#\" , MD5(?label))) as ?s) ?label ?definition ?isDefinedBy\nSELECT ?s ?camelCaseLabel ?label\n# CONSTRUCT {\n#     #URI(CONCAT(\"http://adsantos.dev/sbvr/cfr#\" , STR(?label))) ;\n#     URI(CONCAT(\"http://adsantos.dev/sbvr/cfr#\" , STR(?label))) rdf:type owl:Class ;\n#     rdfs:label ?label ;\n#     skos:definition ?definition ;\n#     rdfs:isDefinedBy ?isDefinedBy .\n# }\nWHERE {\n  {\n    ?s a owl:Class ;\n    ?isDefinedBy a owl:Class ;\n    rdfs:label ?label ;\n    skos:definition ?definition .\n\n    #BIND(IRI(CONCAT(\"http://adsantos.dev/sbvr/cfr#\", STR(?camelCaseLabel))) AS ?s)\n    #?p ?o .\n  }\n}\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# [endpoint=./data/classify_subtypes.ttl]\nPREFIX ex: <http://example.org/schema/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nselect ?sectionID ?sectionTitle ?sectionDefinition ?subsectionID ?subsectionTitle ?subsectionDefinition\nwhere {\n    ?sectionID a ex:Section .\n    ?sectionID rdfs:label ?sectionTitle .\n    ?sectionID ex:definition ?sectionDefinition .\n    ?sectionID ex:hasSubsection ?subsectionID .\n    ?subsectionID a ex:Section .\n    ?subsectionID rdfs:label ?subsectionTitle .\n    ?subsectionID ex:definition ?subsectionDefinition .\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Witt taxonomy",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX ns1: <http://example.org/schema#>\nselect ?s ?p ?o { \n  graph ns1:Rules_Templates\n        { \n          ?s ?p ?o \n        } \n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## MVF",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "View unique classes",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# View unique classes\nPREFIX mvf-trm: <http://www.omg.org/spec/MVF/TermsAndDefinitions#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\n\n# View unique named graphs\nselect ?s ?p ?o \nFROM NAMED mvf-trm:MVF_Graph\n{ \n  graph ?g {\n    ?s a owl:Class .\n    ?s ?p ?o \n  } \n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Tuples",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX mvf-trm: <http://www.omg.org/spec/MVF/TermsAndDefinitions#>\nselect * \nFROM NAMED mvf-trm:MVF_Graph\n{ graph ?g { ?s ?p ?o } }",
+    "metadata": {}
+  }
+]

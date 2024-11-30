@@ -27,9 +27,23 @@ def setting_logging(log_path: str, log_level: str):
         )
     )
 
+    match log_level:
+        case "DEBUG":
+            level = logging.DEBUG
+        case "INFO":
+            level = logging.INFO
+        case "WARNING":
+            level = logging.WARNING
+        case "ERROR":
+            level = logging.ERROR
+        case "CRITICAL":
+            level = logging.CRITICAL
+        case _:
+            level = logging.INFO
+
     # Set up logging configuration
     logging.basicConfig(
-        level=log_level,  # Set to the desired log level
+        level=level,  # Set to the desired log level
         format="%(asctime)s - %(levelname)s - %(message)s",  # Console log format
         datefmt="%Y-%m-%d %H:%M:%S",  # Custom date format
         handlers=[

@@ -14,14 +14,14 @@
 						"section_title": "Formal intensional definitions",
 						"section_definition": "A formal intensional definition defines the subject business term using an intensional definition: one that cites both a hypernym (a term that refers to a superset of the set referred to by the original term) and the characteristics that distinguish members of the set referred to by the original term.",
 						"templates": ["T7"],
-						"examples": ["R70", "R71", "R321", "R322"]
+						"examples": ["R70", "R71", "R321", "R322", "F188", "F189", "F190", "F191", "F192", "F193"]
 					},
 					{
 						"section_id": "9.2.1.2",
 						"section_title": "Formal extensional definitions",
-						"section_definition": "Formal extensional definition defines the subject business term by using an extensional definition: one that lists a complete set of hyponyms (terms that refer to subsets of the set referred to by the original term).",
+						"section_definition": "A formal extensional definition defines the subject business term using an extensional definition: one that lists a complete set of hyponyms (terms that refer to subsets of the set referred to by the original term).",
 						"templates": ["T8"],
-						"examples": ["R72", "R327", "R324", "R325"]
+						"examples": ["R72", "R327", "R324", "R325", "F194", "F195", "F196", "F197", "F198", "F199", "F200", "F201"]
 					},
 					{
 						"section_id": "9.2.1.3",
@@ -56,14 +56,14 @@
 						"section_title": "Complex concept cardinality rules",
 						"section_definition": "A complex concept cardinality rule defines the number of (or minimum and/or maximum number of) components of a particular type within a particular concept.",
 						"templates": ["T12"],
-						"examples": ["R80", "R332"]
+						"examples": ["R80", "R332", "F205"]
 					},
 					{
 						"section_id": "9.2.4.2",
 						"section_title": "Complex concept equivalence rules",
 						"section_definition": "A complex concept equivalence rule defines a pair of components within a particular concept that are of necessity the same.",
 						"templates": ["T13"],
-						"examples": ["R81", "R333"]
+						"examples": ["R81", "R333", "F206", "F207", "F208"]
 					},
 					{
 						"section_id": "9.2.4.3",
@@ -257,7 +257,7 @@
 								"section_title": "Data consistency rules constraining a combination of data items",
 								"section_definition": "",
 								"templates": ["T34"],
-								"examples": ["R115", "R370"]
+								"examples": ["R115", "R370", "F290", "F291", "F292"]
 							},
 							{
 								"section_id": "9.3.2.5.2",
@@ -390,14 +390,14 @@
 								"section_title": "Activity time limit rules",
 								"section_definition": "An activity time limit rule restricts a business process or other activity to within a particular time period.",
 								"templates": ["T48"],
-								"examples": ["R130", "R131", "R385", "R386", "R387"]
-							},
+								"examples": ["R130", "R131", "R385", "R386", "R387", "F313", "F316", "F314", "F318", "F321", "F324","F328", "F315", "F317", "F319", "F322", "F329", "F330", "F331"]
+							}, 
 							{
 								"section_id": "9.4.1.1.2",
 								"section_title": "Activity exclusion period rules",
 								"section_definition": "An activity exclusion period rule prohibits a business process or other activity during a particular time period.",
 								"templates": ["T49"],
-								"examples": ["R132", "R133", "R388"]
+								"examples": ["R132", "R133", "R388", "F320", "F314", "F318", "F321", "F324","F328", "F315", "F317", "F319", "F322", "F329", "F330", "F331"]
 							},
 							{
 								"section_id": "9.4.1.1.3",
@@ -413,7 +413,7 @@
 						"section_title": "Activity pre-condition rules",
 						"section_definition": "An activity pre-condition rule prohibits a business process or other activity unless some other activity or event has previously occurred or some prerequisite condition exists.",
 						"templates": ["T50"],
-						"examples": ["R134", "R391", "R392"]
+						"examples": ["R134", "R391", "R392", "F332", "F333", "F334", "F335"]
 					},
 					{
 						"section_id": "9.4.1.3",
@@ -443,7 +443,7 @@
 				"section_title": "Process decision rules",
 				"section_definition": "A process decision rule determines what action a business process or device is to take in specific situations;",
 				"templates": ["T52"],
-				"examples": ["R139", "R395", "R396"]
+				"examples": ["R139", "R395", "R396", "F341", "F342", "F343"]
 			}
 		]
 	},
@@ -457,7 +457,7 @@
 				"section_title": "Party restriction rules",
 				"section_definition": "A party restriction rule places restrictions on who can perform some processes or activities or play some roles, based on age, some other physical characteristic or capability, or training, testing, and certification in the appropriate skills.",
 				"templates": ["T53"],
-				"examples": ["R140", "R141", "R142", "R143", "R397", "R398"]
+				"examples": ["R140", "R141", "R142", "R143", "R397", "R398", "F344", "F345", "F346", "F347", "F348"]
 			},
 			{
 				"section_id": "9.5.2a",
@@ -485,7 +485,7 @@
 				"section_title": "Responsibility rules",
 				"section_definition": "A responsibility rule defines who is responsible for performing a particular process or liable for a particular fee, duty, or tax.",
 				"templates": ["T56"],
-				"examples": ["R147", "R402"]
+				"examples": ["R147", "R402", "F356", "F357"]
 			}
 		]
 	}

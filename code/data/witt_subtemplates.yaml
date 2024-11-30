@@ -3,7 +3,7 @@ subtemplate_list:
     title: "operative rule statement subject"
     explanation: |
       
-    text: |
+    form: |
       <operative rule statement subject>::=
       {<term>|combination of [<term>, and]|set of <term>}
         {<qualifying clause>|}
@@ -12,14 +12,14 @@ subtemplate_list:
     title: "article"
     explanation: |
       
-    text: |
+    form: |
       <article>::={a |an|the}
 
   - id: "S3"
     title: "cardinality"
     explanation: |
       For example, "exactly one", "at least two", "at least one and at most four".
-    text: |
+    form: |
       <cardinality>::=
       {exactly|at least {<positive integer 1> and at most| }}
       <positive integer 2>
@@ -40,7 +40,7 @@ subtemplate_list:
       1. 'exactly' to express a more rigorous statement as to how many instances are involved;
       2. 'at least' or 'from', to express the minimum number of instances involved;
       3. 'at most' (or 'up to'), to similarly express the maximum number of instances involved.
-    text: |
+    form: |
       <determiner>::=
       {<article>|each|that |those|
       <cardinality>|at most <positive integer>|
@@ -51,7 +51,7 @@ subtemplate_list:
     title: "set function"
     explanation: |
       A set function is any scalar numeric property of a set of data items.
-    text: |
+    form: |
       <set function>::=
       {number |sum| total |maximum|minimum|average|mean|median|
       latest | earliest}
@@ -63,7 +63,7 @@ subtemplate_list:
       1. 'more than', 'less than', 'later than', 'earlier than', 'no more than', 'no less than', 'no later than', 'no earlier than';
       2. 'at least <literal> more than', 'at most <literal> more than', 'at least <literal> later than', 'at most <literal> later than';
       3. 'later than <literal> after', 'earlier than <literal> after', 'later than <literal> before', 'earlier than <literal> before'.
-    text: |
+    form: |
       <inequality operator>::=
       {{no|} {more|less | later | earlier} than|
       at {least |most} <literal> {more| later} than|
@@ -73,7 +73,7 @@ subtemplate_list:
     title: "equality operator"
     explanation: |
       There are various equality operators, some appropriate to non-quantitative comparisons and others to quantitative comparisons.
-    text: |
+    form: |
       <equality operator>::=
       {the same as| different from|equal to|unequal to}
 
@@ -83,7 +83,7 @@ subtemplate_list:
       Thus any of the following can be substituted in place of a <transaction signifier> placeholder:
       1. a term, optionally followed by a qualifying clause;
       2. a list of terms, optionally followed by a qualifying clause, and preceded by "combination of" or "record of a combination of"; the last two objects in the list are separated by "and" (or a comma and "and" if adhering to U.S. punctuation standards) and each other pair of objects in the list is separated by a comma.
-    text: |
+    form: |
       <transaction signifier>::=
       {<term>|{record of a| } combination of [<term>, and]}
         {<qualifying clause>| }
@@ -95,7 +95,7 @@ subtemplate_list:
       1. a preposition preceded by a participle: for example, "specified by";
       2. a preposition preceded by an adjective: for example, "available in";
       3. a preposition alone: for example, "of ".
-    text: |
+    form: |
       <verb part>::=
       {<participle>|<adjective>| } <preposition>
 
@@ -109,7 +109,7 @@ subtemplate_list:
         a. a list of objects, the last two objects in the list separated by "and" (or a comma and "and" if adhering to U.S. punctuation standards), and each other pair of objects in the list separated by a comma: for example, "specifies a discount code and a promotion code";
         b. a list of objects, the last two objects in the list separated by "or" (or a comma and "or" if adhering to U.S. punctuation standards), and each other pair of objects in the list separated by a comma: for example, "is 0 or 1";
       4. a verb phrase alone: for example, "is closed".
-    text: |
+    form: |
       <predicate>::=
       {{<verb phrase>| is {<equality operator>|<inequality operator>}}
         <object>|
@@ -122,7 +122,7 @@ subtemplate_list:
       1. a term optionally preceded by a determiner and optionally followed by a qualifying clause: for example, "the credit card with which the booking was paid for", "employees in receipt of this allowance";
       2. a term preceded by "the <set function> of" and an optional determiner, and optionally followed by a qualifying clause: for example, "the number of employees in the team", "the sum of the fares";
       3. a literal optionally preceded by a determiner: for example, "1 January 2012", "that 24 h".
-    text: |
+    form: |
       <object>::=
       {{<determiner>|the <set function> of {<determiner>| } | } <term>
         {<qualifying clause>| } |
@@ -137,7 +137,7 @@ subtemplate_list:
       3. any two expressions joined by "plus", "minus", "multiplied by", or "divided by": for example, "1 minus the discount for that customer", "1 minus the discount for that customer multiplied by the unit price of that product";
       4. "sum of" or "product of", followed by a list of expressions each separated from the next by a comma and/or "and": for example, "the sum of the base fare, fuel levy, booking fee, and credit card charge for that booking";
       5. "square", "cube", "square root", or "cube root", followed by an expression: for example, "the square of the speed of light".
-    text: |
+    form: |
       <expression>::=
       {<object>|
       <set function> of {<determiner>| } <term> {<qualifying clause>| } |
@@ -160,7 +160,7 @@ subtemplate_list:
           iii. a list of predicates, each pair of predicates in the list separated by "or";
       2. a list of conditional clauses, each pair of clauses in the list separated by "and";
       3. a list of conditional clauses, each pair of clauses in the list separated by "or".
-    text: |
+    form: |
       <conditional clause>::=
       {{<determiner> <term> {<qualifying clause>| } |<expression>| it}
       {<predicate>| [<predicate> and]| [<predicate> or]} |
@@ -185,7 +185,7 @@ subtemplate_list:
       6. a qualifying clause involving multiple criteria:
         a. separated by "and", with or without "both", as defined in subtemplates S15 and S16,
         b. separated by "or", with or without "either", as defined in subtemplates S17 and S18.
-    text: |
+    form: |
       <qualifying clause>::=
       {{that |who} <verb phrase> {<object>| } |
       <verb part> <object>|
@@ -206,7 +206,7 @@ subtemplate_list:
       3. "that is specified in that document and recorded on the register";
       4. "that is specified in that document and registered";
       5. "that specifies an urgency code and a rural delivery address".
-    text: |
+    form: |
       <and-qualifying clause>::=
       {that |who}
       {[<verb phrase> {<object>| } and]|
@@ -220,7 +220,7 @@ subtemplate_list:
       1. "who both has a passport and is booked on an international flight";
       2. "that is both specified in that document and recorded on the register";
       3. "that specifies both an urgency code and a rural delivery address".
-    text: |
+    form: |
       <both-and-qualifying clause>::=
       {that |who}
       {both <verb phrase> {<object>| } and <verb phrase> {<object>| } |
@@ -236,7 +236,7 @@ subtemplate_list:
       3. "that is specified in that document or recorded on the register";
       4. "that is specified in that document or registered";
       5. "that specifies an urgency code or a rural delivery address".
-    text: |
+    form: |
       <or-qualifying clause>::=
       {that |who}
       {[<verb phrase> {<object>| } or] |
@@ -250,7 +250,7 @@ subtemplate_list:
       1. "who both has a passport or is booked on an international flight";
       2. "that is both specified in that document or recorded on the register";
       3. "that specifies both an urgency code or a rural delivery address".
-    text: |
+    form: |
       <either-or-qualifying clause>::=
       {that |who}
       {either <verb phrase> {<object>|} or <verb phrase> {<object>| } |
@@ -264,7 +264,7 @@ subtemplate_list:
       1. "exactly", "at least", or "up to", followed by a positive integer and a term: for example, "exactly two digits", "at least three letters", "up to nine digits";
       2. "from", a positive integer, "to", and another positive integer followed by a term: for example, "from two to seven digits";
       3. any number of any of the above, each separated from the next by "followed by". For example, "exactly two digits followed by a hyphen followed by exactly two digits".
-    text: |
+    form: |
       <format definition>::=
       {{exactly|at least |up to} <positive integer 1>|
       from <positive integer 2> to <positive integer 3>} <term>
@@ -274,7 +274,7 @@ subtemplate_list:
     title: "spatial operator"
     explanation: |
       The <spatial operator> placeholder can be replaced by anything defined in the subtemplate.
-    text: |
+    form: |
       <spatial operator>::=
       {overlap|be within|enclose|span|intersect|meet|be on}
 
@@ -282,7 +282,7 @@ subtemplate_list:
     title: "time restriction"
     explanation: |
       Note that the word 'after' may be used as a conjunction (in which case it is shown as 'after') or a preposition (in which case it is shown as 'after'). This is also true of 'before' and 'until'. Other words and phrases operate only as one or the other: for example, 'while' operates only as a conjunction, while 'during', 'within', 'earlier than', and 'later than' operate only as prepositions.
-    text: |
+    form: |
       <time restriction>::=
       {at any time| }
       {{before|after|during|until|within|{no|} {earlier|later} than} <object>| }
@@ -293,7 +293,7 @@ subtemplate_list:
     title: "information access process"
     explanation: |
       <information access process> defines the form of access that is restricted.
-    text: |
+    form: |
       <information access process>::=
       {viewed|created|updated|deleted}
 
