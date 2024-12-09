@@ -1129,6 +1129,14 @@ example_list:
     text: |
       multi-stop journey is a category of journey
 
+  - id: "F202"
+    text: |
+      status is of payroll deduction
+
+  - id: "F203"
+    text: |
+      status is of loan application
+
   - id: "F205"
     text: |
       flight has departure time
