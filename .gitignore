@@ -9,3 +9,5 @@ storage
 storage_txts
 lib
 __pycache__
+logs
+code/src/objs.pkl

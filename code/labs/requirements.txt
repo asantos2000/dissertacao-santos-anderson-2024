@@ -1,0 +1,4 @@
+duckdb
+deepdiff
+numpy
+pandas

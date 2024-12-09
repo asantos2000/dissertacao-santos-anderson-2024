@@ -1,0 +1,51 @@
+[
+    {
+        "name": "John",
+        "age": 30,
+        "city": "New York",
+        "adresses": [
+            {"street": "Main St", "number": 123},
+            {"street": "Broadway", "number": 456}
+        ]
+    },
+    {
+        "name": "Jane",
+        "age": 25,
+        "city": "Los Angeles",
+        "adresses": [
+            {"street": "Sunset Blvd", "number": 789},
+            {"street": "Hollywood Blvd", "number": 101}
+        ],
+        "institutions": [
+            {"name": "UCLA", "department": "Computer Science"},
+            {"name": "USC", "department": "Physics"}
+        ]
+    },
+    {
+        "name": "Alice",
+        "age": 35,
+        "city": "Chicago",
+        "adresses": [
+            {"street": "Michigan Ave", "number": 303},
+            {"street": "Sunset Blvd", "number": 123}
+        ]
+    },
+    {
+        "name": "Mary",
+        "age": 45,
+        "city": "Las Vegas",
+        "adresses": [
+            {"street": "Las Vegas Blvd", "number": 999},
+            {"street": "Fremont St", "number": 101}
+        ],
+        "institutions": [
+            {"name": "UNLV", "department": "Mathematics"},
+            {"name": "CSN", "department": "Biology"}
+        ]
+    },
+    {
+        "name": "Bob",
+        "age": 40,
+        "city": "San Francisco"
+    }
+]

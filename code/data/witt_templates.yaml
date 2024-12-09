@@ -120,6 +120,8 @@ template_list:
       is by definition
       {either <literal 1> or <literal 2>|
       one of the following: [<literal 3>, or]}.
+    fact_type_form: |
+      1. if "The <category attribute term> of {a|an} <entity class term>" is used, an attribute fact type of the form "<category attribute term> is of <entity class term>": for example, F202 for R328; F203 for R329.
 
   - id: "T11"
     explanation: |
