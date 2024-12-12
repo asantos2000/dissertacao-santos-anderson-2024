@@ -1,0 +1,797 @@
+[
+    {
+        "id": "\u00a7 275.0-2_P2",
+        "type": "llm_response",
+        "content": {
+            "terms": [
+                {
+                    "term": "Secretary",
+                    "definition": "The Secretary of the Commission who forwards copies of process, pleadings, or other papers to named parties by registered or certified mail.",
+                    "confidence": 0.9,
+                    "reason": "The document explicitly defines the role of the Secretary in the process of serving documents.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the procedures outlined in this section."
+                },
+                {
+                    "term": "Partnership",
+                    "definition": null,
+                    "confidence": 0.5,
+                    "reason": "The document mentions partnerships but does not provide a specific definition.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "No specific local scope is indicated for partnerships."
+                },
+                {
+                    "term": "Process, pleadings, or other papers",
+                    "definition": "Documents that can be served on non-resident investment advisers, general partners, and managing agents.",
+                    "confidence": 0.8,
+                    "reason": "The document describes the process of serving these documents but does not explicitly define them.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.8,
+                    "local_scope_reason": "The context is specific to the procedures in this section."
+                },
+                {
+                    "term": "Named party",
+                    "definition": "A party named in the process, pleadings, or other papers served.",
+                    "confidence": 0.7,
+                    "reason": "The document implies the meaning through context but does not explicitly define it.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.7,
+                    "local_scope_reason": "The term is used specifically in the context of this section."
+                },
+                {
+                    "term": "Principal office and place of business",
+                    "definition": "Has the same meaning as in \u00a7 275.203A-3(c) of this chapter.",
+                    "confidence": 0.9,
+                    "reason": "The document refers to another section for the definition.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is tied to a specific reference within the chapter."
+                },
+                {
+                    "term": "Person",
+                    "definition": null,
+                    "confidence": 0.5,
+                    "reason": "The document uses the term but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "No specific local scope is indicated for the term."
+                },
+                {
+                    "term": "Non-resident investment adviser",
+                    "definition": "An investment adviser who resides in a place not subject to the jurisdiction of the United States.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition within the context of non-residents.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the procedures outlined in this section."
+                },
+                {
+                    "term": "Secretary of the Commission",
+                    "definition": "The Secretary of the Commission who forwards copies of process, pleadings, or other papers to named parties by registered or certified mail.",
+                    "confidence": 0.9,
+                    "reason": "The document explicitly defines the role of the Secretary in the process of serving documents.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the procedures outlined in this section."
+                },
+                {
+                    "term": "Corporation",
+                    "definition": "A corporation that is incorporated in or has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition within the context of non-residents.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the procedures outlined in this section."
+                },
+                {
+                    "term": "Unincorporated organization or association",
+                    "definition": "An organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition within the context of non-residents.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the procedures outlined in this section."
+                },
+                {
+                    "term": "Last address filed with the Commission",
+                    "definition": "The address of a named party as filed with the Commission, used for forwarding documents.",
+                    "confidence": 0.8,
+                    "reason": "The document implies the meaning through context but does not explicitly define it.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.8,
+                    "local_scope_reason": "The term is used specifically in the context of this section."
+                },
+                {
+                    "term": "Non-resident managing agent",
+                    "definition": "A managing agent who resides in a place not subject to the jurisdiction of the United States.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition within the context of non-residents.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the procedures outlined in this section."
+                },
+                {
+                    "term": "Non-resident general partner",
+                    "definition": "A general partner who resides in a place not subject to the jurisdiction of the United States.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition within the context of non-residents.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the procedures outlined in this section."
+                },
+                {
+                    "term": "Commission's records",
+                    "definition": "Records maintained by the Commission, which include copies of process, pleadings, or other papers served.",
+                    "confidence": 0.8,
+                    "reason": "The document implies the meaning through context but does not explicitly define it.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.8,
+                    "local_scope_reason": "The term is used specifically in the context of this section."
+                },
+                {
+                    "term": "Registered or certified mail",
+                    "definition": "A method of mailing used by the Secretary to forward documents to named parties.",
+                    "confidence": 0.8,
+                    "reason": "The document implies the meaning through context but does not explicitly define it.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.8,
+                    "local_scope_reason": "The term is used specifically in the context of this section."
+                },
+                {
+                    "term": "Individual",
+                    "definition": "An individual who resides in any place not subject to the jurisdiction of the United States.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition within the context of non-residents.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the procedures outlined in this section."
+                },
+                {
+                    "term": "Evidence of service",
+                    "definition": "Certification by the Secretary that documents were served and forwarded, constituting evidence of service.",
+                    "confidence": 0.8,
+                    "reason": "The document implies the meaning through context but does not explicitly define it.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.8,
+                    "local_scope_reason": "The term is used specifically in the context of this section."
+                },
+                {
+                    "term": "Non-resident",
+                    "definition": "An individual, corporation, partnership, or unincorporated organization or association that resides in a place not subject to the jurisdiction of the United States.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition within the context of non-residents.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the procedures outlined in this section."
+                },
+                {
+                    "term": "Process, pleadings, or papers",
+                    "definition": "Documents that can be served on non-resident investment advisers, general partners, and managing agents.",
+                    "confidence": 0.8,
+                    "reason": "The document describes the process of serving these documents but does not explicitly define them.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.8,
+                    "local_scope_reason": "The context is specific to the procedures in this section."
+                },
+                {
+                    "term": "Managing agent",
+                    "definition": "Any person, including a trustee, who directs or manages, or participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition within the context of managing agents.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the procedures outlined in this section."
+                },
+                {
+                    "term": "Certification",
+                    "definition": "Certification by the Secretary that documents were served and forwarded, constituting evidence of service.",
+                    "confidence": 0.8,
+                    "reason": "The document implies the meaning through context but does not explicitly define it.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.8,
+                    "local_scope_reason": "The term is used specifically in the context of this section."
+                },
+                {
+                    "term": "Trustee",
+                    "definition": "A person who directs or manages, or participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition within the context of managing agents.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the procedures outlined in this section."
+                },
+                {
+                    "term": "Appointed agents",
+                    "definition": "Agents appointed to receive service of process, pleadings, or other papers on behalf of non-resident investment advisers, general partners, or managing agents.",
+                    "confidence": 0.8,
+                    "reason": "The document implies the meaning through context but does not explicitly define it.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.8,
+                    "local_scope_reason": "The term is used specifically in the context of this section."
+                },
+                {
+                    "term": "Commission",
+                    "definition": "The entity responsible for receiving and forwarding process, pleadings, or other papers served on non-resident investment advisers, general partners, or managing agents.",
+                    "confidence": 0.8,
+                    "reason": "The document implies the meaning through context but does not explicitly define it.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.8,
+                    "local_scope_reason": "The term is used specifically in the context of this section."
+                }
+            ],
+            "terms_relationship": [
+                {
+                    "term_1": "Secretary",
+                    "term_2": "Secretary of the Commission",
+                    "relation": "Synonym",
+                    "confidence": 1.0,
+                    "reason": "The document explicitly states that the Secretary refers to the Secretary of the Commission."
+                },
+                {
+                    "term_1": "Process, pleadings, or other papers",
+                    "term_2": "Process, pleadings, or papers",
+                    "relation": "Synonym",
+                    "confidence": 0.9,
+                    "reason": "The terms are used interchangeably in the document."
+                }
+            ]
+        },
+        "elapsed_times": [
+            19.736287469997478
+        ],
+        "completions": [
+            {
+                "id": "chatcmpl-AZVHHpUUCdz2c1k5uzmkyKVKubv6G",
+                "choices": [
+                    {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                            "content": null,
+                            "refusal": null,
+                            "role": "assistant",
+                            "audio": null,
+                            "function_call": null,
+                            "tool_calls": [
+                                {
+                                    "id": "call_iDQA1LQtSNScYTRjFyl31zpv",
+                                    "function": {
+                                        "arguments": "{\"terms\":[{\"term\":\"Secretary\",\"definition\":\"The Secretary of the Commission who forwards copies of process, pleadings, or other papers to named parties by registered or certified mail.\",\"confidence\":0.9,\"reason\":\"The document explicitly defines the role of the Secretary in the process of serving documents.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the procedures outlined in this section.\"},{\"term\":\"Partnership\",\"definition\":null,\"confidence\":0.5,\"reason\":\"The document mentions partnerships but does not provide a specific definition.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"No specific local scope is indicated for partnerships.\"},{\"term\":\"Process, pleadings, or other papers\",\"definition\":\"Documents that can be served on non-resident investment advisers, general partners, and managing agents.\",\"confidence\":0.8,\"reason\":\"The document describes the process of serving these documents but does not explicitly define them.\",\"isLocalScope\":true,\"local_scope_confidence\":0.8,\"local_scope_reason\":\"The context is specific to the procedures in this section.\"},{\"term\":\"Named party\",\"definition\":\"A party named in the process, pleadings, or other papers served.\",\"confidence\":0.7,\"reason\":\"The document implies the meaning through context but does not explicitly define it.\",\"isLocalScope\":true,\"local_scope_confidence\":0.7,\"local_scope_reason\":\"The term is used specifically in the context of this section.\"},{\"term\":\"Principal office and place of business\",\"definition\":\"Has the same meaning as in \u00a7 275.203A-3(c) of this chapter.\",\"confidence\":0.9,\"reason\":\"The document refers to another section for the definition.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is tied to a specific reference within the chapter.\"},{\"term\":\"Person\",\"definition\":null,\"confidence\":0.5,\"reason\":\"The document uses the term but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"No specific local scope is indicated for the term.\"},{\"term\":\"Non-resident investment adviser\",\"definition\":\"An investment adviser who resides in a place not subject to the jurisdiction of the United States.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition within the context of non-residents.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the procedures outlined in this section.\"},{\"term\":\"Secretary of the Commission\",\"definition\":\"The Secretary of the Commission who forwards copies of process, pleadings, or other papers to named parties by registered or certified mail.\",\"confidence\":0.9,\"reason\":\"The document explicitly defines the role of the Secretary in the process of serving documents.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the procedures outlined in this section.\"},{\"term\":\"Corporation\",\"definition\":\"A corporation that is incorporated in or has its principal office and place of business in any place not subject to the jurisdiction of the United States.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition within the context of non-residents.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the procedures outlined in this section.\"},{\"term\":\"Unincorporated organization or association\",\"definition\":\"An organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition within the context of non-residents.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the procedures outlined in this section.\"},{\"term\":\"Last address filed with the Commission\",\"definition\":\"The address of a named party as filed with the Commission, used for forwarding documents.\",\"confidence\":0.8,\"reason\":\"The document implies the meaning through context but does not explicitly define it.\",\"isLocalScope\":true,\"local_scope_confidence\":0.8,\"local_scope_reason\":\"The term is used specifically in the context of this section.\"},{\"term\":\"Non-resident managing agent\",\"definition\":\"A managing agent who resides in a place not subject to the jurisdiction of the United States.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition within the context of non-residents.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the procedures outlined in this section.\"},{\"term\":\"Non-resident general partner\",\"definition\":\"A general partner who resides in a place not subject to the jurisdiction of the United States.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition within the context of non-residents.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the procedures outlined in this section.\"},{\"term\":\"Commission's records\",\"definition\":\"Records maintained by the Commission, which include copies of process, pleadings, or other papers served.\",\"confidence\":0.8,\"reason\":\"The document implies the meaning through context but does not explicitly define it.\",\"isLocalScope\":true,\"local_scope_confidence\":0.8,\"local_scope_reason\":\"The term is used specifically in the context of this section.\"},{\"term\":\"Registered or certified mail\",\"definition\":\"A method of mailing used by the Secretary to forward documents to named parties.\",\"confidence\":0.8,\"reason\":\"The document implies the meaning through context but does not explicitly define it.\",\"isLocalScope\":true,\"local_scope_confidence\":0.8,\"local_scope_reason\":\"The term is used specifically in the context of this section.\"},{\"term\":\"Individual\",\"definition\":\"An individual who resides in any place not subject to the jurisdiction of the United States.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition within the context of non-residents.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the procedures outlined in this section.\"},{\"term\":\"Evidence of service\",\"definition\":\"Certification by the Secretary that documents were served and forwarded, constituting evidence of service.\",\"confidence\":0.8,\"reason\":\"The document implies the meaning through context but does not explicitly define it.\",\"isLocalScope\":true,\"local_scope_confidence\":0.8,\"local_scope_reason\":\"The term is used specifically in the context of this section.\"},{\"term\":\"Non-resident\",\"definition\":\"An individual, corporation, partnership, or unincorporated organization or association that resides in a place not subject to the jurisdiction of the United States.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition within the context of non-residents.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the procedures outlined in this section.\"},{\"term\":\"Process, pleadings, or papers\",\"definition\":\"Documents that can be served on non-resident investment advisers, general partners, and managing agents.\",\"confidence\":0.8,\"reason\":\"The document describes the process of serving these documents but does not explicitly define them.\",\"isLocalScope\":true,\"local_scope_confidence\":0.8,\"local_scope_reason\":\"The context is specific to the procedures in this section.\"},{\"term\":\"Managing agent\",\"definition\":\"Any person, including a trustee, who directs or manages, or participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition within the context of managing agents.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the procedures outlined in this section.\"},{\"term\":\"Certification\",\"definition\":\"Certification by the Secretary that documents were served and forwarded, constituting evidence of service.\",\"confidence\":0.8,\"reason\":\"The document implies the meaning through context but does not explicitly define it.\",\"isLocalScope\":true,\"local_scope_confidence\":0.8,\"local_scope_reason\":\"The term is used specifically in the context of this section.\"},{\"term\":\"Trustee\",\"definition\":\"A person who directs or manages, or participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition within the context of managing agents.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the procedures outlined in this section.\"},{\"term\":\"Appointed agents\",\"definition\":\"Agents appointed to receive service of process, pleadings, or other papers on behalf of non-resident investment advisers, general partners, or managing agents.\",\"confidence\":0.8,\"reason\":\"The document implies the meaning through context but does not explicitly define it.\",\"isLocalScope\":true,\"local_scope_confidence\":0.8,\"local_scope_reason\":\"The term is used specifically in the context of this section.\"},{\"term\":\"Commission\",\"definition\":\"The entity responsible for receiving and forwarding process, pleadings, or other papers served on non-resident investment advisers, general partners, or managing agents.\",\"confidence\":0.8,\"reason\":\"The document implies the meaning through context but does not explicitly define it.\",\"isLocalScope\":true,\"local_scope_confidence\":0.8,\"local_scope_reason\":\"The term is used specifically in the context of this section.\"}],\"terms_relationship\":[{\"term_1\":\"Secretary\",\"term_2\":\"Secretary of the Commission\",\"relation\":\"Synonym\",\"confidence\":1.0,\"reason\":\"The document explicitly states that the Secretary refers to the Secretary of the Commission.\"},{\"term_1\":\"Process, pleadings, or other papers\",\"term_2\":\"Process, pleadings, or papers\",\"relation\":\"Synonym\",\"confidence\":0.9,\"reason\":\"The terms are used interchangeably in the document.\"}]}",
+                                        "name": "TermsDocumentModel"
+                                    },
+                                    "type": "function"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "created": 1733025075,
+                "model": "gpt-4o-2024-08-06",
+                "object": "chat.completion",
+                "service_tier": null,
+                "system_fingerprint": "fp_831e067d82",
+                "usage": {
+                    "completion_tokens": 2088,
+                    "prompt_tokens": 1626,
+                    "total_tokens": 3714,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": null
+                }
+            }
+        ]
+    },
+    {
+        "id": "\u00a7 275.0-5_P2",
+        "type": "llm_response",
+        "content": {
+            "terms": [
+                {
+                    "term": "Facts",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Facts'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Facts'."
+                },
+                {
+                    "term": "Investment adviser",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Investment adviser'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Investment adviser'."
+                },
+                {
+                    "term": "Public interest",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Public interest'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Public interest'."
+                },
+                {
+                    "term": "Interested person",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Interested person'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Interested person'."
+                },
+                {
+                    "term": "Application for registration",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Application for registration'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Application for registration'."
+                },
+                {
+                    "term": "Reasons",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Reasons'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Reasons'."
+                },
+                {
+                    "term": "Initiation of the proceeding",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Initiation of the proceeding'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Initiation of the proceeding'."
+                },
+                {
+                    "term": "Act",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Act'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Act'."
+                },
+                {
+                    "term": "Hearing",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Hearing'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Hearing'."
+                },
+                {
+                    "term": "Protection of investors",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Protection of investors'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Protection of investors'."
+                },
+                {
+                    "term": "Order disposing of the matter",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Order disposing of the matter'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Order disposing of the matter'."
+                },
+                {
+                    "term": "Commission",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Commission'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Commission'."
+                },
+                {
+                    "term": "Nature of interest",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Nature of interest'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Nature of interest'."
+                },
+                {
+                    "term": "Federal Register",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Federal Register'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Federal Register'."
+                },
+                {
+                    "term": "Notice",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Notice'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Notice'."
+                },
+                {
+                    "term": "Order of the Commission",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Order of the Commission'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Order of the Commission'."
+                },
+                {
+                    "term": "Application",
+                    "definition": "For purposes of this rule, an \u201capplication\u201d means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.",
+                    "confidence": 1.0,
+                    "reason": "The document explicitly defines 'Application' in section (d).",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is explicitly stated to be for purposes of this rule."
+                },
+                {
+                    "term": "Period of time",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a definition for 'Period of time'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication of local scope for 'Period of time'."
+                }
+            ],
+            "terms_relationship": []
+        },
+        "elapsed_times": [
+            8.856511199999659
+        ],
+        "completions": [
+            {
+                "id": "chatcmpl-AZVI4l9QZxMFXZhJBJnSnNgenSh5C",
+                "choices": [
+                    {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                            "content": null,
+                            "refusal": null,
+                            "role": "assistant",
+                            "audio": null,
+                            "function_call": null,
+                            "tool_calls": [
+                                {
+                                    "id": "call_gElQUujJUhQ81qRouJ4tl3SV",
+                                    "function": {
+                                        "arguments": "{\"terms\":[{\"term\":\"Facts\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Facts'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Facts'.\"},{\"term\":\"Investment adviser\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Investment adviser'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Investment adviser'.\"},{\"term\":\"Public interest\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Public interest'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Public interest'.\"},{\"term\":\"Interested person\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Interested person'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Interested person'.\"},{\"term\":\"Application for registration\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Application for registration'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Application for registration'.\"},{\"term\":\"Reasons\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Reasons'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Reasons'.\"},{\"term\":\"Initiation of the proceeding\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Initiation of the proceeding'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Initiation of the proceeding'.\"},{\"term\":\"Act\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Act'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Act'.\"},{\"term\":\"Hearing\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Hearing'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Hearing'.\"},{\"term\":\"Protection of investors\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Protection of investors'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Protection of investors'.\"},{\"term\":\"Order disposing of the matter\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Order disposing of the matter'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Order disposing of the matter'.\"},{\"term\":\"Commission\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Commission'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Commission'.\"},{\"term\":\"Nature of interest\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Nature of interest'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Nature of interest'.\"},{\"term\":\"Federal Register\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Federal Register'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Federal Register'.\"},{\"term\":\"Notice\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Notice'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Notice'.\"},{\"term\":\"Order of the Commission\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Order of the Commission'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Order of the Commission'.\"},{\"term\":\"Application\",\"definition\":\"For purposes of this rule, an \u201capplication\u201d means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.\",\"confidence\":1,\"reason\":\"The document explicitly defines 'Application' in section (d).\",\"isLocalScope\":true,\"local_scope_confidence\":1,\"local_scope_reason\":\"The definition is explicitly stated to be for purposes of this rule.\"},{\"term\":\"Period of time\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a definition for 'Period of time'.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication of local scope for 'Period of time'.\"}],\"terms_relationship\":[]}",
+                                        "name": "TermsDocumentModel"
+                                    },
+                                    "type": "function"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "created": 1733025124,
+                "model": "gpt-4o-2024-08-06",
+                "object": "chat.completion",
+                "service_tier": null,
+                "system_fingerprint": "fp_831e067d82",
+                "usage": {
+                    "completion_tokens": 1122,
+                    "prompt_tokens": 1398,
+                    "total_tokens": 2520,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": null
+                }
+            }
+        ]
+    },
+    {
+        "id": "\u00a7 275.0-7_P2",
+        "type": "llm_response",
+        "content": {
+            "terms": [
+                {
+                    "term": "Subsidiaries",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Subsidiaries' is mentioned in the context of total assets but not defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that the term is defined locally."
+                },
+                {
+                    "term": "Partnership",
+                    "definition": "A person is presumed to control a partnership if the person has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the partnership.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of control in the context of a partnership.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                },
+                {
+                    "term": "Right to receive upon dissolution",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term is used in the context of control but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that the term is defined locally."
+                },
+                {
+                    "term": "Small business",
+                    "definition": "An investment adviser with assets under management of less than $25 million, or such higher amount as the Commission may deem appropriate, and did not have total assets of $5 million or more on the last day of the most recent fiscal year, and does not control or is not controlled by another investment adviser with assets under management of $25 million or more.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a detailed definition of a small business in the context of investment advisers.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of this section."
+                },
+                {
+                    "term": "Limited liability company",
+                    "definition": "A person is presumed to control a limited liability company (LLC) if the person directly or indirectly has the right to vote 25 percent or more of a class of the interests of the LLC, has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the LLC, or is an elected manager of the LLC.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of control in the context of an LLC.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                },
+                {
+                    "term": "Capital",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Capital' is mentioned in the context of control but not defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that the term is defined locally."
+                },
+                {
+                    "term": "Person",
+                    "definition": "A person is presumed to control a corporation, partnership, LLC, or trust under certain conditions specified in the document.",
+                    "confidence": 0.8,
+                    "reason": "The document provides a contextual definition related to control.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.8,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                },
+                {
+                    "term": "Section 203A(a)(1)(A) of the Act",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term is referenced but not defined in the document.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that the term is defined locally."
+                },
+                {
+                    "term": "Voting securities",
+                    "definition": "A person is presumed to control a corporation if they have the right to vote 25 percent or more of a class of the corporation's voting securities.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of control in the context of voting securities.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                },
+                {
+                    "term": "Small organization",
+                    "definition": "An investment adviser with assets under management of less than $25 million, or such higher amount as the Commission may deem appropriate, and did not have total assets of $5 million or more on the last day of the most recent fiscal year, and does not control or is not controlled by another investment adviser with assets under management of $25 million or more.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a detailed definition of a small organization in the context of investment advisers.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of this section."
+                },
+                {
+                    "term": "Corporation",
+                    "definition": "A person is presumed to control a corporation if they directly or indirectly have the right to vote 25 percent or more of a class of the corporation's voting securities or have the power to sell or direct the sale of 25 percent or more of a class of the corporation's voting securities.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of control in the context of a corporation.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                },
+                {
+                    "term": "Investment adviser",
+                    "definition": "An investment adviser is defined as a small business or small organization if it has assets under management of less than $25 million, or such higher amount as the Commission may deem appropriate, and did not have total assets of $5 million or more on the last day of the most recent fiscal year, and does not control or is not controlled by another investment adviser with assets under management of $25 million or more.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a detailed definition of an investment adviser in the context of small entities.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of this section."
+                },
+                {
+                    "term": "Balance sheet",
+                    "definition": "Total assets means the total assets as shown on the balance sheet of the investment adviser or other person described above under paragraph (a)(3) of this section, or the balance sheet of the investment adviser or such other person with its subsidiaries consolidated, whichever is larger.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of total assets in relation to the balance sheet.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of this section."
+                },
+                {
+                    "term": "Power",
+                    "definition": "Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of power in the context of control.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                },
+                {
+                    "term": "Right to vote",
+                    "definition": "A person is presumed to control a corporation if they have the right to vote 25 percent or more of a class of the corporation's voting securities.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of control in the context of the right to vote.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                },
+                {
+                    "term": "Policies",
+                    "definition": "Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of policies in the context of control.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                },
+                {
+                    "term": "Management",
+                    "definition": "Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of management in the context of control.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                },
+                {
+                    "term": "Last day of the most recent fiscal year",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term is used in the context of total assets but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that the term is defined locally."
+                },
+                {
+                    "term": "Managing agent",
+                    "definition": "A person is presumed to control a trust if the person is a trustee or managing agent of the trust.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of control in the context of a managing agent.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                },
+                {
+                    "term": "Assets under management",
+                    "definition": "Assets under management, as defined under Section 203A(a)(3) of the Act and reported on its annual updating amendment to Form ADV, of less than $25 million, or such higher amount as the Commission may by rule deem appropriate.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of assets under management in the context of small entities.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of this section."
+                },
+                {
+                    "term": "Total assets",
+                    "definition": "Total assets means the total assets as shown on the balance sheet of the investment adviser or other person described above under paragraph (a)(3) of this section, or the balance sheet of the investment adviser or such other person with its subsidiaries consolidated, whichever is larger.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of total assets in relation to the balance sheet.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of this section."
+                },
+                {
+                    "term": "Interests of the LLC",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term is mentioned in the context of control but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that the term is defined locally."
+                },
+                {
+                    "term": "Trustee",
+                    "definition": "A person is presumed to control a trust if the person is a trustee or managing agent of the trust.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of control in the context of a trustee.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                },
+                {
+                    "term": "Commission",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Commission' is mentioned but not defined in the document.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that the term is defined locally."
+                },
+                {
+                    "term": "Elected manager",
+                    "definition": "A person is presumed to control a limited liability company (LLC) if the person is an elected manager of the LLC.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of control in the context of an elected manager.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                },
+                {
+                    "term": "Control",
+                    "definition": "Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.",
+                    "confidence": 1.0,
+                    "reason": "The document provides a comprehensive definition of control.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of this section."
+                },
+                {
+                    "term": "Trust",
+                    "definition": "A person is presumed to control a trust if the person is a trustee or managing agent of the trust.",
+                    "confidence": 0.9,
+                    "reason": "The document provides a clear definition of control in the context of a trust.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is specific to the context of control within this section."
+                }
+            ],
+            "terms_relationship": []
+        },
+        "elapsed_times": [
+            22.576100940001197
+        ],
+        "completions": [
+            {
+                "id": "chatcmpl-AZVJNSUMMKplR6T2pRy4UPIrNBo5q",
+                "choices": [
+                    {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                            "content": null,
+                            "refusal": null,
+                            "role": "assistant",
+                            "audio": null,
+                            "function_call": null,
+                            "tool_calls": [
+                                {
+                                    "id": "call_HJGBOyQF7pj9Lp7yeEpFIXB3",
+                                    "function": {
+                                        "arguments": "{\"terms\":[{\"term\":\"Subsidiaries\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The term 'Subsidiaries' is mentioned in the context of total assets but not defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"There is no indication that the term is defined locally.\"},{\"term\":\"Partnership\",\"definition\":\"A person is presumed to control a partnership if the person has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the partnership.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of control in the context of a partnership.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"},{\"term\":\"Right to receive upon dissolution\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The term is used in the context of control but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"There is no indication that the term is defined locally.\"},{\"term\":\"Small business\",\"definition\":\"An investment adviser with assets under management of less than $25 million, or such higher amount as the Commission may deem appropriate, and did not have total assets of $5 million or more on the last day of the most recent fiscal year, and does not control or is not controlled by another investment adviser with assets under management of $25 million or more.\",\"confidence\":0.9,\"reason\":\"The document provides a detailed definition of a small business in the context of investment advisers.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of this section.\"},{\"term\":\"Limited liability company\",\"definition\":\"A person is presumed to control a limited liability company (LLC) if the person directly or indirectly has the right to vote 25 percent or more of a class of the interests of the LLC, has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the LLC, or is an elected manager of the LLC.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of control in the context of an LLC.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"},{\"term\":\"Capital\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The term 'Capital' is mentioned in the context of control but not defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"There is no indication that the term is defined locally.\"},{\"term\":\"Person\",\"definition\":\"A person is presumed to control a corporation, partnership, LLC, or trust under certain conditions specified in the document.\",\"confidence\":0.8,\"reason\":\"The document provides a contextual definition related to control.\",\"isLocalScope\":true,\"local_scope_confidence\":0.8,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"},{\"term\":\"Section 203A(a)(1)(A) of the Act\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The term is referenced but not defined in the document.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"There is no indication that the term is defined locally.\"},{\"term\":\"Voting securities\",\"definition\":\"A person is presumed to control a corporation if they have the right to vote 25 percent or more of a class of the corporation's voting securities.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of control in the context of voting securities.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"},{\"term\":\"Small organization\",\"definition\":\"An investment adviser with assets under management of less than $25 million, or such higher amount as the Commission may deem appropriate, and did not have total assets of $5 million or more on the last day of the most recent fiscal year, and does not control or is not controlled by another investment adviser with assets under management of $25 million or more.\",\"confidence\":0.9,\"reason\":\"The document provides a detailed definition of a small organization in the context of investment advisers.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of this section.\"},{\"term\":\"Corporation\",\"definition\":\"A person is presumed to control a corporation if they directly or indirectly have the right to vote 25 percent or more of a class of the corporation's voting securities or have the power to sell or direct the sale of 25 percent or more of a class of the corporation's voting securities.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of control in the context of a corporation.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"},{\"term\":\"Investment adviser\",\"definition\":\"An investment adviser is defined as a small business or small organization if it has assets under management of less than $25 million, or such higher amount as the Commission may deem appropriate, and did not have total assets of $5 million or more on the last day of the most recent fiscal year, and does not control or is not controlled by another investment adviser with assets under management of $25 million or more.\",\"confidence\":0.9,\"reason\":\"The document provides a detailed definition of an investment adviser in the context of small entities.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of this section.\"},{\"term\":\"Balance sheet\",\"definition\":\"Total assets means the total assets as shown on the balance sheet of the investment adviser or other person described above under paragraph (a)(3) of this section, or the balance sheet of the investment adviser or such other person with its subsidiaries consolidated, whichever is larger.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of total assets in relation to the balance sheet.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of this section.\"},{\"term\":\"Power\",\"definition\":\"Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of power in the context of control.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"},{\"term\":\"Right to vote\",\"definition\":\"A person is presumed to control a corporation if they have the right to vote 25 percent or more of a class of the corporation's voting securities.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of control in the context of the right to vote.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"},{\"term\":\"Policies\",\"definition\":\"Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of policies in the context of control.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"},{\"term\":\"Management\",\"definition\":\"Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of management in the context of control.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"},{\"term\":\"Last day of the most recent fiscal year\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The term is used in the context of total assets but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"There is no indication that the term is defined locally.\"},{\"term\":\"Managing agent\",\"definition\":\"A person is presumed to control a trust if the person is a trustee or managing agent of the trust.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of control in the context of a managing agent.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"},{\"term\":\"Assets under management\",\"definition\":\"Assets under management, as defined under Section 203A(a)(3) of the Act and reported on its annual updating amendment to Form ADV, of less than $25 million, or such higher amount as the Commission may by rule deem appropriate.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of assets under management in the context of small entities.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of this section.\"},{\"term\":\"Total assets\",\"definition\":\"Total assets means the total assets as shown on the balance sheet of the investment adviser or other person described above under paragraph (a)(3) of this section, or the balance sheet of the investment adviser or such other person with its subsidiaries consolidated, whichever is larger.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of total assets in relation to the balance sheet.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of this section.\"},{\"term\":\"Interests of the LLC\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The term is mentioned in the context of control but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"There is no indication that the term is defined locally.\"},{\"term\":\"Trustee\",\"definition\":\"A person is presumed to control a trust if the person is a trustee or managing agent of the trust.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of control in the context of a trustee.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"},{\"term\":\"Commission\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The term 'Commission' is mentioned but not defined in the document.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"There is no indication that the term is defined locally.\"},{\"term\":\"Elected manager\",\"definition\":\"A person is presumed to control a limited liability company (LLC) if the person is an elected manager of the LLC.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of control in the context of an elected manager.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"},{\"term\":\"Control\",\"definition\":\"Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.\",\"confidence\":1.0,\"reason\":\"The document provides a comprehensive definition of control.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of this section.\"},{\"term\":\"Trust\",\"definition\":\"A person is presumed to control a trust if the person is a trustee or managing agent of the trust.\",\"confidence\":0.9,\"reason\":\"The document provides a clear definition of control in the context of a trust.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is specific to the context of control within this section.\"}],\"terms_relationship\":[]}",
+                                        "name": "TermsDocumentModel"
+                                    },
+                                    "type": "function"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "created": 1733025205,
+                "model": "gpt-4o-2024-08-06",
+                "object": "chat.completion",
+                "service_tier": null,
+                "system_fingerprint": "fp_831e067d82",
+                "usage": {
+                    "completion_tokens": 2554,
+                    "prompt_tokens": 1783,
+                    "total_tokens": 4337,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": null
+                }
+            }
+        ]
+    }
+]
