@@ -260,7 +260,7 @@ def get_all_checkpoints(checkpoint_dir, prefix="documents", extension="json"):
 def get_elements_from_checkpoints(checkpoint_dir, merge=True, filter="non_null"):
     managers, file_info_list = get_all_checkpoints(checkpoint_dir)
 
-    print(file_info_list)
+    logger.debug(file_info_list)
 
     pred_operative_rules = []
     pred_facts = []
