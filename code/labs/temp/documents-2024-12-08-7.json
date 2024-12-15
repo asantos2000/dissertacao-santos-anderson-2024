@@ -1,0 +1,208 @@
+[
+    {
+        "id": "classify_P1",
+        "type": "llm_response_classification",
+        "content": [
+            {
+                "doc_id": "\u00a7 275.0-2",
+                "statement_id": "3",
+                "statement_title": "Forwarding documents by the Secretary",
+                "statement_text": "The Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.",
+                "statement_sources": [
+                    "(a)(2)"
+                ],
+                "classification": [
+                    {
+                        "type": "Party rules",
+                        "confidence": 0.8,
+                        "explanation": "This statement specifies the role of the Secretary in forwarding documents to named parties, indicating a responsibility and action linked to a specific role, which is characteristic of a party rule."
+                    },
+                    {
+                        "type": "Activity rules",
+                        "confidence": 0.5,
+                        "explanation": "The statement involves an activity (forwarding documents) that must be performed by the Secretary, which aligns with activity rules, but the emphasis is more on the role of the Secretary."
+                    },
+                    {
+                        "type": "Data rules",
+                        "confidence": 0.2,
+                        "explanation": "There is a minor reference to data (the party's last address), but the primary focus is on the action and role, not on data constraints."
+                    }
+                ]
+            },
+            {
+                "doc_id": "\u00a7 275.0-2",
+                "statement_id": "4",
+                "statement_title": "Certification of service by the Secretary",
+                "statement_text": "If the Secretary certifies that the Commission was served with process, pleadings, or other papers pursuant to paragraph (a)(1) of this section and forwarded these documents to a named party pursuant to paragraph (a)(2) of this section, this certification constitutes evidence of service upon that party.",
+                "statement_sources": [
+                    "(a)(3)"
+                ],
+                "classification": [
+                    {
+                        "type": "Party rules",
+                        "confidence": 0.7,
+                        "explanation": "The statement involves the Secretary's role in certifying service, which is a responsibility linked to a specific role, indicating a party rule."
+                    },
+                    {
+                        "type": "Activity rules",
+                        "confidence": 0.6,
+                        "explanation": "The certification and forwarding of documents are activities that must be performed, suggesting an activity rule, but the focus is more on the role of the Secretary."
+                    },
+                    {
+                        "type": "Data rules",
+                        "confidence": 0.3,
+                        "explanation": "There is a reference to documents and certification as evidence, but the primary focus is on the role and activities, not on data constraints."
+                    }
+                ]
+            },
+            {
+                "doc_id": "\u00a7 275.0-5",
+                "statement_id": "1",
+                "statement_title": "Notice of proceeding initiation",
+                "statement_text": "Notice of the initiation of the proceeding will be published in the Federal Register and will indicate the earliest date upon which an order disposing of the matter may be entered.",
+                "statement_sources": [
+                    "(a)"
+                ],
+                "classification": [
+                    {
+                        "type": "Activity rules",
+                        "confidence": 0.9,
+                        "explanation": "The statement describes an activity (publishing notice) that must occur, which is characteristic of an activity rule."
+                    },
+                    {
+                        "type": "Data rules",
+                        "confidence": 0.4,
+                        "explanation": "There is a reference to data (the earliest date), but the primary focus is on the activity of publishing the notice."
+                    },
+                    {
+                        "type": "Party rules",
+                        "confidence": 0.1,
+                        "explanation": "There is no specific reference to roles or responsibilities of parties, making this unlikely to be a party rule."
+                    }
+                ]
+            },
+            {
+                "doc_id": "\u00a7 275.0-5",
+                "statement_id": "2",
+                "statement_title": "Submission of facts and hearing request",
+                "statement_text": "Any interested person may, within the period of time specified therein, submit to the Commission in writing any facts bearing upon the desirability of a hearing on the matter and may request that a hearing be held, stating his reasons therefor and the nature of his interest in the matter.",
+                "statement_sources": [
+                    "(a)"
+                ],
+                "classification": [
+                    {
+                        "type": "Party rules",
+                        "confidence": 0.8,
+                        "explanation": "The statement specifies that any interested person can submit facts and request a hearing, indicating a role-based permission, which is characteristic of a party rule."
+                    },
+                    {
+                        "type": "Activity rules",
+                        "confidence": 0.6,
+                        "explanation": "The statement involves activities (submitting facts, requesting a hearing) that can be performed, suggesting an activity rule, but the emphasis is more on the role of the interested person."
+                    },
+                    {
+                        "type": "Data rules",
+                        "confidence": 0.2,
+                        "explanation": "There is a minor reference to data (facts submitted), but the primary focus is on the roles and activities, not on data constraints."
+                    }
+                ]
+            },
+            {
+                "doc_id": "\u00a7 275.0-5",
+                "statement_id": "3",
+                "statement_title": "Issuance of order disposing of the matter",
+                "statement_text": "An order disposing of the matter will be issued as of course following the expiration of the period of time referred to in paragraph (a) of this section, unless the Commission thereafter orders a hearing on the matter.",
+                "statement_sources": [
+                    "(b)"
+                ],
+                "classification": [
+                    {
+                        "type": "Activity rules",
+                        "confidence": 0.9,
+                        "explanation": "The statement describes an activity (issuing an order) that must occur following a specific condition (expiration of time), which is characteristic of an activity rule."
+                    },
+                    {
+                        "type": "Data rules",
+                        "confidence": 0.3,
+                        "explanation": "There is a reference to a time period, but the primary focus is on the activity of issuing an order."
+                    },
+                    {
+                        "type": "Party rules",
+                        "confidence": 0.1,
+                        "explanation": "There is no specific reference to roles or responsibilities of parties, making this unlikely to be a party rule."
+                    }
+                ]
+            },
+            {
+                "doc_id": "\u00a7 275.0-5",
+                "statement_id": "4",
+                "statement_title": "Commission orders a hearing",
+                "statement_text": "The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors, upon the request of any interested person or upon its own motion.",
+                "statement_sources": [
+                    "(c)"
+                ],
+                "classification": [
+                    {
+                        "type": "Activity rules",
+                        "confidence": 0.8,
+                        "explanation": "The statement describes an activity (ordering a hearing) that the Commission must perform under certain conditions, which is characteristic of an activity rule."
+                    },
+                    {
+                        "type": "Party rules",
+                        "confidence": 0.6,
+                        "explanation": "The statement involves the Commission's role in ordering a hearing, indicating a responsibility linked to a specific role, suggesting a party rule."
+                    },
+                    {
+                        "type": "Data rules",
+                        "confidence": 0.2,
+                        "explanation": "There is a minor reference to conditions (public interest, protection of investors), but the primary focus is on the roles and activities, not on data constraints."
+                    }
+                ]
+            }
+        ],
+        "elapsed_times": [
+            21.661419690000002
+        ],
+        "completions": [
+            {
+                "id": "chatcmpl-AcFg3IpwgZFKY6cVwqgP3YWBe2ZMK",
+                "choices": [
+                    {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                            "content": null,
+                            "refusal": null,
+                            "role": "assistant",
+                            "audio": null,
+                            "function_call": null,
+                            "tool_calls": [
+                                {
+                                    "id": "call_jyNJ1UNqsB3HNAQ0lAQSJER7",
+                                    "function": {
+                                        "arguments": "{\"StatementClassifications\":[{\"doc_id\":\"\u00a7 275.0-2\",\"statement_id\":\"3\",\"statement_title\":\"Forwarding documents by the Secretary\",\"statement_text\":\"The Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.\",\"statement_sources\":[\"(a)(2)\"],\"classification\":[{\"type\":\"Party rules\",\"confidence\":0.8,\"explanation\":\"This statement specifies the role of the Secretary in forwarding documents to named parties, indicating a responsibility and action linked to a specific role, which is characteristic of a party rule.\"},{\"type\":\"Activity rules\",\"confidence\":0.5,\"explanation\":\"The statement involves an activity (forwarding documents) that must be performed by the Secretary, which aligns with activity rules, but the emphasis is more on the role of the Secretary.\"},{\"type\":\"Data rules\",\"confidence\":0.2,\"explanation\":\"There is a minor reference to data (the party's last address), but the primary focus is on the action and role, not on data constraints.\"}]},{\"doc_id\":\"\u00a7 275.0-2\",\"statement_id\":\"4\",\"statement_title\":\"Certification of service by the Secretary\",\"statement_text\":\"If the Secretary certifies that the Commission was served with process, pleadings, or other papers pursuant to paragraph (a)(1) of this section and forwarded these documents to a named party pursuant to paragraph (a)(2) of this section, this certification constitutes evidence of service upon that party.\",\"statement_sources\":[\"(a)(3)\"],\"classification\":[{\"type\":\"Party rules\",\"confidence\":0.7,\"explanation\":\"The statement involves the Secretary's role in certifying service, which is a responsibility linked to a specific role, indicating a party rule.\"},{\"type\":\"Activity rules\",\"confidence\":0.6,\"explanation\":\"The certification and forwarding of documents are activities that must be performed, suggesting an activity rule, but the focus is more on the role of the Secretary.\"},{\"type\":\"Data rules\",\"confidence\":0.3,\"explanation\":\"There is a reference to documents and certification as evidence, but the primary focus is on the role and activities, not on data constraints.\"}]},{\"doc_id\":\"\u00a7 275.0-5\",\"statement_id\":\"1\",\"statement_title\":\"Notice of proceeding initiation\",\"statement_text\":\"Notice of the initiation of the proceeding will be published in the Federal Register and will indicate the earliest date upon which an order disposing of the matter may be entered.\",\"statement_sources\":[\"(a)\"],\"classification\":[{\"type\":\"Activity rules\",\"confidence\":0.9,\"explanation\":\"The statement describes an activity (publishing notice) that must occur, which is characteristic of an activity rule.\"},{\"type\":\"Data rules\",\"confidence\":0.4,\"explanation\":\"There is a reference to data (the earliest date), but the primary focus is on the activity of publishing the notice.\"},{\"type\":\"Party rules\",\"confidence\":0.1,\"explanation\":\"There is no specific reference to roles or responsibilities of parties, making this unlikely to be a party rule.\"}]},{\"doc_id\":\"\u00a7 275.0-5\",\"statement_id\":\"2\",\"statement_title\":\"Submission of facts and hearing request\",\"statement_text\":\"Any interested person may, within the period of time specified therein, submit to the Commission in writing any facts bearing upon the desirability of a hearing on the matter and may request that a hearing be held, stating his reasons therefor and the nature of his interest in the matter.\",\"statement_sources\":[\"(a)\"],\"classification\":[{\"type\":\"Party rules\",\"confidence\":0.8,\"explanation\":\"The statement specifies that any interested person can submit facts and request a hearing, indicating a role-based permission, which is characteristic of a party rule.\"},{\"type\":\"Activity rules\",\"confidence\":0.6,\"explanation\":\"The statement involves activities (submitting facts, requesting a hearing) that can be performed, suggesting an activity rule, but the emphasis is more on the role of the interested person.\"},{\"type\":\"Data rules\",\"confidence\":0.2,\"explanation\":\"There is a minor reference to data (facts submitted), but the primary focus is on the roles and activities, not on data constraints.\"}]},{\"doc_id\":\"\u00a7 275.0-5\",\"statement_id\":\"3\",\"statement_title\":\"Issuance of order disposing of the matter\",\"statement_text\":\"An order disposing of the matter will be issued as of course following the expiration of the period of time referred to in paragraph (a) of this section, unless the Commission thereafter orders a hearing on the matter.\",\"statement_sources\":[\"(b)\"],\"classification\":[{\"type\":\"Activity rules\",\"confidence\":0.9,\"explanation\":\"The statement describes an activity (issuing an order) that must occur following a specific condition (expiration of time), which is characteristic of an activity rule.\"},{\"type\":\"Data rules\",\"confidence\":0.3,\"explanation\":\"There is a reference to a time period, but the primary focus is on the activity of issuing an order.\"},{\"type\":\"Party rules\",\"confidence\":0.1,\"explanation\":\"There is no specific reference to roles or responsibilities of parties, making this unlikely to be a party rule.\"}]},{\"doc_id\":\"\u00a7 275.0-5\",\"statement_id\":\"4\",\"statement_title\":\"Commission orders a hearing\",\"statement_text\":\"The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors, upon the request of any interested person or upon its own motion.\",\"statement_sources\":[\"(c)\"],\"classification\":[{\"type\":\"Activity rules\",\"confidence\":0.8,\"explanation\":\"The statement describes an activity (ordering a hearing) that the Commission must perform under certain conditions, which is characteristic of an activity rule.\"},{\"type\":\"Party rules\",\"confidence\":0.6,\"explanation\":\"The statement involves the Commission's role in ordering a hearing, indicating a responsibility linked to a specific role, suggesting a party rule.\"},{\"type\":\"Data rules\",\"confidence\":0.2,\"explanation\":\"There is a minor reference to conditions (public interest, protection of investors), but the primary focus is on the roles and activities, not on data constraints.\"}]}]}",
+                                        "name": "StatementClassifications"
+                                    },
+                                    "type": "function"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "created": 1733680091,
+                "model": "gpt-4o-2024-08-06",
+                "object": "chat.completion",
+                "service_tier": null,
+                "system_fingerprint": "fp_9d50cd990b",
+                "usage": {
+                    "completion_tokens": 1294,
+                    "prompt_tokens": 2499,
+                    "total_tokens": 3793,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": null
+                }
+            }
+        ]
+    }
+]

@@ -33,6 +33,7 @@ plotly
 seaborn
 XlsxWriter
 xelatex
+missingno
 
 # # Web scraping and diffing
 # beautifulsoup4

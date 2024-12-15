@@ -1,0 +1,719 @@
+[
+    {
+        "id": "\u00a7 275.0-2_P2",
+        "type": "llm_response",
+        "content": {
+            "terms": [
+                {
+                    "term": "Papers",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Papers'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Papers'."
+                },
+                {
+                    "term": "Association",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Association'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Association'."
+                },
+                {
+                    "term": "Registered or certified mail",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Registered or certified mail'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Registered or certified mail'."
+                },
+                {
+                    "term": "Trustee",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Trustee'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Trustee'."
+                },
+                {
+                    "term": "Non-resident investment adviser",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Non-resident investment adviser'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Non-resident investment adviser'."
+                },
+                {
+                    "term": "Non-resident",
+                    "definition": "An individual who resides in any place not subject to the jurisdiction of the United States; a corporation that is incorporated in or that has its principal office and place of business in any place not subject to the jurisdiction of the United States; and a partnership or other unincorporated organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
+                    "confidence": 1.0,
+                    "reason": "The definition is explicitly provided in the document.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is explicitly stated to be for purposes of this section."
+                },
+                {
+                    "term": "Last address filed with the Commission",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Last address filed with the Commission'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Last address filed with the Commission'."
+                },
+                {
+                    "term": "Individual",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Individual'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Individual'."
+                },
+                {
+                    "term": "Non-resident general partner",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Non-resident general partner'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Non-resident general partner'."
+                },
+                {
+                    "term": "Corporation",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Corporation'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Corporation'."
+                },
+                {
+                    "term": "Unincorporated organization",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Unincorporated organization'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Unincorporated organization'."
+                },
+                {
+                    "term": "Named party",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Named party'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Named party'."
+                },
+                {
+                    "term": "Non-resident managing agent",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Non-resident managing agent'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Non-resident managing agent'."
+                },
+                {
+                    "term": "Secretary of the Commission",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Secretary of the Commission'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Secretary of the Commission'."
+                },
+                {
+                    "term": "Person",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Person'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Person'."
+                },
+                {
+                    "term": "Principal office",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Principal office'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Principal office'."
+                },
+                {
+                    "term": "Managing agent",
+                    "definition": "Any person, including a trustee, who directs or manages, or who participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.",
+                    "confidence": 1.0,
+                    "reason": "The definition is explicitly provided in the document.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is explicitly stated to be for purposes of this section."
+                },
+                {
+                    "term": "Appointed agents",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Appointed agents'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Appointed agents'."
+                },
+                {
+                    "term": "Certification",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Certification'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Certification'."
+                },
+                {
+                    "term": "Partnership",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Partnership'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Partnership'."
+                },
+                {
+                    "term": "Commission",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Commission'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Commission'."
+                },
+                {
+                    "term": "Process",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Process'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Process'."
+                },
+                {
+                    "term": "Secretary",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Secretary'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Secretary'."
+                },
+                {
+                    "term": "Place of business",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Place of business'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Place of business'."
+                },
+                {
+                    "term": "Pleadings",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Pleadings'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "No indication of local scope for 'Pleadings'."
+                }
+            ],
+            "terms_relationship": []
+        },
+        "elapsed_times": [
+            31.497356058999685
+        ],
+        "completions": [
+            {
+                "id": "chatcmpl-Aa9bAB84MZYhzZxTCiD7zk391VY0r",
+                "choices": [
+                    {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                            "content": null,
+                            "refusal": null,
+                            "role": "assistant",
+                            "audio": null,
+                            "function_call": null,
+                            "tool_calls": [
+                                {
+                                    "id": "call_W1QKMdScGnGzwwFbz51DIxq5",
+                                    "function": {
+                                        "arguments": "{\"terms\":[{\"term\":\"Papers\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Papers'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Papers'.\"},{\"term\":\"Association\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Association'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Association'.\"},{\"term\":\"Registered or certified mail\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Registered or certified mail'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Registered or certified mail'.\"},{\"term\":\"Trustee\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Trustee'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Trustee'.\"},{\"term\":\"Non-resident investment adviser\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Non-resident investment adviser'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Non-resident investment adviser'.\"},{\"term\":\"Non-resident\",\"definition\":\"An individual who resides in any place not subject to the jurisdiction of the United States; a corporation that is incorporated in or that has its principal office and place of business in any place not subject to the jurisdiction of the United States; and a partnership or other unincorporated organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.\",\"confidence\":1.0,\"reason\":\"The definition is explicitly provided in the document.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is explicitly stated to be for purposes of this section.\"},{\"term\":\"Last address filed with the Commission\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Last address filed with the Commission'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Last address filed with the Commission'.\"},{\"term\":\"Individual\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Individual'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Individual'.\"},{\"term\":\"Non-resident general partner\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Non-resident general partner'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Non-resident general partner'.\"},{\"term\":\"Corporation\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Corporation'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Corporation'.\"},{\"term\":\"Unincorporated organization\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Unincorporated organization'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Unincorporated organization'.\"},{\"term\":\"Named party\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Named party'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Named party'.\"},{\"term\":\"Non-resident managing agent\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Non-resident managing agent'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Non-resident managing agent'.\"},{\"term\":\"Secretary of the Commission\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Secretary of the Commission'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Secretary of the Commission'.\"},{\"term\":\"Person\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Person'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Person'.\"},{\"term\":\"Principal office\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Principal office'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Principal office'.\"},{\"term\":\"Managing agent\",\"definition\":\"Any person, including a trustee, who directs or manages, or who participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.\",\"confidence\":1.0,\"reason\":\"The definition is explicitly provided in the document.\",\"isLocalScope\":true,\"local_scope_confidence\":1.0,\"local_scope_reason\":\"The definition is explicitly stated to be for purposes of this section.\"},{\"term\":\"Appointed agents\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Appointed agents'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Appointed agents'.\"},{\"term\":\"Certification\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Certification'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Certification'.\"},{\"term\":\"Partnership\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Partnership'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Partnership'.\"},{\"term\":\"Commission\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Commission'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Commission'.\"},{\"term\":\"Process\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Process'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Process'.\"},{\"term\":\"Secretary\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Secretary'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Secretary'.\"},{\"term\":\"Place of business\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Place of business'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Place of business'.\"},{\"term\":\"Pleadings\",\"definition\":null,\"confidence\":0.0,\"reason\":\"The document does not provide a specific definition for 'Pleadings'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.0,\"local_scope_reason\":\"No indication of local scope for 'Pleadings'.\"}],\"terms_relationship\":[]}",
+                                        "name": "TermsDocumentModel"
+                                    },
+                                    "type": "function"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "created": 1733180068,
+                "model": "gpt-4o-2024-08-06",
+                "object": "chat.completion",
+                "service_tier": null,
+                "system_fingerprint": "fp_831e067d82",
+                "usage": {
+                    "completion_tokens": 1714,
+                    "prompt_tokens": 1613,
+                    "total_tokens": 3327,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": null
+                }
+            }
+        ]
+    },
+    {
+        "id": "\u00a7 275.0-5_P2",
+        "type": "llm_response",
+        "content": {
+            "terms": [
+                {
+                    "term": "Commission",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Commission'. It is assumed to refer to the regulatory body mentioned in the context.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term 'Commission' is used generally and not defined specifically within this section."
+                },
+                {
+                    "term": "Act",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Act'. It is assumed to refer to the legislative act under which the rules are made.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term 'Act' is used generally and not defined specifically within this section."
+                },
+                {
+                    "term": "Application",
+                    "definition": "For purposes of this rule, an \u201capplication\u201d means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.",
+                    "confidence": 1.0,
+                    "reason": "The definition is explicitly provided in the document.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is explicitly stated to be for the purposes of this rule."
+                },
+                {
+                    "term": "Period of time",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'period of time' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Interested person",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'interested person' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Registration",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document does not provide a specific definition for 'Registration'.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used generally and not defined specifically within this section."
+                },
+                {
+                    "term": "Notice",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'Notice' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Reasons",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'reasons' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Order",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'Order' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Protection of investors",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'protection of investors' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Facts",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'facts' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Initiation of the proceeding",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'initiation of the proceeding' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Investment adviser",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'investment adviser' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Matter",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'matter' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Hearing",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'hearing' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Federal Register",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'Federal Register' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Public interest",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'public interest' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                },
+                {
+                    "term": "Nature of interest",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The document mentions 'nature of interest' but does not define it.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.5,
+                    "local_scope_reason": "The term is used in context but not defined specifically within this section."
+                }
+            ],
+            "terms_relationship": []
+        },
+        "elapsed_times": [
+            15.903299624999818
+        ],
+        "completions": [
+            {
+                "id": "chatcmpl-Aa9cP7OtJB8YybveBr9Hth8kVqChg",
+                "choices": [
+                    {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                            "content": null,
+                            "refusal": null,
+                            "role": "assistant",
+                            "audio": null,
+                            "function_call": null,
+                            "tool_calls": [
+                                {
+                                    "id": "call_87XSUXVHtnQVxFKIzSoCX9sx",
+                                    "function": {
+                                        "arguments": "{\"terms\":[{\"term\":\"Commission\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a specific definition for 'Commission'. It is assumed to refer to the regulatory body mentioned in the context.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term 'Commission' is used generally and not defined specifically within this section.\"},{\"term\":\"Act\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a specific definition for 'Act'. It is assumed to refer to the legislative act under which the rules are made.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term 'Act' is used generally and not defined specifically within this section.\"},{\"term\":\"Application\",\"definition\":\"For purposes of this rule, an \u201capplication\u201d means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.\",\"confidence\":1,\"reason\":\"The definition is explicitly provided in the document.\",\"isLocalScope\":true,\"local_scope_confidence\":1,\"local_scope_reason\":\"The definition is explicitly stated to be for the purposes of this rule.\"},{\"term\":\"Period of time\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'period of time' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Interested person\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'interested person' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Registration\",\"definition\":null,\"confidence\":0,\"reason\":\"The document does not provide a specific definition for 'Registration'.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used generally and not defined specifically within this section.\"},{\"term\":\"Notice\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'Notice' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Reasons\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'reasons' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Order\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'Order' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Protection of investors\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'protection of investors' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Facts\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'facts' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Initiation of the proceeding\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'initiation of the proceeding' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Investment adviser\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'investment adviser' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Matter\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'matter' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Hearing\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'hearing' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Federal Register\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'Federal Register' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Public interest\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'public interest' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"},{\"term\":\"Nature of interest\",\"definition\":null,\"confidence\":0,\"reason\":\"The document mentions 'nature of interest' but does not define it.\",\"isLocalScope\":false,\"local_scope_confidence\":0.5,\"local_scope_reason\":\"The term is used in context but not defined specifically within this section.\"}],\"terms_relationship\":[]}",
+                                        "name": "TermsDocumentModel"
+                                    },
+                                    "type": "function"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "created": 1733180145,
+                "model": "gpt-4o-2024-08-06",
+                "object": "chat.completion",
+                "service_tier": null,
+                "system_fingerprint": "fp_831e067d82",
+                "usage": {
+                    "completion_tokens": 1182,
+                    "prompt_tokens": 1391,
+                    "total_tokens": 2573,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": null
+                }
+            }
+        ]
+    },
+    {
+        "id": "\u00a7 275.0-7_P2",
+        "type": "llm_response",
+        "content": {
+            "terms": [
+                {
+                    "term": "Interests",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Interests' is mentioned in the context of LLCs but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Interests' is defined locally."
+                },
+                {
+                    "term": "Trustee",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Trustee' is mentioned in the context of control but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Trustee' is defined locally."
+                },
+                {
+                    "term": "Investment adviser",
+                    "definition": "An investment adviser is a small business or small organization under the Investment Advisers Act of 1940 if it meets certain criteria regarding assets under management and control.",
+                    "confidence": 0.8,
+                    "reason": "The definition is inferred from the context of the document, which describes criteria for an investment adviser to be considered a small entity.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the context of this section regarding small entities."
+                },
+                {
+                    "term": "Total assets",
+                    "definition": "Total assets means the total assets as shown on the balance sheet of the investment adviser or other person described, or the balance sheet of the investment adviser or such other person with its subsidiaries consolidated, whichever is larger.",
+                    "confidence": 1.0,
+                    "reason": "The definition is explicitly provided in the document.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is explicitly stated for the purposes of this section."
+                },
+                {
+                    "term": "Capital",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Capital' is mentioned in the context of control but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Capital' is defined locally."
+                },
+                {
+                    "term": "Small business",
+                    "definition": "A small business or small organization for purposes of the Investment Advisers Act of 1940 is an investment adviser with less than $25 million in assets under management and other specific criteria.",
+                    "confidence": 0.9,
+                    "reason": "The definition is inferred from the criteria listed for small entities under the Investment Advisers Act.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the context of this section regarding small entities."
+                },
+                {
+                    "term": "Corporation",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Corporation' is mentioned in the context of control but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Corporation' is defined locally."
+                },
+                {
+                    "term": "Control",
+                    "definition": "Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.",
+                    "confidence": 1.0,
+                    "reason": "The definition is explicitly provided in the document.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 1.0,
+                    "local_scope_reason": "The definition is explicitly stated for the purposes of this section."
+                },
+                {
+                    "term": "Subsidiaries",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Subsidiaries' is mentioned in the context of total assets but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Subsidiaries' is defined locally."
+                },
+                {
+                    "term": "Assets under management",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Assets under management' is referenced but not explicitly defined in this document.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Assets under management' is defined locally."
+                },
+                {
+                    "term": "Limited liability company",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Limited liability company' is mentioned in the context of control but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Limited liability company' is defined locally."
+                },
+                {
+                    "term": "Person",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Person' is mentioned in the context of control but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Person' is defined locally."
+                },
+                {
+                    "term": "Trust",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Trust' is mentioned in the context of control but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Trust' is defined locally."
+                },
+                {
+                    "term": "Managing agent",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Managing agent' is mentioned in the context of control but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Managing agent' is defined locally."
+                },
+                {
+                    "term": "Voting securities",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Voting securities' is mentioned in the context of control but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Voting securities' is defined locally."
+                },
+                {
+                    "term": "Partnership",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Partnership' is mentioned in the context of control but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Partnership' is defined locally."
+                },
+                {
+                    "term": "Elected manager",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Elected manager' is mentioned in the context of control but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Elected manager' is defined locally."
+                },
+                {
+                    "term": "Small organization",
+                    "definition": "A small business or small organization for purposes of the Investment Advisers Act of 1940 is an investment adviser with less than $25 million in assets under management and other specific criteria.",
+                    "confidence": 0.9,
+                    "reason": "The definition is inferred from the criteria listed for small entities under the Investment Advisers Act.",
+                    "isLocalScope": true,
+                    "local_scope_confidence": 0.9,
+                    "local_scope_reason": "The definition is specific to the context of this section regarding small entities."
+                },
+                {
+                    "term": "Balance sheet",
+                    "definition": null,
+                    "confidence": 0.0,
+                    "reason": "The term 'Balance sheet' is mentioned in the context of total assets but not explicitly defined.",
+                    "isLocalScope": false,
+                    "local_scope_confidence": 0.0,
+                    "local_scope_reason": "There is no indication that 'Balance sheet' is defined locally."
+                }
+            ],
+            "terms_relationship": []
+        },
+        "elapsed_times": [
+            21.855830839999726
+        ],
+        "completions": [
+            {
+                "id": "chatcmpl-Aa9dMgLzi6KAW2cwyt3phONaaGQBv",
+                "choices": [
+                    {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                            "content": null,
+                            "refusal": null,
+                            "role": "assistant",
+                            "audio": null,
+                            "function_call": null,
+                            "tool_calls": [
+                                {
+                                    "id": "call_enGrOPuflW0S6EuACSwgl8Dk",
+                                    "function": {
+                                        "arguments": "{\"terms\":[{\"term\":\"Interests\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Interests' is mentioned in the context of LLCs but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Interests' is defined locally.\"},{\"term\":\"Trustee\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Trustee' is mentioned in the context of control but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Trustee' is defined locally.\"},{\"term\":\"Investment adviser\",\"definition\":\"An investment adviser is a small business or small organization under the Investment Advisers Act of 1940 if it meets certain criteria regarding assets under management and control.\",\"confidence\":0.8,\"reason\":\"The definition is inferred from the context of the document, which describes criteria for an investment adviser to be considered a small entity.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the context of this section regarding small entities.\"},{\"term\":\"Total assets\",\"definition\":\"Total assets means the total assets as shown on the balance sheet of the investment adviser or other person described, or the balance sheet of the investment adviser or such other person with its subsidiaries consolidated, whichever is larger.\",\"confidence\":1,\"reason\":\"The definition is explicitly provided in the document.\",\"isLocalScope\":true,\"local_scope_confidence\":1,\"local_scope_reason\":\"The definition is explicitly stated for the purposes of this section.\"},{\"term\":\"Capital\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Capital' is mentioned in the context of control but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Capital' is defined locally.\"},{\"term\":\"Small business\",\"definition\":\"A small business or small organization for purposes of the Investment Advisers Act of 1940 is an investment adviser with less than $25 million in assets under management and other specific criteria.\",\"confidence\":0.9,\"reason\":\"The definition is inferred from the criteria listed for small entities under the Investment Advisers Act.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the context of this section regarding small entities.\"},{\"term\":\"Corporation\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Corporation' is mentioned in the context of control but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Corporation' is defined locally.\"},{\"term\":\"Control\",\"definition\":\"Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.\",\"confidence\":1,\"reason\":\"The definition is explicitly provided in the document.\",\"isLocalScope\":true,\"local_scope_confidence\":1,\"local_scope_reason\":\"The definition is explicitly stated for the purposes of this section.\"},{\"term\":\"Subsidiaries\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Subsidiaries' is mentioned in the context of total assets but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Subsidiaries' is defined locally.\"},{\"term\":\"Assets under management\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Assets under management' is referenced but not explicitly defined in this document.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Assets under management' is defined locally.\"},{\"term\":\"Limited liability company\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Limited liability company' is mentioned in the context of control but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Limited liability company' is defined locally.\"},{\"term\":\"Person\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Person' is mentioned in the context of control but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Person' is defined locally.\"},{\"term\":\"Trust\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Trust' is mentioned in the context of control but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Trust' is defined locally.\"},{\"term\":\"Managing agent\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Managing agent' is mentioned in the context of control but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Managing agent' is defined locally.\"},{\"term\":\"Voting securities\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Voting securities' is mentioned in the context of control but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Voting securities' is defined locally.\"},{\"term\":\"Partnership\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Partnership' is mentioned in the context of control but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Partnership' is defined locally.\"},{\"term\":\"Elected manager\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Elected manager' is mentioned in the context of control but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Elected manager' is defined locally.\"},{\"term\":\"Small organization\",\"definition\":\"A small business or small organization for purposes of the Investment Advisers Act of 1940 is an investment adviser with less than $25 million in assets under management and other specific criteria.\",\"confidence\":0.9,\"reason\":\"The definition is inferred from the criteria listed for small entities under the Investment Advisers Act.\",\"isLocalScope\":true,\"local_scope_confidence\":0.9,\"local_scope_reason\":\"The definition is specific to the context of this section regarding small entities.\"},{\"term\":\"Balance sheet\",\"definition\":null,\"confidence\":0,\"reason\":\"The term 'Balance sheet' is mentioned in the context of total assets but not explicitly defined.\",\"isLocalScope\":false,\"local_scope_confidence\":0,\"local_scope_reason\":\"There is no indication that 'Balance sheet' is defined locally.\"}],\"terms_relationship\":[]}",
+                                        "name": "TermsDocumentModel"
+                                    },
+                                    "type": "function"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "created": 1733180204,
+                "model": "gpt-4o-2024-08-06",
+                "object": "chat.completion",
+                "service_tier": null,
+                "system_fingerprint": "fp_831e067d82",
+                "usage": {
+                    "completion_tokens": 1399,
+                    "prompt_tokens": 1733,
+                    "total_tokens": 3132,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": null
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "id": "classify_P1",
+        "type": "true_table",
+        "content": [
+            {
+                "doc_id": "\u00a7 275.0-2",
+                "statement_id": "3",
+                "statement": "The Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.",
+                "sources": [
+                    "(a)(2)"
+                ],
+                "type": "Party rules"
+            },
+            {
+                "doc_id": "\u00a7 275.0-2",
+                "statement_id": "4",
+                "statement": "If the Secretary certifies that the Commission was served with process, pleadings, or other papers pursuant to paragraph (a)(1) of this section and forwarded these documents to a named party pursuant to paragraph (a)(2) of this section, this certification constitutes evidence of service upon that party.",
+                "sources": [
+                    "(a)(3)"
+                ],
+                "type": "Party rules"
+            },
+            {
+                "doc_id": "\u00a7 275.0-5",
+                "statement_id": "1",
+                "statement": "Notice of the initiation of the proceeding will be published in the Federal Register and will indicate the earliest date upon which an order disposing of the matter may be entered.",
+                "sources": [
+                    "(a)"
+                ],
+                "type": "Activity rules"
+            },
+            {
+                "doc_id": "\u00a7 275.0-5",
+                "statement_id": "2",
+                "statement": "Any interested person may, within the period of time specified therein, submit to the Commission in writing any facts bearing upon the desirability of a hearing on the matter and may request that a hearing be held, stating his reasons therefor and the nature of his interest in the matter.",
+                "sources": [
+                    "(a)"
+                ],
+                "type": "Party rules"
+            },
+            {
+                "doc_id": "\u00a7 275.0-5",
+                "statement_id": "3",
+                "statement": "An order disposing of the matter will be issued as of course following the expiration of the period of time referred to in paragraph (a) of this section, unless the Commission thereafter orders a hearing on the matter.",
+                "sources": [
+                    "(b)"
+                ],
+                "type": "Activity rules"
+            },
+            {
+                "doc_id": "\u00a7 275.0-5",
+                "statement_id": "4",
+                "statement": "The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors, upon the request of any interested person or upon its own motion.",
+                "sources": [
+                    "(c)"
+                ],
+                "type": "Activity rules"
+            }
+        ]
+    }
+]
