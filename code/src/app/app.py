@@ -4,7 +4,7 @@ import json
 app = Flask(__name__)
 
 # Load the JSON data
-DATA_FILE = './data/documents-2024-11-01-3.json'
+DATA_FILE = './data/documents-2024-12-08-10.json'
 
 def load_documents():
     with open(DATA_FILE, 'r', encoding='utf-8') as file:
