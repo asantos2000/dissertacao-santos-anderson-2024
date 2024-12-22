@@ -7701,7 +7701,7 @@
         "type": "llm_validation",
         "content": [
             {
-                "doc_id": "\n\u00a7 275.0-2",
+                "doc_id": "\u00a7 275.0-2",
                 "statement_id": "1",
                 "statement": "A person may serve process, pleadings, or other papers on a non-resident investment adviser, or on a non-resident general partner or non-resident managing agent of an investment adviser by serving any or all of its appointed agents.",
                 "sources": [
@@ -9013,7 +9013,7 @@
                 ]
             },
             {
-                "doc_id": "\n\u00a7 275.0-7",
+                "doc_id": "\u00a7 275.0-7",
                 "statement_id": "Small business",
                 "statement": "An investment adviser with assets under management of less than $25 million, or such higher amount as the Commission may deem appropriate, and other specific conditions.",
                 "sources": [
