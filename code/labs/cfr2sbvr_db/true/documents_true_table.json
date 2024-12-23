@@ -854,6 +854,10 @@
                     "statement": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that has assets under management of less than $25 million, or such higher amount as the Commission may by rule deem appropriate.",
                     "terms": [
                         {
+                            "term": "Commission",
+                            "classification": "Proper Noun"
+                        },
+                        {
                             "term": "Small business",
                             "classification": "Common Noun"
                         },
@@ -885,6 +889,10 @@
                     "title": "Assets under management criterion",
                     "statement": "An investment adviser has assets under management, as defined under Section 203A(a)(3) of the Act and reported on its annual updating amendment to Form ADV, of less than $25 million, or such higher amount as the Commission may by rule deem appropriate.",
                     "terms": [
+                        {
+                            "term": "Commission",
+                            "classification": "Proper Noun"
+                        },
                         {
                             "term": "Investment adviser",
                             "classification": "Common Noun"

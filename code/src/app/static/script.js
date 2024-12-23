@@ -150,7 +150,7 @@ function highlightStatement(element) {
     });
 
     // Add source at the beginning of the statement
-    const sourceText = `<strong>[${element.source}]</strong> `;
+    const sourceText = `<strong>[${element.sources}]</strong> `;
     statement = sourceText + statement;
 
     // Add superscript classification

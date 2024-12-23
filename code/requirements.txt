@@ -20,12 +20,13 @@ google-generativeai
 tiktoken
 humanize
 
-# Graph and RDF libraries
+# Graph, DB, and RDF libraries
 agraph-python
 # networkx
 # pygraphviz
 rdflib
 defusedxml
+duckdb
 
 # Visualization libraries
 matplotlib
