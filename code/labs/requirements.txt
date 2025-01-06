@@ -5,3 +5,4 @@ pandas
 rdflib
 networkx
 matplotlib
+jellyfish

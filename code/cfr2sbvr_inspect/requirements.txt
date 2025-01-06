@@ -1,0 +1,8 @@
+duckdb
+deepdiff
+numpy
+pandas
+rdflib
+networkx
+matplotlib
+jellyfish
