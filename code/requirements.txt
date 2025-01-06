@@ -44,6 +44,7 @@ missingno
 inflect
 pyyaml
 jsonref
+jellyfish
 
 # Jupyter environment
 jupyterlab

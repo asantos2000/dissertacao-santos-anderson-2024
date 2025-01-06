@@ -11,5 +11,3 @@ lib
 __pycache__
 logs
 code/src/objs.pkl
-*.db
-*.db.wal
