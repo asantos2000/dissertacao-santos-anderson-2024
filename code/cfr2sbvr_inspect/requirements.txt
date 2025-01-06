@@ -6,3 +6,4 @@ rdflib
 networkx
 matplotlib
 jellyfish
+pyyaml
