@@ -33,7 +33,7 @@ matplotlib
 plotly
 seaborn
 XlsxWriter
-xelatex
+#xelatex
 missingno
 
 # # Web scraping and diffing
@@ -47,6 +47,7 @@ jsonref
 
 # Jupyter environment
 jupyterlab
+streamlit
 
 # Additional notes:
 # pygraphviz depends on sudo apt-get install graphviz graphviz-dev
