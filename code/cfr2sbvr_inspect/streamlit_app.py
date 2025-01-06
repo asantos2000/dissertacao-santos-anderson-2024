@@ -186,7 +186,7 @@ def display_section(doc_id):
 
 @st.dialog("Witt (2012) taxonomy", width="large")
 def witt_taxonomy_dialog(classification): 
-    rule_provider = RuleInformationProvider("../data")
+    rule_provider = RuleInformationProvider("code/cfr2sbvr_inspect/data")
     markdown_data = rule_provider.get_classification_and_templates(classification, return_forms="fact_type")
     st.markdown(markdown_data)
 
