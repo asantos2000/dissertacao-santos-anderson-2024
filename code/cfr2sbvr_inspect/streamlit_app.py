@@ -8,6 +8,10 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
+# only for labs
+import sys
+sys.path.append(r'../src')
+
 import rules_taxonomy_provider.main as rules_taxonomy_provider
 from rules_taxonomy_provider.main import RuleInformationProvider
 
@@ -54,7 +58,7 @@ def calculate_statements_similarity(statement1, statement2):
 
 
 def highlight_statement(
-    prefix,
+    line_id,
     doc_id,
     element_id,
     classification_type,
@@ -162,7 +166,7 @@ def highlight_statement(
         statement = re.sub(tag_pattern, insert_title_fn, statement, flags=re.IGNORECASE)
 
     sup = f" [{classification}]"
-    final_text = f"{prefix}{element_id}: <strong>{sources}</strong> {statement}{sup}"
+    final_text = f"{line_id}: <strong>{sources}</strong> {statement}{sup}"
     return final_text
 
 
@@ -236,12 +240,8 @@ all_tables = conn.sql(query).fetchall()
 
 table_names = [table_name[0] for table_name in all_tables]
 
-print(table_names)
-
-# Sidebar selectbox to choose a table
+# Sidebar selectbox to choose a file
 table_selected = st.sidebar.selectbox("Choose a table", table_names)
-
-print(table_selected)
 
 table_markdown = "\n".join([f"- {table}" for table in table_names])
 
@@ -294,7 +294,7 @@ if event.selection:
                 doc_id = data_df.at[row, "doc_id"]
                 title = data_df.at[row, "statement_title"]
                 statement = data_df.at[row, "statement_text"]
-                element_id = data_df.at[row, "statement_id"]
+                statement_id = data_df.at[row, "statement_id"]
                 checkpoint = data_df.at[row, "checkpoint"]
                 sources = data_df.at[row, "statement_sources"]
 
@@ -349,25 +349,33 @@ if event.selection:
                     classification_subtype = ""
                     classification_subtype_confidence = None
                     classification_subtype_explanation = None
+                # terms
                 try:
                     terms = data_df.at[row, "terms"]
                 except Exception as e:
                     missing_messages.append(f"{e}")
                     terms = []
+                # verb_symbols
                 try:
                     verb_symbols = data_df.at[row, "verb_symbols"]
                 except Exception as e:
                     missing_messages.append(f"{e}")
                     verb_symbols = []
+                # transformation_template_ids
                 try:
                     template_ids = data_df.at[row, "transformation_template_ids"]
+                except Exception as e:
+                    missing_messages.append(f"{e}")
+                    template_ids = []
+                # transformation_confidence
+                try:
                     transformation_confidence = data_df.at[row, "transformation_confidence"]
                     transformation_reason = data_df.at[row, "transformation_reason"]
                 except Exception as e:
                     missing_messages.append(f"{e}")
-                    template_ids = []
                     transformation_confidence = None
                     transformation_reason = None
+                # transformation scores
                 try:
                     transformation_semscore = data_df.at[row, "semscore"]
                     transformation_similarity_score = data_df.at[row, "similarity_score"]
@@ -384,15 +392,22 @@ if event.selection:
                     transformation_accuracy = None
                     transformation_grammar_sintaxe_accuracy = None
 
+                # source of statement
+                try:
+                    statament_from = data_df.at[row, "source"]
+                except Exception as e:
+                    missing_messages.append(f"from {e}")
+                    statament_from = []
+
                 # Display the title
                 if title:
                     st.write(f"Title: **{title}**")
 
                 # Generate highlighted text
                 highlighted_text = highlight_statement(
-                    "OS",
+                    f"OS{row}",
                     doc_id,
-                    element_id,
+                    statement_id,
                     classification_type,
                     classification_subtype,
                     terms,
@@ -408,9 +423,9 @@ if event.selection:
                     st.write("**Rule**")
 
                     highlighted_text = highlight_statement(
-                        "TS",
+                        f"TS{row}",
                         doc_id,
-                        element_id,
+                        statement_id,
                         classification_type,
                         classification_subtype,
                         terms,
@@ -419,7 +434,8 @@ if event.selection:
                         sources,
                     )
                     st.markdown(highlighted_text, unsafe_allow_html=True)
-
+                if statament_from:
+                    st.write(f"**From**: {statament_from}")
                 # display the terms and verb symbols
                 terms_list = [
                     dict(t) for t in terms
@@ -444,11 +460,12 @@ if event.selection:
                                 witt_taxonomy_dialog(classification_subtype)
                             st.write(f"Confidence: {classification_subtype_confidence}")
                             st.write(f"Explanation: {classification_subtype_explanation}")
-                    with col2:
                         if template_ids:
-                            st.write("**Transformation**")
                             st.write(f"Template(s): \n\n {list_to_markdown(template_ids, ordered=False)}")
                             #st.slider(value=transformation_confidence, min_value=0.00, max_value=1.00, label="Confidence", help="Confidence in the transformation", key=f"transformation_confidence_{row}")
+                    with col2:
+                        if transformation_confidence:
+                            st.write("**Transformation**")
                             st.write(f"Confidence: {transformation_confidence}")
                             st.write(f"Reason: {transformation_reason}")
                         if transformation_semscore:
