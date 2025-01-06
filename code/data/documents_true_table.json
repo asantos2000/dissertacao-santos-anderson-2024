@@ -1,4 +1,25 @@
 {
+    "§ 275.0-2|section": {
+        "id": "§ 275.0-2",
+        "type": "section",
+        "content": "§ 275.0-2 General procedures for serving non-residents.\n(a) General procedures for serving process, pleadings, or other papers on non-resident investment advisers, general partners and managing agents.  Under Forms ADV and ADV-NR [17 CFR 279.1 and 279.4], a person may serve process, pleadings, or other papers on a non-resident investment adviser, or on a non-resident general partner or non-resident managing agent of an investment adviser by serving any or all of its appointed agents:\n  (1) A person may serve a non-resident investment adviser, non-resident general partner, or non-resident managing agent by furnishing the Commission with one copy of the process, pleadings, or papers, for each named party, and one additional copy for the Commission's records.\n  (2) If process, pleadings, or other papers are served on the Commission as described in this section, the Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.\n  (3) If the Secretary certifies that the Commission was served with process, pleadings, or other papers pursuant to paragraph (a)(1) of this section and forwarded these documents to a named party pursuant to paragraph (a)(2) of this section, this certification constitutes evidence of service upon that party.\n(b) Definitions.  For purposes of this section:\n  (1) Managing agent  means any person, including a trustee, who directs or manages, or who participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.\n  (2) Non-resident  means:\n    (i) An individual who resides in any place not subject to the jurisdiction of the United States;\n    (ii) A corporation that is incorporated in or that has its principal office and place of business in any place not subject to the jurisdiction of the United States; and\n    (iii) A partnership or other unincorporated organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.\n  (3) Principal office and place of business  has the same meaning as in § 275.203A-3(c) of this chapter.",
+        "elapsed_times": null,
+        "completions": null
+    },
+    "§ 275.0-5|section": {
+        "id": "§ 275.0-5",
+        "type": "section",
+        "content": "§ 275.0-5 Procedure with respect to applications and other matters.\nThe procedure hereinbelow set forth will be followed with respect to any proceeding initiated by the filing of an application, or upon the Commission's own motion, pursuant to any section of the Act or any rule or regulation thereunder, unless in the particular case a different procedure is provided:\n(a) Notice of the initiation of the proceeding will be published in the Federal Register and will indicate the earliest date upon which an order disposing of the matter may be entered. The notice will also provide that any interested person may, within the period of time specified therein, submit to the Commission in writing any facts bearing upon the desirability of a hearing on the matter and may request that a hearing be held, stating his reasons therefor and the nature of his interest in the matter.\n(b) An order disposing of the matter will be issued as of course following the expiration of the period of time referred to in paragraph (a) of this section, unless the Commission thereafter orders a hearing on the matter.\n(c) The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors,\n  (1) upon the request of any interested person or\n  (2) upon its own motion.\n(d) Definition of application. For purposes of this rule, an \u201capplication\u201d means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.",
+        "elapsed_times": null,
+        "completions": null
+    },
+    "§ 275.0-7|section": {
+        "id": "§ 275.0-7",
+        "type": "section",
+        "content": "§ 275.0-7 Small entities under the Investment Advisers Act for purposes of the Regulatory Flexibility Act.\n(a) For purposes of Commission rulemaking in accordance with the provisions of Chapter Six of the Administrative Procedure Act (5 U.S.C. 601 et seq.) and unless otherwise defined for purposes of a particular rulemaking proceeding, the term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that:\n  (1) Has assets under management, as defined under Section 203A(a)(3) of the Act (15 U.S.C. 80b-3a(a)(2)) and reported on its annual updating amendment to Form ADV (17 CFR 279.1), of less than $25 million, or such higher amount as the Commission may by rule deem appropriate under Section 203A(a)(1)(A) of the Act (15 U.S.C. 80b-3a(a)(1)(A));\n  (2) Did not have total assets of $5 million or more on the last day of the most recent fiscal year; and\n  (3) Does not control, is not controlled by, and is not under common control with another investment adviser that has assets under management of $25 million or more (or such higher amount as the Commission may deem appropriate), or any person (other than a natural person) that had total assets of $5 million or more on the last day of the most recent fiscal year.\n(b) For purposes of this section:\n  (1) Control  means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.\n    (i) A person is presumed to control a corporation if the person:\n      (A) Directly or indirectly has the right to vote 25 percent or more of a class of the corporation's voting securities; or\n      (B) Has the power to sell or direct the sale of 25 percent or more of a class of the corporation's voting securities.\n    (ii) A person is presumed to control a partnership if the person has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the partnership.\n    (iii) A person is presumed to control a limited liability company (LLC) if the person:\n      (A) Directly or indirectly has the right to vote 25 percent or more of a class of the interests of the LLC;\n      (B) Has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the LLC; or\n      (C) Is an elected manager of the LLC.\n    (iv) A person is presumed to control a trust if the person is a trustee or managing agent of the trust.\n  (2) Total assets  means the total assets as shown on the balance sheet of the investment adviser or other person described above under paragraph (a)(3) of this section, or the balance sheet of the investment adviser or such other person with its subsidiaries consolidated, whichever is larger.",
+        "elapsed_times": null,
+        "completions": null
+    },
     "§ 275.0-2_P1|true_table": {
         "id": "§ 275.0-2_P1",
         "type": "true_table",
@@ -1384,7 +1405,7 @@
             {
                 "doc_id": "§ 275.0-2",
                 "statement_id": "3",
-                "statement": "The Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.",
+                "statement": "If process, pleadings, or other papers are served on the Commission as described in this section, the Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.",
                 "sources": [
                     "(a)(2)"
                 ],
@@ -1444,7 +1465,8 @@
             {
                 "doc_id": "§ 275.0-2",
                 "statement_id": "3",
-                "statement": "The Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.",
+                "statement_title": "Forwarding documents by the Secretary",
+                "statement": "If process, pleadings, or other papers are served on the Commission as described in this section, the Secretary of the Commission (Secretary) will promptly forward a copy to each named party by registered or certified mail at that party's last address filed with the Commission.",
                 "sources": [
                     "(a)(2)"
                 ],
@@ -1456,6 +1478,7 @@
             {
                 "doc_id": "§ 275.0-2",
                 "statement_id": "4",
+                "statement_title": "Certification of service by the Secretary",
                 "statement": "If the Secretary certifies that the Commission was served with process, pleadings, or other papers pursuant to paragraph (a)(1) of this section and forwarded these documents to a named party pursuant to paragraph (a)(2) of this section, this certification constitutes evidence of service upon that party.",
                 "sources": [
                     "(a)(3)"
@@ -1468,6 +1491,7 @@
             {
                 "doc_id": "§ 275.0-5",
                 "statement_id": "2",
+                "statement_title": "Submission of facts and hearing request",
                 "statement": "Any interested person may, within the period of time specified therein, submit to the Commission in writing any facts bearing upon the desirability of a hearing on the matter and may request that a hearing be held, stating his reasons therefor and the nature of his interest in the matter.",
                 "sources": [
                     "(a)"
@@ -1480,6 +1504,7 @@
             {
                 "doc_id": "§ 275.0-5",
                 "statement_id": "1",
+                "statement_title": "Notice of proceeding initiation",
                 "statement": "Notice of the initiation of the proceeding will be published in the Federal Register and will indicate the earliest date upon which an order disposing of the matter may be entered.",
                 "sources": [
                     "(a)"
@@ -1492,6 +1517,7 @@
             {
                 "doc_id": "§ 275.0-5",
                 "statement_id": "3",
+                "statement_title": "Issuance of order disposing of the matter",
                 "statement": "An order disposing of the matter will be issued as of course following the expiration of the period of time referred to in paragraph (a) of this section, unless the Commission thereafter orders a hearing on the matter.",
                 "sources": [
                     "(b)"
@@ -1504,6 +1530,7 @@
             {
                 "doc_id": "§ 275.0-5",
                 "statement_id": "4",
+                "statement_title": "Commission orders a hearing",
                 "statement": "The Commission will order a hearing on the matter, if it appears that a hearing is necessary or appropriate in the public interest or for the protection of investors, upon the request of any interested person or upon its own motion.",
                 "sources": [
                     "(c)"
@@ -1945,6 +1972,7 @@
             {
                 "doc_id": "§ 275.0-2",
                 "statement_id": "1",
+                "statement_title": "Service of process on non-resident entities",
                 "statement": "A person may serve process, pleadings, or other papers on a non-resident investment adviser, or on a non-resident general partner or non-resident managing agent of an investment adviser by serving any or all of its appointed agents.",
                 "sources": [
                     "(a)"
@@ -1957,6 +1985,7 @@
             {
                 "doc_id": "§ 275.0-2",
                 "statement_id": "2",
+                "statement_title": "Furnishing documents to the Commission",
                 "statement": "A person may serve a non-resident investment adviser, non-resident general partner, or non-resident managing agent by furnishing the Commission with one copy of the process, pleadings, or papers, for each named party, and one additional copy for the Commission's records.",
                 "sources": [
                     "(a)(1)"
@@ -1969,6 +1998,7 @@
             {
                 "doc_id": "§ 275.0-2",
                 "statement_id": "5",
+                "statement_title": "Definition of Managing agent",
                 "statement": "Managing agent means any person, including a trustee, who directs or manages, or who participates in directing or managing, the affairs of any unincorporated organization or association other than a partnership.",
                 "sources": [
                     "(b)(1)"
@@ -1981,6 +2011,7 @@
             {
                 "doc_id": "§ 275.0-2",
                 "statement_id": "6",
+                "statement_title": "Definition of Non-resident",
                 "statement": "Non-resident means an individual who resides in any place not subject to the jurisdiction of the United States; a corporation that is incorporated in or that has its principal office and place of business in any place not subject to the jurisdiction of the United States; and a partnership or other unincorporated organization or association that has its principal office and place of business in any place not subject to the jurisdiction of the United States.",
                 "sources": [
                     "(b)(2)"
@@ -1993,6 +2024,7 @@
             {
                 "doc_id": "§ 275.0-2",
                 "statement_id": "7",
+                "statement_title": "Definition of Principal office and place of business",
                 "statement": "Principal office and place of business has the same meaning as in § 275.203A-3(c) of this chapter.",
                 "sources": [
                     "(b)(3)"
@@ -2005,6 +2037,7 @@
             {
                 "doc_id": "§ 275.0-5",
                 "statement_id": "5",
+                "statement_title": "Definition of application",
                 "statement": "For purposes of this rule, an application means any application for an order of the Commission under the Act other than an application for registration as an investment adviser.",
                 "sources": [
                     "(d)"
@@ -2017,6 +2050,7 @@
             {
                 "doc_id": "§ 275.0-7",
                 "statement_id": "1",
+                "statement_title": "Definition of small business or small organization",
                 "statement": "The term small business or small organization for purposes of the Investment Advisers Act of 1940 shall mean an investment adviser that has assets under management of less than $25 million, or such higher amount as the Commission may by rule deem appropriate.",
                 "sources": [
                     "(a)"
@@ -2029,6 +2063,7 @@
             {
                 "doc_id": "§ 275.0-7",
                 "statement_id": "2",
+                "statement_title": "Assets under management criterion",
                 "statement": "An investment adviser has assets under management, as defined under Section 203A(a)(3) of the Act and reported on its annual updating amendment to Form ADV, of less than $25 million, or such higher amount as the Commission may by rule deem appropriate.",
                 "sources": [
                     "(a)(1)"
@@ -2041,6 +2076,7 @@
             {
                 "doc_id": "§ 275.0-7",
                 "statement_id": "3",
+                "statement_title": "Total assets criterion",
                 "statement": "An investment adviser did not have total assets of $5 million or more on the last day of the most recent fiscal year.",
                 "sources": [
                     "(a)(2)"
@@ -2053,6 +2089,7 @@
             {
                 "doc_id": "§ 275.0-7",
                 "statement_id": "4",
+                "statement_title": "Control relationship criterion",
                 "statement": "An investment adviser does not control, is not controlled by, and is not under common control with another investment adviser that has assets under management of $25 million or more, or any person (other than a natural person) that had total assets of $5 million or more on the last day of the most recent fiscal year.",
                 "sources": [
                     "(a)(3)"
@@ -2065,6 +2102,7 @@
             {
                 "doc_id": "§ 275.0-7",
                 "statement_id": "5",
+                "statement_title": "Definition of control",
                 "statement": "Control means the power, directly or indirectly, to direct the management or policies of a person, whether through ownership of securities, by contract, or otherwise.",
                 "sources": [
                     "(b)(1)"
@@ -2077,6 +2115,7 @@
             {
                 "doc_id": "§ 275.0-7",
                 "statement_id": "6",
+                "statement_title": "Presumption of control over a corporation",
                 "statement": "A person is presumed to control a corporation if the person directly or indirectly has the right to vote 25 percent or more of a class of the corporation's voting securities.",
                 "sources": [
                     "(b)(1)(i)(A)"
@@ -2089,6 +2128,7 @@
             {
                 "doc_id": "§ 275.0-7",
                 "statement_id": "7",
+                "statement_title": "Presumption of control over a partnership",
                 "statement": "A person is presumed to control a partnership if the person has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the partnership.",
                 "sources": [
                     "(b)(1)(ii)"
@@ -2101,6 +2141,7 @@
             {
                 "doc_id": "§ 275.0-7",
                 "statement_id": "8",
+                "statement_title": "Presumption of control over an LLC",
                 "statement": "A person is presumed to control a limited liability company (LLC) if the person directly or indirectly has the right to vote 25 percent or more of a class of the interests of the LLC, has the right to receive upon dissolution, or has contributed, 25 percent or more of the capital of the LLC, or is an elected manager of the LLC.",
                 "sources": [
                     "(b)(1)(iii)"
@@ -2113,6 +2154,7 @@
             {
                 "doc_id": "§ 275.0-7",
                 "statement_id": "9",
+                "statement_title": "Presumption of control over a trust",
                 "statement": "A person is presumed to control a trust if the person is a trustee or managing agent of the trust.",
                 "sources": [
                     "(b)(1)(iv)"
@@ -2125,6 +2167,7 @@
             {
                 "doc_id": "§ 275.0-7",
                 "statement_id": "10",
+                "statement_title": "Definition of total assets",
                 "statement": "Total assets means the total assets as shown on the balance sheet of the investment adviser or other person described above under paragraph (a)(3) of this section, or the balance sheet of the investment adviser or such other person with its subsidiaries consolidated, whichever is larger.",
                 "sources": [
                     "(b)(2)"

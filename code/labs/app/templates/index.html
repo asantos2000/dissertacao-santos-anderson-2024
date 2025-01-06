@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document Viewer</title>
+  <link rel="stylesheet" href="/static/styles.css"/>
+  <style>
+    .tool-header {
+      background-color: #5c5c5c;
+      color: #ffffff;
+      font-weight: bold;
+      padding: 10px;
+      margin: 0;
+      text-transform: uppercase;
+      border-bottom: 1px solid #444;
+    }
+
+    /* For side-by-side comparison blocks */
+    .comparison-block {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      border: 1px solid #ccc;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #f9f9f9;
+    }
+    .comparison-block > div {
+      flex: 1;
+      min-width: 250px;
+      border: 1px solid #ddd;
+      background: #fff;
+      padding: 10px;
+    }
+    .comparison-block .title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Tools</h2>
+      <ul>
+        <li><a href="#" id="tool-elements" onclick="selectTool('elements')">Elements extraction and classification</a></li>
+        <li><a href="#" id="tool-other" onclick="selectTool('other')">Other Tool</a></li>
+      </ul>
+      <hr/>
+      <label>Select one or more files:</label>
+      <select id="file-selector" multiple style="width:100%; height:120px;"></select>
+    </aside>
+
+    <div class="main-content">
+      <nav class="tabs">
+        <ul id="tab-list"></ul>
+      </nav>
+      <main class="content">
+        <div id="section-content"></div>
+
+        <div id="tool-content" style="display: none;">
+          <div class="tool-header" id="tool-header" style="display: none;"></div>
+          <div id="tool-body"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>

@@ -95,7 +95,15 @@ class RuleInformationProvider:
         list
             A list of sections that match the given title.
         """
-        return [section for section in data if section.get('section_title') == title]
+        #return [section for section in data if section.get('section_title') == title]
+        # Improve the filtering to include subsections
+        results = []
+        for section in data:
+            if section.get('section_title') == title:
+                results.append(section)
+            if 'subsections' in section:
+                results.extend(self._filter_sections_by_title(section['subsections'], title))
+        return results
 
     def _convert_to_markdown(self, filtered_data, return_forms):
         """
