@@ -14,7 +14,7 @@ SELECT
 	CLASS_P2.statement_classification_subtype,
 	CLASS_P2.statement_classification_explanation as statement_classification_subtype_explanation,
 	CLASS_P2.statement_classification_confidence as statement_classification_subtype_confidence,
-	CLASS_P2.statement_classification_templates_ids,
+	CLASS_P2.statement_classification_templates_ids as transformation_template_ids,
 	[] as terms,
 	[] as verb_symbols,
 	'Terms' as source
@@ -36,7 +36,7 @@ SELECT
 	CLASS_P2.statement_classification_subtype,
 	CLASS_P2.statement_classification_explanation as statement_classification_subtype_explanation,
 	CLASS_P2.statement_classification_confidence as statement_classification_subtype_confidence,
-	CLASS_P2.statement_classification_templates_ids,
+	CLASS_P2.statement_classification_templates_ids as transformation_template_ids,
 	[] as terms,
 	[] as verb_symbols,
 	'Names' as source
@@ -58,7 +58,7 @@ SELECT
 	CLASS_P2.statement_classification_subtype,
 	CLASS_P2.statement_classification_explanation as statement_classification_subtype_explanation,
 	CLASS_P2.statement_classification_confidence as statement_classification_subtype_confidence,
-	CLASS_P2.statement_classification_templates_ids,
+	CLASS_P2.statement_classification_templates_ids as transformation_template_ids,
 	CLASS_P2.terms,
 	CLASS_P2.verb_symbols,
 	'Fact_Types' as source
@@ -80,7 +80,7 @@ SELECT
 	CLASS_P2.statement_classification_subtype,
 	CLASS_P2.statement_classification_explanation as statement_classification_subtype_explanation,
 	CLASS_P2.statement_classification_confidence as statement_classification_subtype_confidence,
-	CLASS_P2.statement_classification_templates_ids,
+	CLASS_P2.statement_classification_templates_ids as transformation_template_ids,
 	CLASS_P2.terms,
 	CLASS_P2.verb_symbols,
 	'Operative_Rules' as source
