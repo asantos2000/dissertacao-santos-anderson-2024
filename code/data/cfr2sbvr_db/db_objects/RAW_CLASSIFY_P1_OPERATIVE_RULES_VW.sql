@@ -16,20 +16,37 @@ SELECT
 	EXTRACT.verb_symbols
 FROM
 	(
-	SELECT
-		id,
-		file_source AS "checkpoint",
-		"content".doc_id,
-		"content".statement_id,
-		"content".statement_title,
-		"content".statement_text,
-		"content".statement_sources,
-		(unnest("content".classification))."type" AS statement_classification_type,
-		(unnest("content".classification)).explanation AS statement_classification_explanation,
-		(unnest("content".classification)).confidence AS statement_classification_confidence,
-		created_at
-	FROM
-		main.RAW_CLASSIFY_P1_OPERATIVE_RULES) AS CLASS
+	WITH expanded AS (
+SELECT
+	t.id,
+	t.file_source AS "checkpoint",
+	t.content.doc_id,
+	t.content.statement_id,
+	t.content.statement_title,
+	t.content.statement_text,
+	t.content.statement_sources,
+	t.created_at,
+	c.item ->> 'type' AS statement_classification_type,
+	c.item ->> 'explanation' AS statement_classification_explanation,
+	(c.item ->> 'confidence')::DOUBLE AS statement_classification_confidence
+FROM
+	main.RAW_CLASSIFY_P1_OPERATIVE_RULES t,
+	UNNEST(t.content.classification) c(item) ),
+ranked_classifications AS (
+SELECT
+	*,
+	ROW_NUMBER() OVER ( PARTITION BY doc_id,
+	statement_id, checkpoint
+ORDER BY
+	statement_classification_confidence DESC ) AS rn
+FROM
+	expanded )
+SELECT
+	*
+FROM
+	ranked_classifications
+WHERE
+	rn = 1) AS CLASS
 LEFT JOIN main.RAW_SECTION_EXTRACTED_ELEMENTS_VW as EXTRACT
   ON
 	(CLASS.statement_id::STRING = EXTRACT.statement_id::STRING)
