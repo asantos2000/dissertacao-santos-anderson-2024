@@ -171,7 +171,7 @@ class RuleInformationProvider:
         for template_id in templates:
             template = self.template_dict.get(template_id, None)
             if template:
-                markdown += f"**Template ID**: {template_id}\n"
+                markdown += f"**Template ID**: {template_id}\n\n"
                 if 'form' in template:
                     markdown += f"**Form**:\n```form\n{template['form']}\n```\n\n"
                 markdown += f"**Template Explanation**: {template['explanation']}\n\n"
