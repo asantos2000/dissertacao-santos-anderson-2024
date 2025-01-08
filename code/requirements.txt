@@ -45,6 +45,7 @@ inflect
 pyyaml
 jsonref
 jellyfish
+python-dotenv
 
 # Jupyter environment
 jupyterlab
