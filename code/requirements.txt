@@ -46,6 +46,7 @@ pyyaml
 jsonref
 jellyfish
 python-dotenv
+natsort
 
 # Jupyter environment
 jupyterlab
