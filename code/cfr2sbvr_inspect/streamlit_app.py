@@ -464,8 +464,8 @@ if event.selection:
                             if st.button(f"type: {classification_type}", key=f"classification_type_{row}", type="tertiary", icon=":material/info:", help="Click to see more information about the classification type"):
                                 if classification_type == "Fact Type":
                                     classification_type = "Definitional rules"
-                                if classification_type == "Operational rules":
-                                    classification_type = "Activity rules"
+                                if classification_type == "Operative Rule":
+                                    classification_type = "Operative Rules"
                                 witt_taxonomy_dialog(classification_type)
                             st.write(f"Confidence: {classification_type_confidence}")
                             st.write(f"Explanation: {classification_type_explanation}")
