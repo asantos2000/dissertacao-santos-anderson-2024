@@ -46,7 +46,8 @@ SELECT
     confidence := 0.0,
     reason := NULL,
     isLocalScope_confidence := 0.0,
-    isLocalScope_reason := NULL)) AS terms
+    isLocalScope_reason := NULL)) AS terms,
+    P1.classification.REPLACE(' ', '_') as source
 FROM P1
 LEFT JOIN 
 	(select 
@@ -123,7 +124,8 @@ SELECT
     confidence := term_confidence,
     reason := term_reason,
     isLocalScope_confidence := isLocalScope_confidence,
-    isLocalScope_reason := isLocalScope_reason)) AS terms
+    isLocalScope_reason := isLocalScope_reason)) AS terms,
+    P1.classification.REPLACE(' ', '_') as source
 FROM P1
 LEFT JOIN 
 	(select 
