@@ -465,7 +465,7 @@ if event.selection:
                                 if classification_type == "Fact Type":
                                     classification_type = "Definitional rules"
                                 if classification_type == "Operative Rule":
-                                    classification_type = "Operative Rules"
+                                    classification_type = "Operative rules"
                                 witt_taxonomy_dialog(classification_type)
                             st.write(f"Confidence: {classification_type_confidence}")
                             st.write(f"Explanation: {classification_type_explanation}")
