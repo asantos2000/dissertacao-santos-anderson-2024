@@ -208,7 +208,17 @@ st.title("CFR2SBVR Inspect")
 st.sidebar.title("Checkpoints")
 
 # Connect to the database
-conn = duckdb.connect("code/cfr2sbvr_inspect/data/database_v3.db", read_only=True)
+LOCAL_DB = False
+DEFAULT_DATA_DIR = "code/cfr2sbvr_inspect/data"
+
+if LOCAL_DB:
+    conn = duckdb.connect(f'{DEFAULT_DATA_DIR}/cfr2sbvr_db/database_v4.db', read_only=True)
+else:
+    import os
+    from dotenv import load_dotenv
+    load_dotenv()
+    mother_duck_token=os.getenv("MOTHER_DUCK_TOKEN")
+    conn = duckdb.connect(f'md:cfr2sbvr_db?motherduck_token={mother_duck_token}')
 # conn.close()
 
 # Sidebar selectbox to choose a process
