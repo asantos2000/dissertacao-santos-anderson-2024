@@ -11,3 +11,4 @@ lib
 __pycache__
 logs
 code/src/objs.pkl
+code/data/temp

@@ -6,4 +6,5 @@ rdflib
 networkx
 matplotlib
 jellyfish
+python-dotenv
 pyyaml
