@@ -8,3 +8,4 @@ matplotlib
 jellyfish
 python-dotenv
 pyyaml
+natsort
