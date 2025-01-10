@@ -1,20 +1,34 @@
 import re
 from pathlib import Path
 import html
+import datetime as dt
+import os
+from itertools import combinations
 
 import duckdb
 import jellyfish
 import numpy as np
 import pandas as pd
 import streamlit as st
+from dotenv import load_dotenv
 
-# only for labs
-import sys
-sys.path.append(r'../src')
+
+# # only for labs
+# import sys
+# sys.path.append(r'../src')
 
 import rules_taxonomy_provider.main as rules_taxonomy_provider
 from rules_taxonomy_provider.main import RuleInformationProvider
 
+
+# Constants
+QUALITY_THRESHOLD = 0.8
+LOCAL_DB = False # Use cloud database - False or local database - True
+DEFAULT_DATA_DIR = "code/cfr2sbvr_inspect/data"
+
+#
+# Functions
+#
 
 def disconnect_db():
     st.write("called")
@@ -43,8 +57,16 @@ def load_data(table, checkpoints, doc_ids, process_selected):
     ;
     """
 
+    # data_query = f"""
+    # SELECT *
+    # FROM {table}
+    # WHERE 1 = 1
+    # {where_clause}
+    # ORDER BY *
+    # ;
+    # """
+
     # print(data_query)
-    st.write(f"Content from: {table}")
     return conn.sql(query=data_query).fetchdf()
 
 
@@ -203,19 +225,14 @@ def list_to_markdown(list, ordered=True):
 
 st.set_page_config(page_title="CFR2SBVR Inspect", page_icon="🏛️", layout="wide")
 
-st.title("CFR2SBVR Inspect")
+st.sidebar.title(":material/assured_workload: CFR2SBVR Inspect")
 
-st.sidebar.title("Checkpoints")
+st.sidebar.header("Checkpoints", divider='red')
 
 # Connect to the database
-LOCAL_DB = False
-DEFAULT_DATA_DIR = "code/cfr2sbvr_inspect/data"
-
 if LOCAL_DB:
-    conn = duckdb.connect(f'{DEFAULT_DATA_DIR}/cfr2sbvr_db/database_v4.db', read_only=True)
+    conn = duckdb.connect(f'{DEFAULT_DATA_DIR}/database_v4.db', read_only=True)
 else:
-    import os
-    from dotenv import load_dotenv
     load_dotenv()
     mother_duck_token=os.getenv("MOTHER_DUCK_TOKEN")
     conn = duckdb.connect(f'md:cfr2sbvr_db?motherduck_token={mother_duck_token}')
@@ -227,6 +244,13 @@ process_dict = {
     "Classification": "classification",
     "Transformation": "transformation",
     "Validation": "validation",
+}
+
+process_icon = {
+    "Extraction": ":material/colorize:",
+    "Classification": ":material/category:",
+    "Transformation": ":material/move_down:",
+    "Validation": ":material/fact_check:",
 }
 
 process_selected = st.sidebar.selectbox("Choose a process", process_dict.keys())
@@ -243,7 +267,7 @@ SELECT DISTINCT TABLE_NAME,
 FROM CHECKPOINT_METADATA
 WHERE doc_source in ('both')
 AND process='{process_dict[process_selected]}'
-ORDER BY 1;
+ORDER BY 1 DESC;
 """
 
 all_tables = conn.sql(query).fetchall()
@@ -255,6 +279,7 @@ table_selected = st.sidebar.selectbox("Choose a table", table_names)
 
 table_markdown = "\n".join([f"- {table}" for table in table_names])
 
+st.title(f"{process_icon[process_selected]} {process_selected} process")
 # Display the tables available for the selected process
 st.markdown(
     f"""
@@ -271,8 +296,7 @@ checkpoints = conn.sql(f"select distinct checkpoint from {table_selected} order 
 # Sidebar selectbox to choose a file
 checkpoints_selected = st.sidebar.multiselect("Choose checkpoints", checkpoints)
 
-st.write("Selected checkpoints:")
-st.write(checkpoints_selected)
+st.header("Dataset", divider='red')
 
 #
 # Load the selected data
@@ -289,232 +313,257 @@ event = st.dataframe(
     selection_mode=["multi-row"],
 )
 
-st.write(f"Load {len(data_df)} line(s)")
+st.sidebar.header("Dataset info", divider='red')
+st.sidebar.write(f"Content from: {table_selected}")
+st.sidebar.write(f"Loaded {len(data_df)} line(s)")
 
-st.subheader("Compare", divider=True)
+st.header("Evaluate", divider='rainbow')
 
-if event.selection:
-    try:
-        columns = st.columns(len(event.selection["rows"]))
+comp_tab, feedback_tab = st.tabs(["Compare", "Feedback"])
 
-        # Loop through the rows and assign each row to a column
-        for col, row in zip(columns, event.selection["rows"]):
-            with col:
-                # Extract values
-                doc_id = data_df.at[row, "doc_id"]
-                title = data_df.at[row, "statement_title"]
-                statement = data_df.at[row, "statement_text"]
-                statement_id = data_df.at[row, "statement_id"]
-                checkpoint = data_df.at[row, "checkpoint"]
-                sources = data_df.at[row, "statement_sources"]
+with comp_tab:
+    if event.selection:
+        try:
+            columns = st.columns(len(event.selection["rows"]))
 
-                st.write("#### Statement")
-                # Display selected row number
-                st.write(f"Selected checkpoint '{checkpoint}', row: {row}")
+            # Loop through the rows and assign each row to a column
+            for col, row in zip(columns, event.selection["rows"]):
+                with col:
+                    # Extract values
+                    doc_id = data_df.at[row, "doc_id"]
+                    title = data_df.at[row, "statement_title"]
+                    statement = data_df.at[row, "statement_text"]
+                    statement_id = data_df.at[row, "statement_id"]
+                    checkpoint = data_df.at[row, "checkpoint"]
+                    sources = data_df.at[row, "statement_sources"]
 
-                # Display frozen section
-                if doc_id:
-                    with st.expander(f"Section {doc_id} (frozen)"):
-                        display_section(doc_id)
-                
-                # Try get values dependent of the process
-                missing_messages = []
-                try:
-                    transformed_statement = data_df.at[row, "transformed"]
-                except Exception as e:
-                    missing_messages.append(f"{e}")
-                    transformed_statement = None
-                try:
-                    classification_type = data_df.at[
-                        row, "statement_classification_type"
-                    ]
-                except Exception as e:
-                    missing_messages.append(f"{e}")
-                    classification_type = ""
-                # statement_classification_type_confidence
-                try:
-                    classification_type_confidence = data_df.at[
-                        row, "statement_classification_type_confidence"
-                    ]
-                    classification_type_explanation = data_df.at[
-                        row, "statement_classification_type_explanation"
-                    ]
-                except Exception as e:
-                    missing_messages.append(f"{e}")
-                    classification_type_confidence = None
-                    classification_type_explanation = None
-                # statement_classification_subtype
-                try:
-                    classification_subtype = data_df.at[
-                        row, "statement_classification_subtype"
-                    ]
-                    classification_subtype_confidence = data_df.at[
-                        row, "statement_classification_subtype_confidence"
-                    ]
-                    classification_subtype_explanation = data_df.at[
-                        row, "statement_classification_subtype_explanation"
-                    ]
-                except Exception as e:
-                    missing_messages.append(f"{e}")
-                    classification_subtype = ""
-                    classification_subtype_confidence = None
-                    classification_subtype_explanation = None
-                # terms
-                try:
-                    terms = data_df.at[row, "terms"]
-                except Exception as e:
-                    missing_messages.append(f"{e}")
-                    terms = []
-                # verb_symbols
-                try:
-                    verb_symbols = data_df.at[row, "verb_symbols"]
-                except Exception as e:
-                    missing_messages.append(f"{e}")
-                    verb_symbols = []
-                # transformation_template_ids
-                try:
-                    template_ids = data_df.at[row, "transformation_template_ids"]
-                except Exception as e:
-                    missing_messages.append(f"{e}")
-                    template_ids = []
-                # transformation_confidence
-                try:
-                    transformation_confidence = data_df.at[row, "transformation_confidence"]
-                    transformation_reason = data_df.at[row, "transformation_reason"]
-                except Exception as e:
-                    missing_messages.append(f"{e}")
-                    transformation_confidence = None
-                    transformation_reason = None
-                # transformation scores
-                try:
-                    transformation_semscore = data_df.at[row, "semscore"]
-                    transformation_similarity_score = data_df.at[row, "similarity_score"]
-                    transformation_similarity_score_confidence = data_df.at[row, "similarity_score_confidence"]
-                    transformation_findings = data_df.at[row, "findings"]
-                    transformation_accuracy = data_df.at[row, "transformation_accuracy"]
-                    transformation_grammar_syntax_accuracy = data_df.at[row, "grammar_syntax_accuracy"]
-                except Exception as e:
-                    missing_messages.append(f"{e}")
-                    transformation_semscore = None
-                    transformation_similarity_score = None
-                    transformation_similarity_score_confidence = None
-                    transformation_findings = None
-                    transformation_accuracy = None
-                    transformation_grammar_sintaxe_accuracy = None
+                    st.subheader("Statement")
+                    # Display selected row number
+                    st.write(f"Selected checkpoint '{checkpoint}', row: {row}")
 
-                # source of statement
-                try:
-                    statament_from = data_df.at[row, "source"]
-                except Exception as e:
-                    missing_messages.append(f"from {e}")
-                    statament_from = []
+                    # Display frozen section
+                    if doc_id:
+                        with st.expander(f"Section {doc_id} (frozen)"):
+                            display_section(doc_id)
+                    
+                    # Try get values dependent of the process
+                    missing_messages = []
+                    try:
+                        transformed_statement = data_df.at[row, "transformed"]
+                    except Exception as e:
+                        missing_messages.append(f"{e}")
+                        transformed_statement = None
+                    try:
+                        classification_type = data_df.at[
+                            row, "statement_classification_type"
+                        ]
+                    except Exception as e:
+                        missing_messages.append(f"{e}")
+                        classification_type = ""
+                    # statement_classification_type_confidence
+                    try:
+                        classification_type_confidence = data_df.at[
+                            row, "statement_classification_type_confidence"
+                        ]
+                        classification_type_explanation = data_df.at[
+                            row, "statement_classification_type_explanation"
+                        ]
+                    except Exception as e:
+                        missing_messages.append(f"{e}")
+                        classification_type_confidence = None
+                        classification_type_explanation = None
+                    # statement_classification_subtype
+                    try:
+                        classification_subtype = data_df.at[
+                            row, "statement_classification_subtype"
+                        ]
+                        classification_subtype_confidence = data_df.at[
+                            row, "statement_classification_subtype_confidence"
+                        ]
+                        classification_subtype_explanation = data_df.at[
+                            row, "statement_classification_subtype_explanation"
+                        ]
+                    except Exception as e:
+                        missing_messages.append(f"{e}")
+                        classification_subtype = ""
+                        classification_subtype_confidence = None
+                        classification_subtype_explanation = None
+                    # terms
+                    try:
+                        terms = data_df.at[row, "terms"]
+                    except Exception as e:
+                        missing_messages.append(f"{e}")
+                        terms = []
+                    # verb_symbols
+                    try:
+                        verb_symbols = data_df.at[row, "verb_symbols"]
+                    except Exception as e:
+                        missing_messages.append(f"{e}")
+                        verb_symbols = []
+                    # transformation_template_ids
+                    try:
+                        template_ids = data_df.at[row, "transformation_template_ids"]
+                    except Exception as e:
+                        missing_messages.append(f"{e}")
+                        template_ids = []
+                    # transformation_confidence
+                    try:
+                        transformation_confidence = data_df.at[row, "transformation_confidence"]
+                        transformation_reason = data_df.at[row, "transformation_reason"]
+                    except Exception as e:
+                        missing_messages.append(f"{e}")
+                        transformation_confidence = None
+                        transformation_reason = None
+                    # transformation scores
+                    try:
+                        transformation_semscore = data_df.at[row, "semscore"]
+                        transformation_similarity_score = data_df.at[row, "similarity_score"]
+                        transformation_similarity_score_confidence = data_df.at[row, "similarity_score_confidence"]
+                        transformation_findings = data_df.at[row, "findings"]
+                        transformation_accuracy = data_df.at[row, "transformation_accuracy"]
+                        transformation_grammar_syntax_accuracy = data_df.at[row, "grammar_syntax_accuracy"]
+                    except Exception as e:
+                        missing_messages.append(f"{e}")
+                        transformation_semscore = None
+                        transformation_similarity_score = None
+                        transformation_similarity_score_confidence = None
+                        transformation_findings = None
+                        transformation_accuracy = None
+                        transformation_grammar_sintaxe_accuracy = None
 
-                # Display the title
-                if title:
-                    st.write(f"Title: **{title}**")
+                    # source of statement
+                    try:
+                        statament_from = data_df.at[row, "source"]
+                    except Exception as e:
+                        missing_messages.append(f"from {e}")
+                        statament_from = []
 
-                # Generate highlighted text
-                highlighted_text = highlight_statement(
-                    f"OS{row}",
-                    doc_id,
-                    statement_id,
-                    classification_type,
-                    classification_subtype,
-                    terms,
-                    verb_symbols,
-                    statement,
-                    sources,
-                )
-                # Display the statement_text
-                st.write(highlighted_text, unsafe_allow_html=True)
+                    # Display the title
+                    if title:
+                        st.write(f"Title: **{title}**")
 
-                # Display the transformed statement
-                if transformed_statement:
-                    st.write("**Rule**")
-
+                    # Generate highlighted text
                     highlighted_text = highlight_statement(
-                        f"TS{row}",
+                        f"OS{row}",
                         doc_id,
                         statement_id,
                         classification_type,
                         classification_subtype,
                         terms,
                         verb_symbols,
-                        transformed_statement,
+                        statement,
                         sources,
                     )
-                    st.markdown(highlighted_text, unsafe_allow_html=True)
-                if statament_from:
-                    st.write(f"**From**: {statament_from}")
-                # display the terms and verb symbols
-                terms_list = [
-                    dict(t) for t in terms
-                ]  # if each item in terms is already a dict
-                verb_symbols_list = verb_symbols.tolist()
-                st.json(
-                    {"terms": terms_list, "verb_symbols": verb_symbols_list}, expanded=1
-                )
+                    # Display the statement_text
+                    st.write(highlighted_text, unsafe_allow_html=True)
 
-                # display the classification type and subtype
-                with st.expander(f"More info"):
-                    col1, col2 = st.columns(2)
-                    with col1:
-                        st.write("**Classification**")
-                        if classification_type:
-                            if st.button(f"type: {classification_type}", key=f"classification_type_{row}", type="tertiary", icon=":material/info:", help="Click to see more information about the classification type"):
-                                if classification_type == "Fact Type":
-                                    classification_type = "Definitional rules"
-                                if classification_type == "Operative Rule":
-                                    classification_type = "Operative rules"
-                                witt_taxonomy_dialog(classification_type)
-                            st.write(f"Confidence: {classification_type_confidence}")
-                            st.write(f"Explanation: {classification_type_explanation}")
-                        if classification_subtype:
-                            if st.button(f"subtype: {classification_subtype}", key=f"classification_subtype_{row}", type="tertiary", icon=":material/info:", help="Click to see more information about the classification subtype"):
-                                witt_taxonomy_dialog(classification_subtype)
-                            st.write(f"Confidence: {classification_subtype_confidence}")
-                            st.write(f"Explanation: {classification_subtype_explanation}")
-                        if template_ids:
-                            st.write(f"Template(s): \n\n {list_to_markdown(template_ids, ordered=False)}")
-                            #st.slider(value=transformation_confidence, min_value=0.00, max_value=1.00, label="Confidence", help="Confidence in the transformation", key=f"transformation_confidence_{row}")
-                    with col2:
-                        if transformation_confidence:
-                            st.write("**Transformation**")
-                            st.write(f"Confidence: {transformation_confidence}")
-                            st.write(f"Reason: {transformation_reason}")
-                        if transformation_semscore:
-                            st.write("**Validation**")
-                            #st.write(f"Semantic Score: {transformation_semscore}")
-                            st.metric(label="Semantic Score", value=round(transformation_semscore, 2), delta=round(transformation_semscore - transformation_similarity_score, 2), help="Semantic score of the transformation and the difference with the similarity score")
-                            #st.write(f"Similarity Score: {transformation_similarity_score}")
-                            st.metric(label="Similarity Score", value=round(transformation_similarity_score, 2), delta=round(transformation_similarity_score - transformation_semscore, 2), help="Similarity score of the transformation and the difference with the semantic score")
-                            st.write(f"Similarity score confidence: {transformation_similarity_score_confidence}")
-                            st.write(f"Similarity score findings: \n\n {list_to_markdown(transformation_findings)}")
-                            st.write(f"Accuracy: {transformation_accuracy}")
-                            st.write(f"Grammar/Sintax Accuracy: {transformation_grammar_syntax_accuracy}")
+                    # Display the transformed statement
+                    if transformed_statement:
+                        st.write("**Rule**")
 
-                # Display what is missing
-                if missing_messages:
-                    st.write("#### Missing")
-                    for missing_message in missing_messages:
-                        st.write(f":material/error: {missing_message}")
+                        highlighted_text = highlight_statement(
+                            f"TS{row}",
+                            doc_id,
+                            statement_id,
+                            classification_type,
+                            classification_subtype,
+                            terms,
+                            verb_symbols,
+                            transformed_statement,
+                            sources,
+                        )
+                        st.markdown(highlighted_text, unsafe_allow_html=True)
+                    if statament_from:
+                        st.write(f"**From**: {statament_from}")
+                    # display the terms and verb symbols
+                    terms_list = [
+                        dict(t) for t in terms
+                    ]  # if each item in terms is already a dict
+                    verb_symbols_list = verb_symbols.tolist()
+                    st.json(
+                        {"terms": terms_list, "verb_symbols": verb_symbols_list}, expanded=1
+                    )
 
-                # Display similarity scores
-                if len(event.selection["rows"]) > 1:
-                    st.write("#### Levenshtein Distance (LD)")
-                    for other_row in event.selection["rows"]:
-                        if other_row != row:
-                            for column in ("statement_title", "statement_text", "transformed"):
-                                try:
-                                    score = calculate_statements_similarity(
-                                        str(data_df.at[row, column]),
-                                        str(data_df.at[other_row, column]),
-                                    )
-                                    col1 = column.replace('_', '\_')
-                                    st.markdown(
-                                        f"- $LD({col1}_{{{row}}}, {col1}_{{{other_row}}} = {score:.2f}$"
-                                    )
-                                except Exception as e:
-                                    st.write(f"No {e} available")
-    except Exception as e:
-        st.write(f"Nothing to see yet, because {e}.")
+                    # display the classification type and subtype
+                    with st.expander(f"More info"):
+                        col1, col2 = st.columns(2)
+                        with col1:
+                            st.write("**Classification**")
+                            if classification_type:
+                                if st.button(f"type: {classification_type}", key=f"classification_type_{row}", type="tertiary", icon=":material/info:", help="Click to see more information about the classification type"):
+                                    if classification_type == "Fact Type":
+                                        classification_type = "Definitional rules"
+                                    if classification_type == "Operative Rule":
+                                        classification_type = "Operative rules"
+                                    witt_taxonomy_dialog(classification_type)
+                                st.write(f"Confidence: {classification_type_confidence}")
+                                st.write(f"Explanation: {classification_type_explanation}")
+                            if classification_subtype:
+                                if st.button(f"subtype: {classification_subtype}", key=f"classification_subtype_{row}", type="tertiary", icon=":material/info:", help="Click to see more information about the classification subtype"):
+                                    witt_taxonomy_dialog(classification_subtype)
+                                st.write(f"Confidence: {classification_subtype_confidence}")
+                                st.write(f"Explanation: {classification_subtype_explanation}")
+                            if template_ids:
+                                st.write(f"Template(s): \n\n {list_to_markdown(template_ids, ordered=False)}")
+                                #st.slider(value=transformation_confidence, min_value=0.00, max_value=1.00, label="Confidence", help="Confidence in the transformation", key=f"transformation_confidence_{row}")
+                        with col2:
+                            if transformation_confidence:
+                                st.write("**Transformation**")
+                                st.write(f"Confidence: {transformation_confidence}")
+                                st.write(f"Reason: {transformation_reason}")
+                            if transformation_semscore:
+                                st.write("**Validation**")
+                                #st.write(f"Semantic Score: {transformation_semscore}")
+                                st.metric(label="Semantic Score", value=round(transformation_semscore, 2), delta=round(transformation_semscore - transformation_similarity_score, 2), help="Semantic score of the transformation and the difference with the similarity score")
+                                #st.write(f"Similarity Score: {transformation_similarity_score}")
+                                st.metric(label="Similarity Score", value=round(transformation_similarity_score, 2), delta=round(transformation_similarity_score - transformation_semscore, 2), help="Similarity score of the transformation and the difference with the semantic score")
+                                st.write(f"Similarity score confidence: {transformation_similarity_score_confidence}")
+                                st.write(f"Similarity score findings: \n\n {list_to_markdown(transformation_findings)}")
+                                st.write(f"Accuracy: {transformation_accuracy}")
+                                st.write(f"Grammar/Sintax Accuracy: {transformation_grammar_syntax_accuracy}")
+
+                    # Display what is missing
+                    with st.expander(f"Missing"):
+                        if missing_messages:
+                            #st.write("#### Missing")
+                            for missing_message in missing_messages:
+                                st.write(f":material/error: {missing_message}")
+        except Exception as e:
+            st.write(f"Nothing to see yet, because {e}.")
+
+        # Display similarity scores
+        with st.expander("Levenshtein Distance (LD)"):
+            rows_selected = event.selection["rows"]
+            if len(rows_selected) > 1:
+                for column in ("statement_title", "statement_text", "transformed"):
+                    st.markdown(f"*{column}:*")
+                    for row1, row2 in combinations(rows_selected, 2):
+                        try:
+                            score = calculate_statements_similarity(
+                                str(data_df.at[row1, column]),
+                                str(data_df.at[row2, column])
+                            )
+                            if score < QUALITY_THRESHOLD:
+                                st.markdown(
+                                    f"- ({row1}, {row2}) = <span style='color:red;'>{score:.2f}</span>",
+                                    unsafe_allow_html=True
+                                )
+                            else:
+                                st.markdown(
+                                    f"- ({row1}, {row2}) = {score:.2f}"
+                                )
+                        except Exception as e:
+                            st.write(f"- No {e} available")
+
+with feedback_tab:
+    # Experimental
+    #with st.expander("Feedback"):
+    st.write("The best option is SMEs' feedback about which statements are best for keeping the meaning.")
+
+    filtered_df = data_df.iloc[event.selection["rows"], :] 
+
+    st.dataframe(filtered_df)
+
+    if st.button("Save as best option(s)"):
+        st.json(filtered_df.to_json(orient="records"))
+        st.info(f"Best option(s) saved at {dt.datetime.now()}")        
