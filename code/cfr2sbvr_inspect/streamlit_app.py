@@ -23,6 +23,8 @@ from rules_taxonomy_provider.main import RuleInformationProvider
 
 # Constants
 QUALITY_THRESHOLD = 0.8
+LOCAL_DB = False # Use cloud database - False or local database - True
+DEFAULT_DATA_DIR = "code/cfr2sbvr_inspect/data"
 
 #
 # Functions
@@ -228,9 +230,6 @@ st.sidebar.title(":material/assured_workload: CFR2SBVR Inspect")
 st.sidebar.header("Checkpoints", divider='red')
 
 # Connect to the database
-LOCAL_DB = True
-DEFAULT_DATA_DIR = "code/cfr2sbvr_inspect/data"
-
 if LOCAL_DB:
     conn = duckdb.connect(f'{DEFAULT_DATA_DIR}/database_v4.db', read_only=True)
 else:
