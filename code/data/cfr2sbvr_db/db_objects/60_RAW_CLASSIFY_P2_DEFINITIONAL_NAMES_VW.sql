@@ -34,7 +34,8 @@ LEFT JOIN main.RAW_SECTION_EXTRACTED_ELEMENTS_VW as EXTRACT
   ON
 	(CLASS.statement_id::STRING = EXTRACT.statement_id::STRING)
 	AND (CLASS.doc_id = EXTRACT.doc_id)
-	AND (CLASS."checkpoint" = EXTRACT.checkpoint)
+	--AND (CLASS."checkpoint" = EXTRACT.checkpoint)
+	AND (EXTRACT.checkpoint = 'documents_true_table.json')
 	AND list_has_all(CLASS.statement_sources,
 	EXTRACT.statement_sources)
 	AND (CLASS.statement_text = EXTRACT.statement_text)
@@ -60,8 +61,8 @@ SELECT
 	CLASS.content.sources as statement_sources,
 	CLASS.created_at,
 	CLASS.content.subtype as statement_classification_subtype,
-	'' as statement_classification_explanation,
-	0 as statement_classification_confidence,
+	'From true table' as statement_classification_explanation,
+	1 as statement_classification_confidence,
 	CLASS.content.templates_ids as statement_classification_templates_ids,
 	EXTRACT.terms as terms,
 	EXTRACT.verb_symbols as verb_symbols
@@ -71,7 +72,8 @@ LEFT JOIN main.RAW_SECTION_EXTRACTED_ELEMENTS_VW as EXTRACT
   ON
 	(CLASS.content.statement_id::STRING = EXTRACT.statement_id::STRING)
 	AND (CLASS.content.doc_id = EXTRACT.doc_id)
-	AND (CLASS.file_source = EXTRACT.checkpoint)
+	--AND (CLASS.file_source = EXTRACT.checkpoint)
+	AND (EXTRACT.checkpoint = 'documents_true_table.json')
 	AND list_has_all(CLASS.content.sources,
 	EXTRACT.statement_sources)
 	AND (CLASS.content.statement = EXTRACT.statement_text)

@@ -52,11 +52,11 @@ FROM
 		file_source as checkpoint,
 		terms.term as statement_title,
 		terms.definition as statement_text,
-		0 as confidence,
-		'' as reason,
+		1 as confidence,
+		'From true table' as reason,
 		FALSE as isLocalScope,
-		0 as local_scope_confidence,
-		'' as local_scope_reason,
+		1 as local_scope_confidence,
+		'From true table' as local_scope_reason,
 		created_at
 	FROM
 		main.RAW_SECTION_P2_EXTRACTED_NOUN_TRUE rspen 

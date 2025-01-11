@@ -14,3 +14,4 @@ code/src/objs.pkl
 code/data/temp
 .DS_Store
 swark-output
+*.log
