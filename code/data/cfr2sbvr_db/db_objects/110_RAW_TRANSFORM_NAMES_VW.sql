@@ -26,7 +26,8 @@ LEFT JOIN main.RAW_CLASSIFY_VW as CLASS
 	(TRANSF.content.statement_id::STRING = CLASS.statement_id::STRING)
 	AND (CLASS.source = 'Names')
 	AND (TRANSF.content.doc_id = CLASS.doc_id)
-	AND (TRANSF.file_source = CLASS.checkpoint)
+	--AND (TRANSF.file_source = CLASS.checkpoint)
+	AND (CLASS.checkpoint = 'documents_true_table.json')
 	AND list_has_all(TRANSF.content.statement_sources, CLASS.statement_sources)
 	AND (TRANSF.content.statement = CLASS.statement_text)
 );
