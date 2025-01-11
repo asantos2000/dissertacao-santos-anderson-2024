@@ -369,3 +369,10 @@ def extract_row_values(data_df, row):
         # statament_from = []
 
     return row_values, missing_messages
+
+
+def format_score(score, THRESHOLD):
+    if score < THRESHOLD:
+        return f'<span style="color:red;">{score:.2f}</span>'
+    else:
+        return f'{score:.2f}'

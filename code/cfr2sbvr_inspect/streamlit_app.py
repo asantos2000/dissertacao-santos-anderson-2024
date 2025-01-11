@@ -16,7 +16,8 @@ from app_modules import (
     get_doc_ids,
     get_table_names,
     get_checkpoints,
-    extract_row_values
+    extract_row_values,
+    format_score
 )
 
 
@@ -227,9 +228,12 @@ with comp_tab:
                                     witt_taxonomy_dialog(classification_type)
                                 
                                 classification_type_confidence = row_values.get("statement_classification_type_confidence")
-                                st.write(
-                                    f"Confidence: {classification_type_confidence}"
-                                )
+                                
+                                # st.write(
+                                #     f"Confidence: {classification_type_confidence}"
+                                # )
+                                st.markdown(f"Confidence: {format_score(classification_type_confidence, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
+                                
                                 classification_type_explanation = row_values.get("statement_classification_type_explanation")
                                 st.write(
                                     f"Explanation: {classification_type_explanation}"
@@ -245,9 +249,11 @@ with comp_tab:
                                     witt_taxonomy_dialog(classification_subtype)
                                 
                                 classification_subtype_confidence = row_values.get("statement_classification_subtype_confidence")
-                                st.write(
-                                    f"Confidence: {classification_subtype_confidence}"
-                                )
+                                
+                                # st.write(
+                                #     f"Confidence: {classification_subtype_confidence}"
+                                # )
+                                st.markdown(f"Confidence: {format_score(classification_subtype_confidence, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
 
                                 classification_subtype_explanation = row_values.get("statement_classification_subtype_explanation")
                                 st.write(
@@ -264,7 +270,9 @@ with comp_tab:
                             transformation_reason = row_values.get("transformation_reason")
                             if transformation_confidence:
                                 st.write("**Transformation**")
-                                st.write(f"Confidence: {transformation_confidence}")
+                                
+                                # st.write(f"Confidence: {transformation_confidence}")
+                                st.markdown(f"Confidence: {format_score(transformation_confidence, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
                                 st.write(f"Reason: {transformation_reason}")
                             
                             transformation_semscore = row_values.get("transformation_semscore")
@@ -293,9 +301,11 @@ with comp_tab:
                                 )
 
                                 transformation_similarity_score_confidence = row_values.get("transformation_similarity_score_confidence")
-                                st.write(
-                                    f"Similarity score confidence: {transformation_similarity_score_confidence}"
-                                )
+                                
+                                # st.write(
+                                #     f"Similarity score confidence: {transformation_similarity_score_confidence}"
+                                # )
+                                st.markdown(f"Confidence: {format_score(transformation_similarity_score_confidence, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
 
                                 transformation_findings = row_values.get("transformation_findings")
                                 st.write(
@@ -331,13 +341,7 @@ with comp_tab:
                                 str(data_df.at[row1, column]),
                                 str(data_df.at[row2, column]),
                             )
-                            if score < QUALITY_THRESHOLD:
-                                st.markdown(
-                                    f"- ({row1}, {row2}) = <span style='color:red;'>{score:.2f}</span>",
-                                    unsafe_allow_html=True,
-                                )
-                            else:
-                                st.markdown(f"- ({row1}, {row2}) = {score:.2f}")
+                            st.markdown(format_score(score, QUALITY_THRESHOLD))
                         except Exception as e:
                             st.write(f"- No {e} available")
 
