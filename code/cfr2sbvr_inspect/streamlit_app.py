@@ -27,7 +27,7 @@ logging.basicConfig(filename="streamlit_app.log", level=logging.INFO)
 
 # Constants
 QUALITY_THRESHOLD = 0.8
-LOCAL_DB = True  # Use cloud database - False or local database - True
+LOCAL_DB = False  # Use cloud database - False or local database - True
 DEFAULT_DATA_DIR = "code/cfr2sbvr_inspect/data"
 
 
