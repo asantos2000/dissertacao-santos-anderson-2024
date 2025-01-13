@@ -15,6 +15,9 @@ import streamlit as st
 logger = logging.getLogger(__name__)
 
 # Highlight term in the statement
+import re
+import html
+
 def highlight_statement(
     line_id,
     doc_id,
@@ -26,6 +29,60 @@ def highlight_statement(
     statement,
     sources,
 ):
+    keywords = [
+        "the",
+        "a",
+        "an",
+        "another",
+        "a given",
+        "that",
+        "who",
+        "what",
+        "and",
+        "or",
+        "but not both",
+        "if",
+        "if and only if",
+        "not",
+        "does not",
+        "must",
+        "must not",
+        "need not",
+        "always",
+        "never",
+        "can",
+        "cannot",
+        "may",
+        "might",
+        "can not",
+        "could not",
+        "only if",
+        "it is obligatory that",
+        "it is prohibited that",
+        "it is impossible that",
+        "it is possible that",
+        "it is permitted that",
+        "not both",
+        "neither",
+        "either",
+        "nor",
+        "whether or not",
+        "each",
+        "some",
+        "at least one",
+        "at least",
+        "at most one",
+        "at most",
+        "exactly one",
+        "exactly",
+        "at least",
+        "and at most",
+        "more than one",
+        "no",
+        "the",  # repetido, mas sem problemas
+        "a",    # repetido, mas sem problemas
+    ]
+    
     sources_links = []
     for source in sources:
         doc_id_url = doc_id.replace("§ ", "")
@@ -57,7 +114,7 @@ def highlight_statement(
             return original
         return replace_term
 
-    # Apply term substitutions (without inserting the tooltip yet).
+    # Apply term substitutions (sem inserir tooltip ainda).
     for t in terms:
         term_regex = rf"\b{re.escape(t['term'])}\b"
         statement = re.sub(term_regex,
@@ -65,7 +122,7 @@ def highlight_statement(
                            statement,
                            flags=re.IGNORECASE)
 
-    # Highlight verb symbols
+    # Highlight verb symbols (em itálico azul)
     def highlight_match_verb(match):
         original = match.group(0)
         return f'<span style="font-style: italic; color: blue;">{original}</span>'
@@ -74,6 +131,16 @@ def highlight_statement(
         verb_regex = rf"\b{re.escape(verb)}\b"
         statement = re.sub(verb_regex, highlight_match_verb, statement, flags=re.IGNORECASE)
 
+    # Destaque das keywords em laranja
+    def highlight_match_keyword(match):
+        original = match.group(0)
+        return f'<span style="color: orange;">{original}</span>'
+
+    for kw in keywords:
+        kw_regex = rf"\b{re.escape(kw)}\b"
+        statement = re.sub(kw_regex, highlight_match_keyword, statement, flags=re.IGNORECASE)
+
+    # Função para adicionar tooltip aos termos (Common ou Proper Noun)
     def add_tooltip(term_info):
         definition = html.escape(term_info.get("definition", "") or "Missing")
         confidence = term_info.get("confidence", "")
@@ -91,16 +158,16 @@ def highlight_statement(
             f"Reason: {reason}"
         )
 
-        # Regext to capture the tag generated above (simple or double underline) with the corresponding text.
+        # Regex para capturar a tag já gerada acima (simples ou dupla) com o texto correspondente.
         if term_info["classification"] == "Common Noun":
-            # Simple underline
+            # Sublinha simples
             tag_pattern = (
                 r'<span style="text-decoration: underline; text-decoration-color: green;">'
                 rf"(?P<content>{re.escape(term_info['term'])}|{re.escape(term_info['term'].lower())}|{re.escape(term_info['term'].capitalize())})"
                 r"</span>"
             )
         else:
-            # Double underline
+            # Sublinha dupla
             tag_pattern = (
                 r'<span style="text-decoration: underline double; text-decoration-color: green;">'
                 rf"(?P<content>{re.escape(term_info['term'])}|{re.escape(term_info['term'].lower())}|{re.escape(term_info['term'].capitalize())})"
@@ -110,7 +177,7 @@ def highlight_statement(
         def insert_title(match):
             original_span = match.group(0)
             content = match.group("content")
-            # Insert the title attribute without changing the inner text
+            # Insere o atributo title sem alterar o texto interno
             return original_span.replace(
                 ';">' + content,  # ponto de inserção
                 f';" title="{tooltip_content}">' + content
@@ -118,6 +185,7 @@ def highlight_statement(
 
         return tag_pattern, insert_title
 
+    # Agora adicionamos o tooltip aos termos que foram sublinhados
     for t in terms:
         tag_pattern, insert_title_fn = add_tooltip(t)
         statement = re.sub(tag_pattern, insert_title_fn, statement, flags=re.IGNORECASE)
@@ -125,6 +193,7 @@ def highlight_statement(
     sup = f" [{classification}]"
     final_text = f"{line_id}: <strong>{sources}</strong> {statement}{sup}"
     return final_text
+
 
 
 
@@ -161,8 +230,12 @@ def info_dialog(topic):
             - Validation: Validates the extraction, classification, and transformation processes against a golden dataset calculating precision, accuracy, and other scores.
             """)
         st.image("code/cfr2sbvr_inspect/static/cfr2sbvr-process.png")
+        st.write("""
+                Version considerations:
+                 - Version 4 (database_v4.db): The process is as shown in the picture; the true table is used as input for each process after extraction.
+                 - Version 5 (database_v5.db): The process is slightly different from the picture, the output checkpoint from one process is used as input for the next.
+                 """)
         st.write("> Witt, Graham. Writing effective business rules. Elsevier, 2012.")
-
 
 def list_to_markdown(list, ordered=True):
     if ordered:
@@ -175,17 +248,24 @@ def disconnect_db(conn):
     st.write("called")
     # conn.close()
 
+def get_databases(local_db):
+    if local_db:
+        return ["database_v5.db", "database_v4.db"]
+    else:
+        return ["md:cfr2sbvr_db"]
 
 def db_connection(local_db=False, default_data_dir="data"):
     # Connect to the database
     if local_db:
-        conn = duckdb.connect(f"{default_data_dir}/database_v4.db", read_only=True)
+        db_name = 'database_v5.db'
+        conn = duckdb.connect(f"{default_data_dir}/{db_name}", read_only=True)
     else:
+        db_name = "md:cfr2sbvr_db"
         load_dotenv()
         mother_duck_token = os.getenv("MOTHER_DUCK_TOKEN")
-        conn = duckdb.connect(f"md:cfr2sbvr_db?motherduck_token={mother_duck_token}", read_only=True)
+        conn = duckdb.connect(f"{db_name}?motherduck_token={mother_duck_token}", read_only=True)
     
-    return conn
+    return conn, db_name
 
 # @st.cache_data
 def load_data(conn, table, checkpoints, doc_ids, process_selected):
@@ -211,7 +291,10 @@ def load_data(conn, table, checkpoints, doc_ids, process_selected):
 
     logger.debug(data_query)
 
-    return conn.sql(query=data_query).fetchdf()
+
+    df = conn.sql(query=data_query).fetchdf()
+        
+    return df
 
 
 def calculate_statements_similarity(statement1, statement2):
@@ -372,6 +455,8 @@ def extract_row_values(data_df, row):
 
 
 def format_score(score, THRESHOLD):
+    if not score:
+        score = 0.0
     if score < THRESHOLD:
         return f'<span style="color:red;">{score:.2f}</span>'
     else:

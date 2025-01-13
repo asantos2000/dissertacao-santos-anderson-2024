@@ -17,7 +17,8 @@ from app_modules import (
     get_table_names,
     get_checkpoints,
     extract_row_values,
-    format_score
+    format_score,
+    get_databases,
 )
 
 
@@ -27,9 +28,8 @@ logging.basicConfig(filename="streamlit_app.log", level=logging.INFO)
 
 # Constants
 QUALITY_THRESHOLD = 0.8
-LOCAL_DB = False  # Use cloud database - False or local database - True
+LOCAL_DB = True  # Use cloud database - False or local database - True
 DEFAULT_DATA_DIR = "code/cfr2sbvr_inspect/data"
-
 
 #
 # Main
@@ -40,7 +40,7 @@ st.set_page_config(page_title="CFR2SBVR Inspect", page_icon="🏛️", layout="w
 st.sidebar.title(":material/assured_workload: CFR2SBVR Inspect")
 
 # Connect to the database
-conn = db_connection(LOCAL_DB, DEFAULT_DATA_DIR)
+conn, db_name = db_connection(LOCAL_DB, DEFAULT_DATA_DIR)
 
 st.sidebar.header("Checkpoints", divider="red")
 
@@ -88,7 +88,7 @@ st.markdown(
     f"""
 CFR2SBVR Inspect is a tool to inspect CFR2SBVR checkpoint files.
 
-Tables available for {process_selected}:
+Tables available for the process {process_selected.lower()}:
 
 {table_markdown}
 """
@@ -108,17 +108,41 @@ data_df = load_data(
     conn, table_selected, checkpoints_selected, doc_id_selected, process_selected
 )
 
+def highlight_row(row):
+    if row["checkpoint"] == "documents_true_table.json":
+        return ['background-color: #dfffdf'] * len(row)  # Highlight the entire row
+    return [''] * len(row)  # No styling for other rows
+
+# Apply the styling function to the DataFrame
+
+show_true_table_highlight = st.toggle("Show/hide true table highlight", key="show_true_table_highlight", value=True)
+
+if show_true_table_highlight:
+    styled_df = data_df.style.apply(highlight_row, axis=1)
+else:
+    styled_df = data_df
+
 event = st.dataframe(
-    data_df,
-    key="id",
+    styled_df,
+    key="dataset_df",
     on_select="rerun",
     use_container_width=True,
     selection_mode=["multi-row"],
 )
 
 st.sidebar.header("Dataset info", divider="red")
-st.sidebar.write(f"Content from: {table_selected}")
+st.sidebar.write(f":material/database: {db_name} ({':material/computer:' if LOCAL_DB else ':material/cloud:'})")
+
+st.sidebar.write(f":material/table: {table_selected}")
 st.sidebar.write(f"Loaded {len(data_df)} line(s)")
+
+st.sidebar.header("Legends", divider="red")
+st.sidebar.markdown("""
+- <span style="color: orange;">keywords</span>
+- <span style="text-decoration: underline double; text-decoration-color: green;">names</span>
+- <span style="text-decoration: underline; text-decoration-color: green;">terms</span>
+- <span style="font-style: italic; color: blue;">verb symbols</span>
+""", unsafe_allow_html=True)
 
 st.header("Evaluate", divider="rainbow")
 
@@ -341,7 +365,7 @@ with comp_tab:
                                 str(data_df.at[row1, column]),
                                 str(data_df.at[row2, column]),
                             )
-                            st.markdown(format_score(score, QUALITY_THRESHOLD))
+                            st.markdown(f"- ({row1}, {row2}) = {format_score(score, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
                         except Exception as e:
                             st.write(f"- No {e} available")
 
