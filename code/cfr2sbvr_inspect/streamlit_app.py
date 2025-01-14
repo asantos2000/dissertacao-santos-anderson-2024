@@ -17,7 +17,9 @@ from app_modules import (
     get_table_names,
     get_checkpoints,
     extract_row_values,
-    format_score
+    format_score,
+    get_databases,
+    chatbot_widget,
 )
 
 
@@ -27,9 +29,8 @@ logging.basicConfig(filename="streamlit_app.log", level=logging.INFO)
 
 # Constants
 QUALITY_THRESHOLD = 0.8
-LOCAL_DB = False  # Use cloud database - False or local database - True
+LOCAL_DB = True  # Use cloud database - False or local database - True
 DEFAULT_DATA_DIR = "code/cfr2sbvr_inspect/data"
-
 
 #
 # Main
@@ -40,7 +41,7 @@ st.set_page_config(page_title="CFR2SBVR Inspect", page_icon="🏛️", layout="w
 st.sidebar.title(":material/assured_workload: CFR2SBVR Inspect")
 
 # Connect to the database
-conn = db_connection(LOCAL_DB, DEFAULT_DATA_DIR)
+conn, db_name = db_connection(LOCAL_DB, DEFAULT_DATA_DIR)
 
 st.sidebar.header("Checkpoints", divider="red")
 
@@ -88,7 +89,7 @@ st.markdown(
     f"""
 CFR2SBVR Inspect is a tool to inspect CFR2SBVR checkpoint files.
 
-Tables available for {process_selected}:
+Tables available for the process {process_selected.lower()}:
 
 {table_markdown}
 """
@@ -108,17 +109,42 @@ data_df = load_data(
     conn, table_selected, checkpoints_selected, doc_id_selected, process_selected
 )
 
+def highlight_row(row):
+    if row["checkpoint"] == "documents_true_table.json":
+        return ['background-color: #dfffdf'] * len(row)  # Highlight the entire row
+    return [''] * len(row)  # No styling for other rows
+
+# Apply the styling function to the DataFrame
+
+show_true_table_highlight = st.toggle("Show/hide true table highlight", key="show_true_table_highlight", value=True)
+
+if show_true_table_highlight:
+    styled_df = data_df.style.apply(highlight_row, axis=1)
+else:
+    styled_df = data_df
+
 event = st.dataframe(
-    data_df,
-    key="id",
+    styled_df,
+    key="dataset_df",
     on_select="rerun",
     use_container_width=True,
     selection_mode=["multi-row"],
 )
+st.write("Select up to four rows to evaluate.")
 
 st.sidebar.header("Dataset info", divider="red")
-st.sidebar.write(f"Content from: {table_selected}")
+st.sidebar.write(f":material/database: {db_name} ({':material/computer:' if LOCAL_DB else ':material/cloud:'})")
+
+st.sidebar.write(f":material/table: {table_selected}")
 st.sidebar.write(f"Loaded {len(data_df)} line(s)")
+
+st.sidebar.header("Legends", divider="red")
+st.sidebar.markdown("""
+- <span style="color: orange;">keywords</span>
+- <span style="text-decoration: underline double; text-decoration-color: green;">names</span>
+- <span style="text-decoration: underline; text-decoration-color: green;">terms</span>
+- <span style="font-style: italic; color: blue;">verb symbols</span>
+""", unsafe_allow_html=True)
 
 st.header("Evaluate", divider="rainbow")
 
@@ -126,15 +152,21 @@ comp_tab, feedback_tab = st.tabs(["Compare", "Feedback"])
 
 with comp_tab:
     if event.selection:
+        # Create columns
+        # One columns for each selected row limit to 4 columns
         try:
-            columns = st.columns(len(event.selection["rows"]))
+            select_rows = event.selection["rows"]
+            number_of_columns = len(select_rows)
+            columns = st.columns(number_of_columns)
+        except Exception as e:
+            st.write("There is nothing to see here yet, select at least one row.")
+            logger.info(f"Error {e}.")
 
+        if number_of_columns and number_of_columns <= 4:
             # Loop through the rows and assign each row to a column
-            for col, row in zip(columns, event.selection["rows"]):
+            for col, row in zip(columns, select_rows):
                 with col:
                     row_values, missing_messages = extract_row_values(data_df, row)
-
-                    #st.write(row_values)
 
                     # Statement
                     st.subheader("Statement")
@@ -325,26 +357,25 @@ with comp_tab:
                         if missing_messages:
                             for missing_message in missing_messages:
                                 st.write(f":material/error: {missing_message}")
-        except Exception as e:
-            st.write("There is nothing to see here yet, select at least one row.")
-            logger.info(f"Error {e}.")
 
-        # Display similarity scores
-        with st.expander("Levenshtein Distance (LD)"):
-            rows_selected = event.selection["rows"]
-            if len(rows_selected) > 1:
-                for column in ("statement_title", "statement_text", "transformed"):
-                    st.markdown(f"*{column}:*")
-                    for row1, row2 in combinations(rows_selected, 2):
-                        try:
-                            score = calculate_statements_similarity(
-                                str(data_df.at[row1, column]),
-                                str(data_df.at[row2, column]),
-                            )
-                            st.markdown(format_score(score, QUALITY_THRESHOLD))
-                        except Exception as e:
-                            st.write(f"- No {e} available")
-
+            # Display similarity scores
+            with st.expander("Levenshtein Distance (LD)"):
+                rows_selected = event.selection["rows"]
+                if len(rows_selected) > 1:
+                    for column in ("statement_title", "statement_text", "transformed"):
+                        st.markdown(f"*{column}:*")
+                        for row1, row2 in combinations(rows_selected, 2):
+                            try:
+                                score = calculate_statements_similarity(
+                                    str(data_df.at[row1, column]),
+                                    str(data_df.at[row2, column]),
+                                )
+                                st.markdown(f"- ({row1}, {row2}) = {format_score(score, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
+                            except Exception as e:
+                                st.write(f"- No {e} available")
+        else:
+            st.warning("Select up to four rows to evaluate.")
+        
 with feedback_tab:
     st.write(
         "The best option is SMEs' feedback about which statements are best for keeping the meaning."
@@ -357,3 +388,5 @@ with feedback_tab:
     if st.button("Save as best option(s)"):
         st.json(filtered_df.to_json(orient="records"))
         st.info(f"Best option(s) saved at {dt.datetime.now()}")
+
+    chatbot_widget()
