@@ -9,3 +9,4 @@ jellyfish
 python-dotenv
 pyyaml
 natsort
+openai
