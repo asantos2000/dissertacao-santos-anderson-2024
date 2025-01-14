@@ -4,7 +4,6 @@ import logging
 import os
 
 import jellyfish
-from dotenv import load_dotenv
 import duckdb
 
 import rules_taxonomy_provider.main as rules_taxonomy_provider
@@ -272,7 +271,6 @@ def db_connection(local_db=False, default_data_dir="data"):
         conn = duckdb.connect(f"{default_data_dir}/{db_name}", read_only=True)
     else:
         db_name = "md:cfr2sbvr_db"
-        load_dotenv()
         mother_duck_token = os.getenv("MOTHER_DUCK_TOKEN")
         conn = duckdb.connect(
             f"{db_name}?motherduck_token={mother_duck_token}", read_only=True

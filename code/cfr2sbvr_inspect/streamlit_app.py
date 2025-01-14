@@ -1,6 +1,7 @@
 import datetime as dt
 from itertools import combinations
 import logging
+from dotenv import load_dotenv
 
 import streamlit as st
 
@@ -27,10 +28,11 @@ from app_modules import (
 logger = logging.getLogger(__name__)
 logging.basicConfig(filename="streamlit_app.log", level=logging.INFO)
 
-# Constants
+# Constants and environment variables
 QUALITY_THRESHOLD = 0.8
 LOCAL_DB = True  # Use cloud database - False or local database - True
 DEFAULT_DATA_DIR = "code/cfr2sbvr_inspect/data"
+load_dotenv()
 
 #
 # Main
