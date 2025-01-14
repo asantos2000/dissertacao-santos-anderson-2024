@@ -14,6 +14,7 @@ validation,val,validation_judge_Operative_Rules,llm_validation,RAW_LLM_VALIDATIO
 validation,val,validation_judge_Fact_Types,llm_validation,RAW_LLM_VALIDATION
 validation,val,validation_judge_Terms,llm_validation,RAW_LLM_VALIDATION
 validation,val,validation_judge_Names,llm_validation,RAW_LLM_VALIDATION
+validation,both,validation_judge_best,both,RAW_LLM_VALIDATION_BEST_VW
 validation,both,validation_judge,both,RAW_LLM_VALIDATION_VW
 validation,both,validation_completions,both,RAW_LLM_COMPLETION_VW
 validation,both,validation_elepsed_time,both,RAW_ELAPSED_TIME_VW

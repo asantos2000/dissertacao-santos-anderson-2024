@@ -19,6 +19,7 @@ from app_modules import (
     extract_row_values,
     format_score,
     get_databases,
+    chatbot_widget,
 )
 
 
@@ -129,6 +130,7 @@ event = st.dataframe(
     use_container_width=True,
     selection_mode=["multi-row"],
 )
+st.write("Select up to four rows to evaluate.")
 
 st.sidebar.header("Dataset info", divider="red")
 st.sidebar.write(f":material/database: {db_name} ({':material/computer:' if LOCAL_DB else ':material/cloud:'})")
@@ -150,15 +152,21 @@ comp_tab, feedback_tab = st.tabs(["Compare", "Feedback"])
 
 with comp_tab:
     if event.selection:
+        # Create columns
+        # One columns for each selected row limit to 4 columns
         try:
-            columns = st.columns(len(event.selection["rows"]))
+            select_rows = event.selection["rows"]
+            number_of_columns = len(select_rows)
+            columns = st.columns(number_of_columns)
+        except Exception as e:
+            st.write("There is nothing to see here yet, select at least one row.")
+            logger.info(f"Error {e}.")
 
+        if number_of_columns and number_of_columns <= 4:
             # Loop through the rows and assign each row to a column
-            for col, row in zip(columns, event.selection["rows"]):
+            for col, row in zip(columns, select_rows):
                 with col:
                     row_values, missing_messages = extract_row_values(data_df, row)
-
-                    #st.write(row_values)
 
                     # Statement
                     st.subheader("Statement")
@@ -349,26 +357,25 @@ with comp_tab:
                         if missing_messages:
                             for missing_message in missing_messages:
                                 st.write(f":material/error: {missing_message}")
-        except Exception as e:
-            st.write("There is nothing to see here yet, select at least one row.")
-            logger.info(f"Error {e}.")
 
-        # Display similarity scores
-        with st.expander("Levenshtein Distance (LD)"):
-            rows_selected = event.selection["rows"]
-            if len(rows_selected) > 1:
-                for column in ("statement_title", "statement_text", "transformed"):
-                    st.markdown(f"*{column}:*")
-                    for row1, row2 in combinations(rows_selected, 2):
-                        try:
-                            score = calculate_statements_similarity(
-                                str(data_df.at[row1, column]),
-                                str(data_df.at[row2, column]),
-                            )
-                            st.markdown(f"- ({row1}, {row2}) = {format_score(score, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
-                        except Exception as e:
-                            st.write(f"- No {e} available")
-
+            # Display similarity scores
+            with st.expander("Levenshtein Distance (LD)"):
+                rows_selected = event.selection["rows"]
+                if len(rows_selected) > 1:
+                    for column in ("statement_title", "statement_text", "transformed"):
+                        st.markdown(f"*{column}:*")
+                        for row1, row2 in combinations(rows_selected, 2):
+                            try:
+                                score = calculate_statements_similarity(
+                                    str(data_df.at[row1, column]),
+                                    str(data_df.at[row2, column]),
+                                )
+                                st.markdown(f"- ({row1}, {row2}) = {format_score(score, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
+                            except Exception as e:
+                                st.write(f"- No {e} available")
+        else:
+            st.warning("Select up to four rows to evaluate.")
+        
 with feedback_tab:
     st.write(
         "The best option is SMEs' feedback about which statements are best for keeping the meaning."
@@ -381,3 +388,5 @@ with feedback_tab:
     if st.button("Save as best option(s)"):
         st.json(filtered_df.to_json(orient="records"))
         st.info(f"Best option(s) saved at {dt.datetime.now()}")
+
+    chatbot_widget()

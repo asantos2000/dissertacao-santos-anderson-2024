@@ -18,6 +18,7 @@ logger = logging.getLogger(__name__)
 import re
 import html
 
+
 def highlight_statement(
     line_id,
     doc_id,
@@ -80,9 +81,9 @@ def highlight_statement(
         "more than one",
         "no",
         "the",  # repetido, mas sem problemas
-        "a",    # repetido, mas sem problemas
+        "a",  # repetido, mas sem problemas
     ]
-    
+
     sources_links = []
     for source in sources:
         doc_id_url = doc_id.replace("§ ", "")
@@ -112,15 +113,15 @@ def highlight_statement(
                     f'text-decoration-color: green;">{original}</span>'
                 )
             return original
+
         return replace_term
 
     # Apply term substitutions (sem inserir tooltip ainda).
     for t in terms:
         term_regex = rf"\b{re.escape(t['term'])}\b"
-        statement = re.sub(term_regex,
-                           highlight_match_term(t),
-                           statement,
-                           flags=re.IGNORECASE)
+        statement = re.sub(
+            term_regex, highlight_match_term(t), statement, flags=re.IGNORECASE
+        )
 
     # Highlight verb symbols (em itálico azul)
     def highlight_match_verb(match):
@@ -129,7 +130,9 @@ def highlight_statement(
 
     for verb in verb_symbols:
         verb_regex = rf"\b{re.escape(verb)}\b"
-        statement = re.sub(verb_regex, highlight_match_verb, statement, flags=re.IGNORECASE)
+        statement = re.sub(
+            verb_regex, highlight_match_verb, statement, flags=re.IGNORECASE
+        )
 
     # Destaque das keywords em laranja
     def highlight_match_keyword(match):
@@ -138,7 +141,9 @@ def highlight_statement(
 
     for kw in keywords:
         kw_regex = rf"\b{re.escape(kw)}\b"
-        statement = re.sub(kw_regex, highlight_match_keyword, statement, flags=re.IGNORECASE)
+        statement = re.sub(
+            kw_regex, highlight_match_keyword, statement, flags=re.IGNORECASE
+        )
 
     # Função para adicionar tooltip aos termos (Common ou Proper Noun)
     def add_tooltip(term_info):
@@ -180,7 +185,7 @@ def highlight_statement(
             # Insere o atributo title sem alterar o texto interno
             return original_span.replace(
                 ';">' + content,  # ponto de inserção
-                f';" title="{tooltip_content}">' + content
+                f';" title="{tooltip_content}">' + content,
             )
 
         return tag_pattern, insert_title
@@ -195,8 +200,6 @@ def highlight_statement(
     return final_text
 
 
-
-
 def display_section(conn, doc_id):
     doc_id_url = doc_id.replace("§ ", "")
     section_url = f"https://www.ecfr.gov/current/title-17/section-{doc_id_url}"
@@ -207,14 +210,15 @@ def display_section(conn, doc_id):
     content = content.replace("\n", "<br>")
     content = content.replace("$", "\$")
     content = content.replace(doc_id, f'<a href="{section_url}">{doc_id}</a>')
-
-    #st.write(content, unsafe_allow_html=True)
     return content
 
+
 @st.dialog("Witt (2012) taxonomy", width="large")
-def witt_taxonomy_dialog(classification): 
+def witt_taxonomy_dialog(classification):
     rule_provider = RuleInformationProvider("code/cfr2sbvr_inspect/data")
-    markdown_data = rule_provider.get_classification_and_templates(classification, return_forms="fact_type")
+    markdown_data = rule_provider.get_classification_and_templates(
+        classification, return_forms="fact_type"
+    )
     st.markdown(markdown_data)
 
 
@@ -228,25 +232,31 @@ def info_dialog(topic):
             - Classification: Classifies the statements extracted with Witt (2012) taxonomy.
             - Transformation: Transform the statements into SBVR using Witt (2012) templates.
             - Validation: Validates the extraction, classification, and transformation processes against a golden dataset calculating precision, accuracy, and other scores.
-            """)
+            """
+        )
         st.image("code/cfr2sbvr_inspect/static/cfr2sbvr-process.png")
-        st.write("""
+        st.write(
+            """
                 Version considerations:
                  - Version 4 (database_v4.db): The process is as shown in the picture; the true table is used as input for each process after extraction.
                  - Version 5 (database_v5.db): The process is slightly different from the picture, the output checkpoint from one process is used as input for the next.
-                 """)
+                 """
+        )
         st.write("> Witt, Graham. Writing effective business rules. Elsevier, 2012.")
+
 
 def list_to_markdown(list, ordered=True):
     if ordered:
-       prefix = "1."
+        prefix = "1."
     else:
-         prefix = "-"
+        prefix = "-"
     return "\n".join([f"{prefix} {item}" for item in list])
+
 
 def disconnect_db(conn):
     st.write("called")
     # conn.close()
+
 
 def get_databases(local_db):
     if local_db:
@@ -254,24 +264,26 @@ def get_databases(local_db):
     else:
         return ["md:cfr2sbvr_db"]
 
+
 def db_connection(local_db=False, default_data_dir="data"):
     # Connect to the database
     if local_db:
-        db_name = 'database_v5.db'
+        db_name = "database_v5.db"
         conn = duckdb.connect(f"{default_data_dir}/{db_name}", read_only=True)
     else:
         db_name = "md:cfr2sbvr_db"
         load_dotenv()
         mother_duck_token = os.getenv("MOTHER_DUCK_TOKEN")
-        conn = duckdb.connect(f"{db_name}?motherduck_token={mother_duck_token}", read_only=True)
-    
+        conn = duckdb.connect(
+            f"{db_name}?motherduck_token={mother_duck_token}", read_only=True
+        )
     return conn, db_name
+
 
 # @st.cache_data
 def load_data(conn, table, checkpoints, doc_ids, process_selected):
     where_clause = ""
 
-    # where_clause += f' AND file_source=\'{filters["checkpoint"]}\''
     checkpoints_string = ", ".join(f"'{item}'" for item in checkpoints)
     doc_ids_string = ", ".join(f"'{item}'" for item in doc_ids)
     if checkpoints_string:
@@ -290,10 +302,7 @@ def load_data(conn, table, checkpoints, doc_ids, process_selected):
     """
 
     logger.debug(data_query)
-
-
     df = conn.sql(query=data_query).fetchdf()
-        
     return df
 
 
@@ -307,7 +316,9 @@ def calculate_statements_similarity(statement1, statement2):
 
 
 def get_doc_ids(conn):
-    return conn.sql("select distinct id.replace('_P1', '') as doc_id from RAW_SECTION_P1_EXTRACTED_ELEMENTS order by id")
+    return conn.sql(
+        "select distinct id.replace('_P1', '') as doc_id from RAW_SECTION_P1_EXTRACTED_ELEMENTS order by id"
+    )
 
 
 def get_table_names(conn, process_dict, process_selected):
@@ -333,14 +344,6 @@ def extract_row_values(data_df, row):
     missing_messages = []
     row_values = {}
 
-    # Extract values
-    # doc_id = data_df.at[row, "doc_id"]
-    # title = data_df.at[row, "statement_title"]
-    # statement = data_df.at[row, "statement_text"]
-    # statement_id = data_df.at[row, "statement_id"]
-    # checkpoint = data_df.at[row, "checkpoint"]
-    # sources = data_df.at[row, "statement_sources"]
-
     row_values["doc_id"] = data_df.at[row, "doc_id"]
     row_values["statement_title"] = data_df.at[row, "statement_title"]
     row_values["statement_text"] = data_df.at[row, "statement_text"]
@@ -348,108 +351,95 @@ def extract_row_values(data_df, row):
     row_values["checkpoint"] = data_df.at[row, "checkpoint"]
     row_values["statement_sources"] = data_df.at[row, "statement_sources"]
 
+    # transformed
     try:
-        #transformed_statement = data_df.at[row, "transformed"]
         row_values["transformed"] = data_df.at[row, "transformed"]
     except Exception as e:
         missing_messages.append(f"{e}")
-        #transformed_statement = None
-        # row_values["transformed_statement"] = None
+
+    # statement_classification_type
     try:
-        #classification_type = data_df.at[row, "statement_classification_type"]
-        row_values["statement_classification_type"] = data_df.at[row, "statement_classification_type"]
+        row_values["statement_classification_type"] = data_df.at[
+            row, "statement_classification_type"
+        ]
     except Exception as e:
         missing_messages.append(f"{e}")
-        #classification_type = ""
-        # row_values["classification_type"] = None
     # statement_classification_type_confidence
     try:
-        #classification_type_confidence = data_df.at[row, "statement_classification_type_confidence"]
-        row_values["statement_classification_type_confidence"] = data_df.at[row, "statement_classification_type_confidence"]
-        #classification_type_explanation = data_df.at[row, "statement_classification_type_explanation"]
-        row_values["statement_classification_type_explanation"] = data_df.at[row, "statement_classification_type_explanation"]
+        row_values["statement_classification_type_confidence"] = data_df.at[
+            row, "statement_classification_type_confidence"
+        ]
+        row_values["statement_classification_type_explanation"] = data_df.at[
+            row, "statement_classification_type_explanation"
+        ]
     except Exception as e:
         missing_messages.append(f"{e}")
-        # classification_type_confidence = None
-        # classification_type_explanation = None
-        # row_values["classification_type_confidence"] = None
-        # row_values["classification_type_explanation"] = None
     # statement_classification_subtype
     try:
-        # classification_subtype = data_df.at[row, "statement_classification_subtype"]
-        # classification_subtype_confidence = data_df.at[row, "statement_classification_subtype_confidence"]
-        # classification_subtype_explanation = data_df.at[row, "statement_classification_subtype_explanation"]
-        row_values["statement_classification_subtype"] = data_df.at[row, "statement_classification_subtype"]
-        row_values["statement_classification_subtype_confidence"] = data_df.at[row, "statement_classification_subtype_confidence"]
-        row_values["statement_classification_subtype_explanation"] = data_df.at[row, "statement_classification_subtype_explanation"]
+        row_values["statement_classification_subtype"] = data_df.at[
+            row, "statement_classification_subtype"
+        ]
+        row_values["statement_classification_subtype_confidence"] = data_df.at[
+            row, "statement_classification_subtype_confidence"
+        ]
+        row_values["statement_classification_subtype_explanation"] = data_df.at[
+            row, "statement_classification_subtype_explanation"
+        ]
     except Exception as e:
         missing_messages.append(f"{e}")
-        # classification_subtype = ""
-        # classification_subtype_confidence = None
-        # classification_subtype_explanation = None
-        # row_values["classification_subtype"] = None
-        # row_values["classification_subtype_confidence"] = None
-        # row_values["classification_subtype_explanation"] = None
     # terms
     try:
-        # terms = data_df.at[row, "terms"]
         row_values["terms"] = data_df.at[row, "terms"]
     except Exception as e:
         missing_messages.append(f"{e}")
-        # terms = []
+
     # verb_symbols
     try:
-        # verb_symbols = data_df.at[row, "verb_symbols"]
         row_values["verb_symbols"] = data_df.at[row, "verb_symbols"]
     except Exception as e:
         missing_messages.append(f"{e}")
-        # verb_symbols = []
+
     # transformation_template_ids
     try:
-        # template_ids = data_df.at[row, "transformation_template_ids"]
-        row_values["transformation_template_ids"] = data_df.at[row, "transformation_template_ids"]
+        row_values["transformation_template_ids"] = data_df.at[
+            row, "transformation_template_ids"
+        ]
     except Exception as e:
         missing_messages.append(f"{e}")
-        # template_ids = []
+
     # transformation_confidence
     try:
-        # transformation_confidence = data_df.at[row, "transformation_confidence"]
-        # transformation_reason = data_df.at[row, "transformation_reason"]
-        row_values["transformation_confidence"] = data_df.at[row, "transformation_confidence"]
+        row_values["transformation_confidence"] = data_df.at[
+            row, "transformation_confidence"
+        ]
         row_values["transformation_reason"] = data_df.at[row, "transformation_reason"]
     except Exception as e:
         missing_messages.append(f"{e}")
-        # transformation_confidence = None
-        # transformation_reason = None
+
     # transformation scores
     try:
-        # transformation_semscore = data_df.at[row, "semscore"]
-        # transformation_similarity_score = data_df.at[row, "similarity_score"]
-        # transformation_similarity_score_confidence = data_df.at[row, "similarity_score_confidence"]
-        # transformation_findings = data_df.at[row, "findings"]
-        # transformation_accuracy = data_df.at[row, "transformation_accuracy"]
-        # transformation_grammar_syntax_accuracy = data_df.at[row, "grammar_syntax_accuracy"]
         row_values["transformation_semscore"] = data_df.at[row, "semscore"]
-        row_values["transformation_similarity_score"] = data_df.at[row, "similarity_score"]
-        row_values["transformation_similarity_score_confidence"] = data_df.at[row, "similarity_score_confidence"]
+        row_values["transformation_similarity_score"] = data_df.at[
+            row, "similarity_score"
+        ]
+        row_values["transformation_similarity_score_confidence"] = data_df.at[
+            row, "similarity_score_confidence"
+        ]
         row_values["transformation_findings"] = data_df.at[row, "findings"]
-        row_values["transformation_accuracy"] = data_df.at[row, "transformation_accuracy"]
-        row_values["transformation_grammar_syntax_accuracy"] = data_df.at[row, "grammar_syntax_accuracy"]
+        row_values["transformation_accuracy"] = data_df.at[
+            row, "transformation_accuracy"
+        ]
+        row_values["transformation_grammar_syntax_accuracy"] = data_df.at[
+            row, "grammar_syntax_accuracy"
+        ]
     except Exception as e:
         missing_messages.append(f"{e}")
-        # transformation_semscore = None
-        # transformation_similarity_score = None
-        # transformation_similarity_score_confidence = None
-        # transformation_findings = None
-        # transformation_accuracy = None
-        # transformation_grammar_sintaxe_accuracy = None
+
     # source of statement
     try:
-        # statament_from = data_df.at[row, "source"]
         row_values["statament_from"] = data_df.at[row, "source"]
     except Exception as e:
         missing_messages.append(f"from {e}")
-        # statament_from = []
 
     return row_values, missing_messages
 
@@ -460,4 +450,25 @@ def format_score(score, THRESHOLD):
     if score < THRESHOLD:
         return f'<span style="color:red;">{score:.2f}</span>'
     else:
-        return f'{score:.2f}'
+        return f"{score:.2f}"
+
+from openai import OpenAI
+def chatbot_widget():
+    st.caption("🤖 Chatbot powered by OpenAI")
+
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+    client = OpenAI(api_key=openai_api_key)
+
+    if "messages" not in st.session_state:
+        st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
+
+    for msg in st.session_state.messages:
+        st.chat_message(msg["role"]).write(msg["content"])
+
+    if prompt := st.chat_input():
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        st.chat_message("user").write(prompt)
+        response = client.chat.completions.create(model="gpt-4o", messages=st.session_state.messages)
+        msg = response.choices[0].message.content
+        st.session_state.messages.append({"role": "assistant", "content": msg})
+        st.chat_message("assistant").write(msg)    
