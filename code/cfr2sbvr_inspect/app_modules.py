@@ -11,12 +11,11 @@ from rules_taxonomy_provider.main import RuleInformationProvider
 
 import streamlit as st
 
-logger = logging.getLogger(__name__)
-
 # Highlight term in the statement
 import re
 import html
 
+logger = logging.getLogger(__name__)
 
 def highlight_statement(
     line_id,
@@ -148,18 +147,24 @@ def highlight_statement(
     def add_tooltip(term_info):
         definition = html.escape(term_info.get("definition", "") or "Missing")
         confidence = term_info.get("confidence", "")
-        reason = html.escape(term_info.get("reason", "") or "")
+        reason = html.escape(term_info.get("reason", "") or "Missing")
+        transformed = html.escape(term_info.get("transformed", "") or "Missing")
+        transformed_confidence = term_info.get("transform_confidence", "") or "0.0"
+        transformed_reason = html.escape(term_info.get("transform_reason", "") or "Missing")
         isLocalScope = term_info.get("isLocalScope", False)
         if isLocalScope:
-            scope = "📍"
+            scope = "📍Local\n"
         else:
-            scope = "🌎"
+            scope = "🌎 Elsewhere\n"
 
         tooltip_content = (
             f"{scope} "
-            f"Definition: {definition} - "
-            f"Confidence: {confidence} - "
-            f"Reason: {reason}"
+            f"• Definition: {definition}\n"
+            f"• D. confidence: {confidence}\n"
+            f"• D. reason: {reason}\n"
+            f"• Transformed: {transformed}\n"
+            f"• T. confidence: {transformed_confidence}\n"
+            f"• T. Reason: {transformed_reason}"
         )
 
         # Regex para capturar a tag já gerada acima (simples ou dupla) com o texto correspondente.
@@ -267,10 +272,10 @@ def get_databases(local_db):
 def db_connection(local_db=False, default_data_dir="data"):
     # Connect to the database
     if local_db:
-        db_name = "database_v5.db"
+        db_name = "cfr2sbvr_v5.db"
         conn = duckdb.connect(f"{default_data_dir}/{db_name}", read_only=True)
     else:
-        db_name = "md:cfr2sbvr_db"
+        db_name = "md:cfr2sbvr_v4"
         mother_duck_token = os.getenv("MOTHER_DUCK_TOKEN")
         conn = duckdb.connect(
             f"{db_name}?motherduck_token={mother_duck_token}", read_only=True
@@ -469,4 +474,17 @@ def chatbot_widget():
         response = client.chat.completions.create(model="gpt-4o", messages=st.session_state.messages)
         msg = response.choices[0].message.content
         st.session_state.messages.append({"role": "assistant", "content": msg})
-        st.chat_message("assistant").write(msg)    
+        st.chat_message("assistant").write(msg)
+
+def log_config(home_dir):
+    # Set up logging configuration
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(message)s",  # Console log format
+        datefmt="%Y-%m-%d %H:%M:%S",  # Custom date format
+        filename=f"{home_dir}/streamlit_app.log",
+    )
+
+    logger = logging.getLogger(__name__)
+
+    return logger
