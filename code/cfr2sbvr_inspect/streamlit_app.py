@@ -1,6 +1,7 @@
 import datetime as dt
 from itertools import combinations
 import logging
+import os
 from dotenv import load_dotenv
 
 import streamlit as st
@@ -21,18 +22,19 @@ from app_modules import (
     format_score,
     get_databases,
     chatbot_widget,
+    log_config,
 )
 
+# Constants and environment variables
+load_dotenv()
+QUALITY_THRESHOLD = os.getenv("QUALITY_THRESHOLD") or 0.8
+LOCAL_DB = os.getenv("LOCAL_DB") or True  # Use cloud database - False or local database - True
+HOME_DIR = os.getenv("HOME_DIR") or "code/cfr2sbvr_inspect"
+DEFAULT_DATA_DIR = os.getenv("DEFAULT_DATA_DIR") or f"{HOME_DIR}/data"
 
 # Config logging
-logger = logging.getLogger(__name__)
-logging.basicConfig(filename="streamlit_app.log", level=logging.INFO)
+logger = log_config(HOME_DIR)
 
-# Constants and environment variables
-QUALITY_THRESHOLD = 0.8
-LOCAL_DB = True  # Use cloud database - False or local database - True
-DEFAULT_DATA_DIR = "code/cfr2sbvr_inspect/data"
-load_dotenv()
 
 #
 # Main

@@ -52,6 +52,7 @@ DEFAULT_OBJ_CACHE_FILE: null  # to be set programmatically
 DEFAULT_EXTRACTION_REPORT_FILE: null  # to be set programmatically
 DEFAULT_EXCEL_FILE: "../outputs/compare_items_metrics.xlsx"
 DEFAULT_SCRIPTS_DIR: "../scripts"
+DEFAULT_APP_DIR: "../cfr2sbvr_inspect"
 
 # GitHub Configuration
 GITHUB_REPO: "https://github.com/asantos2000/master-degree-santos-anderson.git"  # You can set this with environment variables
