@@ -17,6 +17,193 @@ import html
 
 logger = logging.getLogger(__name__)
 
+# def highlight_statement(
+#     line_id,
+#     doc_id,
+#     element_id,
+#     classification_type,
+#     classification_subtype,
+#     terms,
+#     verb_symbols,
+#     statement,
+#     sources,
+# ):
+#     keywords = [
+#         "the",
+#         "a",
+#         "an",
+#         "another",
+#         "a given",
+#         "that",
+#         "who",
+#         "what",
+#         "and",
+#         "or",
+#         "but not both",
+#         "if",
+#         "if and only if",
+#         "not",
+#         "does not",
+#         "must",
+#         "must not",
+#         "need not",
+#         "always",
+#         "never",
+#         "can",
+#         "cannot",
+#         "may",
+#         "might",
+#         "can not",
+#         "could not",
+#         "only if",
+#         "it is obligatory that",
+#         "it is prohibited that",
+#         "it is impossible that",
+#         "it is possible that",
+#         "it is permitted that",
+#         "not both",
+#         "neither",
+#         "either",
+#         "nor",
+#         "whether or not",
+#         "each",
+#         "some",
+#         "at least one",
+#         "at least",
+#         "at most one",
+#         "at most",
+#         "exactly one",
+#         "exactly",
+#         "at least",
+#         "and at most",
+#         "more than one",
+#         "no",
+#         "the",  # repetido, mas sem problemas
+#         "a",  # repetido, mas sem problemas
+#     ]
+
+#     sources_links = []
+#     for source in sources:
+#         doc_id_url = doc_id.replace("§ ", "")
+#         url = f"https://www.ecfr.gov/current/title-17/part-275#p-{doc_id_url}{source}"
+#         sources_links.append(f'<a href="{url}">{source}</a>')
+#     sources = ", ".join(sources_links)
+
+#     classification = classification_type
+#     if classification_subtype:
+#         classification += f" | {classification_subtype}"
+
+#     # Clean up the statement
+#     statement = statement.replace("$", "\\$")
+
+#     def highlight_match_term(term_info):
+#         def replace_term(match):
+#             original = match.group(0)
+#             if term_info["classification"] == "Common Noun":
+#                 # Aqui apenas inserimos um placeholder. Depois criaremos o tooltip.
+#                 return (
+#                     f'<span style="text-decoration: underline; '
+#                     f'text-decoration-color: green;">{original}</span>'
+#                 )
+#             elif term_info["classification"] == "Proper Noun":
+#                 return (
+#                     f'<span style="text-decoration: underline double; '
+#                     f'text-decoration-color: green;">{original}</span>'
+#                 )
+#             return original
+
+#         return replace_term
+
+#     # Apply term substitutions (sem inserir tooltip ainda).
+#     for t in terms:
+#         term_regex = rf"\b{re.escape(t['term'])}\b"
+#         statement = re.sub(
+#             term_regex, highlight_match_term(t), statement, flags=re.IGNORECASE
+#         )
+
+#     # Highlight verb symbols (em itálico azul)
+#     def highlight_match_verb(match):
+#         original = match.group(0)
+#         return f'<span style="font-style: italic; color: blue;">{original}</span>'
+
+#     for verb in verb_symbols:
+#         verb_regex = rf"\b{re.escape(verb)}\b"
+#         statement = re.sub(
+#             verb_regex, highlight_match_verb, statement, flags=re.IGNORECASE
+#         )
+
+#     # Destaque das keywords em laranja
+#     def highlight_match_keyword(match):
+#         original = match.group(0)
+#         return f'<span style="color: orange;">{original}</span>'
+
+#     for kw in keywords:
+#         kw_regex = rf"\b{re.escape(kw)}\b"
+#         statement = re.sub(
+#             kw_regex, highlight_match_keyword, statement, flags=re.IGNORECASE
+#         )
+
+#     # Função para adicionar tooltip aos termos (Common ou Proper Noun)
+#     def add_tooltip(term_info):
+#         definition = html.escape(term_info.get("definition", "") or "Missing")
+#         confidence = term_info.get("confidence", "")
+#         reason = html.escape(term_info.get("reason", "") or "Missing")
+#         transformed = html.escape(term_info.get("transformed", "") or "Missing")
+#         transformed_confidence = term_info.get("transform_confidence", "") or "0.0"
+#         transformed_reason = html.escape(term_info.get("transform_reason", "") or "Missing")
+#         isLocalScope = term_info.get("isLocalScope", False)
+#         if isLocalScope:
+#             scope = "📍Local\n"
+#         else:
+#             scope = "🌎 Elsewhere\n"
+
+#         tooltip_content = (
+#             f"{scope} "
+#             f"• Definition: {definition}\n"
+#             f"• D. confidence: {confidence}\n"
+#             f"• D. reason: {reason}\n"
+#             f"• Transformed: {transformed}\n"
+#             f"• T. confidence: {transformed_confidence}\n"
+#             f"• T. Reason: {transformed_reason}"
+#         )
+
+#         # Regex para capturar a tag já gerada acima (simples ou dupla) com o texto correspondente.
+#         if term_info["classification"] == "Common Noun":
+#             # Sublinha simples
+#             tag_pattern = (
+#                 r'<span style="text-decoration: underline; text-decoration-color: green;">'
+#                 rf"(?P<content>{re.escape(term_info['term'])}|{re.escape(term_info['term'].lower())}|{re.escape(term_info['term'].capitalize())})"
+#                 r"</span>"
+#             )
+#         else:
+#             # Sublinha dupla
+#             tag_pattern = (
+#                 r'<span style="text-decoration: underline double; text-decoration-color: green;">'
+#                 rf"(?P<content>{re.escape(term_info['term'])}|{re.escape(term_info['term'].lower())}|{re.escape(term_info['term'].capitalize())})"
+#                 r"</span>"
+#             )
+
+#         def insert_title(match):
+#             original_span = match.group(0)
+#             content = match.group("content")
+#             # Insere o atributo title sem alterar o texto interno
+#             return original_span.replace(
+#                 ';">' + content,  # ponto de inserção
+#                 f';" title="{tooltip_content}">' + content,
+#             )
+
+#         return tag_pattern, insert_title
+
+#     # Agora adicionamos o tooltip aos termos que foram sublinhados
+#     for t in terms:
+#         tag_pattern, insert_title_fn = add_tooltip(t)
+#         statement = re.sub(tag_pattern, insert_title_fn, statement, flags=re.IGNORECASE)
+
+#     sup = f" [{classification}]"
+#     final_text = f"{line_id}: <strong>{sources}</strong> {statement}{sup}"
+#     return final_text
+
+
 def highlight_statement(
     line_id,
     doc_id,
@@ -78,8 +265,8 @@ def highlight_statement(
         "and at most",
         "more than one",
         "no",
-        "the",  # repetido, mas sem problemas
-        "a",  # repetido, mas sem problemas
+        "the",  # repetido
+        "a",    # repetido
     ]
 
     sources_links = []
@@ -93,14 +280,12 @@ def highlight_statement(
     if classification_subtype:
         classification += f" | {classification_subtype}"
 
-    # Clean up the statement
     statement = statement.replace("$", "\\$")
 
     def highlight_match_term(term_info):
         def replace_term(match):
             original = match.group(0)
             if term_info["classification"] == "Common Noun":
-                # Aqui apenas inserimos um placeholder. Depois criaremos o tooltip.
                 return (
                     f'<span style="text-decoration: underline; '
                     f'text-decoration-color: green;">{original}</span>'
@@ -111,20 +296,16 @@ def highlight_statement(
                     f'text-decoration-color: green;">{original}</span>'
                 )
             return original
-
         return replace_term
 
-    # Apply term substitutions (sem inserir tooltip ainda).
     for t in terms:
         term_regex = rf"\b{re.escape(t['term'])}\b"
         statement = re.sub(
             term_regex, highlight_match_term(t), statement, flags=re.IGNORECASE
         )
 
-    # Highlight verb symbols (em itálico azul)
     def highlight_match_verb(match):
-        original = match.group(0)
-        return f'<span style="font-style: italic; color: blue;">{original}</span>'
+        return f'<span style="font-style: italic; color: blue;">{match.group(0)}</span>'
 
     for verb in verb_symbols:
         verb_regex = rf"\b{re.escape(verb)}\b"
@@ -132,18 +313,26 @@ def highlight_statement(
             verb_regex, highlight_match_verb, statement, flags=re.IGNORECASE
         )
 
-    # Destaque das keywords em laranja
-    def highlight_match_keyword(match):
-        original = match.group(0)
-        return f'<span style="color: orange;">{original}</span>'
+    # Função auxiliar para destacar keywords apenas fora de <span>
+    def highlight_keywords_outside_spans(text, kw_list):
+        # Divide em segmentos que são ou não <span ...>...</span>
+        segments = re.split(r'(<span.*?>.*?</span>)', text, flags=re.IGNORECASE|re.DOTALL)
+        # Em cada segmento fora de <span>, faz a substituição das keywords
+        for i, seg in enumerate(segments):
+            if seg.startswith("<span"):
+                continue
+            for kw in kw_list:
+                kw_pattern = re.compile(rf"\b{re.escape(kw)}\b", re.IGNORECASE)
+                seg = kw_pattern.sub(
+                    lambda m: f'<span style="color: orange;">{m.group(0)}</span>',
+                    seg
+                )
+            segments[i] = seg
+        return "".join(segments)
 
-    for kw in keywords:
-        kw_regex = rf"\b{re.escape(kw)}\b"
-        statement = re.sub(
-            kw_regex, highlight_match_keyword, statement, flags=re.IGNORECASE
-        )
+    # Agora destacamos keywords apenas fora de spans
+    statement = highlight_keywords_outside_spans(statement, keywords)
 
-    # Função para adicionar tooltip aos termos (Common ou Proper Noun)
     def add_tooltip(term_info):
         definition = html.escape(term_info.get("definition", "") or "Missing")
         confidence = term_info.get("confidence", "")
@@ -167,34 +356,33 @@ def highlight_statement(
             f"• T. Reason: {transformed_reason}"
         )
 
-        # Regex para capturar a tag já gerada acima (simples ou dupla) com o texto correspondente.
         if term_info["classification"] == "Common Noun":
-            # Sublinha simples
             tag_pattern = (
                 r'<span style="text-decoration: underline; text-decoration-color: green;">'
-                rf"(?P<content>{re.escape(term_info['term'])}|{re.escape(term_info['term'].lower())}|{re.escape(term_info['term'].capitalize())})"
+                rf"(?P<content>{re.escape(term_info['term'])}|"
+                rf"{re.escape(term_info['term'].lower())}|"
+                rf"{re.escape(term_info['term'].capitalize())})"
                 r"</span>"
             )
         else:
-            # Sublinha dupla
             tag_pattern = (
                 r'<span style="text-decoration: underline double; text-decoration-color: green;">'
-                rf"(?P<content>{re.escape(term_info['term'])}|{re.escape(term_info['term'].lower())}|{re.escape(term_info['term'].capitalize())})"
+                rf"(?P<content>{re.escape(term_info['term'])}|"
+                rf"{re.escape(term_info['term'].lower())}|"
+                rf"{re.escape(term_info['term'].capitalize())})"
                 r"</span>"
             )
 
         def insert_title(match):
             original_span = match.group(0)
             content = match.group("content")
-            # Insere o atributo title sem alterar o texto interno
             return original_span.replace(
-                ';">' + content,  # ponto de inserção
+                ';">' + content,
                 f';" title="{tooltip_content}">' + content,
             )
 
         return tag_pattern, insert_title
 
-    # Agora adicionamos o tooltip aos termos que foram sublinhados
     for t in terms:
         tag_pattern, insert_title_fn = add_tooltip(t)
         statement = re.sub(tag_pattern, insert_title_fn, statement, flags=re.IGNORECASE)
@@ -202,6 +390,10 @@ def highlight_statement(
     sup = f" [{classification}]"
     final_text = f"{line_id}: <strong>{sources}</strong> {statement}{sup}"
     return final_text
+
+
+
+
 
 
 def display_section(conn, doc_id):
