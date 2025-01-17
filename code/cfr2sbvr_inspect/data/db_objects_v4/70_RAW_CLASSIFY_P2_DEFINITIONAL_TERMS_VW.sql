@@ -36,7 +36,7 @@ LEFT JOIN main.RAW_SECTION_EXTRACTED_ELEMENTS_VW as EXTRACT
 	AND (CLASS.doc_id = EXTRACT.doc_id)
 	--AND CLASS.checkpoint = EXTRACT.checkpoint
 	AND EXTRACT.checkpoint = 'documents_true_table.json'
-	AND list_has_all(CLASS.statement_sources,
+	AND list_has_any(CLASS.statement_sources,
 	EXTRACT.statement_sources)
 	AND (CLASS.statement_text = EXTRACT.statement_text)
 GROUP BY
@@ -74,7 +74,7 @@ LEFT JOIN main.RAW_SECTION_EXTRACTED_ELEMENTS_VW as EXTRACT
 	AND (CLASS.content.doc_id = EXTRACT.doc_id)
 	--AND CLASS.file_source = EXTRACT.checkpoint
 	AND EXTRACT.checkpoint = 'documents_true_table.json'
-	AND list_has_all(CLASS.content.sources,
+	AND list_has_any(CLASS.content.sources,
 	EXTRACT.statement_sources)
 	AND (CLASS.content.statement = EXTRACT.statement_text)
 );

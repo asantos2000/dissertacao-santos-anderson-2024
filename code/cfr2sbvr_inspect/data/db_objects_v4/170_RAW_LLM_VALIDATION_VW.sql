@@ -38,7 +38,7 @@ LEFT JOIN main.RAW_TRANSFORM_ELEMENTS_VW as TRANSF
 	AND (VAL.id.REPLACE('validation_judge_', '') = TRANSF.source)
 	AND (VAL.content.doc_id = TRANSF.doc_id)
 	AND (VAL.file_source = TRANSF.checkpoint)
-	AND list_has_all(VAL.content.sources, TRANSF.statement_sources)
+	AND list_has_any(VAL.content.sources, TRANSF.statement_sources)
 	AND (VAL.content.statement = TRANSF.statement_text)
 );
 

@@ -173,13 +173,13 @@ LEFT JOIN RAW_TRANSFORM_NAMES AS NAMES
 ON (P1.doc_id = NAMES.content.doc_id
 		AND P1.checkpoint = NAMES.file_source
 		AND P2.term::VARCHAR = NAMES.content.statement_id::VARCHAR
-		AND list_has_all(P1.statement_sources, NAMES.content.statement_sources)
+		AND list_has_any(P1.statement_sources, NAMES.content.statement_sources)
 )
 LEFT JOIN RAW_TRANSFORM_TERMS AS TERMS
 ON ( P1.doc_id = TERMS.content.doc_id
 		AND P1.checkpoint = TERMS.file_source
 		AND P2.term::VARCHAR = TERMS.content.statement_id::VARCHAR
-		AND list_has_all(P1.statement_sources, TERMS.content.statement_sources)
+		AND list_has_any(P1.statement_sources, TERMS.content.statement_sources)
 )
 GROUP BY
 	P1.id,

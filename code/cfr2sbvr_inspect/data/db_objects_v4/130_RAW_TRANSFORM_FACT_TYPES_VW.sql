@@ -29,7 +29,7 @@ LEFT JOIN main.RAW_CLASSIFY_VW as CLASS
 	AND (TRANSF.content.doc_id = CLASS.doc_id)
 	--AND TRANSF.file_source = CLASS.checkpoint
 	AND CLASS.checkpoint = 'documents_true_table.json'
-	AND list_has_all(TRANSF.content.statement_sources, CLASS.statement_sources)
+	AND list_has_any(TRANSF.content.statement_sources, CLASS.statement_sources)
 	AND (TRANSF.content.statement = CLASS.statement_text)
 );
 

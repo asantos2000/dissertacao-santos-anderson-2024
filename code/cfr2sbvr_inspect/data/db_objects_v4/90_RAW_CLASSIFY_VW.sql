@@ -89,7 +89,7 @@ FROM
 LEFT JOIN main.RAW_CLASSIFY_P1_OPERATIVE_RULES_VW as CLASS_P1
   ON (CLASS_P2.statement_id = CLASS_P1.statement_id)
 	 AND (CLASS_P2.checkpoint = CLASS_P1.checkpoint)
- 	 AND list_has_all(CLASS_P2.statement_sources, CLASS_P1.statement_sources)
+ 	 AND list_has_any(CLASS_P2.statement_sources, CLASS_P1.statement_sources)
  	 AND (CLASS_P2.statement_text = CLASS_P1.statement_text)
 );
 
