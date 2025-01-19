@@ -18,6 +18,7 @@ from app_modules import (
     get_doc_ids,
     get_table_names,
     get_checkpoints,
+    get_statement_sources,
     extract_row_values,
     format_score,
     get_databases,
@@ -28,7 +29,9 @@ from app_modules import (
 # Constants and environment variables
 load_dotenv()
 QUALITY_THRESHOLD = os.getenv("QUALITY_THRESHOLD") or 0.8
-LOCAL_DB = os.getenv("LOCAL_DB") or True  # Use cloud database - False or local database - True
+LOCAL_DB = (
+    os.getenv("LOCAL_DB") or True
+)  # Use cloud database - False or local database - True
 HOME_DIR = os.getenv("HOME_DIR") or "code/cfr2sbvr_inspect"
 DEFAULT_DATA_DIR = os.getenv("DEFAULT_DATA_DIR") or f"{HOME_DIR}/data"
 
@@ -75,11 +78,6 @@ if st.sidebar.button(
 ):
     info_dialog("process")
 
-doc_ids = get_doc_ids(conn)
-
-# Sidebar selectbox to choose a file
-doc_id_selected = st.sidebar.multiselect("Choose a doc_id", doc_ids)
-
 table_names = get_table_names(conn, process_dict, process_selected)
 
 # Sidebar selectbox to choose a file
@@ -99,28 +97,47 @@ Tables available for the process {process_selected.lower()}:
 """
 )
 
+# Sidebar selectbox to choose doc_ids
+doc_ids = get_doc_ids(conn)
+doc_id_selected = st.sidebar.multiselect("Choose a doc_id(s)", doc_ids)
+
+# Sidebar selectbox to choose statement sources
+statement_sources = get_statement_sources(conn, table_selected)
+statement_sources_selected = st.sidebar.multiselect(
+    "Choose statement source(s)", statement_sources
+)
+
+# Sidebar selectbox to choose checkpoints
 checkpoints = get_checkpoints(conn, table_selected)
+checkpoints_selected = st.sidebar.multiselect("Choose checkpoint(s)", checkpoints)
 
-# Sidebar selectbox to choose a file
-checkpoints_selected = st.sidebar.multiselect("Choose checkpoints", checkpoints)
-
+# Sidebar selectbox dataset
 st.header("Dataset", divider="red")
 
 #
 # Load the selected data
 #
 data_df = load_data(
-    conn, table_selected, checkpoints_selected, doc_id_selected, process_selected
+    conn,
+    table_selected,
+    checkpoints_selected,
+    doc_id_selected,
+    statement_sources_selected,
+    process_selected,
 )
+
 
 def highlight_row(row):
     if row["checkpoint"] == "documents_true_table.json":
-        return ['background-color: #dfffdf'] * len(row)  # Highlight the entire row
-    return [''] * len(row)  # No styling for other rows
+        return ["background-color: #dfffdf"] * len(row)  # Highlight the entire row
+    return [""] * len(row)  # No styling for other rows
+
 
 # Apply the styling function to the DataFrame
 
-show_true_table_highlight = st.toggle("Show/hide true table highlight", key="show_true_table_highlight", value=True)
+show_true_table_highlight = st.toggle(
+    "Show/hide true table highlight", key="show_true_table_highlight", value=True
+)
 
 if show_true_table_highlight:
     styled_df = data_df.style.apply(highlight_row, axis=1)
@@ -137,18 +154,23 @@ event = st.dataframe(
 st.write("Select up to four rows to evaluate.")
 
 st.sidebar.header("Dataset info", divider="red")
-st.sidebar.write(f":material/database: {db_name} ({':material/computer:' if LOCAL_DB else ':material/cloud:'})")
+st.sidebar.write(
+    f":material/database: {db_name} ({':material/computer:' if LOCAL_DB else ':material/cloud:'})"
+)
 
 st.sidebar.write(f":material/table: {table_selected}")
 st.sidebar.write(f"Loaded {len(data_df)} line(s)")
 
 st.sidebar.header("Legends", divider="red")
-st.sidebar.markdown("""
+st.sidebar.markdown(
+    """
 - <span style="color: orange;">keywords</span>
 - <span style="text-decoration: underline double; text-decoration-color: green;">names</span>
 - <span style="text-decoration: underline; text-decoration-color: green;">terms</span>
 - <span style="font-style: italic; color: blue;">verb symbols</span>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 st.header("Evaluate", divider="rainbow")
 
@@ -193,8 +215,12 @@ with comp_tab:
                     # Generate highlighted text
                     statement_id = row_values.get("statement_id")
                     statement = row_values.get("statement_text")
-                    classification_type = row_values.get("statement_classification_type")
-                    classification_subtype = row_values.get("statement_classification_subtype")
+                    classification_type = row_values.get(
+                        "statement_classification_type"
+                    )
+                    classification_subtype = row_values.get(
+                        "statement_classification_subtype"
+                    )
                     terms = row_values.get("terms")
                     verb_symbols = row_values.get("verb_symbols")
                     sources = row_values.get("statement_sources")
@@ -262,15 +288,19 @@ with comp_tab:
                                     if classification_type == "Operative Rule":
                                         classification_type = "Operative rules"
                                     witt_taxonomy_dialog(classification_type)
-                                
-                                classification_type_confidence = row_values.get("statement_classification_type_confidence")
-                                
-                                # st.write(
-                                #     f"Confidence: {classification_type_confidence}"
-                                # )
-                                st.markdown(f"Confidence: {format_score(classification_type_confidence, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
-                                
-                                classification_type_explanation = row_values.get("statement_classification_type_explanation")
+
+                                classification_type_confidence = row_values.get(
+                                    "statement_classification_type_confidence"
+                                )
+
+                                st.markdown(
+                                    f"Confidence: {format_score(classification_type_confidence, QUALITY_THRESHOLD)}",
+                                    unsafe_allow_html=True,
+                                )
+
+                                classification_type_explanation = row_values.get(
+                                    "statement_classification_type_explanation"
+                                )
                                 st.write(
                                     f"Explanation: {classification_type_explanation}"
                                 )
@@ -283,15 +313,19 @@ with comp_tab:
                                     help="Click to see more information about the classification subtype",
                                 ):
                                     witt_taxonomy_dialog(classification_subtype)
-                                
-                                classification_subtype_confidence = row_values.get("statement_classification_subtype_confidence")
-                                
-                                # st.write(
-                                #     f"Confidence: {classification_subtype_confidence}"
-                                # )
-                                st.markdown(f"Confidence: {format_score(classification_subtype_confidence, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
 
-                                classification_subtype_explanation = row_values.get("statement_classification_subtype_explanation")
+                                classification_subtype_confidence = row_values.get(
+                                    "statement_classification_subtype_confidence"
+                                )
+
+                                st.markdown(
+                                    f"Confidence: {format_score(classification_subtype_confidence, QUALITY_THRESHOLD)}",
+                                    unsafe_allow_html=True,
+                                )
+
+                                classification_subtype_explanation = row_values.get(
+                                    "statement_classification_subtype_explanation"
+                                )
                                 st.write(
                                     f"Explanation: {classification_subtype_explanation}"
                                 )
@@ -302,19 +336,29 @@ with comp_tab:
                                     f"Template(s): \n\n {list_to_markdown(template_ids, ordered=False)}"
                                 )
                         with col2:
-                            transformation_confidence = row_values.get("transformation_confidence")
-                            transformation_reason = row_values.get("transformation_reason")
+                            transformation_confidence = row_values.get(
+                                "transformation_confidence"
+                            )
+                            transformation_reason = row_values.get(
+                                "transformation_reason"
+                            )
                             if transformation_confidence:
                                 st.write("**Transformation**")
-                                
-                                # st.write(f"Confidence: {transformation_confidence}")
-                                st.markdown(f"Confidence: {format_score(transformation_confidence, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
+
+                                st.markdown(
+                                    f"Confidence: {format_score(transformation_confidence, QUALITY_THRESHOLD)}",
+                                    unsafe_allow_html=True,
+                                )
                                 st.write(f"Reason: {transformation_reason}")
-                            
-                            transformation_semscore = row_values.get("transformation_semscore")
+
+                            transformation_semscore = row_values.get(
+                                "transformation_semscore"
+                            )
                             if transformation_semscore:
                                 st.write("**Validation**")
-                                transformation_similarity_score = row_values.get("transformation_similarity_score")
+                                transformation_similarity_score = row_values.get(
+                                    "transformation_similarity_score"
+                                )
                                 st.metric(
                                     label="Semantic Score",
                                     value=round(transformation_semscore, 2),
@@ -336,22 +380,32 @@ with comp_tab:
                                     help="Similarity score of the transformation and the difference with the semantic score",
                                 )
 
-                                transformation_similarity_score_confidence = row_values.get("transformation_similarity_score_confidence")
-                                
-                                # st.write(
-                                #     f"Similarity score confidence: {transformation_similarity_score_confidence}"
-                                # )
-                                st.markdown(f"Confidence: {format_score(transformation_similarity_score_confidence, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
+                                transformation_similarity_score_confidence = (
+                                    row_values.get(
+                                        "transformation_similarity_score_confidence"
+                                    )
+                                )
 
-                                transformation_findings = row_values.get("transformation_findings")
+                                st.markdown(
+                                    f"Confidence: {format_score(transformation_similarity_score_confidence, QUALITY_THRESHOLD)}",
+                                    unsafe_allow_html=True,
+                                )
+
+                                transformation_findings = row_values.get(
+                                    "transformation_findings"
+                                )
                                 st.write(
                                     f"Similarity score findings: \n\n {list_to_markdown(transformation_findings)}"
                                 )
 
-                                transformation_accuracy = row_values.get("transformation_accuracy")
+                                transformation_accuracy = row_values.get(
+                                    "transformation_accuracy"
+                                )
                                 st.write(f"Accuracy: {transformation_accuracy}")
 
-                                transformation_grammar_syntax_accuracy = row_values.get("transformation_grammar_syntax_accuracy")
+                                transformation_grammar_syntax_accuracy = row_values.get(
+                                    "transformation_grammar_syntax_accuracy"
+                                )
                                 st.write(
                                     f"Grammar/Sintax Accuracy: {transformation_grammar_syntax_accuracy}"
                                 )
@@ -374,12 +428,15 @@ with comp_tab:
                                     str(data_df.at[row1, column]),
                                     str(data_df.at[row2, column]),
                                 )
-                                st.markdown(f"- ({row1}, {row2}) = {format_score(score, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
+                                st.markdown(
+                                    f"- ({row1}, {row2}) = {format_score(score, QUALITY_THRESHOLD)}",
+                                    unsafe_allow_html=True,
+                                )
                             except Exception as e:
                                 st.write(f"- No {e} available")
         else:
             st.warning("Select up to four rows to evaluate.")
-        
+
 with feedback_tab:
     st.write(
         "The best option is SMEs' feedback about which statements are best for keeping the meaning."

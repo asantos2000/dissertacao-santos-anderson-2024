@@ -71,7 +71,7 @@ FROM
 LEFT JOIN main.RAW_SECTION_EXTRACTED_ELEMENTS_VW as EXTRACT
   ON
 	(CLASS.content.statement_id::STRING = EXTRACT.statement_id::STRING)
-	--AND (CLASS.content.doc_id = EXTRACT.doc_id)
+	AND (CLASS.content.doc_id = EXTRACT.doc_id)
 	AND CLASS.file_source = EXTRACT.checkpoint
 	--AND EXTRACT.checkpoint = 'documents_true_table.json'
 	AND list_has_any(CLASS.content.sources,
