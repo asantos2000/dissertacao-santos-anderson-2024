@@ -99,7 +99,7 @@ Tables available for the process {process_selected.lower()}:
 """
 )
 
-checkpoints = get_checkpoints(conn, table_selected)
+checkpoints = get_checkpoints(conn, table_selected, doc_id_selected)
 
 # Sidebar selectbox to choose a file
 checkpoints_selected = st.sidebar.multiselect("Choose checkpoints", checkpoints)
@@ -265,9 +265,6 @@ with comp_tab:
                                 
                                 classification_type_confidence = row_values.get("statement_classification_type_confidence")
                                 
-                                # st.write(
-                                #     f"Confidence: {classification_type_confidence}"
-                                # )
                                 st.markdown(f"Confidence: {format_score(classification_type_confidence, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
                                 
                                 classification_type_explanation = row_values.get("statement_classification_type_explanation")
@@ -286,9 +283,6 @@ with comp_tab:
                                 
                                 classification_subtype_confidence = row_values.get("statement_classification_subtype_confidence")
                                 
-                                # st.write(
-                                #     f"Confidence: {classification_subtype_confidence}"
-                                # )
                                 st.markdown(f"Confidence: {format_score(classification_subtype_confidence, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
 
                                 classification_subtype_explanation = row_values.get("statement_classification_subtype_explanation")
@@ -307,7 +301,6 @@ with comp_tab:
                             if transformation_confidence:
                                 st.write("**Transformation**")
                                 
-                                # st.write(f"Confidence: {transformation_confidence}")
                                 st.markdown(f"Confidence: {format_score(transformation_confidence, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
                                 st.write(f"Reason: {transformation_reason}")
                             
@@ -338,9 +331,6 @@ with comp_tab:
 
                                 transformation_similarity_score_confidence = row_values.get("transformation_similarity_score_confidence")
                                 
-                                # st.write(
-                                #     f"Similarity score confidence: {transformation_similarity_score_confidence}"
-                                # )
                                 st.markdown(f"Confidence: {format_score(transformation_similarity_score_confidence, QUALITY_THRESHOLD)}", unsafe_allow_html=True)
 
                                 transformation_findings = row_values.get("transformation_findings")

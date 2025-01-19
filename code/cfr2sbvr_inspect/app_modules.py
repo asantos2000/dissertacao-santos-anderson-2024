@@ -392,10 +392,6 @@ def highlight_statement(
     return final_text
 
 
-
-
-
-
 def display_section(conn, doc_id):
     doc_id_url = doc_id.replace("§ ", "")
     section_url = f"https://www.ecfr.gov/current/title-17/section-{doc_id_url}"
@@ -478,13 +474,12 @@ def db_connection(local_db=False, default_data_dir="data"):
 # @st.cache_data
 def load_data(conn, table, checkpoints, doc_ids, process_selected):
     where_clause = ""
-
-    checkpoints_string = ", ".join(f"'{item}'" for item in checkpoints)
-    doc_ids_string = ", ".join(f"'{item}'" for item in doc_ids)
-    if checkpoints_string:
+    if checkpoints:
+        checkpoints_string = ", ".join(f"'{item}'" for item in checkpoints)
         where_clause += f" AND checkpoint in ({checkpoints_string})"
 
-    if doc_ids_string:
+    if doc_ids:
+        doc_ids_string = ", ".join(f"'{item}'" for item in doc_ids)
         where_clause += f" AND doc_id in ({doc_ids_string})"
 
     data_query = f"""
@@ -512,7 +507,7 @@ def calculate_statements_similarity(statement1, statement2):
 
 def get_doc_ids(conn):
     return conn.sql(
-        "select distinct id.replace('_P1', '') as doc_id from RAW_SECTION_P1_EXTRACTED_ELEMENTS order by id"
+        "select distinct id as doc_id from RAW_SECTION order by id"
     )
 
 
@@ -530,8 +525,10 @@ def get_table_names(conn, process_dict, process_selected):
     return [table_name[0] for table_name in all_tables]
 
 
-def get_checkpoints(conn, table_selected):
-    return conn.sql(f"select distinct checkpoint from {table_selected} order by 1")
+def get_checkpoints(conn, table_selected, doc_ids):
+    return conn.sql(f"""
+                    select distinct checkpoint from {table_selected} order by 1
+                    """)
 
 
 def extract_row_values(data_df, row):
