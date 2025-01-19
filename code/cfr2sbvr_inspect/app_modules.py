@@ -1,19 +1,16 @@
-import re
 import html
 import logging
 import os
 
-import jellyfish
-import duckdb
-
-import rules_taxonomy_provider.main as rules_taxonomy_provider
-from rules_taxonomy_provider.main import RuleInformationProvider
-
-import streamlit as st
-
 # Highlight term in the statement
 import re
-import html
+
+import duckdb
+import jellyfish
+import rules_taxonomy_provider.main as rules_taxonomy_provider
+import streamlit as st
+from openai import OpenAI
+from rules_taxonomy_provider.main import RuleInformationProvider
 
 logger = logging.getLogger(__name__)
 
@@ -266,7 +263,7 @@ def highlight_statement(
         "more than one",
         "no",
         "the",  # repetido
-        "a",    # repetido
+        "a",  # repetido
     ]
 
     sources_links = []
@@ -296,6 +293,7 @@ def highlight_statement(
                     f'text-decoration-color: green;">{original}</span>'
                 )
             return original
+
         return replace_term
 
     for t in terms:
@@ -316,7 +314,9 @@ def highlight_statement(
     # Função auxiliar para destacar keywords apenas fora de <span>
     def highlight_keywords_outside_spans(text, kw_list):
         # Divide em segmentos que são ou não <span ...>...</span>
-        segments = re.split(r'(<span.*?>.*?</span>)', text, flags=re.IGNORECASE|re.DOTALL)
+        segments = re.split(
+            r"(<span.*?>.*?</span>)", text, flags=re.IGNORECASE | re.DOTALL
+        )
         # Em cada segmento fora de <span>, faz a substituição das keywords
         for i, seg in enumerate(segments):
             if seg.startswith("<span"):
@@ -324,8 +324,7 @@ def highlight_statement(
             for kw in kw_list:
                 kw_pattern = re.compile(rf"\b{re.escape(kw)}\b", re.IGNORECASE)
                 seg = kw_pattern.sub(
-                    lambda m: f'<span style="color: orange;">{m.group(0)}</span>',
-                    seg
+                    lambda m: f'<span style="color: orange;">{m.group(0)}</span>', seg
                 )
             segments[i] = seg
         return "".join(segments)
@@ -339,7 +338,9 @@ def highlight_statement(
         reason = html.escape(term_info.get("reason", "") or "Missing")
         transformed = html.escape(term_info.get("transformed", "") or "Missing")
         transformed_confidence = term_info.get("transform_confidence", "") or "0.0"
-        transformed_reason = html.escape(term_info.get("transform_reason", "") or "Missing")
+        transformed_reason = html.escape(
+            term_info.get("transform_reason", "") or "Missing"
+        )
         isLocalScope = term_info.get("isLocalScope", False)
         if isLocalScope:
             scope = "📍Local\n"
@@ -472,7 +473,7 @@ def db_connection(local_db=False, default_data_dir="data"):
 
 
 # @st.cache_data
-def load_data(conn, table, checkpoints, doc_ids, process_selected):
+def load_data(conn, table, checkpoints, doc_ids, statement_sources, process_selected):
     where_clause = ""
     if checkpoints:
         checkpoints_string = ", ".join(f"'{item}'" for item in checkpoints)
@@ -481,6 +482,12 @@ def load_data(conn, table, checkpoints, doc_ids, process_selected):
     if doc_ids:
         doc_ids_string = ", ".join(f"'{item}'" for item in doc_ids)
         where_clause += f" AND doc_id in ({doc_ids_string})"
+
+    if statement_sources:
+        statement_sources_string = ", ".join(f"'{item}'" for item in statement_sources)
+        where_clause += (
+            f" AND list_has_any([{statement_sources_string}], statement_sources)"
+        )
 
     data_query = f"""
     SELECT *
@@ -505,12 +512,6 @@ def calculate_statements_similarity(statement1, statement2):
     return similarity_score
 
 
-def get_doc_ids(conn):
-    return conn.sql(
-        "select distinct id as doc_id from RAW_SECTION order by id"
-    )
-
-
 def get_table_names(conn, process_dict, process_selected):
     query = f"""
     SELECT DISTINCT TABLE_NAME,
@@ -525,10 +526,33 @@ def get_table_names(conn, process_dict, process_selected):
     return [table_name[0] for table_name in all_tables]
 
 
-def get_checkpoints(conn, table_selected, doc_ids):
-    return conn.sql(f"""
-                    select distinct checkpoint from {table_selected} order by 1
-                    """)
+def get_doc_ids(conn):
+    return conn.sql(
+        """
+        select distinct id as doc_id
+        from RAW_SECTION
+        order by id
+        """)
+
+
+def get_checkpoints(conn, table_selected):
+    return conn.sql(
+        f"""
+        select distinct checkpoint as checkpoint
+        from RAW_SECTION_EXTRACTED_ELEMENTS_VW --{table_selected}
+        order by checkpoint
+        """
+    )
+
+
+def get_statement_sources(conn, table_selected):
+    return conn.sql(
+        f"""
+        select distinct unnest(statement_sources) as statement_source
+        from RAW_SECTION_EXTRACTED_ELEMENTS_VW --{table_selected}
+        order by statement_source
+        """
+    )
 
 
 def extract_row_values(data_df, row):
@@ -644,7 +668,7 @@ def format_score(score, THRESHOLD):
     else:
         return f"{score:.2f}"
 
-from openai import OpenAI
+
 def chatbot_widget():
     st.caption("🤖 Chatbot powered by OpenAI")
 
@@ -652,7 +676,9 @@ def chatbot_widget():
     client = OpenAI(api_key=openai_api_key)
 
     if "messages" not in st.session_state:
-        st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
+        st.session_state["messages"] = [
+            {"role": "assistant", "content": "How can I help you?"}
+        ]
 
     for msg in st.session_state.messages:
         st.chat_message(msg["role"]).write(msg["content"])
@@ -660,10 +686,13 @@ def chatbot_widget():
     if prompt := st.chat_input():
         st.session_state.messages.append({"role": "user", "content": prompt})
         st.chat_message("user").write(prompt)
-        response = client.chat.completions.create(model="gpt-4o", messages=st.session_state.messages)
+        response = client.chat.completions.create(
+            model="gpt-4o", messages=st.session_state.messages
+        )
         msg = response.choices[0].message.content
         st.session_state.messages.append({"role": "assistant", "content": msg})
         st.chat_message("assistant").write(msg)
+
 
 def log_config(home_dir):
     # Set up logging configuration
